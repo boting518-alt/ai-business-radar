@@ -1,0 +1,60 @@
+{
+  "$defs": {
+    "HypeClassification": {
+      "enum": [
+        "content_driven",
+        "mixed",
+        "demand_driven",
+        "insufficient_evidence"
+      ],
+      "title": "HypeClassification",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "classification": {
+      "$ref": "#/$defs/HypeClassification"
+    },
+    "content_hype_score": {
+      "anyOf": [
+        {
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Content Hype Score"
+    },
+    "real_demand_score": {
+      "anyOf": [
+        {
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Real Demand Score"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "content_hype_score",
+    "real_demand_score",
+    "classification",
+    "reason"
+  ],
+  "title": "HypeDetectorOutput",
+  "type": "object"
+}

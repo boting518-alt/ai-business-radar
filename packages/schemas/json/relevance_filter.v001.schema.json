@@ -1,0 +1,58 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "content_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Content Type"
+    },
+    "primary_topic": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Primary Topic"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "relevance_score": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Relevance Score"
+    },
+    "relevant": {
+      "title": "Relevant",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "relevant",
+    "relevance_score",
+    "content_type",
+    "primary_topic",
+    "reason"
+  ],
+  "title": "RelevanceFilterOutput",
+  "type": "object"
+}

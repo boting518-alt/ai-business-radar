@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "OpportunityNormalizationAction": {
+      "enum": [
+        "MATCH",
+        "CREATE",
+        "REVIEW"
+      ],
+      "title": "OpportunityNormalizationAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "$ref": "#/$defs/OpportunityNormalizationAction"
+    },
+    "canonical_name": {
+      "title": "Canonical Name",
+      "type": "string"
+    },
+    "confidence": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Confidence"
+    },
+    "opportunity_id": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Opportunity Id"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "opportunity_id",
+    "canonical_name",
+    "confidence",
+    "reason"
+  ],
+  "title": "OpportunityNormalizerOutput",
+  "type": "object"
+}

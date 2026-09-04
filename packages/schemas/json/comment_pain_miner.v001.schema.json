@@ -1,0 +1,105 @@
+{
+  "$defs": {
+    "CommentPainSignal": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "comment_id": {
+          "format": "uuid",
+          "title": "Comment Id",
+          "type": "string"
+        },
+        "current_solution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Current Solution"
+        },
+        "evidence_strength": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Evidence Strength"
+        },
+        "pain": {
+          "title": "Pain",
+          "type": "string"
+        },
+        "purchase_intent": {
+          "title": "Purchase Intent",
+          "type": "boolean"
+        },
+        "requested_solution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Requested Solution"
+        },
+        "spend": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Spend"
+        }
+      },
+      "required": [
+        "category",
+        "pain",
+        "current_solution",
+        "requested_solution",
+        "spend",
+        "purchase_intent",
+        "evidence_strength",
+        "comment_id"
+      ],
+      "title": "CommentPainSignal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "signals": {
+      "items": {
+        "$ref": "#/$defs/CommentPainSignal"
+      },
+      "title": "Signals",
+      "type": "array"
+    }
+  },
+  "required": [
+    "signals"
+  ],
+  "title": "CommentPainMinerOutput",
+  "type": "object"
+}

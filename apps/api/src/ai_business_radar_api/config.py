@@ -1,0 +1,57 @@
+"""Environment-backed application configuration."""
+
+import json
+from functools import lru_cache
+
+from pydantic import SecretStr, model_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+    )
+
+    app_env: str = "development"
+    app_name: str = "YouTube AI Business Radar API"
+    app_version: str = "0.1.0"
+
+    api_host: str = "0.0.0.0"
+    api_port: int = 8000
+
+    supabase_url: str | None = None
+    supabase_anon_key: SecretStr | None = None
+    supabase_service_role_key: SecretStr | None = None
+    database_url: SecretStr | None = None
+    redis_url: SecretStr | None = None
+
+    youtube_api_key: SecretStr | None = None
+    ai_provider: str | None = None
+    openai_api_key: SecretStr | None = None
+
+    log_level: str = "INFO"
+    cors_origins: str = "http://localhost:3000"
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        raw_value = self.cors_origins.strip()
+        if raw_value.startswith("["):
+            decoded = json.loads(raw_value)
+            if not isinstance(decoded, list) or not all(isinstance(item, str) for item in decoded):
+                raise ValueError("CORS_ORIGINS JSON must be a list of strings")
+            return [item.strip() for item in decoded if item.strip()]
+        return [item.strip() for item in raw_value.split(",") if item.strip()]
+
+    @model_validator(mode="after")
+    def validate_safe_production_cors(self) -> "Settings":
+        if self.app_env.lower() == "production" and "*" in self.cors_origin_list:
+            raise ValueError("CORS_ORIGINS must not contain '*' in production")
+        return self
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()

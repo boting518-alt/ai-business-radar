@@ -1,0 +1,247 @@
+{
+  "$defs": {
+    "ClaimStatus": {
+      "enum": [
+        "fact",
+        "creator_claim",
+        "inferred",
+        "opinion",
+        "speculation",
+        "unknown"
+      ],
+      "title": "ClaimStatus",
+      "type": "string"
+    },
+    "ExtractedBusinessSignal": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_status": {
+          "$ref": "#/$defs/ClaimStatus"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Confidence"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/SignalType"
+        }
+      },
+      "required": [
+        "type",
+        "statement",
+        "evidence",
+        "claim_status",
+        "confidence"
+      ],
+      "title": "ExtractedBusinessSignal",
+      "type": "object"
+    },
+    "PriceRange": {
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period"
+        }
+      },
+      "title": "PriceRange",
+      "type": "object"
+    },
+    "SignalType": {
+      "enum": [
+        "pain",
+        "demand",
+        "purchase_intent",
+        "revenue",
+        "pricing",
+        "customer",
+        "product_launch",
+        "growth",
+        "competition",
+        "distribution",
+        "workflow",
+        "technology",
+        "market_change",
+        "complaint",
+        "feature_request",
+        "adoption"
+      ],
+      "title": "SignalType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "business_model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Business Model"
+    },
+    "customer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Customer"
+    },
+    "distribution": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Distribution",
+      "type": "array"
+    },
+    "industry": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Industry"
+    },
+    "pricing": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PriceRange"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "problem": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Problem"
+    },
+    "signals": {
+      "items": {
+        "$ref": "#/$defs/ExtractedBusinessSignal"
+      },
+      "title": "Signals",
+      "type": "array"
+    },
+    "solution": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Solution"
+    },
+    "technology": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Technology",
+      "type": "array"
+    }
+  },
+  "required": [
+    "industry",
+    "customer",
+    "problem",
+    "solution",
+    "business_model",
+    "technology",
+    "distribution",
+    "pricing",
+    "signals"
+  ],
+  "title": "BusinessSignalExtractorOutput",
+  "type": "object"
+}

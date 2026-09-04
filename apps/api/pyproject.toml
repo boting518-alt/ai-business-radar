@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-business-radar-api"
+version = "0.1.0"
+description = "FastAPI application for YouTube AI Business Radar"
+requires-python = ">=3.12"
+dependencies = [
+    "ai-business-radar-schemas",
+    "fastapi>=0.118,<1",
+    "httpx>=0.28,<1",
+    "pydantic>=2.10,<3",
+    "pydantic-settings>=2.7,<3",
+    "uvicorn>=0.37,<1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<9",
+    "pytest-asyncio>=0.24,<2",
+    "ruff>=0.13,<1",
+]
+
+[tool.uv.sources]
+ai-business-radar-schemas = { path = "../../packages/schemas/python", editable = true }
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_business_radar_api"]
