@@ -2,7 +2,8 @@
 
 Repository skeleton for a business-intelligence system that detects emerging AI business opportunities from YouTube signals.
 
-The repository includes the frozen v0.1 foundation and a runnable FastAPI skeleton. Application business logic has not been implemented.
+The repository includes the frozen v0.1 intelligence pipeline, FastAPI product API, workers, and
+a runnable authenticated Next.js application shell.
 
 ## Structure
 
@@ -25,3 +26,14 @@ uv run uvicorn ai_business_radar_api.main:app --reload
 ```
 
 Run API tests with `uv run pytest` and lint with `uv run ruff check .` from `apps/api`.
+
+## Frontend development
+
+```bash
+cd apps/web
+pnpm install
+pnpm dev
+```
+
+The frontend runs on `http://localhost:3000`. See `apps/web/README.md` for required public
+environment variables and validation commands.

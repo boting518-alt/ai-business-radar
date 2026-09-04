@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 5 — Review & Product API
+Phase 5 — Frontend MVP
 
 ## Completed
 
@@ -28,10 +28,10 @@ Phase 5 — Review & Product API
 - [x] TASK-020 Opportunity Scoring
 - [x] TASK-021 Review Workflow Service
 - [x] TASK-022 Radar Query API
+- [x] TASK-023 Frontend Skeleton
 
 ## Next
 
-- [ ] TASK-023 Frontend Skeleton
 - [ ] TASK-024 Radar Page
 - [ ] TASK-025 Opportunity Detail Page
 - [ ] TASK-026 Admin Review UI

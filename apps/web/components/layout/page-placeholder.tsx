@@ -1,0 +1,3 @@
+import { DataTableShell, FilterBar, PageHeader, SectionHeader, SkeletonTable } from "@/components/ui/primitives";
+import { EmptyState } from "@/components/states/states";
+export function PagePlaceholder({title,description,sections=[]}:{title:string;description:string;sections?:string[]}){return <><PageHeader title={title} description={description}/><FilterBar/><DataTableShell>{sections.length?<div className="grid gap-4 p-5 md:grid-cols-2">{sections.map(s=><section key={s} className="min-h-36 rounded border p-4"><SectionHeader>{s}</SectionHeader><div className="mt-4"><SkeletonTable/></div></section>)}</div>:<div className="p-5"><EmptyState title={`${title}尚无数据`} description="数据接入将在后续前端任务完成。"/></div>}</DataTableShell></>}

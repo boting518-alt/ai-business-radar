@@ -1,0 +1,2 @@
+@import "tailwindcss";
+:root{color-scheme:light dark}*{border-color:color-mix(in srgb,currentColor 15%,transparent)}body{font-family:Arial,Helvetica,sans-serif}button,a,input{outline-offset:2px}
