@@ -214,9 +214,7 @@ async def test_database_constraints_are_enforced(db_session: AsyncSession) -> No
         processing_status="new",
     )
     await videos.add_snapshot(video_id=video.id, captured_at=now)
-    with pytest.raises(IntegrityError):
-        async with db_session.begin_nested():
-            await videos.add_snapshot(video_id=video.id, captured_at=now)
+    assert await videos.add_snapshot(video_id=video.id, captured_at=now) is None
 
     with pytest.raises(IntegrityError):
         async with db_session.begin_nested():

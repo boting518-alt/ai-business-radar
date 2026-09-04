@@ -17,13 +17,14 @@ Phase 2 — YouTube Collection
 - [x] TASK-009 Supabase Auth + RLS Baseline
 - [x] TASK-010 YouTube API Client
 - [x] TASK-011 YouTube Discovery Pipeline
+- [x] TASK-012 Metadata / Snapshot Collection
 
 ## Next
 
-- [ ] TASK-012 Metadata / Snapshot Collection
 - [ ] TASK-013 Comment Collection
 - [ ] TASK-014 Collection Worker Runtime
 - [ ] TASK-015 Relevance Filter Pipeline
+- [ ] TASK-016 Signal Extraction Pipeline
 
 ## Validation debt
 

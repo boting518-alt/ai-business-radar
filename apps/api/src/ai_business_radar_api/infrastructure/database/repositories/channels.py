@@ -24,7 +24,8 @@ class ChannelRepository:
         mutable = {
             key: value
             for key, value in values.items()
-            if key not in {"id", "youtube_channel_id", "first_seen_at", "created_at"}
+            if key
+            not in {"id", "youtube_channel_id", "first_seen_at", "created_at", "channel_type"}
         }
         statement = (
             insert(Channel)

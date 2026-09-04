@@ -129,7 +129,7 @@ The `review_tasks` target is a constrained application-level reference described
 **Foreign keys:** `search_query_id -> search_queries.id ON DELETE RESTRICT`.
 **Uniqueness:** No natural uniqueness is imposed because deliberate reruns are retained; scheduler/job idempotency must reuse or resolve a stable run identity at the service boundary.
 **Important indexes:** `status, created_at`; `run_type, created_at`; `search_query_id, created_at`.
-**Important constraints:** `source_type = 'youtube'`; `run_type IN ('discovery', 'channel_monitor', 'video_snapshot', 'comment_collection')`; `status IN ('pending', 'running', 'completed', 'partial', 'failed', 'cancelled')`; counts are non-negative; `finished_at >= started_at` when both exist. Pending runs have neither execution timestamp; running runs require `started_at` and no `finished_at`; terminal states require both.
+**Important constraints:** `source_type = 'youtube'`; `run_type IN ('discovery', 'metadata_collection', 'channel_monitor', 'video_snapshot', 'comment_collection')`; `status IN ('pending', 'running', 'completed', 'partial', 'failed', 'cancelled')`; counts are non-negative; `finished_at >= started_at` when both exist. Pending runs have neither execution timestamp; running runs require `started_at` and no `finished_at`; terminal states require both.
 **Lifecycle notes:** Status transitions are `pending -> running -> completed|partial|failed|cancelled`; cancellation before start may use `pending -> cancelled` with `finished_at` and no `started_at`. Retain runs for operations and audit.
 
 ### 6.4 `channels`
@@ -344,7 +344,7 @@ The `review_tasks` target is a constrained application-level reference described
 
 ### 6.19 `youtube_discovery_items`
 
-Internal RAW staging links each accepted search result to its `collection_run` and managed `search_query`. It retains the external video/channel IDs and optional search snippet fields needed by TASK-012. `(collection_run_id, youtube_video_id)` is unique, so duplicates within a run are ignored while the same video may appear in later runs. `processing_status` is limited to `pending`, `processed`, or `failed`; canonical channel/video creation remains a separate metadata-ingestion responsibility. RLS is enabled with no authenticated-user policy.
+Internal RAW staging links each accepted search result to its discovery `collection_run` and managed `search_query`. It retains external IDs and optional search snippets, which are non-authoritative hints. `(collection_run_id, youtube_video_id)` is unique, so duplicates within a run are ignored while the same video may appear in later runs. `processing_status` is `pending`, `processing`, `processed`, or `failed`; terminal rows record `processed_at`, successful rows link `canonical_video_id`, and failed rows store a safe `error_summary`. Metadata collectors claim pending rows atomically. RLS is enabled with no authenticated-user policy.
 
 ## 7. Relationship rules
 

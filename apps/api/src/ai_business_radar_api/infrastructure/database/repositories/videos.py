@@ -19,7 +19,13 @@ class VideoRepository:
         return await self.session.scalar(select(Video).where(Video.youtube_video_id == external_id))
 
     async def create_or_update_video(self, **values: Any) -> Video:
-        immutable = {"id", "youtube_video_id", "first_seen_at", "created_at"}
+        immutable = {
+            "id",
+            "youtube_video_id",
+            "first_seen_at",
+            "created_at",
+            "processing_status",
+        }
         mutable = {key: value for key, value in values.items() if key not in immutable}
         statement = (
             insert(Video)
@@ -39,6 +45,13 @@ class VideoRepository:
         )
         return list(result)
 
-    async def add_snapshot(self, **values: Any) -> VideoSnapshot:
-        statement = insert(VideoSnapshot).values(**values).returning(VideoSnapshot)
-        return (await self.session.execute(statement)).scalar_one()
+    async def add_snapshot(self, **values: Any) -> VideoSnapshot | None:
+        statement = (
+            insert(VideoSnapshot)
+            .values(**values)
+            .on_conflict_do_nothing(
+                index_elements=[VideoSnapshot.video_id, VideoSnapshot.captured_at]
+            )
+            .returning(VideoSnapshot)
+        )
+        return (await self.session.execute(statement)).scalar_one_or_none()

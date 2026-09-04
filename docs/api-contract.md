@@ -104,6 +104,10 @@ Admin-only manual trigger for one bounded managed-query discovery run. The reque
 
 Missing queries return 404. Disabled or monitoring-mode queries return 409. External YouTube failures are converted into safe failed/partial discovery results rather than exposing provider exceptions.
 
+### `POST /api/v1/admin/youtube/metadata`
+
+Admin-only manual trigger for one bounded metadata collection. The request accepts optional `collection_run_id`, `limit` (1–250, default 50), and `include_snapshots` (default true). It claims pending discovery rows and returns a typed summary containing claim, success/failure, video/channel request and return counts, snapshots created, estimated quota units, timestamps, reason, and final collection-run status. External provider details and raw payloads are never returned.
+
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
 ## Pagination direction
@@ -123,6 +127,7 @@ Implemented:
 - `GET /api/v1/auth/me`
 - `GET /api/v1/admin/health`
 - `POST /api/v1/admin/youtube/discovery`
+- `POST /api/v1/admin/youtube/metadata`
 
 Planned:
 
