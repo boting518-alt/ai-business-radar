@@ -15,3 +15,8 @@ Business signal extraction also requires `AI_MODEL_SIGNAL_EXTRACTION` and runs m
 
 Comment pain mining shares `ai_extraction`, requires `AI_MODEL_COMMENT_PAIN_MINING`, and is also
 manual-only.
+
+Opportunity normalization shares `ai_extraction`, requires
+`AI_MODEL_OPPORTUNITY_NORMALIZATION`, and is manual-only. MATCH/CREATE thresholds default to 0.70
+and 0.75 and can be changed with `AI_OPPORTUNITY_MATCH_THRESHOLD` and
+`AI_OPPORTUNITY_CREATE_THRESHOLD`.

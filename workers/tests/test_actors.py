@@ -12,6 +12,7 @@ from ai_business_radar_workers.actors import (
     recover_stale_collection_claims,
     relevance,
     run_comment_pain_mining,
+    run_opportunity_normalization,
     run_relevance_filter,
     run_signal_extraction,
     run_youtube_comment_collection,
@@ -33,6 +34,7 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_relevance_filter: "ai_relevance",
         run_comment_pain_mining: "ai_extraction",
         run_signal_extraction: "ai_extraction",
+        run_opportunity_normalization: "ai_extraction",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -208,4 +210,34 @@ async def test_comment_pain_actor_delegates_to_service(monkeypatch) -> None:
     monkeypatch.setattr(comment_pain, "comment_pain_dependencies", dependencies)
     monkeypatch.setattr(comment_pain, "CommentPainMiningService", Service)
     result = await comment_pain.execute_comment_pain({"limit": 5}, settings)
+    assert result.status == "completed" and called[0].limit == 5
+
+
+@pytest.mark.asyncio
+async def test_opportunity_normalization_actor_delegates_to_service(monkeypatch) -> None:
+    from ai_business_radar_workers.actors import opportunities
+
+    called = []
+
+    @asynccontextmanager
+    async def dependencies(_settings):
+        yield "sessions", "ai"
+
+    class Service:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+        async def normalize_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    settings = SimpleNamespace(
+        ai_provider="openai",
+        ai_model_opportunity_normalization="model",
+        ai_opportunity_match_threshold=0.70,
+        ai_opportunity_create_threshold=0.75,
+    )
+    monkeypatch.setattr(opportunities, "opportunity_normalization_dependencies", dependencies)
+    monkeypatch.setattr(opportunities, "OpportunityNormalizationService", Service)
+    result = await opportunities.execute_opportunity_normalization({"limit": 5}, settings)
     assert result.status == "completed" and called[0].limit == 5

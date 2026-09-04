@@ -66,6 +66,7 @@ class VideoProcessingStatus(StrEnum):
 class AIExtractionSourceType(StrEnum):
     VIDEO = "video"
     COMMENT = "comment"
+    SIGNAL = "signal"
     OPPORTUNITY = "opportunity"
 
 

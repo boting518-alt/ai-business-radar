@@ -147,6 +147,7 @@ class ReviewTask(Base):
     assigned_to: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
     decision: Mapped[str | None]
     decision_notes: Mapped[str | None] = mapped_column(Text)
+    context: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))

@@ -28,6 +28,17 @@ class ReviewTaskRepository:
         statement = insert(ReviewTask).values(**values).returning(ReviewTask)
         return (await self.session.execute(statement)).scalar_one()
 
+    async def find_open_for_target(self, *, target_type: str, target_id: UUID) -> ReviewTask | None:
+        return await self.session.scalar(
+            select(ReviewTask)
+            .where(
+                ReviewTask.target_type == target_type,
+                ReviewTask.target_id == target_id,
+                ReviewTask.status.in_(("pending", "in_review")),
+            )
+            .order_by(ReviewTask.created_at.desc())
+        )
+
     async def update_review_status(self, entity_id: UUID, **values: Any) -> ReviewTask | None:
         statement = (
             update(ReviewTask)

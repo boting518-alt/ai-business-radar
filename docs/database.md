@@ -38,7 +38,7 @@ Logical ownership does not prevent foreign keys across layers. Those links are r
 - Discovery begins with managed `search_queries` and observable `collection_runs`.
 - `youtube_discovery_items` stages bounded `search.list` results without creating incomplete canonical channels or videos.
 - `channels` own canonical `videos`; videos own historical `video_snapshots` and public `comments`.
-- `ai_extractions` audit model work against a known video or comment source.
+- `ai_extractions` audit model work against a known video, comment, signal, or opportunity source.
 - Atomic `signals` refer to source evidence and optionally to the extraction that produced them.
 - `opportunities` normalize many signals through `opportunity_signal_links` and expose research provenance through `opportunity_evidence`.
 - `opportunity_merge_history` preserves canonical lineage when duplicates are merged.
@@ -194,12 +194,12 @@ The `review_tasks` target is a constrained application-level reference described
 **Layer:** FACT.
 **Primary key:** `id UUID`.
 
-**Fields:** All required fields are `id UUID` PK; `source_type VARCHAR NOT NULL`; `source_id UUID NOT NULL`; `task_type VARCHAR NOT NULL`; `provider VARCHAR NOT NULL`; `model VARCHAR NOT NULL`; `prompt_version VARCHAR NOT NULL`; `input_hash VARCHAR NOT NULL`; `status VARCHAR NOT NULL`; `raw_output JSONB NULL`; `parsed_output JSONB NULL`; `confidence NUMERIC NULL`; `error_message TEXT NULL`; `started_at TIMESTAMPTZ NULL`; `completed_at TIMESTAMPTZ NULL`; `created_at TIMESTAMPTZ NOT NULL`. Integrity-supporting fields are `video_id UUID NULL`, `comment_id UUID NULL`, `opportunity_id UUID NULL`, `attempt_number INT NOT NULL DEFAULT 1`, `supersedes_extraction_id UUID NULL`, nullable non-negative `input_tokens`, `output_tokens`, and `total_tokens`, plus nullable `provider_request_id`.
+**Fields:** All required fields are `id UUID` PK; `source_type VARCHAR NOT NULL`; `source_id UUID NOT NULL`; `task_type VARCHAR NOT NULL`; `provider VARCHAR NOT NULL`; `model VARCHAR NOT NULL`; `prompt_version VARCHAR NOT NULL`; `input_hash VARCHAR NOT NULL`; `status VARCHAR NOT NULL`; `raw_output JSONB NULL`; `parsed_output JSONB NULL`; `confidence NUMERIC NULL`; `error_message TEXT NULL`; `started_at TIMESTAMPTZ NULL`; `completed_at TIMESTAMPTZ NULL`; `created_at TIMESTAMPTZ NOT NULL`. Integrity-supporting fields are `video_id UUID NULL`, `comment_id UUID NULL`, `signal_id UUID NULL`, `opportunity_id UUID NULL`, `attempt_number INT NOT NULL DEFAULT 1`, `supersedes_extraction_id UUID NULL`, nullable non-negative `input_tokens`, `output_tokens`, and `total_tokens`, plus nullable `provider_request_id`.
 
-**Foreign keys:** `video_id -> videos.id ON DELETE RESTRICT`; `comment_id -> comments.id ON DELETE RESTRICT`; `opportunity_id -> opportunities.id ON DELETE RESTRICT`; `supersedes_extraction_id -> ai_extractions.id ON DELETE RESTRICT`.
+**Foreign keys:** `video_id -> videos.id ON DELETE RESTRICT`; `comment_id -> comments.id ON DELETE RESTRICT`; `signal_id -> signals.id ON DELETE RESTRICT` (added by migration 0009); `opportunity_id -> opportunities.id ON DELETE RESTRICT`; `supersedes_extraction_id -> ai_extractions.id ON DELETE RESTRICT`.
 **Uniqueness:** `(source_type, source_id, task_type, prompt_version, model, input_hash, attempt_number)`. The base six-field identity identifies equivalent work; a deliberate rerun increments `attempt_number` and references the prior attempt when it supersedes it. Enqueue logic should reuse an existing pending/running/completed equivalent attempt unless an explicit rerun is requested.
-**Important indexes:** Base six-field identity; `status, created_at`; `task_type, created_at`; `video_id`; `comment_id`; `opportunity_id`.
-**Important constraints:** `source_type IN ('video', 'comment', 'opportunity')`; exactly one source FK is non-null and equals `source_id` according to `source_type`; `task_type` initially allows `relevance_filter`, `signal_extractor`, `comment_pain_miner`, `opportunity_normalizer`, `hype_detector`; `status IN ('pending', 'running', 'completed', 'failed', 'invalid_output')`; normalized confidence is null or `0..1`; `attempt_number >= 1`; completed/invalid-output attempts require `completed_at`; completed attempts require parsed output; `completed_at >= started_at`.
+**Important indexes:** Base six-field identity; `status, created_at`; `task_type, created_at`; `video_id`; `comment_id`; `signal_id`; `opportunity_id`.
+**Important constraints:** `source_type IN ('video', 'comment', 'signal', 'opportunity')`; exactly one source FK is non-null and equals `source_id` according to `source_type`; `task_type` initially allows `relevance_filter`, `signal_extractor`, `comment_pain_miner`, `opportunity_normalizer`, `hype_detector`; `status IN ('pending', 'running', 'completed', 'failed', 'invalid_output')`; normalized confidence is null or `0..1`; `attempt_number >= 1`; completed/invalid-output attempts require `completed_at`; completed attempts require parsed output; `completed_at >= started_at`.
 **Lifecycle notes:** Retained audit record, not overwritten by a rerun. Raw and parsed outputs are JSONB because provider responses and task schemas vary, but downstream facts are relational. Prompt versions already used are immutable.
 
 ### 6.9 `signals`
@@ -363,7 +363,11 @@ Foreign keys generally use `ON DELETE RESTRICT`. The deliberate exceptions are `
 
 ## 8. Source/evidence provenance model
 
-v0.1 AI extraction targets are videos, comments, or opportunities; signals themselves originate only from videos or comments. `ai_extractions` and `signals` retain the required `source_type` and `source_id`, with explicit nullable foreign keys for their allowed source universe. A CHECK constraint requires exactly one FK and requires it to match the discriminator and `source_id`. This hybrid keeps a stable source identity for application interfaces while providing database-enforced referential integrity for known sources.
+v0.1 AI extraction targets are videos, comments, signals, or opportunities; signals themselves originate only from videos or comments. `ai_extractions` and `signals` retain the required `source_type` and `source_id`, with explicit nullable foreign keys for their allowed source universe. A CHECK constraint requires exactly one FK and requires it to match the discriminator and `source_id`. Migration 0009 adds the reverse signal extraction reference required for auditable opportunity normalization. This hybrid keeps a stable source identity for application interfaces while providing database-enforced referential integrity for known sources.
+
+Migration 0009 also adds nullable `review_tasks.context JSONB`. It stores bounded normalization
+decision context (reason, proposed candidate, candidate IDs, and extraction ID) so a signal-targeted
+review is actionable without weakening the constrained polymorphic target model.
 
 `signals.ai_extraction_id` links AI-created facts to the exact provider, model, prompt, input hash, raw output, parsed output, and attempt. Manual/reviewer-created signals may leave it null but still require a concrete video or comment source in v0.1.
 

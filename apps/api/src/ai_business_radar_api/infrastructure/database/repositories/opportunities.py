@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any
 from uuid import UUID
 
-from sqlalchemy import select
+from sqlalchemy import or_, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -38,9 +38,58 @@ class OpportunityRepository:
         )
         return list(rows)
 
+    async def list_lexical_candidates(
+        self, *, terms: list[str], limit: int = 100
+    ) -> list[Opportunity]:
+        query = select(Opportunity).where(Opportunity.status.in_(("candidate", "active", "review")))
+        if terms:
+            columns = (
+                Opportunity.name,
+                Opportunity.one_line_thesis,
+                Opportunity.industry,
+                Opportunity.customer_type,
+                Opportunity.problem,
+                Opportunity.solution,
+            )
+            query = query.where(
+                or_(*(column.ilike(f"%{term}%") for term in terms for column in columns))
+            )
+        rows = await self.session.scalars(
+            query.order_by(Opportunity.last_activity_at.desc(), Opportunity.id).limit(limit)
+        )
+        return list(rows)
+
+    async def get_link_for_signal(self, signal_id: UUID) -> OpportunitySignalLink | None:
+        return await self.session.scalar(
+            select(OpportunitySignalLink).where(OpportunitySignalLink.signal_id == signal_id)
+        )
+
+    async def update_last_activity(self, opportunity_id: UUID, last_activity_at: datetime) -> None:
+        opportunity = await self.get_by_id(opportunity_id)
+        if opportunity is not None and last_activity_at > opportunity.last_activity_at:
+            await self.session.execute(
+                update(Opportunity)
+                .where(Opportunity.id == opportunity_id)
+                .values(
+                    last_activity_at=last_activity_at,
+                    updated_at=datetime.now(last_activity_at.tzinfo),
+                )
+            )
+
     async def link_signal(self, **values: Any) -> OpportunitySignalLink:
-        statement = insert(OpportunitySignalLink).values(**values).returning(OpportunitySignalLink)
-        return (await self.session.execute(statement)).scalar_one()
+        statement = (
+            insert(OpportunitySignalLink)
+            .values(**values)
+            .on_conflict_do_nothing(index_elements=["opportunity_id", "signal_id"])
+            .returning(OpportunitySignalLink)
+        )
+        created = (await self.session.execute(statement)).scalar_one_or_none()
+        if created is not None:
+            return created
+        existing = await self.get_link_for_signal(values["signal_id"])
+        if existing is None:
+            raise RuntimeError("Opportunity signal link conflict could not be resolved")
+        return existing
 
     async def add_evidence(self, **values: Any) -> OpportunityEvidence:
         statement = insert(OpportunityEvidence).values(**values).returning(OpportunityEvidence)

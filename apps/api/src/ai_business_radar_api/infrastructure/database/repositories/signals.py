@@ -39,6 +39,16 @@ class SignalRepository:
             await self.session.scalars(select(Signal).where(Signal.comment_id == comment_id))
         )
 
+    async def list_for_normalization(self, *, limit: int) -> list[Signal]:
+        return list(
+            await self.session.scalars(
+                select(Signal)
+                .where(Signal.status == "review")
+                .order_by(Signal.observed_at.asc().nulls_last(), Signal.created_at, Signal.id)
+                .limit(limit)
+            )
+        )
+
     async def update_status(self, entity_id: UUID, status: str) -> Signal | None:
         statement = (
             update(Signal).where(Signal.id == entity_id).values(status=status).returning(Signal)

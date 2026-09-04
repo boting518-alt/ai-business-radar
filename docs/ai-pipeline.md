@@ -119,13 +119,28 @@ consume reviewed candidates for opportunity normalization but is not implemented
 
 ### Opportunity normalizer
 
-Uses the explicit actions `MATCH`, `CREATE`, and `REVIEW`:
+TASK-018 normalizes one FACT signal per extraction using the explicit actions `MATCH`, `CREATE`,
+and `REVIEW`:
 
 - `MATCH` requires `opportunity_id`.
 - `CREATE` requires `opportunity_id` to be null.
 - `REVIEW` permits either null or a candidate opportunity ID.
 
-The output proposes normalization; it does not bypass human review or perform persistence.
+Candidate retrieval is deterministic lexical matching over eligible `candidate`, `active`, and
+`review` opportunities. At most 10 candidates (hard ceiling 20) are sent to the model; a returned
+MATCH UUID outside that set is `invalid_output`. No embedding or pgvector dependency is introduced.
+
+Application policy—not the model—owns side effects. MATCH confidence below 0.70 and CREATE
+confidence below 0.75 route to REVIEW; both thresholds are environment-configurable. MATCH adds a
+supporting link and advances only `last_activity_at`. CREATE derives a deterministic slug, creates a
+`candidate` with `unknown` market stage using signal fields only, then links the signal. Slug
+collision routes to review without a random suffix. REVIEW creates an `opportunity_match` or
+`opportunity_creation` task with reconstructable JSON context and leaves the signal in review.
+
+Successful side effects and extraction completion share one transaction. A successful MATCH or
+CREATE makes the signal active. Provider/validation/persistence failures create no opportunity or
+link. Identity reuse makes no provider call and does not repeat side effects; `force` creates a new
+audited attempt. No automatic schedule is installed.
 
 ### Hype detector
 

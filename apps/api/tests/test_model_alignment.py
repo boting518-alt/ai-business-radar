@@ -16,7 +16,7 @@ def test_all_migrated_tables_have_exactly_one_model() -> None:
 def test_critical_columns_remain_mapped() -> None:
     expected = {
         "channels": {"youtube_channel_id", "first_seen_at", "last_seen_at"},
-        "ai_extractions": {"source_id", "input_hash", "raw_output", "parsed_output"},
+        "ai_extractions": {"source_id", "signal_id", "input_hash", "raw_output", "parsed_output"},
         "signals": {"source_id", "claim_status", "confidence"},
         "opportunity_scores": {"scoring_version", "inputs_snapshot"},
         "youtube_discovery_items": {
@@ -30,6 +30,7 @@ def test_critical_columns_remain_mapped() -> None:
             "error_summary",
         },
         "comments": {"source_updated_at"},
+        "review_tasks": {"context"},
     }
     for table_name, columns in expected.items():
         assert columns <= set(Base.metadata.tables[table_name].columns.keys())

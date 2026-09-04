@@ -7,6 +7,7 @@ broker = initialize_broker()
 from .actors import (  # noqa: E402
     recover_stale_collection_claims,
     run_comment_pain_mining,
+    run_opportunity_normalization,
     run_relevance_filter,
     run_signal_extraction,
     run_youtube_comment_collection,
@@ -19,6 +20,7 @@ __all__ = [
     "recover_stale_collection_claims",
     "run_comment_pain_mining",
     "run_relevance_filter",
+    "run_opportunity_normalization",
     "run_signal_extraction",
     "run_youtube_comment_collection",
     "run_youtube_discovery",

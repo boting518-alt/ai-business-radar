@@ -22,7 +22,9 @@ class VideoSourceRef(SchemaModel):
 
 
 class CommentSourceRef(SchemaModel):
-    source_type: Literal[AIExtractionSourceType.COMMENT] = AIExtractionSourceType.COMMENT
+    source_type: Literal[AIExtractionSourceType.COMMENT] = (
+        AIExtractionSourceType.COMMENT
+    )
     source_id: UUID
     comment_id: UUID
 
@@ -34,7 +36,9 @@ class CommentSourceRef(SchemaModel):
 
 
 class OpportunitySourceRef(SchemaModel):
-    source_type: Literal[AIExtractionSourceType.OPPORTUNITY] = AIExtractionSourceType.OPPORTUNITY
+    source_type: Literal[AIExtractionSourceType.OPPORTUNITY] = (
+        AIExtractionSourceType.OPPORTUNITY
+    )
     source_id: UUID
     opportunity_id: UUID
 
@@ -45,4 +49,18 @@ class OpportunitySourceRef(SchemaModel):
         return self
 
 
-AIExtractionSourceRef = VideoSourceRef | CommentSourceRef | OpportunitySourceRef
+class SignalSourceRef(SchemaModel):
+    source_type: Literal[AIExtractionSourceType.SIGNAL] = AIExtractionSourceType.SIGNAL
+    source_id: UUID
+    signal_id: UUID
+
+    @model_validator(mode="after")
+    def source_ids_match(self) -> "SignalSourceRef":
+        if self.source_id != self.signal_id:
+            raise ValueError("source_id must equal signal_id")
+        return self
+
+
+AIExtractionSourceRef = (
+    VideoSourceRef | CommentSourceRef | SignalSourceRef | OpportunitySourceRef
+)

@@ -146,6 +146,14 @@ from 1–200 (default 50). `POST /api/v1/admin/ai/comment-pain/jobs` enqueues th
 `ai_extraction` and returns HTTP 202. Responses expose only safe audit IDs, status, mined/reused
 flags, signal counts, and empty-result counts. All routes are admin-only.
 
+### Opportunity normalization
+
+`POST /api/v1/admin/ai/opportunities/normalize/{signal_id}` normalizes one signal and accepts
+optional `force`. `POST /api/v1/admin/ai/opportunities/normalize` processes review signals with
+`limit` 1–200 (default 50). `POST /api/v1/admin/ai/opportunities/normalize/jobs` enqueues the batch
+on `ai_extraction` and returns HTTP 202. Responses expose safe extraction, action, opportunity, and
+review-task IDs but never prompts, provider raw output, or review context. All routes are admin-only.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -177,6 +185,9 @@ Implemented:
 - `POST /api/v1/admin/ai/comment-pain/{comment_id}`
 - `POST /api/v1/admin/ai/comment-pain`
 - `POST /api/v1/admin/ai/comment-pain/jobs`
+- `POST /api/v1/admin/ai/opportunities/normalize/{signal_id}`
+- `POST /api/v1/admin/ai/opportunities/normalize`
+- `POST /api/v1/admin/ai/opportunities/normalize/jobs`
 
 Planned:
 

@@ -38,6 +38,23 @@ class AIExtractionRepository:
             .order_by(AIExtraction.attempt_number.desc())
         )
 
+    async def find_latest_completed_source(
+        self, *, source_type: str, source_id: UUID, task_type: str, prompt_version: str, model: str
+    ) -> AIExtraction | None:
+        return await self.session.scalar(
+            select(AIExtraction)
+            .where(
+                AIExtraction.source_type == source_type,
+                AIExtraction.source_id == source_id,
+                AIExtraction.task_type == task_type,
+                AIExtraction.prompt_version == prompt_version,
+                AIExtraction.model == model,
+                AIExtraction.status == "completed",
+            )
+            .order_by(AIExtraction.attempt_number.desc())
+            .limit(1)
+        )
+
     async def create_pending(self, **values: Any) -> AIExtraction:
         identity = (
             AIExtraction.source_type == values["source_type"],

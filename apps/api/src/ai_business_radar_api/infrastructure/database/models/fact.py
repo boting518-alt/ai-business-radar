@@ -21,6 +21,7 @@ class AIExtraction(Base):
     source_id: Mapped[UUID] = mapped_column(Uuid)
     video_id: Mapped[UUID | None] = mapped_column(ForeignKey("videos.id"))
     comment_id: Mapped[UUID | None] = mapped_column(ForeignKey("comments.id"))
+    signal_id: Mapped[UUID | None] = mapped_column(ForeignKey("signals.id"))
     opportunity_id: Mapped[UUID | None] = mapped_column(ForeignKey("opportunities.id"))
     task_type: Mapped[str]
     provider: Mapped[str]

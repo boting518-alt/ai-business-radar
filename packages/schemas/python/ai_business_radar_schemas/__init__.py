@@ -11,9 +11,18 @@ from .ai_outputs import (
 from .common import NonNegativeDecimal, NonNegativeInt, NormalizedConfidence, Score100
 from .opportunities import OpportunityCreate, OpportunityRead, OpportunitySummary
 from .reviews import ReviewDecisionRequest, ReviewTaskRead
-from .scoring import OpportunityScoreComponents, OpportunityScoreResult, OpportunityScoringInput
+from .scoring import (
+    OpportunityScoreComponents,
+    OpportunityScoreResult,
+    OpportunityScoringInput,
+)
 from .signals import SignalCreate, SignalExtractionCandidate, SignalRead
-from .sources import CommentSourceRef, OpportunitySourceRef, VideoSourceRef
+from .sources import (
+    CommentSourceRef,
+    OpportunitySourceRef,
+    SignalSourceRef,
+    VideoSourceRef,
+)
 
 __all__ = [
     "AI_OUTPUT_MODELS",
@@ -39,5 +48,6 @@ __all__ = [
     "SignalCreate",
     "SignalExtractionCandidate",
     "SignalRead",
+    "SignalSourceRef",
     "VideoSourceRef",
 ]

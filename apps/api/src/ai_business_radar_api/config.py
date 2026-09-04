@@ -3,7 +3,7 @@
 import json
 from functools import lru_cache
 
-from pydantic import SecretStr, model_validator
+from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -41,6 +41,9 @@ class Settings(BaseSettings):
     ai_model_relevance: str | None = None
     ai_model_signal_extraction: str | None = None
     ai_model_comment_pain_mining: str | None = None
+    ai_model_opportunity_normalization: str | None = None
+    ai_opportunity_match_threshold: float = Field(default=0.70, ge=0, le=1)
+    ai_opportunity_create_threshold: float = Field(default=0.75, ge=0, le=1)
     ai_max_retries: int = 2
     openai_api_key: SecretStr | None = None
 

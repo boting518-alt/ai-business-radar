@@ -1,6 +1,7 @@
 """Human-review boundary contracts without workflow implementation."""
 
 from datetime import datetime
+from typing import Any
 from uuid import UUID
 
 from pydantic import model_validator
@@ -19,6 +20,7 @@ class ReviewTaskRead(SchemaModel):
     assigned_to: UUID | None = None
     decision: ReviewDecision | None = None
     decision_notes: str | None = None
+    context: dict[str, Any] | None = None
     created_at: datetime
     updated_at: datetime
     resolved_at: datetime | None = None

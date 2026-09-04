@@ -1,6 +1,6 @@
+import re
 from enum import StrEnum
 from pathlib import Path
-import re
 
 import pytest
 
@@ -34,7 +34,7 @@ from ai_business_radar_schemas.enums import (
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[4]
-MIGRATION = REPOSITORY_ROOT / "database/migrations/0001_initial_schema.sql"
+MIGRATIONS = REPOSITORY_ROOT / "database/migrations"
 
 
 ENUM_CONSTRAINTS: list[tuple[type[StrEnum], str]] = [
@@ -55,7 +55,10 @@ ENUM_CONSTRAINTS: list[tuple[type[StrEnum], str]] = [
     (SignalStatus, "ck_signals_status"),
     (MarketStage, "ck_opportunities_market_stage"),
     (OpportunityStatus, "ck_opportunities_status"),
-    (OpportunitySignalRelationshipType, "ck_opportunity_signal_links_relationship_type"),
+    (
+        OpportunitySignalRelationshipType,
+        "ck_opportunity_signal_links_relationship_type",
+    ),
     (EvidenceSourceType, "ck_opportunity_evidence_source_type"),
     (EvidenceType, "ck_opportunity_evidence_evidence_type"),
     (TrendWindowType, "ck_trend_snapshots_window_type"),
@@ -68,7 +71,7 @@ ENUM_CONSTRAINTS: list[tuple[type[StrEnum], str]] = [
 
 def constraint_section(sql: str, constraint_name: str) -> str:
     marker = f"CONSTRAINT {constraint_name}"
-    marker_start = sql.index(marker)
+    marker_start = sql.rindex(marker)
     check_start = sql.index("CHECK", marker_start)
     open_parenthesis = sql.index("(", check_start)
     depth = 0
@@ -98,7 +101,12 @@ def constraint_section(sql: str, constraint_name: str) -> str:
 def test_enum_values_exist_in_corresponding_database_check(
     enum_type: type[StrEnum], constraint_name: str
 ) -> None:
-    sql = MIGRATION.read_text(encoding="utf-8")
+    migration_name = (
+        "0009_opportunity_normalization.sql"
+        if constraint_name == "ck_ai_extractions_source_type"
+        else "0001_initial_schema.sql"
+    )
+    sql = (MIGRATIONS / migration_name).read_text(encoding="utf-8")
     section = constraint_section(sql, constraint_name)
     python_values = {member.value for member in enum_type}
     sql_values = set(re.findall(r"'([^']+)'", section))
