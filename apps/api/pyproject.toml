@@ -11,6 +11,7 @@ dependencies = [
     "ai-business-radar-schemas",
     "fastapi>=0.118,<1",
     "httpx>=0.28,<1",
+    "isodate>=0.7,<1",
     "pydantic>=2.10,<3",
     "pydantic-settings>=2.7,<3",
     "PyJWT>=2.10,<3",

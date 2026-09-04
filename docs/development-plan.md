@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 1 — Data Foundation
+Phase 2 — YouTube Collection
 
 ## Completed
 
@@ -15,13 +15,14 @@ Phase 1 — Data Foundation
 - [x] TASK-007 Backend Application Skeleton
 - [x] TASK-008 Database Repository Layer
 - [x] TASK-009 Supabase Auth + RLS Baseline
+- [x] TASK-010 YouTube API Client
 
 ## Next
 
-- [ ] TASK-010 YouTube API Client
 - [ ] TASK-011 YouTube Discovery Pipeline
 - [ ] TASK-012 Metadata / Snapshot Collection
 - [ ] TASK-013 Comment Collection
+- [ ] TASK-014 Collection Worker Runtime
 
 ## Validation debt
 

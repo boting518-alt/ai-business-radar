@@ -14,6 +14,9 @@ def test_non_secret_defaults() -> None:
     assert settings.api_port == 8000
     assert settings.log_level == "INFO"
     assert settings.cors_origin_list == ["http://localhost:3000"]
+    assert settings.youtube_api_base_url == "https://www.googleapis.com/youtube/v3/"
+    assert settings.youtube_http_timeout_seconds == 10.0
+    assert settings.youtube_max_retries == 3
 
 
 def test_external_service_secrets_are_optional() -> None:

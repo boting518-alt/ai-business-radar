@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     redis_url: SecretStr | None = None
 
     youtube_api_key: SecretStr | None = None
+    youtube_api_base_url: str = "https://www.googleapis.com/youtube/v3/"
+    youtube_http_timeout_seconds: float = 10.0
+    youtube_max_retries: int = 3
     ai_provider: str | None = None
     openai_api_key: SecretStr | None = None
 

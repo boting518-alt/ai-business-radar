@@ -21,7 +21,7 @@ The shared schema package is installed as an editable local dependency from `../
 
 Set `DATABASE_URL` to either `postgresql://...` or `postgresql+asyncpg://...`; the former is normalized internally to the asyncpg dialect. URLs are never logged. The API and health liveness endpoint start without this value. A database operation without configuration fails explicitly, and readiness reports `database: not_configured`.
 
-Repository methods share a caller-owned `AsyncSession`, flush or execute changes, and never commit. Application services own commit/rollback boundaries. RLS is intentionally deferred to TASK-009.
+Repository methods share a caller-owned `AsyncSession`, flush or execute changes, and never commit. Application services own commit/rollback boundaries. RLS policies live in `database/migrations/0002_rls_baseline.sql`.
 
 Real PostgreSQL integration tests create a random temporary database, apply `database/migrations/0001_initial_schema.sql`, run the tests, and drop it:
 
@@ -39,7 +39,7 @@ From `apps/api`:
 uv run uvicorn ai_business_radar_api.main:app --reload
 ```
 
-The API is available under `/api/v1`. Redis, YouTube, AI-provider integration, and review business workflows are not implemented yet.
+The API is available under `/api/v1`. Redis, YouTube collection orchestration, AI-provider integration, and review business workflows are not implemented yet.
 
 ## Authentication
 
@@ -48,3 +48,9 @@ Protected routes accept a Supabase access token as `Authorization: Bearer <token
 JWT identity is resolved to `user_profiles.auth_user_id`; the application role always comes from `user_profiles`, never a client-controlled JWT role claim. A valid JWT without a profile receives HTTP 403. Profile provisioning is intentionally separate.
 
 `SUPABASE_SERVICE_ROLE_KEY` and `SUPABASE_JWT_SECRET` must remain server-side. The service role bypasses RLS, so FastAPI role checks and repository/service validation remain mandatory.
+
+## YouTube Data API client
+
+Set the server-only `YOUTUBE_API_KEY` to use the official YouTube Data API v3 adapter. Optional settings control the official base URL, HTTP timeout, and bounded retry attempts. The adapter supports `search.list`, `videos.list`, `channels.list`, and `commentThreads.list`; it does not scrape YouTube or fetch unofficial transcripts, and it performs no persistence or worker orchestration.
+
+Automated tests use `httpx.MockTransport` and never require a real key or network. A manual smoke test is optional: with `YOUTUBE_API_KEY` set locally, instantiate `YouTubeClient` in an async Python shell and make one small `search_videos` request followed by `get_videos` for one returned ID. Never print the key or store the response. Live calls are not a CI requirement.
