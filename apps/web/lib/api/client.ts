@@ -18,7 +18,7 @@ export class ApiClient {
     if (!response.ok) throw new ApiError(response.status,data?.error?.message ?? data?.detail ?? "Request failed",data?.error?.code,requestId,data);
     return data as T;
   }
-  private path(path:string,query:Query={}) { const p=new URLSearchParams(); Object.entries(query).forEach(([k,v])=>{if(v!=null)p.set(k,String(v))}); const s=p.toString(); return s?`${path}?${s}`:path; }
+  private path(path:string,query:Query={}) { const p=new URLSearchParams(); Object.entries(query).forEach(([k,v])=>{if(v==null)return;if(Array.isArray(v))v.forEach(item=>p.append(k,String(item)));else p.set(k,String(v))}); const s=p.toString(); return s?`${path}?${s}`:path; }
   getCurrentUser=()=>this.request<CurrentUser>("/api/v1/auth/me");
   getRadar=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/radar",query));
   listOpportunities=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/opportunities",query));
