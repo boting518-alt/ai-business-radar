@@ -145,3 +145,23 @@ class Comment(Base):
     first_seen_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class YouTubeDiscoveryItem(Base):
+    __tablename__ = "youtube_discovery_items"
+    __table_args__ = (UniqueConstraint("collection_run_id", "youtube_video_id"),)
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    collection_run_id: Mapped[UUID] = mapped_column(ForeignKey("collection_runs.id"))
+    search_query_id: Mapped[UUID] = mapped_column(ForeignKey("search_queries.id"))
+    youtube_video_id: Mapped[str]
+    youtube_channel_id: Mapped[str]
+    title: Mapped[str | None] = mapped_column(Text)
+    description: Mapped[str | None] = mapped_column(Text)
+    published_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    channel_title: Mapped[str | None] = mapped_column(Text)
+    thumbnail_url: Mapped[str | None] = mapped_column(Text)
+    discovered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    processing_status: Mapped[str]
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))

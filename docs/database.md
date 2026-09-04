@@ -27,7 +27,7 @@ This document defines the logical relational model. TASK-005 will translate it i
 | Layer | Tables | Responsibility |
 | --- | --- | --- |
 | Identity/support | `user_profiles` | Application identity and coarse role mapped to Supabase Auth |
-| RAW | `search_queries`, `collection_runs`, `channels`, `videos`, `video_snapshots`, `comments` | Source discovery, canonical YouTube records, observations, and collection audit |
+| RAW | `search_queries`, `collection_runs`, `youtube_discovery_items`, `channels`, `videos`, `video_snapshots`, `comments` | Source discovery staging, canonical YouTube records, observations, and collection audit |
 | FACT | `ai_extractions`, `signals` | Auditable AI operations and atomic evidence-backed observations |
 | INTELLIGENCE | `opportunities`, `opportunity_signal_links`, `opportunity_evidence`, `opportunity_merge_history`, `trend_snapshots`, `opportunity_scores`, `review_tasks`, `watchlists`, `watchlist_items` | Normalization, provenance presentation, time series, scoring, review, and user tracking |
 
@@ -36,6 +36,7 @@ Logical ownership does not prevent foreign keys across layers. Those links are r
 ## 4. Entity overview
 
 - Discovery begins with managed `search_queries` and observable `collection_runs`.
+- `youtube_discovery_items` stages bounded `search.list` results without creating incomplete canonical channels or videos.
 - `channels` own canonical `videos`; videos own historical `video_snapshots` and public `comments`.
 - `ai_extractions` audit model work against a known video or comment source.
 - Atomic `signals` refer to source evidence and optionally to the extraction that produced them.
@@ -340,6 +341,10 @@ The `review_tasks` target is a constrained application-level reference described
 **Important indexes:** `source_opportunity_id`; `canonical_opportunity_id`; `merged_at`.
 **Important constraints:** Source and canonical IDs differ; the source opportunity must have `status = 'merged'` and the canonical must not be merged/rejected/archived, enforced transactionally because cross-row status checks require service logic or a trigger. Merge chains must be resolved to the final canonical record and cycles are forbidden.
 **Lifecycle notes:** Append-only. This table is justified because `opportunities.status` alone cannot identify the canonical survivor, reviewer, decision, or merge history.
+
+### 6.19 `youtube_discovery_items`
+
+Internal RAW staging links each accepted search result to its `collection_run` and managed `search_query`. It retains the external video/channel IDs and optional search snippet fields needed by TASK-012. `(collection_run_id, youtube_video_id)` is unique, so duplicates within a run are ignored while the same video may appear in later runs. `processing_status` is limited to `pending`, `processed`, or `failed`; canonical channel/video creation remains a separate metadata-ingestion responsibility. RLS is enabled with no authenticated-user policy.
 
 ## 7. Relationship rules
 

@@ -35,6 +35,7 @@ class Settings(BaseSettings):
     youtube_api_base_url: str = "https://www.googleapis.com/youtube/v3/"
     youtube_http_timeout_seconds: float = 10.0
     youtube_max_retries: int = 3
+    youtube_discovery_max_quota_units_per_run: int = 500
     ai_provider: str | None = None
     openai_api_key: SecretStr | None = None
 

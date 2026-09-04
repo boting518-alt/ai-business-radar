@@ -60,7 +60,7 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
             await connection.fetchval(
                 "SELECT count(*) FROM pg_class WHERE relkind = 'r' AND relrowsecurity"
             )
-            == 18
+            == 19
         )
 
         await connection.execute("SET ROLE authenticated")
@@ -74,6 +74,8 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
         assert await connection.fetchval("SELECT count(*) FROM review_tasks") == 0
         with pytest.raises(asyncpg.InsufficientPrivilegeError):
             await connection.fetchval("SELECT count(*) FROM channels")
+        with pytest.raises(asyncpg.InsufficientPrivilegeError):
+            await connection.fetchval("SELECT count(*) FROM youtube_discovery_items")
         with pytest.raises(asyncpg.PostgresError):
             await connection.execute(
                 "INSERT INTO watchlists (user_profile_id, name) VALUES ($1, 'Forbidden')",

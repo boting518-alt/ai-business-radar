@@ -3,13 +3,14 @@ from pathlib import Path
 
 from ai_business_radar_api.infrastructure.database.models import Base
 
-MIGRATION = Path(__file__).parents[3] / "database/migrations/0001_initial_schema.sql"
+MIGRATIONS = Path(__file__).parents[3] / "database/migrations"
 
 
 def test_all_migrated_tables_have_exactly_one_model() -> None:
-    migrated = set(re.findall(r"^CREATE TABLE (\w+)", MIGRATION.read_text(), re.MULTILINE))
+    migration_sql = "\n".join(path.read_text() for path in sorted(MIGRATIONS.glob("[0-9]*.sql")))
+    migrated = set(re.findall(r"^CREATE TABLE (\w+)", migration_sql, re.MULTILINE))
     assert set(Base.metadata.tables) == migrated
-    assert len(migrated) == 18
+    assert len(migrated) == 19
 
 
 def test_critical_columns_remain_mapped() -> None:
@@ -18,6 +19,12 @@ def test_critical_columns_remain_mapped() -> None:
         "ai_extractions": {"source_id", "input_hash", "raw_output", "parsed_output"},
         "signals": {"source_id", "claim_status", "confidence"},
         "opportunity_scores": {"scoring_version", "inputs_snapshot"},
+        "youtube_discovery_items": {
+            "collection_run_id",
+            "search_query_id",
+            "youtube_video_id",
+            "processing_status",
+        },
     }
     for table_name, columns in expected.items():
         assert columns <= set(Base.metadata.tables[table_name].columns.keys())

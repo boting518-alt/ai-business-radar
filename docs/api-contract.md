@@ -98,6 +98,12 @@ Returns the resolved authenticated user:
 
 Administrative routes use the same bearer-token boundary plus an application `admin` role check. `GET /api/v1/admin/health` is the v0.1 authorization verification endpoint; review business endpoints remain undefined.
 
+### `POST /api/v1/admin/youtube/discovery`
+
+Admin-only manual trigger for one bounded managed-query discovery run. The request accepts `search_query_id`, `max_pages` (1–5), optional `max_results` (1–250), optional timezone-aware `published_after`, and `order` (`date`, `relevance`, or `viewCount`). The response reports collection-run identity, requested/completed pages, unique staged discoveries, estimated quota units, continuation token, timestamps, and final status. It never returns raw YouTube JSON.
+
+Missing queries return 404. Disabled or monitoring-mode queries return 409. External YouTube failures are converted into safe failed/partial discovery results rather than exposing provider exceptions.
+
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
 ## Pagination direction
@@ -116,6 +122,7 @@ Implemented:
 - `GET /api/v1/health/ready`
 - `GET /api/v1/auth/me`
 - `GET /api/v1/admin/health`
+- `POST /api/v1/admin/youtube/discovery`
 
 Planned:
 

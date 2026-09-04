@@ -17,6 +17,7 @@ def test_non_secret_defaults() -> None:
     assert settings.youtube_api_base_url == "https://www.googleapis.com/youtube/v3/"
     assert settings.youtube_http_timeout_seconds == 10.0
     assert settings.youtube_max_retries == 3
+    assert settings.youtube_discovery_max_quota_units_per_run == 500
 
 
 def test_external_service_secrets_are_optional() -> None:

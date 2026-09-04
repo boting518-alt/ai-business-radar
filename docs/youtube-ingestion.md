@@ -50,3 +50,13 @@ v0.1 does not depend on unofficial bulk transcript scraping. Transcript ingestio
 ## Discovery versus monitoring
 
 Discovery searches for unknown videos and opportunities and is quota-sensitive. Monitoring refreshes already known resource IDs using lower-cost metadata endpoints. The client supplies primitives for both but makes no scheduling or persistence decisions. TASK-011 will implement discovery orchestration, managed queries, page/quota budgeting, and collection-run behavior.
+
+## Discovery pipeline
+
+TASK-011 implements admin-triggered discovery from enabled `search_queries` whose `discovery_mode` is `discovery`. Each attempt creates a `collection_runs` record, transitions it through `pending`/`running`, and finalizes it as `completed`, `partial`, or `failed`. `last_run_at` is set when a valid external attempt starts; disabled or monitoring queries do not change it.
+
+The service uses short database transactions before and after network calls. It never holds a transaction open while awaiting YouTube. Search results enter `youtube_discovery_items`, an internal RAW staging table, instead of polluting canonical channel/video records with incomplete search snippets. TASK-012 owns conversion of pending staging items into canonical metadata.
+
+Pagination is bounded by `max_pages` (1–5), optional `max_results` (up to 250), missing continuation tokens, and the configured per-run estimated quota budget. Search cost is counted as 100 units per logical page request. Items are deduplicated by video ID within and across pages and by a database uniqueness constraint within each run. `items_discovered` means unique items accepted by that run.
+
+Zero results complete normally. A YouTube failure before any completed page marks the run failed; a failure after progress marks it partial. Reaching the quota budget with more pages available also produces a partial run after progress. Early stops preserve `next_page_token` for inspection, but automatic resume and scheduling are intentionally deferred.

@@ -1,0 +1,47 @@
+"""Admin-only manual YouTube discovery trigger."""
+
+from typing import Annotated
+
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+
+from ...infrastructure.auth import RequiredAdmin
+from ...infrastructure.external.youtube import YouTubeClient
+from ...infrastructure.external.youtube.dependencies import get_youtube_client
+from ...services.youtube_discovery import (
+    DiscoveryRequest,
+    DiscoveryResult,
+    InvalidDiscoveryMode,
+    SearchQueryDisabled,
+    SearchQueryNotFound,
+    YouTubeDiscoveryService,
+)
+
+router = APIRouter(prefix="/admin/youtube", tags=["admin", "youtube"])
+
+
+def get_youtube_discovery_service(
+    request: Request,
+    youtube: Annotated[YouTubeClient, Depends(get_youtube_client)],
+) -> YouTubeDiscoveryService:
+    factory = getattr(request.app.state, "database_session_factory", None)
+    if factory is None:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Database is not configured")
+    return YouTubeDiscoveryService(
+        factory,
+        youtube,
+        max_quota_units_per_run=request.app.state.settings.youtube_discovery_max_quota_units_per_run,
+    )
+
+
+@router.post("/discovery", response_model=DiscoveryResult)
+async def trigger_discovery(
+    discovery_request: DiscoveryRequest,
+    _: RequiredAdmin,
+    service: Annotated[YouTubeDiscoveryService, Depends(get_youtube_discovery_service)],
+) -> DiscoveryResult:
+    try:
+        return await service.discover(discovery_request)
+    except SearchQueryNotFound as error:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Search query was not found") from error
+    except (SearchQueryDisabled, InvalidDiscoveryMode) as error:
+        raise HTTPException(status.HTTP_409_CONFLICT, str(error)) from error

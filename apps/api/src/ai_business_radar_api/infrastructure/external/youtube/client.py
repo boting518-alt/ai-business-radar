@@ -166,6 +166,8 @@ class YouTubeClient:
     def _map_error(self, response: httpx.Response) -> YouTubeAPIError:
         reason, message = self._safe_error_details(response)
         message = message.replace(self._api_key, "[redacted]")
+        if reason is not None:
+            reason = reason.replace(self._api_key, "[redacted]")
         kwargs = {"status_code": response.status_code, "reason": reason}
         if reason in QUOTA_REASONS:
             return YouTubeQuotaExceededError(message, **kwargs)

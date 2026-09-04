@@ -13,7 +13,16 @@ from .intelligence import (
     Watchlist,
     WatchlistItem,
 )
-from .raw import Channel, CollectionRun, Comment, SearchQuery, UserProfile, Video, VideoSnapshot
+from .raw import (
+    Channel,
+    CollectionRun,
+    Comment,
+    SearchQuery,
+    UserProfile,
+    Video,
+    VideoSnapshot,
+    YouTubeDiscoveryItem,
+)
 
 __all__ = [
     "AIExtraction",
@@ -35,4 +44,5 @@ __all__ = [
     "VideoSnapshot",
     "Watchlist",
     "WatchlistItem",
+    "YouTubeDiscoveryItem",
 ]
