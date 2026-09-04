@@ -20,6 +20,7 @@ from ai_business_radar_api.infrastructure.database.repositories import (
     OpportunityRepository,
     ReviewTaskRepository,
     SignalRepository,
+    UserProfileRepository,
     VideoRepository,
     WatchlistRepository,
 )
@@ -179,6 +180,11 @@ async def test_core_repository_flow_and_append_only_records(db_session: AsyncSes
             insert(UserProfile).values(auth_user_id=uuid4(), role="user").returning(UserProfile.id)
         )
     ).scalar_one()
+    assert (
+        await UserProfileRepository(db_session).get_by_auth_user_id(
+            (await db_session.get(UserProfile, profile_id)).auth_user_id
+        )
+    ).id == profile_id
     watchlists = WatchlistRepository(db_session)
     watchlist = await watchlists.create_watchlist(user_profile_id=profile_id, name="Default")
     await watchlists.add_item(watchlist_id=watchlist.id, opportunity_id=opportunity.id)

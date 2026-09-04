@@ -448,7 +448,7 @@ TASK-005 should avoid redundant indexes already provided by unique constraints a
 
 ## 16. RLS/security model
 
-Supabase Row Level Security is required on application-exposed tables. Actual policies belong to TASK-009; the initial relational migration intentionally does not enable or define RLS.
+`0002_rls_baseline.sql` enables Supabase Row Level Security on all application tables. JWT identity maps through `auth.uid()` to `user_profiles.auth_user_id`; application roles remain stored in `user_profiles`.
 
 - Authenticated `user` and `admin` roles may read product-approved opportunities, exposed active signals, trend snapshots, score history/current score, and permitted evidence.
 - Users may read and mutate only watchlists whose `user_profile_id` maps to their own `auth.uid()`, and only items inside those watchlists.
@@ -456,6 +456,8 @@ Supabase Row Level Security is required on application-exposed tables. Actual po
 - RAW payloads, AI raw output, extraction errors, internal candidate/rejected intelligence, and operational run metadata are not broadly user-readable.
 - Service-role access is restricted to trusted API/workers and never exposed to the browser.
 - RLS supplements rather than replaces FastAPI authorization and transactional domain validation.
+- Normal users have no direct `user_profiles` write policy and therefore cannot self-promote to `admin`.
+- The `auth.users` relationship remains logical rather than a cross-schema FK for portability; no automatic profile-creation trigger is installed.
 
 ## 17. Extensibility considerations
 

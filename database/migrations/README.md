@@ -10,6 +10,13 @@ Migration files use a zero-padded numeric prefix followed by a descriptive snake
 
 The expected application mechanism will be selected with deployment tooling. Until then, apply migrations with an authenticated PostgreSQL migration client or Supabase migration workflow in a controlled environment. Never place credentials in this directory or command examples committed to the repository.
 
+## Migration contents
+
+- `0001_initial_schema.sql` creates the core relational schema.
+- `0002_rls_baseline.sql` adds the Supabase Auth/RLS boundary separately so policy changes remain auditable.
+
+Apply 0001 before 0002. The second migration expects Supabase's `auth.uid()` function and `authenticated`/`service_role` database roles. A standalone PostgreSQL syntax/runtime test may provide test-only equivalents; that does not constitute full Supabase Local validation.
+
 ## Initial-schema boundaries
 
 `0001_initial_schema.sql` creates the core relational schema and enables only `pgcrypto` for `gen_random_uuid()`.
@@ -18,6 +25,14 @@ The expected application mechanism will be selected with deployment tooling. Unt
 - pgvector is not enabled and no vector column exists because the embedding model, dimensions, distance metric, and retrieval query are not yet defined.
 - `user_profiles.auth_user_id` is the logical Supabase `auth.users.id`, but 0001 does not create a cross-schema foreign key so the migration remains portable.
 - `updated_at` defaults to `NOW()` and is application-maintained in v0.1; no update trigger is installed.
+
+## Auth and RLS baseline
+
+0002 enables RLS on all application tables. Authenticated users can read their own profile, own and mutate only their watchlists, and read active product intelligence. Candidate/non-active intelligence is visible directly only to admins where required for review. RAW/operational tables have no authenticated policy. Review tasks have an admin-only policy, and normal users receive no profile write permission, preventing direct role escalation.
+
+The relationship from `user_profiles.auth_user_id` to `auth.users.id` remains logical rather than a cross-schema FK, preserving migration portability and avoiding coupling profile retention to Supabase internals. Profiles are not auto-created by a trigger.
+
+Supabase service-role connections bypass RLS and are restricted to trusted API/workers. RLS is defense-in-depth and never replaces FastAPI authorization.
 
 ## History and deletion
 

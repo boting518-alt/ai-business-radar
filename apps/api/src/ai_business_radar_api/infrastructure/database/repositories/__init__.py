@@ -3,6 +3,7 @@
 from .channels import ChannelRepository
 from .comments import CommentRepository
 from .opportunities import OpportunityRepository
+from .profiles import UserProfileRepository
 from .reviews import ReviewTaskRepository
 from .signals import SignalRepository
 from .videos import VideoRepository
@@ -12,6 +13,7 @@ __all__ = [
     "ChannelRepository",
     "CommentRepository",
     "OpportunityRepository",
+    "UserProfileRepository",
     "ReviewTaskRepository",
     "SignalRepository",
     "VideoRepository",

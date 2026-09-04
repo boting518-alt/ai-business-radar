@@ -14,6 +14,7 @@ from ai_business_radar_api.infrastructure.database import (
 )
 
 MIGRATION = Path(__file__).parents[4] / "database/migrations/0001_initial_schema.sql"
+RLS_MIGRATION = Path(__file__).parents[4] / "database/migrations/0002_rls_baseline.sql"
 
 
 def _with_database(url: str, database: str) -> str:
@@ -54,3 +55,30 @@ async def db_session(postgres_url: str) -> AsyncIterator[AsyncSession]:
     async with factory() as session, session.begin():
         yield session
     await engine.dispose()
+
+
+@pytest_asyncio.fixture(scope="session")
+async def rls_postgres_url(postgres_url: str) -> str:
+    connection = await asyncpg.connect(postgres_url)
+    try:
+        await connection.execute(
+            """
+            DO $$ BEGIN CREATE ROLE anon NOLOGIN; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+            DO $$ BEGIN
+                CREATE ROLE authenticated NOLOGIN;
+            EXCEPTION WHEN duplicate_object THEN NULL;
+            END $$;
+            DO $$ BEGIN CREATE ROLE service_role NOLOGIN BYPASSRLS;
+                EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+            CREATE SCHEMA IF NOT EXISTS auth;
+            CREATE OR REPLACE FUNCTION auth.uid() RETURNS UUID LANGUAGE SQL STABLE AS $$
+                SELECT NULLIF(current_setting('request.jwt.claim.sub', TRUE), '')::UUID
+            $$;
+            GRANT USAGE ON SCHEMA auth TO authenticated, service_role;
+            GRANT EXECUTE ON FUNCTION auth.uid() TO authenticated, service_role;
+            """
+        )
+        await connection.execute(RLS_MIGRATION.read_text())
+    finally:
+        await connection.close()
+    return postgres_url

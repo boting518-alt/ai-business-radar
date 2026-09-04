@@ -75,7 +75,28 @@ TASK-007 defines the typed envelope but does not add an exception hierarchy or r
 
 ## Authentication direction
 
-Future protected endpoints will accept a Bearer token issued by Supabase Auth. FastAPI will perform authoritative authentication and role enforcement. TASK-007 does not verify tokens, create fake users, or expose admin routes.
+Protected endpoints require a Supabase access token:
+
+```http
+Authorization: Bearer <token>
+```
+
+The API verifies the JWT locally, resolves `sub` through `user_profiles.auth_user_id`, and takes the `user`/`admin` authorization role from that database profile. JWT role claims are not authoritative. Missing, malformed, invalid, or expired tokens return HTTP 401. A valid token without an application profile, or an authenticated user lacking the required role, returns HTTP 403.
+
+### `GET /api/v1/auth/me`
+
+Returns the resolved authenticated user:
+
+```json
+{
+  "auth_user_id": "uuid",
+  "user_profile_id": "uuid",
+  "role": "user",
+  "email": "analyst@example.com"
+}
+```
+
+Administrative routes use the same bearer-token boundary plus an application `admin` role check. `GET /api/v1/admin/health` is the v0.1 authorization verification endpoint; review business endpoints remain undefined.
 
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
@@ -93,6 +114,8 @@ Implemented:
 
 - `GET /api/v1/health`
 - `GET /api/v1/health/ready`
+- `GET /api/v1/auth/me`
+- `GET /api/v1/admin/health`
 
 Planned:
 

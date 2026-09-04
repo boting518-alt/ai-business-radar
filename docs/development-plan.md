@@ -14,13 +14,14 @@ Phase 1 — Data Foundation
 - [x] TASK-006 Shared Domain Schemas
 - [x] TASK-007 Backend Application Skeleton
 - [x] TASK-008 Database Repository Layer
+- [x] TASK-009 Supabase Auth + RLS Baseline
 
 ## Next
 
-- [ ] TASK-009 Supabase RLS Baseline
 - [ ] TASK-010 YouTube API Client
 - [ ] TASK-011 YouTube Discovery Pipeline
 - [ ] TASK-012 Metadata / Snapshot Collection
+- [ ] TASK-013 Comment Collection
 
 ## Validation debt
 

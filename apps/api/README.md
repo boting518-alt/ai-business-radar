@@ -39,4 +39,12 @@ From `apps/api`:
 uv run uvicorn ai_business_radar_api.main:app --reload
 ```
 
-The API is available under `/api/v1`. Redis, YouTube, Supabase Auth, RLS, and AI-provider integration are not implemented yet.
+The API is available under `/api/v1`. Redis, YouTube, AI-provider integration, and review business workflows are not implemented yet.
+
+## Authentication
+
+Protected routes accept a Supabase access token as `Authorization: Bearer <token>`. v0.1 verifies legacy Supabase HS256 tokens locally using the server-only `SUPABASE_JWT_SECRET`, with optional issuer and `authenticated` audience validation. No Supabase network request occurs per API request.
+
+JWT identity is resolved to `user_profiles.auth_user_id`; the application role always comes from `user_profiles`, never a client-controlled JWT role claim. A valid JWT without a profile receives HTTP 403. Profile provisioning is intentionally separate.
+
+`SUPABASE_SERVICE_ROLE_KEY` and `SUPABASE_JWT_SECRET` must remain server-side. The service role bypasses RLS, so FastAPI role checks and repository/service validation remain mandatory.
