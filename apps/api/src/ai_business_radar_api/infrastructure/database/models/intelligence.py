@@ -153,6 +153,7 @@ class ReviewTask(Base):
     status: Mapped[str]
     priority: Mapped[Decimal] = mapped_column(Numeric)
     assigned_to: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
+    resolved_by: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
     decision: Mapped[str | None]
     decision_notes: Mapped[str | None] = mapped_column(Text)
     context: Mapped[dict[str, Any] | None] = mapped_column(JSONB)

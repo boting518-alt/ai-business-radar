@@ -15,6 +15,37 @@ class ReviewTaskRepository:
     async def get_by_id(self, entity_id: UUID) -> ReviewTask | None:
         return await self.session.get(ReviewTask, entity_id)
 
+    async def get_for_update(self, entity_id: UUID) -> ReviewTask | None:
+        return await self.session.scalar(
+            select(ReviewTask).where(ReviewTask.id == entity_id).with_for_update()
+        )
+
+    async def list_tasks(
+        self,
+        *,
+        status: str | None = None,
+        review_type: str | None = None,
+        assigned_to: UUID | None = None,
+        priority: float | None = None,
+        offset: int = 0,
+        limit: int = 100,
+    ) -> list[ReviewTask]:
+        query = select(ReviewTask)
+        if status is not None:
+            query = query.where(ReviewTask.status == status)
+        if review_type is not None:
+            query = query.where(ReviewTask.review_type == review_type)
+        if assigned_to is not None:
+            query = query.where(ReviewTask.assigned_to == assigned_to)
+        if priority is not None:
+            query = query.where(ReviewTask.priority == priority)
+        rows = await self.session.scalars(
+            query.order_by(ReviewTask.priority.desc(), ReviewTask.created_at, ReviewTask.id)
+            .offset(offset)
+            .limit(limit)
+        )
+        return list(rows)
+
     async def list_pending(self, *, limit: int = 100) -> list[ReviewTask]:
         rows = await self.session.scalars(
             select(ReviewTask)

@@ -31,7 +31,7 @@ def test_critical_columns_remain_mapped() -> None:
             "error_summary",
         },
         "comments": {"source_updated_at"},
-        "review_tasks": {"context"},
+        "review_tasks": {"context", "resolved_by"},
     }
     for table_name, columns in expected.items():
         assert columns <= set(Base.metadata.tables[table_name].columns.keys())

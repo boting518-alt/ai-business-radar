@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 4 — Trend & Scoring
+Phase 5 — Review & Product API
 
 ## Completed
 
@@ -26,13 +26,15 @@ Phase 4 — Trend & Scoring
 - [x] TASK-018 Opportunity Normalization Pipeline
 - [x] TASK-019 Trend Aggregation
 - [x] TASK-020 Opportunity Scoring
+- [x] TASK-021 Review Workflow Service
 
 ## Next
 
-- [ ] TASK-021 Review Workflow Service
 - [ ] TASK-022 Radar Query API
 - [ ] TASK-023 Frontend Skeleton
 - [ ] TASK-024 Radar Page
+- [ ] TASK-025 Opportunity Detail Page
+- [ ] TASK-026 Admin Review UI
 
 ## Validation debt
 

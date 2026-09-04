@@ -170,6 +170,18 @@ accepts optional `force`. `POST /api/v1/admin/scoring` processes up to 500 eligi
 Admin responses expose component, Confidence, Hype Risk, input hash, and reproducibility snapshot;
 TASK-022 remains responsible for public/current-score reads.
 
+### Administrative review workflow
+
+`GET /api/v1/admin/reviews` lists review tasks ordered by priority descending, then creation time
+and ID ascending. It supports `status`, `review_type`, `assigned_to`, exact `priority`, `offset`,
+and bounded `limit` (1–200). `GET /api/v1/admin/reviews/{review_task_id}` returns one task.
+
+`POST /api/v1/admin/reviews/{review_task_id}/claim` atomically claims a pending task for the current
+admin. `POST /api/v1/admin/reviews/{review_task_id}/decision` accepts `ReviewDecisionRequest` and
+executes the validated domain decision transactionally. Missing tasks/targets return 404,
+assignment or lifecycle conflicts return 409, and invalid decision or merge semantics return 422.
+All review routes are admin-only; no release endpoint is included in v0.1.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -210,6 +222,10 @@ Implemented:
 - `POST /api/v1/admin/scoring/{opportunity_id}`
 - `POST /api/v1/admin/scoring`
 - `POST /api/v1/admin/scoring/jobs`
+- `GET /api/v1/admin/reviews`
+- `GET /api/v1/admin/reviews/{review_task_id}`
+- `POST /api/v1/admin/reviews/{review_task_id}/claim`
+- `POST /api/v1/admin/reviews/{review_task_id}/decision`
 
 Planned:
 
@@ -217,6 +233,5 @@ Planned:
 - Opportunity search, summaries, and details
 - Signal feed
 - User watchlists
-- Administrative review
 
 No planned endpoint path or payload is frozen by this status list.

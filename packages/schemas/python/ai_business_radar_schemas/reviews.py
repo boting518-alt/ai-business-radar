@@ -18,6 +18,7 @@ class ReviewTaskRead(SchemaModel):
     status: ReviewStatus
     priority: NonNegativeDecimal
     assigned_to: UUID | None = None
+    resolved_by: UUID | None = None
     decision: ReviewDecision | None = None
     decision_notes: str | None = None
     context: dict[str, Any] | None = None

@@ -1,0 +1,12 @@
+[
+  {"id":"A","scenario":"approve signal"},
+  {"id":"B","scenario":"reject bad signal"},
+  {"id":"C","scenario":"ambiguous match approves existing opportunity"},
+  {"id":"D","scenario":"ambiguous match creates new opportunity"},
+  {"id":"E","scenario":"merge duplicate opportunities"},
+  {"id":"F","scenario":"reject illegal merge cycle"},
+  {"id":"G","scenario":"collapse duplicate watchlist membership"},
+  {"id":"H","scenario":"reject stale review context"},
+  {"id":"I","scenario":"concurrent administrators claim one task"},
+  {"id":"J","scenario":"defer unresolved task"}
+]

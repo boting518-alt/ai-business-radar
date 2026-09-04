@@ -296,9 +296,9 @@ older rows were not created from a canonical input hash. New `score-v001` rows a
 **Layer:** INTELLIGENCE.
 **Primary key:** `id UUID`.
 
-**Fields:** `id UUID` PK; `review_type VARCHAR NOT NULL`; `target_type VARCHAR NOT NULL`; `target_id UUID NOT NULL`; `status VARCHAR NOT NULL`; `priority NUMERIC NOT NULL`; `assigned_to UUID NULL`; `decision VARCHAR NULL`; `decision_notes TEXT NULL`; `created_at TIMESTAMPTZ NOT NULL`; `updated_at TIMESTAMPTZ NOT NULL`; `resolved_at TIMESTAMPTZ NULL`.
+**Fields:** `id UUID` PK; `review_type VARCHAR NOT NULL`; `target_type VARCHAR NOT NULL`; `target_id UUID NOT NULL`; `status VARCHAR NOT NULL`; `priority NUMERIC NOT NULL`; `assigned_to UUID NULL`; `resolved_by UUID NULL`; `decision VARCHAR NULL`; `decision_notes TEXT NULL`; `context JSONB NULL`; `created_at TIMESTAMPTZ NOT NULL`; `updated_at TIMESTAMPTZ NOT NULL`; `resolved_at TIMESTAMPTZ NULL`.
 
-**Foreign keys:** `assigned_to -> user_profiles.id ON DELETE SET NULL`. `target_id` is not a database FK because it may identify a signal or opportunity.
+**Foreign keys:** `assigned_to -> user_profiles.id ON DELETE SET NULL`; `resolved_by -> user_profiles.id ON DELETE SET NULL`. `target_id` is not a database FK because it may identify a signal or opportunity.
 **Uniqueness:** A partial uniqueness rule should prevent more than one open task for the same `(review_type, target_type, target_id)` while allowing retained resolved history.
 **Important indexes:** `(status, priority DESC, created_at)`; `(target_type, target_id)`; `assigned_to, status`.
 **Important constraints:** `review_type IN ('signal_validation', 'opportunity_match', 'opportunity_merge', 'opportunity_creation', 'hype_review', 'quality_review')`; `target_type IN ('signal', 'opportunity')`; `status IN ('pending', 'in_review', 'resolved', 'ignored')`; decision null or one of `approve`, `merge`, `create_new`, `reject`, `ignore`, `defer`; `priority >= 0`; resolved/ignored tasks require `resolved_at` and a decision; open tasks have no resolved timestamp.
