@@ -182,9 +182,41 @@ executes the validated domain decision transactionally. Missing tasks/targets re
 assignment or lifecycle conflicts return 409, and invalid decision or merge semantics return 422.
 All review routes are admin-only; no release endpoint is included in v0.1.
 
-## Pagination direction
+### Product Radar and opportunity reads
 
-The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
+All product query routes require an authenticated application user and explicitly expose only
+`active` opportunities and `active` signals. Invisible IDs and slugs return the same safe 404.
+GET requests never trigger AI, normalization, trend aggregation, or scoring.
+
+`GET /api/v1/radar` accepts `window_type` (`7d`, `30d`, `90d`), sort (`score`, `momentum`,
+`confidence`, `hype`, `recent`), direction, offset/limit, simple `q`, classification filters,
+score/confidence ranges, `hype_max`, and `detected_after`. Repeated or comma-separated values are
+OR within one field; different fields are AND. Default score ranking excludes active opportunities
+without `score-v001`; other sorts keep missing values last. Latest score is selected by
+`calculated_at`; latest requested `trend-v001` by `period_end`. Missing display trend is null.
+Ordering is deterministic with activity and ID tie-breaks. Hype direction is literal: ascending
+places lower risk first.
+
+`GET /api/v1/opportunities` is the active catalog and defaults to recent sorting while sharing the
+same filters and compact response model. `GET /api/v1/opportunities/{id-or-slug}` returns identity,
+business fields, persisted current score and seven components, latest 7d/30d/90d trends, compact
+evidence counts, timestamps, and whether the opportunity occurs in any watchlist owned by the
+current user. It does not expose score `inputs_snapshot`.
+
+`GET /api/v1/opportunities/{id-or-slug}/trends` and `/scores` return bounded chronological history.
+The former optionally filters by window; the latter omits reproducibility internals.
+`GET /api/v1/opportunities/{id-or-slug}/evidence` returns bounded safe evidence summaries and
+optional video ID/title, never comment author data or AI output.
+
+`GET /api/v1/signals` returns only active signals and supports signal type, industry, customer,
+active-opportunity, observed-after, and offset/limit filters. Source context is limited to video
+title and active opportunity IDs; comment author identity is never returned.
+
+## Pagination
+
+Product list, signal, evidence, and history reads use bounded `offset`/`limit` pagination for the
+MVP dataset. Radar and catalog ordering includes deterministic tie-breaks, so repeated reads over
+unchanged data are stable. Health endpoints are not paginated.
 
 ## CORS
 
@@ -226,12 +258,16 @@ Implemented:
 - `GET /api/v1/admin/reviews/{review_task_id}`
 - `POST /api/v1/admin/reviews/{review_task_id}/claim`
 - `POST /api/v1/admin/reviews/{review_task_id}/decision`
+- `GET /api/v1/radar`
+- `GET /api/v1/opportunities`
+- `GET /api/v1/opportunities/{id-or-slug}`
+- `GET /api/v1/opportunities/{id-or-slug}/trends`
+- `GET /api/v1/opportunities/{id-or-slug}/scores`
+- `GET /api/v1/opportunities/{id-or-slug}/evidence`
+- `GET /api/v1/signals`
 
 Planned:
 
-- Radar queries
-- Opportunity search, summaries, and details
-- Signal feed
 - User watchlists
 
 No planned endpoint path or payload is frozen by this status list.

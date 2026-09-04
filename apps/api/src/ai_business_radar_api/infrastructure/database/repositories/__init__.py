@@ -10,6 +10,7 @@ from .discovery import (
 )
 from .opportunities import OpportunityRepository
 from .profiles import UserProfileRepository
+from .radar_queries import RadarQueryRepository
 from .reviews import ReviewTaskRepository
 from .scores import OpportunityScoreRepository, ScoringSignalRow
 from .signals import SignalRepository
@@ -23,6 +24,7 @@ __all__ = [
     "CommentRepository",
     "CollectionRunRepository",
     "OpportunityRepository",
+    "RadarQueryRepository",
     "UserProfileRepository",
     "ReviewTaskRepository",
     "OpportunityScoreRepository",

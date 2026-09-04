@@ -27,14 +27,16 @@ Phase 5 — Review & Product API
 - [x] TASK-019 Trend Aggregation
 - [x] TASK-020 Opportunity Scoring
 - [x] TASK-021 Review Workflow Service
+- [x] TASK-022 Radar Query API
 
 ## Next
 
-- [ ] TASK-022 Radar Query API
 - [ ] TASK-023 Frontend Skeleton
 - [ ] TASK-024 Radar Page
 - [ ] TASK-025 Opportunity Detail Page
 - [ ] TASK-026 Admin Review UI
+- [ ] TASK-027 Signals + Watchlist UI
+- [ ] TASK-028 End-to-End MVP QA
 
 ## Validation debt
 

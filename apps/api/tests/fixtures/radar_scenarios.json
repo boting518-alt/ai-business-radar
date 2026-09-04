@@ -1,0 +1,12 @@
+[
+  {"id":"A","scenario":"high-score accelerating opportunity"},
+  {"id":"B","scenario":"medium-score high-confidence opportunity"},
+  {"id":"C","scenario":"high-hype opportunity"},
+  {"id":"D","scenario":"active opportunity missing trend"},
+  {"id":"E","scenario":"active opportunity missing current score"},
+  {"id":"F","scenario":"candidate hidden opportunity"},
+  {"id":"G","scenario":"merged hidden opportunity"},
+  {"id":"H","scenario":"two user-specific watchlists"},
+  {"id":"I","scenario":"opportunity with mixed signals"},
+  {"id":"J","scenario":"opportunity with score history"}
+]
