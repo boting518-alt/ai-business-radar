@@ -1,0 +1,12 @@
+[
+  {"case": "strong_pain", "comment": "We lose appointments whenever nobody can answer the phone.", "expected": ["pain"]},
+  {"case": "workaround", "comment": "I copy every lead into a spreadsheet by hand.", "expected": ["workflow"]},
+  {"case": "purchase_intent", "comment": "I would buy this today if it connected to our CRM.", "expected": ["purchase_intent"]},
+  {"case": "existing_spend", "comment": "We currently pay 200 USD each month for this.", "expected": ["pricing"]},
+  {"case": "feature_request", "comment": "Please add calendar synchronization.", "expected": ["feature_request"]},
+  {"case": "competitor_usage", "comment": "Our team uses a competing voice assistant.", "expected": ["competition"]},
+  {"case": "compliment", "comment": "Great video, thanks!", "expected": []},
+  {"case": "joke", "comment": "My spreadsheet just asked for a vacation.", "expected": []},
+  {"case": "ambiguous", "comment": "Interesting idea.", "expected": []},
+  {"case": "multi_signal", "comment": "Manual entry takes hours and I would pay for an integration.", "expected": ["workflow", "purchase_intent"]}
+]

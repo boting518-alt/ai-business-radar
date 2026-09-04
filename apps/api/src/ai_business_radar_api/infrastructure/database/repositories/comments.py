@@ -46,3 +46,13 @@ class CommentRepository:
             .limit(limit)
         )
         return list(rows)
+
+    async def list_for_pain_mining(self, *, limit: int) -> list[Comment]:
+        return list(
+            await self.session.scalars(
+                select(Comment)
+                .where(Comment.text.is_not(None), Comment.text != "")
+                .order_by(Comment.first_seen_at, Comment.id)
+                .limit(limit)
+            )
+        )

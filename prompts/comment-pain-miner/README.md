@@ -1,5 +1,6 @@
-# Comment Pain Miner Prompts
+# Comment pain miner prompts
 
-Prompt versions are immutable after first use. The first production prompt will be `v001`; TASK-006 does not define its content.
+`v001.md` is paired with the shared `CommentPainMinerOutput` v001 schema. Versions are selected
+explicitly with no `latest` fallback and become immutable once used.
 
 The corresponding generated contract is `packages/schemas/json/comment_pain_miner.v001.schema.json`. Provider and model selection are runtime configuration and must not be hardcoded in this folder.

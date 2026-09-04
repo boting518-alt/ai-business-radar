@@ -22,13 +22,14 @@ Phase 3 — AI Intelligence
 - [x] TASK-014 Collection Worker Runtime
 - [x] TASK-015 Relevance Filter Pipeline
 - [x] TASK-016 Signal Extraction Pipeline
+- [x] TASK-017 Comment Pain Mining Pipeline
 
 ## Next
 
-- [ ] TASK-017 Comment Pain Mining Pipeline
 - [ ] TASK-018 Opportunity Normalization Pipeline
 - [ ] TASK-019 Trend Aggregation
 - [ ] TASK-020 Opportunity Scoring
+- [ ] TASK-021 Review Workflow Service
 
 ## Validation debt
 

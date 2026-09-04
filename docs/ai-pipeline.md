@@ -1,6 +1,6 @@
 # YouTube AI Business Radar — AI Pipeline Contracts v0.1
 
-Status: Implemented through TASK-016
+Status: Implemented through TASK-017
 Version: 0.1
 Last updated: 2026-09-04
 
@@ -97,6 +97,25 @@ state because later opportunity normalization is not represented by the video li
 ### Comment pain miner
 
 Returns atomic comment-derived pain signals containing category, pain, current/requested solutions, optional non-negative spend, purchase intent, evidence strength, and the internal comment UUID. It never includes author identity.
+
+TASK-017 uses one canonical comment per extraction so source identity, input hashing, reruns, and
+signal lineage remain exact. Input contains comment text/public counters plus bounded parent
+video/channel context; author hash, author identity, replies, transcripts, demographics, and
+sensitive-trait inference are excluded. The model-returned UUID must equal `comments.id`—the shared
+schema defines an internal UUID, not YouTube's string comment identifier.
+
+Categories are normalized deterministically: existing pain → `pain`; current workaround and
+workflow inefficiency → `workflow`; purchase intent and willingness to pay → `purchase_intent`;
+existing spending → `pricing`; feature request → `feature_request`; adoption blocker → `complaint`;
+competitor usage → `competition`; unmet need → `demand`. Unknown categories invalidate the output
+rather than extending the taxonomy. Ordinary comment evidence uses conservative claim status
+`unknown`, never `creator_claim`, and starts in `review`.
+
+A valid empty signal list is a completed extraction with zero FACT rows. Successful signal writes
+and extraction completion are atomic; provider, schema, source-ID, category, or persistence failures
+create no partial signals and never mutate the parent video's status. Identity reuse makes no AI
+call and inserts nothing; forced reruns retain prior extraction-owned signal history. TASK-018 may
+consume reviewed candidates for opportunity normalization but is not implemented here.
 
 ### Opportunity normalizer
 

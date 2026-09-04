@@ -17,6 +17,7 @@ class AIExtractionRepository:
     async def find_completed_identity(
         self,
         *,
+        source_type: str = "video",
         source_id: UUID,
         task_type: str,
         prompt_version: str,
@@ -26,7 +27,7 @@ class AIExtractionRepository:
         return await self.session.scalar(
             select(AIExtraction)
             .where(
-                AIExtraction.source_type == "video",
+                AIExtraction.source_type == source_type,
                 AIExtraction.source_id == source_id,
                 AIExtraction.task_type == task_type,
                 AIExtraction.prompt_version == prompt_version,

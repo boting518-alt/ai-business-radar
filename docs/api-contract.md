@@ -138,6 +138,14 @@ status, reuse, and signal counts. `POST /api/v1/admin/ai/signals/jobs` enqueues 
 `ai_extraction` and returns HTTP 202. All endpoints are admin-only; missing configuration returns
 503, and raw provider output remains internal.
 
+### Comment pain mining
+
+`POST /api/v1/admin/ai/comment-pain/{comment_id}` mines one canonical comment with optional
+`force`. `POST /api/v1/admin/ai/comment-pain` processes an oldest-first bounded batch with `limit`
+from 1–200 (default 50). `POST /api/v1/admin/ai/comment-pain/jobs` enqueues the batch on
+`ai_extraction` and returns HTTP 202. Responses expose only safe audit IDs, status, mined/reused
+flags, signal counts, and empty-result counts. All routes are admin-only.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -166,6 +174,9 @@ Implemented:
 - `POST /api/v1/admin/ai/signals/{video_id}`
 - `POST /api/v1/admin/ai/signals`
 - `POST /api/v1/admin/ai/signals/jobs`
+- `POST /api/v1/admin/ai/comment-pain/{comment_id}`
+- `POST /api/v1/admin/ai/comment-pain`
+- `POST /api/v1/admin/ai/comment-pain/jobs`
 
 Planned:
 

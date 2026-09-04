@@ -12,3 +12,6 @@ collection jobs; v0.1 does not schedule relevance processing automatically.
 
 Business signal extraction also requires `AI_MODEL_SIGNAL_EXTRACTION` and runs manually on the
 `ai_extraction` queue. It is not scheduled automatically.
+
+Comment pain mining shares `ai_extraction`, requires `AI_MODEL_COMMENT_PAIN_MINING`, and is also
+manual-only.

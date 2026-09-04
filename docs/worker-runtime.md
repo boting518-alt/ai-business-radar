@@ -56,3 +56,7 @@ TASK-016 adds `run_signal_extraction` on the shared-capacity `ai_extraction` que
 primitive bounded batch arguments and delegates to `BusinessSignalExtractionService`; it does not
 duplicate prompt, validation, audit, or persistence behavior. It is manual-only in v0.1 and uses
 `AI_MODEL_SIGNAL_EXTRACTION`.
+
+TASK-017 adds `run_comment_pain_mining` to the same `ai_extraction` queue. The actor accepts only
+bounded primitive batch arguments, constructs `AI_MODEL_COMMENT_PAIN_MINING` dependencies, and
+delegates to `CommentPainMiningService`. It is intentionally absent from the scheduler.

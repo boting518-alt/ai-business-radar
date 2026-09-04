@@ -11,6 +11,7 @@ class WorkerSettings(BaseSettings):
     ai_provider: str | None = None
     ai_model_relevance: str | None = None
     ai_model_signal_extraction: str | None = None
+    ai_model_comment_pain_mining: str | None = None
     ai_max_retries: int = 2
     openai_api_key: SecretStr | None = None
     youtube_api_base_url: str = "https://www.googleapis.com/youtube/v3/"
