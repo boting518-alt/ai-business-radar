@@ -127,6 +127,7 @@ class OpportunityScore(Base):
     opportunity_id: Mapped[UUID] = mapped_column(ForeignKey("opportunities.id"))
     calculated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     scoring_version: Mapped[str]
+    input_hash: Mapped[str]
     trend_velocity_score: Mapped[Decimal] = mapped_column(Numeric)
     demand_evidence_score: Mapped[Decimal] = mapped_column(Numeric)
     revenue_evidence_score: Mapped[Decimal] = mapped_column(Numeric)

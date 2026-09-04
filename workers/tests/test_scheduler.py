@@ -55,3 +55,13 @@ def test_daily_trend_schedule_enqueues_three_bounded_windows(monkeypatch) -> Non
         {"window_type": "30d", "limit": 75},
         {"window_type": "90d", "limit": 75},
     ]
+
+
+def test_scoring_schedule_enqueues_one_bounded_batch(monkeypatch) -> None:
+    from ai_business_radar_workers.actors.scoring import run_opportunity_scoring
+
+    sent = []
+    monkeypatch.setattr(run_opportunity_scoring, "send", lambda **payload: sent.append(payload))
+    settings = SimpleNamespace(opportunity_scoring_batch_size=60)
+    schedules.enqueue_scheduled_scoring(settings)
+    assert sent == [{"limit": 60}]

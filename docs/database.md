@@ -279,13 +279,16 @@ The `review_tasks` target is a constrained application-level reference described
 **Layer:** INTELLIGENCE.
 **Primary key:** `id UUID`.
 
-**Fields:** `id UUID` PK; `opportunity_id UUID NOT NULL`; `calculated_at TIMESTAMPTZ NOT NULL`; `scoring_version VARCHAR NOT NULL`; `trend_velocity_score NUMERIC NOT NULL`; `demand_evidence_score NUMERIC NOT NULL`; `revenue_evidence_score NUMERIC NOT NULL`; `pain_severity_score NUMERIC NOT NULL`; `competition_white_space_score NUMERIC NOT NULL`; `build_feasibility_score NUMERIC NOT NULL`; `distribution_ease_score NUMERIC NOT NULL`; `opportunity_score NUMERIC NOT NULL`; `confidence_score NUMERIC NULL`; `hype_risk_score NUMERIC NULL`; `inputs_snapshot JSONB NOT NULL`; `created_at TIMESTAMPTZ NOT NULL`.
+**Fields:** `id UUID` PK; `opportunity_id UUID NOT NULL`; `calculated_at TIMESTAMPTZ NOT NULL`; `scoring_version VARCHAR NOT NULL`; `input_hash VARCHAR NOT NULL`; `trend_velocity_score NUMERIC NOT NULL`; `demand_evidence_score NUMERIC NOT NULL`; `revenue_evidence_score NUMERIC NOT NULL`; `pain_severity_score NUMERIC NOT NULL`; `competition_white_space_score NUMERIC NOT NULL`; `build_feasibility_score NUMERIC NOT NULL`; `distribution_ease_score NUMERIC NOT NULL`; `opportunity_score NUMERIC NOT NULL`; `confidence_score NUMERIC NULL`; `hype_risk_score NUMERIC NULL`; `inputs_snapshot JSONB NOT NULL`; `created_at TIMESTAMPTZ NOT NULL`.
 
 **Foreign keys:** `opportunity_id -> opportunities.id ON DELETE RESTRICT`.
 **Uniqueness:** `(opportunity_id, scoring_version, calculated_at)`.
-**Important indexes:** `(opportunity_id, calculated_at DESC)`; optionally `(scoring_version, calculated_at)`.
+**Important indexes:** `(opportunity_id, calculated_at DESC)` and unique `(opportunity_id, scoring_version, input_hash)`.
 **Important constraints:** All component and final score values are `0..100`; `inputs_snapshot` is a JSON object and records every persisted input/version needed for reproduction; non-empty scoring version.
-**Lifecycle notes:** Append-only. The current score is the latest applicable row by `calculated_at` (with deterministic tie-breaking by `created_at`/`id`), not a duplicate cached value on `opportunities`. Recalculation inserts a new row.
+**Lifecycle notes:** Append-only. Exact input identity is reused; changed evidence or evaluation time inserts a new row. The current score is the latest applicable row by `calculated_at`, not a duplicate cached value on `opportunities`.
+
+Migration 0011 backfills any pre-existing score row with a unique `legacy-<row UUID>` identity because
+older rows were not created from a canonical input hash. New `score-v001` rows always use SHA-256.
 
 ### 6.15 `review_tasks`
 

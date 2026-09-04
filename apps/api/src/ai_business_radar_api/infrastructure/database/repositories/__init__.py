@@ -11,6 +11,7 @@ from .discovery import (
 from .opportunities import OpportunityRepository
 from .profiles import UserProfileRepository
 from .reviews import ReviewTaskRepository
+from .scores import OpportunityScoreRepository, ScoringSignalRow
 from .signals import SignalRepository
 from .trends import LinkedSignalRow, TrendRepository
 from .videos import VideoRepository
@@ -24,6 +25,8 @@ __all__ = [
     "OpportunityRepository",
     "UserProfileRepository",
     "ReviewTaskRepository",
+    "OpportunityScoreRepository",
+    "ScoringSignalRow",
     "SignalRepository",
     "LinkedSignalRow",
     "TrendRepository",

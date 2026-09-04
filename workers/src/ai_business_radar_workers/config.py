@@ -33,3 +33,5 @@ class WorkerSettings(BaseSettings):
     youtube_stale_recovery_schedule_minutes: int = Field(default=15, ge=1)
     trend_aggregation_batch_size: int = Field(default=100, ge=1, le=500)
     trend_aggregation_schedule_hour_utc: int = Field(default=2, ge=0, le=23)
+    opportunity_scoring_batch_size: int = Field(default=100, ge=1, le=500)
+    opportunity_scoring_schedule_delay_minutes: int = Field(default=30, ge=1, le=180)

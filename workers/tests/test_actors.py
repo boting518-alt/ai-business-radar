@@ -13,6 +13,7 @@ from ai_business_radar_workers.actors import (
     relevance,
     run_comment_pain_mining,
     run_opportunity_normalization,
+    run_opportunity_scoring,
     run_relevance_filter,
     run_signal_extraction,
     run_trend_aggregation,
@@ -37,6 +38,7 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_signal_extraction: "ai_extraction",
         run_opportunity_normalization: "ai_extraction",
         run_trend_aggregation: "aggregation",
+        run_opportunity_scoring: "aggregation",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -271,3 +273,31 @@ async def test_trend_actor_delegates_without_ai(monkeypatch) -> None:
     )
     result = await trends.execute_trend_aggregation({"window_type": "7d", "limit": 3}, settings)
     assert result.status == "completed" and called[0].limit == 3
+
+
+@pytest.mark.asyncio
+async def test_scoring_actor_delegates_without_ai(monkeypatch) -> None:
+    from ai_business_radar_workers.actors import scoring
+
+    called = []
+
+    class Engine:
+        async def dispose(self):
+            pass
+
+    class Service:
+        def __init__(self, _sessions):
+            pass
+
+        async def score_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    monkeypatch.setattr(scoring, "create_database_engine", lambda _url: Engine())
+    monkeypatch.setattr(scoring, "create_session_factory", lambda _engine: "sessions")
+    monkeypatch.setattr(scoring, "OpportunityScoringService", Service)
+    settings = SimpleNamespace(
+        database_url=SimpleNamespace(get_secret_value=lambda: "postgresql://safe")
+    )
+    result = await scoring.execute_opportunity_scoring({"limit": 4}, settings)
+    assert result.status == "completed" and called[0].limit == 4

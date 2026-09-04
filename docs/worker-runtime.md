@@ -60,3 +60,10 @@ duplicate prompt, validation, audit, or persistence behavior. It is manual-only 
 TASK-017 adds `run_comment_pain_mining` to the same `ai_extraction` queue. The actor accepts only
 bounded primitive batch arguments, constructs `AI_MODEL_COMMENT_PAIN_MINING` dependencies, and
 delegates to `CommentPainMiningService`. It is intentionally absent from the scheduler.
+## Opportunity scoring
+
+`run_opportunity_scoring` runs on the non-AI `aggregation` queue and delegates to the deterministic
+scoring service. A daily bounded scoring batch is scheduled after trend aggregation using
+`OPPORTUNITY_SCORING_SCHEDULE_DELAY_MINUTES` (default 30) and
+`OPPORTUNITY_SCORING_BATCH_SIZE` (default 100). It does not trigger trend aggregation or invoke an
+LLM.

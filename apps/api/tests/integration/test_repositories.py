@@ -151,6 +151,7 @@ async def test_core_repository_flow_and_append_only_records(db_session: AsyncSes
                 opportunity_id=opportunity.id,
                 calculated_at=now + timedelta(hours=offset),
                 scoring_version="v001",
+                input_hash=f"hash-{offset}",
                 trend_velocity_score=score,
                 demand_evidence_score=score,
                 revenue_evidence_score=score,

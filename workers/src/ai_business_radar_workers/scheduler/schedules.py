@@ -37,6 +37,12 @@ def enqueue_scheduled_trends(settings: WorkerSettings) -> int:
     return 3
 
 
+def enqueue_scheduled_scoring(settings: WorkerSettings) -> None:
+    from ..actors.scoring import run_opportunity_scoring
+
+    run_opportunity_scoring.send(limit=settings.opportunity_scoring_batch_size)
+
+
 def build_scheduler(settings: WorkerSettings) -> BlockingScheduler:
     from ..actors import (
         recover_stale_collection_claims,
@@ -50,6 +56,19 @@ def build_scheduler(settings: WorkerSettings) -> BlockingScheduler:
         "interval",
         minutes=settings.youtube_discovery_schedule_minutes,
         id="youtube_discovery",
+        max_instances=1,
+    )
+    scoring_hour = (
+        settings.trend_aggregation_schedule_hour_utc
+        + settings.opportunity_scoring_schedule_delay_minutes // 60
+    ) % 24
+    scoring_minute = settings.opportunity_scoring_schedule_delay_minutes % 60
+    scheduler.add_job(
+        lambda: enqueue_scheduled_scoring(settings),
+        "cron",
+        hour=scoring_hour,
+        minute=scoring_minute,
+        id="opportunity_scoring",
         max_instances=1,
     )
     scheduler.add_job(

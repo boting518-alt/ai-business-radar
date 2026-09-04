@@ -1,0 +1,15 @@
+{
+  "scoring_version": "score-v001",
+  "scenarios": [
+    {"id": "accelerating_strong_commercial", "expected": "high_score_high_confidence_low_hype"},
+    {"id": "viral_weak_demand", "expected": "lower_score_high_hype"},
+    {"id": "new_sparse", "expected": "low_confidence"},
+    {"id": "strong_pain_easy_build_weak_distribution", "expected": "mixed_components"},
+    {"id": "moderate_competition", "expected": "high_white_space"},
+    {"id": "extreme_competition", "expected": "low_white_space"},
+    {"id": "no_competition_sparse_demand", "expected": "moderate_white_space"},
+    {"id": "creator_claim_revenue", "expected": "discounted_revenue"},
+    {"id": "independent_customer_demand", "expected": "diversity_bonus"},
+    {"id": "stale_opportunity", "expected": "lower_confidence"}
+  ]
+}

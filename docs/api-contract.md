@@ -162,6 +162,14 @@ boundary. `POST /api/v1/admin/trends` processes up to 500 eligible opportunities
 `POST /api/v1/admin/trends/jobs` submits the batch to the non-AI `aggregation` queue. All routes are
 admin-only and return persisted core metrics, the exact window, version, snapshot ID, and reuse flag.
 
+### Opportunity scoring
+
+`POST /api/v1/admin/scoring/{opportunity_id}` calculates one deterministic `score-v001` result and
+accepts optional `force`. `POST /api/v1/admin/scoring` processes up to 500 eligible opportunities
+(default 100). `POST /api/v1/admin/scoring/jobs` enqueues that bounded batch on `aggregation`.
+Admin responses expose component, Confidence, Hype Risk, input hash, and reproducibility snapshot;
+TASK-022 remains responsible for public/current-score reads.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -199,6 +207,9 @@ Implemented:
 - `POST /api/v1/admin/trends/{opportunity_id}`
 - `POST /api/v1/admin/trends`
 - `POST /api/v1/admin/trends/jobs`
+- `POST /api/v1/admin/scoring/{opportunity_id}`
+- `POST /api/v1/admin/scoring`
+- `POST /api/v1/admin/scoring/jobs`
 
 Planned:
 
