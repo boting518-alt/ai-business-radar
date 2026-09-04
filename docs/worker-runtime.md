@@ -51,3 +51,8 @@ video-state behavior to `VideoRelevanceService`. It is intentionally absent from
 AI configuration and missing immutable prompts are permanent job errors; unexpected infrastructure
 errors retain the actor's bounded retry policy. Provider retries remain separately bounded by
 `AI_MAX_RETRIES` to avoid multiplying retries.
+
+TASK-016 adds `run_signal_extraction` on the shared-capacity `ai_extraction` queue. It accepts only
+primitive bounded batch arguments and delegates to `BusinessSignalExtractionService`; it does not
+duplicate prompt, validation, audit, or persistence behavior. It is manual-only in v0.1 and uses
+`AI_MODEL_SIGNAL_EXTRACTION`.

@@ -129,6 +129,15 @@ safe status, relevance, score, and reuse information, but never raw provider out
 returns HTTP 202. All three endpoints are admin-only. Missing AI credentials or model/provider
 configuration returns a safe 503 without preventing application startup.
 
+### Business signal extraction
+
+`POST /api/v1/admin/ai/signals/{video_id}` extracts signals from one eligible canonical video and
+accepts `force` (default false). `POST /api/v1/admin/ai/signals` processes an oldest-first bounded
+batch of queued videos with `limit` (1–100). Responses include only safe extraction identity,
+status, reuse, and signal counts. `POST /api/v1/admin/ai/signals/jobs` enqueues the batch on
+`ai_extraction` and returns HTTP 202. All endpoints are admin-only; missing configuration returns
+503, and raw provider output remains internal.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -154,6 +163,9 @@ Implemented:
 - `POST /api/v1/admin/ai/relevance/{video_id}`
 - `POST /api/v1/admin/ai/relevance`
 - `POST /api/v1/admin/ai/relevance/jobs`
+- `POST /api/v1/admin/ai/signals/{video_id}`
+- `POST /api/v1/admin/ai/signals`
+- `POST /api/v1/admin/ai/signals/jobs`
 
 Planned:
 

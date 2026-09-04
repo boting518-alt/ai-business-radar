@@ -1,6 +1,6 @@
 # YouTube AI Business Radar — AI Pipeline Contracts v0.1
 
-Status: Implemented through TASK-015
+Status: Implemented through TASK-016
 Version: 0.1
 Last updated: 2026-09-04
 
@@ -75,6 +75,24 @@ version may evaluate it again.
 Returns structured industry, customer, problem, solution, business-model, technology, distribution, and pricing context plus a list of atomic signals. Every signal contains a canonical signal type, statement, source evidence text, explicit claim status, and normalized confidence.
 
 The list is not a video summary. Each item must represent one commercial observation.
+
+TASK-016 processes only canonical videos in `queued` state during normal batches and uses the
+immutable `signal-extractor/v001` prompt with bounded metadata-only video/channel input. Each
+validated output signal becomes one FACT `signals` row in `review` state, with statement and
+`evidence_text` stored separately and linked to both the video and producing extraction. The model's
+claim status is preserved exactly; confidence never upgrades a creator claim to fact.
+
+Top-level industry, customer, problem, solution, business-model, technology, and distribution
+context is copied only where present. The shared v001 schema has no revenue amount, geography, or
+sub-industry output, so those columns remain null. Pricing context is attached only to pricing
+signals. No transcript is requested.
+
+The extraction completion, all produced signals, and return of the video to `queued` commit in one
+transaction. A persistence failure rolls back the complete signal set. Provider failure creates no
+signals and marks the video failed; invalid structured output creates no signals and routes it to
+review. Normal identity reuse returns existing signals without duplication; a forced rerun creates
+a new extraction and a new extraction-owned signal history. `queued` remains the conservative video
+state because later opportunity normalization is not represented by the video lifecycle.
 
 ### Comment pain miner
 

@@ -4,6 +4,7 @@ from fastapi import APIRouter
 
 from .admin import router as admin_router
 from .ai_relevance import router as ai_relevance_router
+from .ai_signals import router as ai_signals_router
 from .auth import router as auth_router
 from .health import router as health_router
 from .youtube_discovery import router as youtube_discovery_router
@@ -14,3 +15,4 @@ router.include_router(auth_router)
 router.include_router(admin_router)
 router.include_router(youtube_discovery_router)
 router.include_router(ai_relevance_router)
+router.include_router(ai_signals_router)

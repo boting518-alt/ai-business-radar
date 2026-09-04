@@ -79,7 +79,7 @@ class AIExtractionRepository:
         completed_at: datetime,
         raw_output: dict,
         parsed_output: dict,
-        confidence: Decimal,
+        confidence: Decimal | None,
         **usage: Any,
     ) -> None:
         await self._update(

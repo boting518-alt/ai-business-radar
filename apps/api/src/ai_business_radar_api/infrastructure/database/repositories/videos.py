@@ -55,6 +55,16 @@ class VideoRepository:
             )
         )
 
+    async def list_queued_for_signal_extraction(self, *, limit: int) -> list[Video]:
+        return list(
+            await self.session.scalars(
+                select(Video)
+                .where(Video.processing_status == "queued")
+                .order_by(Video.first_seen_at, Video.id)
+                .limit(limit)
+            )
+        )
+
     async def update_processing_status(self, entity_id: UUID, status: str) -> None:
         await self.session.execute(
             update(Video).where(Video.id == entity_id).values(processing_status=status)

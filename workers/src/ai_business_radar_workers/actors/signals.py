@@ -1,0 +1,31 @@
+import logging
+
+import dramatiq
+from ai_business_radar_api.services.signal_extraction import (
+    BusinessSignalExtractionService,
+    SignalBatchRequest,
+)
+
+from ..config import WorkerSettings
+from ..lifecycle import signal_extraction_dependencies
+from .runtime import run_async
+
+logger = logging.getLogger(__name__)
+
+
+async def execute_signal_extraction(payload: dict, settings: WorkerSettings | None = None):
+    runtime = settings or WorkerSettings()
+    request = SignalBatchRequest.model_validate(payload)
+    async with signal_extraction_dependencies(runtime) as (sessions, ai_client):
+        return await BusinessSignalExtractionService(
+            sessions,
+            ai_client,
+            provider=runtime.ai_provider or "",
+            model=runtime.ai_model_signal_extraction or "",
+        ).extract_batch(request)
+
+
+@dramatiq.actor(queue_name="ai_extraction", max_retries=2, min_backoff=5000)
+def run_signal_extraction(**payload):
+    result = run_async(lambda: execute_signal_extraction(payload))
+    logger.info("signal_extraction_actor_finished status=%s", type(result).__name__)

@@ -9,3 +9,6 @@ Collection actors require `REDIS_URL`, `DATABASE_URL`, and `YOUTUBE_API_KEY`. Th
 triggered `ai_relevance` actor additionally requires `AI_PROVIDER=openai`,
 `AI_MODEL_RELEVANCE`, and `OPENAI_API_KEY`. The scheduler only enqueues bounded YouTube
 collection jobs; v0.1 does not schedule relevance processing automatically.
+
+Business signal extraction also requires `AI_MODEL_SIGNAL_EXTRACTION` and runs manually on the
+`ai_extraction` queue. It is not scheduled automatically.

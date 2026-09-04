@@ -55,6 +55,7 @@ class Signal(Base):
     ai_extraction_id: Mapped[UUID | None] = mapped_column(ForeignKey("ai_extractions.id"))
     signal_type: Mapped[str]
     statement: Mapped[str] = mapped_column(Text)
+    evidence_text: Mapped[str | None] = mapped_column(Text)
     normalized_statement: Mapped[str | None] = mapped_column(Text)
     industry: Mapped[str | None]
     sub_industry: Mapped[str | None]

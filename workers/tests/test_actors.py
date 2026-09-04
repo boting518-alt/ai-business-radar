@@ -11,6 +11,7 @@ from ai_business_radar_workers.actors import (
     recover_stale_collection_claims,
     relevance,
     run_relevance_filter,
+    run_signal_extraction,
     run_youtube_comment_collection,
     run_youtube_discovery,
     run_youtube_metadata_collection,
@@ -28,6 +29,7 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_youtube_comment_collection: "youtube_comments",
         recover_stale_collection_claims: "maintenance",
         run_relevance_filter: "ai_relevance",
+        run_signal_extraction: "ai_extraction",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -156,3 +158,28 @@ async def test_relevance_actor_delegates_to_service(monkeypatch) -> None:
     result = await relevance.execute_relevance({"limit": 3}, settings)
     assert result.status == "completed"
     assert called[0].limit == 3
+
+
+@pytest.mark.asyncio
+async def test_signal_actor_delegates_to_service(monkeypatch) -> None:
+    from ai_business_radar_workers.actors import signals
+
+    called = []
+
+    @asynccontextmanager
+    async def dependencies(_settings):
+        yield "sessions", "ai"
+
+    class Service:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+        async def extract_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    settings = SimpleNamespace(ai_provider="openai", ai_model_signal_extraction="model")
+    monkeypatch.setattr(signals, "signal_extraction_dependencies", dependencies)
+    monkeypatch.setattr(signals, "BusinessSignalExtractionService", Service)
+    result = await signals.execute_signal_extraction({"limit": 4}, settings)
+    assert result.status == "completed" and called[0].limit == 4

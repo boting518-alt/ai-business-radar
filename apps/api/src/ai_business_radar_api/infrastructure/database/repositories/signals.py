@@ -1,7 +1,7 @@
 from typing import Any
 from uuid import UUID
 
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -15,6 +15,18 @@ class SignalRepository:
     async def create_signal(self, **values: Any) -> Signal:
         statement = insert(Signal).values(**values).returning(Signal)
         return (await self.session.execute(statement)).scalar_one()
+
+    async def create_many(self, values: list[dict[str, Any]]) -> list[Signal]:
+        if not values:
+            return []
+        return list(await self.session.scalars(insert(Signal).values(values).returning(Signal)))
+
+    async def count_for_extraction(self, extraction_id: UUID) -> int:
+        return (
+            await self.session.scalar(
+                select(func.count(Signal.id)).where(Signal.ai_extraction_id == extraction_id)
+            )
+        ) or 0
 
     async def get_by_id(self, entity_id: UUID) -> Signal | None:
         return await self.session.get(Signal, entity_id)
