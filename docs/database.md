@@ -180,13 +180,13 @@ The `review_tasks` target is a constrained application-level reference described
 **Layer:** RAW.
 **Primary key:** `id UUID`.
 
-**Fields:** `id UUID` PK; `youtube_comment_id VARCHAR NOT NULL`; `video_id UUID NOT NULL`; `text TEXT NOT NULL`; `published_at TIMESTAMPTZ NOT NULL`; `like_count INT NULL`; `reply_count INT NULL`; `author_hash VARCHAR NULL`; `is_question BOOLEAN NULL`; `language VARCHAR NULL`; `first_seen_at TIMESTAMPTZ NOT NULL`; `created_at TIMESTAMPTZ NOT NULL`; `updated_at TIMESTAMPTZ NOT NULL`.
+**Fields:** `id UUID` PK; `youtube_comment_id VARCHAR NOT NULL`; `video_id UUID NOT NULL`; `text TEXT NOT NULL`; `published_at TIMESTAMPTZ NOT NULL`; `source_updated_at TIMESTAMPTZ NULL`; `like_count INT NULL`; `reply_count INT NULL`; `author_hash VARCHAR NULL`; `is_question BOOLEAN NULL`; `language VARCHAR NULL`; `first_seen_at TIMESTAMPTZ NOT NULL`; `created_at TIMESTAMPTZ NOT NULL`; `updated_at TIMESTAMPTZ NOT NULL`.
 
 **Foreign keys:** `video_id -> videos.id ON DELETE RESTRICT`.
 **Uniqueness:** `youtube_comment_id`.
 **Important indexes:** Unique `youtube_comment_id`; `video_id`; `published_at`; optionally `(video_id, published_at)`.
 **Important constraints:** Counts are null or non-negative; non-empty text; required observation timestamps.
-**Lifecycle notes:** Upsert mutable public metrics/text by YouTube comment ID while preserving `first_seen_at`. Identifiable author names are not required; an optional non-reversible `author_hash` may support deduplication/analysis. Retain comments used by evidence or extraction for audit; later privacy or source-removal policy may redact text while preserving lineage metadata.
+**Lifecycle notes:** Upsert mutable public metrics/text by YouTube comment ID while preserving `first_seen_at`. `source_updated_at` records YouTube's source edit time separately from application-managed `updated_at`. Identifiable author names are not required; an optional non-reversible `author_hash` may support deduplication/analysis. Retain comments used by evidence or extraction for audit; later privacy or source-removal policy may redact text while preserving lineage metadata.
 
 ### 6.8 `ai_extractions`
 

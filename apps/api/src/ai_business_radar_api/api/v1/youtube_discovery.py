@@ -7,6 +7,12 @@ from fastapi import APIRouter, Depends, HTTPException, Request, status
 from ...infrastructure.auth import RequiredAdmin
 from ...infrastructure.external.youtube import YouTubeClient
 from ...infrastructure.external.youtube.dependencies import get_youtube_client
+from ...services.youtube_comments import (
+    CanonicalVideosNotFound,
+    CommentCollectionRequest,
+    CommentCollectionResult,
+    YouTubeCommentCollectionService,
+)
 from ...services.youtube_discovery import (
     DiscoveryRequest,
     DiscoveryResult,
@@ -48,6 +54,20 @@ def get_youtube_metadata_service(
     return YouTubeMetadataCollectionService(factory, youtube)
 
 
+def get_youtube_comment_service(
+    request: Request,
+    youtube: Annotated[YouTubeClient, Depends(get_youtube_client)],
+) -> YouTubeCommentCollectionService:
+    factory = getattr(request.app.state, "database_session_factory", None)
+    if factory is None:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Database is not configured")
+    return YouTubeCommentCollectionService(
+        factory,
+        youtube,
+        max_quota_units_per_run=request.app.state.settings.youtube_comment_max_quota_units_per_run,
+    )
+
+
 @router.post("/discovery", response_model=DiscoveryResult)
 async def trigger_discovery(
     discovery_request: DiscoveryRequest,
@@ -69,3 +89,18 @@ async def collect_metadata(
     service: Annotated[YouTubeMetadataCollectionService, Depends(get_youtube_metadata_service)],
 ) -> MetadataCollectionResult:
     return await service.collect(metadata_request)
+
+
+@router.post("/comments", response_model=CommentCollectionResult)
+async def collect_comments(
+    comment_request: CommentCollectionRequest,
+    _: RequiredAdmin,
+    service: Annotated[YouTubeCommentCollectionService, Depends(get_youtube_comment_service)],
+) -> CommentCollectionResult:
+    try:
+        return await service.collect(comment_request)
+    except CanonicalVideosNotFound as error:
+        raise HTTPException(
+            status.HTTP_404_NOT_FOUND,
+            "One or more canonical videos were not found or are ineligible",
+        ) from error

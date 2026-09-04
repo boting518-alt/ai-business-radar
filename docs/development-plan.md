@@ -18,13 +18,14 @@ Phase 2 — YouTube Collection
 - [x] TASK-010 YouTube API Client
 - [x] TASK-011 YouTube Discovery Pipeline
 - [x] TASK-012 Metadata / Snapshot Collection
+- [x] TASK-013 Comment Collection
 
 ## Next
 
-- [ ] TASK-013 Comment Collection
 - [ ] TASK-014 Collection Worker Runtime
 - [ ] TASK-015 Relevance Filter Pipeline
 - [ ] TASK-016 Signal Extraction Pipeline
+- [ ] TASK-017 Comment Pain Mining Pipeline
 
 ## Validation debt
 

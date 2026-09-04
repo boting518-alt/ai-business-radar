@@ -137,6 +137,7 @@ class Comment(Base):
     video_id: Mapped[UUID] = mapped_column(ForeignKey("videos.id"))
     text: Mapped[str] = mapped_column(Text)
     published_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    source_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     like_count: Mapped[int | None] = mapped_column(Integer)
     reply_count: Mapped[int | None] = mapped_column(Integer)
     author_hash: Mapped[str | None]

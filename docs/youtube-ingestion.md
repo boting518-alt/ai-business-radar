@@ -70,3 +70,13 @@ TASK-012 converts pending discovery staging rows into canonical RAW records. The
 When enabled, one append-only `video_snapshots` observation is created per unique successfully fetched video using a consistent batch timestamp. Canonical channel/video uniqueness is based on YouTube external IDs, and `(video_id, captured_at)` conflicts are ignored, making persistence safe if the same batch timestamp is retried. A later collection at a new timestamp appends a new observation.
 
 Missing/private/deleted videos are recorded as `video_unavailable`; unresolved channels use `channel_unavailable`. Successful staging rows store their canonical video ID and processing timestamp. Mixed success produces a `partial` metadata collection run, complete success (including no eligible rows) produces `completed`, and an external request failure with no persisted successes produces `failed` while releasing claimed rows back to `pending`. Provider payloads and exception text are not persisted.
+
+## Comment collection
+
+TASK-013 collects only top-level public comments for canonical videos through the official `commentThreads.list` endpoint. Replies are not expanded; only the thread's reply count is retained. Every run is bounded by video count, pages per video, comments per video, and an estimated quota budget (default 500 units). Each run starts at the first page and does not persist a cursor.
+
+For initial discovery and analysis, `order=relevance` with one or two pages samples higher-value discussion. For monitoring recent demand, `order=time` samples recent comments. Both modes are deliberately bounded; adaptive sampling is deferred. The service selects eligible videos with fewest stored comments first, then newer discoveries, excluding canonical videos marked `ignored` or `failed`. Explicit IDs must all resolve to eligible canonical videos.
+
+Comments are idempotently upserted by YouTube comment ID. Source refreshes update plain text, like/reply counts, source edit time, and the database row timestamp while preserving `first_seen_at`, `is_question`, and `author_hash`. No author display name is requested or stored, and no hash is fabricated. `source_updated_at` represents YouTube's edit timestamp; `updated_at` remains application row-maintenance time.
+
+A disabled-comments response is recorded as a safe video-level skip and never changes the canonical video's status. A failed video alongside successful or skipped videos makes the run partial; all external failures make it failed. A valid video with zero comments is completed successfully. Provider messages and payloads are not persisted. RAW comments remain internal until a later, explicitly scoped AI comment-mining task creates traceable FACT records.

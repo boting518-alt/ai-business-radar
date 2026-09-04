@@ -18,7 +18,16 @@ class CommentRepository:
         )
 
     async def upsert_comment(self, **values: Any) -> Comment:
-        immutable = {"id", "youtube_comment_id", "first_seen_at", "created_at"}
+        immutable = {
+            "id",
+            "youtube_comment_id",
+            "video_id",
+            "published_at",
+            "author_hash",
+            "is_question",
+            "first_seen_at",
+            "created_at",
+        }
         mutable = {key: value for key, value in values.items() if key not in immutable}
         statement = (
             insert(Comment)

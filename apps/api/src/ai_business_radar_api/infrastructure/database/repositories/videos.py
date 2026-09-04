@@ -1,11 +1,11 @@
 from typing import Any
 from uuid import UUID
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..models import Video, VideoSnapshot
+from ..models import Comment, Video, VideoSnapshot
 
 
 class VideoRepository:
@@ -44,6 +44,30 @@ class VideoRepository:
             .limit(limit)
         )
         return list(result)
+
+    async def list_for_comment_collection(self, *, limit: int) -> list[Video]:
+        comment_count = func.count(Comment.id)
+        rows = await self.session.scalars(
+            select(Video)
+            .outerjoin(Comment, Comment.video_id == Video.id)
+            .where(Video.processing_status.not_in(("ignored", "failed")))
+            .group_by(Video.id)
+            .order_by(comment_count, Video.first_seen_at.desc(), Video.id)
+            .limit(limit)
+        )
+        return list(rows)
+
+    async def list_existing_by_ids(self, entity_ids: list[UUID]) -> list[Video]:
+        if not entity_ids:
+            return []
+        return list(
+            await self.session.scalars(
+                select(Video).where(
+                    Video.id.in_(entity_ids),
+                    Video.processing_status.not_in(("ignored", "failed")),
+                )
+            )
+        )
 
     async def add_snapshot(self, **values: Any) -> VideoSnapshot | None:
         statement = (

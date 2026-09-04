@@ -16,6 +16,7 @@ The expected application mechanism will be selected with deployment tooling. Unt
 - `0002_rls_baseline.sql` adds the Supabase Auth/RLS boundary separately so policy changes remain auditable.
 - `0003_youtube_discovery_staging.sql` adds internal RAW staging for bounded discovery results.
 - `0004_youtube_metadata_collection.sql` adds metadata-run taxonomy and staging claim/result fields.
+- `0005_youtube_comment_collection.sql` separates YouTube comment edit time from row update time.
 
 Apply migrations in numeric order. Migrations after 0001 expect Supabase's `auth.uid()` function and `anon`/`authenticated`/`service_role` database roles. A standalone PostgreSQL syntax/runtime test may provide test-only equivalents; that does not constitute full Supabase Local validation.
 

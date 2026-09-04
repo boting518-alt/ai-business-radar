@@ -108,6 +108,10 @@ Missing queries return 404. Disabled or monitoring-mode queries return 409. Exte
 
 Admin-only manual trigger for one bounded metadata collection. The request accepts optional `collection_run_id`, `limit` (1–250, default 50), and `include_snapshots` (default true). It claims pending discovery rows and returns a typed summary containing claim, success/failure, video/channel request and return counts, snapshots created, estimated quota units, timestamps, reason, and final collection-run status. External provider details and raw payloads are never returned.
 
+### `POST /api/v1/admin/youtube/comments`
+
+Admin-only manual trigger for bounded top-level comment collection. The request accepts optional canonical `video_ids`, `limit_videos` (1–100), `max_pages_per_video` (1–5), `max_comments_per_video` (1–500), and `order` (`relevance` or `time`). The response reports video/page/comment counts, estimated quota units, timestamps, safe reason, and final run status. Missing or ineligible explicit canonical video IDs return 404.
+
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
 ## Pagination direction
@@ -128,6 +132,7 @@ Implemented:
 - `GET /api/v1/admin/health`
 - `POST /api/v1/admin/youtube/discovery`
 - `POST /api/v1/admin/youtube/metadata`
+- `POST /api/v1/admin/youtube/comments`
 
 Planned:
 

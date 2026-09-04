@@ -28,6 +28,7 @@ def test_critical_columns_remain_mapped() -> None:
             "processed_at",
             "error_summary",
         },
+        "comments": {"source_updated_at"},
     }
     for table_name, columns in expected.items():
         assert columns <= set(Base.metadata.tables[table_name].columns.keys())
