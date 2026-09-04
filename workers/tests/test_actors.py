@@ -15,6 +15,7 @@ from ai_business_radar_workers.actors import (
     run_opportunity_normalization,
     run_relevance_filter,
     run_signal_extraction,
+    run_trend_aggregation,
     run_youtube_comment_collection,
     run_youtube_discovery,
     run_youtube_metadata_collection,
@@ -35,6 +36,7 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_comment_pain_mining: "ai_extraction",
         run_signal_extraction: "ai_extraction",
         run_opportunity_normalization: "ai_extraction",
+        run_trend_aggregation: "aggregation",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -241,3 +243,31 @@ async def test_opportunity_normalization_actor_delegates_to_service(monkeypatch)
     monkeypatch.setattr(opportunities, "OpportunityNormalizationService", Service)
     result = await opportunities.execute_opportunity_normalization({"limit": 5}, settings)
     assert result.status == "completed" and called[0].limit == 5
+
+
+@pytest.mark.asyncio
+async def test_trend_actor_delegates_without_ai(monkeypatch) -> None:
+    from ai_business_radar_workers.actors import trends
+
+    called = []
+
+    class Engine:
+        async def dispose(self):
+            pass
+
+    class Service:
+        def __init__(self, _sessions):
+            pass
+
+        async def aggregate_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    monkeypatch.setattr(trends, "create_database_engine", lambda _url: Engine())
+    monkeypatch.setattr(trends, "create_session_factory", lambda _engine: "sessions")
+    monkeypatch.setattr(trends, "OpportunityTrendAggregationService", Service)
+    settings = SimpleNamespace(
+        database_url=SimpleNamespace(get_secret_value=lambda: "postgresql://safe")
+    )
+    result = await trends.execute_trend_aggregation({"window_type": "7d", "limit": 3}, settings)
+    assert result.status == "completed" and called[0].limit == 3

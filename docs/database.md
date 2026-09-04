@@ -42,7 +42,8 @@ Logical ownership does not prevent foreign keys across layers. Those links are r
 - Atomic `signals` refer to source evidence and optionally to the extraction that produced them.
 - `opportunities` normalize many signals through `opportunity_signal_links` and expose research provenance through `opportunity_evidence`.
 - `opportunity_merge_history` preserves canonical lineage when duplicates are merged.
-- `trend_snapshots` and `opportunity_scores` are append-only intelligence histories.
+- `trend_snapshots` retain versioned historical windows; exact identities are deterministic
+  materializations. `opportunity_scores` remain append-only intelligence history.
 - `review_tasks` retain administrative decisions about signals or opportunities.
 - `user_profiles` own `watchlists`, which contain `watchlist_items` referencing opportunities.
 
@@ -264,13 +265,13 @@ The `review_tasks` target is a constrained application-level reference described
 **Layer:** INTELLIGENCE.
 **Primary key:** `id UUID`.
 
-**Fields:** Required fields are `id UUID` PK; `opportunity_id UUID NOT NULL`; `period_start TIMESTAMPTZ NOT NULL`; `period_end TIMESTAMPTZ NOT NULL`; `video_count INT NOT NULL DEFAULT 0`; `new_video_count INT NOT NULL DEFAULT 0`; `unique_channel_count INT NOT NULL DEFAULT 0`; `total_views BIGINT NOT NULL DEFAULT 0`; `comment_count INT NOT NULL DEFAULT 0`; `pain_signal_count INT NOT NULL DEFAULT 0`; `demand_signal_count INT NOT NULL DEFAULT 0`; `purchase_intent_signal_count INT NOT NULL DEFAULT 0`; `revenue_signal_count INT NOT NULL DEFAULT 0`; `competitor_signal_count INT NOT NULL DEFAULT 0`; `momentum_score NUMERIC NULL`; `created_at TIMESTAMPTZ NOT NULL`. The required disambiguator is `window_type VARCHAR NOT NULL`.
+**Fields:** Required fields are `id UUID` PK; `opportunity_id UUID NOT NULL`; `period_start TIMESTAMPTZ NOT NULL`; `period_end TIMESTAMPTZ NOT NULL`; `aggregation_version VARCHAR NOT NULL`; `video_count INT NOT NULL DEFAULT 0`; `new_video_count INT NOT NULL DEFAULT 0`; `unique_channel_count INT NOT NULL DEFAULT 0`; `total_views BIGINT NOT NULL DEFAULT 0`; `comment_count INT NOT NULL DEFAULT 0`; `pain_signal_count INT NOT NULL DEFAULT 0`; `demand_signal_count INT NOT NULL DEFAULT 0`; `purchase_intent_signal_count INT NOT NULL DEFAULT 0`; `revenue_signal_count INT NOT NULL DEFAULT 0`; `competitor_signal_count INT NOT NULL DEFAULT 0`; `momentum_score NUMERIC NULL`; `created_at TIMESTAMPTZ NOT NULL`. The required window disambiguator is `window_type VARCHAR NOT NULL`.
 
 **Foreign keys:** `opportunity_id -> opportunities.id ON DELETE RESTRICT`.
-**Uniqueness:** `(opportunity_id, window_type, period_start, period_end)`. This avoids conflating windows that share an end time while their boundaries differ.
-**Important indexes:** Unique `(opportunity_id, window_type, period_start, period_end)` plus a retrieval index on `(opportunity_id, window_type, period_end DESC)`.
+**Uniqueness:** `(opportunity_id, window_type, period_start, period_end, aggregation_version)`. Formula versions never reinterpret prior-version rows.
+**Important indexes:** Versioned unique identity plus retrieval on `(opportunity_id, window_type, period_end DESC)`.
 **Important constraints:** `window_type IN ('7d', '30d', '90d')`; `period_start < period_end`; all counts non-negative; momentum score null or `0..100`.
-**Lifecycle notes:** Append-only. A corrected/recomputed snapshot for the same logical window requires an explicit later schema versioning strategy before insertion; it must not silently overwrite history. TASK-005 should add an aggregation version if recomputation retention is required immediately.
+**Lifecycle notes:** Historical windows and formula versions are retained. Within one exact versioned identity the row is a deterministic materialization: normal retries reuse it, while explicit `force=true` recomputes its metric columns in place to incorporate late-arriving linked evidence. Formula changes require a new aggregation version and never update an older version.
 
 ### 6.14 `opportunity_scores`
 
@@ -395,11 +396,11 @@ Assignment is optional. Only admins may mutate review tasks or execute review de
 ## 11. Snapshot/time-series strategy
 
 - Video snapshots are append-only observations unique by video and capture time.
-- Trend snapshots are append-only aggregates unique by opportunity, window type, and period end.
-- Supported initial windows are 7D, 30D, and 90D; their period boundaries must follow one consistent UTC convention defined in TASK-005.
+- Trend snapshots retain historical windows and formula versions; an exact versioned identity is a recomputable derived materialization.
+- Supported windows are 7D, 30D, and 90D. `period_end` is exclusive; `period_start = period_end - window`; all boundaries use UTC. Omitted ends round down to the UTC hour.
 - Current source counters on videos/channels are mutable conveniences; historical analysis uses snapshots.
 - Fixed interval deltas are derived rather than stored on video snapshots.
-- Silent updates to existing snapshots are forbidden. A future aggregation-version field is required if the same logical trend window must retain multiple recomputations.
+- Normal calls reuse an exact snapshot. Only explicit force may update one versioned materialization; formula changes create a new version.
 
 ## 12. Score persistence strategy
 

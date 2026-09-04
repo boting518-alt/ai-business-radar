@@ -1,0 +1,12 @@
+{
+  "aggregation_version": "trend-v001",
+  "scenarios": [
+    {"id": "accelerating", "previous_signals": 2, "current_signals": 6},
+    {"id": "flat", "previous_signals": 4, "current_signals": 4},
+    {"id": "declining", "previous_signals": 6, "current_signals": 2},
+    {"id": "new_no_history", "previous_signals": null, "current_signals": 2},
+    {"id": "one_creator_dominates", "current_signals": 8, "current_channels": 1},
+    {"id": "independent_channels", "current_signals": 8, "current_channels": 8},
+    {"id": "high_views_low_activity", "current_signals": 1, "current_views": 1000000}
+  ]
+}

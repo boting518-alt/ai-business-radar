@@ -41,3 +41,17 @@ async def test_scheduler_enqueues_only_loaded_bounded_discovery_queries(monkeypa
     )
     assert await schedules.enqueue_scheduled_discovery(settings) == 2
     assert sent == [{"search_query_id": "enabled-1"}, {"search_query_id": "enabled-2"}]
+
+
+def test_daily_trend_schedule_enqueues_three_bounded_windows(monkeypatch) -> None:
+    from ai_business_radar_workers.actors.trends import run_trend_aggregation
+
+    sent = []
+    monkeypatch.setattr(run_trend_aggregation, "send", lambda **payload: sent.append(payload))
+    settings = SimpleNamespace(trend_aggregation_batch_size=75)
+    assert schedules.enqueue_scheduled_trends(settings) == 3
+    assert sent == [
+        {"window_type": "7d", "limit": 75},
+        {"window_type": "30d", "limit": 75},
+        {"window_type": "90d", "limit": 75},
+    ]

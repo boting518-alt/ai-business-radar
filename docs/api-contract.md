@@ -154,6 +154,14 @@ optional `force`. `POST /api/v1/admin/ai/opportunities/normalize` processes revi
 on `ai_extraction` and returns HTTP 202. Responses expose safe extraction, action, opportunity, and
 review-task IDs but never prompts, provider raw output, or review context. All routes are admin-only.
 
+### Trend aggregation
+
+`POST /api/v1/admin/trends/{opportunity_id}` calculates one `7d`, `30d`, or `90d` trend snapshot.
+It accepts an optional timezone-aware `period_end` and `force`; omitted ends use the current UTC hour
+boundary. `POST /api/v1/admin/trends` processes up to 500 eligible opportunities (default 100).
+`POST /api/v1/admin/trends/jobs` submits the batch to the non-AI `aggregation` queue. All routes are
+admin-only and return persisted core metrics, the exact window, version, snapshot ID, and reuse flag.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -188,6 +196,9 @@ Implemented:
 - `POST /api/v1/admin/ai/opportunities/normalize/{signal_id}`
 - `POST /api/v1/admin/ai/opportunities/normalize`
 - `POST /api/v1/admin/ai/opportunities/normalize/jobs`
+- `POST /api/v1/admin/trends/{opportunity_id}`
+- `POST /api/v1/admin/trends`
+- `POST /api/v1/admin/trends/jobs`
 
 Planned:
 

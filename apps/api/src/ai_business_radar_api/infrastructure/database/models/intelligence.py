@@ -88,7 +88,13 @@ class OpportunityEvidence(Base):
 class TrendSnapshot(Base):
     __tablename__ = "trend_snapshots"
     __table_args__ = (
-        UniqueConstraint("opportunity_id", "window_type", "period_start", "period_end"),
+        UniqueConstraint(
+            "opportunity_id",
+            "window_type",
+            "period_start",
+            "period_end",
+            "aggregation_version",
+        ),
     )
     id: Mapped[UUID] = mapped_column(
         Uuid, primary_key=True, server_default=text("gen_random_uuid()")
@@ -97,6 +103,7 @@ class TrendSnapshot(Base):
     window_type: Mapped[str]
     period_start: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     period_end: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    aggregation_version: Mapped[str]
     video_count: Mapped[int] = mapped_column(Integer)
     new_video_count: Mapped[int] = mapped_column(Integer)
     unique_channel_count: Mapped[int] = mapped_column(Integer)

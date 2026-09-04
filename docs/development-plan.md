@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 3 — AI Intelligence
+Phase 4 — Trend & Scoring
 
 ## Completed
 
@@ -24,12 +24,14 @@ Phase 3 — AI Intelligence
 - [x] TASK-016 Signal Extraction Pipeline
 - [x] TASK-017 Comment Pain Mining Pipeline
 - [x] TASK-018 Opportunity Normalization Pipeline
+- [x] TASK-019 Trend Aggregation
 
 ## Next
 
-- [ ] TASK-019 Trend Aggregation
 - [ ] TASK-020 Opportunity Scoring
 - [ ] TASK-021 Review Workflow Service
+- [ ] TASK-022 Radar Query API
+- [ ] TASK-023 Frontend Skeleton
 
 ## Validation debt
 

@@ -125,6 +125,10 @@ v0.1 uses Dramatiq with Redis for queued background work. A lightweight schedule
 
 Initial queue responsibilities are YouTube collection, AI extraction, and aggregation. Scheduled job categories include managed-query discovery, video-statistic snapshots, monitoring refreshes, and opportunity aggregation/recomputation.
 
+TASK-019 fixes aggregation as deterministic application code on the `aggregation` queue. A daily
+UTC scheduler submits one bounded batch for each supported window; it never invokes an LLM or
+calculates the final Opportunity Score.
+
 Jobs must be designed for at-least-once delivery:
 
 - Use stable job inputs and idempotency keys where practical.

@@ -12,6 +12,7 @@ from .opportunities import OpportunityRepository
 from .profiles import UserProfileRepository
 from .reviews import ReviewTaskRepository
 from .signals import SignalRepository
+from .trends import LinkedSignalRow, TrendRepository
 from .videos import VideoRepository
 from .watchlists import WatchlistRepository
 
@@ -24,6 +25,8 @@ __all__ = [
     "UserProfileRepository",
     "ReviewTaskRepository",
     "SignalRepository",
+    "LinkedSignalRow",
+    "TrendRepository",
     "SearchQueryRepository",
     "VideoRepository",
     "WatchlistRepository",

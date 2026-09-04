@@ -19,6 +19,7 @@ def test_critical_columns_remain_mapped() -> None:
         "ai_extractions": {"source_id", "signal_id", "input_hash", "raw_output", "parsed_output"},
         "signals": {"source_id", "claim_status", "confidence"},
         "opportunity_scores": {"scoring_version", "inputs_snapshot"},
+        "trend_snapshots": {"aggregation_version", "window_type", "momentum_score"},
         "youtube_discovery_items": {
             "collection_run_id",
             "search_query_id",
