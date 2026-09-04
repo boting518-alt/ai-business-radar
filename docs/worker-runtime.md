@@ -42,3 +42,12 @@ uv run python -m ai_business_radar_workers.scheduler
 Both processes require valid `REDIS_URL`, `DATABASE_URL`, and `YOUTUBE_API_KEY`. Broker construction is explicit and does not silently fall back to an in-memory production broker. Startup does not provide a distributed heartbeat; dependency failures surface when the broker starts or a job constructs its application dependencies.
 
 The existing synchronous admin collection endpoints remain development/debug operations. The `/jobs` variants return `202` after Redis accepts the message. Redis failures return a safe `503`; queued transport state is not presented as durable execution state.
+
+## AI relevance actor
+
+TASK-015 adds the manually triggered `run_relevance_filter` actor on the `ai_relevance` queue.
+It constructs the configured AI provider and delegates all selection, inference, audit, reuse, and
+video-state behavior to `VideoRelevanceService`. It is intentionally absent from the scheduler.
+AI configuration and missing immutable prompts are permanent job errors; unexpected infrastructure
+errors retain the actor's bounded retry policy. Provider retries remain separately bounded by
+`AI_MAX_RETRIES` to avoid multiplying retries.

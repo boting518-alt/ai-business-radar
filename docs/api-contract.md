@@ -118,6 +118,17 @@ Admin-only manual trigger for bounded top-level comment collection. The request 
 
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
+### AI relevance filter
+
+`POST /api/v1/admin/ai/relevance/{video_id}` evaluates one canonical video and accepts
+`force` (default false). `POST /api/v1/admin/ai/relevance` evaluates a bounded oldest-first
+batch of new videos and accepts `limit` (1–100) and `force`. Responses expose extraction IDs,
+safe status, relevance, score, and reuse information, but never raw provider output.
+
+`POST /api/v1/admin/ai/relevance/jobs` enqueues the same batch request on `ai_relevance` and
+returns HTTP 202. All three endpoints are admin-only. Missing AI credentials or model/provider
+configuration returns a safe 503 without preventing application startup.
+
 ## Pagination direction
 
 The choice between cursor pagination and limit/offset remains deferred until the first collection endpoint contract is defined. Health endpoints are not paginated.
@@ -140,6 +151,9 @@ Implemented:
 - `POST /api/v1/admin/youtube/discovery/jobs`
 - `POST /api/v1/admin/youtube/metadata/jobs`
 - `POST /api/v1/admin/youtube/comments/jobs`
+- `POST /api/v1/admin/ai/relevance/{video_id}`
+- `POST /api/v1/admin/ai/relevance`
+- `POST /api/v1/admin/ai/relevance/jobs`
 
 Planned:
 

@@ -1,5 +1,6 @@
-# Relevance Filter Prompts
+# Relevance filter prompts
 
-Prompt versions are immutable after first use. The first production prompt will be `v001`; TASK-006 does not define its content.
-
-The corresponding generated contract is `packages/schemas/json/relevance_filter.v001.schema.json`. Provider and model selection are runtime configuration and must not be hardcoded in this folder.
+`v001.md` is the first production prompt paired with the shared
+`RelevanceFilterOutput` v001 schema. Prompt versions are selected explicitly and never through a
+`latest` alias. Once a version has been used in an extraction, it is immutable; behavior changes
+require a new version.

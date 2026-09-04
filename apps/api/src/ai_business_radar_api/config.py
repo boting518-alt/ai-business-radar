@@ -38,6 +38,8 @@ class Settings(BaseSettings):
     youtube_discovery_max_quota_units_per_run: int = 500
     youtube_comment_max_quota_units_per_run: int = 500
     ai_provider: str | None = None
+    ai_model_relevance: str | None = None
+    ai_max_retries: int = 2
     openai_api_key: SecretStr | None = None
 
     log_level: str = "INFO"

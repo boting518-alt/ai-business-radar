@@ -1,7 +1,7 @@
 from typing import Any
 from uuid import UUID
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -44,6 +44,21 @@ class VideoRepository:
             .limit(limit)
         )
         return list(result)
+
+    async def list_new_for_relevance(self, *, limit: int) -> list[Video]:
+        return list(
+            await self.session.scalars(
+                select(Video)
+                .where(Video.processing_status == "new")
+                .order_by(Video.first_seen_at, Video.id)
+                .limit(limit)
+            )
+        )
+
+    async def update_processing_status(self, entity_id: UUID, status: str) -> None:
+        await self.session.execute(
+            update(Video).where(Video.id == entity_id).values(processing_status=status)
+        )
 
     async def list_for_comment_collection(self, *, limit: int) -> list[Video]:
         comment_count = func.count(Comment.id)

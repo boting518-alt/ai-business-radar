@@ -1,5 +1,6 @@
 """Small, domain-oriented repositories sharing a caller-owned session."""
 
+from .ai_extractions import AIExtractionRepository
 from .channels import ChannelRepository
 from .comments import CommentRepository
 from .discovery import (
@@ -16,6 +17,7 @@ from .watchlists import WatchlistRepository
 
 __all__ = [
     "ChannelRepository",
+    "AIExtractionRepository",
     "CommentRepository",
     "CollectionRunRepository",
     "OpportunityRepository",

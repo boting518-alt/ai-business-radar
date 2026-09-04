@@ -1,6 +1,6 @@
 # YouTube AI Business Radar — AI Pipeline Contracts v0.1
 
-Status: Frozen for TASK-006
+Status: Implemented through TASK-015
 Version: 0.1
 Last updated: 2026-09-04
 
@@ -51,6 +51,24 @@ Each persisted AI extraction must still record its source/target, task type, pro
 ### Relevance filter
 
 Returns whether content is relevant, normalized relevance confidence, optional content/topic labels, and a reason.
+
+TASK-015 implements this first gate using immutable prompt `relevance-filter/v001` and
+metadata-only video/channel input. The canonical SHA-256 input identity includes the input,
+task type, and prompt version; the selected model is stored separately. Equivalent completed
+attempts are reused unless an explicit forced rerun is requested. Every attempt transitions
+through the `ai_extractions` audit record, while the video transitions through `processing` to
+`queued`, `ignored`, `review`, or `failed`. This gate creates no signals or opportunities.
+
+The provider boundary is an application-owned `AIClient`; v0.1 supplies an OpenAI Responses API
+adapter with schema-constrained output. Provider errors are persisted with safe error categories,
+and provider raw output is never returned by the admin API.
+
+The provider performs only a small configured retry budget for transient transport/service errors;
+the worker retains its existing infrastructure-only retry boundary. A returned response that fails
+schema validation is recorded once as `invalid_output` and routed to review, not blindly retried.
+Relevant videos enter `queued` for TASK-016 signal extraction. `ignored` retains the RAW video and
+means only that the current prompt version classified it as irrelevant; a later explicit prompt
+version may evaluate it again.
 
 ### Business signal extractor
 

@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 2 — YouTube Collection
+Phase 3 — AI Intelligence
 
 ## Completed
 
@@ -20,12 +20,14 @@ Phase 2 — YouTube Collection
 - [x] TASK-012 Metadata / Snapshot Collection
 - [x] TASK-013 Comment Collection
 - [x] TASK-014 Collection Worker Runtime
+- [x] TASK-015 Relevance Filter Pipeline
 
 ## Next
 
-- [ ] TASK-015 Relevance Filter Pipeline
 - [ ] TASK-016 Signal Extraction Pipeline
 - [ ] TASK-017 Comment Pain Mining Pipeline
+- [ ] TASK-018 Opportunity Normalization Pipeline
+- [ ] TASK-019 Trend Aggregation
 
 ## Validation debt
 

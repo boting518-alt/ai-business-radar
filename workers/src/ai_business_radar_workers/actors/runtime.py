@@ -2,6 +2,7 @@ import asyncio
 import logging
 from collections.abc import Awaitable, Callable
 
+from ai_business_radar_api.infrastructure.ai import AIConfigurationError, PromptNotFoundError
 from ai_business_radar_api.services.youtube_discovery import (
     InvalidDiscoveryMode,
     SearchQueryDisabled,
@@ -10,7 +11,14 @@ from ai_business_radar_api.services.youtube_discovery import (
 from pydantic import ValidationError
 
 logger = logging.getLogger(__name__)
-PermanentErrors = (ValidationError, SearchQueryNotFound, SearchQueryDisabled, InvalidDiscoveryMode)
+PermanentErrors = (
+    ValidationError,
+    SearchQueryNotFound,
+    SearchQueryDisabled,
+    InvalidDiscoveryMode,
+    AIConfigurationError,
+    PromptNotFoundError,
+)
 
 
 def run_async(factory: Callable[[], Awaitable[object]]) -> object:

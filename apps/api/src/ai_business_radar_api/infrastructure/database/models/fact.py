@@ -36,6 +36,10 @@ class AIExtraction(Base):
     error_message: Mapped[str | None] = mapped_column(Text)
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    input_tokens: Mapped[int | None] = mapped_column(Integer)
+    output_tokens: Mapped[int | None] = mapped_column(Integer)
+    total_tokens: Mapped[int | None] = mapped_column(Integer)
+    provider_request_id: Mapped[str | None]
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 

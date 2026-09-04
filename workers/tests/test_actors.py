@@ -9,6 +9,8 @@ from ai_business_radar_api.services.youtube_discovery import SearchQueryDisabled
 
 from ai_business_radar_workers.actors import (
     recover_stale_collection_claims,
+    relevance,
+    run_relevance_filter,
     run_youtube_comment_collection,
     run_youtube_discovery,
     run_youtube_metadata_collection,
@@ -25,6 +27,7 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_youtube_metadata_collection: "youtube_metadata",
         run_youtube_comment_collection: "youtube_comments",
         recover_stale_collection_claims: "maintenance",
+        run_relevance_filter: "ai_relevance",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -129,3 +132,27 @@ async def test_execute_functions_invoke_application_services(
     monkeypatch.setattr(module, service_name, Service)
     result = await getattr(module, execute_name)(payload, settings)
     assert result.status == "completed" and len(called) == 1
+
+
+@pytest.mark.asyncio
+async def test_relevance_actor_delegates_to_service(monkeypatch) -> None:
+    called = []
+
+    @asynccontextmanager
+    async def dependencies(_settings):
+        yield "sessions", "ai"
+
+    class Service:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+        async def analyze_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    settings = SimpleNamespace(ai_provider="openai", ai_model_relevance="test")
+    monkeypatch.setattr(relevance, "relevance_dependencies", dependencies)
+    monkeypatch.setattr(relevance, "VideoRelevanceService", Service)
+    result = await relevance.execute_relevance({"limit": 3}, settings)
+    assert result.status == "completed"
+    assert called[0].limit == 3
