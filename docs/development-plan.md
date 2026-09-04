@@ -19,10 +19,10 @@ Phase 2 — YouTube Collection
 - [x] TASK-011 YouTube Discovery Pipeline
 - [x] TASK-012 Metadata / Snapshot Collection
 - [x] TASK-013 Comment Collection
+- [x] TASK-014 Collection Worker Runtime
 
 ## Next
 
-- [ ] TASK-014 Collection Worker Runtime
 - [ ] TASK-015 Relevance Filter Pipeline
 - [ ] TASK-016 Signal Extraction Pipeline
 - [ ] TASK-017 Comment Pain Mining Pipeline

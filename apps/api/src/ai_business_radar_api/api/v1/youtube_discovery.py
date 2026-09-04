@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request, status
 from ...infrastructure.auth import RequiredAdmin
 from ...infrastructure.external.youtube import YouTubeClient
 from ...infrastructure.external.youtube.dependencies import get_youtube_client
+from ...infrastructure.queue import JobEnqueuer, QueuedJob, QueueUnavailableError
 from ...services.youtube_comments import (
     CanonicalVideosNotFound,
     CommentCollectionRequest,
@@ -28,6 +29,25 @@ from ...services.youtube_metadata import (
 )
 
 router = APIRouter(prefix="/admin/youtube", tags=["admin", "youtube"])
+
+
+def get_job_enqueuer(request: Request) -> JobEnqueuer:
+    redis_url = request.app.state.settings.redis_url
+    if redis_url is None:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, "Collection queue is not configured"
+        )
+    return JobEnqueuer(redis_url.get_secret_value())
+
+
+def enqueue_job(enqueuer: JobEnqueuer, *, queue: str, actor: str, payload: dict) -> QueuedJob:
+    try:
+        job_id = enqueuer.enqueue(queue=queue, actor=actor, payload=payload)
+    except QueueUnavailableError as error:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, "Collection queue is unavailable"
+        ) from error
+    return QueuedJob(job_id=job_id, queue=queue)
 
 
 def get_youtube_discovery_service(
@@ -104,3 +124,45 @@ async def collect_comments(
             status.HTTP_404_NOT_FOUND,
             "One or more canonical videos were not found or are ineligible",
         ) from error
+
+
+@router.post("/discovery/jobs", response_model=QueuedJob, status_code=status.HTTP_202_ACCEPTED)
+async def enqueue_discovery(
+    discovery_request: DiscoveryRequest,
+    _: RequiredAdmin,
+    enqueuer: Annotated[JobEnqueuer, Depends(get_job_enqueuer)],
+) -> QueuedJob:
+    return enqueue_job(
+        enqueuer,
+        queue="youtube_discovery",
+        actor="run_youtube_discovery",
+        payload=discovery_request.model_dump(mode="json", exclude_none=True),
+    )
+
+
+@router.post("/metadata/jobs", response_model=QueuedJob, status_code=status.HTTP_202_ACCEPTED)
+async def enqueue_metadata(
+    metadata_request: MetadataCollectionRequest,
+    _: RequiredAdmin,
+    enqueuer: Annotated[JobEnqueuer, Depends(get_job_enqueuer)],
+) -> QueuedJob:
+    return enqueue_job(
+        enqueuer,
+        queue="youtube_metadata",
+        actor="run_youtube_metadata_collection",
+        payload=metadata_request.model_dump(mode="json", exclude_none=True),
+    )
+
+
+@router.post("/comments/jobs", response_model=QueuedJob, status_code=status.HTTP_202_ACCEPTED)
+async def enqueue_comments(
+    comment_request: CommentCollectionRequest,
+    _: RequiredAdmin,
+    enqueuer: Annotated[JobEnqueuer, Depends(get_job_enqueuer)],
+) -> QueuedJob:
+    return enqueue_job(
+        enqueuer,
+        queue="youtube_comments",
+        actor="run_youtube_comment_collection",
+        payload=comment_request.model_dump(mode="json", exclude_none=True),
+    )

@@ -291,11 +291,11 @@ async def test_claim_pending_uses_skip_locked(metadata_database) -> None:
     discovery_run_id, _ = await seed_staging(factory, "claim-v1")
     async with factory() as first, first.begin():
         claimed = await YouTubeDiscoveryItemRepository(first).claim_pending(
-            limit=1, collection_run_id=discovery_run_id
+            limit=1, claimed_at=NOW, collection_run_id=discovery_run_id
         )
         async with factory() as second, second.begin():
             competing = await YouTubeDiscoveryItemRepository(second).claim_pending(
-                limit=1, collection_run_id=discovery_run_id
+                limit=1, claimed_at=NOW, collection_run_id=discovery_run_id
             )
         assert len(claimed) == 1 and competing == []
 

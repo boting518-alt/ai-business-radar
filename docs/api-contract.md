@@ -112,6 +112,10 @@ Admin-only manual trigger for one bounded metadata collection. The request accep
 
 Admin-only manual trigger for bounded top-level comment collection. The request accepts optional canonical `video_ids`, `limit_videos` (1–100), `max_pages_per_video` (1–5), `max_comments_per_video` (1–500), and `order` (`relevance` or `time`). The response reports video/page/comment counts, estimated quota units, timestamps, safe reason, and final run status. Missing or ineligible explicit canonical video IDs return 404.
 
+### Asynchronous collection jobs
+
+`POST /api/v1/admin/youtube/discovery/jobs`, `/metadata/jobs`, and `/comments/jobs` accept the corresponding synchronous endpoint request model and return `202` with `job_id`, fixed `queue`, and `status: queued`. The job ID identifies the Dramatiq transport message; a collection run ID exists only after worker execution starts. Redis enqueue failure returns a safe 503. No durable job-status endpoint is defined in v0.1.
+
 Roles remain the frozen `user` and `admin` roles described in ADR-003.
 
 ## Pagination direction
@@ -133,6 +137,9 @@ Implemented:
 - `POST /api/v1/admin/youtube/discovery`
 - `POST /api/v1/admin/youtube/metadata`
 - `POST /api/v1/admin/youtube/comments`
+- `POST /api/v1/admin/youtube/discovery/jobs`
+- `POST /api/v1/admin/youtube/metadata/jobs`
+- `POST /api/v1/admin/youtube/comments/jobs`
 
 Planned:
 

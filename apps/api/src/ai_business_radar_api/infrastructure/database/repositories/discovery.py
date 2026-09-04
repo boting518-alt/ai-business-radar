@@ -27,6 +27,19 @@ class SearchQueryRepository:
             )
         )
 
+    async def list_enabled_discovery(self, *, limit: int) -> list[SearchQuery]:
+        return list(
+            await self.session.scalars(
+                select(SearchQuery)
+                .where(
+                    SearchQuery.enabled.is_(True),
+                    SearchQuery.discovery_mode == "discovery",
+                )
+                .order_by(SearchQuery.priority.desc(), SearchQuery.created_at, SearchQuery.id)
+                .limit(limit)
+            )
+        )
+
     async def update_last_run_at(self, entity_id: UUID, attempted_at: datetime) -> None:
         await self.session.execute(
             update(SearchQuery).where(SearchQuery.id == entity_id).values(last_run_at=attempted_at)
@@ -113,7 +126,7 @@ class YouTubeDiscoveryItemRepository:
         )
 
     async def claim_pending(
-        self, *, limit: int, collection_run_id: UUID | None = None
+        self, *, limit: int, claimed_at: datetime, collection_run_id: UUID | None = None
     ) -> list[YouTubeDiscoveryItem]:
         query = (
             select(YouTubeDiscoveryItem)
@@ -129,7 +142,7 @@ class YouTubeDiscoveryItemRepository:
             await self.session.execute(
                 update(YouTubeDiscoveryItem)
                 .where(YouTubeDiscoveryItem.id.in_([item.id for item in items]))
-                .values(processing_status="processing")
+                .values(processing_status="processing", claimed_at=claimed_at)
             )
             for item in items:
                 item.processing_status = "processing"
@@ -143,20 +156,20 @@ class YouTubeDiscoveryItemRepository:
             .where(YouTubeDiscoveryItem.id == entity_id)
             .values(
                 processing_status="processed",
+                claimed_at=None,
                 canonical_video_id=canonical_video_id,
                 processed_at=processed_at,
                 error_summary=None,
             )
         )
 
-    async def mark_failed(
-        self, entity_id: UUID, *, processed_at: datetime, reason: str
-    ) -> None:
+    async def mark_failed(self, entity_id: UUID, *, processed_at: datetime, reason: str) -> None:
         await self.session.execute(
             update(YouTubeDiscoveryItem)
             .where(YouTubeDiscoveryItem.id == entity_id)
             .values(
                 processing_status="failed",
+                claimed_at=None,
                 canonical_video_id=None,
                 processed_at=processed_at,
                 error_summary=reason,
@@ -172,5 +185,24 @@ class YouTubeDiscoveryItemRepository:
                 YouTubeDiscoveryItem.id.in_(entity_ids),
                 YouTubeDiscoveryItem.processing_status == "processing",
             )
-            .values(processing_status="pending")
+            .values(processing_status="pending", claimed_at=None)
         )
+
+    async def recover_stale_claims(self, *, stale_before: datetime, limit: int) -> int:
+        candidate_ids = (
+            select(YouTubeDiscoveryItem.id)
+            .where(
+                YouTubeDiscoveryItem.processing_status == "processing",
+                YouTubeDiscoveryItem.claimed_at < stale_before,
+            )
+            .order_by(YouTubeDiscoveryItem.claimed_at, YouTubeDiscoveryItem.id)
+            .limit(limit)
+            .with_for_update(skip_locked=True)
+        )
+        statement = (
+            update(YouTubeDiscoveryItem)
+            .where(YouTubeDiscoveryItem.id.in_(candidate_ids))
+            .values(processing_status="pending", claimed_at=None)
+            .returning(YouTubeDiscoveryItem.id)
+        )
+        return len((await self.session.scalars(statement)).all())

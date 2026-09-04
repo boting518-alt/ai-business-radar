@@ -1,0 +1,131 @@
+import json
+from contextlib import asynccontextmanager
+from datetime import UTC, datetime
+from types import SimpleNamespace
+from uuid import uuid4
+
+import pytest
+from ai_business_radar_api.services.youtube_discovery import SearchQueryDisabled
+
+from ai_business_radar_workers.actors import (
+    recover_stale_collection_claims,
+    run_youtube_comment_collection,
+    run_youtube_discovery,
+    run_youtube_metadata_collection,
+    youtube_comments,
+    youtube_discovery,
+    youtube_metadata,
+)
+from ai_business_radar_workers.actors.runtime import run_async
+
+
+def test_actor_queues_and_payloads_are_serializable() -> None:
+    actors = {
+        run_youtube_discovery: "youtube_discovery",
+        run_youtube_metadata_collection: "youtube_metadata",
+        run_youtube_comment_collection: "youtube_comments",
+        recover_stale_collection_claims: "maintenance",
+    }
+    for actor, queue in actors.items():
+        assert actor.queue_name == queue
+        assert actor.options["max_retries"] == 2
+    payload = {
+        "search_query_id": str(uuid4()),
+        "published_after": datetime.now(UTC).isoformat(),
+        "max_pages": 1,
+    }
+    assert json.loads(json.dumps(payload)) == payload
+
+
+def test_permanent_errors_do_not_escape_for_actor_retry() -> None:
+    async def permanent():
+        raise SearchQueryDisabled("disabled")
+
+    assert run_async(permanent) is None
+
+
+def test_retryable_infrastructure_error_escapes_and_partial_result_does_not() -> None:
+    async def retryable():
+        raise ConnectionError("safe")
+
+    with pytest.raises(ConnectionError):
+        run_async(retryable)
+
+    class Partial:
+        status = "partial"
+
+    async def partial():
+        return Partial()
+
+    assert run_async(partial).status == "partial"
+
+
+def test_validation_error_is_permanent() -> None:
+    async def invalid():
+        from ai_business_radar_api.services.youtube_discovery import DiscoveryRequest
+
+        DiscoveryRequest(search_query_id=uuid4(), max_pages=99)
+
+    assert run_async(invalid) is None
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("module", "execute_name", "service_name", "method", "payload"),
+    [
+        (
+            youtube_discovery,
+            "execute_discovery",
+            "YouTubeDiscoveryService",
+            "discover",
+            {"search_query_id": str(uuid4())},
+        ),
+        (
+            youtube_metadata,
+            "execute_metadata",
+            "YouTubeMetadataCollectionService",
+            "collect",
+            {"limit": 1},
+        ),
+        (
+            youtube_comments,
+            "execute_comments",
+            "YouTubeCommentCollectionService",
+            "collect",
+            {"limit_videos": 1},
+        ),
+    ],
+)
+async def test_execute_functions_invoke_application_services(
+    monkeypatch, module, execute_name, service_name, method, payload
+) -> None:
+    called = []
+
+    @asynccontextmanager
+    async def dependencies(_settings):
+        yield "sessions", "youtube"
+
+    class Service:
+        def __init__(self, *_args, **_kwargs) -> None:
+            pass
+
+        def __getattribute__(self, name):
+            if name == method:
+
+                async def invoke(request):
+                    called.append(request)
+                    return SimpleNamespace(status="completed")
+
+                return invoke
+            return object.__getattribute__(self, name)
+
+    settings = SimpleNamespace(
+        youtube_metadata_batch_size=50,
+        youtube_comment_batch_size=20,
+        youtube_discovery_max_quota_units_per_run=500,
+        youtube_comment_max_quota_units_per_run=500,
+    )
+    monkeypatch.setattr(module, "collection_dependencies", dependencies)
+    monkeypatch.setattr(module, service_name, Service)
+    result = await getattr(module, execute_name)(payload, settings)
+    assert result.status == "completed" and len(called) == 1

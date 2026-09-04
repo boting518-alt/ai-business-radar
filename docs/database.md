@@ -344,7 +344,7 @@ The `review_tasks` target is a constrained application-level reference described
 
 ### 6.19 `youtube_discovery_items`
 
-Internal RAW staging links each accepted search result to its discovery `collection_run` and managed `search_query`. It retains external IDs and optional search snippets, which are non-authoritative hints. `(collection_run_id, youtube_video_id)` is unique, so duplicates within a run are ignored while the same video may appear in later runs. `processing_status` is `pending`, `processing`, `processed`, or `failed`; terminal rows record `processed_at`, successful rows link `canonical_video_id`, and failed rows store a safe `error_summary`. Metadata collectors claim pending rows atomically. RLS is enabled with no authenticated-user policy.
+Internal RAW staging links each accepted search result to its discovery `collection_run` and managed `search_query`. It retains external IDs and optional search snippets, which are non-authoritative hints. `(collection_run_id, youtube_video_id)` is unique, so duplicates within a run are ignored while the same video may appear in later runs. `processing_status` is `pending`, `processing`, `processed`, or `failed`; active claims record `claimed_at`, terminal rows record `processed_at`, successful rows link `canonical_video_id`, and failed rows store a safe `error_summary`. Metadata collectors claim pending rows atomically; maintenance may reset only expired processing claims. RLS is enabled with no authenticated-user policy.
 
 ## 7. Relationship rules
 

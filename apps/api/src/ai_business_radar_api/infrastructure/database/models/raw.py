@@ -165,6 +165,7 @@ class YouTubeDiscoveryItem(Base):
     thumbnail_url: Mapped[str | None] = mapped_column(Text)
     discovered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     processing_status: Mapped[str]
+    claimed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     canonical_video_id: Mapped[UUID | None] = mapped_column(ForeignKey("videos.id"))
     processed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     error_summary: Mapped[str | None] = mapped_column(Text)

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-business-radar-workers"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "ai-business-radar-api",
+    "ai-business-radar-schemas",
+    "apscheduler>=3.11,<4",
+    "dramatiq[redis]>=1.18,<2",
+    "pydantic-settings>=2.7,<3",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "pytest-asyncio>=0.24,<2", "ruff>=0.13,<1"]
+
+[tool.uv.sources]
+ai-business-radar-api = { path = "../apps/api", editable = true }
+ai-business-radar-schemas = { path = "../packages/schemas/python", editable = true }
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_business_radar_workers"]

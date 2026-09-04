@@ -24,6 +24,7 @@ def test_critical_columns_remain_mapped() -> None:
             "search_query_id",
             "youtube_video_id",
             "processing_status",
+            "claimed_at",
             "canonical_video_id",
             "processed_at",
             "error_summary",

@@ -157,7 +157,9 @@ class YouTubeMetadataCollectionService:
             )
             await CollectionRunRepository(session).mark_running(run.id, started_at)
             items = await YouTubeDiscoveryItemRepository(session).claim_pending(
-                limit=request.limit, collection_run_id=request.collection_run_id
+                limit=request.limit,
+                claimed_at=started_at,
+                collection_run_id=request.collection_run_id,
             )
             await CollectionRunRepository(session).update_progress(
                 run.id, items_discovered=len(items), metadata=metadata
