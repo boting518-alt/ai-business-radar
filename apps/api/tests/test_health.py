@@ -25,11 +25,34 @@ def test_health_returns_typed_service_status() -> None:
     }
 
 
-def test_readiness_is_application_level_only() -> None:
+def test_readiness_reports_unconfigured_database_without_failing_startup() -> None:
     app = create_app(Settings(_env_file=None))
 
     with TestClient(app) as client:
         response = client.get("/api/v1/health/ready")
 
     assert response.status_code == 200
-    assert response.json() == {"status": "ready"}
+    assert response.json() == {
+        "status": "ready",
+        "dependencies": {"database": "not_configured"},
+    }
+
+
+def test_readiness_returns_503_when_configured_database_is_unreachable() -> None:
+    class FailingSession:
+        async def __aenter__(self) -> None:
+            raise OSError("database unavailable")
+
+        async def __aexit__(self, *args: object) -> None:
+            return None
+
+    app = create_app(Settings(_env_file=None))
+    with TestClient(app) as client:
+        app.state.database_session_factory = FailingSession
+        response = client.get("/api/v1/health/ready")
+
+    assert response.status_code == 503
+    assert response.json() == {
+        "status": "not_ready",
+        "dependencies": {"database": "not_ready"},
+    }

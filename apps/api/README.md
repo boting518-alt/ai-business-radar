@@ -1,6 +1,6 @@
 # YouTube AI Business Radar API
 
-Runnable FastAPI skeleton for the v0.1 backend. It currently provides application-level health checks, environment-backed configuration, request correlation IDs, CORS configuration, and package boundaries. It does not connect to PostgreSQL, Redis, YouTube, Supabase Auth, or an AI provider.
+Runnable FastAPI service with an async SQLAlchemy 2.x/asyncpg repository layer. The checked-in SQL migration remains the database schema authority; ORM metadata is persistence mapping only.
 
 ## Requirements
 
@@ -17,6 +17,20 @@ uv run ruff check .
 
 The shared schema package is installed as an editable local dependency from `../../packages/schemas/python`.
 
+## PostgreSQL
+
+Set `DATABASE_URL` to either `postgresql://...` or `postgresql+asyncpg://...`; the former is normalized internally to the asyncpg dialect. URLs are never logged. The API and health liveness endpoint start without this value. A database operation without configuration fails explicitly, and readiness reports `database: not_configured`.
+
+Repository methods share a caller-owned `AsyncSession`, flush or execute changes, and never commit. Application services own commit/rollback boundaries. RLS is intentionally deferred to TASK-009.
+
+Real PostgreSQL integration tests create a random temporary database, apply `database/migrations/0001_initial_schema.sql`, run the tests, and drop it:
+
+```bash
+POSTGRES_TEST_ADMIN_URL=postgresql://user@127.0.0.1:5432/postgres uv run pytest tests/integration
+```
+
+The admin URL must point to a disposable local/test PostgreSQL role allowed to create databases. Never use production credentials. Without this variable, integration tests are skipped; SQLite is not used.
+
 ## Run locally
 
 From `apps/api`:
@@ -25,4 +39,4 @@ From `apps/api`:
 uv run uvicorn ai_business_radar_api.main:app --reload
 ```
 
-The API is available under `/api/v1`. No external service credentials are required for skeleton startup or health checks.
+The API is available under `/api/v1`. Redis, YouTube, Supabase Auth, RLS, and AI-provider integration are not implemented yet.

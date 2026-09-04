@@ -42,17 +42,20 @@ Successful response, HTTP 200:
 
 ### `GET /api/v1/health/ready`
 
-Reports application-level readiness for TASK-007. PostgreSQL, Supabase, Redis, YouTube, and AI-provider readiness checks are intentionally absent until those integrations exist.
+Reports application and PostgreSQL readiness. It does not check Supabase Auth, Redis, YouTube, or the AI provider.
 
 Successful response, HTTP 200:
 
 ```json
 {
-  "status": "ready"
+  "status": "ready",
+  "dependencies": {
+    "database": "ready"
+  }
 }
 ```
 
-Future tasks may extend readiness with dependency checks without changing the meaning of the liveness endpoint.
+When `DATABASE_URL` is absent (supported for development and liveness-only startup), HTTP 200 uses `database: not_configured`. When configured PostgreSQL is unreachable, HTTP 503 uses `status: not_ready` and `database: not_ready`. Future tasks may add dependency keys without changing liveness semantics.
 
 ## Error response direction
 
