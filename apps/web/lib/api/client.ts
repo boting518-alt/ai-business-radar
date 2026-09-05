@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, Query, RadarResponse, ReviewDecision } from "./types";
+import type { CurrentUser, EvidenceItem, OpportunityDetail, Query, RadarResponse, ReviewDecision, ScoreItem, TrendItem } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -22,10 +22,10 @@ export class ApiClient {
   getCurrentUser=()=>this.request<CurrentUser>("/api/v1/auth/me");
   getRadar=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/radar",query));
   listOpportunities=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/opportunities",query));
-  getOpportunity=(id:string)=>this.request<unknown>(`/api/v1/opportunities/${id}`);
-  getOpportunityTrends=(id:string,query:Query={})=>this.request<unknown>(this.path(`/api/v1/opportunities/${id}/trends`,query));
-  getOpportunityScores=(id:string,query:Query={})=>this.request<unknown>(this.path(`/api/v1/opportunities/${id}/scores`,query));
-  getOpportunityEvidence=(id:string,query:Query={})=>this.request<unknown>(this.path(`/api/v1/opportunities/${id}/evidence`,query));
+  getOpportunity=(id:string)=>this.request<OpportunityDetail>(`/api/v1/opportunities/${encodeURIComponent(id)}`);
+  getOpportunityTrends=(id:string,query:Query={})=>this.request<TrendItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/trends`,query));
+  getOpportunityScores=(id:string,query:Query={})=>this.request<ScoreItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/scores`,query));
+  getOpportunityEvidence=(id:string,query:Query={})=>this.request<EvidenceItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/evidence`,query));
   listSignals=(query:Query={})=>this.request<unknown>(this.path("/api/v1/signals",query));
   listReviews=(query:Query={})=>this.request<unknown>(this.path("/api/v1/admin/reviews",query));
   getReview=(id:string)=>this.request<unknown>(`/api/v1/admin/reviews/${id}`);

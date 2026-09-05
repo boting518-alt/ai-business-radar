@@ -44,12 +44,12 @@ response offers to clear filters. No production fixtures or sample opportunities
 
 Large screens use a semantic sortable table. Smaller screens use stacked compact records that
 prioritize Score, momentum, Confidence, and Hype Risk without horizontal overflow. Opportunity
-names are links to `/opportunities/{slug}`; TASK-025 owns the destination's full implementation.
-Watchlist membership is read-only in this task.
+names link to the implemented evidence-backed `/opportunities/{slug}` dossier. Watchlist
+membership remains read-only.
 
 ## Known limitations
 
 - Filters accept one exact value per classification field in the current UI, although the API can
   accept repeated values.
 - The summary averages describe only the returned page.
-- No watchlist mutation, chart, saved view, or detail implementation is included.
+- No watchlist mutation, chart, or saved view is included.

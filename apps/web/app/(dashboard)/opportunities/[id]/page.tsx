@@ -1,2 +1,6 @@
-import { PagePlaceholder } from "@/components/layout/page-placeholder";
-export default function OpportunityDetail(){return <PagePlaceholder title="机会详情" description="检查评分、趋势、证据与商业论点。" sections={["Overview","Score","Trend","Evidence","Business Thesis"]}/>}
+import { OpportunityDossier } from "@/components/opportunities/opportunity-dossier";
+
+export default async function OpportunityDetailPage({params}:{params:Promise<{id:string}>}){
+  const {id}=await params;
+  return <OpportunityDossier identifier={id}/>;
+}

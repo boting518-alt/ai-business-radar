@@ -68,9 +68,31 @@ evidence counts, and read-only watchlist state. Null intelligence uses an em das
 the controls visible with a table skeleton; empty states distinguish an unpopulated Radar from a
 filtered result with no matches.
 
-## Known limitations and TASK-025 transition
+## Opportunity detail implementation
+
+`/opportunities/[id]` accepts the backend's UUID-or-slug identifier and renders an authenticated
+intelligence dossier. After resolving the browser session, it starts detail, bounded trend
+history, bounded score history, and paginated evidence reads together with `Promise.all`. There
+are no per-evidence, per-video, or per-history-row requests. The four typed responses remain
+separate because the detail endpoint intentionally carries only current intelligence and compact
+summaries.
+
+The detail response owns identity, business thesis, current score components, latest 7d/30d/90d
+trends, evidence totals, and watchlist state. History and evidence endpoints supply their own
+sections. The frontend formats dates, prices, and null values only; it never recomputes a score or
+infers market stage. `trend_window` and `evidence_offset` are URL state, with trend history bounded
+to 50 rows and evidence pages bounded to 10 rows.
+
+The dossier uses a dense research layout: header and key metrics first, then business thesis,
+three-window trend overview, seven persisted score components, evidence totals and supporting
+evidence, followed by trend/score history and metadata. Sections stack naturally on small screens;
+history tables alone use bounded horizontal scrolling. A 404 uses the same message for missing and
+invisible records. Evidence renders only the safe API fields and excludes author identity, raw AI
+output, reproducibility inputs, and provider internals.
+
+## Known limitations and TASK-026 transition
 
 There is no signup/magic-link UI, theme toggle, mobile drawer, visualization, review action UI,
 signal feed, or watchlist write flow. Industry, business model, and customer type remain exact
-text filters because no taxonomy endpoint exists. TASK-025 will replace the linked opportunity
-detail skeleton with the complete evidence-backed detail page.
+text filters because no taxonomy endpoint exists. Detail history is presented as compact tables
+without a charting dependency. TASK-026 owns the administrative review interface.

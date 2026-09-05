@@ -30,10 +30,10 @@ Phase 5 — Frontend MVP
 - [x] TASK-022 Radar Query API
 - [x] TASK-023 Frontend Skeleton
 - [x] TASK-024 Radar Page
+- [x] TASK-025 Opportunity Detail Page
 
 ## Next
 
-- [ ] TASK-025 Opportunity Detail Page
 - [ ] TASK-026 Admin Review UI
 - [ ] TASK-027 Signals + Watchlist UI
 - [ ] TASK-028 End-to-End MVP QA
