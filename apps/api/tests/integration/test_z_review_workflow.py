@@ -114,6 +114,7 @@ async def test_claim_defer_and_signal_decision_are_safe(postgres_url) -> None:
     admins, video_id, signal_id, task_id = await seed(factory)
     service = ReviewWorkflowService(factory)
 
+    detail = await service.get_task(task_id)
     claimed = await service.claim_task(task_id, admins[0])
     with pytest.raises(ReviewAssignmentConflict):
         await service.claim_task(task_id, admins[1])
@@ -137,6 +138,8 @@ async def test_claim_defer_and_signal_decision_are_safe(postgres_url) -> None:
         task = await session.get(ReviewTask, task_id)
     await engine.dispose()
 
+    assert detail.context["signal"]["statement"] == "A traceable pain"
+    assert "raw_output" not in detail.context
     assert claimed.status == "in_review"
     assert deferred.status == "pending" and deferred.resolved_at is None
     assert resolved.status == "resolved" and resolved.resolved_by == admins[1]
@@ -210,6 +213,7 @@ async def test_match_and_merge_preserve_rows_and_collapse_links(postgres_url) ->
             )
         )
     service = ReviewWorkflowService(factory)
+    match_detail = await service.get_task(match_task)
     matched = await service.decide(
         match_task, admins[0], ReviewDecisionRequest(decision="approve")
     )
@@ -254,6 +258,9 @@ async def test_match_and_merge_preserve_rows_and_collapse_links(postgres_url) ->
         )
     await engine.dispose()
 
+    assert [item["id"] for item in match_detail.context["candidates"]] == [
+        opportunity_ids[0]
+    ]
     assert matched.side_effects["signal_status"] == "active"
     assert merged.side_effects["source_opportunity_status"] == "merged"
     assert source is not None and source.status == "merged"

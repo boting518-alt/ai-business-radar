@@ -129,7 +129,77 @@ class ReviewWorkflowService:
             task = await ReviewTaskRepository(session).get_by_id(task_id)
             if task is None:
                 raise ReviewTaskNotFound("Review task was not found")
-            return self._task_result(task)
+            result = self._task_result(task)
+            result.context = await self._presentation_context(session, task)
+            return result
+
+    async def _presentation_context(self, session, task) -> dict[str, Any]:
+        """Project persisted IDs into safe, human-readable review detail."""
+        stored = task.context if isinstance(task.context, dict) else {}
+        context = {
+            key: stored.get(key)
+            for key in ("reason", "model_action", "proposed_opportunity_id")
+            if stored.get(key) is not None
+        }
+        if task.target_type == "signal":
+            signal = await session.get(Signal, task.target_id)
+            if signal is not None:
+                context["signal"] = self._signal_context(signal)
+
+        raw_candidate_ids = stored.get("candidate_ids")
+        candidate_ids = [self._uuid(value) for value in raw_candidate_ids or []]
+        candidate_ids = [value for value in candidate_ids if value is not None]
+        canonical_id = next(
+            (
+                self._uuid(stored.get(key))
+                for key in (
+                    "canonical_opportunity_id",
+                    "merge_target_opportunity_id",
+                    "target_opportunity_id",
+                )
+                if self._uuid(stored.get(key)) is not None
+            ),
+            None,
+        )
+        opportunity_ids = set(candidate_ids)
+        if task.target_type == "opportunity":
+            opportunity_ids.add(task.target_id)
+        if canonical_id is not None:
+            opportunity_ids.add(canonical_id)
+        opportunities = list(
+            await session.scalars(
+                select(Opportunity).where(Opportunity.id.in_(opportunity_ids))
+            )
+        ) if opportunity_ids else []
+        by_id = {item.id: self._opportunity_context(item) for item in opportunities}
+        if candidate_ids:
+            context["candidates"] = [by_id[value] for value in candidate_ids if value in by_id]
+        if task.target_type == "opportunity" and task.target_id in by_id:
+            context["source_opportunity"] = by_id[task.target_id]
+        if canonical_id is not None and canonical_id in by_id:
+            context["canonical_opportunity"] = by_id[canonical_id]
+        return context
+
+    @staticmethod
+    def _signal_context(signal) -> dict[str, Any]:
+        return {
+            key: getattr(signal, key)
+            for key in (
+                "id", "signal_type", "statement", "evidence_text", "claim_status",
+                "confidence", "evidence_strength", "industry", "customer_type", "problem",
+                "solution", "observed_at", "source_type",
+            )
+        }
+
+    @staticmethod
+    def _opportunity_context(opportunity) -> dict[str, Any]:
+        return {
+            key: getattr(opportunity, key)
+            for key in (
+                "id", "slug", "name", "one_line_thesis", "industry", "customer_type",
+                "problem", "solution", "market_stage", "first_detected_at", "last_activity_at",
+            )
+        }
 
     async def claim_task(self, task_id: UUID, admin_user_id: UUID) -> ReviewWorkflowResult:
         now = datetime.now(UTC)

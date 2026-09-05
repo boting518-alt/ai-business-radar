@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, EvidenceItem, OpportunityDetail, Query, RadarResponse, ReviewDecision, ScoreItem, TrendItem } from "./types";
+import type { CurrentUser, EvidenceItem, OpportunityDetail, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, TrendItem } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -27,8 +27,8 @@ export class ApiClient {
   getOpportunityScores=(id:string,query:Query={})=>this.request<ScoreItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/scores`,query));
   getOpportunityEvidence=(id:string,query:Query={})=>this.request<EvidenceItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/evidence`,query));
   listSignals=(query:Query={})=>this.request<unknown>(this.path("/api/v1/signals",query));
-  listReviews=(query:Query={})=>this.request<unknown>(this.path("/api/v1/admin/reviews",query));
-  getReview=(id:string)=>this.request<unknown>(`/api/v1/admin/reviews/${id}`);
-  claimReview=(id:string)=>this.request<unknown>(`/api/v1/admin/reviews/${id}/claim`,{method:"POST"});
-  decideReview=(id:string,body:ReviewDecision)=>this.request<unknown>(`/api/v1/admin/reviews/${id}/decision`,{method:"POST",body:JSON.stringify(body)});
+  listReviews=(query:Query={})=>this.request<ReviewListResult>(this.path("/api/v1/admin/reviews",query));
+  getReview=(id:string)=>this.request<ReviewTask>(`/api/v1/admin/reviews/${encodeURIComponent(id)}`);
+  claimReview=(id:string)=>this.request<ReviewWorkflowResult>(`/api/v1/admin/reviews/${encodeURIComponent(id)}/claim`,{method:"POST"});
+  decideReview=(id:string,body:ReviewDecision)=>this.request<ReviewWorkflowResult>(`/api/v1/admin/reviews/${encodeURIComponent(id)}/decision`,{method:"POST",body:JSON.stringify(body)});
 }

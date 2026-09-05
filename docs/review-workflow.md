@@ -55,6 +55,11 @@ Context is persisted input, not trusted state. UUIDs, entity existence, target e
 candidate membership, extraction output, and canonical names are revalidated at decision time.
 Decision notes are human audit text and never machine state.
 
+The detail read model may add safe signal and opportunity summaries to the returned context for
+human inspection. This transient presentation projection does not alter persisted context; the
+service continues to validate decisions exclusively against locked database state and the original
+workflow inputs.
+
 The task lock and every domain effect share one PostgreSQL transaction. A validation or persistence
 failure rolls back the complete decision. Admin authorization is enforced by FastAPI and existing
 RLS policies continue to restrict `review_tasks` to application admins. Watchlist reconciliation
@@ -65,5 +70,5 @@ changes only the referenced opportunity and never crosses watchlist ownership.
 Claim/defer event history is intentionally limited to current task fields; final decisions remain
 auditable. Release is deferred because direct decision and defer provide the minimum admin flow.
 There is no task reopening, manual score override, market-stage policy, or autonomous merge.
-TASK-026 may build the admin UI on the list/detail/claim/decision endpoints without duplicating
-workflow policy. TASK-022 may consume approved state for Radar queries.
+The TASK-026 admin UI uses the list/detail/claim/decision endpoints without duplicating workflow
+policy. TASK-022 consumes approved state for Radar queries.

@@ -182,6 +182,12 @@ executes the validated domain decision transactionally. Missing tasks/targets re
 assignment or lifecycle conflicts return 409, and invalid decision or merge semantics return 422.
 All review routes are admin-only; no release endpoint is included in v0.1.
 
+The task detail response may enrich persisted `context` with a read-only presentation projection:
+safe signal evidence plus bounded source, candidate, and canonical opportunity summaries. This
+projection is resolved from current records, is never persisted back into workflow context, and is
+not trusted for decisions. It excludes raw model output, provider data, input hashes, extraction
+errors, scoring internals, and arbitrary database fields.
+
 ### Product Radar and opportunity reads
 
 All product query routes require an authenticated application user and explicitly expose only

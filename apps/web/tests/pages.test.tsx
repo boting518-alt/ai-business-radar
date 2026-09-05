@@ -7,4 +7,4 @@ import Watchlist from "@/app/(dashboard)/watchlist/page";
 import Reviews from "@/app/(dashboard)/admin/review/page";
 vi.mock("next/navigation",()=>({useRouter:()=>({replace:vi.fn()}),useSearchParams:()=>new URLSearchParams()}));
 vi.mock("@/lib/auth/client",()=>({createClient:()=>({auth:{getSession:vi.fn().mockResolvedValue({data:{session:null}})}})}));
-describe("MVP route shells",()=>{it.each([[Radar,"AI Business Radar"],[Opportunities,"机会库"],[Signals,"信号"],[Watchlist,"关注列表"],[Reviews,"人工审核"]] as const)("renders its page heading",(Page,title)=>{render(<Page/>);expect(screen.getByRole("heading",{name:title})).toBeInTheDocument()})});
+describe("MVP route shells",()=>{it.each([[Radar,"AI Business Radar"],[Opportunities,"机会库"],[Signals,"信号"],[Watchlist,"关注列表"],[Reviews,"Admin Review"]] as const)("renders its page heading",(Page,title)=>{render(<Page/>);expect(screen.getByRole("heading",{name:title})).toBeInTheDocument()})});

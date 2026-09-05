@@ -90,9 +90,23 @@ history tables alone use bounded horizontal scrolling. A 404 uses the same messa
 invisible records. Evidence renders only the safe API fields and excludes author identity, raw AI
 output, reproducibility inputs, and provider internals.
 
-## Known limitations and TASK-026 transition
+## Admin review implementation
 
-There is no signup/magic-link UI, theme toggle, mobile drawer, visualization, review action UI,
-signal feed, or watchlist write flow. Industry, business model, and customer type remain exact
-text filters because no taxonomy endpoint exists. Detail history is presented as compact tables
-without a charting dependency. TASK-026 owns the administrative review interface.
+`/admin/review` is a URL-addressable queue/detail workspace. Its default queue is `pending`, with
+status, type, assignee, offset, and selection encoded in search parameters. Queue reads are bounded
+to 25 tasks. Detail reads use the safe presentation projection documented in the API contract; the
+component never displays arbitrary context JSON or AI provenance internals.
+
+Claim and decision mutations go only through `ApiClient`. The interface waits for confirmed server
+results, prevents duplicate submission, refreshes the queue, and advances selection after success.
+Conflict, validation, missing-record, and authorization states fail safely and retain request IDs.
+Merge targets are bounded by task context and require an explicit confirmation dialog describing
+the history-preserving merge behavior. Backend workflow validation remains authoritative.
+
+## Known limitations and TASK-027 transition
+
+There is no signup/magic-link UI, theme toggle, mobile drawer, visualization, signal feed, or
+watchlist write flow. Industry, business model, and customer type remain exact text filters because
+no taxonomy endpoint exists. Detail history is presented as compact tables without a charting
+dependency. The review queue has no total count or admin directory. TASK-027 owns Signals and
+Watchlist UI.
