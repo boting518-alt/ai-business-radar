@@ -21,6 +21,7 @@ from ai_business_radar_api.tools.live_validation import (
     database_identity,
     preflight_ready,
     safe_error,
+    safe_provider_diagnostic,
 )
 
 
@@ -213,6 +214,60 @@ def test_preflight_requires_keys_models_database_and_redis() -> None:
     assert preflight_ready(checks)
     checks["OPENAI_API_KEY"] = "missing"
     assert not preflight_ready(checks)
+
+
+def test_live_preflight_requires_both_provider_checks_to_pass() -> None:
+    checks = {
+        **configuration_status(
+            Settings(
+                _env_file=None,
+                youtube_api_key="youtube-secret",
+                openai_api_key="openai-secret",
+                ai_provider="openai",
+                ai_model_relevance="model",
+                ai_model_signal_extraction="model",
+                ai_model_comment_pain_mining="model",
+                ai_model_opportunity_normalization="model",
+            )
+        ),
+        "migrations": "ready",
+        "redis": "reachable",
+        "live_requests": True,
+        "youtube_live": "passed",
+        "openai_live": {"status": "failed", "error_type": "BadRequestError"},
+    }
+    assert not preflight_ready(checks)
+    checks["openai_live"] = "passed"
+    assert preflight_ready(checks)
+
+
+def test_provider_diagnostic_is_bounded_and_redacts_credentials() -> None:
+    openai_secret = "sk-this-is-a-configured-secret-value"
+    bearer_secret = "header-token-that-must-not-leak"
+    root = RuntimeError("provider request failed")
+    root.body = {
+        "error": {
+            "message": (
+                f"Invalid schema using {openai_secret}; "
+                f"Authorization: Bearer {bearer_secret}"
+            )
+        }
+    }
+    outer = RuntimeError("wrapper")
+    outer.__cause__ = root
+
+    diagnostic = safe_provider_diagnostic(
+        outer,
+        Settings(_env_file=None, openai_api_key=openai_secret),
+    )
+    serialized = json.dumps(diagnostic)
+
+    assert diagnostic["status"] == "failed"
+    assert diagnostic["error_type"] == "RuntimeError"
+    assert "Invalid schema" in diagnostic["message"]
+    assert len(diagnostic["message"]) <= 500
+    assert openai_secret not in serialized
+    assert bearer_secret not in serialized
 
 
 def test_report_has_token_totals_checklist_and_no_supplied_secret(tmp_path: Path) -> None:

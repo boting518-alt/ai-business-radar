@@ -316,10 +316,11 @@ class OpportunityNormalizationService:
     async def _complete(self, signal, candidates, extraction_id, parsed, response):
         now = datetime.now(UTC)
         action = parsed.action.value
+        confidence = Decimal(str(parsed.confidence))
         review_reason = None
-        if action == "MATCH" and parsed.confidence < self._match_threshold:
+        if action == "MATCH" and confidence < self._match_threshold:
             action, review_reason = "REVIEW", "match_confidence_below_threshold"
-        elif action == "CREATE" and parsed.confidence < self._create_threshold:
+        elif action == "CREATE" and confidence < self._create_threshold:
             action, review_reason = "REVIEW", "create_confidence_below_threshold"
 
         async with self._sessions() as session, session.begin():
@@ -332,7 +333,7 @@ class OpportunityNormalizationService:
                     opportunity_id=opportunity_id,
                     signal_id=signal.id,
                     relationship_type="supporting",
-                    confidence=parsed.confidence,
+                    confidence=confidence,
                     created_at=now,
                 )
                 await opportunities.update_last_activity(opportunity_id, signal.observed_at or now)
@@ -372,7 +373,7 @@ class OpportunityNormalizationService:
                         opportunity_id=opportunity.id,
                         signal_id=signal.id,
                         relationship_type="supporting",
-                        confidence=parsed.confidence,
+                        confidence=confidence,
                         created_at=now,
                     )
                     await SignalRepository(session).update_status(signal.id, "active")
@@ -391,7 +392,7 @@ class OpportunityNormalizationService:
                         target_type="signal",
                         target_id=signal.id,
                         status="pending",
-                        priority=parsed.confidence,
+                        priority=confidence,
                         assigned_to=None,
                         decision=None,
                         decision_notes=None,
@@ -414,7 +415,7 @@ class OpportunityNormalizationService:
                 completed_at=now,
                 raw_output=response.raw_output,
                 parsed_output=parsed.model_dump(mode="json"),
-                confidence=parsed.confidence,
+                confidence=confidence,
                 input_tokens=response.input_tokens,
                 output_tokens=response.output_tokens,
                 total_tokens=response.total_tokens,

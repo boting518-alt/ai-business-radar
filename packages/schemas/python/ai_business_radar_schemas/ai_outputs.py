@@ -5,11 +5,11 @@ from uuid import UUID
 from pydantic import model_validator
 
 from .common import (
-    NonNegativeDecimal,
-    NormalizedConfidence,
-    PriceRange,
+    AIConfidence,
+    AINonNegativeNumber,
+    AIPriceRange,
+    AIScore100,
     SchemaModel,
-    Score100,
 )
 from .enums import (
     ClaimStatus,
@@ -21,7 +21,7 @@ from .enums import (
 
 class RelevanceFilterOutput(SchemaModel):
     relevant: bool
-    relevance_score: NormalizedConfidence
+    relevance_score: AIConfidence
     content_type: str | None
     primary_topic: str | None
     reason: str
@@ -32,7 +32,7 @@ class ExtractedBusinessSignal(SchemaModel):
     statement: str
     evidence: str
     claim_status: ClaimStatus
-    confidence: NormalizedConfidence
+    confidence: AIConfidence
 
 
 class BusinessSignalExtractorOutput(SchemaModel):
@@ -43,7 +43,7 @@ class BusinessSignalExtractorOutput(SchemaModel):
     business_model: str | None
     technology: list[str]
     distribution: list[str]
-    pricing: PriceRange | None
+    pricing: AIPriceRange | None
     signals: list[ExtractedBusinessSignal]
 
 
@@ -52,9 +52,9 @@ class CommentPainSignal(SchemaModel):
     pain: str
     current_solution: str | None
     requested_solution: str | None
-    spend: NonNegativeDecimal | None
+    spend: AINonNegativeNumber | None
     purchase_intent: bool
-    evidence_strength: NormalizedConfidence
+    evidence_strength: AIConfidence
     comment_id: UUID
 
 
@@ -66,7 +66,7 @@ class OpportunityNormalizerOutput(SchemaModel):
     action: OpportunityNormalizationAction
     opportunity_id: UUID | None
     canonical_name: str
-    confidence: NormalizedConfidence
+    confidence: AIConfidence
     reason: str
 
     @model_validator(mode="after")
@@ -81,8 +81,8 @@ class OpportunityNormalizerOutput(SchemaModel):
 
 
 class HypeDetectorOutput(SchemaModel):
-    content_hype_score: Score100
-    real_demand_score: Score100
+    content_hype_score: AIScore100
+    real_demand_score: AIScore100
     classification: HypeClassification
     reason: str
 

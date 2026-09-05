@@ -17,32 +17,16 @@
       "$ref": "#/$defs/HypeClassification"
     },
     "content_hype_score": {
-      "anyOf": [
-        {
-          "maximum": 100.0,
-          "minimum": 0.0,
-          "type": "number"
-        },
-        {
-          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-          "type": "string"
-        }
-      ],
-      "title": "Content Hype Score"
+      "maximum": 100.0,
+      "minimum": 0.0,
+      "title": "Content Hype Score",
+      "type": "number"
     },
     "real_demand_score": {
-      "anyOf": [
-        {
-          "maximum": 100.0,
-          "minimum": 0.0,
-          "type": "number"
-        },
-        {
-          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-          "type": "string"
-        }
-      ],
-      "title": "Real Demand Score"
+      "maximum": 100.0,
+      "minimum": 0.0,
+      "title": "Real Demand Score",
+      "type": "number"
     },
     "reason": {
       "title": "Reason",

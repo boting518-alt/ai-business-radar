@@ -211,6 +211,19 @@ Stop local processes and delete the dedicated database manually only when its id
 independently verified. Reports and collected local data are not fixtures and must not be committed.
 Errors are reduced to exception class names; provider responses and credentials are never printed.
 
+Provider preflight failures include only a bounded diagnostic object with `status`, `error_type`,
+and a credential-redacted provider message. Request payloads and raw provider responses are not
+included. With `preflight --live`, both `youtube_live` and `openai_live` must equal `passed`; a
+provider failure exits non-zero.
+
+Before a live OpenAI preflight, verify the checked-in structured-output artifacts from
+`packages/schemas/python`:
+
+```bash
+uv run pytest tests/test_openai_schema_compatibility.py
+uv run python scripts/export_ai_json_schemas.py
+```
+
 Known limits: no automatic clean reset, no browser review automation, no scheduler/queue execution,
 no automatic duplicate metric, and no real cost estimate. A stage failure stops later stages but
 still writes all completed-stage results and a sanitized partial report.

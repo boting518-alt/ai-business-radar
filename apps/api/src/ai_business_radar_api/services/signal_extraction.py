@@ -211,8 +211,9 @@ class BusinessSignalExtractionService:
 
     async def _complete(self, extraction_id, video, parsed, response) -> int:
         now = datetime.now(UTC)
+        confidences = [Decimal(str(item.confidence)) for item in parsed.signals]
         confidence = (
-            sum((item.confidence for item in parsed.signals), Decimal(0)) / len(parsed.signals)
+            sum(confidences, Decimal(0)) / len(confidences)
             if parsed.signals
             else None
         )
@@ -250,14 +251,14 @@ class BusinessSignalExtractionService:
             problem=parsed.problem,
             solution=parsed.solution,
             business_model=parsed.business_model,
-            price_min=pricing.min if pricing else None,
-            price_max=pricing.max if pricing else None,
+            price_min=Decimal(str(pricing.min)) if pricing and pricing.min is not None else None,
+            price_max=Decimal(str(pricing.max)) if pricing and pricing.max is not None else None,
             price_currency=pricing.currency if pricing else None,
             price_period=pricing.period if pricing else None,
             technology=parsed.technology or None,
             distribution_channels=parsed.distribution or None,
             claim_status=item.claim_status,
-            confidence=item.confidence,
+            confidence=Decimal(str(item.confidence)),
             observed_at=video.published_at,
             status="review",
         )

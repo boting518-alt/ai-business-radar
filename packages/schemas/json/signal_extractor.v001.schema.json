@@ -1,61 +1,8 @@
 {
   "$defs": {
-    "ClaimStatus": {
-      "enum": [
-        "fact",
-        "creator_claim",
-        "inferred",
-        "opinion",
-        "speculation",
-        "unknown"
-      ],
-      "title": "ClaimStatus",
-      "type": "string"
-    },
-    "ExtractedBusinessSignal": {
+    "AIPriceRange": {
       "additionalProperties": false,
-      "properties": {
-        "claim_status": {
-          "$ref": "#/$defs/ClaimStatus"
-        },
-        "confidence": {
-          "anyOf": [
-            {
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-              "type": "string"
-            }
-          ],
-          "title": "Confidence"
-        },
-        "evidence": {
-          "title": "Evidence",
-          "type": "string"
-        },
-        "statement": {
-          "title": "Statement",
-          "type": "string"
-        },
-        "type": {
-          "$ref": "#/$defs/SignalType"
-        }
-      },
-      "required": [
-        "type",
-        "statement",
-        "evidence",
-        "claim_status",
-        "confidence"
-      ],
-      "title": "ExtractedBusinessSignal",
-      "type": "object"
-    },
-    "PriceRange": {
-      "additionalProperties": false,
+      "description": "Provider-facing price range; persistence converts amounts to Decimal.",
       "properties": {
         "currency": {
           "anyOf": [
@@ -76,10 +23,6 @@
               "type": "number"
             },
             {
-              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-              "type": "string"
-            },
-            {
               "type": "null"
             }
           ],
@@ -91,10 +34,6 @@
             {
               "minimum": 0.0,
               "type": "number"
-            },
-            {
-              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-              "type": "string"
             },
             {
               "type": "null"
@@ -116,7 +55,53 @@
           "title": "Period"
         }
       },
-      "title": "PriceRange",
+      "title": "AIPriceRange",
+      "type": "object"
+    },
+    "ClaimStatus": {
+      "enum": [
+        "fact",
+        "creator_claim",
+        "inferred",
+        "opinion",
+        "speculation",
+        "unknown"
+      ],
+      "title": "ClaimStatus",
+      "type": "string"
+    },
+    "ExtractedBusinessSignal": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_status": {
+          "$ref": "#/$defs/ClaimStatus"
+        },
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/SignalType"
+        }
+      },
+      "required": [
+        "type",
+        "statement",
+        "evidence",
+        "claim_status",
+        "confidence"
+      ],
+      "title": "ExtractedBusinessSignal",
       "type": "object"
     },
     "SignalType": {
@@ -187,7 +172,7 @@
     "pricing": {
       "anyOf": [
         {
-          "$ref": "#/$defs/PriceRange"
+          "$ref": "#/$defs/AIPriceRange"
         },
         {
           "type": "null"

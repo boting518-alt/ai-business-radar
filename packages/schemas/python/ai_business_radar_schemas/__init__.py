@@ -8,7 +8,16 @@ from .ai_outputs import (
     OpportunityNormalizerOutput,
     RelevanceFilterOutput,
 )
-from .common import NonNegativeDecimal, NonNegativeInt, NormalizedConfidence, Score100
+from .common import (
+    AIConfidence,
+    AINonNegativeNumber,
+    AIPriceRange,
+    AIScore100,
+    NonNegativeDecimal,
+    NonNegativeInt,
+    NormalizedConfidence,
+    Score100,
+)
 from .opportunities import OpportunityCreate, OpportunityRead, OpportunitySummary
 from .reviews import ReviewDecisionRequest, ReviewTaskRead
 from .scoring import (
@@ -26,6 +35,10 @@ from .sources import (
 
 __all__ = [
     "AI_OUTPUT_MODELS",
+    "AIConfidence",
+    "AINonNegativeNumber",
+    "AIPriceRange",
+    "AIScore100",
     "BusinessSignalExtractorOutput",
     "CommentPainMinerOutput",
     "CommentSourceRef",

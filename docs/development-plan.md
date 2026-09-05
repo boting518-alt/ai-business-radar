@@ -37,6 +37,7 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-027 Signals + Watchlist UI
 - [x] TASK-028 End-to-End MVP QA
 - [x] TASK-029 Local Live API & Intelligence Validation
+- [x] TASK-029A OpenAI Structured Output Schema Compatibility Fix
 
 ## Next
 

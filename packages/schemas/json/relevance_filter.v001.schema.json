@@ -28,18 +28,10 @@
       "type": "string"
     },
     "relevance_score": {
-      "anyOf": [
-        {
-          "maximum": 1.0,
-          "minimum": 0.0,
-          "type": "number"
-        },
-        {
-          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-          "type": "string"
-        }
-      ],
-      "title": "Relevance Score"
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Relevance Score",
+      "type": "number"
     },
     "relevant": {
       "title": "Relevant",

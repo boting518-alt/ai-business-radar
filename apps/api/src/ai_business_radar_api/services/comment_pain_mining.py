@@ -262,8 +262,8 @@ class CommentPainMiningService:
             problem=item.pain,
             solution=item.requested_solution or item.current_solution,
             claim_status="unknown",
-            confidence=item.evidence_strength,
-            evidence_strength=item.evidence_strength,
+            confidence=Decimal(str(item.evidence_strength)),
+            evidence_strength=Decimal(str(item.evidence_strength)),
             observed_at=comment.published_at,
             status="review",
         )
@@ -273,9 +273,9 @@ class CommentPainMiningService:
 
     async def _complete(self, extraction_id, parsed, response, rows) -> int:
         now = datetime.now(UTC)
+        strengths = [Decimal(str(item.evidence_strength)) for item in parsed.signals]
         confidence = (
-            sum((item.evidence_strength for item in parsed.signals), Decimal(0))
-            / len(parsed.signals)
+            sum(strengths, Decimal(0)) / len(strengths)
             if parsed.signals
             else None
         )

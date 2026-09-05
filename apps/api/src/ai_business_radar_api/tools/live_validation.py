@@ -4,6 +4,7 @@ import argparse
 import asyncio
 import csv
 import json
+import re
 import sys
 from collections import Counter
 from dataclasses import dataclass, field
@@ -189,6 +190,33 @@ def configured(secret: Any) -> bool:
 def safe_error(error: BaseException) -> str:
     """Never serialize provider exception messages, which may contain request details."""
     return type(error).__name__
+
+
+def safe_provider_diagnostic(error: BaseException, settings: Settings) -> dict[str, str]:
+    """Expose only a bounded provider category/message with credentials redacted."""
+    root = error.__cause__ or error
+    body = getattr(root, "body", None)
+    provider_error = body.get("error", {}) if isinstance(body, dict) else {}
+    message = provider_error.get("message") if isinstance(provider_error, dict) else None
+    if not isinstance(message, str):
+        message = str(getattr(root, "message", "Provider request failed"))
+    secrets = (
+        settings.youtube_api_key,
+        settings.openai_api_key,
+        settings.supabase_service_role_key,
+        settings.supabase_jwt_secret,
+    )
+    for secret in secrets:
+        if configured(secret):
+            message = message.replace(secret.get_secret_value(), "[REDACTED]")
+    message = re.sub(r"(?i)bearer\s+[a-z0-9._-]+", "Bearer [REDACTED]", message)
+    message = re.sub(r"\bsk-[A-Za-z0-9_-]{12,}\b", "[REDACTED]", message)
+    message = re.sub(r"\bAIza[0-9A-Za-z_-]{20,}\b", "[REDACTED]", message)
+    return {
+        "status": "failed",
+        "error_type": type(root).__name__,
+        "message": message[:500],
+    }
 
 
 def configuration_status(settings: Settings) -> dict[str, str]:
@@ -864,15 +892,20 @@ def preflight_ready(checks: dict[str, Any]) -> bool:
         "AI_MODEL_COMMENT_PAIN_MINING",
         "AI_MODEL_OPPORTUNITY_NORMALIZATION",
     )
-    return (
+    configuration_is_ready = (
         checks.get("migrations") == "ready"
         and checks.get("redis") == "reachable"
         and checks.get("AI_PROVIDER") == "openai"
         and all(checks.get(name) not in {None, "", "missing"} for name in required)
     )
+    if not configuration_is_ready:
+        return False
+    if checks.get("live_requests"):
+        return checks.get("youtube_live") == "passed" and checks.get("openai_live") == "passed"
+    return True
 
 
-async def _youtube_live_preflight(settings: Settings) -> str:
+async def _youtube_live_preflight(settings: Settings) -> str | dict[str, str]:
     if not configured(settings.youtube_api_key):
         return "skipped_missing_key"
     client = YouTubeClient(
@@ -886,10 +919,10 @@ async def _youtube_live_preflight(settings: Settings) -> str:
             await client.search_videos("AI business", max_results=1)
         return "passed"
     except Exception as error:
-        return f"failed:{safe_error(error)}"
+        return safe_provider_diagnostic(error, settings)
 
 
-async def _openai_live_preflight(settings: Settings) -> str:
+async def _openai_live_preflight(settings: Settings) -> str | dict[str, str]:
     if not configured(settings.openai_api_key) or not settings.ai_model_relevance:
         return "skipped_missing_configuration"
     client = OpenAIClient(settings.openai_api_key.get_secret_value(), max_retries=0)
@@ -916,7 +949,7 @@ async def _openai_live_preflight(settings: Settings) -> str:
         )
         return "passed"
     except Exception as error:
-        return f"failed:{safe_error(error)}"
+        return safe_provider_diagnostic(error, settings)
 
 
 def build_services(

@@ -167,6 +167,18 @@ The exporter calls Pydantic `model_json_schema(mode="validation")` for the five 
 
 Tests regenerate schemas into a temporary directory and compare them with direct Pydantic output. Changes to a Pydantic contract require regenerated artifacts and review of prompt compatibility.
 
+### OpenAI structured-output numeric compatibility
+
+The AI transport models use JSON `number` fields with simple `minimum` and `maximum` constraints.
+They must not emit Decimal compatibility branches such as `number|string`, or regex patterns with
+lookaround assertions, because those constructs are not accepted by OpenAI Structured Outputs.
+
+This is a transport-boundary rule only. Domain calculations and PostgreSQL `NUMERIC` persistence
+continue to use `Decimal`; application services convert validated AI floats explicitly with
+`Decimal(str(value))`. Compatibility tests inspect all five structured-output schemas before their
+generated artifacts are committed. The semantic `v001` contracts and prompts are unchanged by this
+provider-compatibility correction.
+
 ## Prompt/schema version relationship
 
 Prompt and schema versions begin at `v001` and are independently identifiable but released deliberately as a compatible pair for each task.

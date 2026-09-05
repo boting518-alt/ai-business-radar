@@ -24,18 +24,10 @@
           "title": "Current Solution"
         },
         "evidence_strength": {
-          "anyOf": [
-            {
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-              "type": "string"
-            }
-          ],
-          "title": "Evidence Strength"
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Evidence Strength",
+          "type": "number"
         },
         "pain": {
           "title": "Pain",
@@ -61,10 +53,6 @@
             {
               "minimum": 0.0,
               "type": "number"
-            },
-            {
-              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
-              "type": "string"
             },
             {
               "type": "null"
