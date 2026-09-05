@@ -39,6 +39,9 @@ available locally and a mocked browser layer would duplicate the existing compon
 - Redis/Dramatiq: run successfully against an isolated localhost instance.
 - Supabase Auth/PostgreSQL and Vercel/container deployment: not exercised against target managed
   services.
+- A bounded localhost-only live-validation CLI is available in
+  `docs/local-live-validation.md`; no real provider call is claimed until the user explicitly runs
+  its non-dry commands and reviews the generated report.
 
 ## Security and privacy review
 

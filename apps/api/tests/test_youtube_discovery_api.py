@@ -25,7 +25,7 @@ class DiscoveryServiceStub:
             pages_completed=1,
             items_discovered=1,
             unique_video_count=1,
-            estimated_quota_units=100,
+            estimated_quota_units=1,
             next_page_token=None,
             status="completed",
             started_at=now,
@@ -73,5 +73,5 @@ def test_admin_can_trigger_discovery() -> None:
         )
     assert response.status_code == 200
     assert response.json()["search_query_id"] == str(query_id)
-    assert response.json()["estimated_quota_units"] == 100
+    assert response.json()["estimated_quota_units"] == 1
     assert service.called is True

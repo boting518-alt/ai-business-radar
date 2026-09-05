@@ -26,7 +26,7 @@ Search and comment methods return exactly one requested page with continuation t
 
 The adapter exposes local published-cost metadata, not account quota remaining:
 
-- `search.list`: 100 units and therefore high cost.
+- `search.list`: 1 unit per request in a dedicated default 100-calls/day Search Queries bucket.
 - `videos.list`, `channels.list`, `commentThreads.list`: 1 unit per request.
 
 TASK-011 owns collection-run quota budgets and decisions about how many search pages to request.
@@ -57,7 +57,7 @@ TASK-011 implements admin-triggered discovery from enabled `search_queries` whos
 
 The service uses short database transactions before and after network calls. It never holds a transaction open while awaiting YouTube. Search results enter `youtube_discovery_items`, an internal RAW staging table, instead of polluting canonical channel/video records with incomplete search snippets. TASK-012 owns conversion of pending staging items into canonical metadata.
 
-Pagination is bounded by `max_pages` (1–5), optional `max_results` (up to 250), missing continuation tokens, and the configured per-run estimated quota budget. Search cost is counted as 100 units per logical page request. Items are deduplicated by video ID within and across pages and by a database uniqueness constraint within each run. `items_discovered` means unique items accepted by that run.
+Pagination is bounded by `max_pages` (1–5), optional `max_results` (up to 250), missing continuation tokens, and the configured per-run estimated quota budget. Since Google's June 2026 quota change, search cost is counted as 1 unit per logical page request against a dedicated default 100-calls/day Search Queries bucket. Items are deduplicated by video ID within and across pages and by a database uniqueness constraint within each run. `items_discovered` means unique items accepted by that run.
 
 Zero results complete normally. A YouTube failure before any completed page marks the run failed; a failure after progress marks it partial. Reaching the quota budget with more pages available also produces a partial run after progress. Early stops preserve `next_page_token` for inspection, but automatic resume and scheduling are intentionally deferred.
 

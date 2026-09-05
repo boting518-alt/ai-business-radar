@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     supabase_jwt_issuer: str | None = None
     supabase_jwt_audience: str | None = "authenticated"
     database_url: SecretStr | None = None
+    live_validation_database_url: SecretStr | None = None
     redis_url: SecretStr | None = None
 
     youtube_api_key: SecretStr | None = None

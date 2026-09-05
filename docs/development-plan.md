@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 5 — MVP Complete / QA
+Phase 6 — Live Validation
 
 MVP STATUS: READY WITH KNOWN GAPS
 
@@ -36,10 +36,14 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-026 Admin Review UI
 - [x] TASK-027 Signals + Watchlist UI
 - [x] TASK-028 End-to-End MVP QA
+- [x] TASK-029 Local Live API & Intelligence Validation
 
 ## Next
 
-- Staging deployment and live-provider verification
+- [ ] TASK-030 Local Intelligence Quality Review / Prompt Tuning
+- [ ] TASK-031 Staging Infrastructure Deployment
+- [ ] TASK-032 Managed Supabase Auth + RLS Drill
+- [ ] TASK-033 Staging Live Integration Validation
 
 ## Validation debt
 

@@ -54,3 +54,14 @@ JWT identity is resolved to `user_profiles.auth_user_id`; the application role a
 Set the server-only `YOUTUBE_API_KEY` to use the official YouTube Data API v3 adapter. Optional settings control the official base URL, HTTP timeout, and bounded retry attempts. The adapter supports `search.list`, `videos.list`, `channels.list`, and `commentThreads.list`; it does not scrape YouTube or fetch unofficial transcripts, and it performs no persistence or worker orchestration.
 
 Automated tests use `httpx.MockTransport` and never require a real key or network. A manual smoke test is optional: with `YOUTUBE_API_KEY` set locally, instantiate `YouTubeClient` in an async Python shell and make one small `search_videos` request followed by `get_videos` for one returned ID. Never print the key or store the response. Live calls are not a CI requirement.
+
+For the bounded, repeatable YouTube/OpenAI validation workflow, see
+`../../docs/local-live-validation.md` and start with:
+
+```bash
+uv run python scripts/live_validation.py preflight
+uv run python scripts/live_validation.py full --query "AI dental receptionist" --dry-run
+```
+
+The non-dry commands require the dedicated localhost database
+`ai_business_radar_live_test`; they never start the scheduler.

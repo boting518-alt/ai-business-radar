@@ -23,6 +23,7 @@ coverage/
 *.log
 logs/
 tmp/
+artifacts/live-validation/
 
 # IDE and operating system
 .DS_Store

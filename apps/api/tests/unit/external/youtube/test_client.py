@@ -295,5 +295,5 @@ async def test_malformed_success_response_maps_validation_error() -> None:
 
 
 def test_quota_cost_metadata_is_explicit() -> None:
-    assert YouTubeQuotaCost.SEARCH_LIST == 100
+    assert YouTubeQuotaCost.SEARCH_LIST == 1
     assert YouTubeQuotaCost.VIDEOS_LIST == 1

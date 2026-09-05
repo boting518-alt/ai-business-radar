@@ -109,7 +109,7 @@ async def test_enabled_query_completes_and_persists_run_and_staging(
     assert result.status == "completed"
     assert result.items_discovered == result.unique_video_count == 2
     assert result.pages_requested == result.pages_completed == 1
-    assert result.estimated_quota_units == 100
+    assert result.estimated_quota_units == 1
     async with factory() as session:
         run = await session.get(CollectionRun, result.collection_run_id)
         items = list(
@@ -121,7 +121,7 @@ async def test_enabled_query_completes_and_persists_run_and_staging(
         )
         query = await session.get(SearchQuery, query_id)
     assert run.status == "completed" and run.finished_at is not None
-    assert run.items_discovered == 2 and run.metadata_["estimated_quota_units"] == 100
+    assert run.items_discovered == 2 and run.metadata_["estimated_quota_units"] == 1
     assert query.last_run_at == result.started_at
     assert {item.youtube_video_id for item in items} == {"v1", "v2"}
     assert youtube.calls[0]["region_code"] == "US"
@@ -174,7 +174,7 @@ async def test_multiple_pages_deduplicate_and_stop_at_max_pages(
     )
     assert result.pages_completed == 2 and result.unique_video_count == 3
     assert result.next_page_token == "three"
-    assert result.estimated_quota_units == 200
+    assert result.estimated_quota_units == 2
     assert len(youtube.calls) == 2
 
 
@@ -199,11 +199,11 @@ async def test_quota_budget_stops_after_progress_as_partial(
     _, factory = discovery_database
     query_id = await create_query(factory)
     youtube = YouTubeStub([page("v1", next_token="more")])
-    result = await YouTubeDiscoveryService(factory, youtube, max_quota_units_per_run=100).discover(
+    result = await YouTubeDiscoveryService(factory, youtube, max_quota_units_per_run=1).discover(
         DiscoveryRequest(search_query_id=query_id, max_pages=3)
     )
     assert result.status == "partial" and result.reason == "quota_budget_reached"
-    assert result.pages_completed == 1 and result.estimated_quota_units == 100
+    assert result.pages_completed == 1 and result.estimated_quota_units == 1
     assert result.next_page_token == "more" and len(youtube.calls) == 1
 
 

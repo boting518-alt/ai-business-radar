@@ -97,3 +97,11 @@ inserts, but a clean database gives the most predictable demonstration.
 Run component validation from each workspace using its README commands. Stop the web, scheduler,
 worker, API, Redis, and PostgreSQL processes after the demo. Never copy placeholder JWT subjects or
 development secrets into production configuration.
+
+## Local Live Validation
+
+For bounded validation against the official YouTube and OpenAI APIs, use the explicit CLI described
+in `docs/local-live-validation.md`. It requires a separate localhost database named
+`ai_business_radar_live_test`, never starts the scheduler, and writes ignored reports under
+`artifacts/live-validation/`. Start with config-only preflight and dry-run; real API calls occur only
+after you explicitly run a non-dry command.
