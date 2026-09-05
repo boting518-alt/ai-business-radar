@@ -2,7 +2,9 @@
 
 ## Current Phase
 
-Phase 5 — Frontend MVP
+Phase 5 — MVP Complete / QA
+
+MVP STATUS: READY WITH KNOWN GAPS
 
 ## Completed
 
@@ -33,14 +35,17 @@ Phase 5 — Frontend MVP
 - [x] TASK-025 Opportunity Detail Page
 - [x] TASK-026 Admin Review UI
 - [x] TASK-027 Signals + Watchlist UI
+- [x] TASK-028 End-to-End MVP QA
 
 ## Next
 
-- [ ] TASK-028 End-to-End MVP QA
+- Staging deployment and live-provider verification
 
 ## Validation debt
 
-No open validation debt. The 0001 migration and repository integration suite were validated against PostgreSQL 16.15 during TASK-008.
+No local validation debt. All migrations, API/PostgreSQL integration tests, shared schemas, workers,
+frontend checks, and a real local Redis broker smoke test passed during TASK-028. Live YouTube,
+OpenAI, managed Supabase, and production deployment verification remain explicit environment gaps.
 
 ## Deferred
 

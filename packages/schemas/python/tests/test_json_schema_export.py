@@ -4,7 +4,6 @@ from pathlib import Path
 from ai_business_radar_schemas.ai_outputs import AI_OUTPUT_MODELS
 from scripts.export_ai_json_schemas import export_schemas
 
-
 CHECKED_IN_SCHEMA_DIRECTORY = Path(__file__).resolve().parents[2] / "json"
 
 

@@ -118,7 +118,11 @@ async def test_personal_watchlist_create_list_duplicate_and_remove(postgres_url)
         watchlist_count = await session.scalar(
             select(func.count(Watchlist.id)).where(Watchlist.user_profile_id == users[0])
         )
-        item_count = await session.scalar(select(func.count(WatchlistItem.id)))
+        item_count = await session.scalar(
+            select(func.count(WatchlistItem.id))
+            .join(Watchlist, Watchlist.id == WatchlistItem.watchlist_id)
+            .where(Watchlist.user_profile_id == users[0])
+        )
     await engine.dispose()
 
     assert empty.items == [] and other.items == []

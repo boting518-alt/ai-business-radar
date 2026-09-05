@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=8,<9", "pytest-asyncio>=0.24,<2", "ruff>=0.13,<1"]
+dev = ["pytest>=9.0.3,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.13,<1"]
 
 [tool.uv.sources]
 ai-business-radar-api = { path = "../apps/api", editable = true }

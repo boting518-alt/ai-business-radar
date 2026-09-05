@@ -2,6 +2,37 @@ BEGIN;
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
+-- Supabase pre-creates these API roles. Standalone PostgreSQL needs compatible
+-- roles so the portable RLS migration can grant privileges without test setup.
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'anon') THEN
+        CREATE ROLE anon NOLOGIN;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'authenticated') THEN
+        CREATE ROLE authenticated NOLOGIN;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'service_role') THEN
+        CREATE ROLE service_role NOLOGIN BYPASSRLS;
+    END IF;
+END
+$$;
+
+-- Supabase provides auth.uid(). A portable PostgreSQL deployment needs the same
+-- claim-reader contract before the RLS migration; never replace Supabase's function.
+CREATE SCHEMA IF NOT EXISTS auth;
+DO $$
+BEGIN
+    IF to_regprocedure('auth.uid()') IS NULL THEN
+        EXECUTE $function$
+            CREATE FUNCTION auth.uid() RETURNS UUID
+            LANGUAGE SQL STABLE
+            AS 'SELECT NULLIF(current_setting(''request.jwt.claim.sub'', TRUE), '''')::UUID'
+        $function$;
+    END IF;
+END
+$$;
+
 -- Identity/support. auth_user_id logically references Supabase auth.users(id),
 -- but no cross-schema FK is created in this portable initial migration.
 CREATE TABLE user_profiles (

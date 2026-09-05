@@ -38,7 +38,9 @@ class OpportunityCreate(SchemaModel):
             raise ValueError("slug and name must not be blank")
         if self.typical_price_min is not None and self.typical_price_max is not None:
             if self.typical_price_min > self.typical_price_max:
-                raise ValueError("typical_price_min must be less than or equal to typical_price_max")
+                raise ValueError(
+                    "typical_price_min must be less than or equal to typical_price_max"
+                )
         if (
             self.typical_price_min is not None or self.typical_price_max is not None
         ) and not self.typical_price_currency:

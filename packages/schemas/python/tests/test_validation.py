@@ -3,8 +3,6 @@ from decimal import Decimal
 from uuid import uuid4
 
 import pytest
-from pydantic import ValidationError
-
 from ai_business_radar_schemas.ai_outputs import (
     BusinessSignalExtractorOutput,
     HypeDetectorOutput,
@@ -24,6 +22,7 @@ from ai_business_radar_schemas.opportunities import OpportunityCreate
 from ai_business_radar_schemas.reviews import ReviewDecisionRequest
 from ai_business_radar_schemas.scoring import OpportunityScoreComponents
 from ai_business_radar_schemas.signals import SignalCreate, SignalExtractionCandidate
+from pydantic import ValidationError
 
 
 def candidate_data() -> dict[str, object]:
@@ -213,7 +212,7 @@ def test_hype_output_uses_explicit_taxonomy() -> None:
 
 def test_opportunity_base_model_has_no_score_columns() -> None:
     now = datetime.now(UTC)
-    opportunity = OpportunityCreate(
+    OpportunityCreate(
         slug="ai-dental-receptionist",
         name="AI Dental Receptionist",
         market_stage=MarketStage.EMERGING,

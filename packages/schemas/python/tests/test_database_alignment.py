@@ -3,7 +3,6 @@ from enum import StrEnum
 from pathlib import Path
 
 import pytest
-
 from ai_business_radar_schemas.enums import (
     AIExtractionSourceType,
     AIExtractionStatus,
@@ -31,7 +30,6 @@ from ai_business_radar_schemas.enums import (
     UserRole,
     VideoProcessingStatus,
 )
-
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[4]
 MIGRATIONS = REPOSITORY_ROOT / "database/migrations"

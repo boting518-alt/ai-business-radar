@@ -16,6 +16,8 @@ a runnable authenticated Next.js application shell.
 - `docs/` — product, architecture, and development documentation
 
 See `AGENTS.md` for project constraints and working conventions.
+See `docs/mvp-runbook.md` for the isolated synthetic-data demo and
+`docs/mvp-release-readiness.md` for current release status.
 
 ## Backend development
 

@@ -19,7 +19,11 @@ The expected application mechanism will be selected with deployment tooling. Unt
 - `0005_youtube_comment_collection.sql` separates YouTube comment edit time from row update time.
 - `0006_worker_runtime.sql` timestamps metadata staging claims for bounded stale recovery.
 
-Apply migrations in numeric order. Migrations after 0001 expect Supabase's `auth.uid()` function and `anon`/`authenticated`/`service_role` database roles. A standalone PostgreSQL syntax/runtime test may provide test-only equivalents; that does not constitute full Supabase Local validation.
+Apply migrations in numeric order. `0001` creates `auth.uid()` only when it is absent so standalone
+PostgreSQL can apply the RLS baseline without manual schema state; Supabase's existing function is
+never replaced. The RLS migration creates missing `anon`/`authenticated`/`service_role` roles for a
+portable local validation, while managed Supabase retains ownership of its existing roles. A
+standalone PostgreSQL run does not constitute full Supabase Local validation.
 
 ## Initial-schema boundaries
 

@@ -1,4 +1,4 @@
--- Supabase Auth and RLS baseline. Requires Supabase-provided auth.uid() and roles.
+-- Supabase Auth and RLS baseline. The portable prerequisites are established by 0001.
 BEGIN;
 
 CREATE OR REPLACE FUNCTION public.current_user_profile_id()

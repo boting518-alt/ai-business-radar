@@ -5,7 +5,6 @@ from typing import Annotated, Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
-
 NormalizedConfidence = Annotated[Decimal, Field(ge=0, le=1)]
 Score100 = Annotated[Decimal, Field(ge=0, le=100)]
 NonNegativeInt = Annotated[int, Field(ge=0)]

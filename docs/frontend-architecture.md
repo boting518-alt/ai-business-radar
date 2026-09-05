@@ -115,11 +115,11 @@ opportunity detail, and the watchlist page reuse a single local-state mutation c
 state changes only after the API confirms it; no global cache, direct database access, scoring, or
 optimistic domain mutation is introduced.
 
-## Known limitations and TASK-028 transition
+## Known limitations after MVP QA
 
 There is no signup/magic-link UI, theme toggle, mobile drawer, or visualization. Industry, business
 model, and customer type remain exact text filters because
 no taxonomy endpoint exists. Detail history is presented as compact tables without a charting
 dependency. The review queue has no total count or admin directory. Signals have no total count,
-and v0.1 presents one logical personal watchlist without list management. TASK-028 owns end-to-end
-MVP QA.
+and v0.1 presents one logical personal watchlist without list management. End-to-end validation
+status and deployment gaps are maintained in `docs/mvp-release-readiness.md`.

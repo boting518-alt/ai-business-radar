@@ -13,12 +13,21 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pytest>=8,<9",
+    "pytest>=9.0.3,<10",
+    "ruff>=0.13,<1",
 ]
 
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["ai_business_radar_schemas", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["ai_business_radar_schemas"]
