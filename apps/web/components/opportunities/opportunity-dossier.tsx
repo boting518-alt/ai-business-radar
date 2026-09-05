@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Bookmark, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ApiClient, ApiError } from "@/lib/api/client";
 import { createClient } from "@/lib/auth/client";
 import type { EvidenceItem, OpportunityDetail, ScoreItem, TrendItem } from "@/lib/api/types";
 import { EmptyState, ErrorState } from "@/components/states/states";
 import { StageBadge } from "@/components/ui/primitives";
+import { WatchlistButton } from "@/components/watchlist/watchlist-button";
 
 const WINDOWS=["7d","30d","90d"] as const;
 const EVIDENCE_LIMIT=10;
@@ -81,7 +82,7 @@ export function OpportunityDossier({identifier}:{identifier:string}){
 
   return <article className="space-y-7">
     <nav aria-label="面包屑" className="flex items-center gap-2 text-sm text-slate-500"><Link href="/radar" className="hover:text-slate-950 hover:underline dark:hover:text-white">Radar</Link><span aria-hidden="true">/</span><span className="truncate text-slate-900 dark:text-slate-100">{opportunity.name}</span></nav>
-    <header className="border-b pb-6"><div className="flex flex-wrap items-start justify-between gap-4"><div className="max-w-4xl"><div className="flex flex-wrap items-center gap-2"><h1 className="text-3xl font-semibold tracking-tight">{opportunity.name}</h1><StageBadge stage={opportunity.market_stage}/>{detail.watchlisted&&<span className="inline-flex items-center gap-1 text-xs text-amber-700"><Bookmark size={14} className="fill-current"/>已关注</span>}</div>{opportunity.one_line_thesis&&<p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">{opportunity.one_line_thesis}</p>}<div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">{[opportunity.industry,opportunity.sub_industry,opportunity.customer_type,opportunity.business_model].filter(Boolean).map(value=><span key={value}>{value}</span>)}</div></div><div className="text-right text-xs text-slate-500"><p>首次发现 {date(opportunity.first_detected_at)}</p><p className="mt-1">最近活动 {date(opportunity.last_activity_at)}</p></div></div></header>
+    <header className="border-b pb-6"><div className="flex flex-wrap items-start justify-between gap-4"><div className="max-w-4xl"><div className="flex flex-wrap items-center gap-2"><h1 className="text-3xl font-semibold tracking-tight">{opportunity.name}</h1><StageBadge stage={opportunity.market_stage}/><WatchlistButton opportunityId={opportunity.id} initialWatchlisted={detail.watchlisted}/></div>{opportunity.one_line_thesis&&<p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">{opportunity.one_line_thesis}</p>}<div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">{[opportunity.industry,opportunity.sub_industry,opportunity.customer_type,opportunity.business_model].filter(Boolean).map(value=><span key={value}>{value}</span>)}</div></div><div className="text-right text-xs text-slate-500"><p>首次发现 {date(opportunity.first_detected_at)}</p><p className="mt-1">最近活动 {date(opportunity.last_activity_at)}</p></div></div></header>
     <section aria-labelledby="key-metrics"><h2 id="key-metrics" className="sr-only">Key intelligence metrics</h2><div className="grid grid-cols-2 divide-x divide-y rounded-xl border bg-white sm:grid-cols-4 sm:divide-y-0 dark:bg-slate-950"><PrimaryMetric label="Opportunity Score" value={current?.opportunity_score} definition="Composite commercial opportunity strength"/><PrimaryMetric label="Confidence" value={current?.confidence_score} definition="Strength and coverage of supporting evidence"/><PrimaryMetric label="Hype Risk" value={current?.hype_risk_score} definition="Attention relative to commercial evidence"/><PrimaryMetric label="Momentum" value={currentTrend?.momentum_score} definition="Recent trend activity"/></div></section>
     <Section title="Business thesis"><dl className="grid gap-px overflow-hidden rounded-lg border bg-slate-200 md:grid-cols-2 dark:bg-slate-800">{businessFields.map(([label,value])=><div key={label} className="bg-white p-4 dark:bg-slate-950"><dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt><dd className="mt-2 text-sm leading-6">{value}</dd></div>)}</dl></Section>
     <Section title="Trend overview"><div className="grid gap-3 lg:grid-cols-3">{WINDOWS.map(window=><TrendSummary key={window} window={window} trend={detail.trend_summary[window]}/>)}</div></Section>

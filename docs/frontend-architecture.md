@@ -103,10 +103,23 @@ Conflict, validation, missing-record, and authorization states fail safely and r
 Merge targets are bounded by task context and require an explicit confirmation dialog describing
 the history-preserving merge behavior. Backend workflow validation remains authoritative.
 
-## Known limitations and TASK-027 transition
+## Signals and watchlist implementation
 
-There is no signup/magic-link UI, theme toggle, mobile drawer, visualization, signal feed, or
-watchlist write flow. Industry, business model, and customer type remain exact text filters because
+`/signals` consumes one safe chronological feed request and keeps every supported filter and page
+position in URL parameters. It uses semantic list/article markup, compact metadata, explicit claim
+labels, and responsive columns without locally reordering server pages. No author or raw extraction
+data is rendered.
+
+`/watchlist` consumes one product-ready response containing current persisted intelligence. Radar,
+opportunity detail, and the watchlist page reuse a single local-state mutation control. Add/remove
+state changes only after the API confirms it; no global cache, direct database access, scoring, or
+optimistic domain mutation is introduced.
+
+## Known limitations and TASK-028 transition
+
+There is no signup/magic-link UI, theme toggle, mobile drawer, or visualization. Industry, business
+model, and customer type remain exact text filters because
 no taxonomy endpoint exists. Detail history is presented as compact tables without a charting
-dependency. The review queue has no total count or admin directory. TASK-027 owns Signals and
-Watchlist UI.
+dependency. The review queue has no total count or admin directory. Signals have no total count,
+and v0.1 presents one logical personal watchlist without list management. TASK-028 owns end-to-end
+MVP QA.

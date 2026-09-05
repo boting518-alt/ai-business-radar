@@ -9,6 +9,11 @@ export interface ScoreItem { calculated_at:string;scoring_version:string;trend_v
 export interface OpportunityDetailData { id:string;slug:string;name:string;one_line_thesis:string|null;industry:string|null;sub_industry:string|null;customer_type:string|null;problem:string|null;solution:string|null;business_model:string|null;primary_technology:string|null;typical_price_min:string|null;typical_price_max:string|null;typical_price_currency:string|null;typical_price_period:string|null;competition_level:string|null;build_difficulty:string|null;sales_difficulty:string|null;market_stage:MarketStage;first_detected_at:string;last_activity_at:string }
 export interface OpportunityDetail { opportunity:OpportunityDetailData;current_intelligence:ScoreItem|null;trend_summary:Record<"7d"|"30d"|"90d",TrendItem|null>;evidence_summary:EvidenceSummary;watchlisted:boolean }
 export interface EvidenceItem { evidence_id:string;evidence_type:string;summary:string;source_type:string;observed_at:string|null;strength:string|null;confidence:string|null;youtube_video_id:string|null;video_title:string|null }
+export interface SignalFeedItem { id:string;signal_type:string;statement:string;evidence_text:string|null;industry:string|null;customer_type:string|null;claim_status:string;confidence:string|null;evidence_strength:string|null;observed_at:string|null;source_type:string;video_title:string|null;opportunity_ids:string[] }
+export interface WatchlistOpportunity { id:string;slug:string;name:string;one_line_thesis:string|null;industry:string|null;market_stage:MarketStage }
+export interface WatchlistItem { opportunity:WatchlistOpportunity;opportunity_score:string|null;confidence_score:string|null;hype_risk_score:string|null;momentum_score:string|null;added_at:string }
+export interface WatchlistResult { items:WatchlistItem[] }
+export interface WatchlistMembershipResult { opportunity_id:string;watchlisted:boolean;added_at:string|null }
 export type ReviewType = "signal_validation"|"opportunity_match"|"opportunity_merge"|"opportunity_creation"|"hype_review"|"quality_review";
 export type ReviewStatus = "pending"|"in_review"|"resolved"|"ignored";
 export type ReviewDecisionName = "approve"|"merge"|"create_new"|"reject"|"ignore"|"defer";

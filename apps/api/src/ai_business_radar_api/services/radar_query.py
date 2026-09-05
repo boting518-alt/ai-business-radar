@@ -170,6 +170,7 @@ class SignalFeedItem(BaseModel):
     confidence: Decimal
     evidence_strength: Decimal | None
     observed_at: datetime | None
+    source_type: str
     video_title: str | None
     opportunity_ids: list[UUID]
 

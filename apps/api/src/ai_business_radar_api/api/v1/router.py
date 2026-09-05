@@ -13,6 +13,7 @@ from .radar import router as radar_router
 from .reviews import router as reviews_router
 from .scoring import router as scoring_router
 from .trends import router as trends_router
+from .watchlist import router as watchlist_router
 from .youtube_discovery import router as youtube_discovery_router
 
 router = APIRouter(prefix="/api/v1")
@@ -28,3 +29,4 @@ router.include_router(trends_router)
 router.include_router(scoring_router)
 router.include_router(reviews_router)
 router.include_router(radar_router)
+router.include_router(watchlist_router)

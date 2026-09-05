@@ -216,7 +216,16 @@ optional video ID/title, never comment author data or AI output.
 
 `GET /api/v1/signals` returns only active signals and supports signal type, industry, customer,
 active-opportunity, observed-after, and offset/limit filters. Source context is limited to video
-title and active opportunity IDs; comment author identity is never returned.
+title, source type, and active opportunity IDs; comment author identity is never returned.
+
+`GET /api/v1/watchlist` returns the current user's logical personal watchlist with active
+opportunity identity, current `score-v001` intelligence, latest 7-day `trend-v001` momentum, and
+membership time. `POST /api/v1/watchlist/items/{opportunity_id}` adds a product-visible opportunity
+and returns the existing membership on duplicate requests. `DELETE` on the same path removes the
+membership and succeeds safely when it is already absent. The first valid add creates a personal
+list named `Watchlist` only when the user has no list. Ownership is derived exclusively from the
+authenticated user; no owner identifier is accepted. List reads use set queries and never expose
+another user's items.
 
 ## Pagination
 
@@ -271,9 +280,12 @@ Implemented:
 - `GET /api/v1/opportunities/{id-or-slug}/scores`
 - `GET /api/v1/opportunities/{id-or-slug}/evidence`
 - `GET /api/v1/signals`
+- `GET /api/v1/watchlist`
+- `POST /api/v1/watchlist/items/{opportunity_id}`
+- `DELETE /api/v1/watchlist/items/{opportunity_id}`
 
 Planned:
 
-- User watchlists
+- None in the frozen v0.1 product API
 
 No planned endpoint path or payload is frozen by this status list.

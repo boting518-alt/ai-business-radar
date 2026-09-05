@@ -205,6 +205,7 @@ class RadarQueryRepository:
                 Signal.confidence,
                 Signal.evidence_strength,
                 Signal.observed_at,
+                Signal.source_type,
                 Video.title.label("video_title"),
                 opportunity_ids.label("opportunity_ids"),
             )
