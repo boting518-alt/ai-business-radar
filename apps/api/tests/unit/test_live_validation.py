@@ -6,6 +6,7 @@ from uuid import uuid4
 
 import pytest
 from pydantic import SecretStr
+from sqlalchemy.exc import IntegrityError
 
 from ai_business_radar_api.config import Settings
 from ai_business_radar_api.tools.live_validation import (
@@ -21,6 +22,7 @@ from ai_business_radar_api.tools.live_validation import (
     database_identity,
     preflight_ready,
     safe_error,
+    safe_integrity_diagnostic,
     safe_provider_diagnostic,
 )
 
@@ -268,6 +270,32 @@ def test_provider_diagnostic_is_bounded_and_redacts_credentials() -> None:
     assert len(diagnostic["message"]) <= 500
     assert openai_secret not in serialized
     assert bearer_secret not in serialized
+
+
+def test_integrity_diagnostic_exposes_constraint_without_sql_secrets() -> None:
+    secret = "database-password-that-must-not-leak"
+    original = RuntimeError("driver detail")
+    original.diag = SimpleNamespace(
+        constraint_name="ck_search_queries_query_group",
+        message_primary="new row violates check constraint ck_search_queries_query_group",
+    )
+    error = IntegrityError(
+        "INSERT INTO search_queries VALUES (:secret)",
+        {"secret": secret, "url": f"postgresql://user:{secret}@localhost/database"},
+        original,
+    )
+
+    diagnostic = safe_integrity_diagnostic("discovery", error)
+    serialized = json.dumps(diagnostic)
+
+    assert diagnostic == {
+        "stage": "discovery",
+        "error_type": "IntegrityError",
+        "constraint": "ck_search_queries_query_group",
+        "message": "new row violates check constraint ck_search_queries_query_group",
+    }
+    assert secret not in serialized
+    assert "INSERT INTO" not in serialized
 
 
 def test_report_has_token_totals_checklist_and_no_supplied_secret(tmp_path: Path) -> None:

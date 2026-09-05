@@ -136,6 +136,11 @@ This invokes Discovery → Metadata → Comments and stops before any OpenAI req
 `--show-sample` to include at most five titles and five author-free, bounded comment excerpts in the
 ignored report. Raw comments are never dumped to the terminal.
 
+Local validation stores its managed query with the existing legal `query_group=discovery` and
+`discovery_mode=discovery` taxonomy. Repeating the same query reuses that compatible row. It does
+not introduce a validation-only value into the production query taxonomy or mutate queries with
+different groups or discovery modes.
+
 ## AI-only validation
 
 After inspecting locally collected RAW data:

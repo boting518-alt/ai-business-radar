@@ -17,6 +17,7 @@ from ai_business_radar_schemas import RelevanceFilterOutput
 from redis.asyncio import Redis
 from sqlalchemy import func, select, text
 from sqlalchemy.engine import URL, make_url
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from ..config import Settings
@@ -192,6 +193,33 @@ def safe_error(error: BaseException) -> str:
     return type(error).__name__
 
 
+def safe_integrity_diagnostic(stage: str, error: IntegrityError) -> dict[str, str]:
+    """Return actionable PostgreSQL metadata without SQL, parameters, or URLs."""
+    original = error.orig
+    diagnostic = getattr(original, "diag", None)
+    constraint = getattr(diagnostic, "constraint_name", None)
+    message = getattr(diagnostic, "message_primary", None)
+    if not isinstance(message, str) or not message:
+        message = "Database integrity constraint violated."
+    message = re.sub(r"(?i)postgres(?:ql)?://\S+", "[REDACTED_DATABASE_URL]", message)
+    message = re.sub(r"(?i)password\s*[=:]\s*\S+", "password=[REDACTED]", message)
+    result = {
+        "stage": stage,
+        "error_type": "IntegrityError",
+        "message": message[:300],
+    }
+    if isinstance(constraint, str) and re.fullmatch(r"[A-Za-z0-9_]{1,128}", constraint):
+        result["constraint"] = constraint
+    return result
+
+
+def failure_summary(item: dict[str, str]) -> str:
+    error_type = item.get("error", item.get("error_type", "Error"))
+    constraint = f" ({item['constraint']})" if item.get("constraint") else ""
+    message = f": {item['message']}" if item.get("message") else ""
+    return f"- {item['stage']}: {error_type}{constraint}{message}"
+
+
 def safe_provider_diagnostic(error: BaseException, settings: Settings) -> dict[str, str]:
     """Expose only a bounded provider category/message with credentials redacted."""
     root = error.__cause__ or error
@@ -267,9 +295,7 @@ class ReportWriter:
 
     @staticmethod
     def _markdown(report: ValidationReport) -> str:
-        failures = "\n".join(
-            f"- {item['stage']}: {item['error']}" for item in report.failures
-        ) or "- None"
+        failures = "\n".join(failure_summary(item) for item in report.failures) or "- None"
         warnings = "\n".join(f"- {item}" for item in report.warnings) or "- None"
         checklist = "\n".join(f"- [ ] {name}:" for name in QUALITY_CHECKLIST)
         scores = "\n".join(
@@ -560,7 +586,12 @@ class LiveValidationRunner:
             report.stages_completed.append("scoring")
         except Exception as error:
             stage = next((item for item in STAGES if item not in report.stages_completed), "setup")
-            report.failures.append({"stage": stage, "error": safe_error(error)})
+            failure = (
+                safe_integrity_diagnostic(stage, error)
+                if isinstance(error, IntegrityError)
+                else {"stage": stage, "error": safe_error(error)}
+            )
+            report.failures.append(failure)
         return self._finish(report)
 
     def _finish(self, report: ValidationReport) -> tuple[ValidationReport, Path]:
@@ -576,7 +607,8 @@ class LiveValidationRunner:
             existing = await session.scalar(
                 select(SearchQuery).where(
                     SearchQuery.query == query,
-                    SearchQuery.query_group == "local-live-validation",
+                    SearchQuery.query_group == "discovery",
+                    SearchQuery.discovery_mode == "discovery",
                 )
             )
             if existing:
@@ -584,7 +616,7 @@ class LiveValidationRunner:
             now = datetime.now(UTC)
             entity = SearchQuery(
                 query=query,
-                query_group="local-live-validation",
+                query_group="discovery",
                 language="en",
                 region=None,
                 enabled=True,
