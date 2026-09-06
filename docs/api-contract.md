@@ -81,7 +81,12 @@ Protected endpoints require a Supabase access token:
 Authorization: Bearer <token>
 ```
 
-The API verifies the JWT locally, resolves `sub` through `user_profiles.auth_user_id`, and takes the `user`/`admin` authorization role from that database profile. JWT role claims are not authoritative. Missing, malformed, invalid, or expired tokens return HTTP 401. A valid token without an application profile, or an authenticated user lacking the required role, returns HTTP 403.
+The API verifies the JWT locally using the hosted project's JWKS for `RS256`/`ES256`, with optional
+legacy `HS256` secret compatibility. It validates the configured issuer and audience, resolves `sub`
+through `user_profiles.auth_user_id`, and takes the `user`/`admin` authorization role from that
+database profile. JWT role claims are not authoritative. Missing, malformed, invalid, expired, or
+unknown-key tokens return HTTP 401. A valid token without an application profile, or an
+authenticated user lacking the required role, returns HTTP 403.
 
 ### `GET /api/v1/auth/me`
 

@@ -16,11 +16,12 @@ bearer = HTTPBearer(auto_error=False)
 def get_token_verifier(request: Request) -> SupabaseJWTVerifier:
     settings = request.app.state.settings
     secret = settings.supabase_jwt_secret
-    if secret is None:
+    if secret is None and settings.supabase_jwks_url is None:
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Authentication is not configured")
     try:
         return SupabaseJWTVerifier(
-            secret.get_secret_value(),
+            secret.get_secret_value() if secret else None,
+            jwks_url=settings.supabase_jwks_url,
             issuer=settings.supabase_jwt_issuer,
             audience=settings.supabase_jwt_audience,
         )

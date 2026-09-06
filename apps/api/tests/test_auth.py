@@ -5,10 +5,12 @@ from uuid import UUID, uuid4
 
 import jwt
 import pytest
+from cryptography.hazmat.primitives.asymmetric import rsa
 from fastapi.testclient import TestClient
 
 from ai_business_radar_api.config import Settings
 from ai_business_radar_api.infrastructure.auth.dependencies import get_user_profile_repository
+from ai_business_radar_api.infrastructure.auth.supabase import SupabaseJWTVerifier
 from ai_business_radar_api.main import create_app
 
 
@@ -92,6 +94,85 @@ def test_expired_token_returns_401(auth_context: tuple[TestClient, str, UUID]) -
         client.get("/api/v1/auth/me", headers={"Authorization": f"Bearer {token}"}).status_code
         == 401
     )
+
+
+@pytest.mark.parametrize(
+    "claims",
+    [
+        {"iss": "https://wrong.supabase.co/auth/v1"},
+        {"aud": "wrong-audience"},
+    ],
+)
+def test_invalid_issuer_or_audience_returns_401(
+    auth_context: tuple[TestClient, str, UUID], claims: dict[str, str]
+) -> None:
+    client, secret, auth_user_id = auth_context
+    token = make_token(secret, auth_user_id, **claims)
+    assert (
+        client.get("/api/v1/auth/me", headers={"Authorization": f"Bearer {token}"}).status_code
+        == 401
+    )
+
+
+def test_asymmetric_jwks_token_is_verified() -> None:
+    private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    auth_user_id = uuid4()
+    token = jwt.encode(
+        {
+            "sub": str(auth_user_id),
+            "aud": "authenticated",
+            "iss": "https://test.supabase.co/auth/v1",
+            "exp": datetime.now(UTC) + timedelta(minutes=5),
+        },
+        private_key,
+        algorithm="RS256",
+        headers={"kid": "current-key"},
+    )
+    verifier = SupabaseJWTVerifier(
+        None,
+        jwks_url="https://test.supabase.co/auth/v1/.well-known/jwks.json",
+        issuer="https://test.supabase.co/auth/v1",
+        audience="authenticated",
+    )
+    verifier._jwks_client = SimpleNamespace(
+        get_signing_key_from_jwt=lambda _token: SimpleNamespace(key=private_key.public_key())
+    )
+
+    assert verifier.verify(token).auth_user_id == auth_user_id
+
+
+def test_unknown_jwks_key_returns_401_without_token_leak() -> None:
+    private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    auth_user_id = uuid4()
+    token = jwt.encode(
+        {"sub": str(auth_user_id), "exp": datetime.now(UTC) + timedelta(minutes=5)},
+        private_key,
+        algorithm="RS256",
+        headers={"kid": "unknown-key"},
+    )
+    app = create_app(
+        Settings(
+            _env_file=None,
+            supabase_jwks_url="https://test.supabase.co/auth/v1/.well-known/jwks.json",
+        )
+    )
+
+    class MissingKeyClient:
+        def get_signing_key_from_jwt(self, _token: str):
+            raise jwt.PyJWKClientError("Unable to find a signing key that matches")
+
+    from ai_business_radar_api.infrastructure.auth import dependencies
+
+    verifier = dependencies.get_token_verifier(SimpleNamespace(app=app))
+    verifier._jwks_client = MissingKeyClient()
+    app.dependency_overrides[dependencies.get_token_verifier] = lambda: verifier
+    with TestClient(app) as client:
+        response = client.get(
+            "/api/v1/auth/me", headers={"Authorization": f"Bearer {token}"}
+        )
+
+    assert response.status_code == 401
+    assert token not in response.text
 
 
 def test_valid_token_without_profile_returns_403(

@@ -39,6 +39,10 @@ From `apps/api`:
 uv run uvicorn ai_business_radar_api.main:app --reload
 ```
 
+Hosted Supabase Auth should configure `SUPABASE_JWKS_URL`, `SUPABASE_JWT_ISSUER`, and
+`SUPABASE_JWT_AUDIENCE`. `SUPABASE_JWT_SECRET` is optional legacy HS256 compatibility and must
+remain server-only. See `docs/supabase-setup-checklist.md` for the hosted setup and RLS drill.
+
 The API is available under `/api/v1`. Redis, YouTube collection orchestration, AI-provider integration, and review business workflows are not implemented yet.
 
 ## Authentication

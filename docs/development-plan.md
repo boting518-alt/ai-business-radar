@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 6 — Live Validation
+Phase 6 — Live Validation / Supabase Readiness
 
 MVP STATUS: READY WITH KNOWN GAPS
 
@@ -39,13 +39,14 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-029 Local Live API & Intelligence Validation
 - [x] TASK-029A OpenAI Structured Output Schema Compatibility Fix
 - [x] TASK-029B Local Validation Search Query Taxonomy Fix
+- [x] TASK-030 Supabase Project Compatibility & Auth/RLS Readiness Check
 
 ## Next
 
-- [ ] TASK-030 Local Intelligence Quality Review / Prompt Tuning
-- [ ] TASK-031 Staging Infrastructure Deployment
-- [ ] TASK-032 Managed Supabase Auth + RLS Drill
-- [ ] TASK-033 Staging Live Integration Validation
+- [ ] TASK-031 Create & Connect Hosted Supabase Project
+- [ ] TASK-032 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-033 Staging Infrastructure Deployment
+- [ ] TASK-034 Staging Full Integration Validation
 
 ## Validation debt
 

@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     supabase_anon_key: SecretStr | None = None
     supabase_service_role_key: SecretStr | None = None
     supabase_jwt_secret: SecretStr | None = None
+    supabase_jwks_url: str | None = None
     supabase_jwt_issuer: str | None = None
     supabase_jwt_audience: str | None = "authenticated"
     database_url: SecretStr | None = None
