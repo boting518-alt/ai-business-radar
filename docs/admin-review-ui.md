@@ -32,6 +32,12 @@ the queue and selects the next available task. `defer` returns the task to the p
 The UI presents the decision matrix from the frozen workflow specification, while the backend
 remains authoritative and revalidates every transition and target.
 
+Activation reviews show the opportunity definition, six readiness checks, advisory recommendation,
+and score/confidence/hype/momentum context. Actions are labeled Publish, Defer, and Invalid rather
+than generic approve/reject. Publish requires a Radar-visibility confirmation; Invalid requires a
+stronger rejected-state confirmation. Both use the existing review decision endpoint, and displayed
+metrics explicitly do not control publication.
+
 ## Review context
 
 Signal, match, creation, hype, and quality reviews show safe, human-readable signal evidence and

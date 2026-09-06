@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 6 — Live Validation / Supabase Readiness
+Phase 6 — Live Validation / Product Activation
 
 MVP STATUS: READY WITH KNOWN GAPS
 
@@ -41,13 +41,14 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-029B Local Validation Search Query Taxonomy Fix
 - [x] TASK-030 Supabase Project Compatibility & Auth/RLS Readiness Check
 - [x] TASK-031 Local Product Activation & UI Polish (activation blocked pending a specified candidate-to-active workflow)
+- [x] TASK-032 Opportunity Activation Readiness + Publish Workflow
 
 ## Next
 
-- [ ] TASK-032 Create & Connect Hosted Supabase Project
-- [ ] TASK-033 Hosted Supabase Auth + RLS Drill
-- [ ] TASK-034 Staging Infrastructure Deployment
-- [ ] TASK-035 Staging Full Integration Validation
+- [ ] TASK-033 Local Intelligence Quality Review / Prompt Tuning
+- [ ] TASK-034 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-035 Staging Infrastructure Deployment
+- [ ] TASK-036 Staging Full Integration Validation
 
 ## Validation debt
 

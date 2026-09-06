@@ -187,6 +187,13 @@ executes the validated domain decision transactionally. Missing tasks/targets re
 assignment or lifecycle conflicts return 409, and invalid decision or merge semantics return 422.
 All review routes are admin-only; no release endpoint is included in v0.1.
 
+`GET /api/v1/admin/opportunities/{opportunity_id}/activation-readiness` returns six deterministic
+checks, an advisory recommendation, duplicate candidates, and informational score/trend metrics.
+`POST /api/v1/admin/opportunities/{opportunity_id}/activation-review` creates or reuses an open
+`opportunity_activation` task for an eligible candidate with active supporting evidence. Neither
+endpoint publishes. Publish/Defer/Invalid continue through the existing review decision endpoint
+as `approve`/`defer`/`reject`, with decision-time hard-check revalidation.
+
 The task detail response may enrich persisted `context` with a read-only presentation projection:
 safe signal evidence plus bounded source, candidate, and canonical opportunity summaries. This
 projection is resolved from current records, is never persisted back into workflow context, and is

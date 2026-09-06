@@ -181,6 +181,7 @@ class ReviewType(StrEnum):
     OPPORTUNITY_MATCH = "opportunity_match"
     OPPORTUNITY_MERGE = "opportunity_merge"
     OPPORTUNITY_CREATION = "opportunity_creation"
+    OPPORTUNITY_ACTIVATION = "opportunity_activation"
     HYPE_REVIEW = "hype_review"
     QUALITY_REVIEW = "quality_review"
 

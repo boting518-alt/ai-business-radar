@@ -25,6 +25,7 @@ idempotent and have no additional side effect.
 | `opportunity_match` | `approve`, `merge`, `create_new`, `reject`, `defer` |
 | `opportunity_creation` | `approve`, `create_new`, `reject`, `defer` |
 | `opportunity_merge` | `merge`, `reject`, `defer` |
+| `opportunity_activation` | `approve` (Publish), `reject` (Invalid), `defer` |
 | `hype_review` | `approve`, `reject`, `defer` |
 | `quality_review` | `approve`, `reject`, `ignore`, `defer` |
 
@@ -48,6 +49,11 @@ scores, remain untouched and queryable under the source ID.
 
 Hype and quality decisions are audit-only in v0.1. They do not rewrite deterministic scores,
 Hype Risk, other target state, or `market_stage`.
+
+Activation approval is the only v0.1 `candidate → active` path. It locks the candidate and
+re-runs deterministic hard readiness checks in the review transaction. Activation rejection marks
+the opportunity entity `rejected`; low evidence alone should instead be deferred. Scores and AI
+confidence remain advisory and cannot publish an opportunity.
 
 ## Context, transactions, and authorization
 

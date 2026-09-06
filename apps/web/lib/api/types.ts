@@ -14,12 +14,16 @@ export interface WatchlistOpportunity { id:string;slug:string;name:string;one_li
 export interface WatchlistItem { opportunity:WatchlistOpportunity;opportunity_score:string|null;confidence_score:string|null;hype_risk_score:string|null;momentum_score:string|null;added_at:string }
 export interface WatchlistResult { items:WatchlistItem[] }
 export interface WatchlistMembershipResult { opportunity_id:string;watchlisted:boolean;added_at:string|null }
-export type ReviewType = "signal_validation"|"opportunity_match"|"opportunity_merge"|"opportunity_creation"|"hype_review"|"quality_review";
+export type ReviewType = "signal_validation"|"opportunity_match"|"opportunity_merge"|"opportunity_creation"|"opportunity_activation"|"hype_review"|"quality_review";
 export type ReviewStatus = "pending"|"in_review"|"resolved"|"ignored";
 export type ReviewDecisionName = "approve"|"merge"|"create_new"|"reject"|"ignore"|"defer";
 export interface ReviewSignalContext { id:string;signal_type:string;statement:string;evidence_text:string|null;claim_status:string;confidence:string;evidence_strength:string|null;industry:string|null;customer_type:string|null;problem:string|null;solution:string|null;observed_at:string|null;source_type:string }
 export interface ReviewOpportunityContext { id:string;slug:string;name:string;one_line_thesis:string|null;industry:string|null;customer_type:string|null;problem:string|null;solution:string|null;market_stage:string;first_detected_at:string;last_activity_at:string }
-export interface ReviewContext { reason?:string;model_action?:string;proposed_opportunity_id?:string;signal?:ReviewSignalContext;candidates?:ReviewOpportunityContext[];source_opportunity?:ReviewOpportunityContext;canonical_opportunity?:ReviewOpportunityContext }
+export type ReadinessStatus = "pass"|"warning"|"fail";
+export interface ReadinessCheck { status:ReadinessStatus;message:string;supporting_metrics:Record<string,unknown> }
+export interface ActivationMetrics { active_signal_count:number;distinct_video_count:number;distinct_channel_count:number;latest_score:string|null;confidence_score:string|null;hype_risk:string|null;momentum_7d:string|null;first_detected_at:string;last_activity_at:string }
+export interface ActivationReadiness { opportunity_id:string;checks:Record<string,ReadinessCheck>;overall:"ready"|"needs_review"|"not_ready";recommendation:"publish"|"defer"|"invalid_review";metrics:ActivationMetrics;duplicate_candidates:Array<{opportunity_id:string;name:string;status:string;overlap:number}> }
+export interface ReviewContext { reason?:string;model_action?:string;proposed_opportunity_id?:string;signal?:ReviewSignalContext;candidates?:ReviewOpportunityContext[];source_opportunity?:ReviewOpportunityContext;canonical_opportunity?:ReviewOpportunityContext;readiness?:ActivationReadiness;recommendation?:string;metrics?:ActivationMetrics;duplicate_candidates?:ActivationReadiness["duplicate_candidates"] }
 export interface ReviewTask { id:string;review_type:ReviewType;target_type:string;target_id:string;status:ReviewStatus;priority:number;assigned_to:string|null;resolved_by:string|null;decision:ReviewDecisionName|null;decision_notes:string|null;context:ReviewContext|null;created_at:string;updated_at:string;resolved_at:string|null }
 export interface ReviewListResult { items:ReviewTask[];offset:number;limit:number }
 export interface ReviewWorkflowResult { review_task_id:string;review_type:ReviewType;previous_status:ReviewStatus;status:ReviewStatus;decision:ReviewDecisionName|null;target_type:string;target_id:string;assigned_to:string|null;resolved_by:string|null;resolved_at:string|null;side_effects:Record<string,unknown> }

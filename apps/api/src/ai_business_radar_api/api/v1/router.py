@@ -9,6 +9,7 @@ from .ai_relevance import router as ai_relevance_router
 from .ai_signals import router as ai_signals_router
 from .auth import router as auth_router
 from .health import router as health_router
+from .opportunity_activation import router as opportunity_activation_router
 from .radar import router as radar_router
 from .reviews import router as reviews_router
 from .scoring import router as scoring_router
@@ -27,6 +28,7 @@ router.include_router(ai_opportunities_router)
 router.include_router(ai_signals_router)
 router.include_router(trends_router)
 router.include_router(scoring_router)
+router.include_router(opportunity_activation_router)
 router.include_router(reviews_router)
 router.include_router(radar_router)
 router.include_router(watchlist_router)

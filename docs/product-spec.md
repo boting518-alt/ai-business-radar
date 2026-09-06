@@ -272,6 +272,9 @@ Required review actions:
 4. Related signals are normalized into candidate opportunities.
 5. The system aggregates historical trend metrics and calculates deterministic scores.
 6. A Reviewer/Admin validates AI-generated intelligence.
+7. A candidate becomes Radar-visible only after an administrator explicitly publishes an
+   `opportunity_activation` review. `active` means sufficiently supported and coherent for
+   monitoring; it does not mean proven commercial success or an investment recommendation.
 7. An Analyst/User views ranked opportunities on the radar and opens detail pages to inspect the reasoning and evidence.
 
 ### Browse evidence and signals

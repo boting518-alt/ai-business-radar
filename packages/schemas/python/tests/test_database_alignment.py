@@ -102,6 +102,8 @@ def test_enum_values_exist_in_corresponding_database_check(
     migration_name = (
         "0009_opportunity_normalization.sql"
         if constraint_name == "ck_ai_extractions_source_type"
+        else "0013_opportunity_activation.sql"
+        if constraint_name == "ck_review_tasks_review_type"
         else "0001_initial_schema.sql"
     )
     sql = (MIGRATIONS / migration_name).read_text(encoding="utf-8")

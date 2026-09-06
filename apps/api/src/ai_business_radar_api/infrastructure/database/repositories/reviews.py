@@ -59,14 +59,19 @@ class ReviewTaskRepository:
         statement = insert(ReviewTask).values(**values).returning(ReviewTask)
         return (await self.session.execute(statement)).scalar_one()
 
-    async def find_open_for_target(self, *, target_type: str, target_id: UUID) -> ReviewTask | None:
+    async def find_open_for_target(
+        self, *, target_type: str, target_id: UUID, review_type: str | None = None
+    ) -> ReviewTask | None:
+        conditions = [
+            ReviewTask.target_type == target_type,
+            ReviewTask.target_id == target_id,
+            ReviewTask.status.in_(("pending", "in_review")),
+        ]
+        if review_type is not None:
+            conditions.append(ReviewTask.review_type == review_type)
         return await self.session.scalar(
             select(ReviewTask)
-            .where(
-                ReviewTask.target_type == target_type,
-                ReviewTask.target_id == target_id,
-                ReviewTask.status.in_(("pending", "in_review")),
-            )
+            .where(*conditions)
             .order_by(ReviewTask.created_at.desc())
         )
 

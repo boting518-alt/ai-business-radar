@@ -57,6 +57,7 @@ async def list_reviews(
         "opportunity_match",
         "opportunity_merge",
         "opportunity_creation",
+        "opportunity_activation",
         "hype_review",
         "quality_review",
     ]

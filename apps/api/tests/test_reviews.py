@@ -75,11 +75,13 @@ def user(role):
 def test_review_decision_matrix_is_explicit() -> None:
     assert DECISION_MATRIX["signal_validation"] == {"approve", "reject", "ignore", "defer"}
     assert DECISION_MATRIX["opportunity_merge"] == {"merge", "reject", "defer"}
+    assert DECISION_MATRIX["opportunity_activation"] == {"approve", "reject", "defer"}
     assert set(DECISION_MATRIX) == {
         "signal_validation",
         "opportunity_match",
         "opportunity_merge",
         "opportunity_creation",
+        "opportunity_activation",
         "hype_review",
         "quality_review",
     }

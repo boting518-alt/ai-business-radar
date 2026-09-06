@@ -21,12 +21,14 @@ from ..infrastructure.database.models import (
     WatchlistItem,
 )
 from ..infrastructure.database.repositories import OpportunityRepository, ReviewTaskRepository
+from .opportunity_activation import OpportunityActivationReadinessService
 
 DECISION_MATRIX = {
     "signal_validation": {"approve", "reject", "ignore", "defer"},
     "opportunity_match": {"approve", "merge", "create_new", "reject", "defer"},
     "opportunity_creation": {"approve", "create_new", "reject", "defer"},
     "opportunity_merge": {"merge", "reject", "defer"},
+    "opportunity_activation": {"approve", "reject", "defer"},
     "hype_review": {"approve", "reject", "defer"},
     "quality_review": {"approve", "reject", "ignore", "defer"},
 }
@@ -138,7 +140,15 @@ class ReviewWorkflowService:
         stored = task.context if isinstance(task.context, dict) else {}
         context = {
             key: stored.get(key)
-            for key in ("reason", "model_action", "proposed_opportunity_id")
+            for key in (
+                "reason",
+                "model_action",
+                "proposed_opportunity_id",
+                "readiness",
+                "recommendation",
+                "metrics",
+                "duplicate_candidates",
+            )
             if stored.get(key) is not None
         }
         if task.target_type == "signal":
@@ -166,11 +176,15 @@ class ReviewWorkflowService:
             opportunity_ids.add(task.target_id)
         if canonical_id is not None:
             opportunity_ids.add(canonical_id)
-        opportunities = list(
-            await session.scalars(
-                select(Opportunity).where(Opportunity.id.in_(opportunity_ids))
+        opportunities = (
+            list(
+                await session.scalars(
+                    select(Opportunity).where(Opportunity.id.in_(opportunity_ids))
+                )
             )
-        ) if opportunity_ids else []
+            if opportunity_ids
+            else []
+        )
         by_id = {item.id: self._opportunity_context(item) for item in opportunities}
         if candidate_ids:
             context["candidates"] = [by_id[value] for value in candidate_ids if value in by_id]
@@ -185,9 +199,19 @@ class ReviewWorkflowService:
         return {
             key: getattr(signal, key)
             for key in (
-                "id", "signal_type", "statement", "evidence_text", "claim_status",
-                "confidence", "evidence_strength", "industry", "customer_type", "problem",
-                "solution", "observed_at", "source_type",
+                "id",
+                "signal_type",
+                "statement",
+                "evidence_text",
+                "claim_status",
+                "confidence",
+                "evidence_strength",
+                "industry",
+                "customer_type",
+                "problem",
+                "solution",
+                "observed_at",
+                "source_type",
             )
         }
 
@@ -196,8 +220,17 @@ class ReviewWorkflowService:
         return {
             key: getattr(opportunity, key)
             for key in (
-                "id", "slug", "name", "one_line_thesis", "industry", "customer_type",
-                "problem", "solution", "market_stage", "first_detected_at", "last_activity_at",
+                "id",
+                "slug",
+                "name",
+                "one_line_thesis",
+                "industry",
+                "customer_type",
+                "problem",
+                "solution",
+                "market_stage",
+                "first_detected_at",
+                "last_activity_at",
             )
         }
 
@@ -268,6 +301,7 @@ class ReviewWorkflowService:
             "opportunity_match": "signal",
             "opportunity_creation": "signal",
             "opportunity_merge": "opportunity",
+            "opportunity_activation": "opportunity",
         }.get(task.review_type)
         if expected is not None and task.target_type != expected:
             raise ReviewTargetNotFound("Review task target type is invalid")
@@ -290,9 +324,7 @@ class ReviewWorkflowService:
                 context = task.context if isinstance(task.context, dict) else {}
                 source_id = self._uuid(context.get("source_opportunity_id"))
                 if source_id is None:
-                    raise InvalidMergeTarget(
-                        "Persisted match context has no source opportunity"
-                    )
+                    raise InvalidMergeTarget("Persisted match context has no source opportunity")
                 return await self._merge(
                     session,
                     source_id,
@@ -311,8 +343,43 @@ class ReviewWorkflowService:
                 request.decision_notes,
                 now,
             )
+        if task.review_type == "opportunity_activation":
+            return await self._activate(session, task, decision, now)
         # Hype/quality decisions are audit-only and never rewrite scores in v0.1.
         return {"review_only": True}
+
+    async def _activate(self, session, task, decision, now):
+        opportunity = await session.scalar(
+            select(Opportunity).where(Opportunity.id == task.target_id).with_for_update()
+        )
+        if opportunity is None:
+            raise ReviewTargetNotFound("Opportunity was not found")
+        if opportunity.status != "candidate":
+            raise ReviewTaskConflict("Opportunity is no longer an eligible candidate")
+        if decision == "reject":
+            opportunity.status = "rejected"
+            opportunity.updated_at = now
+            await session.flush()
+            return {"opportunity_status": "rejected"}
+        readiness = await OpportunityActivationReadinessService(self._sessions).assess_in_session(
+            session, opportunity
+        )
+        hard_checks = (
+            "supporting_evidence",
+            "scope_clear",
+            "commercial_definition",
+            "duplicate_risk",
+        )
+        if any(readiness.checks[name].status == "fail" for name in hard_checks):
+            raise ReviewTaskConflict("Activation readiness hard conditions are no longer satisfied")
+        opportunity.status = "active"
+        opportunity.updated_at = now
+        await session.flush()
+        return {
+            "opportunity_status": "active",
+            "readiness_revalidated": True,
+            "recommendation": readiness.recommendation,
+        }
 
     async def _match_or_create(self, session, task, decision, now):
         signal = await session.get(Signal, task.target_id)
