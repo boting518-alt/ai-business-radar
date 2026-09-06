@@ -39,7 +39,7 @@ describe("Opportunity detail page",()=>{
   it("renders persisted identity, metrics, business fields, price, and watchlist",async()=>{
     render(<OpportunityDossier identifier="ai-dental-receptionist"/>);await screen.findByRole("heading",{name:"AI Dental Receptionist"});
     expect(screen.getByText(detail.opportunity.one_line_thesis!)).toBeInTheDocument();
-    expect(screen.getAllByText("74.3").length).toBeGreaterThan(0);expect(screen.getAllByText("78").length).toBeGreaterThan(0);expect(screen.getAllByText("29").length).toBeGreaterThan(0);expect(screen.getAllByText("68.4").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("74.3").length).toBeGreaterThan(0);expect(screen.getAllByText("78%").length).toBeGreaterThan(0);expect(screen.getAllByText("29").length).toBeGreaterThan(0);expect(screen.getAllByText("68.4").length).toBeGreaterThan(0);
     expect(screen.getAllByText("accelerating").length).toBeGreaterThan(0);expect(screen.getByText(detail.opportunity.problem!)).toBeInTheDocument();expect(screen.getByText("199–499 USD / month")).toBeInTheDocument();expect(screen.getByText("已关注")).toBeInTheDocument();
   });
 

@@ -40,13 +40,14 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-029A OpenAI Structured Output Schema Compatibility Fix
 - [x] TASK-029B Local Validation Search Query Taxonomy Fix
 - [x] TASK-030 Supabase Project Compatibility & Auth/RLS Readiness Check
+- [x] TASK-031 Local Product Activation & UI Polish (activation blocked pending a specified candidate-to-active workflow)
 
 ## Next
 
-- [ ] TASK-031 Create & Connect Hosted Supabase Project
-- [ ] TASK-032 Hosted Supabase Auth + RLS Drill
-- [ ] TASK-033 Staging Infrastructure Deployment
-- [ ] TASK-034 Staging Full Integration Validation
+- [ ] TASK-032 Create & Connect Hosted Supabase Project
+- [ ] TASK-033 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-034 Staging Infrastructure Deployment
+- [ ] TASK-035 Staging Full Integration Validation
 
 ## Validation debt
 

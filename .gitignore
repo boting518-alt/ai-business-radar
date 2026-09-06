@@ -24,6 +24,7 @@ coverage/
 logs/
 tmp/
 artifacts/live-validation/
+artifacts/local-product-activation/
 
 # IDE and operating system
 .DS_Store

@@ -23,7 +23,7 @@ describe("Radar page",()=>{
     expect(document.querySelector(".animate-pulse")).toBeInTheDocument();
     expect(await screen.findAllByText("AI Dental Receptionist")).toHaveLength(2);
     expect(screen.getAllByText("82.5").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("74").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("74%").length).toBeGreaterThan(0);
     expect(screen.getAllByText("31").length).toBeGreaterThan(0);
     expect(screen.getAllByText("68.4").length).toBeGreaterThan(0);
     expect(screen.getAllByText("accelerating").length).toBeGreaterThan(0);
@@ -47,11 +47,11 @@ describe("Radar page",()=>{
   it("submits supported filters and resets pagination",async()=>{
     query="offset=25";render(<RadarDashboard/>);
     await userEvent.type(screen.getByLabelText("搜索"),"agents");
-    await userEvent.type(screen.getByLabelText("Industry"),"Healthcare");
-    await userEvent.selectOptions(screen.getByLabelText("Market Stage"),"accelerating");
-    await userEvent.type(screen.getByLabelText("Score minimum"),"70");
-    await userEvent.type(screen.getByLabelText("Confidence minimum"),"60");
-    await userEvent.type(screen.getByLabelText("Hype maximum"),"40");
+    await userEvent.type(screen.getByLabelText("行业 Industry"),"Healthcare");
+    await userEvent.selectOptions(screen.getByLabelText("市场阶段 Market Stage"),"accelerating");
+    await userEvent.type(screen.getByLabelText("最低机会评分"),"70");
+    await userEvent.type(screen.getByLabelText("最低置信度"),"60");
+    await userEvent.type(screen.getByLabelText("最高炒作风险"),"40");
     await userEvent.click(screen.getByRole("button",{name:"应用筛选"}));
     const url=replace.mock.calls.at(-1)?.[0] as string;
     expect(url).toContain("q=agents");expect(url).toContain("industry=Healthcare");expect(url).toContain("market_stage=accelerating");expect(url).toContain("score_min=70");expect(url).toContain("confidence_min=60");expect(url).toContain("hype_max=40");expect(url).not.toContain("offset");
@@ -66,7 +66,7 @@ describe("Radar page",()=>{
     first.unmount();query="offset=25";replace.mockClear();render(<RadarDashboard/>);await screen.findAllByText("AI Dental Receptionist");fireEvent.click(screen.getByRole("button",{name:/上一页/}));expect(replace).toHaveBeenLastCalledWith("/radar?offset=0");
   });
 
-  it.each([["","目前还没有已评分的机会"],["industry=Unknown","没有符合筛选条件的机会"]])("renders the correct empty state for %s",async(params,title)=>{
+  it.each([["","目前还没有可见的已评分机会"],["industry=Unknown","没有符合筛选条件的机会"]])("renders the correct empty state for %s",async(params,title)=>{
     query=params;vi.stubGlobal("fetch",vi.fn().mockImplementation(()=>Promise.resolve(new Response(JSON.stringify({items:[],total:0,offset:0,limit:25}),{status:200,headers:{"Content-Type":"application/json"}}))));render(<RadarDashboard/>);expect(await screen.findByText(title)).toBeInTheDocument();
   });
 
