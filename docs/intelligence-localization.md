@@ -22,9 +22,10 @@ source hash or translation version. Signal fields are `statement`, optional `evi
 `customer_type`, `problem`, and `solution`.
 
 `IntelligenceLocalizationService` hashes the current canonical field using SHA-256. A matching
-`current` record supplies the projection. A missing record returns canonical English. A mismatched
-hash or non-current record is internally marked stale and also falls back to canonical content.
-Fallback never blocks rendering.
+`current` record with the configured current translation version supplies the projection. A missing
+record returns canonical English. A mismatched hash, older translation version, or non-current
+record is ignored and also falls back to canonical content. Fallback never blocks rendering and the
+read service never mutates projection state.
 
 Product reads accept an explicit `locale=zh-CN|en-US` query on `/signals`, `/radar`,
 `/opportunities`, and `/opportunities/{identifier}`. The API defaults to canonical `en-US`; the
@@ -42,8 +43,27 @@ RLS permits authenticated reads only when the corresponding signal or opportunit
 admins retain review visibility. Product repositories independently enforce active opportunity
 visibility, so candidate/rejected localization cannot enter Radar or linked-opportunity output.
 
+## Translation worker
+
+TASK-034 adds explicit asynchronous generation for `zh-CN`. Signal translation is limited to
+`statement` and `evidence_text`; opportunity translation is limited to `name`, `one_line_thesis`,
+`problem`, and `solution`. Industry and customer type remain canonical until a taxonomy-label
+system is specified.
+
+The immutable prompt is `prompts/intelligence-translation/zh-CN/v001.md`; stored projections use
+`translation-zh-CN-v001`. A projection is reusable only when entity, field, locale, canonical source
+hash, version, and `current` status all match. Source changes or a later version preserve prior rows
+and make them ineligible for reads. A forced run refreshes the matching versioned projection without
+rewriting canonical intelligence.
+
+Writes for one entity are atomic. Audit data includes provider, model, provider request ID, token
+usage, source hash, version, and timestamps. Translation runs only from the bounded CLI or admin
+enqueue endpoints on the `intelligence_translation` queue; product GET requests never call AI.
+
+Operational commands, retry behavior, and validation procedures are documented in
+`docs/intelligence-translation-worker.md`.
+
 ## Future direction
 
-TASK-034 may add an explicit worker/admin batch job that writes auditable projections. It must not
-run from a GET request. Industry and customer free text should later migrate to stable taxonomy
-codes with per-locale labels; TASK-033 deliberately performs no automatic taxonomy mapping.
+Industry and customer free text should later migrate to stable taxonomy codes with per-locale
+labels. Automatic taxonomy mapping remains out of scope.

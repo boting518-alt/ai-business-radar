@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "TranslationField": {
+      "additionalProperties": false,
+      "properties": {
+        "field_name": {
+          "title": "Field Name",
+          "type": "string"
+        },
+        "translated_text": {
+          "title": "Translated Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "field_name",
+        "translated_text"
+      ],
+      "title": "TranslationField",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "preserved_terms": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Preserved Terms",
+      "type": "array"
+    },
+    "translations": {
+      "items": {
+        "$ref": "#/$defs/TranslationField"
+      },
+      "maxItems": 4,
+      "minItems": 1,
+      "title": "Translations",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "translations",
+    "preserved_terms",
+    "warnings"
+  ],
+  "title": "IntelligenceTranslationOutput",
+  "type": "object"
+}

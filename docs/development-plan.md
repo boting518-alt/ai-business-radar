@@ -43,10 +43,10 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-031 Local Product Activation & UI Polish (activation blocked pending a specified candidate-to-active workflow)
 - [x] TASK-032 Opportunity Activation Readiness + Publish Workflow
 - [x] TASK-033 Signal Semantics + Intelligence Localization Foundation
+- [x] TASK-034 Intelligence Translation Worker v0.1
 
 ## Next
 
-- [ ] TASK-034 Intelligence Translation Worker v0.1
 - [ ] TASK-035 Local Intelligence Quality Review / Prompt Tuning
 - [ ] TASK-036 Hosted Supabase Auth + RLS Drill
 - [ ] TASK-037 Staging Infrastructure Deployment

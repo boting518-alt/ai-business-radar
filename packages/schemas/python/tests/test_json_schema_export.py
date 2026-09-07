@@ -16,6 +16,7 @@ def test_all_ai_json_schemas_are_generated_from_models(tmp_path: Path) -> None:
         "comment_pain_miner.v001.schema.json",
         "opportunity_normalizer.v001.schema.json",
         "hype_detector.v001.schema.json",
+        "intelligence_translation.v001.schema.json",
     }
 
     for task_name, model in AI_OUTPUT_MODELS.items():

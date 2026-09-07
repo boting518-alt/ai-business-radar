@@ -312,3 +312,10 @@ Signal items additionally return original statement/evidence, localization flags
 title, channel name, canonical enums, and visible linked opportunity identity (`id`, `slug`, `name`).
 Translated evidence never replaces `original_evidence_text`. Candidate or rejected opportunities
 are excluded from linked opportunity projections and Radar responses.
+
+`POST /api/v1/admin/localization/translate` enqueues one signal or opportunity translation request.
+`POST /api/v1/admin/localization/translate-batch` enqueues a bounded request of at most 50 entities.
+Both require the application `admin` role, target only `zh-CN`, and return HTTP 202 with the broker
+message ID, fixed `intelligence_translation` queue, and `queued` status. They do not return generated
+text and do not support dry-run; dry-run is a local CLI operation. Enqueue failure returns a safe
+503 response.

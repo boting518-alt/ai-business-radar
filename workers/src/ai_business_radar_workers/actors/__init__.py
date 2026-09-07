@@ -1,4 +1,5 @@
 from .comment_pain import run_comment_pain_mining
+from .intelligence_translation import translate_batch, translate_opportunity, translate_signal
 from .maintenance import recover_stale_collection_claims
 from .opportunities import run_opportunity_normalization
 from .relevance import run_relevance_filter
@@ -11,6 +12,9 @@ from .youtube_metadata import run_youtube_metadata_collection
 
 __all__ = [
     "recover_stale_collection_claims",
+    "translate_batch",
+    "translate_opportunity",
+    "translate_signal",
     "run_comment_pain_mining",
     "run_relevance_filter",
     "run_opportunity_normalization",

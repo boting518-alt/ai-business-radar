@@ -2,7 +2,7 @@
 
 from uuid import UUID
 
-from pydantic import model_validator
+from pydantic import Field, field_validator, model_validator
 
 from .common import (
     AIConfidence,
@@ -87,10 +87,37 @@ class HypeDetectorOutput(SchemaModel):
     reason: str
 
 
+class TranslationField(SchemaModel):
+    field_name: str
+    translated_text: str
+
+    @field_validator("field_name", "translated_text")
+    @classmethod
+    def reject_blank(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("translation fields must not be blank")
+        return value
+
+
+class IntelligenceTranslationOutput(SchemaModel):
+    translations: list[TranslationField] = Field(min_length=1, max_length=4)
+    preserved_terms: list[str] = Field(max_length=50)
+    warnings: list[str] = Field(max_length=20)
+
+    @field_validator("translations")
+    @classmethod
+    def unique_fields(cls, value: list[TranslationField]) -> list[TranslationField]:
+        names = [item.field_name for item in value]
+        if len(names) != len(set(names)):
+            raise ValueError("translation field names must be unique")
+        return value
+
+
 AI_OUTPUT_MODELS = {
     "relevance_filter": RelevanceFilterOutput,
     "signal_extractor": BusinessSignalExtractorOutput,
     "comment_pain_miner": CommentPainMinerOutput,
     "opportunity_normalizer": OpportunityNormalizerOutput,
     "hype_detector": HypeDetectorOutput,
+    "intelligence_translation": IntelligenceTranslationOutput,
 }

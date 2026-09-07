@@ -5,8 +5,10 @@ from .ai_outputs import (
     BusinessSignalExtractorOutput,
     CommentPainMinerOutput,
     HypeDetectorOutput,
+    IntelligenceTranslationOutput,
     OpportunityNormalizerOutput,
     RelevanceFilterOutput,
+    TranslationField,
 )
 from .common import (
     AIConfidence,
@@ -43,6 +45,7 @@ __all__ = [
     "CommentPainMinerOutput",
     "CommentSourceRef",
     "HypeDetectorOutput",
+    "IntelligenceTranslationOutput",
     "NonNegativeDecimal",
     "NonNegativeInt",
     "NormalizedConfidence",
@@ -62,5 +65,6 @@ __all__ = [
     "SignalExtractionCandidate",
     "SignalRead",
     "SignalSourceRef",
+    "TranslationField",
     "VideoSourceRef",
 ]

@@ -3,6 +3,7 @@ import logging
 from collections.abc import Awaitable, Callable
 
 from ai_business_radar_api.infrastructure.ai import AIConfigurationError, PromptNotFoundError
+from ai_business_radar_api.services.intelligence_translation import PermanentTranslationError
 from ai_business_radar_api.services.youtube_discovery import (
     InvalidDiscoveryMode,
     SearchQueryDisabled,
@@ -18,6 +19,7 @@ PermanentErrors = (
     InvalidDiscoveryMode,
     AIConfigurationError,
     PromptNotFoundError,
+    PermanentTranslationError,
 )
 
 

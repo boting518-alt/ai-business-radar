@@ -20,6 +20,9 @@ from ai_business_radar_workers.actors import (
     run_youtube_comment_collection,
     run_youtube_discovery,
     run_youtube_metadata_collection,
+    translate_batch,
+    translate_opportunity,
+    translate_signal,
     youtube_comments,
     youtube_discovery,
     youtube_metadata,
@@ -39,6 +42,9 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         run_opportunity_normalization: "ai_extraction",
         run_trend_aggregation: "aggregation",
         run_opportunity_scoring: "aggregation",
+        translate_signal: "intelligence_translation",
+        translate_opportunity: "intelligence_translation",
+        translate_batch: "intelligence_translation",
     }
     for actor, queue in actors.items():
         assert actor.queue_name == queue
@@ -301,3 +307,34 @@ async def test_scoring_actor_delegates_without_ai(monkeypatch) -> None:
     )
     result = await scoring.execute_opportunity_scoring({"limit": 4}, settings)
     assert result.status == "completed" and called[0].limit == 4
+
+
+@pytest.mark.asyncio
+async def test_translation_actor_delegates_to_bounded_service(monkeypatch) -> None:
+    from ai_business_radar_workers.actors import intelligence_translation
+
+    called = []
+
+    @asynccontextmanager
+    async def dependencies(_settings):
+        yield "sessions", "ai"
+
+    class Service:
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+        async def translate_batch(self, request):
+            called.append(request)
+            return SimpleNamespace(status="completed")
+
+    settings = SimpleNamespace(
+        ai_provider="openai", intelligence_translation_model="translation-model"
+    )
+    monkeypatch.setattr(
+        intelligence_translation, "intelligence_translation_dependencies", dependencies
+    )
+    monkeypatch.setattr(intelligence_translation, "IntelligenceTranslationService", Service)
+    result = await intelligence_translation.execute_batch_translation(
+        {"entity_type": "all", "limit": 5}, settings
+    )
+    assert result.status == "completed" and called[0].limit == 5

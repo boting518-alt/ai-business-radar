@@ -517,3 +517,8 @@ identity includes entity, field, locale, canonical source hash, and translation 
 a projection to authenticated users only when its corresponding entity is active; administrators
 may inspect non-active projections. See `docs/intelligence-localization.md` for field and fallback
 rules.
+
+Migration `0015_intelligence_translation_runtime.sql` extends each projection with nullable prompt
+hash, provider request ID, and input/output token counts plus validation constraints. These fields
+make TASK-034 provider calls auditable without weakening the versioned identity or RLS behavior
+added by `0014`.

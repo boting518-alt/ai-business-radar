@@ -18,7 +18,10 @@ from ai_business_radar_api.infrastructure.database.models import (
     UserProfile,
     Video,
 )
-from ai_business_radar_api.services.intelligence_localization import source_text_hash
+from ai_business_radar_api.services.intelligence_localization import (
+    CURRENT_TRANSLATION_VERSIONS,
+    source_text_hash,
+)
 from ai_business_radar_api.services.radar_query import RadarQueryService, RadarRequest
 
 NOW = datetime(2026, 9, 7, tzinfo=UTC)
@@ -126,7 +129,7 @@ async def test_localized_product_reads_preserve_visibility_and_provenance(postgr
                 locale="zh-CN",
                 translated_text="牙科线索进入 VitalDesk 仪表盘。",
                 source_text_hash=source_text_hash("Dental leads enter the VitalDesk dashboard."),
-                translation_version="test-v1",
+                translation_version=CURRENT_TRANSLATION_VERSIONS["zh-CN"],
                 status="current",
             ),
             dict(
@@ -136,7 +139,7 @@ async def test_localized_product_reads_preserve_visibility_and_provenance(postgr
                 locale="zh-CN",
                 translated_text="线索会整理到仪表盘中。",
                 source_text_hash=source_text_hash("Leads are organized inside the dashboard."),
-                translation_version="test-v1",
+                translation_version=CURRENT_TRANSLATION_VERSIONS["zh-CN"],
                 status="current",
             ),
             dict(
@@ -146,7 +149,7 @@ async def test_localized_product_reads_preserve_visibility_and_provenance(postgr
                 locale="zh-CN",
                 translated_text="牙科线索工作流",
                 source_text_hash=source_text_hash("Dental lead workflow"),
-                translation_version="test-v1",
+                translation_version=CURRENT_TRANSLATION_VERSIONS["zh-CN"],
                 status="current",
             ),
             dict(

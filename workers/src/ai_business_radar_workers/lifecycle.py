@@ -98,3 +98,21 @@ async def opportunity_normalization_dependencies(settings: WorkerSettings):
         )
     finally:
         await engine.dispose()
+
+
+@asynccontextmanager
+async def intelligence_translation_dependencies(settings: WorkerSettings):
+    if settings.ai_provider != "openai" or not settings.intelligence_translation_model:
+        raise AIConfigurationError("AI intelligence translation is not configured")
+    if settings.openai_api_key is None:
+        raise AIConfigurationError("OPENAI_API_KEY is not configured")
+    engine = create_database_engine(settings.database_url.get_secret_value())
+    try:
+        yield (
+            create_session_factory(engine),
+            OpenAIClient(
+                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+            ),
+        )
+    finally:
+        await engine.dispose()

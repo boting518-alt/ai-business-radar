@@ -13,6 +13,7 @@ class WorkerSettings(BaseSettings):
     ai_model_signal_extraction: str | None = None
     ai_model_comment_pain_mining: str | None = None
     ai_model_opportunity_normalization: str | None = None
+    intelligence_translation_model: str | None = None
     ai_opportunity_match_threshold: float = Field(default=0.70, ge=0, le=1)
     ai_opportunity_create_threshold: float = Field(default=0.75, ge=0, le=1)
     ai_max_retries: int = 2

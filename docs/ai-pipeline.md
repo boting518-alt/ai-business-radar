@@ -163,7 +163,7 @@ Run the exporter from `packages/schemas/python`:
 uv run python scripts/export_ai_json_schemas.py
 ```
 
-The exporter calls Pydantic `model_json_schema(mode="validation")` for the five authoritative output models and writes deterministic, formatted JSON to `packages/schemas/json/`.
+The exporter calls Pydantic `model_json_schema(mode="validation")` for the authoritative output models and writes deterministic, formatted JSON to `packages/schemas/json/`.
 
 Tests regenerate schemas into a temporary directory and compare them with direct Pydantic output. Changes to a Pydantic contract require regenerated artifacts and review of prompt compatibility.
 
@@ -178,6 +178,18 @@ continue to use `Decimal`; application services convert validated AI floats expl
 `Decimal(str(value))`. Compatibility tests inspect all five structured-output schemas before their
 generated artifacts are committed. The semantic `v001` contracts and prompts are unchanged by this
 provider-compatibility correction.
+
+### Intelligence translation
+
+`IntelligenceTranslationOutput` is the strict transport contract for stored locale projections.
+The caller supplies the exact requested field names, and the response must contain each field once
+with no extras. The `zh-CN/v001` prompt requires faithful meaning, preservation of claims and
+uncertainty, proper-name and numeric stability, and translated evidence that remains visibly a
+projection of the original evidence.
+
+Translation runs asynchronously on the dedicated `intelligence_translation` queue or explicitly
+through the local CLI. Source hashes and `translation-zh-CN-v001` determine reuse and staleness.
+Provider/model/request ID/token audit data is persisted. No read endpoint invokes this pipeline.
 
 ## Prompt/schema version relationship
 

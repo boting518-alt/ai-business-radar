@@ -76,6 +76,10 @@ class IntelligenceLocalization(Base):
     translation_version: Mapped[str]
     translation_provider: Mapped[str | None]
     translation_model: Mapped[str | None]
+    prompt_hash: Mapped[str | None]
+    provider_request_id: Mapped[str | None]
+    input_tokens: Mapped[int | None] = mapped_column(Integer)
+    output_tokens: Mapped[int | None] = mapped_column(Integer)
     status: Mapped[str]
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))

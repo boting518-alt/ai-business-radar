@@ -12,6 +12,7 @@ from ..infrastructure.database.models import IntelligenceLocalization
 
 EntityType = Literal["signal", "opportunity"]
 Locale = Literal["zh-CN", "en-US"]
+CURRENT_TRANSLATION_VERSIONS = {"zh-CN": "translation-zh-CN-v001"}
 
 
 @dataclass(frozen=True)
@@ -54,6 +55,8 @@ class IntelligenceLocalizationService:
                     IntelligenceLocalization.entity_type == entity_type,
                     IntelligenceLocalization.entity_id == entity_id,
                     IntelligenceLocalization.locale == locale,
+                    IntelligenceLocalization.translation_version
+                    == CURRENT_TRANSLATION_VERSIONS[locale],
                     IntelligenceLocalization.field_name.in_(populated),
                 )
                 .order_by(
