@@ -1,0 +1,43 @@
+[
+  {
+    "case_id": "same-workflow-dental-cross-vendor",
+    "source_video_ids": ["U6Wb-XlCHjY", "zrp1DyV3b8I"],
+    "expected_relation": "same_opportunity",
+    "expected_cluster": "AI receptionist and appointment booking for dental practices",
+    "human_verdict": "pass",
+    "guards": ["vendor_neutral_name", "buyer_and_workflow_preserved"]
+  },
+  {
+    "case_id": "same-workflow-legal-cross-vendor",
+    "source_video_ids": ["g8mMWu570Zw", "v91sUCPOqfg"],
+    "expected_relation": "same_opportunity",
+    "expected_cluster": "AI intake and lead qualification for law firms",
+    "human_verdict": "pass",
+    "guards": ["vendor_neutral_name", "buyer_and_workflow_preserved"]
+  },
+  {
+    "case_id": "similar-receptionist-different-buyers",
+    "source_video_ids": ["U6Wb-XlCHjY", "g8mMWu570Zw"],
+    "expected_relation": "separate_opportunities",
+    "expected_clusters": [
+      "AI receptionist and appointment booking for dental practices",
+      "AI intake and lead qualification for law firms"
+    ],
+    "human_verdict": "pass",
+    "guards": ["no_cross_buyer_false_merge"]
+  },
+  {
+    "case_id": "ecommerce-capability-category-regression",
+    "source_video_ids": ["P4j2vx5Dh4M"],
+    "expected_relation": "manual_review",
+    "human_verdict": "observed_minor_issue",
+    "guards": ["workflow_capability_not_technology_by_default"]
+  },
+  {
+    "case_id": "property-pricing-schema-invalid",
+    "source_video_ids": ["ZsiQUulCb8c"],
+    "expected_relation": "schema_failure_is_recorded",
+    "human_verdict": "observed_major_issue_v001",
+    "guards": ["invalid_numeric_object_must_not_be_persisted"]
+  }
+]

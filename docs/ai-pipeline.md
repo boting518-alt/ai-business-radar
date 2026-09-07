@@ -204,6 +204,12 @@ on v001 until the documented A/B and promotion gates pass. Signal/normalizer rep
 create new extraction history; translation promotion must use `translation-zh-CN-v002`. See
 `docs/intelligence-quality-review.md` and `docs/prompt-tuning-policy.md`.
 
+TASK-036 adds a bounded cross-source evaluation path outside the active pipeline. It uses official
+YouTube metadata, identical A/B inputs, current structured-output schemas, five-candidate
+normalization stress, and artifact-only translation output. It intentionally opens no database
+session, queues no worker job, and cannot activate or publish intelligence. See
+`docs/cross-source-validation.md`.
+
 ## Prompt/schema version relationship
 
 Prompt and schema versions begin at `v001` and are independently identifiable but released deliberately as a compatible pair for each task.

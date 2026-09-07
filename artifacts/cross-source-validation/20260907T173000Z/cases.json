@@ -1,0 +1,3299 @@
+{
+  "limits": {
+    "videos": 20,
+    "search_requests": 5,
+    "ab_source_inputs": 10,
+    "normalizer_cases": 10,
+    "translation_fields": 16,
+    "provider_calls_planned": 48,
+    "provider_calls_failure_allowance": 20
+  },
+  "youtube_quota_estimate": 530,
+  "queries": {
+    "dental_receptionist": "AI dental receptionist appointment booking",
+    "legal_intake": "AI legal intake assistant law firm receptionist",
+    "property_management": "AI property management tenant inquiry automation",
+    "ecommerce_support": "AI ecommerce customer support agent Shopify",
+    "bookkeeping": "AI bookkeeping automation small business accounting"
+  },
+  "sources": {
+    "dental_receptionist": [
+      {
+        "video_id": "U6Wb-XlCHjY",
+        "title": "AI Dental Receptionist Demo: Schedule an Urgent Appointment in Seconds",
+        "channel_id": "UCA1V40prjTf8ry4IPZhgC4w",
+        "channel": "Weave",
+        "comments_sampled": 1
+      },
+      {
+        "video_id": "zrp1DyV3b8I",
+        "title": "I Built An AI Dental Receptionist #aiagents #openai #chatgpt #aivoice",
+        "channel_id": "UCzIsviqoJc-VcWqF5Pp8iLw",
+        "channel": "Brendan Jowett",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "GbsB4h88hpU",
+        "title": "Building an AI Receptionist For a Dental Clinic (full tutorial)",
+        "channel_id": "UCf2z8XOFzbaW1mTVOXLGmiQ",
+        "channel": "GHL With Gijs",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "C8duBqGQpSA",
+        "title": "Yuaa AI Receptionist – Automated Dental Appointment Booking",
+        "channel_id": "UCp_rHNc_SZjYYY1035UBhnA",
+        "channel": "YUAA AI",
+        "comments_sampled": 0
+      }
+    ],
+    "legal_intake": [
+      {
+        "video_id": "g8mMWu570Zw",
+        "title": "AI Receptionist for Law Firms: 24/7 New Client Intake | Live Demo",
+        "channel_id": "UChdC3fZuRd_bwdONNyEto0g",
+        "channel": "DesOConnorLaw AI",
+        "comments_sampled": 0
+      },
+      {
+        "video_id": "v91sUCPOqfg",
+        "title": "24/7 AI Receptionist for Law Firms — Call Handling, Intake & Booking",
+        "channel_id": "UC7zIln1MPr2XoNv6bMFninw",
+        "channel": "TechCraftAgent",
+        "comments_sampled": 0
+      },
+      {
+        "video_id": "0HBeLGVZ3aw",
+        "title": "Meet Lawayer Phone Assistant™ – The AI Receptionist Built for Law Firms | 24/7 Legal Intake Demo",
+        "channel_id": "UClFAaj62sgvl7TmGBctjrrg",
+        "channel": "Lawayer",
+        "comments_sampled": 0
+      },
+      {
+        "video_id": "EeGVmtFV3GE",
+        "title": "Introducing Intake 360 by Attorney Assistant | Boost Your Firm with Innovative Solutions!",
+        "channel_id": "UCAalB2OD62jLGkekymLaXWA",
+        "channel": "Attorney Assistant",
+        "comments_sampled": 1
+      }
+    ],
+    "property_management": [
+      {
+        "video_id": "ZsiQUulCb8c",
+        "title": "The Future of Property Management: How AI Automation is Changing Everything",
+        "channel_id": "UC9rgoOh2Yli8Jlt3WaFgDxg",
+        "channel": "MagicDoor",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "lti7XPAo_nY",
+        "title": "WhatsApp AI: Automate Tenant FAQs on Guest Policies & Amenities",
+        "channel_id": "UCKeMiUSh59NpZJf_UE2VrnA",
+        "channel": "MonkSpaces_Ai",
+        "comments_sampled": 0
+      },
+      {
+        "video_id": "RhXNReYaOZg",
+        "title": "Never Miss Tenant Calls: Build AI Property Management System (2025 Tutorial)",
+        "channel_id": "UCqbXqdUnPbv0KFBYj6cvlOQ",
+        "channel": "Abdullah Yahya",
+        "comments_sampled": 2
+      },
+      {
+        "video_id": "G67T8D9JQLI",
+        "title": "AI for Property Managers | Weblo AI Demo (Automated Tenant Calls & 24/7 Reception)",
+        "channel_id": "UCJKDk27LwYNd2aUvioxJd-w",
+        "channel": "weblo",
+        "comments_sampled": 1
+      }
+    ],
+    "ecommerce_support": [
+      {
+        "video_id": "P4j2vx5Dh4M",
+        "title": "Shopify Tutorial: How To Automate Customer Support with an AI Sales Agent using Tidio",
+        "channel_id": "UCCzXT3Zt9keSOy59MZQuY1g",
+        "channel": "Shopify Success",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "pwTBMVr9DAs",
+        "title": "Best Shopify AI Agent for Ecommerce Stores in 2026 (step-by-step tutorial)",
+        "channel_id": "UCgYwVeud35Zh-D5Z8u6N5Ew",
+        "channel": "Vince Opra",
+        "comments_sampled": 1
+      },
+      {
+        "video_id": "5pmnJOMd93o",
+        "title": "Build an AI Customer Support Agent - Shopify (No Code, Self-Hosted)",
+        "channel_id": "UCTsGh7dphKZS7b4tBRxxjmA",
+        "channel": "Jackson Rose | AI Automations",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "jgsHsabx4Nc",
+        "title": "How to Build an AI Agent for Your Shopify Store",
+        "channel_id": "UC7geKfz2-IH0rsgRBtHTm0g",
+        "channel": "Learn With Shopify",
+        "comments_sampled": 3
+      }
+    ],
+    "bookkeeping": [
+      {
+        "video_id": "XxnluV4-iDQ",
+        "title": "Google AI + Bookkeeping in QuickBooks",
+        "channel_id": "UC00MExfC3vuP9680IUW0jLA",
+        "channel": "Hector Garcia CPA",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "8baMba3neio",
+        "title": "AI Bookkeeping for Small Business: What Works and What Doesn’t in 2026",
+        "channel_id": "UCLtSFIn3d5Id8jg6kd3uaCw",
+        "channel": "Jay Aldebert | Profit By Design",
+        "comments_sampled": 3
+      },
+      {
+        "video_id": "_J8GozqhUhM",
+        "title": "How AI Is Reshaping Small Business Accounting & Bookkeeping #LedgerLabspodcast",
+        "channel_id": "UCv6ZuH0GvPqCpSTfgsknh4w",
+        "channel": "Ledger Labs",
+        "comments_sampled": 0
+      },
+      {
+        "video_id": "YiszxqSaGxs",
+        "title": "You Shouldn’t Be Doing Your Own Bookkeeping",
+        "channel_id": "UCYhW8fghJ-3NG_8qXWxR7LA",
+        "channel": "Merchant Maverick",
+        "comments_sampled": 0
+      }
+    ]
+  },
+  "signal_ab": [
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "U6Wb-XlCHjY",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1066,
+          "output_tokens": 828,
+          "output": {
+            "industry": "Dental healthcare / dental practice management",
+            "customer": "Dental practices, especially offices with high call volume, after-hours scheduling needs, or front-desk teams",
+            "problem": "Front-desk workload, incomplete phone coverage, and delays in scheduling patients—particularly for urgent calls",
+            "solution": "An AI dental receptionist that answers calls, verifies patient identity, checks appointment availability, and books appointments",
+            "business_model": null,
+            "technology": [
+              "AI dental receptionist",
+              "AI automation",
+              "real-time appointment availability",
+              "patient identity verification"
+            ],
+            "distribution": [
+              "YouTube",
+              "Channel subscription content"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "Weave is demonstrating an AI dental receptionist workflow for handling urgent appointment calls.",
+                "evidence": "Title: \"AI Dental Receptionist Demo: Schedule an Urgent Appointment in Seconds\" Description: \"Watch how an AI dental receptionist handles a real-world urgent call\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The demonstrated workflow includes patient identity verification, finding the earliest available appointment, and booking the appointment.",
+                "evidence": "\"verifying patient identity, finding the earliest openings, and booking an appointment in seconds.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "The product is positioned to answer dental-practice calls instantly on a 24/7 basis.",
+                "evidence": "\"Answer calls instantly, 24/7\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to verify patient information securely during calls.",
+                "evidence": "\"Verify patient information securely\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to provide real-time appointment availability to callers.",
+                "evidence": "\"Offer real-time appointment availability\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to book appointments without staff intervention.",
+                "evidence": "\"Book appointments without staff intervention\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "pain",
+                "statement": "Dental practices are presented as having front-desk workload that could be reduced.",
+                "evidence": "\"If your practice is looking to reduce front-desk workload\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "pain",
+                "statement": "Dental practices are presented as needing improved phone coverage.",
+                "evidence": "\"If your practice is looking to ... improve phone coverage\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "pain",
+                "statement": "Dental practices dealing with high call volume are identified as a target audience.",
+                "evidence": "\"Perfect for: -Dental practices dealing with high call volume\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "demand",
+                "statement": "After-hours scheduling is identified as a use case for dental offices.",
+                "evidence": "\"Perfect for: -Offices wanting after-hours scheduling\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "customer",
+                "statement": "Dental teams seeking to improve patient experience are identified as target customers.",
+                "evidence": "\"Perfect for: -Teams aiming to improve patient experience\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "adoption",
+                "statement": "Dental practices exploring healthcare AI automation are identified as a target segment.",
+                "evidence": "\"Perfect for: -Practices exploring AI automation in healthcare\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "customer",
+                "statement": "Urgent-call patients are positioned as recipients of immediate assistance.",
+                "evidence": "\"Patients get help right away\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "growth",
+                "statement": "The video had 448 views, 2 likes, and 2 comments at the time the metadata was captured.",
+                "evidence": "Video statistics: \"view_count\": 448, \"like_count\": 2, \"comment_count\": 2",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1291,
+          "output_tokens": 696,
+          "output": {
+            "industry": "dental practices",
+            "customer": "Dental practices dealing with high call volume; offices wanting after-hours scheduling; teams aiming to improve patient experience; practices exploring AI automation in healthcare",
+            "problem": "Front-desk workload, phone coverage, and delays in scheduling patients are presented as operational challenges for dental practices.",
+            "solution": "An AI dental receptionist positioned to handle urgent calls and schedule appointments.",
+            "business_model": null,
+            "technology": [
+              "AI dental receptionist",
+              "secure patient identity verification",
+              "real-time appointment availability"
+            ],
+            "distribution": [
+              "YouTube channel content",
+              "channel subscription call to action"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The demonstrated AI dental receptionist workflow verifies patient identity during an urgent call.",
+                "evidence": "“Watch how an AI dental receptionist handles a real-world urgent call: verifying patient identity”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The demonstrated workflow finds the earliest available appointment openings.",
+                "evidence": "“finding the earliest openings”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The demonstrated AI dental receptionist workflow books an appointment.",
+                "evidence": "“and booking an appointment in seconds.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "pain",
+                "statement": "Dental practices are positioned as seeking to reduce front-desk workload.",
+                "evidence": "“If your practice is looking to reduce front-desk workload”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "Dental practices are positioned as seeking improved phone coverage.",
+                "evidence": "“improve phone coverage”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is claimed to answer calls instantly, 24/7.",
+                "evidence": "“✅ Answer calls instantly, 24/7”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is claimed to respond empathetically to urgent patient needs.",
+                "evidence": "“✅ Respond with empathy to urgent patient needs”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The AI is claimed to verify patient information securely.",
+                "evidence": "“✅ Verify patient information securely”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is claimed to offer real-time appointment availability.",
+                "evidence": "“✅ Offer real-time appointment availability”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is claimed to book appointments without staff intervention.",
+                "evidence": "“✅ Book appointments without staff intervention”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "customer",
+                "statement": "The video targets dental practices dealing with high call volume.",
+                "evidence": "“Perfect for: -Dental practices dealing with high call volume”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The video targets offices seeking after-hours scheduling.",
+                "evidence": "“Perfect for: -Offices wanting after-hours scheduling”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "The video targets practices exploring AI automation in healthcare.",
+                "evidence": "“Perfect for: -Practices exploring AI automation in healthcare”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "zrp1DyV3b8I",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1111,
+          "output_tokens": 693,
+          "output": {
+            "industry": "Dental services",
+            "customer": "Dental practices",
+            "problem": null,
+            "solution": "AI dental receptionist",
+            "business_model": "Agency services, paid one-on-one consulting, channel memberships, and affiliate/referral promotion of AI tools",
+            "technology": [
+              "AI voice agents",
+              "Retell AI",
+              "Make",
+              "ElevenLabs",
+              "OpenAI",
+              "ChatGPT"
+            ],
+            "distribution": [
+              "YouTube channel",
+              "Agency website",
+              "Free AI Resource Hub",
+              "Skool Community",
+              "LinkedIn",
+              "Twitter",
+              "Instagram"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "The creator states that they built an AI dental receptionist.",
+                "evidence": "Video title: \"I Built An AI Dental Receptionist\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The represented AI receptionist solution is targeted at the dental industry.",
+                "evidence": "Video title: \"I Built An AI Dental Receptionist\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator directs viewers to an agency website to work with them.",
+                "evidence": "Description: \"🤝 Work with me: https://inflate.agency\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "purchase_intent",
+                "statement": "The creator offers paid one-on-one consulting through a booking link.",
+                "evidence": "Description: \"1-ON-1 PAID CONSULTING ⤵️ https://tidycal.com/brendanjowett\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator monetizes through paid one-on-one consulting.",
+                "evidence": "Description: \"1-ON-1 PAID CONSULTING\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator offers channel memberships with exclusive benefits.",
+                "evidence": "Description: \"Become a member of the channel for exclusive benefits!\"",
+                "claim_status": "fact",
+                "confidence": 0.97
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator uses a free AI Resource Hub and Skool Community as audience-access channels.",
+                "evidence": "Description: \"Get access to my Free AI Resource Hub & Skool Community\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "Retell AI is listed as a resource associated with the video.",
+                "evidence": "Description: \"Resources/Links Mentioned: Retell AI: https://dashboard.retellai.com//?ref=brendan\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "Make is listed as a resource associated with the video.",
+                "evidence": "Description: \"Resources/Links Mentioned: Make: https://www.make.com/en/register?pc=brendan\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "ElevenLabs is listed as a resource associated with the video.",
+                "evidence": "Description: \"Resources/Links Mentioned: Eleven labs: https://elevenlabs.io/?from=partnermartinez1418\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator promotes subscription and social-media channels for audience distribution.",
+                "evidence": "Description includes links labeled \"Subscribe,\" \"Linkedin,\" \"Twitter,\" and \"Instagram.\"",
+                "claim_status": "fact",
+                "confidence": 0.97
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1336,
+          "output_tokens": 769,
+          "output": {
+            "industry": "dental",
+            "customer": null,
+            "problem": null,
+            "solution": "AI dental receptionist",
+            "business_model": "Agency services, paid one-on-one consulting, and paid channel memberships",
+            "technology": [
+              "Retell AI",
+              "Make",
+              "ElevenLabs"
+            ],
+            "distribution": [
+              "YouTube",
+              "LinkedIn",
+              "Twitter",
+              "Instagram"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "The creator claims to have built an AI dental receptionist.",
+                "evidence": "Video title: \"I Built An AI Dental Receptionist\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The described solution is positioned as an AI receptionist for the dental industry.",
+                "evidence": "Video title: \"I Built An AI Dental Receptionist\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator offers paid one-on-one consulting.",
+                "evidence": "\"1-ON-1 PAID CONSULTING\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator monetizes the channel through memberships with exclusive benefits.",
+                "evidence": "\"Become a member of the channel for exclusive benefits!\"",
+                "claim_status": "fact",
+                "confidence": 0.97
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator promotes agency services through an Inflate Agency website.",
+                "evidence": "\"Work with me: https://inflate.agency\"",
+                "claim_status": "fact",
+                "confidence": 0.94
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator distributes content and audience calls to action through YouTube, LinkedIn, Twitter, and Instagram.",
+                "evidence": "\"Subscribe\" YouTube link and listed \"Linkedin,\" \"Twitter,\" and \"Instagram\" links.",
+                "claim_status": "fact",
+                "confidence": 0.98
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "g8mMWu570Zw",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 990,
+          "output_tokens": 679,
+          "output": {
+            "industry": "Legal services / law firms",
+            "customer": "Busy law firms and prospective legal clients",
+            "problem": "Law firms may miss or delay responses to new client enquiries outside normal office hours.",
+            "solution": "An AI-powered receptionist for 24/7 new-client intake that engages prospective clients, collects information, answers initial questions, and supports intake.",
+            "business_model": null,
+            "technology": [
+              "AI-powered receptionist",
+              "AI reception technology"
+            ],
+            "distribution": [
+              "YouTube",
+              "AI Marketing for Lawyers channel"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "The video presents an AI receptionist product/application for law firms.",
+                "evidence": "Title: \"AI Receptionist for Law Firms: 24/7 New Client Intake | Live Demo\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "customer",
+                "statement": "The intended customer segment is law firms, particularly busy law firms.",
+                "evidence": "Description: \"For busy law firms, AI can help...\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is positioned to support the new-client intake workflow.",
+                "evidence": "Description: \"support the new client intake process\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is represented as engaging with potential clients.",
+                "evidence": "Description: \"an AI-powered receptionist can engage with potential clients\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is represented as collecting important information from potential clients.",
+                "evidence": "Description: \"collect important information\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is represented as answering initial questions from prospective clients.",
+                "evidence": "Description: \"answer initial questions\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "adoption",
+                "statement": "The product is positioned for use outside normal office hours, including 24/7 handling of new-client enquiries.",
+                "evidence": "Description: \"handle new client enquiries 24/7\" and \"even outside normal office hours\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "pain",
+                "statement": "Missed opportunities from client enquiries are presented as a problem for law firms.",
+                "evidence": "Description: \"AI can help improve response times, reduce missed opportunities\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              },
+              {
+                "type": "pain",
+                "statement": "Slow response times to prospective-client enquiries are presented as a law-firm problem.",
+                "evidence": "Description: \"AI can help improve response times\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              },
+              {
+                "type": "demand",
+                "statement": "The video targets law firms seeking to improve prospective-client experience during intake.",
+                "evidence": "Description: \"provide a better experience for prospective clients\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.84
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator uses YouTube content and a subscription call-to-action to distribute legal-AI tools, demonstrations, and strategies to legal professionals.",
+                "evidence": "Description: \"Subscribe to AI Marketing for Lawyers for more practical insights, AI tools, demonstrations, and strategies designed specifically for legal professionals.\"",
+                "claim_status": "fact",
+                "confidence": 0.94
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1215,
+          "output_tokens": 557,
+          "output": {
+            "industry": "Legal services",
+            "customer": "Law firms",
+            "problem": "Law firms may miss prospective-client enquiries and have limited ability to respond outside normal office hours.",
+            "solution": "An AI-powered receptionist for prospective-client engagement and new-client intake.",
+            "business_model": null,
+            "technology": [
+              "AI-powered receptionist"
+            ],
+            "distribution": [
+              "YouTube live demo",
+              "YouTube channel subscriptions"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "The video presents a live demonstration of an AI receptionist for law firms.",
+                "evidence": "\"In this live demo, you’ll see how an AI-powered receptionist...\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is positioned to engage potential clients during new-client intake.",
+                "evidence": "\"an AI-powered receptionist can engage with potential clients... and support the new client intake process\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is positioned to collect information from potential clients.",
+                "evidence": "\"an AI-powered receptionist can... collect important information\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is positioned to answer potential clients' initial questions.",
+                "evidence": "\"an AI-powered receptionist can... answer initial questions\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "adoption",
+                "statement": "The AI receptionist is positioned to support law-firm intake outside normal office hours.",
+                "evidence": "\"support the new client intake process—even outside normal office hours\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "The metadata identifies missed opportunities as a challenge for busy law firms.",
+                "evidence": "\"For busy law firms, AI can help improve response times, reduce missed opportunities\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "pain",
+                "statement": "The metadata identifies response times as an operational concern for busy law firms.",
+                "evidence": "\"For busy law firms, AI can help improve response times\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "customer",
+                "statement": "The video targets legal professionals with AI tools, demonstrations, and strategies.",
+                "evidence": "\"AI tools, demonstrations, and strategies designed specifically for legal professionals.\"",
+                "claim_status": "fact",
+                "confidence": 0.96
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator uses YouTube subscriptions to distribute practical AI insights, tools, demonstrations, and strategies for legal professionals.",
+                "evidence": "\"Subscribe to AI Marketing for Lawyers for more practical insights, AI tools, demonstrations, and strategies designed specifically for legal professionals.\"",
+                "claim_status": "fact",
+                "confidence": 0.95
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "v91sUCPOqfg",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1136,
+          "output_tokens": 831,
+          "output": {
+            "industry": "Legal services / law firms",
+            "customer": "Solo attorneys, small and mid-sized law firms, high-volume legal practices, and firms seeking after-hours phone coverage",
+            "problem": "Law firms may miss calls and experience inconsistent intake workflows, creating staff workload and potential loss of client capture.",
+            "solution": "A 24/7 AI voice intake specialist that answers firm phone calls, collects intake information, checks availability, books appointments, and sends intake summaries into firm systems.",
+            "business_model": null,
+            "technology": [
+              "Retell AI",
+              "n8n",
+              "Cal.com",
+              "AI voice agent",
+              "Google Sheets",
+              "email"
+            ],
+            "distribution": [
+              "TechCraftAgent website (www.techcraftagent.com)",
+              "YouTube demo video"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "TechCraftAgent presents an AI Intake Specialist for law firms.",
+                "evidence": "\"Meet the AI Intake Specialist — a 24/7 voice assistant that answers calls, captures client information, books appointments, and syncs everything to your system.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The product is positioned for solo attorneys, small and mid-sized law firms, high-volume practices, and firms that need after-hours coverage.",
+                "evidence": "\"Ideal For\" lists \"Solo attorneys,\" \"Small & mid-sized law firms,\" \"High-volume practices,\" and \"Firms wanting after-hours coverage.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The proposed workflow handles inbound calls, captures client intake information, schedules appointments, and syncs intake outputs to firm systems.",
+                "evidence": "\"answers calls, captures client information, books appointments, and syncs everything to your system.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The assistant is claimed to check attorney or team availability in real time before booking appointments on a calendar.",
+                "evidence": "\"Checks attorney/team availability in real time\" and \"Books appointments directly on your calendar.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The system is claimed to send intake summaries to email and Google Sheets.",
+                "evidence": "\"Sends clean intake summaries to email + Google Sheets.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "pain",
+                "statement": "The product is positioned as addressing missed calls and inconsistent legal-client intake.",
+                "evidence": "\"Firms tired of missed calls & inconsistent intake\" and \"never misses a call.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "Staff workload in client intake is presented as a problem for law firms.",
+                "evidence": "\"Reduces staff workload\" and \"Reduce intake labor costs by up to 70%.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims the system can prevent missed potential clients by answering calls continuously.",
+                "evidence": "\"Never miss another potential client\" and \"Answers your firm’s phone line 24/7.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "pricing",
+                "statement": "The creator claims the solution can reduce intake labor costs by up to 70%.",
+                "evidence": "\"Reduce intake labor costs by up to 70%.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The solution is described as using Retell AI for its voice agent, n8n for workflow automation, and Cal.com for scheduling.",
+                "evidence": "\"Built With\" lists \"AI Voice Agent (Retell AI),\" \"Workflow Automation (n8n),\" and \"Calendar Scheduling (Cal.com).\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator directs interested law firms to TechCraftAgent's website.",
+                "evidence": "\"Want to add this to your law firm? Explore: www.techcraftagent.com\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1361,
+          "output_tokens": 839,
+          "output": {
+            "industry": "Legal services / law firms",
+            "customer": "Solo attorneys, small and mid-sized law firms, high-volume practices, and firms seeking after-hours coverage or addressing missed calls and inconsistent intake",
+            "problem": "Law firms may miss calls and have inconsistent client-intake processes, while staff workload is required for call handling and intake.",
+            "solution": "An AI-powered 24/7 voice intake assistant positioned to answer law-firm calls, collect intake information, check availability, book appointments, and send intake summaries to connected systems.",
+            "business_model": null,
+            "technology": [
+              "Retell AI voice agent",
+              "n8n workflow automation",
+              "Cal.com calendar scheduling",
+              "Google Sheets integration",
+              "Email intake-summary delivery"
+            ],
+            "distribution": [
+              "TechCraftAgent website"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "customer",
+                "statement": "The solution is positioned for solo attorneys, small and mid-sized law firms, high-volume practices, and firms seeking after-hours coverage.",
+                "evidence": "“Ideal For\n\nSolo attorneys\n\nSmall & mid-sized law firms\n\nHigh-volume practices\n\nFirms wanting after-hours coverage”",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "pain",
+                "statement": "The creator identifies missed calls and inconsistent intake as problems for target law firms.",
+                "evidence": "“Firms tired of missed calls & inconsistent intake”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The voice assistant is presented as answering a law firm's phone line around the clock.",
+                "evidence": "“Answers your firm’s phone line 24/7”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The assistant is presented as collecting full client-intake details through conversation.",
+                "evidence": "“Collects full intake details with human-like conversation”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The assistant is described as understanding context and clarifying uncertain responses during intake conversations.",
+                "evidence": "“Understands context, clarifies uncertain responses”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The workflow is presented as checking attorney or team availability in real time.",
+                "evidence": "“Checks attorney/team availability in real time”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The assistant is presented as booking appointments directly on a calendar.",
+                "evidence": "“Books appointments directly on your calendar”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The workflow is presented as sending intake summaries to email and Google Sheets.",
+                "evidence": "“Sends clean intake summaries to email + Google Sheets”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "complaint",
+                "statement": "The creator frames staff workload as an operational burden that the intake assistant can reduce.",
+                "evidence": "“Reduces staff workload”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "growth",
+                "statement": "The creator claims the system can improve client capture rates.",
+                "evidence": "“Reduces staff workload and improves capture rates”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims the system can reduce intake labor costs by up to 70%.",
+                "evidence": "“Reduce intake labor costs by up to 70%”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The solution is described as using Retell AI for its AI voice agent.",
+                "evidence": "“Built With\n\nAI Voice Agent (Retell AI)”",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "technology",
+                "statement": "The solution is described as using n8n for workflow automation.",
+                "evidence": "“Workflow Automation (n8n)”",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "technology",
+                "statement": "The solution is described as using Cal.com for calendar scheduling.",
+                "evidence": "“Calendar Scheduling (Cal.com)”",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "ZsiQUulCb8c",
+      "versions": {
+        "v001": {
+          "status": "invalid_output",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "error_type": "ValidationError"
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1398,
+          "output_tokens": 619,
+          "output": {
+            "industry": "Property management",
+            "customer": "Landlords and property managers",
+            "problem": "Manual work in maintenance handling, rent collection, tenant communication, leasing, and financial tracking",
+            "solution": "MagicDoor positions its product as a fully automated property management system integrating tenant messaging, leasing, maintenance, and financial tracking.",
+            "business_model": null,
+            "technology": [
+              "AI-powered automation",
+              "AI triage of maintenance requests",
+              "Automatic vendor assignment",
+              "AI-powered tenant screening",
+              "AI rent collection",
+              "AI communication tools"
+            ],
+            "distribution": [
+              "MagicDoor website signup",
+              "LinkedIn",
+              "TikTok",
+              "Instagram",
+              "Facebook"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "AI automation is described as handling maintenance, rent collection, and tenant communication for landlords and property managers.",
+                "evidence": "“AI automation is already transforming how landlords and property managers handle maintenance, rent collection, tenant communication, and more.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              },
+              {
+                "type": "workflow",
+                "statement": "MagicDoor claims its AI can triage maintenance requests.",
+                "evidence": "“how AI triages maintenance requests”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "workflow",
+                "statement": "MagicDoor claims its AI can assign maintenance vendors automatically.",
+                "evidence": "“assigns vendors automatically”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "workflow",
+                "statement": "MagicDoor claims its AI can resolve tenant issues without human involvement.",
+                "evidence": "“resolves tenant issues without human involvement.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "adoption",
+                "statement": "The video claims that 44% of maintenance issues are handled entirely or partially by AI.",
+                "evidence": "“With 44% of maintenance issues now being handled entirely or partially by AI”",
+                "claim_status": "creator_claim",
+                "confidence": 0.84
+              },
+              {
+                "type": "product_launch",
+                "statement": "MagicDoor positions itself as a fully automated property management system.",
+                "evidence": "“MagicDoor is leading the AI revolution—providing a fully automated property management system”",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "workflow",
+                "statement": "MagicDoor claims its system integrates tenant messaging, leasing, maintenance, and financial tracking.",
+                "evidence": "“a fully automated property management system that integrates tenant messaging, leasing, maintenance, and financial tracking”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "pain",
+                "statement": "MagicDoor positions its system as eliminating manual work in property-management workflows.",
+                "evidence": "“integrates tenant messaging, leasing, maintenance, and financial tracking without the manual work.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              },
+              {
+                "type": "pricing",
+                "statement": "MagicDoor claims it has no hidden fees.",
+                "evidence": "“No Hidden Fees”",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              },
+              {
+                "type": "pricing",
+                "statement": "MagicDoor claims it has no unit minimums.",
+                "evidence": "“No Unit Minimums”",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "lti7XPAo_nY",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1125,
+          "output_tokens": 810,
+          "output": {
+            "industry": "Property management / real estate operations",
+            "customer": "Property managers, leasing and community teams, and real estate operators managing residential buildings and shared amenities",
+            "problem": "Teams are overwhelmed by repetitive tenant questions about building rules, guest policies, amenity access, and associated fees.",
+            "solution": "A WhatsApp-based AI digital property manager that references building-specific guidelines and fee structures to answer resident inquiries.",
+            "business_model": null,
+            "technology": [
+              "Agentic AI",
+              "WhatsApp AI",
+              "AI knowledge retrieval over building guidelines and fee structures"
+            ],
+            "distribution": [
+              "Company website",
+              "WhatsApp",
+              "Demo booking via website",
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Property managers face repetitive tenant inquiries about building rules and amenity access.",
+                "evidence": "\"Property managers overwhelmed by repetitive tenant questions regarding building rules and amenity access\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "demand",
+                "statement": "Leasing and community teams seek instant, around-the-clock support for current residents.",
+                "evidence": "\"Leasing and community teams wanting to provide instant, 24/7 support for current residents\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "Tenant support inquiries include questions about overnight guest policies, gym access, and additional amenity fees.",
+                "evidence": "\"tenant's multi-turn questions about overnight guest policies, gym access, and additional amenity fees\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The product uses WhatsApp AI to answer multi-turn tenant questions in real time.",
+                "evidence": "\"Watch our WhatsApp AI instantly answer a tenant's multi-turn questions\" and \"resolve routine resident inquiries in real-time\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI references building-specific rules when responding to routine resident inquiries.",
+                "evidence": "\"the AI seamlessly references specific building rules\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The AI uses building-specific guidelines and fee structures as response context.",
+                "evidence": "\"instantly referencing your specific building guidelines and fee structures to answer tenant questions\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "MonkSpaces positions its WhatsApp AI as a 24/7 digital property manager.",
+                "evidence": "\"Our WhatsApp AI acts as a 24/7 digital property manager\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to answer tenant questions without staff involvement.",
+                "evidence": "\"answer tenant questions accurately without requiring any staff involvement\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "demand",
+                "statement": "Real estate operators may want to automate guest-pass inquiries for shared amenities.",
+                "evidence": "\"Real estate operators aiming to manage and monetize shared amenities efficiently by automating guest pass inquiries\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "revenue",
+                "statement": "The product is positioned around helping operators monetize shared amenities.",
+                "evidence": "\"manage and monetize shared amenities efficiently\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "distribution",
+                "statement": "MonkSpaces offers dedicated website pages for Voice AI, WhatsApp AI, and Email AI products.",
+                "evidence": "\"Voice AI: https://www.monkspaces.ai/ai/voice\"; \"WhatsApp AI: https://www.monkspaces.ai/ai/whatsapp\"; \"Email AI: https://www.monkspaces.ai/ai/email\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "distribution",
+                "statement": "MonkSpaces provides a website demo-booking call to action.",
+                "evidence": "\"Book a Demo: https://www.monkspaces.ai/#demo\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1350,
+          "output_tokens": 679,
+          "output": {
+            "industry": "Property management / real estate operations",
+            "customer": "Property managers, leasing and community teams, and real estate operators",
+            "problem": "Teams are described as being overwhelmed by repetitive tenant questions about building rules and amenity access.",
+            "solution": "A WhatsApp-based AI agent positioned to answer resident questions using building guidelines and fee structures.",
+            "business_model": null,
+            "technology": [
+              "Agentic AI",
+              "WhatsApp AI",
+              "AI referencing building-specific rules and fee structures"
+            ],
+            "distribution": [
+              "WhatsApp",
+              "Website",
+              "Demo booking"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Property managers are described as overwhelmed by repetitive tenant questions about building rules and amenity access.",
+                "evidence": "“Property managers overwhelmed by repetitive tenant questions regarding building rules and amenity access”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is positioned to handle tenant questions about overnight guest policies.",
+                "evidence": "“Watch our WhatsApp AI instantly answer a tenant's multi-turn questions about overnight guest policies”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is positioned to handle tenant questions about gym access.",
+                "evidence": "“Watch our WhatsApp AI instantly answer a tenant's multi-turn questions about overnight guest policies, gym access”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI is positioned to handle tenant questions about amenity fees.",
+                "evidence": "“Watch our WhatsApp AI instantly answer a tenant's multi-turn questions about overnight guest policies, gym access, and additional amenity fees.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The WhatsApp AI is claimed to reference specific building rules when resolving resident inquiries.",
+                "evidence": "“This demonstration highlights how the AI seamlessly references specific building rules to resolve routine resident inquiries in real-time.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The product is described as agentic AI for property management.",
+                "evidence": "“MonkSpaces.Ai builds agentic AI products that modernize property management and streamline resident support.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "adoption",
+                "statement": "The WhatsApp AI is positioned as a 24/7 digital property manager.",
+                "evidence": "“Our WhatsApp AI acts as a 24/7 digital property manager”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is claimed to answer tenant questions without staff involvement.",
+                "evidence": "“answer tenant questions accurately without requiring any staff involvement.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "customer",
+                "statement": "Leasing and community teams are identified as buyers seeking instant, 24/7 support for current residents.",
+                "evidence": "“Leasing and community teams wanting to provide instant, 24/7 support for current residents”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to automate guest-pass inquiries for shared amenities.",
+                "evidence": "“real estate operators aiming to manage and monetize shared amenities efficiently by automating guest pass inquiries”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "P4j2vx5Dh4M",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1288,
+          "output_tokens": 879,
+          "output": {
+            "industry": "E-commerce / Shopify retail",
+            "customer": "Shopify store owners",
+            "problem": "Customer-support questions, product recommendations, and order-status inquiries can require staff time and may limit sales conversion.",
+            "solution": "Tidio AI sales and support agent integrated with a Shopify store.",
+            "business_model": "Affiliate promotion of Tidio and Shopify; paid Shopify course sales.",
+            "technology": [
+              "Tidio",
+              "AI sales agent",
+              "AI support agent",
+              "Shopify",
+              "chatbot",
+              "catalog synchronization"
+            ],
+            "distribution": [
+              "YouTube video",
+              "Affiliate links",
+              "Kajabi course landing page"
+            ],
+            "pricing": {
+              "min": 1.0,
+              "max": 1.0,
+              "currency": "USD",
+              "period": "first 3 months"
+            },
+            "signals": [
+              {
+                "type": "pricing",
+                "statement": "The description promotes a Shopify offer of a 3-day free trial followed by a $1-per-month discount for the first three months.",
+                "evidence": "“Get a 3 day Shopify FREE TRIAL + claim a $1/month discount for the first 3 months”",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator distributes Shopify and Tidio offers through affiliate links in the YouTube description.",
+                "evidence": "“https://shopify.pxf.io/daOqB7” and “https://affiliate.tidio.com/pffo41yy0re5”",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "revenue",
+                "statement": "The channel sells a Shopify course through a Kajabi-hosted course page.",
+                "evidence": "“Get the FULL Shopify Course ➜ https://shopifysuccess.mykajabi.com/getcourse”",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "demand",
+                "statement": "The course is positioned toward store owners seeking more sales and Shopify-store optimization.",
+                "evidence": "“Sell Like a Pro: Optimize Your Shopify Store To Get More Sales”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "The creator identifies common store mistakes as blockers to sales.",
+                "evidence": "“Fix common mistakes blocking your sales”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "The presented AI agent workflow includes instant responses to customer questions.",
+                "evidence": "“It’s gonna take care of questions instantly”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The presented AI agent workflow includes product recommendations.",
+                "evidence": "“it can recommend products”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The presented AI agent workflow includes checking order statuses.",
+                "evidence": "“check order statuses”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The tutorial includes configuring agent guidance settings and communication style.",
+                "evidence": "Timestamps list “04:50 - Guidance settings” and “05:18 - Communication style.”",
+                "claim_status": "fact",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "The tutorial includes handoff and escalation configuration for the AI agent.",
+                "evidence": "Timestamp: “05:51 - Handoff and escalation”",
+                "claim_status": "fact",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The setup shown includes installing Tidio on Shopify and syncing the product catalog with the AI agent.",
+                "evidence": "Timestamps list “03:07 - Installing Tidio on Shopify” and “08:28 - Syncing catalog with AI agent.”",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "The creator claims an AI sales and support agent can automate Shopify customer support without additional team members or extra time.",
+                "evidence": "“automate your customer support… without having to hire any extra team members or spend additional time.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims the AI agent can increase sales.",
+                "evidence": "“This is a super smart way to… increase your sales”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "growth",
+                "statement": "The creator positions the AI agent as a Shopify app for improving conversions.",
+                "evidence": "“Shopify app for improving conversions”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1513,
+          "output_tokens": 697,
+          "output": {
+            "industry": "E-commerce / Shopify stores",
+            "customer": "Shopify store operators",
+            "problem": "Customer-support questions, product recommendations, and order-status requests require ongoing handling by store teams.",
+            "solution": "Tidio AI sales and support agent for Shopify stores",
+            "business_model": "Affiliate promotion and paid Shopify course",
+            "technology": [
+              "AI sales and support agent",
+              "AI catalog synchronization"
+            ],
+            "distribution": [
+              "YouTube video",
+              "Affiliate links",
+              "Kajabi-hosted course"
+            ],
+            "pricing": {
+              "min": 1.0,
+              "max": 1.0,
+              "currency": "USD",
+              "period": "month for the first 3 months"
+            },
+            "signals": [
+              {
+                "type": "pricing",
+                "statement": "Shopify is promoted with a $1/month introductory discount for the first three months after a three-day free trial.",
+                "evidence": "Get a 3 day Shopify FREE TRIAL + claim a $1/month discount for the first 3 months",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "product_launch",
+                "statement": "Tidio is presented as an AI sales agent for Shopify stores.",
+                "evidence": "Tidio – AI Sales agent for your Shopify store!",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The video describes installing Tidio on Shopify as part of adding an AI support agent to a Shopify store.",
+                "evidence": "03:07 - Installing Tidio on Shopify",
+                "claim_status": "fact",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The described AI agent workflow includes handoff and escalation settings.",
+                "evidence": "05:51 - Handoff and escalation",
+                "claim_status": "fact",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The described AI agent can synchronize a store catalog.",
+                "evidence": "08:28 - Syncing catalog with AI agent",
+                "claim_status": "fact",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator positions the agent as automating customer support without hiring extra team members or spending additional time.",
+                "evidence": "automate your customer support ... without having to hire any extra team members or spend additional time",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The creator claims the agent can answer customer questions instantly.",
+                "evidence": "It’s gonna take care of questions instantly",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "technology",
+                "statement": "The creator claims the agent can recommend products.",
+                "evidence": "it can recommend products",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "technology",
+                "statement": "The creator claims the agent can check order statuses.",
+                "evidence": "check order statuses",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "technology",
+                "statement": "The creator claims the agent can operate as a sales and support agent 24/7.",
+                "evidence": "basically work for your store 24/7 as a sales and support agent",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "growth",
+                "statement": "The creator claims the AI support agent can increase sales.",
+                "evidence": "to increase your sales",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "growth",
+                "statement": "The creator positions the associated Shopify course as providing strategies to get more sales and fix mistakes blocking sales.",
+                "evidence": "Packed with step-by-step strategies to get more sales / Fix common mistakes blocking your sales",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "pwTBMVr9DAs",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 892,
+          "output_tokens": 354,
+          "output": {
+            "industry": "ecommerce / Shopify stores",
+            "customer": "Shopify ecommerce store operators",
+            "problem": "Abandoned checkouts and the need to increase revenue from existing customers",
+            "solution": "Outcraft AI, presented as a Shopify AI agent",
+            "business_model": null,
+            "technology": [
+              "AI agent",
+              "Shopify"
+            ],
+            "distribution": [
+              "YouTube video",
+              "Outcraft signup link"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "Outcraft AI is presented as an AI agent for Shopify ecommerce stores.",
+                "evidence": "Video title: \"Best Shopify AI Agent for Ecommerce Stores in 2026\"; description: \"Outcraft AI can help...\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is presented as supporting abandoned-checkout recovery.",
+                "evidence": "Description: \"Outcraft AI can help you recover abandoned checkouts\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is presented as supporting upsells to existing ecommerce customers.",
+                "evidence": "Description: \"[Outcraft AI can] upsell existing ecommerce customers\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is presented as helping ecommerce stores obtain more reviews.",
+                "evidence": "Description: \"[Outcraft AI can] even get more reviews\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "distribution",
+                "statement": "The video directs viewers to sign up for Outcraft through a tracked or creator-specific URL.",
+                "evidence": "Description: \"Sign up for Outcraft: outcraft.ai/vince01\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1117,
+          "output_tokens": 462,
+          "output": {
+            "industry": "ecommerce",
+            "customer": "Shopify ecommerce stores",
+            "problem": "Abandoned checkouts; opportunities to upsell existing customers and obtain more reviews.",
+            "solution": "Outcraft AI",
+            "business_model": null,
+            "technology": [
+              "AI agent"
+            ],
+            "distribution": [
+              "YouTube creator referral link"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "Outcraft AI is presented as an AI agent for Shopify ecommerce stores.",
+                "evidence": "\"Best Shopify AI Agent for Ecommerce Stores in 2026\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "Outcraft AI is claimed to help stores recover abandoned checkouts.",
+                "evidence": "\"Outcraft AI can help you recover abandoned checkouts\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Outcraft AI is claimed to help stores upsell existing ecommerce customers.",
+                "evidence": "\"upsell existing ecommerce customers\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Outcraft AI is claimed to help stores get more reviews.",
+                "evidence": "\"or even get more reviews\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator directs viewers to sign up for Outcraft through a provided Outcraft URL.",
+                "evidence": "\"Sign up for Outcraft: outcraft.ai/vince01\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "XxnluV4-iDQ",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 894,
+          "output_tokens": 485,
+          "output": {
+            "industry": "Accounting and bookkeeping",
+            "customer": null,
+            "problem": null,
+            "solution": null,
+            "business_model": null,
+            "technology": [
+              "Google AI",
+              "QuickBooks"
+            ],
+            "distribution": [
+              "YouTube video",
+              "REFRAME 2025 event link"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The video addresses applying Google AI within a QuickBooks bookkeeping workflow.",
+                "evidence": "Title: \"Google AI + Bookkeeping in QuickBooks\"",
+                "claim_status": "fact",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The content covers pre-prompting AI with context.",
+                "evidence": "Timestamp label: \"01:13 Pre-Prompting AI with Context\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The content includes AI categorization examples and troubleshooting.",
+                "evidence": "Timestamp label: \"05:19 AI Categorization Examples/Troubleshooting\"",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "market_change",
+                "statement": "The creator presents AI as shaping the future of accounting.",
+                "evidence": "Timestamp label: \"00:00 Introduction & AI-Driven Accounting Future\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator promotes REFRAME 2025 through a link in the video description.",
+                "evidence": "Description: \"Join me at REFRAME 2025: https://www.reframeaccounting.com\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "adoption",
+                "statement": "The video had 31,159 views, 558 likes, and 52 comments at the supplied metadata snapshot.",
+                "evidence": "Video statistics: \"view_count\": 31159, \"like_count\": 558, \"comment_count\": 52",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1119,
+          "output_tokens": 437,
+          "output": {
+            "industry": "Accounting and bookkeeping",
+            "customer": null,
+            "problem": null,
+            "solution": null,
+            "business_model": null,
+            "technology": [
+              "Google AI",
+              "QuickBooks"
+            ],
+            "distribution": [
+              "REFRAME 2025 event"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The video covers pre-prompting AI with context for bookkeeping-related use.",
+                "evidence": "timestamps: 01:13 Pre-Prompting AI with Context",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The video covers AI categorization examples and troubleshooting.",
+                "evidence": "timestamps: 05:19 AI Categorization Examples/Troubleshooting",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The video focuses on using Google AI in a QuickBooks bookkeeping context.",
+                "evidence": "title: Google AI + Bookkeeping in QuickBooks",
+                "claim_status": "fact",
+                "confidence": 0.99
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator directs viewers to REFRAME 2025 through an event link in the video description.",
+                "evidence": "Join me at REFRAME 2025: https://www.reframeaccounting.com",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "8baMba3neio",
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+          "input_tokens": 1037,
+          "output_tokens": 536,
+          "output": {
+            "industry": "Small-business bookkeeping and accounting",
+            "customer": "Small business owners",
+            "problem": "Small business owners may have messy financial numbers, confusing reports, and uncertainty about whether their business is profitable; using AI bookkeeping without human oversight may create financial risk.",
+            "solution": "A hybrid bookkeeping system combining AI automation with human oversight to maintain accurate, clean books.",
+            "business_model": null,
+            "technology": [
+              "AI bookkeeping",
+              "bookkeeping automation"
+            ],
+            "distribution": [
+              "YouTube",
+              "LinkedIn",
+              "TikTok"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "market_change",
+                "statement": "The creator characterizes AI bookkeeping as rapidly growing in 2026.",
+                "evidence": "\"AI bookkeeping is exploding in 2026.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "customer",
+                "statement": "The video targets small business owners using AI bookkeeping.",
+                "evidence": "\"most small business owners are using it wrong.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The proposed bookkeeping workflow combines AI with human oversight rather than relying on AI alone.",
+                "evidence": "\"How to combine AI and human oversight for accurate books\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "AI bookkeeping is presented as suitable for some bookkeeping tasks but unsuitable for others.",
+                "evidence": "\"What AI bookkeeping actually does well, what it does terribly\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "pain",
+                "statement": "Relying on AI alone for bookkeeping is presented as a risk to business financial records.",
+                "evidence": "\"Why trusting AI by itself can quietly destroy your financials\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator distinguishes bookkeeping tasks that should be automated from tasks that should never be automated.",
+                "evidence": "\"What to automate and what to NEVER automate\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "pain",
+                "statement": "Messy numbers are identified as a problem for the intended audience.",
+                "evidence": "\"If you are tired of messy numbers\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "Confusing financial reports are identified as a problem for the intended audience.",
+                "evidence": "\"confused reports\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "pain",
+                "statement": "Uncertainty about business profitability is identified as a problem for the intended audience.",
+                "evidence": "\"not knowing whether your business is actually profitable\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1262,
+          "output_tokens": 548,
+          "output": {
+            "industry": "Small-business bookkeeping",
+            "customer": "Small business owners",
+            "problem": "Messy numbers, confusing reports, and uncertainty about business profitability",
+            "solution": "A hybrid bookkeeping system combining AI with human oversight",
+            "business_model": null,
+            "technology": [
+              "AI bookkeeping"
+            ],
+            "distribution": [
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "market_change",
+                "statement": "The creator characterizes AI bookkeeping as rapidly growing in 2026.",
+                "evidence": "AI bookkeeping is exploding in 2026.",
+                "claim_status": "creator_claim",
+                "confidence": 0.78
+              },
+              {
+                "type": "pain",
+                "statement": "Some small business owners experience messy financial numbers.",
+                "evidence": "If you are tired of messy numbers...",
+                "claim_status": "creator_claim",
+                "confidence": 0.87
+              },
+              {
+                "type": "pain",
+                "statement": "Some small business owners find financial reports confusing.",
+                "evidence": "If you are tired of ... confused reports...",
+                "claim_status": "creator_claim",
+                "confidence": 0.87
+              },
+              {
+                "type": "pain",
+                "statement": "Some small business owners are uncertain whether their business is profitable.",
+                "evidence": "If you are tired of ... not knowing whether your business is actually profitable...",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator recommends combining AI with human oversight for bookkeeping.",
+                "evidence": "How to combine AI and human oversight for accurate books",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "complaint",
+                "statement": "The creator warns that relying on AI alone for bookkeeping can harm financial records.",
+                "evidence": "Why trusting AI by itself can quietly destroy your financials",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              },
+              {
+                "type": "workflow",
+                "statement": "The video positions bookkeeping automation as requiring decisions about which tasks should and should not be automated.",
+                "evidence": "What to automate and what to NEVER automate",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "normalizer_ab": [
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "U6Wb-XlCHjY",
+      "expected_opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1001,
+          "output_tokens": 91,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+            "canonical_name": "AI receptionist and appointment booking for dental practices",
+            "confidence": 0.99,
+            "reason": "The signal explicitly concerns an AI dental receptionist handling urgent calls, identity verification, and appointment scheduling, directly matching the dental-practice candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1155,
+          "output_tokens": 99,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+            "canonical_name": "AI receptionist and appointment booking for dental practices",
+            "confidence": 0.99,
+            "reason": "The signal describes an AI dental receptionist handling an urgent patient call and identity verification, which is a front-desk workflow within the existing dental missed-call and appointment-handling opportunity."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "zrp1DyV3b8I",
+      "expected_opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1002,
+          "output_tokens": 87,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+            "canonical_name": "AI receptionist and appointment booking for dental practices",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets dental practices with an AI dental receptionist addressing missed calls and appointment handling, directly matching the candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1156,
+          "output_tokens": 90,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+            "canonical_name": "AI receptionist and appointment booking for dental practices",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets dental practices with an AI dental receptionist for missed-call and appointment-handling workflows, directly matching the existing candidate."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "g8mMWu570Zw",
+      "expected_opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1000,
+          "output_tokens": 96,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+            "canonical_name": "AI intake and lead qualification for law firms",
+            "confidence": 0.99,
+            "reason": "The signal explicitly describes an AI receptionist for law firms handling 24/7 new-client intake, matching the candidate's customer, problem, and solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1154,
+          "output_tokens": 112,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+            "canonical_name": "AI intake and lead qualification for law firms",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets law firms and describes an AI receptionist for 24/7 new-client intake, matching the candidate's buyer, unanswered-inquiry and manual-intake problem, and AI receptionist/intake/lead-qualification workflow."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "v91sUCPOqfg",
+      "expected_opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1025,
+          "output_tokens": 95,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+            "canonical_name": "AI intake and lead qualification for law firms",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets law firms and describes an AI receptionist for call handling, intake, booking, and after-hours coverage, directly matching the candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1179,
+          "output_tokens": 102,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+            "canonical_name": "AI intake and lead qualification for law firms",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets law firms and describes an AI receptionist for call handling, intake, booking, and after-hours coverage, matching the candidate's buyer, problem, and solution workflow."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "ZsiQUulCb8c",
+      "expected_opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1013,
+          "output_tokens": 94,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+            "canonical_name": "AI tenant inquiry and maintenance intake for property managers",
+            "confidence": 0.98,
+            "reason": "The signal explicitly targets property managers and describes AI automation for tenant communication and maintenance handling, directly matching the candidate's customer, problem, and solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1167,
+          "output_tokens": 93,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+            "canonical_name": "AI tenant inquiry and maintenance intake for property managers",
+            "confidence": 0.98,
+            "reason": "The signal names property managers and describes AI handling tenant communication and maintenance workflows, directly matching the candidate’s tenant-support and maintenance request-routing pattern."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "lti7XPAo_nY",
+      "expected_opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1003,
+          "output_tokens": 90,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+            "canonical_name": "AI tenant inquiry and maintenance intake for property managers",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets property managers overwhelmed by repetitive tenant questions, matching the candidate's tenant-support and request-routing problem and solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1157,
+          "output_tokens": 113,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+            "canonical_name": "AI tenant inquiry and maintenance intake for property managers",
+            "confidence": 0.99,
+            "reason": "The signal has the same buyer (property managers), problem (repetitive tenant inquiries), and solution pattern (AI tenant support and request routing) as the existing candidate. Tenant FAQs about rules and amenities are a narrower instance of that workflow."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "P4j2vx5Dh4M",
+      "expected_opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1027,
+          "output_tokens": 95,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+            "canonical_name": "AI customer support and sales assistance for ecommerce stores",
+            "confidence": 0.98,
+            "reason": "The signal explicitly concerns automating customer support with an AI sales agent for Shopify ecommerce stores, matching the ecommerce support and sales-assistance candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1181,
+          "output_tokens": 112,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+            "canonical_name": "AI customer support and sales assistance for ecommerce stores",
+            "confidence": 0.94,
+            "reason": "The signal explicitly identifies ecommerce stores and an AI customer-support and sales-assistance agent, matching the existing candidate's buyer, problem, and solution pattern. The Shopify promotion is a creator claim and does not alter the opportunity classification."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "pwTBMVr9DAs",
+      "expected_opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1005,
+          "output_tokens": 97,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+            "canonical_name": "AI customer support and sales assistance for ecommerce stores",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets Shopify ecommerce stores with an AI agent for customer support and sales assistance, matching the candidate's customer type, problem, and solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1159,
+          "output_tokens": 101,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+            "canonical_name": "AI customer support and sales assistance for ecommerce stores",
+            "confidence": 0.99,
+            "reason": "The signal explicitly targets ecommerce stores and describes an AI agent for repetitive support questions and product-selection assistance, directly matching the existing candidate's buyer, problem, and solution pattern."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "XxnluV4-iDQ",
+      "expected_opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 997,
+          "output_tokens": 82,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+            "canonical_name": "AI bookkeeping workflow automation for small businesses",
+            "confidence": 0.99,
+            "reason": "The signal exactly matches the candidate's customer type, problem, and AI-assisted bookkeeping/accounting workflow solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1151,
+          "output_tokens": 85,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+            "canonical_name": "AI bookkeeping workflow automation for small businesses",
+            "confidence": 0.98,
+            "reason": "The signal specifies the same buyer segment, bookkeeping workflow problems, and AI-assisted accounting automation solution pattern as the existing candidate."
+          }
+        }
+      }
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "8baMba3neio",
+      "expected_opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+      "candidate_count": 5,
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1001,
+          "output_tokens": 82,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+            "canonical_name": "AI bookkeeping workflow automation for small businesses",
+            "confidence": 0.99,
+            "reason": "The signal directly matches the candidate's customer type, problem, and AI-assisted bookkeeping/accounting workflow solution."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1155,
+          "output_tokens": 103,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+            "canonical_name": "AI bookkeeping workflow automation for small businesses",
+            "confidence": 0.99,
+            "reason": "The signal explicitly identifies the same buyer segment, manual bookkeeping workflow problems, and AI-assisted bookkeeping/accounting automation solution as the existing candidate. The growth statement is a creator claim and does not alter the opportunity match."
+          }
+        }
+      }
+    }
+  ],
+  "translation_ab": [
+    {
+      "verticals": [
+        "legal_intake",
+        "legal_intake",
+        "legal_intake",
+        "legal_intake"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 523,
+          "output_tokens": 142,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "该视频展示了一个面向律师事务所的 AI 接待员的现场演示。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "该 AI 接待员被定位为在新客户接洽过程中与潜在客户互动。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该 AI 接待员被定位为收集潜在客户的信息。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "该 AI 接待员被定位为回答潜在客户的初步问题。"
+              }
+            ],
+            "preserved_terms": [
+              "AI"
+            ],
+            "warnings": []
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 692,
+          "output_tokens": 151,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "视频展示了一款面向律师事务所的 AI 前台接待员的实时演示。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "该 AI 前台接待员被定位为可在新客户接待过程中与潜在客户互动。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该 AI 前台接待员被定位为可收集潜在客户的信息。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "该 AI 前台接待员被定位为可回答潜在客户的初步问题。"
+              }
+            ],
+            "preserved_terms": [
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "verticals": [
+        "property_management",
+        "property_management",
+        "property_management",
+        "property_management"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 525,
+          "output_tokens": 148,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "AI 自动化被描述为可为房东和物业管理人员处理维护、租金收取以及租户沟通。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "MagicDoor 声称其 AI 可以对维护请求进行分流。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "MagicDoor 声称其 AI 可以自动指派维护供应商。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "MagicDoor 声称其 AI 可以在无需人工参与的情况下解决租户问题。"
+              }
+            ],
+            "preserved_terms": [
+              "AI",
+              "MagicDoor"
+            ],
+            "warnings": []
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 694,
+          "output_tokens": 147,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "AI 自动化被描述为可为房东和物业管理人员处理维护、租金收取及租户沟通。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "MagicDoor 声称其 AI 可以分流处理维护请求。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "MagicDoor 声称其 AI 可以自动指派维护供应商。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "MagicDoor 声称其 AI 可以在无需人工参与的情况下解决租户问题。"
+              }
+            ],
+            "preserved_terms": [
+              "MagicDoor",
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "verticals": [
+        "ecommerce_support",
+        "ecommerce_support",
+        "ecommerce_support",
+        "ecommerce_support"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 539,
+          "output_tokens": 161,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "Shopify 推出优惠：在三天免费试用后，前 3 个月可享每月 $1 的入门折扣。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "Tidio 被宣传为面向 Shopify 商店的 AI 销售代理。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该视频将 Shopify 上安装 Tidio 描述为向 Shopify 商店添加 AI 支持代理的一部分。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "所述的 AI 代理工作流包括交接和升级设置。"
+              }
+            ],
+            "preserved_terms": [
+              "Shopify",
+              "Tidio",
+              "AI"
+            ],
+            "warnings": []
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 708,
+          "output_tokens": 156,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "Shopify 宣传称，在三天免费试用结束后的前三个月，提供每月 $1 的优惠价。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "Tidio 被定位为面向 Shopify 商店的 AI 销售代理。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该视频将把 Tidio 安装到 Shopify 描述为向 Shopify 商店添加 AI 支持代理的一部分。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "所述 AI 代理工作流程包括交接和升级设置。"
+              }
+            ],
+            "preserved_terms": [
+              "Shopify",
+              "Tidio",
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "verticals": [
+        "bookkeeping",
+        "bookkeeping",
+        "bookkeeping",
+        "bookkeeping"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 528,
+          "output_tokens": 159,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "该视频讲解了在与 AI 交互前提供上下文，以用于簿记相关用途。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "该视频涵盖了 AI 分类示例和故障排除。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该视频重点介绍了在 QuickBooks 簿记场景中使用 Google AI。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "创作者通过视频说明中的活动链接引导观众前往 REFRAME 2025。"
+              }
+            ],
+            "preserved_terms": [
+              "AI",
+              "QuickBooks",
+              "Google AI",
+              "REFRAME 2025"
+            ],
+            "warnings": []
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 697,
+          "output_tokens": 160,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement_1",
+                "translated_text": "该视频介绍了在簿记相关场景中，如何预先为 AI 提供上下文提示。"
+              },
+              {
+                "field_name": "statement_2",
+                "translated_text": "该视频介绍了 AI 分类示例和故障排查。"
+              },
+              {
+                "field_name": "statement_3",
+                "translated_text": "该视频重点讲解如何在 QuickBooks 簿记场景中使用 Google AI。"
+              },
+              {
+                "field_name": "statement_4",
+                "translated_text": "创作者通过视频简介中的活动链接引导观众前往 REFRAME 2025。"
+              }
+            ],
+            "preserved_terms": [
+              "AI",
+              "Google AI",
+              "QuickBooks",
+              "REFRAME 2025"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    }
+  ],
+  "lexical_candidate_review": [
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "U6Wb-XlCHjY",
+      "signal_id": "875a5520-3f62-556a-b0ff-ddea1aa94028",
+      "terms": [
+        "and",
+        "appointment",
+        "automation",
+        "call",
+        "calls",
+        "demonstrated",
+        "dental",
+        "during",
+        "front-desk",
+        "handling",
+        "identity",
+        "missed",
+        "patient",
+        "practices",
+        "receptionist",
+        "the",
+        "urgent",
+        "verifies",
+        "workflow"
+      ],
+      "expected_opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 12
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 3
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 3
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 2
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "vertical": "dental_receptionist",
+      "video_id": "zrp1DyV3b8I",
+      "signal_id": "cb000b0f-4ef2-57ae-a7a2-c553114bc76a",
+      "terms": [
+        "and",
+        "appointment",
+        "automation",
+        "built",
+        "calls",
+        "claims",
+        "creator",
+        "dental",
+        "front-desk",
+        "handling",
+        "have",
+        "missed",
+        "practices",
+        "receptionist",
+        "the",
+        "workflow"
+      ],
+      "expected_opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 11
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 3
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 3
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 2
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "g8mMWu570Zw",
+      "signal_id": "dbb59a58-0131-5824-9571-887c699356a2",
+      "terms": [
+        "and",
+        "client",
+        "demonstration",
+        "firms",
+        "for",
+        "inquiries",
+        "intake",
+        "law",
+        "lead",
+        "live",
+        "manual",
+        "presents",
+        "qualification",
+        "receptionist",
+        "the",
+        "unanswered",
+        "video",
+        "workflow"
+      ],
+      "expected_opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 13
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 5
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 4
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 4
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "legal_intake",
+      "video_id": "v91sUCPOqfg",
+      "signal_id": "8c646991-bcef-5faf-b230-7655a6dd80a5",
+      "terms": [
+        "after-hours",
+        "and",
+        "attorneys",
+        "client",
+        "coverage",
+        "firms",
+        "for",
+        "high-volume",
+        "inquiries",
+        "intake",
+        "law",
+        "lead",
+        "manual",
+        "mid-sized",
+        "positioned",
+        "practices",
+        "qualification",
+        "receptionist",
+        "seeking",
+        "small"
+      ],
+      "expected_opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 11
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 5
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 4
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 4
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "ZsiQUulCb8c",
+      "signal_id": "91d0443e-2074-5d5e-800c-91c61d0ff261",
+      "terms": [
+        "and",
+        "automation",
+        "collection",
+        "communication",
+        "described",
+        "for",
+        "handling",
+        "inquiries",
+        "intake",
+        "landlords",
+        "maintenance",
+        "managers",
+        "property",
+        "rent",
+        "repetitive",
+        "request",
+        "request-routing",
+        "support",
+        "tenant"
+      ],
+      "expected_opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 13
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 4
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 4
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 4
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "vertical": "property_management",
+      "video_id": "lti7XPAo_nY",
+      "signal_id": "2d5414bc-1ccf-5232-abda-8eaee5711677",
+      "terms": [
+        "about",
+        "access",
+        "amenity",
+        "and",
+        "are",
+        "automation",
+        "building",
+        "described",
+        "inquiries",
+        "intake",
+        "maintenance",
+        "managers",
+        "overwhelmed",
+        "property",
+        "questions",
+        "repetitive",
+        "request",
+        "request-routing",
+        "rules",
+        "support"
+      ],
+      "expected_opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 11
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 4
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 3
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 2
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "P4j2vx5Dh4M",
+      "signal_id": "15162b12-2b4c-5399-b3b9-c8bdbfd1fdd8",
+      "terms": [
+        "after",
+        "agent",
+        "and",
+        "customer",
+        "discount",
+        "ecommerce",
+        "first",
+        "for",
+        "free",
+        "friction",
+        "introductory",
+        "month",
+        "months",
+        "product-selection",
+        "promoted",
+        "questions",
+        "repetitive",
+        "sales-assistance",
+        "shopify",
+        "stores"
+      ],
+      "expected_opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 11
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 3
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 2
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 2
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "ecommerce_support",
+      "video_id": "pwTBMVr9DAs",
+      "signal_id": "5d2ab6c7-86af-58f2-a597-0e85f1f403e8",
+      "terms": [
+        "agent",
+        "and",
+        "customer",
+        "ecommerce",
+        "for",
+        "friction",
+        "outcraft",
+        "presented",
+        "product-selection",
+        "questions",
+        "repetitive",
+        "sales-assistance",
+        "shopify",
+        "stores",
+        "support"
+      ],
+      "expected_opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 12
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 4
+        },
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 2
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 2
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "XxnluV4-iDQ",
+      "signal_id": "4ebb3dc3-e749-5e30-bc04-f340a89cdd21",
+      "terms": [
+        "accounting",
+        "ai-assisted",
+        "and",
+        "automation",
+        "bookkeeping",
+        "bookkeeping-related",
+        "businesses",
+        "categorization",
+        "close",
+        "context",
+        "covers",
+        "firms",
+        "for",
+        "manual",
+        "pre-prompting",
+        "reconciliation",
+        "small",
+        "the",
+        "transaction",
+        "use"
+      ],
+      "expected_opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 14
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 4
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 3
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 3
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "vertical": "bookkeeping",
+      "video_id": "8baMba3neio",
+      "signal_id": "56691259-d7f1-5d72-84bc-31fac09778fb",
+      "terms": [
+        "accounting",
+        "ai-assisted",
+        "and",
+        "automation",
+        "bookkeeping",
+        "businesses",
+        "categorization",
+        "characterizes",
+        "close",
+        "creator",
+        "firms",
+        "growing",
+        "manual",
+        "rapidly",
+        "reconciliation",
+        "small",
+        "the",
+        "transaction",
+        "workflow",
+        "workflows"
+      ],
+      "expected_opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+      "expected_rank": 1,
+      "ranked_candidates": [
+        {
+          "opportunity_id": "03f48776-d77a-53b3-af2d-359f2b528a29",
+          "name": "AI bookkeeping workflow automation for small businesses",
+          "score": 15
+        },
+        {
+          "opportunity_id": "2a3019e1-8b88-57de-9492-4b6d3705b37a",
+          "name": "AI intake and lead qualification for law firms",
+          "score": 4
+        },
+        {
+          "opportunity_id": "8b8a11e0-ec55-5052-be87-87c1f7d53451",
+          "name": "AI receptionist and appointment booking for dental practices",
+          "score": 3
+        },
+        {
+          "opportunity_id": "7eb84410-7c71-58c6-8a2f-0dec91b725fe",
+          "name": "AI tenant inquiry and maintenance intake for property managers",
+          "score": 2
+        },
+        {
+          "opportunity_id": "6ed84e3c-0695-5bae-8a75-1893c5b0bb1d",
+          "name": "AI customer support and sales assistance for ecommerce stores",
+          "score": 1
+        }
+      ]
+    }
+  ]
+}

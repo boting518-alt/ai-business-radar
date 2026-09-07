@@ -109,3 +109,16 @@ v002 A/B used the same bounded inputs and configured models after credential rot
 confirmed. Signal and translation v002 improved the targeted sample, while normalizer output was
 unchanged. All v002 prompts remain experimental because the dataset is too narrow to establish
 stochastic robustness; no active intelligence was replaced during evaluation.
+
+## Broader cross-source validation
+
+TASK-036 extends the local baseline to five narrow verticals, 20 videos, 20 distinct channels, ten
+shared A/B source inputs, ten five-candidate normalization comparisons, and 16 translated fields.
+Both normalizer prompts converged five two-source groups correctly and produced no cross-vertical
+false merge in the reviewed cases. Signal v002 was more atomic and better grounded, but retained an
+ecommerce workflow-versus-technology category regression. Translation v002 was directionally more
+natural but retained awkward legal-intake phrasing. All three v002 families remain experimental.
+
+Detailed local metrics, cases, limitations, and provider usage are recorded in
+`docs/cross-source-validation.md` and the dated artifact. These results supplement rather than
+replace the TASK-035 dental baseline.

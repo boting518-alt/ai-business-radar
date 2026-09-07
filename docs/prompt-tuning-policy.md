@@ -31,6 +31,11 @@ Synthetic golden fixtures guard semantic properties and forbidden behavior; they
 for real-data human review. Avoid brittle exact wording checks except immutable hashes and explicit
 known-bad regression phrases.
 
+Cross-source evaluation uses the bounded protocol in `docs/cross-source-validation.md`. It adds
+multiple verticals, distinct channels, lexical-candidate stress, false-merge review, and domain-term
+translation checks while remaining artifact-only. Cross-source results can recommend a decision but
+cannot change the active prompt configuration.
+
 ## Promotion rule
 
 A candidate becomes the default only when all conditions hold:
