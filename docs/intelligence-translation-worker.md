@@ -18,6 +18,11 @@ product reads.
 The provider/model setting is mandatory for non-dry runs and is recorded per projection. Prompt and
 translation versions are immutable once used.
 
+TASK-035 adds `zh-CN/v002.md` as an experimental naturalness candidate. It is not the runtime
+default: reads and worker generation remain on `translation-zh-CN-v001` until bounded A/B validation
+meets the promotion policy. A future promotion must create v002 projection rows and preserve v001
+history.
+
 ## Idempotency and staleness
 
 Each canonical field is SHA-256 hashed. A current row with the same entity, field, locale, source
@@ -59,3 +64,7 @@ Verification should cover schema export, service and database integration tests,
 API authorization/enqueue tests, linting, and frontend regressions. A live validation additionally
 checks translated reads, canonical fallback for missing projections, original evidence retention,
 and zero provider activity on read paths.
+
+The current dental review found 10/14 fields good, three minor language issues, and one meaning-risk
+word-order regression. The exact case and recommended phrasing are documented in
+`docs/intelligence-quality-review.md`; the persisted v001 row was not manually patched.

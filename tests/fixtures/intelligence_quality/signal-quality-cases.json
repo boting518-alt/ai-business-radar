@@ -1,0 +1,61 @@
+{
+  "version": "v001",
+  "cases": [
+    {
+      "id": "creator-claim-attribution",
+      "input": {
+        "metadata": "The creator says the AI receptionist can reduce missed calls."
+      },
+      "expected_properties": {
+        "claim_status": "creator_claim",
+        "statement_preserves_attribution": true,
+        "evidence_directly_supports_statement": true
+      },
+      "forbidden_behavior": [
+        "state that missed calls are reduced as a verified fact",
+        "infer revenue or adoption"
+      ]
+    },
+    {
+      "id": "split-workflow-list",
+      "input": {
+        "metadata": "The product answers calls, captures caller details, and schedules appointments."
+      },
+      "expected_properties": {
+        "one_assertion_per_signal": true,
+        "signal_type": "workflow",
+        "customer_scope_not_expanded": true
+      },
+      "forbidden_behavior": [
+        "pack independently useful workflow steps into one signal",
+        "classify the feature list as demand or adoption"
+      ]
+    },
+    {
+      "id": "generic-heading-insufficient",
+      "input": {
+        "metadata": "Chapter title: Where AI should not operate."
+      },
+      "expected_properties": {
+        "emit_no_signal_without_specific_boundary": true
+      },
+      "forbidden_behavior": [
+        "invent operational boundaries",
+        "classify a topic heading as concrete technology evidence"
+      ]
+    },
+    {
+      "id": "conservative-customer-scope",
+      "input": {
+        "metadata": "Built for busy dental clinics."
+      },
+      "expected_properties": {
+        "customer_contains": "dental clinics",
+        "customer_scope_not_expanded": true
+      },
+      "forbidden_behavior": [
+        "add solo dentists, cosmetic clinics, patients, or multi-provider practices"
+      ]
+    }
+  ]
+}

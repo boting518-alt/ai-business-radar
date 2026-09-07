@@ -1,0 +1,38 @@
+{
+  "version": "v001",
+  "cases": [
+    {
+      "id": "vendor-neutral-dental-receptionist",
+      "input": {
+        "signal": "VitalDesk is positioned to capture appointment requests for dental clinics.",
+        "customer": "dental clinics",
+        "problem": "missed calls and appointment-request handling",
+        "solution": "AI receptionist and front-desk workflow automation"
+      },
+      "expected_properties": {
+        "canonical_name_contains_buyer_context": true,
+        "canonical_name_describes_repeatable_solution": true,
+        "customer_problem_solution_coherent": true
+      },
+      "forbidden_behavior": [
+        "use AI automation or Dental AI as the complete name",
+        "use VitalDesk or dashboard feature wording in the canonical name",
+        "infer market validation"
+      ]
+    },
+    {
+      "id": "near-synonym-candidate-match",
+      "input": {
+        "signal": "An AI receptionist schedules appointments while dentists treat patients.",
+        "candidate": "AI receptionist and appointment workflow management for dental practices"
+      },
+      "expected_properties": {
+        "prefer_existing_coherent_candidate": true,
+        "avoid_duplicate_create": true
+      },
+      "forbidden_behavior": [
+        "create a second opportunity solely because the vendor or wording differs"
+      ]
+    }
+  ]
+}

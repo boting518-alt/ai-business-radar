@@ -44,13 +44,15 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-032 Opportunity Activation Readiness + Publish Workflow
 - [x] TASK-033 Signal Semantics + Intelligence Localization Foundation
 - [x] TASK-034 Intelligence Translation Worker v0.1
+- [x] TASK-035 Local Intelligence Quality Review + Prompt Tuning
 
 ## Next
 
-- [ ] TASK-035 Local Intelligence Quality Review / Prompt Tuning
-- [ ] TASK-036 Hosted Supabase Auth + RLS Drill
-- [ ] TASK-037 Staging Infrastructure Deployment
-- [ ] TASK-038 Staging Full Integration Validation
+- [ ] TASK-036 Industry + Customer Taxonomy Foundation
+- [ ] TASK-037 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-038 Staging Infrastructure Deployment
+- [ ] TASK-039 Staging Full Integration Validation
+- [ ] TASK-040 Broader YouTube Discovery Quality Validation
 
 ## Validation debt
 

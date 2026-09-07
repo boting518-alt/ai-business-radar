@@ -191,6 +191,19 @@ Translation runs asynchronously on the dedicated `intelligence_translation` queu
 through the local CLI. Source hashes and `translation-zh-CN-v001` determine reuse and staleness.
 Provider/model/request ID/token audit data is persisted. No read endpoint invokes this pipeline.
 
+### Quality review and experimental prompts
+
+TASK-035 adds a bounded human-evaluation baseline over real dental metadata. Experimental
+`signal-extractor/v002`, `opportunity-normalizer/v002`, and
+`intelligence-translation/zh-CN/v002` prompts address observed compound signals, weak heading-only
+evidence, customer over-expansion, vendor-specific opportunity framing, and Chinese word-order
+calques. Their structured-output schemas are unchanged.
+
+Creation does not imply promotion: runtime constants and current localization read preference stay
+on v001 until the documented A/B and promotion gates pass. Signal/normalizer reprocessing must
+create new extraction history; translation promotion must use `translation-zh-CN-v002`. See
+`docs/intelligence-quality-review.md` and `docs/prompt-tuning-policy.md`.
+
 ## Prompt/schema version relationship
 
 Prompt and schema versions begin at `v001` and are independently identifiable but released deliberately as a compatible pair for each task.

@@ -1,0 +1,421 @@
+{
+  "dataset": {
+    "signal_extraction_video_id": "40ccdc96-0bae-4f44-b9cb-688cdb09d5c5",
+    "normalizer_signal_id": "3f5b6fcd-b047-4bf1-9785-678f9de34311",
+    "translation_signal_ids": [
+      "0a74cce1-79ee-47e1-b270-b7da6f6f5736",
+      "3f5b6fcd-b047-4bf1-9785-678f9de34311",
+      "4097d6ce-4c26-4e38-b190-c7da02030778",
+      "63eda4a9-3176-45ad-8ecf-fecfcd7c954d",
+      "6926dc73-ae72-4378-80df-c29a659dcd35"
+    ],
+    "translation_opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861"
+  },
+  "comparisons": {
+    "signal_extractor": {
+      "v001": {
+        "provider": "openai",
+        "model": "gpt-5.6-terra",
+        "prompt_hash": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
+        "input_tokens": 964,
+        "output_tokens": 366,
+        "output": {
+          "industry": "Dental practices",
+          "customer": "Dentists and dental practices",
+          "problem": "Dental providers may be unable to answer incoming calls while treating patients, potentially interrupting booking workflows.",
+          "solution": "An AI receptionist that answers calls, captures caller details, and schedules appointments on a calendar.",
+          "business_model": null,
+          "technology": [
+            "AI receptionist",
+            "calendar scheduling"
+          ],
+          "distribution": [
+            "YouTube Shorts",
+            "Call to action to comment \"SYSTEM\" for a free booking-process audit"
+          ],
+          "pricing": null,
+          "signals": [
+            {
+              "type": "pain",
+              "statement": "Dentists can be unavailable to answer incoming calls while treating patients.",
+              "evidence": "\"When you’re treating a patient, you can’t always stop to answer an incoming call.\"",
+              "claim_status": "creator_claim",
+              "confidence": 0.98
+            },
+            {
+              "type": "workflow",
+              "statement": "An AI receptionist is presented as handling calls, collecting caller details, and scheduling appointments while the dentist continues patient care.",
+              "evidence": "\"An AI receptionist can help answer calls, capture the caller’s details, and schedule appointments onto your calendar while you continue focusing on patient care.\"",
+              "claim_status": "creator_claim",
+              "confidence": 0.99
+            },
+            {
+              "type": "workflow",
+              "statement": "The offering is positioned as creating a booking process that does not require the dentist to be available for every call.",
+              "evidence": "\"It’s one way to create a clearer dental booking process without relying on you to be available for every call.\"",
+              "claim_status": "creator_claim",
+              "confidence": 0.97
+            },
+            {
+              "type": "demand",
+              "statement": "The creator offers a free audit of a viewer's current dental booking process in exchange for commenting \"SYSTEM.\"",
+              "evidence": "\"Comment SYSTEM and I’ll send you a free audit of your current booking process.\"",
+              "claim_status": "creator_claim",
+              "confidence": 0.99
+            }
+          ]
+        }
+      },
+      "v002": {
+        "provider": "openai",
+        "model": "gpt-5.6-terra",
+        "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+        "input_tokens": 1189,
+        "output_tokens": 402,
+        "output": {
+          "industry": "Dental practices",
+          "customer": "Dentists treating patients",
+          "problem": "Dentists may be unable to answer incoming calls while treating a patient.",
+          "solution": "An AI receptionist positioned to answer calls, capture caller details, and schedule appointments to a calendar.",
+          "business_model": null,
+          "technology": [
+            "AI receptionist"
+          ],
+          "distribution": [
+            "YouTube Shorts",
+            "Comment-triggered free booking-process audit"
+          ],
+          "pricing": null,
+          "signals": [
+            {
+              "type": "pain",
+              "statement": "Dentists may be unable to answer incoming calls while treating a patient.",
+              "evidence": "“When you’re treating a patient, you can’t always stop to answer an incoming call.”",
+              "claim_status": "creator_claim",
+              "confidence": 0.98
+            },
+            {
+              "type": "workflow",
+              "statement": "The AI receptionist is positioned to answer incoming calls.",
+              "evidence": "“An AI receptionist can help answer calls...”",
+              "claim_status": "creator_claim",
+              "confidence": 0.95
+            },
+            {
+              "type": "workflow",
+              "statement": "The AI receptionist is positioned to capture callers’ details.",
+              "evidence": "“An AI receptionist can help answer calls, capture the caller’s details...”",
+              "claim_status": "creator_claim",
+              "confidence": 0.95
+            },
+            {
+              "type": "workflow",
+              "statement": "The AI receptionist is positioned to schedule appointments onto the dentist's calendar.",
+              "evidence": "“An AI receptionist can help ... schedule appointments onto your calendar...”",
+              "claim_status": "creator_claim",
+              "confidence": 0.97
+            },
+            {
+              "type": "workflow",
+              "statement": "The service is positioned to let dentists continue focusing on patient care while calls are handled.",
+              "evidence": "“...schedule appointments onto your calendar while you continue focusing on patient care.”",
+              "claim_status": "creator_claim",
+              "confidence": 0.94
+            },
+            {
+              "type": "distribution",
+              "statement": "The creator offers a free audit of the viewer's current booking process in response to comments containing “SYSTEM.”",
+              "evidence": "“Comment SYSTEM and I’ll send you a free audit of your current booking process.”",
+              "claim_status": "creator_claim",
+              "confidence": 0.99
+            }
+          ]
+        }
+      }
+    },
+    "opportunity_normalizer": {
+      "v001": {
+        "provider": "openai",
+        "model": "gpt-5.6-terra",
+        "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+        "input_tokens": 752,
+        "output_tokens": 93,
+        "output": {
+          "action": "MATCH",
+          "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+          "canonical_name": "AI receptionist and appointment-lead workflow management for dental practices",
+          "confidence": 0.99,
+          "reason": "The signal directly matches the candidate's dental-practice customer, missed-call and appointment-request problem, and VitalDesk AI receptionist/dashboard workflow solution."
+        }
+      },
+      "v002": {
+        "provider": "openai",
+        "model": "gpt-5.6-terra",
+        "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+        "input_tokens": 906,
+        "output_tokens": 96,
+        "output": {
+          "action": "MATCH",
+          "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+          "canonical_name": "AI receptionist and appointment-lead workflow management for dental practices",
+          "confidence": 1.0,
+          "reason": "The signal exactly matches the existing candidate's dental-practice buyer, missed-call and appointment-request workflow problem, and AI receptionist/front-desk dashboard solution pattern."
+        }
+      }
+    },
+    "translation": {
+      "v001": [
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 433,
+          "output_tokens": 51,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "牙科预约线索已在 VitalDesk 仪表板中整理。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 440,
+          "output_tokens": 55,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "VitalDesk 被定位为用于获取预约请求并整理牙科诊所前台工作流程。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 435,
+          "output_tokens": 46,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "患者来电和网站聊天请求可由该产品捕获。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 440,
+          "output_tokens": 61,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "VitalDesk 使用 AI 前台接待员处理重复性的患者沟通、来电记录和请求路由。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk",
+              "AI"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 435,
+          "output_tokens": 46,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "诊所可以在产品中查看对话日志和请求状态。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "1519c6cb9aa7569db5988f45119769ea8595b509cecac7c3df3c01bcb1edb28e",
+          "input_tokens": 528,
+          "output_tokens": 157,
+          "output": {
+            "translations": [
+              {
+                "field_name": "name",
+                "translated_text": "面向牙科诊所的 AI 接待员及预约线索工作流管理"
+              },
+              {
+                "field_name": "one_line_thesis",
+                "translated_text": "牙科预约线索在 VitalDesk 仪表板中进行整理。"
+              },
+              {
+                "field_name": "problem",
+                "translated_text": "遗漏患者来电和非营业时间咨询，以及收集和分流与预约相关的患者请求所带来的行政负担。"
+              },
+              {
+                "field_name": "solution",
+                "translated_text": "VitalDesk：一款用于收集患者沟通信息并整理前台工作流的 AI 接待员和仪表板。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk",
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      ],
+      "v002": [
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 602,
+          "output_tokens": 51,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "牙科预约线索已在 VitalDesk 仪表板中整理。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 609,
+          "output_tokens": 58,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "VitalDesk 定位为用于捕获预约请求并整理牙科诊所前台工作流程的工具。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 604,
+          "output_tokens": 45,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "该产品可以捕获患者来电和网站聊天请求。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 609,
+          "output_tokens": 59,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "VitalDesk 使用 AI 接待员处理重复性的患者沟通、来电记录和请求分流。"
+              }
+            ],
+            "preserved_terms": [
+              "VitalDesk",
+              "AI"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 604,
+          "output_tokens": 46,
+          "output": {
+            "translations": [
+              {
+                "field_name": "statement",
+                "translated_text": "诊所可在产品中查看对话记录和请求状态。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 697,
+          "output_tokens": 158,
+          "output": {
+            "translations": [
+              {
+                "field_name": "name",
+                "translated_text": "面向牙科诊所的 AI 前台接待与预约线索工作流管理"
+              },
+              {
+                "field_name": "one_line_thesis",
+                "translated_text": "牙科预约线索在 VitalDesk 仪表板内集中整理。"
+              },
+              {
+                "field_name": "problem",
+                "translated_text": "患者来电和非工作时间咨询被遗漏，以及记录和分派与预约相关的患者请求所带来的行政负担。"
+              },
+              {
+                "field_name": "solution",
+                "translated_text": "VitalDesk 是一款 AI 前台接待工具及仪表板，用于记录患者沟通并整理前台工作流。"
+              }
+            ],
+            "preserved_terms": [
+              "AI",
+              "VitalDesk"
+            ],
+            "warnings": []
+          }
+        }
+      ]
+    }
+  }
+}

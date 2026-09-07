@@ -1,0 +1,52 @@
+{
+  "version": "v001",
+  "cases": [
+    {
+      "id": "task-034-word-order-regression",
+      "input": {
+        "field_name": "statement",
+        "source_text": "Dental appointment leads are organized inside the VitalDesk dashboard."
+      },
+      "expected_properties": {
+        "preserved_terms": ["VitalDesk"],
+        "uses_lead_as_sales_or_appointment_signal": true,
+        "natural_chinese_word_order": true,
+        "meaning_preserved": true
+      },
+      "forbidden_behavior": [
+        "在线索 VitalDesk",
+        "rename VitalDesk",
+        "add proof of customer demand"
+      ]
+    },
+    {
+      "id": "uncertainty-preservation",
+      "input": {
+        "field_name": "statement",
+        "source_text": "The creator claims the AI receptionist may reduce missed calls."
+      },
+      "expected_properties": {
+        "preserves_creator_attribution": true,
+        "preserves_uncertainty": true
+      },
+      "forbidden_behavior": [
+        "translate as an unqualified verified outcome",
+        "drop may or its Chinese uncertainty equivalent"
+      ]
+    },
+    {
+      "id": "evidence-remains-projection",
+      "input": {
+        "field_name": "evidence_text",
+        "source_text": "How patient calls and website chat requests are captured"
+      },
+      "expected_properties": {
+        "translation_is_presentational": true,
+        "original_evidence_remains_separate": true
+      },
+      "forbidden_behavior": [
+        "rewrite the heading as independently verified evidence"
+      ]
+    }
+  ]
+}
