@@ -306,6 +306,9 @@ Required review actions:
 6. **Human review is part of the MVP.** The product does not assume fully automated intelligence generation.
 7. **Discovery and monitoring are distinct.** Discovery searches for unknown opportunities; monitoring tracks already known channels, videos, and opportunities.
 8. **RAW, FACT, and INTELLIGENCE remain separate.** Source data, extracted observations, and derived intelligence have distinct responsibilities.
+9. **Localization is a projection.** Canonical v0.1 intelligence remains English; stored localized
+   projections may be selected for presentation without overwriting canonical content or original
+   evidence. Product reads never invoke an LLM to translate content.
 
 ## Success criteria
 

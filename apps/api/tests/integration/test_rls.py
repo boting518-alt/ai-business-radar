@@ -35,10 +35,18 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
                (slug, name, market_stage, status, first_detected_at, last_activity_at)
                VALUES ('active', 'Active', 'emerging', 'active', NOW(), NOW()) RETURNING id"""
         )
-        await connection.execute(
+        candidate_id = await connection.fetchval(
             """INSERT INTO opportunities
                (slug, name, market_stage, status, first_detected_at, last_activity_at)
-               VALUES ('candidate', 'Candidate', 'emerging', 'candidate', NOW(), NOW())"""
+               VALUES ('candidate', 'Candidate', 'emerging', 'candidate', NOW(), NOW())
+               RETURNING id"""
+        )
+        await connection.executemany(
+            """INSERT INTO intelligence_localizations
+               (entity_type, entity_id, field_name, locale, translated_text,
+                source_text_hash, translation_version, status)
+               VALUES ('opportunity', $1, 'name', 'zh-CN', $2, $3, 'test-v1', 'current')""",
+            [(active_id, "已发布", "active-hash"), (candidate_id, "候选", "candidate-hash")],
         )
         await connection.execute(
             """INSERT INTO review_tasks
@@ -60,7 +68,7 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
             await connection.fetchval(
                 "SELECT count(*) FROM pg_class WHERE relkind = 'r' AND relrowsecurity"
             )
-            == 19
+            == 20
         )
 
         await connection.execute("SET ROLE authenticated")
@@ -71,6 +79,7 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
         assert await connection.fetchval("SELECT count(*) FROM watchlists") == 1
         assert await connection.fetchval("SELECT count(*) FROM watchlist_items") == 1
         assert await connection.fetchval("SELECT count(*) FROM opportunities") == 1
+        assert await connection.fetchval("SELECT count(*) FROM intelligence_localizations") == 1
         assert await connection.fetchval("SELECT count(*) FROM review_tasks") == 0
         with pytest.raises(asyncpg.InsufficientPrivilegeError):
             await connection.fetchval("SELECT count(*) FROM channels")
@@ -109,6 +118,7 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
             )
             == 2
         )
+        assert await connection.fetchval("SELECT count(*) FROM intelligence_localizations") == 2
         assert own_watchlist_id is not None
     finally:
         await connection.close()

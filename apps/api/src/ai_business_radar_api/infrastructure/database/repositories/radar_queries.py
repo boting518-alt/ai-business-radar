@@ -193,6 +193,18 @@ class RadarQueryRepository:
             OpportunitySignalLink.opportunity_id.is_not(None),
             Opportunity.status == "active",
         )
+        opportunities = func.jsonb_agg(
+            func.distinct(
+                func.jsonb_build_object(
+                    "id",
+                    Opportunity.id,
+                    "slug",
+                    Opportunity.slug,
+                    "name",
+                    Opportunity.name,
+                )
+            )
+        ).filter(Opportunity.id.is_not(None), Opportunity.status == "active")
         query = (
             select(
                 Signal.id,
@@ -207,14 +219,17 @@ class RadarQueryRepository:
                 Signal.observed_at,
                 Signal.source_type,
                 Video.title.label("video_title"),
+                Channel.name.label("channel_name"),
                 opportunity_ids.label("opportunity_ids"),
+                opportunities.label("opportunities"),
             )
             .outerjoin(Comment, Comment.id == Signal.comment_id)
             .outerjoin(Video, Video.id == func.coalesce(Signal.video_id, Comment.video_id))
+            .outerjoin(Channel, Channel.id == Video.channel_id)
             .outerjoin(OpportunitySignalLink, OpportunitySignalLink.signal_id == Signal.id)
             .outerjoin(Opportunity, Opportunity.id == OpportunitySignalLink.opportunity_id)
             .where(Signal.status == "active")
-            .group_by(Signal.id, Video.title)
+            .group_by(Signal.id, Video.title, Channel.name)
         )
         if signal_type:
             query = query.where(Signal.signal_type == signal_type)

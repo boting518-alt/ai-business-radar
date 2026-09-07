@@ -3,6 +3,7 @@
 from .base import Base
 from .fact import AIExtraction, Signal
 from .intelligence import (
+    IntelligenceLocalization,
     Opportunity,
     OpportunityEvidence,
     OpportunityMergeHistory,
@@ -30,6 +31,7 @@ __all__ = [
     "Channel",
     "CollectionRun",
     "Comment",
+    "IntelligenceLocalization",
     "Opportunity",
     "OpportunityEvidence",
     "OpportunityMergeHistory",

@@ -52,6 +52,35 @@ class Opportunity(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 
+class IntelligenceLocalization(Base):
+    __tablename__ = "intelligence_localizations"
+    __table_args__ = (
+        UniqueConstraint(
+            "entity_type",
+            "entity_id",
+            "field_name",
+            "locale",
+            "source_text_hash",
+            "translation_version",
+        ),
+    )
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    entity_type: Mapped[str]
+    entity_id: Mapped[UUID] = mapped_column(Uuid)
+    field_name: Mapped[str]
+    locale: Mapped[str]
+    translated_text: Mapped[str] = mapped_column(Text)
+    source_text_hash: Mapped[str]
+    translation_version: Mapped[str]
+    translation_provider: Mapped[str | None]
+    translation_model: Mapped[str | None]
+    status: Mapped[str]
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
 class OpportunitySignalLink(Base):
     __tablename__ = "opportunity_signal_links"
     __table_args__ = (UniqueConstraint("opportunity_id", "signal_id"),)

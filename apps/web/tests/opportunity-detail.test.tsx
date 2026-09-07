@@ -30,7 +30,7 @@ describe("Opportunity detail page",()=>{
     expect(await screen.findByRole("heading",{name:"AI Dental Receptionist"})).toBeInTheDocument();
     await waitFor(()=>expect(fetch).toHaveBeenCalledTimes(4));
     const urls=vi.mocked(fetch).mock.calls.map(call=>String(call[0]));
-    expect(urls.some(url=>url.endsWith("/opportunities/ai-dental-receptionist"))).toBe(true);
+    expect(urls.some(url=>url.endsWith("/opportunities/ai-dental-receptionist?locale=zh-CN"))).toBe(true);
     expect(urls.some(url=>url.includes("/trends?window_type=7d"))).toBe(true);
     expect(urls.some(url=>url.includes("/scores?limit=50"))).toBe(true);
     expect(urls.some(url=>url.includes("/evidence?offset=0&limit=10"))).toBe(true);

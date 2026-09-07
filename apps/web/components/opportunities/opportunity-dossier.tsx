@@ -10,6 +10,7 @@ import type { EvidenceItem, OpportunityDetail, ScoreItem, TrendItem } from "@/li
 import { EmptyState, ErrorState } from "@/components/states/states";
 import { StageBadge } from "@/components/ui/primitives";
 import { WatchlistButton } from "@/components/watchlist/watchlist-button";
+import { useI18n } from "@/lib/i18n/context";
 
 const WINDOWS=["7d","30d","90d"] as const;
 const EVIDENCE_LIMIT=10;
@@ -28,6 +29,7 @@ function price(detail:OpportunityDetail["opportunity"]){
 }
 
 export function OpportunityDossier({identifier}:{identifier:string}){
+  const {locale}=useI18n();
   const router=useRouter();
   const searchParams=useSearchParams();
   const serialized=searchParams.toString();
@@ -58,7 +60,7 @@ export function OpportunityDossier({identifier}:{identifier:string}){
         if(!session){router.replace("/login");return}
         const api=new ApiClient(async()=>session.access_token);
         const [nextDetail,nextTrends,nextScores,nextEvidence]=await Promise.all([
-          api.getOpportunity(identifier),api.getOpportunityTrends(identifier,{window_type:trendWindow,limit:50}),api.getOpportunityScores(identifier,{limit:50}),api.getOpportunityEvidence(identifier,{offset:evidenceOffset,limit:EVIDENCE_LIMIT}),
+          api.getOpportunity(identifier,{locale}),api.getOpportunityTrends(identifier,{window_type:trendWindow,limit:50}),api.getOpportunityScores(identifier,{limit:50}),api.getOpportunityEvidence(identifier,{offset:evidenceOffset,limit:EVIDENCE_LIMIT}),
         ]);
         if(active){setDetail(nextDetail);setTrends(nextTrends);setScores(nextScores);setEvidence(nextEvidence)}
       }catch(reason){
@@ -67,7 +69,7 @@ export function OpportunityDossier({identifier}:{identifier:string}){
       }finally{if(active)setLoading(false)}
     }
     void load();return()=>{active=false};
-  },[evidenceOffset,identifier,retry,router,trendWindow]);
+  },[evidenceOffset,identifier,locale,retry,router,trendWindow]);
 
   if(loading)return <DossierSkeleton/>;
   if(error)return <div className="space-y-4"><BackLink/>{error.status===404?<EmptyState title="Opportunity not found or unavailable." description="该机会不存在，或当前不可查看。" action={<Link href="/radar" className="mt-4 inline-block rounded-md border px-4 py-2 text-sm">返回 Radar</Link>}/>:<ErrorState message={error.status===403?"你没有查看该机会的权限":error.message} requestId={error.requestId??undefined} onRetry={()=>setRetry(value=>value+1)}/>}</div>;

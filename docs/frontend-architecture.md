@@ -123,3 +123,17 @@ no taxonomy endpoint exists. Detail history is presented as compact tables witho
 dependency. The review queue has no total count or admin directory. Signals have no total count,
 and v0.1 presents one logical personal watchlist without list management. End-to-end validation
 status and deployment gaps are maintained in `docs/mvp-release-readiness.md`.
+
+## Localization and Signal semantics
+
+Fixed UI text uses a small typed React context and dictionaries rather than a routing-scale i18n
+framework. It supports `zh-CN` (default) and `en-US`, initializes identically during SSR/hydration,
+persists the preference locally, and centralizes canonical enum display labels. The locale selector
+also refreshes localized Radar, Signal, and Opportunity detail reads through the explicit API
+locale parameter.
+
+Dynamic intelligence never enters the UI dictionary. The backend returns a stored localized
+projection or canonical fallback. Signal cards distinguish statement from evidence, display
+industry/customer/claim as separate semantic fields, retain original translated evidence behind a
+toggle, and keep video/channel proper names unchanged. See `docs/signal-semantics.md` and
+`docs/intelligence-localization.md`.

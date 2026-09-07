@@ -7,6 +7,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from ..infrastructure.database.repositories.radar_queries import RadarQueryRepository
+from .intelligence_localization import IntelligenceLocalizationService, Locale
 
 Window = Literal["7d", "30d", "90d"]
 Sort = Literal["score", "momentum", "confidence", "hype", "recent"]
@@ -172,14 +173,29 @@ class SignalFeedItem(BaseModel):
     observed_at: datetime | None
     source_type: str
     video_title: str | None
+    channel_name: str | None
     opportunity_ids: list[UUID]
+    opportunities: list["LinkedOpportunity"]
+    original_statement: str
+    original_evidence_text: str | None
+    statement_localized: bool = False
+    evidence_localized: bool = False
+    localization_stale: bool = False
+
+
+class LinkedOpportunity(BaseModel):
+    id: UUID
+    slug: str
+    name: str
 
 
 class RadarQueryService:
     def __init__(self, sessions: async_sessionmaker[AsyncSession]) -> None:
         self._sessions = sessions
 
-    async def radar(self, user_id: UUID, request: RadarRequest) -> RadarResponse:
+    async def radar(
+        self, user_id: UUID, request: RadarRequest, locale: Locale = "en-US"
+    ) -> RadarResponse:
         async with self._sessions() as session:
             repo = RadarQueryRepository(session)
             opportunities = await repo.list_active_opportunities()
@@ -188,12 +204,30 @@ class RadarQueryService:
             trends = await repo.latest_trends(ids, request.window_type)
             summaries = await repo.evidence_summaries(ids)
             watched = await repo.watchlisted_ids(user_id, ids)
-        items = [
-            self._item(
-                item, scores.get(item.id), trends.get(item.id), summaries.get(item.id), watched
-            )
-            for item in opportunities
-        ]
+            localization = IntelligenceLocalizationService(session)
+            items = []
+            for item in opportunities:
+                fields = await localization.localize(
+                    "opportunity",
+                    item.id,
+                    locale,
+                    {
+                        "name": item.name,
+                        "one_line_thesis": item.one_line_thesis,
+                        "industry": item.industry,
+                        "customer_type": item.customer_type,
+                    },
+                )
+                items.append(
+                    self._item(
+                        item,
+                        scores.get(item.id),
+                        trends.get(item.id),
+                        summaries.get(item.id),
+                        watched,
+                        fields,
+                    )
+                )
         items = self._filter(items, request)
         items = self._sort(items, request.sort, request.direction)
         total = len(items)
@@ -207,10 +241,14 @@ class RadarQueryService:
             limit=request.limit,
         )
 
-    async def opportunities(self, user_id: UUID, request: RadarRequest) -> RadarResponse:
-        return await self.radar(user_id, request.model_copy(update={"sort": request.sort}))
+    async def opportunities(
+        self, user_id: UUID, request: RadarRequest, locale: Locale = "en-US"
+    ) -> RadarResponse:
+        return await self.radar(user_id, request.model_copy(update={"sort": request.sort}), locale)
 
-    async def detail(self, user_id: UUID, identifier: str) -> OpportunityDetail:
+    async def detail(
+        self, user_id: UUID, identifier: str, locale: Locale = "en-US"
+    ) -> OpportunityDetail:
         async with self._sessions() as session:
             repo = RadarQueryRepository(session)
             opportunity = await repo.get_visible_opportunity(identifier)
@@ -223,6 +261,19 @@ class RadarQueryService:
             }
             summaries = await repo.evidence_summaries([opportunity.id])
             watched = await repo.watchlisted_ids(user_id, [opportunity.id])
+            localized = await IntelligenceLocalizationService(session).localize(
+                "opportunity",
+                opportunity.id,
+                locale,
+                {
+                    "name": opportunity.name,
+                    "one_line_thesis": opportunity.one_line_thesis,
+                    "industry": opportunity.industry,
+                    "customer_type": opportunity.customer_type,
+                    "problem": opportunity.problem,
+                    "solution": opportunity.solution,
+                },
+            )
         identity = {
             key: getattr(opportunity, key)
             for key in (
@@ -249,6 +300,8 @@ class RadarQueryService:
                 "last_activity_at",
             )
         }
+        for key, value in localized.items():
+            identity[key] = value.text
         return OpportunityDetail(
             opportunity=OpportunityDetailData(**identity),
             current_intelligence=self._score(scores.get(opportunity.id)),
@@ -284,26 +337,59 @@ class RadarQueryService:
             rows = await repo.evidence(opportunity.id, offset, limit)
         return [EvidenceItem(**dict(row._mapping)) for row in rows]
 
-    async def signals(self, **filters: Any) -> list[SignalFeedItem]:
+    async def signals(self, locale: Locale = "en-US", **filters: Any) -> list[SignalFeedItem]:
         async with self._sessions() as session:
             rows = await RadarQueryRepository(session).active_signals(**filters)
-        items = []
-        for row in rows:
-            values = dict(row._mapping)
-            values["opportunity_ids"] = values["opportunity_ids"] or []
-            items.append(SignalFeedItem(**values))
+            localization = IntelligenceLocalizationService(session)
+            items = []
+            for row in rows:
+                values = dict(row._mapping)
+                localized = await localization.localize(
+                    "signal",
+                    values["id"],
+                    locale,
+                    {
+                        "statement": values["statement"],
+                        "evidence_text": values["evidence_text"],
+                        "industry": values["industry"],
+                        "customer_type": values["customer_type"],
+                    },
+                )
+                values["original_statement"] = values["statement"]
+                values["original_evidence_text"] = values["evidence_text"]
+                for key, value in localized.items():
+                    values[key] = value.text
+                values["statement_localized"] = localized["statement"].localized
+                values["evidence_localized"] = localized["evidence_text"].localized
+                values["localization_stale"] = any(value.stale for value in localized.values())
+                values["opportunity_ids"] = values["opportunity_ids"] or []
+                values["opportunities"] = values["opportunities"] or []
+                for opportunity in values["opportunities"]:
+                    name = await localization.localize(
+                        "opportunity",
+                        UUID(str(opportunity["id"])),
+                        locale,
+                        {"name": opportunity["name"]},
+                    )
+                    opportunity["name"] = name["name"].text
+                items.append(SignalFeedItem(**values))
         return items
 
     @staticmethod
-    def _item(opportunity, score, trend, summary, watched):
+    def _item(opportunity, score, trend, summary, watched, localized=None):
+        localized = localized or {}
+
+        def value(field):
+            return localized[field].text if field in localized else getattr(opportunity, field)
+
         return RadarOpportunityItem(
             id=opportunity.id,
             slug=opportunity.slug,
-            name=opportunity.name,
-            one_line_thesis=opportunity.one_line_thesis,
-            industry=opportunity.industry,
+            name=value("name"),
+            one_line_thesis=value("one_line_thesis"),
+            industry=value("industry"),
             sub_industry=opportunity.sub_industry,
-            customer_type=opportunity.customer_type,
+            customer_type=value("customer_type"),
             business_model=opportunity.business_model,
             market_stage=opportunity.market_stage,
             competition_level=opportunity.competition_level,

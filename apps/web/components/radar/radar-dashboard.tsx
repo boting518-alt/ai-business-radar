@@ -10,6 +10,7 @@ import type { MarketStage, Query, RadarOpportunity, RadarResponse } from "@/lib/
 import { EmptyState, ErrorState } from "@/components/states/states";
 import { DataTableShell, PageHeader, ScoreBadge, SkeletonTable, StageBadge, StatCard } from "@/components/ui/primitives";
 import { WatchlistButton } from "@/components/watchlist/watchlist-button";
+import { useI18n } from "@/lib/i18n/context";
 
 const WINDOWS=["7d","30d","90d"] as const;
 const STAGES:MarketStage[]=["unknown","emerging","accelerating","validated","crowded","mature","declining"];
@@ -23,6 +24,7 @@ function percentage(value:string|null){const formatted=metric(value);return form
 function shortDate(value:string){return new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"short",day:"numeric"}).format(new Date(value))}
 
 export function RadarDashboard(){
+  const {locale}=useI18n();
   const router=useRouter();
   const searchParams=useSearchParams();
   const serialized=searchParams.toString();
@@ -56,7 +58,7 @@ export function RadarDashboard(){
       try{
         const {data:{session}}=await createClient().auth.getSession();
         if(!session){router.replace("/login");return}
-        const query:Query={window_type:windowType,sort,direction,offset,limit};
+        const query:Query={window_type:windowType,sort,direction,offset,limit,locale};
         FILTER_KEYS.forEach(key=>{const value=params.get(key);if(value)query[key]=value});
         const result=await new ApiClient(async()=>session.access_token).getRadar(query);
         if(active){setData(result);setFetchedAt(new Date())}
@@ -66,7 +68,7 @@ export function RadarDashboard(){
       }finally{if(active)setLoading(false)}
     }
     void load();return()=>{active=false};
-  },[direction,limit,offset,params,refreshKey,router,sort,windowType]);
+  },[direction,limit,locale,offset,params,refreshKey,router,sort,windowType]);
 
   const hasFilters=FILTER_KEYS.some(key=>params.has(key));
   const page=Math.floor(offset/limit)+1;

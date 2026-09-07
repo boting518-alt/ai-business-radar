@@ -113,8 +113,9 @@ async def radar(
     confidence_max: Decimal | None = Query(None, ge=0, le=100),
     hype_max: Decimal | None = Query(None, ge=0, le=100),
     detected_after: datetime | None = None,
+    locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> RadarResponse:
-    return await service.radar(user.user_profile_id, _request(**locals()))
+    return await service.radar(user.user_profile_id, _request(**locals()), locale)
 
 
 @router.get("/opportunities", response_model=RadarResponse)
@@ -141,8 +142,9 @@ async def opportunities(
     confidence_max: Decimal | None = Query(None, ge=0, le=100),
     hype_max: Decimal | None = Query(None, ge=0, le=100),
     detected_after: datetime | None = None,
+    locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> RadarResponse:
-    return await service.opportunities(user.user_profile_id, _request(**locals()))
+    return await service.opportunities(user.user_profile_id, _request(**locals()), locale)
 
 
 def _not_found(error: OpportunityNotVisibleError) -> None:
@@ -154,9 +156,10 @@ async def detail(
     identifier: str,
     user: RequiredUser,
     service: Annotated[RadarQueryService, Depends(get_radar_service)],
+    locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> OpportunityDetail:
     try:
-        return await service.detail(user.user_profile_id, identifier)
+        return await service.detail(user.user_profile_id, identifier, locale)
     except OpportunityNotVisibleError as error:
         _not_found(error)
 
@@ -213,8 +216,10 @@ async def signals(
     observed_after: datetime | None = None,
     offset: int = Query(0, ge=0),
     limit: int = Query(50, ge=1, le=100),
+    locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> list[SignalFeedItem]:
     return await service.signals(
+        locale=locale,
         signal_type=signal_type,
         industry=industry,
         customer_type=customer_type,

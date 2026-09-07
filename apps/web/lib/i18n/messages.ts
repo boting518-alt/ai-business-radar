@@ -1,0 +1,24 @@
+export const locales = ["zh-CN", "en-US"] as const;
+export type Locale = (typeof locales)[number];
+
+export const messages = {
+  "zh-CN": {
+    "nav.radar":"雷达","nav.opportunities":"机会","nav.signals":"信号","nav.watchlist":"关注","nav.review":"人工审核",
+    "shell.subtitle":"YouTube 商业情报终端","shell.workspace":"情报工作台","shell.reviewWorkspace":"审核工作区","shell.admin":"管理员","shell.signedIn":"已登录用户","shell.language":"情报语言",
+    "signals.title":"商业信号","signals.description":"按观察时间展示已激活、可追溯证据的商业信号。","signals.type":"信号类型","signals.allTypes":"全部类型","signals.industry":"行业","signals.customer":"客户","signals.observedAfter":"观察时间晚于","signals.opportunityId":"机会 ID","signals.apply":"应用筛选","signals.clear":"清除筛选","signals.evidence":"证据摘录","signals.translatedEvidence":"译文证据","signals.original":"查看原文","signals.hideOriginal":"收起原文","signals.claim":"声明类型","signals.source":"来源","signals.video":"视频","signals.channel":"频道","signals.sourceType":"来源类型","signals.linkedOpportunity":"关联机会","signals.noOpportunity":"尚未关联已发布机会","signals.confidence":"置信度","signals.evidenceStrength":"证据强度","signals.previous":"上一页","signals.next":"下一页","signals.offset":"偏移量","signals.pagination":"信号分页","signals.loading":"正在加载商业信号","signals.empty":"目前还没有已激活的商业信号","signals.filteredEmpty":"没有符合筛选条件的信号","signals.emptyDescription":"信号通过审核后会按观察时间显示。","signals.filteredDescription":"调整或清除筛选后重试。","signals.forbidden":"你没有查看信号的权限","signals.loadError":"无法加载商业信号","signals.confidenceHint":"模型提取置信度，并非事实真实性概率","signals.originalEvidence":"原始证据",
+  },
+  "en-US": {
+    "nav.radar":"Radar","nav.opportunities":"Opportunities","nav.signals":"Signals","nav.watchlist":"Watchlist","nav.review":"Review",
+    "shell.subtitle":"YouTube intelligence terminal","shell.workspace":"Intelligence Workspace","shell.reviewWorkspace":"Review workspace","shell.admin":"Admin","shell.signedIn":"Signed-in user","shell.language":"Intelligence language",
+    "signals.title":"Commercial Signals","signals.description":"Active, traceable commercial signals ordered by observation time.","signals.type":"Signal Type","signals.allTypes":"All types","signals.industry":"Industry","signals.customer":"Customer","signals.observedAfter":"Observed After","signals.opportunityId":"Opportunity ID","signals.apply":"Apply Filters","signals.clear":"Clear Filters","signals.evidence":"Evidence","signals.translatedEvidence":"Translated Evidence","signals.original":"Show original","signals.hideOriginal":"Hide original","signals.claim":"Claim Type","signals.source":"Source","signals.video":"Video","signals.channel":"Channel","signals.sourceType":"Source Type","signals.linkedOpportunity":"Linked Opportunity","signals.noOpportunity":"No published opportunity linked","signals.confidence":"Confidence","signals.evidenceStrength":"Evidence Strength","signals.previous":"Previous","signals.next":"Next","signals.offset":"Offset","signals.pagination":"Signal pagination","signals.loading":"Loading commercial signals","signals.empty":"No active commercial signals yet","signals.filteredEmpty":"No signals match these filters","signals.emptyDescription":"Signals appear here after review and activation.","signals.filteredDescription":"Adjust or clear the filters and try again.","signals.forbidden":"You do not have permission to view signals","signals.loadError":"Unable to load commercial signals","signals.confidenceHint":"Model extraction confidence, not probability that the claim is factual","signals.originalEvidence":"Original evidence",
+  },
+} as const;
+
+export type TranslationKey = keyof (typeof messages)["en-US"];
+
+const enumLabels: Record<Locale, Record<string,string>> = {
+  "zh-CN": {workflow:"工作流",technology:"技术",pain:"痛点",demand:"需求",pricing:"定价",purchase_intent:"购买意向",feature_request:"功能请求",complaint:"投诉",competition:"竞争",revenue:"营收",customer:"客户",product_launch:"产品发布",growth:"增长",distribution:"分销",market_change:"市场变化",adoption:"采用",fact:"事实",creator_claim:"创作者声明",inferred:"推断",opinion:"观点",speculation:"推测",unknown:"未知",candidate:"候选",active:"已发布",publish:"发布",defer:"暂缓",invalid:"无效",video:"YouTube 视频",comment:"YouTube 评论"},
+  "en-US": {workflow:"Workflow",technology:"Technology",pain:"Pain",demand:"Demand",pricing:"Pricing",purchase_intent:"Purchase intent",feature_request:"Feature request",complaint:"Complaint",competition:"Competition",revenue:"Revenue",customer:"Customer",product_launch:"Product launch",growth:"Growth",distribution:"Distribution",market_change:"Market change",adoption:"Adoption",fact:"Fact",creator_claim:"Creator claim",inferred:"Inferred",opinion:"Opinion",speculation:"Speculation",unknown:"Unknown",candidate:"Candidate",active:"Active",publish:"Publish",defer:"Defer",invalid:"Invalid",video:"YouTube Video",comment:"YouTube Comment"},
+};
+
+export function enumLabel(locale:Locale,value:string){return enumLabels[locale][value]??value}

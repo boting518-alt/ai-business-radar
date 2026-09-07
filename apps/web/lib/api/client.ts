@@ -22,7 +22,7 @@ export class ApiClient {
   getCurrentUser=()=>this.request<CurrentUser>("/api/v1/auth/me");
   getRadar=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/radar",query));
   listOpportunities=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/opportunities",query));
-  getOpportunity=(id:string)=>this.request<OpportunityDetail>(`/api/v1/opportunities/${encodeURIComponent(id)}`);
+  getOpportunity=(id:string,query:Query={})=>this.request<OpportunityDetail>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}`,query));
   getOpportunityTrends=(id:string,query:Query={})=>this.request<TrendItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/trends`,query));
   getOpportunityScores=(id:string,query:Query={})=>this.request<ScoreItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/scores`,query));
   getOpportunityEvidence=(id:string,query:Query={})=>this.request<EvidenceItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/evidence`,query));

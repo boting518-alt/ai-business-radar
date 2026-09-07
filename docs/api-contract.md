@@ -301,3 +301,14 @@ Planned:
 - None in the frozen v0.1 product API
 
 No planned endpoint path or payload is frozen by this status list.
+
+## Intelligence locale projection
+
+`GET /radar`, `GET /opportunities`, `GET /opportunities/{id-or-slug}`, and `GET /signals` accept
+`locale=zh-CN|en-US` and default to canonical `en-US`. Missing or stale projections fall back to
+canonical content without failing the request. These reads never generate a translation.
+
+Signal items additionally return original statement/evidence, localization flags, original video
+title, channel name, canonical enums, and visible linked opportunity identity (`id`, `slug`, `name`).
+Translated evidence never replaces `original_evidence_text`. Candidate or rejected opportunities
+are excluded from linked opportunity projections and Radar responses.

@@ -508,3 +508,12 @@ TASK-005 should:
 10. Add migration-level verification for constraints, indexes, delete behavior, and RLS.
 
 No migration file is created by TASK-004.
+
+## 20. Localization projection extension (TASK-033)
+
+Migration `0014_intelligence_localizations.sql` adds a polymorphic INTELLIGENCE projection table
+for localizable signal and opportunity text. Canonical entity tables remain authoritative. Lookup
+identity includes entity, field, locale, canonical source hash, and translation version. RLS exposes
+a projection to authenticated users only when its corresponding entity is active; administrators
+may inspect non-active projections. See `docs/intelligence-localization.md` for field and fallback
+rules.
