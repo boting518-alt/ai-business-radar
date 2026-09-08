@@ -11,13 +11,8 @@ from ai_business_radar_api.services.intelligence_translation import TRANSLATION_
 ROOT = Path(__file__).parents[3]
 PROMPTS = ROOT / "prompts"
 FIXTURES = ROOT / "tests" / "fixtures" / "intelligence_quality"
-AB_RESULTS = (
-    ROOT
-    / "artifacts"
-    / "intelligence-quality"
-    / "20260907T171231Z"
-    / "ab-results.json"
-)
+AB_RESULTS = ROOT / "artifacts" / "intelligence-quality" / "20260907T171231Z" / "ab-results.json"
+V003_REPORT = ROOT / "artifacts" / "prompt-fix" / "20260908T093000Z" / "signal-v003-ab.md"
 
 V001_HASHES = {
     "signal-extractor/v001.md": "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641",
@@ -53,10 +48,31 @@ def test_v002_prompts_encode_observed_quality_controls():
 
 
 def test_v002_is_experimental_and_does_not_change_runtime_defaults():
-    assert signal_extraction.PROMPT_VERSION == "v001"
+    assert signal_extraction.PROMPT_VERSION == "v003"
     assert opportunity_normalization.PROMPT_VERSION == "v001"
     assert TRANSLATION_VERSION == "translation-zh-CN-v001"
     assert CURRENT_TRANSLATION_VERSIONS == {"zh-CN": "translation-zh-CN-v001"}
+
+
+def test_promoted_v003_encodes_permanent_signal_regressions():
+    prompt = " ".join((PROMPTS / "signal-extractor/v003.md").read_text().split()).lower()
+    for phrase in (
+        "business behavior as `workflow`",
+        "enabling mechanism as `technology`",
+        "attribute monetization to its actual owner",
+        "cta",
+        "community size",
+        "not automatically the featured product's customer base",
+        "keep tightly coupled substeps together",
+        "keep buyer scope exact",
+        "preserve vendor/creator attribution",
+        "pricing: null",
+        "never use numeric zero as a placeholder",
+    ):
+        assert phrase in prompt
+    report = V003_REPORT.read_text()
+    assert "PD2eKTzkZ70" in report and "schema-invalid under v002" in report
+    assert "completed under v003" in report and "pricing: null" in report
 
 
 def test_quality_fixtures_are_bounded_semantic_contracts():
@@ -91,9 +107,7 @@ def test_recorded_ab_outputs_address_observed_regressions():
 
     translations = comparisons["translation"]["v002"]
     translated_text = [
-        field["translated_text"]
-        for run in translations
-        for field in run["output"]["translations"]
+        field["translated_text"] for run in translations for field in run["output"]["translations"]
     ]
     assert "VitalDesk" in translated_text[0]
     assert "线索" in translated_text[0] and "潜在客户" not in translated_text[0]

@@ -1,6 +1,7 @@
 import logging
 
 import dramatiq
+from ai_business_radar_api.infrastructure.ai import default_prompt_version
 from ai_business_radar_api.services.signal_extraction import (
     BusinessSignalExtractionService,
     SignalBatchRequest,
@@ -22,6 +23,11 @@ async def execute_signal_extraction(payload: dict, settings: WorkerSettings | No
             ai_client,
             provider=runtime.ai_provider or "",
             model=runtime.ai_model_signal_extraction or "",
+            prompt_version=getattr(
+                runtime,
+                "signal_extractor_prompt_version",
+                default_prompt_version("signal-extractor"),
+            ),
         ).extract_batch(request)
 
 

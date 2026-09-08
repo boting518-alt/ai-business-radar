@@ -1027,7 +1027,11 @@ def build_services(
             sessions, ai, provider="openai", model=settings.ai_model_relevance
         ),
         signals=BusinessSignalExtractionService(
-            sessions, ai, provider="openai", model=settings.ai_model_signal_extraction
+            sessions,
+            ai,
+            provider="openai",
+            model=settings.ai_model_signal_extraction,
+            prompt_version=settings.signal_extractor_prompt_version,
         ),
         comment_pain=CommentPainMiningService(
             sessions, ai, provider="openai", model=settings.ai_model_comment_pain_mining

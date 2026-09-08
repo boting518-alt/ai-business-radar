@@ -65,6 +65,15 @@ OpenAI, managed Supabase, and production deployment verification remain explicit
 
 ## Deferred
 
+- [x] TASK-039 Promote Signal Extractor v003 + Runtime Version Governance
+- [ ] TASK-040 Industry + Customer Taxonomy Foundation
+- [ ] TASK-041 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-042 Staging Infrastructure Deployment
+- [ ] TASK-043 Staging Full Integration Validation
+- [ ] TASK-044 Hybrid Retrieval Runtime Prototype
+
+TASK-039 does not mark the product production-ready.
+
 - Reddit integration
 - GitHub integration
 - Product Hunt integration

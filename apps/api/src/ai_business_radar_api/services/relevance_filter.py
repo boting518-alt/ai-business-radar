@@ -9,14 +9,19 @@ from ai_business_radar_schemas import RelevanceFilterOutput
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.ai import AIClient, AIStructuredOutputError, load_prompt
+from ..infrastructure.ai import (
+    AIClient,
+    AIStructuredOutputError,
+    default_prompt_version,
+    load_prompt,
+)
 from ..infrastructure.ai.errors import AIProviderError
 from ..infrastructure.database.models import Channel, Video
 from ..infrastructure.database.repositories import AIExtractionRepository, VideoRepository
 
 TASK_TYPE = "relevance_filter"
 PROMPT_TASK = "relevance-filter"
-PROMPT_VERSION = "v001"
+PROMPT_VERSION = default_prompt_version(PROMPT_TASK)
 
 
 class VideoNotFoundError(RuntimeError):

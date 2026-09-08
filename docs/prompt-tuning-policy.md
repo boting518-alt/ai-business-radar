@@ -1,5 +1,8 @@
 # Prompt Tuning and Promotion Policy v0.1
 
+Runtime promotion and rollback follow `docs/runtime-prompt-version-governance.md`: change centralized
+selection, never published prompt bytes, and never silently rewrite historical evidence.
+
 ## Versioning
 
 Prompts become immutable after first provider use. Changes require a new file such as `v002.md`;

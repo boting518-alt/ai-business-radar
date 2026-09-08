@@ -27,6 +27,7 @@ class AIExtraction(Base):
     provider: Mapped[str]
     model: Mapped[str]
     prompt_version: Mapped[str]
+    prompt_hash: Mapped[str | None]
     input_hash: Mapped[str]
     attempt_number: Mapped[int] = mapped_column(Integer)
     supersedes_extraction_id: Mapped[UUID | None] = mapped_column(ForeignKey("ai_extractions.id"))

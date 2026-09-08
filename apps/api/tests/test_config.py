@@ -19,6 +19,7 @@ def test_non_secret_defaults() -> None:
     assert settings.youtube_max_retries == 3
     assert settings.youtube_discovery_max_quota_units_per_run == 500
     assert settings.youtube_comment_max_quota_units_per_run == 500
+    assert settings.signal_extractor_prompt_version == "v003"
 
 
 def test_external_service_secrets_are_optional() -> None:
@@ -49,3 +50,10 @@ def test_cors_accepts_comma_separated_or_json_lists() -> None:
 def test_production_cors_rejects_unrestricted_wildcard() -> None:
     with pytest.raises(ValidationError, match="must not contain"):
         Settings(_env_file=None, app_env="production", cors_origins="*")
+
+
+def test_signal_prompt_version_allows_rollback_and_rejects_unknown_version() -> None:
+    settings = Settings(_env_file=None, signal_extractor_prompt_version="v001")
+    assert settings.signal_extractor_prompt_version == "v001"
+    with pytest.raises(ValidationError, match="Invalid prompt version"):
+        Settings(_env_file=None, signal_extractor_prompt_version="v999")

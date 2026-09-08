@@ -10,7 +10,12 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.ai import AIClient, AIStructuredOutputError, load_prompt
+from ..infrastructure.ai import (
+    AIClient,
+    AIStructuredOutputError,
+    default_prompt_version,
+    resolve_prompt,
+)
 from ..infrastructure.ai.errors import AIProviderError
 from ..infrastructure.database.models import Channel, Video
 from ..infrastructure.database.repositories import (
@@ -22,7 +27,7 @@ from .relevance_filter import canonical_input_hash
 
 TASK_TYPE = "signal_extractor"
 PROMPT_TASK = "signal-extractor"
-PROMPT_VERSION = "v001"
+PROMPT_VERSION = default_prompt_version(PROMPT_TASK)
 
 
 class SignalVideoNotFoundError(RuntimeError):
@@ -67,18 +72,20 @@ class BusinessSignalExtractionService:
         *,
         provider: str,
         model: str,
+        prompt_version: str = PROMPT_VERSION,
     ) -> None:
         self._sessions = session_factory
         self._ai = ai_client
         self._provider = provider
         self._model = model
+        self._prompt = resolve_prompt(PROMPT_TASK, prompt_version)
 
     async def extract(self, video_id: UUID, *, force: bool = False) -> SignalItemResult:
         video, channel = await self._load_video(video_id, force=force)
         input_data = self._build_input(video, channel)
-        prompt = load_prompt(PROMPT_TASK, PROMPT_VERSION)
+        prompt = self._prompt.content
         input_hash = canonical_input_hash(
-            input_data, prompt_version=PROMPT_VERSION, task_type=TASK_TYPE
+            input_data, prompt_version=self._prompt.version, task_type=TASK_TYPE
         )
         if not force:
             reused = await self._find_completed(video_id, input_hash)
@@ -187,7 +194,7 @@ class BusinessSignalExtractionService:
             return await AIExtractionRepository(session).find_completed_identity(
                 source_id=video_id,
                 task_type=TASK_TYPE,
-                prompt_version=PROMPT_VERSION,
+                prompt_version=self._prompt.version,
                 model=self._model,
                 input_hash=input_hash,
             )
@@ -202,7 +209,8 @@ class BusinessSignalExtractionService:
                 task_type=TASK_TYPE,
                 provider=self._provider,
                 model=self._model,
-                prompt_version=PROMPT_VERSION,
+                prompt_version=self._prompt.version,
+                prompt_hash=self._prompt.sha256,
                 input_hash=input_hash,
             )
             await AIExtractionRepository(session).mark_running(extraction.id, now)
@@ -212,11 +220,7 @@ class BusinessSignalExtractionService:
     async def _complete(self, extraction_id, video, parsed, response) -> int:
         now = datetime.now(UTC)
         confidences = [Decimal(str(item.confidence)) for item in parsed.signals]
-        confidence = (
-            sum(confidences, Decimal(0)) / len(confidences)
-            if parsed.signals
-            else None
-        )
+        confidence = sum(confidences, Decimal(0)) / len(confidences) if parsed.signals else None
         rows = [
             self._signal_values(video, extraction_id, parsed, item, now) for item in parsed.signals
         ]

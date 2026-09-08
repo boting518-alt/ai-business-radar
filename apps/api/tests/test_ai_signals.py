@@ -52,3 +52,16 @@ def test_missing_signal_configuration_is_safe_503() -> None:
     with TestClient(app) as client:
         response = client.post(f"/api/v1/admin/ai/signals/{uuid4()}", json={})
     assert response.status_code == 503 and "key" not in response.text.lower()
+
+
+def test_admin_runtime_diagnostics_exposes_versions_and_hashes_only() -> None:
+    app = create_app(Settings(_env_file=None))
+    app.dependency_overrides[get_current_user] = lambda: user("admin")
+    with TestClient(app) as client:
+        response = client.get("/api/v1/admin/runtime/ai-versions")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["prompts"]["signal_extractor"]["version"] == "v003"
+    assert len(body["prompts"]["signal_extractor"]["prompt_hash"]) == 64
+    assert "path" not in response.text and "key" not in response.text.lower()
+    assert body["hybrid_retrieval"] == "offline_only"

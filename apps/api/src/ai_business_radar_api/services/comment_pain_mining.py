@@ -7,7 +7,12 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.ai import AIClient, AIStructuredOutputError, load_prompt
+from ..infrastructure.ai import (
+    AIClient,
+    AIStructuredOutputError,
+    default_prompt_version,
+    load_prompt,
+)
 from ..infrastructure.ai.errors import AIProviderError
 from ..infrastructure.database.models import Channel, Comment, Video
 from ..infrastructure.database.repositories import (
@@ -19,7 +24,7 @@ from .relevance_filter import canonical_input_hash
 
 TASK_TYPE = "comment_pain_miner"
 PROMPT_TASK = "comment-pain-miner"
-PROMPT_VERSION = "v001"
+PROMPT_VERSION = default_prompt_version(PROMPT_TASK)
 EVIDENCE_LIMIT = 2000
 
 CATEGORY_TO_SIGNAL_TYPE = {
@@ -274,11 +279,7 @@ class CommentPainMiningService:
     async def _complete(self, extraction_id, parsed, response, rows) -> int:
         now = datetime.now(UTC)
         strengths = [Decimal(str(item.evidence_strength)) for item in parsed.signals]
-        confidence = (
-            sum(strengths, Decimal(0)) / len(strengths)
-            if parsed.signals
-            else None
-        )
+        confidence = sum(strengths, Decimal(0)) / len(strengths) if parsed.signals else None
         async with self._sessions() as session, session.begin():
             created = await SignalRepository(session).create_many(rows)
             await AIExtractionRepository(session).mark_completed(

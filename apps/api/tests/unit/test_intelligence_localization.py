@@ -9,6 +9,7 @@ from ai_business_radar_api.services.intelligence_localization import (
     IntelligenceLocalizationService,
     source_text_hash,
 )
+from ai_business_radar_api.services.intelligence_translation import IntelligenceTranslationService
 
 
 class Result:
@@ -80,3 +81,10 @@ def test_localization_read_service_has_no_ai_provider_dependency():
     source = getsource(module).lower()
     assert "openai" not in source
     assert "structured_generate" not in source
+
+
+def test_translation_plan_skips_null_and_empty_canonical_text() -> None:
+    plan = IntelligenceTranslationService._plan(
+        {"name": "Actual text", "problem": None, "solution": ""}, [], False
+    )
+    assert [item.field_name for item in plan] == ["name"]

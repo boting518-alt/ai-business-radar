@@ -148,7 +148,7 @@ def test_new_prompts_do_not_switch_runtime_or_mutate_old_prompts() -> None:
     }
     for relative, expected in hashes.items():
         assert hashlib.sha256((PROMPTS / relative).read_bytes()).hexdigest() == expected
-    assert signal_extraction.PROMPT_VERSION == "v001"
+    assert signal_extraction.PROMPT_VERSION == "v003"
     assert opportunity_normalization.PROMPT_VERSION == "v001"
     assert TRANSLATION_VERSION == "translation-zh-CN-v001"
     assert CURRENT_TRANSLATION_VERSIONS == {"zh-CN": "translation-zh-CN-v001"}

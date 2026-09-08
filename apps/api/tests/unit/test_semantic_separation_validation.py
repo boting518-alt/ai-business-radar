@@ -143,7 +143,7 @@ def test_v001_prompts_and_runtime_defaults_remain_immutable() -> None:
     }
     for relative, checksum in expected.items():
         assert hashlib.sha256((ROOT / "prompts" / relative).read_bytes()).hexdigest() == checksum
-    assert signal_extraction.PROMPT_VERSION == "v001"
+    assert signal_extraction.PROMPT_VERSION == "v003"
     assert opportunity_normalization.PROMPT_VERSION == "v001"
     assert TRANSLATION_VERSION == "translation-zh-CN-v001"
     assert CURRENT_TRANSLATION_VERSIONS == {"zh-CN": "translation-zh-CN-v001"}

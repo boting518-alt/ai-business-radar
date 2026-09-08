@@ -9,7 +9,7 @@ from .errors import (
     AITransientError,
     PromptNotFoundError,
 )
-from .prompts import load_prompt
+from .prompts import RUNTIME_PROMPT_DEFAULTS, default_prompt_version, load_prompt, resolve_prompt
 from .providers import OpenAIClient
 
 __all__ = [
@@ -25,4 +25,7 @@ __all__ = [
     "OpenAIClient",
     "PromptNotFoundError",
     "load_prompt",
+    "resolve_prompt",
+    "default_prompt_version",
+    "RUNTIME_PROMPT_DEFAULTS",
 ]

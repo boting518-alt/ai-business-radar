@@ -17,5 +17,11 @@ ambiguity, not a need to weaken the Pydantic contract. The strict contract preve
 data. v003 completed the repeated invoice case without a schema change.
 
 The bounded A/B improved reviewed category accuracy, balanced fragmentation, community ownership,
-and structured-output success. Recommendation: `PROMOTE` v003 only through TASK-039's explicit
-runtime decision. Current v001 remains active.
+and structured-output success. TASK-039 promoted v003 through centralized, configurable runtime
+selection. Promotion did not modify v001/v002/v003 bytes or historical extraction records.
+
+TASK-039 live validation ran two dental videos and one non-dental bookkeeping/invoice video through
+the normal provider path. All three completed with v003 and hash
+`d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3`; created Signals remained in
+review. A separate one-video process override completed with v001 and its historical hash, after
+which the ordinary configuration resolved back to v003.

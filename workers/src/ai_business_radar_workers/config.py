@@ -1,4 +1,9 @@
-from pydantic import Field, SecretStr
+from ai_business_radar_api.infrastructure.ai import (
+    PromptNotFoundError,
+    default_prompt_version,
+    resolve_prompt,
+)
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -11,6 +16,7 @@ class WorkerSettings(BaseSettings):
     ai_provider: str | None = None
     ai_model_relevance: str | None = None
     ai_model_signal_extraction: str | None = None
+    signal_extractor_prompt_version: str = default_prompt_version("signal-extractor")
     ai_model_comment_pain_mining: str | None = None
     ai_model_opportunity_normalization: str | None = None
     intelligence_translation_model: str | None = None
@@ -36,3 +42,12 @@ class WorkerSettings(BaseSettings):
     trend_aggregation_schedule_hour_utc: int = Field(default=2, ge=0, le=23)
     opportunity_scoring_batch_size: int = Field(default=100, ge=1, le=500)
     opportunity_scoring_schedule_delay_minutes: int = Field(default=30, ge=1, le=180)
+
+    @field_validator("signal_extractor_prompt_version")
+    @classmethod
+    def validate_signal_prompt_version(cls, value: str) -> str:
+        try:
+            resolve_prompt("signal-extractor", value)
+        except PromptNotFoundError as error:
+            raise ValueError(str(error)) from error
+        return value

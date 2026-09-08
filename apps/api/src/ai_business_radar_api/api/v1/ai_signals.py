@@ -43,6 +43,7 @@ def get_signal_extraction_service(request: Request) -> BusinessSignalExtractionS
         client,
         provider="openai",
         model=settings.ai_model_signal_extraction,
+        prompt_version=settings.signal_extractor_prompt_version,
     )
 
 

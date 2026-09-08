@@ -121,10 +121,42 @@ async def test_valid_extraction_maps_atomic_review_signals_and_audit(signal_data
     assert rows[0].technology == ["voice AI"] and rows[0].distribution_channels == ["direct sales"]
     assert rows[0].revenue_claim_amount is None and rows[0].geography is None
     assert extractions[0].status == "completed" and extractions[0].total_tokens == 30
+    assert extractions[0].prompt_version == "v003"
+    assert extractions[0].prompt_hash == (
+        "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3"
+    )
     assert (
         extractions[1].supersedes_extraction_id == extractions[0].id
         and video.processing_status == "queued"
     )
+
+
+@pytest.mark.asyncio
+async def test_prompt_rollback_creates_separate_history_without_mutating_v003(
+    signal_database,
+) -> None:
+    _, factory = signal_database
+    video_id = await seed_video(factory, status="queued")
+    ai = AIStub(output(), output())
+    current = BusinessSignalExtractionService(
+        factory, ai, provider="openai", model="signal-model", prompt_version="v003"
+    )
+    rollback = BusinessSignalExtractionService(
+        factory, ai, provider="openai", model="signal-model", prompt_version="v001"
+    )
+    await current.extract(video_id)
+    await rollback.extract(video_id, force=True)
+    async with factory() as session:
+        rows = list(
+            await session.scalars(
+                select(AIExtraction)
+                .where(AIExtraction.video_id == video_id)
+                .order_by(AIExtraction.created_at)
+            )
+        )
+    assert [row.prompt_version for row in rows] == ["v003", "v001"]
+    assert rows[0].prompt_hash == "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3"
+    assert rows[1].prompt_hash == "e129d096c32b51356fd5a2280f80877a21759b70b0e4fa5d9c05b7bc945ff641"
 
 
 @pytest.mark.asyncio

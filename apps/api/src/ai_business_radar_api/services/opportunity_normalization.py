@@ -9,7 +9,12 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.ai import AIClient, AIStructuredOutputError, load_prompt
+from ..infrastructure.ai import (
+    AIClient,
+    AIStructuredOutputError,
+    default_prompt_version,
+    load_prompt,
+)
 from ..infrastructure.ai.errors import AIProviderError
 from ..infrastructure.database.models import AIExtraction, Comment, Opportunity, Signal, Video
 from ..infrastructure.database.repositories import (
@@ -22,7 +27,7 @@ from .relevance_filter import canonical_input_hash
 
 TASK_TYPE = "opportunity_normalizer"
 PROMPT_TASK = "opportunity-normalizer"
-PROMPT_VERSION = "v001"
+PROMPT_VERSION = default_prompt_version(PROMPT_TASK)
 CANDIDATE_LIMIT = 10
 LEXICAL_POOL_LIMIT = 100
 

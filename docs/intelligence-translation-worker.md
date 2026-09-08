@@ -68,3 +68,8 @@ and zero provider activity on read paths.
 The current dental review found 10/14 fields good, three minor language issues, and one meaning-risk
 word-order regression. The exact case and recommended phrasing are documented in
 `docs/intelligence-quality-review.md`; the persisted v001 row was not manually patched.
+# TASK-039 status
+
+Translation zh-CN v003 remains experimental. The runtime/read preference stays v001 because meaning
+risk remained non-zero, including passive/calque issues and an unsupported abandoned-checkout
+semantic addition. Nullable or empty canonical fields are skipped and are never hashed or stored.

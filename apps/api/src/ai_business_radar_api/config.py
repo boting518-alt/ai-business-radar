@@ -3,8 +3,11 @@
 import json
 from functools import lru_cache
 
-from pydantic import Field, SecretStr, model_validator
+from pydantic import Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from .infrastructure.ai.errors import PromptNotFoundError
+from .infrastructure.ai.prompts import default_prompt_version, resolve_prompt
 
 
 class Settings(BaseSettings):
@@ -42,6 +45,7 @@ class Settings(BaseSettings):
     ai_provider: str | None = None
     ai_model_relevance: str | None = None
     ai_model_signal_extraction: str | None = None
+    signal_extractor_prompt_version: str = default_prompt_version("signal-extractor")
     ai_model_comment_pain_mining: str | None = None
     ai_model_opportunity_normalization: str | None = None
     intelligence_translation_model: str | None = None
@@ -49,6 +53,15 @@ class Settings(BaseSettings):
     ai_opportunity_create_threshold: float = Field(default=0.75, ge=0, le=1)
     ai_max_retries: int = 2
     openai_api_key: SecretStr | None = None
+
+    @field_validator("signal_extractor_prompt_version")
+    @classmethod
+    def validate_signal_prompt_version(cls, value: str) -> str:
+        try:
+            resolve_prompt("signal-extractor", value)
+        except PromptNotFoundError as error:
+            raise ValueError(str(error)) from error
+        return value
 
     log_level: str = "INFO"
     cors_origins: str = "http://localhost:3000"

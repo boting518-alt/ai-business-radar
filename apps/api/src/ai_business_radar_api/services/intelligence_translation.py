@@ -11,7 +11,7 @@ from sqlalchemy import select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.ai import AIClient
+from ..infrastructure.ai import AIClient, default_prompt_version, resolve_prompt
 from ..infrastructure.ai.client import AIResponse
 from ..infrastructure.ai.errors import (
     AIAuthenticationError,
@@ -20,15 +20,16 @@ from ..infrastructure.ai.errors import (
     AIStructuredOutputError,
     AITransientError,
 )
-from ..infrastructure.ai.prompts import PROMPT_ROOT
 from ..infrastructure.database.models import IntelligenceLocalization, Opportunity, Signal
 from .intelligence_localization import source_text_hash
 
 logger = logging.getLogger(__name__)
 
 TARGET_LOCALE = "zh-CN"
-TRANSLATION_VERSION = "translation-zh-CN-v001"
-PROMPT_PATH = PROMPT_ROOT / "intelligence-translation" / TARGET_LOCALE / "v001.md"
+PROMPT_FAMILY = "intelligence-translation/zh-CN"
+PROMPT_VERSION = default_prompt_version(PROMPT_FAMILY)
+TRANSLATION_VERSION = f"translation-zh-CN-{PROMPT_VERSION}"
+PROMPT_PATH = resolve_prompt(PROMPT_FAMILY, PROMPT_VERSION).path
 ENTITY_FIELDS = {
     "signal": ("statement", "evidence_text"),
     "opportunity": ("name", "one_line_thesis", "problem", "solution"),
@@ -301,6 +302,8 @@ class IntelligenceTranslationService:
     def _plan(canonical, existing, force: bool) -> list[TranslationFieldPlan]:
         plan = []
         for field, value in canonical.items():
+            if not value:
+                continue
             digest = source_text_hash(value)
             current = next(
                 (
@@ -384,9 +387,7 @@ class IntelligenceTranslationService:
 
     async def _batch_targets(self, request: TranslationBatchRequest):
         targets: list[tuple[EntityType, UUID]] = []
-        needs_projection_filter = not request.force and (
-            request.only_missing or request.only_stale
-        )
+        needs_projection_filter = not request.force and (request.only_missing or request.only_stale)
         async with self._sessions() as session:
             if request.entity_type in ("signals", "all"):
                 query = (

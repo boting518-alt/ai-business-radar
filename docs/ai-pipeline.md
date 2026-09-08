@@ -229,3 +229,8 @@ Prompt and schema versions begin at `v001` and are independently identifiable bu
 ## Evaluation and failure handling
 
 Provider output must be validated against the corresponding Pydantic model before it becomes parsed output or downstream FACT data. Invalid output is recorded as `invalid_output`; raw output and extraction metadata remain available for audit. Later tasks will define retries, prompt regression datasets, and evaluation gates.
+
+TASK-039 promotes immutable Signal Extractor v003 as the configurable runtime default. Prompt
+selection and hashing are centralized, unknown overrides fail explicitly, and new Signal audit rows
+store the SHA-256. Translation v003 and hybrid retrieval remain experimental; Normalizer stays v001.
+See `docs/runtime-prompt-version-governance.md`.

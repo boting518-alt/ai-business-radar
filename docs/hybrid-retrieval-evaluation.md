@@ -20,3 +20,5 @@ unavailable. Opportunity vectors should refresh only when canonical retrieval fi
 vectors should use a bounded cache. Latency, provider cost, batch behavior, multilingual recall,
 hard-negative false merges, and database storage design require a separate prototype. Semantic-only
 retrieval is not recommended.
+
+TASK-039 freezes this result as offline-only; no embedding or pgvector runtime change is authorized.
