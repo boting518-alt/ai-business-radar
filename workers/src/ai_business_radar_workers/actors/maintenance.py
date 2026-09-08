@@ -6,6 +6,10 @@ from ai_business_radar_api.infrastructure.database import (
     create_session_factory,
 )
 from ai_business_radar_api.infrastructure.queue import JobEnqueuer
+from ai_business_radar_api.services.discovery_operations import (
+    DiscoveryOperationsService,
+    StaleRunRecoveryRequest,
+)
 from ai_business_radar_api.services.stale_claims import StaleClaimRecoveryService
 from ai_business_radar_api.services.translation_orchestration import (
     TranslationCoverageReconciliationService,
@@ -39,9 +43,23 @@ def recover_stale_collection_claims(**payload):
     run_async(lambda: execute_recovery(payload))
 
 
-async def execute_translation_reconciliation(
-    payload: dict, settings: WorkerSettings | None = None
-):
+async def execute_discovery_run_recovery(payload: dict, settings: WorkerSettings | None = None):
+    runtime = settings or WorkerSettings()
+    engine = create_database_engine(runtime.database_url.get_secret_value())
+    try:
+        return await DiscoveryOperationsService(create_session_factory(engine)).recover_stale(
+            StaleRunRecoveryRequest(dry_run=False, limit=payload.get("limit", 100))
+        )
+    finally:
+        await engine.dispose()
+
+
+@dramatiq.actor(queue_name="maintenance", max_retries=2, min_backoff=5000)
+def recover_stale_discovery_runs(**payload):
+    run_async(lambda: execute_discovery_run_recovery(payload))
+
+
+async def execute_translation_reconciliation(payload: dict, settings: WorkerSettings | None = None):
     runtime = settings or WorkerSettings()
     engine = create_database_engine(runtime.database_url.get_secret_value())
     try:

@@ -34,3 +34,23 @@ videos and one estimated quota unit; the immediate duplicate was rejected. The s
 not invoked live because legacy enabled queries would also be queued, so due-topic scheduling was
 validated in isolation and the validation topic was left paused/manual. v0.1 does not provide arbitrary cron, non-YouTube sources, exact provider
 quota accounting, downstream per-run attribution, worker heartbeat, or billing.
+
+## Run reliability and action UX
+
+TASK-044A guarantees that permanent discovery request/domain validation failures finalize a
+pre-created run as `failed` with `finished_at`, a bounded safe message, and an application error
+code. Finalization is idempotent and never overwrites a terminal result. The partial unique index
+therefore blocks only genuinely queued/running work; completed, partial, failed, and recovered runs
+never block a later Run Now.
+
+Queued runs older than 15 minutes and running runs older than 60 minutes are conservatively stale.
+`POST /api/v1/admin/discovery/runs/recover-stale` supports bounded dry-run and repair, and the
+existing maintenance scheduler performs the same recovery every configured stale-recovery interval.
+Recovery preserves history and records `stale_run_recovered` rather than deleting rows.
+
+Run Now immediately changes only the selected topic action to Queuing, then displays Queued and
+refreshes topics/runs. The page polls every three seconds only while a persisted run is queued or
+running and stops at terminal state. Active topics show completed/total and failed counts. A backend
+409 is presented as an already queued/running state and triggers refresh. Paused/manual topics can
+always be run by an admin; archived topics cannot. Worker health remains `unknown` without a
+reliable heartbeat.

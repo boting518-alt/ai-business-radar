@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, DiscoveryRun, DiscoverySystemStatus, DiscoveryTopic, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
+import type { CurrentUser, DiscoveryRun, DiscoveryRunPage, DiscoverySystemStatus, DiscoveryTopic, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -41,4 +41,5 @@ export class ApiClient {
   resumeDiscoveryTopic=(id:string)=>this.request<DiscoveryTopic>(`/api/v1/admin/discovery/topics/${id}/resume`,{method:"POST"});
   duplicateDiscoveryTopic=(id:string)=>this.request<DiscoveryTopic>(`/api/v1/admin/discovery/topics/${id}/duplicate`,{method:"POST"});
   getDiscoveryStatus=()=>this.request<DiscoverySystemStatus>("/api/v1/admin/discovery/system-status");
+  listDiscoveryRuns=(query:Query={})=>this.request<DiscoveryRunPage>(this.path("/api/v1/admin/discovery/runs",query));
 }

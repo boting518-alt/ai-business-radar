@@ -88,6 +88,7 @@ class DiscoveryRunSummary(BaseModel):
     completed_at: datetime | None
     videos_discovered: int
     quota_estimate: int | None
+    error_code: str | None = None
     error_message_safe: str | None
     worker_message_id: str | None
 
@@ -125,6 +126,22 @@ class DiscoverySystemStatus(BaseModel):
     scheduler: Literal["configured"] = "configured"
     youtube_api: Literal["configured", "unconfigured"]
     openai_api: Literal["configured", "unconfigured"]
+
+
+class StaleRunRecoveryRequest(BaseModel):
+    dry_run: bool = True
+    limit: int = Field(100, ge=1, le=500)
+
+
+class StaleRunRecoveryResult(BaseModel):
+    queued_stale: int
+    running_stale: int
+    would_mark_failed: int
+    marked_failed: int
+
+
+QUEUED_STALE_AFTER = timedelta(minutes=15)
+RUNNING_STALE_AFTER = timedelta(minutes=60)
 
 
 class DiscoveryConflict(RuntimeError):
@@ -406,15 +423,77 @@ class DiscoveryOperationsService:
             )
 
     async def mark_enqueue_failed(self, run_id: UUID) -> None:
+        now = datetime.now(UTC)
         async with self.sessions() as session, session.begin():
             await session.execute(
                 update(CollectionRun)
                 .where(CollectionRun.id == run_id, CollectionRun.status == "pending")
                 .values(
                     status="failed",
-                    finished_at=datetime.now(UTC),
+                    started_at=now,
+                    finished_at=now,
                     error_summary="queue_unavailable",
                 )
+            )
+
+    async def finalize_failure(self, run_id: UUID, *, error_code: str, safe_message: str) -> bool:
+        """Idempotently move only an active discovery run to failed."""
+        now = datetime.now(UTC)
+        async with self.sessions() as session, session.begin():
+            current = await session.get(CollectionRun, run_id, with_for_update=True)
+            if current is None or current.run_type != "discovery":
+                return False
+            if current.status not in {"pending", "running"}:
+                return False
+            metadata = dict(current.metadata_ or {})
+            metadata["error_code"] = error_code
+            current.status = "failed"
+            current.started_at = current.started_at or now
+            current.finished_at = now
+            current.error_summary = safe_message[:500]
+            current.metadata_ = metadata
+            return True
+
+    async def recover_stale(
+        self, body: StaleRunRecoveryRequest, *, now: datetime | None = None
+    ) -> StaleRunRecoveryResult:
+        clock = now or datetime.now(UTC)
+        async with self.sessions() as session, session.begin():
+            rows = list(
+                await session.scalars(
+                    select(CollectionRun)
+                    .where(
+                        CollectionRun.run_type == "discovery",
+                        (
+                            (CollectionRun.status == "pending")
+                            & (CollectionRun.created_at < clock - QUEUED_STALE_AFTER)
+                        )
+                        | (
+                            (CollectionRun.status == "running")
+                            & (CollectionRun.started_at < clock - RUNNING_STALE_AFTER)
+                        ),
+                    )
+                    .order_by(CollectionRun.created_at)
+                    .limit(body.limit)
+                    .with_for_update(skip_locked=True)
+                )
+            )
+            queued = sum(row.status == "pending" for row in rows)
+            running = sum(row.status == "running" for row in rows)
+            if not body.dry_run:
+                for row in rows:
+                    metadata = dict(row.metadata_ or {})
+                    metadata["error_code"] = "stale_run_recovered"
+                    row.status = "failed"
+                    row.started_at = row.started_at or clock
+                    row.finished_at = clock
+                    row.error_summary = "Stale discovery run recovered"
+                    row.metadata_ = metadata
+            return StaleRunRecoveryResult(
+                queued_stale=queued,
+                running_stale=running,
+                would_mark_failed=len(rows),
+                marked_failed=0 if body.dry_run else len(rows),
             )
 
     async def _latest_runs(self, session, ids):
@@ -476,6 +555,7 @@ class DiscoveryOperationsService:
             completed_at=x.finished_at,
             videos_discovered=x.items_discovered,
             quota_estimate=meta.get("estimated_quota_units", meta.get("quota_estimate")),
+            error_code=meta.get("error_code"),
             error_message_safe=x.error_summary,
             worker_message_id=x.worker_message_id,
         )

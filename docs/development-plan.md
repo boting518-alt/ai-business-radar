@@ -57,6 +57,7 @@ MVP STATUS: READY WITH KNOWN GAPS
 
 - [x] TASK-043 Opportunity Library v0.1
 - [x] TASK-044 Discovery Operations Console v0.1
+- [x] TASK-044A Discovery Run Reliability + Run Now UX Fix
 - [ ] TASK-045 Staging Infrastructure Deployment
 - [ ] TASK-046 Staging Full Integration Validation
 - [ ] TASK-047 Hybrid Retrieval Runtime Prototype

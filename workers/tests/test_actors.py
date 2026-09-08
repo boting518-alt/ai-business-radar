@@ -90,6 +90,40 @@ def test_validation_error_is_permanent() -> None:
 
 
 @pytest.mark.asyncio
+async def test_discovery_validation_error_finalizes_precreated_run(monkeypatch) -> None:
+    run_id = uuid4()
+    finalized = []
+
+    async def invalid(_payload, _settings):
+        from ai_business_radar_api.services.youtube_discovery import DiscoveryRequest
+
+        DiscoveryRequest(search_query_id=uuid4(), max_pages=99)
+
+    class Engine:
+        async def dispose(self):
+            pass
+
+    class Operations:
+        def __init__(self, _factory):
+            pass
+
+        async def finalize_failure(self, entity_id, **values):
+            finalized.append((entity_id, values))
+
+    settings = SimpleNamespace(database_url=SimpleNamespace(get_secret_value=lambda: "db"))
+    monkeypatch.setattr(youtube_discovery, "execute_discovery", invalid)
+    monkeypatch.setattr(youtube_discovery, "create_database_engine", lambda _url: Engine())
+    monkeypatch.setattr(youtube_discovery, "create_session_factory", lambda _engine: "factory")
+    monkeypatch.setattr(youtube_discovery, "DiscoveryOperationsService", Operations)
+    result = await youtube_discovery.execute_discovery_safely(
+        {"collection_run_id": str(run_id), "search_query_id": str(uuid4())}, settings
+    )
+    assert result is None
+    assert finalized[0][0] == run_id
+    assert finalized[0][1]["error_code"] == "invalid_discovery_request"
+
+
+@pytest.mark.asyncio
 @pytest.mark.parametrize(
     ("module", "execute_name", "service_name", "method", "payload"),
     [

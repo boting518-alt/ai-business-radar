@@ -20,6 +20,8 @@ from ...services.discovery_operations import (
     DiscoveryTopicDetail,
     DiscoveryTopicPatch,
     DiscoveryTopicSummary,
+    StaleRunRecoveryRequest,
+    StaleRunRecoveryResult,
 )
 
 router = APIRouter(prefix="/admin/discovery", tags=["admin", "discovery"])
@@ -194,6 +196,15 @@ async def runs(
     return await ops.runs(
         page=page, page_size=page_size, status=run_status, topic_id=topic_id, query_id=query_id
     )
+
+
+@router.post("/runs/recover-stale", response_model=StaleRunRecoveryResult)
+async def recover_stale_runs(
+    body: StaleRunRecoveryRequest,
+    _: RequiredAdmin,
+    ops: Annotated[DiscoveryOperationsService, Depends(service)],
+):
+    return await ops.recover_stale(body)
 
 
 @router.get("/runs/{run_id}")
