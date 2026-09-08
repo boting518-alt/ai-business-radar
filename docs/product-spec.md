@@ -174,6 +174,9 @@ The external sources listed under [Non-goals](#non-goals) are not ingested in v0
 
 ## Product data layers
 
+Industry and customer taxonomy is additive controlled metadata. Stable taxonomy-v001 codes enable
+filtering while source-derived free text remains canonical evidence; ambiguous records stay unmapped.
+
 The product keeps three concepts separate:
 
 - **RAW:** API or source data preserved with source timestamps.

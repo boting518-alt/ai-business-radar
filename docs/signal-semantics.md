@@ -19,6 +19,5 @@ relationship visually distinct.
 | `channel` | YouTube channel associated with the source video. | Industry or publisher classification. | Original proper name. |
 | `opportunity` | Normalized business opportunity linked through `opportunity_signal_links`. | A required property of every signal or proof of publication. | Names of visible active opportunities; an unlinked state is explicit. |
 
-Industry and customer values need canonical taxonomy codes in a future migration. For example,
-`healthcare.dental` could have Chinese and English display labels. TASK-033 does not rewrite or
-automatically map existing free text because an unsafe mapping would change product meaning.
+TASK-040 adds optional taxonomy mappings without rewriting these free-text fields. Customer codes
+represent buyers/operators, not beneficiaries. See `docs/taxonomy-foundation.md`.

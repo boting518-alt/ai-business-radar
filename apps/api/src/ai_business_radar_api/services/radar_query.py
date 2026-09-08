@@ -63,6 +63,11 @@ class EvidenceSummary(BaseModel):
     revenue_signal_count: int = 0
 
 
+class TaxonomyProjection(BaseModel):
+    code: str
+    label: str
+
+
 class RadarOpportunityItem(BaseModel):
     id: UUID
     slug: str
@@ -71,6 +76,8 @@ class RadarOpportunityItem(BaseModel):
     industry: str | None
     sub_industry: str | None
     customer_type: str | None
+    industry_taxonomy: TaxonomyProjection | None = None
+    customer_taxonomy: TaxonomyProjection | None = None
     business_model: str | None
     market_stage: str
     competition_level: str | None
@@ -114,6 +121,8 @@ class RadarRequest(BaseModel):
     confidence_max: Decimal | None = Field(default=None, ge=0, le=100)
     hype_max: Decimal | None = Field(default=None, ge=0, le=100)
     detected_after: datetime | None = None
+    industry_code: str | None = None
+    customer_code: str | None = None
 
 
 class OpportunityDetailData(BaseModel):
@@ -124,6 +133,8 @@ class OpportunityDetailData(BaseModel):
     industry: str | None
     sub_industry: str | None
     customer_type: str | None
+    industry_taxonomy: TaxonomyProjection | None = None
+    customer_taxonomy: TaxonomyProjection | None = None
     problem: str | None
     solution: str | None
     business_model: str | None
@@ -167,6 +178,8 @@ class SignalFeedItem(BaseModel):
     evidence_text: str | None
     industry: str | None
     customer_type: str | None
+    industry_taxonomy: TaxonomyProjection | None = None
+    customer_taxonomy: TaxonomyProjection | None = None
     claim_status: str
     confidence: Decimal
     evidence_strength: Decimal | None
@@ -198,13 +211,16 @@ class RadarQueryService:
     ) -> RadarResponse:
         async with self._sessions() as session:
             repo = RadarQueryRepository(session)
-            opportunities = await repo.list_active_opportunities()
+            opportunities = await repo.list_active_opportunities(
+                request.industry_code, request.customer_code
+            )
             ids = [item.id for item in opportunities]
             scores = await repo.latest_scores(ids)
             trends = await repo.latest_trends(ids, request.window_type)
             summaries = await repo.evidence_summaries(ids)
             watched = await repo.watchlisted_ids(user_id, ids)
             localization = IntelligenceLocalizationService(session)
+            taxonomy = await repo.taxonomy("opportunity", ids, locale)
             items = []
             for item in opportunities:
                 fields = await localization.localize(
@@ -226,6 +242,7 @@ class RadarQueryService:
                         summaries.get(item.id),
                         watched,
                         fields,
+                        taxonomy,
                     )
                 )
         items = self._filter(items, request)
@@ -274,6 +291,7 @@ class RadarQueryService:
                     "solution": opportunity.solution,
                 },
             )
+            taxonomy = await repo.taxonomy("opportunity", [opportunity.id], locale)
         identity = {
             key: getattr(opportunity, key)
             for key in (
@@ -302,6 +320,8 @@ class RadarQueryService:
         }
         for key, value in localized.items():
             identity[key] = value.text
+        identity["industry_taxonomy"] = taxonomy.get((opportunity.id, "industry"))
+        identity["customer_taxonomy"] = taxonomy.get((opportunity.id, "customer"))
         return OpportunityDetail(
             opportunity=OpportunityDetailData(**identity),
             current_intelligence=self._score(scores.get(opportunity.id)),
@@ -341,6 +361,9 @@ class RadarQueryService:
         async with self._sessions() as session:
             rows = await RadarQueryRepository(session).active_signals(**filters)
             localization = IntelligenceLocalizationService(session)
+            taxonomy = await RadarQueryRepository(session).taxonomy(
+                "signal", [row._mapping["id"] for row in rows], locale
+            )
             items = []
             for row in rows:
                 values = dict(row._mapping)
@@ -364,6 +387,8 @@ class RadarQueryService:
                 values["localization_stale"] = any(value.stale for value in localized.values())
                 values["opportunity_ids"] = values["opportunity_ids"] or []
                 values["opportunities"] = values["opportunities"] or []
+                values["industry_taxonomy"] = taxonomy.get((values["id"], "industry"))
+                values["customer_taxonomy"] = taxonomy.get((values["id"], "customer"))
                 for opportunity in values["opportunities"]:
                     name = await localization.localize(
                         "opportunity",
@@ -376,7 +401,7 @@ class RadarQueryService:
         return items
 
     @staticmethod
-    def _item(opportunity, score, trend, summary, watched, localized=None):
+    def _item(opportunity, score, trend, summary, watched, localized=None, taxonomy=None):
         localized = localized or {}
 
         def value(field):
@@ -390,6 +415,8 @@ class RadarQueryService:
             industry=value("industry"),
             sub_industry=opportunity.sub_industry,
             customer_type=value("customer_type"),
+            industry_taxonomy=(taxonomy or {}).get((opportunity.id, "industry")),
+            customer_taxonomy=(taxonomy or {}).get((opportunity.id, "customer")),
             business_model=opportunity.business_model,
             market_stage=opportunity.market_stage,
             competition_level=opportunity.competition_level,

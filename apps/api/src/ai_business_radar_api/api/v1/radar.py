@@ -55,6 +55,8 @@ def _request(
     confidence_max=None,
     hype_max=None,
     detected_after=None,
+    industry_code=None,
+    customer_code=None,
     **_ignored,
 ) -> RadarRequest:
     if score_min is not None and score_max is not None and score_min > score_max:
@@ -86,6 +88,8 @@ def _request(
         confidence_max=confidence_max,
         hype_max=hype_max,
         detected_after=detected_after,
+        industry_code=industry_code,
+        customer_code=customer_code,
     )
 
 
@@ -113,6 +117,8 @@ async def radar(
     confidence_max: Decimal | None = Query(None, ge=0, le=100),
     hype_max: Decimal | None = Query(None, ge=0, le=100),
     detected_after: datetime | None = None,
+    industry_code: str | None = None,
+    customer_code: str | None = None,
     locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> RadarResponse:
     return await service.radar(user.user_profile_id, _request(**locals()), locale)
@@ -142,6 +148,8 @@ async def opportunities(
     confidence_max: Decimal | None = Query(None, ge=0, le=100),
     hype_max: Decimal | None = Query(None, ge=0, le=100),
     detected_after: datetime | None = None,
+    industry_code: str | None = None,
+    customer_code: str | None = None,
     locale: Literal["zh-CN", "en-US"] = "en-US",
 ) -> RadarResponse:
     return await service.opportunities(user.user_profile_id, _request(**locals()), locale)
@@ -212,6 +220,8 @@ async def signals(
     signal_type: str | None = None,
     industry: str | None = None,
     customer_type: str | None = None,
+    industry_code: str | None = None,
+    customer_code: str | None = None,
     opportunity_id: UUID | None = None,
     observed_after: datetime | None = None,
     offset: int = Query(0, ge=0),
@@ -223,6 +233,8 @@ async def signals(
         signal_type=signal_type,
         industry=industry,
         customer_type=customer_type,
+        industry_code=industry_code,
+        customer_code=customer_code,
         opportunity_id=opportunity_id,
         observed_after=observed_after,
         offset=offset,

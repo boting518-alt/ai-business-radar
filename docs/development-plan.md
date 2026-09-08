@@ -52,7 +52,7 @@ MVP STATUS: READY WITH KNOWN GAPS
 ## Next
 
 - [ ] TASK-039 Runtime Promotion Decision + Selected Version Switch
-- [ ] TASK-040 Industry + Customer Taxonomy Foundation
+- [x] TASK-040 Industry + Customer Taxonomy Foundation
 - [ ] TASK-041 Hosted Supabase Auth + RLS Drill
 - [ ] TASK-042 Staging Infrastructure Deployment
 - [ ] TASK-043 Staging Full Integration Validation

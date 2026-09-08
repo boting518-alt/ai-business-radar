@@ -117,6 +117,9 @@ optimistic domain mutation is introduced.
 
 ## Known limitations after MVP QA
 
+TASK-040 adds optional canonical industry/customer projections and code filters. Normal UX displays
+localized labels and retains source-derived free text; admin/debug surfaces may expose codes.
+
 There is no signup/magic-link UI, theme toggle, mobile drawer, or visualization. Industry, business
 model, and customer type remain exact text filters because
 no taxonomy endpoint exists. Detail history is presented as compact tables without a charting

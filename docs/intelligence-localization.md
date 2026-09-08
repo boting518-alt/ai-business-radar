@@ -65,5 +65,8 @@ Operational commands, retry behavior, and validation procedures are documented i
 
 ## Future direction
 
+TASK-040 implements controlled taxonomy labels in `taxonomy_localizations`; they do not use the AI
+translation table. Locale changes labels only and never canonical codes.
+
 Industry and customer free text should later migrate to stable taxonomy codes with per-locale
 labels. Automatic taxonomy mapping remains out of scope.

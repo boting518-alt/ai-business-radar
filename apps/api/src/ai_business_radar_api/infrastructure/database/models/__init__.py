@@ -24,6 +24,14 @@ from .raw import (
     VideoSnapshot,
     YouTubeDiscoveryItem,
 )
+from .taxonomy import (
+    CustomerTaxonomyNode,
+    IndustryTaxonomyNode,
+    OpportunityTaxonomyMapping,
+    SignalTaxonomyMapping,
+    TaxonomyAlias,
+    TaxonomyLocalization,
+)
 
 __all__ = [
     "AIExtraction",
@@ -47,4 +55,10 @@ __all__ = [
     "Watchlist",
     "WatchlistItem",
     "YouTubeDiscoveryItem",
+    "CustomerTaxonomyNode",
+    "IndustryTaxonomyNode",
+    "OpportunityTaxonomyMapping",
+    "SignalTaxonomyMapping",
+    "TaxonomyAlias",
+    "TaxonomyLocalization",
 ]

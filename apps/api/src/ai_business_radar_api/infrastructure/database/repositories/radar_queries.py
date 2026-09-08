@@ -10,7 +10,10 @@ from ..models import (
     OpportunityEvidence,
     OpportunityScore,
     OpportunitySignalLink,
+    OpportunityTaxonomyMapping,
     Signal,
+    SignalTaxonomyMapping,
+    TaxonomyLocalization,
     TrendSnapshot,
     Video,
     Watchlist,
@@ -22,12 +25,38 @@ class RadarQueryRepository:
     def __init__(self, session: AsyncSession) -> None:
         self.session = session
 
-    async def list_active_opportunities(self):
-        return list(
-            await self.session.scalars(
-                select(Opportunity).where(Opportunity.status == "active").order_by(Opportunity.id)
+    async def list_active_opportunities(self, industry_code=None, customer_code=None):
+        query = select(Opportunity).where(Opportunity.status == "active")
+        for taxonomy_type, code in (("industry", industry_code), ("customer", customer_code)):
+            if code:
+                query = query.where(
+                    select(OpportunityTaxonomyMapping.id)
+                    .where(
+                        OpportunityTaxonomyMapping.opportunity_id == Opportunity.id,
+                        OpportunityTaxonomyMapping.taxonomy_type == taxonomy_type,
+                        OpportunityTaxonomyMapping.taxonomy_code == code,
+                        OpportunityTaxonomyMapping.mapping_status == "active",
+                    )
+                    .exists()
+                )
+        return list(await self.session.scalars(query.order_by(Opportunity.id)))
+
+    async def taxonomy(self, entity_type, ids, locale):
+        if not ids:
+            return {}
+        model = SignalTaxonomyMapping if entity_type == "signal" else OpportunityTaxonomyMapping
+        id_column = model.signal_id if entity_type == "signal" else model.opportunity_id
+        rows = await self.session.execute(
+            select(id_column, model.taxonomy_type, model.taxonomy_code, TaxonomyLocalization.label)
+            .outerjoin(
+                TaxonomyLocalization,
+                (TaxonomyLocalization.taxonomy_type == model.taxonomy_type)
+                & (TaxonomyLocalization.taxonomy_code == model.taxonomy_code)
+                & (TaxonomyLocalization.locale == locale),
             )
+            .where(id_column.in_(ids), model.mapping_status == "active")
         )
+        return {(row[0], row[1]): {"code": row[2], "label": row[3] or row[2]} for row in rows}
 
     async def get_visible_opportunity(self, identifier: str):
         try:
@@ -182,6 +211,8 @@ class RadarQueryRepository:
         signal_type=None,
         industry=None,
         customer_type=None,
+        industry_code=None,
+        customer_code=None,
         opportunity_id=None,
         observed_after=None,
         offset=0,
@@ -237,6 +268,18 @@ class RadarQueryRepository:
             query = query.where(Signal.industry == industry)
         if customer_type:
             query = query.where(Signal.customer_type == customer_type)
+        for taxonomy_type, code in (("industry", industry_code), ("customer", customer_code)):
+            if code:
+                query = query.where(
+                    select(SignalTaxonomyMapping.id)
+                    .where(
+                        SignalTaxonomyMapping.signal_id == Signal.id,
+                        SignalTaxonomyMapping.taxonomy_type == taxonomy_type,
+                        SignalTaxonomyMapping.taxonomy_code == code,
+                        SignalTaxonomyMapping.mapping_status == "active",
+                    )
+                    .exists()
+                )
         if opportunity_id:
             query = query.where(
                 OpportunitySignalLink.opportunity_id == opportunity_id,

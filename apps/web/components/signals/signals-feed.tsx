@@ -13,7 +13,7 @@ import { PageHeader } from "@/components/ui/primitives";
 
 const LIMIT=25;
 const TYPES=["pain","demand","purchase_intent","revenue","pricing","customer","product_launch","growth","competition","distribution","workflow","technology","market_change","complaint","feature_request","adoption"];
-const FILTERS=["signal_type","industry","customer_type","opportunity_id","observed_after"] as const;
+const FILTERS=["signal_type","industry","industry_code","customer_type","customer_code","opportunity_id","observed_after"] as const;
 function percentage(value:string|null){if(value==null)return "—";const number=Number(value);return Number.isFinite(number)?`${Math.round(number*100)}%`:value}
 
 export function SignalsFeed(){

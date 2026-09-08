@@ -14,6 +14,7 @@ from .opportunity_activation import router as opportunity_activation_router
 from .radar import router as radar_router
 from .reviews import router as reviews_router
 from .scoring import router as scoring_router
+from .taxonomy import router as taxonomy_router
 from .trends import router as trends_router
 from .watchlist import router as watchlist_router
 from .youtube_discovery import router as youtube_discovery_router
@@ -34,3 +35,4 @@ router.include_router(opportunity_activation_router)
 router.include_router(reviews_router)
 router.include_router(radar_router)
 router.include_router(watchlist_router)
+router.include_router(taxonomy_router)
