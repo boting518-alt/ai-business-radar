@@ -26,6 +26,8 @@ keys in query parameters.
 
 `scripts/dev-runtime.sh` is the canonical local entry point. It starts Web, API, Dramatiq workers,
 and APScheduler as one process group and terminates children together.
+Local Next.js development uses webpack because Turbopack's persistence database is unreliable on
+the project's external filesystem. Production builds continue to use the framework default.
 
 ## Discovery failure terminality
 
