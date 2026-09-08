@@ -21,6 +21,7 @@ from ..infrastructure.database.repositories import (
     SignalRepository,
 )
 from .relevance_filter import canonical_input_hash
+from .translation_orchestration import TranslationCoverageReconciliationService
 
 TASK_TYPE = "comment_pain_miner"
 PROMPT_TASK = "comment-pain-miner"
@@ -85,11 +86,13 @@ class CommentPainMiningService:
         *,
         provider: str,
         model: str,
+        translation_orchestrator: TranslationCoverageReconciliationService | None = None,
     ) -> None:
         self._sessions = session_factory
         self._ai = ai_client
         self._provider = provider
         self._model = model
+        self._translation = translation_orchestrator
 
     async def mine(self, comment_id: UUID, *, force: bool = False) -> CommentPainItemResult:
         comment, video, channel = await self._load_context(comment_id)
@@ -139,12 +142,17 @@ class CommentPainMiningService:
             return self._invalid_result(comment_id, extraction_id)
 
         try:
-            count = await self._complete(extraction_id, parsed, response, rows)
+            count, signal_ids = await self._complete(extraction_id, parsed, response, rows)
         except SQLAlchemyError:
             await self._fail(extraction_id, invalid=False, error="signal_persistence_failed")
             return CommentPainItemResult(
                 comment_id=comment_id, extraction_id=extraction_id, status="failed"
             )
+        if self._translation is not None:
+            for signal_id in signal_ids:
+                await self._translation.best_effort_enqueue(
+                    "signal", signal_id, reason="signal_review"
+                )
         return CommentPainItemResult(
             comment_id=comment_id,
             extraction_id=extraction_id,
@@ -276,7 +284,7 @@ class CommentPainMiningService:
         values.update(evidence_text=comment.text[:EVIDENCE_LIMIT], created_at=now, updated_at=now)
         return values
 
-    async def _complete(self, extraction_id, parsed, response, rows) -> int:
+    async def _complete(self, extraction_id, parsed, response, rows) -> tuple[int, list[UUID]]:
         now = datetime.now(UTC)
         strengths = [Decimal(str(item.evidence_strength)) for item in parsed.signals]
         confidence = sum(strengths, Decimal(0)) / len(strengths) if parsed.signals else None
@@ -293,7 +301,7 @@ class CommentPainMiningService:
                 total_tokens=response.total_tokens,
                 provider_request_id=response.provider_request_id,
             )
-            return len(created)
+        return len(created), [item.id for item in created]
 
     async def _fail(
         self, extraction_id, *, invalid: bool, raw=None, error: str | None = None

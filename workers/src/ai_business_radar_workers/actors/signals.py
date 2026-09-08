@@ -2,9 +2,13 @@ import logging
 
 import dramatiq
 from ai_business_radar_api.infrastructure.ai import default_prompt_version
+from ai_business_radar_api.infrastructure.queue import JobEnqueuer
 from ai_business_radar_api.services.signal_extraction import (
     BusinessSignalExtractionService,
     SignalBatchRequest,
+)
+from ai_business_radar_api.services.translation_orchestration import (
+    TranslationCoverageReconciliationService,
 )
 
 from ..config import WorkerSettings
@@ -18,6 +22,10 @@ async def execute_signal_extraction(payload: dict, settings: WorkerSettings | No
     runtime = settings or WorkerSettings()
     request = SignalBatchRequest.model_validate(payload)
     async with signal_extraction_dependencies(runtime) as (sessions, ai_client):
+        redis_url = getattr(runtime, "redis_url", None)
+        translation = TranslationCoverageReconciliationService(
+            sessions, JobEnqueuer(redis_url.get_secret_value()) if redis_url else None
+        )
         return await BusinessSignalExtractionService(
             sessions,
             ai_client,
@@ -28,6 +36,7 @@ async def execute_signal_extraction(payload: dict, settings: WorkerSettings | No
                 "signal_extractor_prompt_version",
                 default_prompt_version("signal-extractor"),
             ),
+            translation_orchestrator=translation,
         ).extract_batch(request)
 
 

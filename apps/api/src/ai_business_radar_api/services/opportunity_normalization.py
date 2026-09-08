@@ -24,6 +24,7 @@ from ..infrastructure.database.repositories import (
     SignalRepository,
 )
 from .relevance_filter import canonical_input_hash
+from .translation_orchestration import TranslationCoverageReconciliationService
 
 TASK_TYPE = "opportunity_normalizer"
 PROMPT_TASK = "opportunity-normalizer"
@@ -84,6 +85,7 @@ class OpportunityNormalizationService:
         model: str,
         match_threshold: float = 0.70,
         create_threshold: float = 0.75,
+        translation_orchestrator: TranslationCoverageReconciliationService | None = None,
     ) -> None:
         self._sessions = session_factory
         self._ai = ai_client
@@ -91,6 +93,7 @@ class OpportunityNormalizationService:
         self._model = model
         self._match_threshold = Decimal(str(match_threshold))
         self._create_threshold = Decimal(str(create_threshold))
+        self._translation = translation_orchestrator
 
     async def normalize(
         self, signal_id: UUID, *, force: bool = False
@@ -134,10 +137,15 @@ class OpportunityNormalizationService:
             return self._result(signal_id, extraction_id, "invalid_output")
 
         try:
-            return await self._complete(signal, candidates, extraction_id, parsed, response)
+            result = await self._complete(signal, candidates, extraction_id, parsed, response)
         except SQLAlchemyError:
             await self._fail(extraction_id, invalid=False, error="normalization_persistence_failed")
             return self._result(signal_id, extraction_id, "failed")
+        if self._translation is not None and result.action in {"MATCH", "CREATE"}:
+            await self._translation.best_effort_enqueue(
+                "signal", signal_id, reason="signal_active"
+            )
+        return result
 
     async def normalize_batch(
         self, request: OpportunityNormalizationBatchRequest

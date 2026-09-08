@@ -7,8 +7,9 @@ Install from this directory with `uv sync`.
 
 Collection actors require `REDIS_URL`, `DATABASE_URL`, and `YOUTUBE_API_KEY`. The manually
 triggered `ai_relevance` actor additionally requires `AI_PROVIDER=openai`,
-`AI_MODEL_RELEVANCE`, and `OPENAI_API_KEY`. The scheduler only enqueues bounded YouTube
-collection jobs; v0.1 does not schedule relevance processing automatically.
+`AI_MODEL_RELEVANCE`, and `OPENAI_API_KEY`. The scheduler enqueues bounded collection,
+aggregation/scoring, stale-claim recovery, and translation-reconciliation work; it does not
+schedule relevance extraction automatically.
 
 Business signal extraction also requires `AI_MODEL_SIGNAL_EXTRACTION` and runs manually on the
 `ai_extraction` queue. It is not scheduled automatically.
@@ -24,3 +25,8 @@ and 0.75 and can be changed with `AI_OPPORTUNITY_MATCH_THRESHOLD` and
 Trend aggregation runs on the non-AI `aggregation` queue. The scheduler submits bounded `7d`,
 `30d`, and `90d` batches once daily at `TREND_AGGREGATION_SCHEDULE_HOUR_UTC` (default 02:00 UTC);
 `TREND_AGGREGATION_BATCH_SIZE` defaults to 100.
+
+Translation coverage reconciliation runs every 20 minutes by default. It scans at most
+`TRANSLATION_RECONCILIATION_BATCH_SIZE` eligible review/active entities and submits only
+missing, stale, wrong-version, or failed coverage to the dedicated `intelligence_translation`
+queue. Lifecycle triggers remain primary; reconciliation repairs missed best-effort enqueue events.

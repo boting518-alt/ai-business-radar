@@ -57,8 +57,9 @@ and make them ineligible for reads. A forced run refreshes the matching versione
 rewriting canonical intelligence.
 
 Writes for one entity are atomic. Audit data includes provider, model, provider request ID, token
-usage, source hash, version, and timestamps. Translation runs only from the bounded CLI or admin
-enqueue endpoints on the `intelligence_translation` queue; product GET requests never call AI.
+usage, source hash, version, and timestamps. Translation runs on the dedicated
+`intelligence_translation` queue through explicit commands or TASK-042 post-commit lifecycle
+triggers and bounded reconciliation; product GET requests never call AI.
 
 Operational commands, retry behavior, and validation procedures are documented in
 `docs/intelligence-translation-worker.md`.

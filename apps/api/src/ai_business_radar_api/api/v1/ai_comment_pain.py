@@ -14,6 +14,7 @@ from ...services.comment_pain_mining import (
     CommentPainMiningService,
     CommentPainRunRequest,
 )
+from ...services.translation_orchestration import TranslationCoverageReconciliationService
 from .youtube_discovery import enqueue_job, get_job_enqueuer
 
 router = APIRouter(prefix="/admin/ai/comment-pain", tags=["admin", "ai"])
@@ -35,11 +36,16 @@ def get_comment_pain_service(request: Request) -> CommentPainMiningService:
     client = OpenAIClient(
         settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
     )
+    translation = TranslationCoverageReconciliationService(
+        sessions,
+        JobEnqueuer(settings.redis_url.get_secret_value()) if settings.redis_url else None,
+    )
     return CommentPainMiningService(
         sessions,
         client,
         provider="openai",
         model=settings.ai_model_comment_pain_mining,
+        translation_orchestrator=translation,
     )
 
 

@@ -4,6 +4,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 
 from ...infrastructure.auth import RequiredAdmin
+from ...infrastructure.queue import JobEnqueuer
 from ...services.opportunity_activation import (
     ActivationReviewResult,
     OpportunityActivationNotEligible,
@@ -11,6 +12,7 @@ from ...services.opportunity_activation import (
     OpportunityActivationReadiness,
     OpportunityActivationReadinessService,
 )
+from ...services.translation_orchestration import TranslationCoverageReconciliationService
 
 router = APIRouter(prefix="/admin/opportunities", tags=["admin", "opportunity activation"])
 
@@ -19,7 +21,10 @@ def get_activation_service(request: Request) -> OpportunityActivationReadinessSe
     sessions = getattr(request.app.state, "database_session_factory", None)
     if sessions is None:
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Database is not configured")
-    return OpportunityActivationReadinessService(sessions)
+    redis_url = request.app.state.settings.redis_url
+    enqueuer = JobEnqueuer(redis_url.get_secret_value()) if redis_url is not None else None
+    translation = TranslationCoverageReconciliationService(sessions, enqueuer)
+    return OpportunityActivationReadinessService(sessions, translation)
 
 
 def _raise_error(error: Exception) -> None:

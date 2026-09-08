@@ -33,6 +33,15 @@ from ai_business_radar_api.services.review_workflow import (
 NOW = datetime(2026, 9, 7, tzinfo=UTC)
 
 
+class TranslationTriggerStub:
+    def __init__(self):
+        self.calls = []
+
+    async def best_effort_enqueue(self, entity_type, entity_id, *, reason):
+        self.calls.append((entity_type, entity_id, reason))
+        return True
+
+
 async def opportunity(session, *, name="Dental AI Receptionist", status="candidate", **values):
     return (
         await session.execute(
@@ -237,7 +246,8 @@ async def test_activation_review_lifecycle_revalidates_and_preserves_history(pos
         )
         await supporting_signal(session, invalid_candidate.id)
 
-    activation = OpportunityActivationReadinessService(factory)
+    trigger = TranslationTriggerStub()
+    activation = OpportunityActivationReadinessService(factory, trigger)
     created = await activation.create_review(publishable.id)
     reused = await activation.create_review(publishable.id)
     deferred = await activation.create_review(deferred_candidate.id)
@@ -245,7 +255,7 @@ async def test_activation_review_lifecycle_revalidates_and_preserves_history(pos
     assert created.created and not reused.created
     assert created.review_task_id == reused.review_task_id
 
-    workflow = ReviewWorkflowService(factory)
+    workflow = ReviewWorkflowService(factory, trigger)
     await workflow.claim_task(deferred.review_task_id, admin)
     deferred_result = await workflow.decide(
         deferred.review_task_id,
@@ -287,6 +297,8 @@ async def test_activation_review_lifecycle_revalidates_and_preserves_history(pos
     assert [item.id for item in radar.items] == [publishable.id]
     assert publish_task.resolved_by == admin and publish_task.decision_notes == "Checklist reviewed"
     assert evidence_row.status == "active"
+    assert ("opportunity", publishable.id, "activation_review") in trigger.calls
+    assert ("opportunity", publishable.id, "opportunity_active") in trigger.calls
 
 
 @pytest.mark.asyncio

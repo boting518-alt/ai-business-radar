@@ -24,6 +24,7 @@ from ..infrastructure.database.repositories import (
     VideoRepository,
 )
 from .relevance_filter import canonical_input_hash
+from .translation_orchestration import TranslationCoverageReconciliationService
 
 TASK_TYPE = "signal_extractor"
 PROMPT_TASK = "signal-extractor"
@@ -73,12 +74,14 @@ class BusinessSignalExtractionService:
         provider: str,
         model: str,
         prompt_version: str = PROMPT_VERSION,
+        translation_orchestrator: TranslationCoverageReconciliationService | None = None,
     ) -> None:
         self._sessions = session_factory
         self._ai = ai_client
         self._provider = provider
         self._model = model
         self._prompt = resolve_prompt(PROMPT_TASK, prompt_version)
+        self._translation = translation_orchestrator
 
     async def extract(self, video_id: UUID, *, force: bool = False) -> SignalItemResult:
         video, channel = await self._load_video(video_id, force=force)
@@ -127,7 +130,7 @@ class BusinessSignalExtractionService:
             )
 
         try:
-            count = await self._complete(extraction_id, video, parsed, response)
+            count, signal_ids = await self._complete(extraction_id, video, parsed, response)
         except SQLAlchemyError:
             await self._fail(
                 extraction_id,
@@ -136,6 +139,11 @@ class BusinessSignalExtractionService:
                 error="signal_persistence_failed",
             )
             return SignalItemResult(video_id=video_id, extraction_id=extraction_id, status="failed")
+        if self._translation is not None:
+            for signal_id in signal_ids:
+                await self._translation.best_effort_enqueue(
+                    "signal", signal_id, reason="signal_review"
+                )
         return SignalItemResult(
             video_id=video_id,
             extraction_id=extraction_id,
@@ -217,7 +225,7 @@ class BusinessSignalExtractionService:
             await VideoRepository(session).update_processing_status(video_id, "processing")
             return extraction.id
 
-    async def _complete(self, extraction_id, video, parsed, response) -> int:
+    async def _complete(self, extraction_id, video, parsed, response) -> tuple[int, list[UUID]]:
         now = datetime.now(UTC)
         confidences = [Decimal(str(item.confidence)) for item in parsed.signals]
         confidence = sum(confidences, Decimal(0)) / len(confidences) if parsed.signals else None
@@ -238,7 +246,7 @@ class BusinessSignalExtractionService:
                 provider_request_id=response.provider_request_id,
             )
             await VideoRepository(session).update_processing_status(video.id, "queued")
-            return len(created)
+        return len(created), [item.id for item in created]
 
     @staticmethod
     def _signal_values(video, extraction_id, parsed, item, now) -> dict:

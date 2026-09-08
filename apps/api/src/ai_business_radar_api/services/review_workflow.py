@@ -22,6 +22,7 @@ from ..infrastructure.database.models import (
 )
 from ..infrastructure.database.repositories import OpportunityRepository, ReviewTaskRepository
 from .opportunity_activation import OpportunityActivationReadinessService
+from .translation_orchestration import TranslationCoverageReconciliationService
 
 DECISION_MATRIX = {
     "signal_validation": {"approve", "reject", "ignore", "defer"},
@@ -114,8 +115,13 @@ class ReviewWorkflowResult(BaseModel):
 
 
 class ReviewWorkflowService:
-    def __init__(self, session_factory: async_sessionmaker[AsyncSession]) -> None:
+    def __init__(
+        self,
+        session_factory: async_sessionmaker[AsyncSession],
+        translation_orchestrator: TranslationCoverageReconciliationService | None = None,
+    ) -> None:
         self._sessions = session_factory
+        self._translation = translation_orchestrator
 
     async def list_tasks(self, request: ReviewListRequest) -> ReviewListResult:
         async with self._sessions() as session:
@@ -293,7 +299,17 @@ class ReviewWorkflowService:
             task.resolved_at = now
             task.updated_at = now
             await session.flush()
-            return self._workflow_result(task, previous, effects)
+            result = self._workflow_result(task, previous, effects)
+        if self._translation is not None:
+            if effects.get("signal_status") == "active":
+                await self._translation.best_effort_enqueue(
+                    "signal", task.target_id, reason="signal_active"
+                )
+            if effects.get("opportunity_status") == "active":
+                await self._translation.best_effort_enqueue(
+                    "opportunity", task.target_id, reason="opportunity_active"
+                )
+        return result
 
     async def _validate_target(self, session: AsyncSession, task: ReviewTask) -> None:
         expected = {

@@ -17,6 +17,7 @@ from ..infrastructure.database.models import (
     Video,
 )
 from ..infrastructure.database.repositories import OpportunityRepository, ReviewTaskRepository
+from .translation_orchestration import TranslationCoverageReconciliationService
 
 GENERIC_NAMES = {
     "ai",
@@ -84,8 +85,13 @@ class ActivationReviewResult(BaseModel):
 
 
 class OpportunityActivationReadinessService:
-    def __init__(self, session_factory: async_sessionmaker[AsyncSession]) -> None:
+    def __init__(
+        self,
+        session_factory: async_sessionmaker[AsyncSession],
+        translation_orchestrator: TranslationCoverageReconciliationService | None = None,
+    ) -> None:
         self._sessions = session_factory
+        self._translation = translation_orchestrator
 
     async def assess(self, opportunity_id: UUID) -> OpportunityActivationReadiness:
         async with self._sessions() as session:
@@ -273,28 +279,38 @@ class OpportunityActivationReadinessService:
                 review_type="opportunity_activation",
             )
             if existing:
-                return ActivationReviewResult(
+                result = ActivationReviewResult(
                     review_task_id=existing.id, created=False, readiness=readiness
                 )
-            task = await ReviewTaskRepository(session).create_review_task(
-                review_type="opportunity_activation",
-                target_type="opportunity",
-                target_id=opportunity.id,
-                status="pending",
-                priority=Decimal(sum(item.status == "pass" for item in readiness.checks.values()))
-                / Decimal(6),
-                context={
-                    "readiness": readiness.model_dump(mode="json"),
-                    "recommendation": readiness.recommendation,
-                    "metrics": readiness.metrics.model_dump(mode="json"),
-                    "duplicate_candidates": [
-                        item.model_dump(mode="json") for item in readiness.duplicate_candidates
-                    ],
-                },
-                created_at=now,
-                updated_at=now,
+            else:
+                task = await ReviewTaskRepository(session).create_review_task(
+                    review_type="opportunity_activation",
+                    target_type="opportunity",
+                    target_id=opportunity.id,
+                    status="pending",
+                    priority=Decimal(
+                        sum(item.status == "pass" for item in readiness.checks.values())
+                    )
+                    / Decimal(6),
+                    context={
+                        "readiness": readiness.model_dump(mode="json"),
+                        "recommendation": readiness.recommendation,
+                        "metrics": readiness.metrics.model_dump(mode="json"),
+                        "duplicate_candidates": [
+                            item.model_dump(mode="json") for item in readiness.duplicate_candidates
+                        ],
+                    },
+                    created_at=now,
+                    updated_at=now,
+                )
+                result = ActivationReviewResult(
+                    review_task_id=task.id, created=True, readiness=readiness
+                )
+        if self._translation is not None:
+            await self._translation.best_effort_enqueue(
+                "opportunity", opportunity_id, reason="activation_review"
             )
-            return ActivationReviewResult(review_task_id=task.id, created=True, readiness=readiness)
+        return result
 
     @staticmethod
     def _scope(opportunity: Opportunity) -> tuple[Literal["pass", "warning", "fail"], str]:

@@ -5,6 +5,7 @@ from ai_business_radar_schemas import ReviewDecisionRequest
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 
 from ...infrastructure.auth import RequiredAdmin
+from ...infrastructure.queue import JobEnqueuer
 from ...services.review_workflow import (
     InvalidMergeTarget,
     InvalidReviewDecision,
@@ -20,6 +21,7 @@ from ...services.review_workflow import (
     ReviewWorkflowResult,
     ReviewWorkflowService,
 )
+from ...services.translation_orchestration import TranslationCoverageReconciliationService
 
 router = APIRouter(prefix="/admin/reviews", tags=["admin", "reviews"])
 
@@ -28,7 +30,10 @@ def get_review_service(request: Request) -> ReviewWorkflowService:
     sessions = getattr(request.app.state, "database_session_factory", None)
     if sessions is None:
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Database is not configured")
-    return ReviewWorkflowService(sessions)
+    redis_url = request.app.state.settings.redis_url
+    enqueuer = JobEnqueuer(redis_url.get_secret_value()) if redis_url is not None else None
+    translation = TranslationCoverageReconciliationService(sessions, enqueuer)
+    return ReviewWorkflowService(sessions, translation)
 
 
 def _raise_review_error(error: Exception) -> None:

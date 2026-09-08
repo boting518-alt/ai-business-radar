@@ -5,6 +5,7 @@ from .broker import initialize_broker
 broker = initialize_broker()
 
 from .actors import (  # noqa: E402
+    reconcile_translation_coverage,
     recover_stale_collection_claims,
     run_comment_pain_mining,
     run_opportunity_normalization,
@@ -23,6 +24,7 @@ from .actors import (  # noqa: E402
 __all__ = [
     "broker",
     "recover_stale_collection_claims",
+    "reconcile_translation_coverage",
     "translate_batch",
     "translate_opportunity",
     "translate_signal",

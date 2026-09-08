@@ -51,14 +51,15 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-039 Promote Signal Extractor v003 + Runtime Version Governance
 - [x] TASK-040 Industry + Customer Taxonomy Foundation
 - [x] TASK-041 Hosted Supabase Auth + RLS Drill
+- [x] TASK-042 Automatic Intelligence Translation Orchestration
 
 ## Next
 
-- [ ] TASK-042 Staging Infrastructure Deployment
-- [ ] TASK-043 Staging Full Integration Validation
-- [ ] TASK-044 Hybrid Retrieval Runtime Prototype
-- [ ] TASK-045 AI-Assisted Taxonomy Mapping + Review
-- [ ] TASK-046 Translation v003 Improvement / Promotion Decision
+- [ ] TASK-043 Opportunity Library v0.1
+- [ ] TASK-044 Discovery Operations Console v0.1
+- [ ] TASK-045 Staging Infrastructure Deployment
+- [ ] TASK-046 Staging Full Integration Validation
+- [ ] TASK-047 Hybrid Retrieval Runtime Prototype
 
 ## Validation debt
 

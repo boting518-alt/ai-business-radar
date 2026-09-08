@@ -15,6 +15,7 @@ from ...services.opportunity_normalization import (
     SignalNotEligibleError,
     SignalNotFoundError,
 )
+from ...services.translation_orchestration import TranslationCoverageReconciliationService
 from .youtube_discovery import enqueue_job, get_job_enqueuer
 
 router = APIRouter(prefix="/admin/ai/opportunities/normalize", tags=["admin", "ai"])
@@ -34,6 +35,10 @@ def get_opportunity_normalization_service(request: Request) -> OpportunityNormal
             status.HTTP_503_SERVICE_UNAVAILABLE,
             "AI opportunity normalization is not configured",
         )
+    translation = TranslationCoverageReconciliationService(
+        sessions,
+        JobEnqueuer(settings.redis_url.get_secret_value()) if settings.redis_url else None,
+    )
     return OpportunityNormalizationService(
         sessions,
         OpenAIClient(
@@ -43,6 +48,7 @@ def get_opportunity_normalization_service(request: Request) -> OpportunityNormal
         model=settings.ai_model_opportunity_normalization,
         match_threshold=settings.ai_opportunity_match_threshold,
         create_threshold=settings.ai_opportunity_create_threshold,
+        translation_orchestrator=translation,
     )
 
 

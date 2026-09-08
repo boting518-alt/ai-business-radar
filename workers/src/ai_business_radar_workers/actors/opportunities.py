@@ -1,9 +1,13 @@
 import logging
 
 import dramatiq
+from ai_business_radar_api.infrastructure.queue import JobEnqueuer
 from ai_business_radar_api.services.opportunity_normalization import (
     OpportunityNormalizationBatchRequest,
     OpportunityNormalizationService,
+)
+from ai_business_radar_api.services.translation_orchestration import (
+    TranslationCoverageReconciliationService,
 )
 
 from ..config import WorkerSettings
@@ -17,6 +21,10 @@ async def execute_opportunity_normalization(payload: dict, settings: WorkerSetti
     runtime = settings or WorkerSettings()
     request = OpportunityNormalizationBatchRequest.model_validate(payload)
     async with opportunity_normalization_dependencies(runtime) as (sessions, ai_client):
+        redis_url = getattr(runtime, "redis_url", None)
+        translation = TranslationCoverageReconciliationService(
+            sessions, JobEnqueuer(redis_url.get_secret_value()) if redis_url else None
+        )
         return await OpportunityNormalizationService(
             sessions,
             ai_client,
@@ -24,6 +32,7 @@ async def execute_opportunity_normalization(payload: dict, settings: WorkerSetti
             model=runtime.ai_model_opportunity_normalization or "",
             match_threshold=runtime.ai_opportunity_match_threshold,
             create_threshold=runtime.ai_opportunity_create_threshold,
+            translation_orchestrator=translation,
         ).normalize_batch(request)
 
 

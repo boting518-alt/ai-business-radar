@@ -17,6 +17,7 @@ from ...services.signal_extraction import (
     SignalVideoNotEligibleError,
     SignalVideoNotFoundError,
 )
+from ...services.translation_orchestration import TranslationCoverageReconciliationService
 from .youtube_discovery import enqueue_job, get_job_enqueuer
 
 router = APIRouter(prefix="/admin/ai/signals", tags=["admin", "ai"])
@@ -38,12 +39,17 @@ def get_signal_extraction_service(request: Request) -> BusinessSignalExtractionS
     client = OpenAIClient(
         settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
     )
+    translation = TranslationCoverageReconciliationService(
+        sessions,
+        JobEnqueuer(settings.redis_url.get_secret_value()) if settings.redis_url else None,
+    )
     return BusinessSignalExtractionService(
         sessions,
         client,
         provider="openai",
         model=settings.ai_model_signal_extraction,
         prompt_version=settings.signal_extractor_prompt_version,
+        translation_orchestrator=translation,
     )
 
 

@@ -41,12 +41,18 @@ The worker exposes `translate_signal`, `translate_opportunity`, and `translate_b
 Transient provider/rate-limit failures receive at most two worker retries. Configuration,
 validation, authorization, and other permanent failures are not retried.
 
+TASK-042 automatically submits eligible lifecycle events and adds a 20-minute bounded coverage
+reconciliation safety net. New review Signals, open activation-review Opportunities, and active
+transitions are checked after their domain transaction commits. Queue failure never rolls back the
+domain write. See `docs/automatic-translation-orchestration.md`.
+
 Run the local CLI from `apps/api`:
 
 ```bash
 uv run python scripts/translate_intelligence.py signal --id <uuid> --dry-run --show-sample
 uv run python scripts/translate_intelligence.py opportunity --id <uuid>
 uv run python scripts/translate_intelligence.py batch --entity-type signals --limit 5
+uv run python scripts/reconcile_translations.py --locale zh-CN --limit 100 --dry-run
 ```
 
 Dry-run calculates missing/stale/reusable fields but performs no provider call and no database

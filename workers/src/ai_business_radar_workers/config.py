@@ -42,6 +42,8 @@ class WorkerSettings(BaseSettings):
     trend_aggregation_schedule_hour_utc: int = Field(default=2, ge=0, le=23)
     opportunity_scoring_batch_size: int = Field(default=100, ge=1, le=500)
     opportunity_scoring_schedule_delay_minutes: int = Field(default=30, ge=1, le=180)
+    translation_reconciliation_batch_size: int = Field(default=100, ge=1, le=500)
+    translation_reconciliation_schedule_minutes: int = Field(default=20, ge=5, le=1440)
 
     @field_validator("signal_extractor_prompt_version")
     @classmethod

@@ -55,6 +55,10 @@ re-runs deterministic hard readiness checks in the review transaction. Activatio
 the opportunity entity `rejected`; low evidence alone should instead be deferred. Scores and AI
 confidence remain advisory and cannot publish an opportunity.
 
+After a successful committed approval that activates a Signal or Opportunity, translation
+orchestration performs a best-effort current-coverage check and submits missing/stale zh-CN work.
+This occurs outside the review transaction; translation or Redis failure cannot undo the decision.
+
 ## Context, transactions, and authorization
 
 Context is persisted input, not trusted state. UUIDs, entity existence, target eligibility,

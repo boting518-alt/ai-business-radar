@@ -39,6 +39,11 @@ The reviewer sees active signal count, video/channel diversity, latest Opportuni
 
 The task targets the opportunity and persists the readiness snapshot, metrics, recommendation, and bounded duplicate candidates in `review_tasks.context`. Final audit uses the existing decision, notes, `resolved_by`, and `resolved_at`; v0.1 needs no activation-history table.
 
+After the activation-review transaction commits, the candidate receives a best-effort zh-CN
+translation enqueue when its current coverage is missing or stale. Publish similarly guarantees
+that an active Opportunity is present or queued, but translation availability never blocks either
+review creation or Publish.
+
 ## Decision-time safety and transaction
 
 The existing review decision endpoint remains authoritative. Publish locks the review and opportunity, verifies candidate state, and re-runs hard checks inside the same PostgreSQL transaction before changing status and resolving the review. Any stale state or failed check rolls back both. Invalid verifies candidate state before setting `rejected`. Defer performs no opportunity mutation.

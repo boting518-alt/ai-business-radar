@@ -45,6 +45,7 @@ def enqueue_scheduled_scoring(settings: WorkerSettings) -> None:
 
 def build_scheduler(settings: WorkerSettings) -> BlockingScheduler:
     from ..actors import (
+        reconcile_translation_coverage,
         recover_stale_collection_claims,
         run_youtube_comment_collection,
         run_youtube_metadata_collection,
@@ -100,6 +101,15 @@ def build_scheduler(settings: WorkerSettings) -> BlockingScheduler:
         "interval",
         minutes=settings.youtube_stale_recovery_schedule_minutes,
         id="stale_claim_recovery",
+        max_instances=1,
+    )
+    scheduler.add_job(
+        lambda: reconcile_translation_coverage.send(
+            limit=settings.translation_reconciliation_batch_size
+        ),
+        "interval",
+        minutes=settings.translation_reconciliation_schedule_minutes,
+        id="translation_reconciliation",
         max_instances=1,
     )
     return scheduler

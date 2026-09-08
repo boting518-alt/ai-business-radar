@@ -54,6 +54,15 @@ class AIStub:
         )
 
 
+class TranslationTriggerStub:
+    def __init__(self):
+        self.calls = []
+
+    async def best_effort_enqueue(self, entity_type, entity_id, *, reason):
+        self.calls.append((entity_type, entity_id, reason))
+        return True
+
+
 def output():
     return BusinessSignalExtractorOutput.model_validate(
         {
@@ -129,6 +138,30 @@ async def test_valid_extraction_maps_atomic_review_signals_and_audit(signal_data
         extractions[1].supersedes_extraction_id == extractions[0].id
         and video.processing_status == "queued"
     )
+
+
+@pytest.mark.asyncio
+async def test_new_review_signals_trigger_translation_after_persistence(signal_database) -> None:
+    _, factory = signal_database
+    video_id = await seed_video(factory, status="queued")
+    trigger = TranslationTriggerStub()
+    result = await BusinessSignalExtractionService(
+        factory,
+        AIStub(output()),
+        provider="openai",
+        model="signal-model",
+        translation_orchestrator=trigger,
+    ).extract(video_id)
+
+    async with factory() as session:
+        persisted_ids = set(
+            await session.scalars(select(Signal.id).where(Signal.video_id == video_id))
+        )
+    assert result.signals_created == 2
+    assert {(kind, entity_id) for kind, entity_id, _ in trigger.calls} == {
+        ("signal", entity_id) for entity_id in persisted_ids
+    }
+    assert {reason for _, _, reason in trigger.calls} == {"signal_review"}
 
 
 @pytest.mark.asyncio
