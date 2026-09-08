@@ -19,6 +19,9 @@ async def execute_discovery(payload: dict, settings: WorkerSettings | None = Non
     runtime = settings or WorkerSettings()
     request = DiscoveryRequest(
         search_query_id=UUID(payload["search_query_id"]),
+        collection_run_id=(
+            UUID(payload["collection_run_id"]) if payload.get("collection_run_id") else None
+        ),
         max_pages=payload.get("max_pages", 1),
         max_results=payload.get("max_results", 50),
         order=payload.get("order", "date"),

@@ -8,6 +8,7 @@ from .ai_opportunities import router as ai_opportunities_router
 from .ai_relevance import router as ai_relevance_router
 from .ai_signals import router as ai_signals_router
 from .auth import router as auth_router
+from .discovery_operations import router as discovery_operations_router
 from .health import router as health_router
 from .localization import router as localization_router
 from .opportunity_activation import router as opportunity_activation_router
@@ -23,6 +24,7 @@ router = APIRouter(prefix="/api/v1")
 router.include_router(health_router)
 router.include_router(auth_router)
 router.include_router(admin_router)
+router.include_router(discovery_operations_router)
 router.include_router(youtube_discovery_router)
 router.include_router(ai_relevance_router)
 router.include_router(ai_comment_pain_router)

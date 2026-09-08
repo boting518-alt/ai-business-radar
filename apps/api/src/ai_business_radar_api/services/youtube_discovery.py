@@ -25,6 +25,7 @@ class DiscoveryRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     search_query_id: UUID
+    collection_run_id: UUID | None = None
     max_pages: int = Field(default=1, ge=1, le=5)
     max_results: int | None = Field(default=50, ge=1, le=250)
     published_after: datetime | None = None
@@ -252,12 +253,16 @@ class YouTubeDiscoveryService:
         metadata = self._metadata(0, 0, 0, None, request.order, None)
         async with self._sessions() as session, session.begin():
             runs = CollectionRunRepository(session)
-            run = await runs.create_run(request.search_query_id, metadata)
-            await runs.mark_running(run.id, started_at)
+            if request.collection_run_id is None:
+                run = await runs.create_run(request.search_query_id, metadata)
+                run_id = run.id
+            else:
+                run_id = request.collection_run_id
+            await runs.mark_running(run_id, started_at)
             await SearchQueryRepository(session).update_last_run_at(
                 request.search_query_id, started_at
             )
-            return run.id
+            return run_id
 
     async def _persist_page(
         self,

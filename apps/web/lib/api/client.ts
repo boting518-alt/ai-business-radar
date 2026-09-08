@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
+import type { CurrentUser, DiscoveryRun, DiscoverySystemStatus, DiscoveryTopic, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -34,4 +34,11 @@ export class ApiClient {
   getReview=(id:string)=>this.request<ReviewTask>(`/api/v1/admin/reviews/${encodeURIComponent(id)}`);
   claimReview=(id:string)=>this.request<ReviewWorkflowResult>(`/api/v1/admin/reviews/${encodeURIComponent(id)}/claim`,{method:"POST"});
   decideReview=(id:string,body:ReviewDecision)=>this.request<ReviewWorkflowResult>(`/api/v1/admin/reviews/${encodeURIComponent(id)}/decision`,{method:"POST",body:JSON.stringify(body)});
+  listDiscoveryTopics=()=>this.request<DiscoveryTopic[]>("/api/v1/admin/discovery/topics");
+  createDiscoveryTopic=(body:unknown)=>this.request<DiscoveryTopic>("/api/v1/admin/discovery/topics",{method:"POST",body:JSON.stringify(body)});
+  runDiscoveryTopic=(id:string)=>this.request<DiscoveryRun[]>(`/api/v1/admin/discovery/topics/${id}/run`,{method:"POST"});
+  pauseDiscoveryTopic=(id:string)=>this.request<DiscoveryTopic>(`/api/v1/admin/discovery/topics/${id}/pause`,{method:"POST"});
+  resumeDiscoveryTopic=(id:string)=>this.request<DiscoveryTopic>(`/api/v1/admin/discovery/topics/${id}/resume`,{method:"POST"});
+  duplicateDiscoveryTopic=(id:string)=>this.request<DiscoveryTopic>(`/api/v1/admin/discovery/topics/${id}/duplicate`,{method:"POST"});
+  getDiscoveryStatus=()=>this.request<DiscoverySystemStatus>("/api/v1/admin/discovery/system-status");
 }

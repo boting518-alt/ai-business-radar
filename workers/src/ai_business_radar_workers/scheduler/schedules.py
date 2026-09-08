@@ -1,11 +1,19 @@
 import asyncio
+from datetime import UTC, datetime
 
 from ai_business_radar_api.infrastructure.database import (
     create_database_engine,
     create_session_factory,
 )
+from ai_business_radar_api.infrastructure.database.models import DiscoveryTopic, SearchQuery
 from ai_business_radar_api.infrastructure.database.repositories import SearchQueryRepository
+from ai_business_radar_api.services.discovery_operations import (
+    DiscoveryConflict,
+    DiscoveryOperationsService,
+    next_run,
+)
 from apscheduler.schedulers.blocking import BlockingScheduler
+from sqlalchemy import select, update
 
 from ..broker import initialize_broker
 from ..config import WorkerSettings
@@ -16,13 +24,55 @@ async def enqueue_scheduled_discovery(settings: WorkerSettings) -> int:
 
     engine = create_database_engine(settings.database_url.get_secret_value())
     try:
-        async with create_session_factory(engine)() as session:
-            queries = await SearchQueryRepository(session).list_enabled_discovery(
+        factory = create_session_factory(engine)
+        now = datetime.now(UTC)
+        async with factory() as session:
+            managed = await SearchQueryRepository(session).list_enabled_discovery(
                 limit=settings.youtube_discovery_schedule_batch_size
             )
-        for query in queries:
+            legacy = [query for query in managed if getattr(query, "topic_id", None) is None]
+            if not hasattr(session, "scalars"):
+                for query in legacy:
+                    run_youtube_discovery.send(search_query_id=str(query.id))
+                return len(legacy)
+            queries = list(
+                await session.scalars(
+                    select(SearchQuery)
+                    .join(DiscoveryTopic, DiscoveryTopic.id == SearchQuery.topic_id)
+                    .where(
+                        DiscoveryTopic.status == "active",
+                        DiscoveryTopic.default_schedule != "manual",
+                        DiscoveryTopic.next_run_at <= now,
+                        SearchQuery.enabled.is_(True),
+                        SearchQuery.discovery_mode == "discovery",
+                    )
+                    .order_by(DiscoveryTopic.next_run_at)
+                    .limit(settings.youtube_discovery_schedule_batch_size)
+                )
+            )
+        queued = 0
+        for query in legacy:
             run_youtube_discovery.send(search_query_id=str(query.id))
-        return len(queries)
+            queued += 1
+        ops = DiscoveryOperationsService(factory)
+        for query in queries:
+            try:
+                run, payload = await ops.queue_run(query.id, "scheduled")
+                message = run_youtube_discovery.send(**payload)
+                await ops.mark_message(run.id, str(message.message_id))
+                queued += 1
+            except DiscoveryConflict:
+                continue
+        topic_ids = {query.topic_id for query in queries}
+        async with factory() as session, session.begin():
+            for topic_id in topic_ids:
+                topic = await session.get(DiscoveryTopic, topic_id)
+                await session.execute(
+                    update(DiscoveryTopic)
+                    .where(DiscoveryTopic.id == topic_id)
+                    .values(last_run_at=now, next_run_at=next_run(topic.default_schedule, now))
+                )
+        return queued
     finally:
         await engine.dispose()
 

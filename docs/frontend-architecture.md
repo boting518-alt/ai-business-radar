@@ -122,6 +122,12 @@ optimistic domain mutation is introduced.
 
 ## Opportunity Library implementation
 
+## Discovery Operations Console
+
+`/admin/discovery` is protected by the existing server-side admin layout. It provides bounded topic
+creation, multiple-query editing, system status, topic actions, latest result and estimated quota.
+All mutations call admin APIs and never invoke YouTube from the browser.
+
 `/opportunities` is a URL-driven authenticated catalogue, separate from the trend-window-oriented
 Radar. It delegates search, taxonomy/stage/metric/watchlist filters, deterministic sort, and
 20/50/100-item pagination to the product API. Results reuse the shared stage, score, error/empty,

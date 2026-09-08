@@ -18,6 +18,8 @@ The expected application mechanism will be selected with deployment tooling. Unt
 - `0004_youtube_metadata_collection.sql` adds metadata-run taxonomy and staging claim/result fields.
 - `0005_youtube_comment_collection.sql` separates YouTube comment edit time from row update time.
 - `0006_worker_runtime.sql` timestamps metadata staging claims for bounded stale recovery.
+- `0018_discovery_operations.sql` adds admin-managed discovery topics, bounded query overrides,
+  durable queued runs, schedule state, and duplicate in-flight protection.
 
 Apply migrations in numeric order. `0001` creates `auth.uid()` only when it is absent so standalone
 PostgreSQL can apply the RLS baseline without manual schema state; Supabase's existing function is

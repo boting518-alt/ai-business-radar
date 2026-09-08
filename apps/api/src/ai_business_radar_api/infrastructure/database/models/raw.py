@@ -49,6 +49,30 @@ class SearchQuery(Base):
     last_run_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    topic_id: Mapped[UUID | None] = mapped_column(ForeignKey("discovery_topics.id"))
+    max_videos: Mapped[int | None] = mapped_column(Integer)
+    max_pages: Mapped[int | None] = mapped_column(Integer)
+    max_comments_per_video: Mapped[int | None] = mapped_column(Integer)
+    schedule_override: Mapped[str | None]
+
+
+class DiscoveryTopic(Base):
+    __tablename__ = "discovery_topics"
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    name: Mapped[str] = mapped_column(Text)
+    description: Mapped[str | None] = mapped_column(Text)
+    status: Mapped[str]
+    default_schedule: Mapped[str]
+    default_max_videos: Mapped[int] = mapped_column(Integer)
+    default_max_pages: Mapped[int] = mapped_column(Integer)
+    default_max_comments_per_video: Mapped[int] = mapped_column(Integer)
+    created_by: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
+    last_run_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    next_run_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 
 class CollectionRun(Base):
@@ -68,6 +92,9 @@ class CollectionRun(Base):
     error_summary: Mapped[str | None] = mapped_column(Text)
     metadata_: Mapped[dict[str, Any] | None] = mapped_column("metadata", JSONB)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    discovery_topic_id: Mapped[UUID | None] = mapped_column(ForeignKey("discovery_topics.id"))
+    trigger_type: Mapped[str | None]
+    worker_message_id: Mapped[str | None] = mapped_column(Text)
 
 
 class Channel(Base):
