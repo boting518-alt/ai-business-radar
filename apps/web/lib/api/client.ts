@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, EvidenceItem, OpportunityDetail, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
+import type { CurrentUser, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -21,7 +21,7 @@ export class ApiClient {
   private path(path:string,query:Query={}) { const p=new URLSearchParams(); Object.entries(query).forEach(([k,v])=>{if(v==null)return;if(Array.isArray(v))v.forEach(item=>p.append(k,String(item)));else p.set(k,String(v))}); const s=p.toString(); return s?`${path}?${s}`:path; }
   getCurrentUser=()=>this.request<CurrentUser>("/api/v1/auth/me");
   getRadar=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/radar",query));
-  listOpportunities=(query:Query={})=>this.request<RadarResponse>(this.path("/api/v1/opportunities",query));
+  listOpportunities=(query:Query={})=>this.request<OpportunityLibraryResponse>(this.path("/api/v1/opportunities",query));
   getOpportunity=(id:string,query:Query={})=>this.request<OpportunityDetail>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}`,query));
   getOpportunityTrends=(id:string,query:Query={})=>this.request<TrendItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/trends`,query));
   getOpportunityScores=(id:string,query:Query={})=>this.request<ScoreItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/scores`,query));

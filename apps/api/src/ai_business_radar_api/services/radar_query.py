@@ -11,6 +11,14 @@ from .intelligence_localization import IntelligenceLocalizationService, Locale
 
 Window = Literal["7d", "30d", "90d"]
 Sort = Literal["score", "momentum", "confidence", "hype", "recent"]
+LibrarySort = Literal[
+    "last_activity_desc",
+    "first_detected_desc",
+    "score_desc",
+    "confidence_desc",
+    "momentum_desc",
+    "name_asc",
+]
 Direction = Literal["asc", "desc"]
 
 
@@ -98,6 +106,29 @@ class RadarResponse(BaseModel):
     total: int
     offset: int
     limit: int
+
+
+class OpportunityLibraryRequest(BaseModel):
+    q: str | None = Field(default=None, max_length=200)
+    industry_code: str | None = None
+    customer_code: str | None = None
+    market_stage: str | None = None
+    min_score: Decimal | None = Field(default=None, ge=0, le=100)
+    max_score: Decimal | None = Field(default=None, ge=0, le=100)
+    min_confidence: Decimal | None = Field(default=None, ge=0, le=100)
+    max_hype_risk: Decimal | None = Field(default=None, ge=0, le=100)
+    watchlisted: bool | None = None
+    sort: LibrarySort = "last_activity_desc"
+    page: int = Field(default=1, ge=1)
+    page_size: Literal[20, 50, 100] = 20
+
+
+class OpportunityLibraryResponse(BaseModel):
+    items: list[RadarOpportunityItem]
+    total: int
+    page: int
+    page_size: int
+    total_pages: int
 
 
 class RadarRequest(BaseModel):
@@ -259,9 +290,110 @@ class RadarQueryService:
         )
 
     async def opportunities(
-        self, user_id: UUID, request: RadarRequest, locale: Locale = "en-US"
-    ) -> RadarResponse:
-        return await self.radar(user_id, request.model_copy(update={"sort": request.sort}), locale)
+        self, user_id: UUID, request: OpportunityLibraryRequest, locale: Locale = "en-US"
+    ) -> OpportunityLibraryResponse:
+        async with self._sessions() as session:
+            repo = RadarQueryRepository(session)
+            opportunities = await repo.list_active_opportunities(
+                request.industry_code, request.customer_code
+            )
+            ids = [item.id for item in opportunities]
+            scores = await repo.latest_scores(ids)
+            trends = await repo.latest_trends(ids, "7d")
+            summaries = await repo.evidence_summaries(ids)
+            watched = await repo.watchlisted_ids(user_id, ids)
+            taxonomy = await repo.taxonomy("opportunity", ids, locale)
+            canonical = {
+                item.id: {
+                    "name": item.name,
+                    "one_line_thesis": item.one_line_thesis,
+                    "problem": item.problem,
+                    "solution": item.solution,
+                    "industry": item.industry,
+                    "customer_type": item.customer_type,
+                }
+                for item in opportunities
+            }
+            localized = await IntelligenceLocalizationService(session).localize_many(
+                "opportunity", canonical, locale
+            )
+            items = [
+                self._item(
+                    item,
+                    scores.get(item.id),
+                    trends.get(item.id),
+                    summaries.get(item.id),
+                    watched,
+                    localized[item.id],
+                    taxonomy,
+                )
+                for item in opportunities
+            ]
+        needle = request.q.casefold().strip() if request.q else None
+        if needle:
+            items = [
+                item
+                for item in items
+                if needle
+                in " ".join(
+                    str(localized[item.id].get(field).text or "")
+                    for field in ("name", "one_line_thesis", "problem", "solution")
+                ).casefold()
+            ]
+        if request.market_stage:
+            items = [item for item in items if item.market_stage == request.market_stage]
+        if request.min_score is not None:
+            items = [
+                item
+                for item in items
+                if item.opportunity_score is not None
+                and item.opportunity_score >= request.min_score
+            ]
+        if request.max_score is not None:
+            items = [
+                item
+                for item in items
+                if item.opportunity_score is not None
+                and item.opportunity_score <= request.max_score
+            ]
+        if request.min_confidence is not None:
+            items = [
+                item
+                for item in items
+                if item.confidence_score is not None
+                and item.confidence_score >= request.min_confidence
+            ]
+        if request.max_hype_risk is not None:
+            items = [
+                item
+                for item in items
+                if item.hype_risk_score is not None
+                and item.hype_risk_score <= request.max_hype_risk
+            ]
+        if request.watchlisted is not None:
+            items = [item for item in items if item.watchlisted is request.watchlisted]
+        key = {
+            "last_activity_desc": lambda x: x.last_activity_at,
+            "first_detected_desc": lambda x: x.first_detected_at,
+            "score_desc": lambda x: x.opportunity_score or Decimal("-1"),
+            "confidence_desc": lambda x: x.confidence_score or Decimal("-1"),
+            "momentum_desc": lambda x: (
+                x.trend.momentum_score
+                if x.trend and x.trend.momentum_score is not None
+                else Decimal("-1")
+            ),
+            "name_asc": lambda x: x.name.casefold(),
+        }[request.sort]
+        items.sort(key=key, reverse=request.sort != "name_asc")
+        total = len(items)
+        start = (request.page - 1) * request.page_size
+        return OpportunityLibraryResponse(
+            items=items[start : start + request.page_size],
+            total=total,
+            page=request.page,
+            page_size=request.page_size,
+            total_pages=(total + request.page_size - 1) // request.page_size,
+        )
 
     async def detail(
         self, user_id: UUID, identifier: str, locale: Locale = "en-US"

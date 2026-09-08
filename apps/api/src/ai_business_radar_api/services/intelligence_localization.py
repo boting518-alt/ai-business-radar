@@ -89,3 +89,38 @@ class IntelligenceLocalizationService:
                     stale=True,
                 )
         return result
+
+    async def localize_many(
+        self,
+        entity_type: EntityType,
+        entities: dict[UUID, dict[str, str | None]],
+        locale: Locale,
+    ) -> dict[UUID, dict[str, LocalizedText]]:
+        results = {
+            entity_id: {
+                field: LocalizedText(text=value, original_text=value)
+                for field, value in fields.items()
+            }
+            for entity_id, fields in entities.items()
+        }
+        if locale == "en-US" or not entities:
+            return results
+        rows = list(
+            await self._session.scalars(
+                select(IntelligenceLocalization).where(
+                    IntelligenceLocalization.entity_type == entity_type,
+                    IntelligenceLocalization.entity_id.in_(entities),
+                    IntelligenceLocalization.locale == locale,
+                    IntelligenceLocalization.translation_version
+                    == CURRENT_TRANSLATION_VERSIONS[locale],
+                    IntelligenceLocalization.status == "current",
+                )
+            )
+        )
+        for row in rows:
+            canonical = entities.get(row.entity_id, {}).get(row.field_name)
+            if canonical and row.source_text_hash == source_text_hash(canonical):
+                results[row.entity_id][row.field_name] = LocalizedText(
+                    text=row.translated_text, original_text=canonical, localized=True
+                )
+        return results

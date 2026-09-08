@@ -11,6 +11,8 @@ from ...infrastructure.auth import RequiredUser
 from ...services.radar_query import (
     EvidenceItem,
     OpportunityDetail,
+    OpportunityLibraryRequest,
+    OpportunityLibraryResponse,
     OpportunityNotVisibleError,
     RadarQueryService,
     RadarRequest,
@@ -124,35 +126,43 @@ async def radar(
     return await service.radar(user.user_profile_id, _request(**locals()), locale)
 
 
-@router.get("/opportunities", response_model=RadarResponse)
+@router.get("/opportunities", response_model=OpportunityLibraryResponse)
 async def opportunities(
     user: RequiredUser,
     service: Annotated[RadarQueryService, Depends(get_radar_service)],
-    window_type: Literal["7d", "30d", "90d"] = "7d",
-    sort: Literal["score", "momentum", "confidence", "hype", "recent"] = "recent",
-    direction: Literal["asc", "desc"] = "desc",
-    limit: int = Query(25, ge=1, le=100),
-    offset: int = Query(0, ge=0),
     q: str | None = Query(None, max_length=200),
-    industry: list[str] | None = Query(None),
-    sub_industry: list[str] | None = Query(None),
-    business_model: list[str] | None = Query(None),
-    customer_type: list[str] | None = Query(None),
-    market_stage: list[str] | None = Query(None),
-    competition_level: list[str] | None = Query(None),
-    build_difficulty: list[str] | None = Query(None),
-    sales_difficulty: list[str] | None = Query(None),
-    score_min: Decimal | None = Query(None, ge=0, le=100),
-    score_max: Decimal | None = Query(None, ge=0, le=100),
-    confidence_min: Decimal | None = Query(None, ge=0, le=100),
-    confidence_max: Decimal | None = Query(None, ge=0, le=100),
-    hype_max: Decimal | None = Query(None, ge=0, le=100),
-    detected_after: datetime | None = None,
     industry_code: str | None = None,
     customer_code: str | None = None,
+    market_stage: str | None = None,
+    min_score: Decimal | None = Query(None, ge=0, le=100),
+    max_score: Decimal | None = Query(None, ge=0, le=100),
+    min_confidence: Decimal | None = Query(None, ge=0, le=100),
+    max_hype_risk: Decimal | None = Query(None, ge=0, le=100),
+    watchlisted: bool | None = None,
+    sort: Literal[
+        "last_activity_desc",
+        "first_detected_desc",
+        "score_desc",
+        "confidence_desc",
+        "momentum_desc",
+        "name_asc",
+    ] = "last_activity_desc",
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20),
     locale: Literal["zh-CN", "en-US"] = "en-US",
-) -> RadarResponse:
-    return await service.opportunities(user.user_profile_id, _request(**locals()), locale)
+) -> OpportunityLibraryResponse:
+    if min_score is not None and max_score is not None and min_score > max_score:
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Invalid score range")
+    if page_size not in (20, 50, 100):
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "Invalid page size")
+    request = OpportunityLibraryRequest(
+        **{
+            key: value
+            for key, value in locals().items()
+            if key in OpportunityLibraryRequest.model_fields
+        }
+    )
+    return await service.opportunities(user.user_profile_id, request, locale)
 
 
 def _not_found(error: OpportunityNotVisibleError) -> None:

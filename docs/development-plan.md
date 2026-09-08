@@ -55,7 +55,7 @@ MVP STATUS: READY WITH KNOWN GAPS
 
 ## Next
 
-- [ ] TASK-043 Opportunity Library v0.1
+- [x] TASK-043 Opportunity Library v0.1
 - [ ] TASK-044 Discovery Operations Console v0.1
 - [ ] TASK-045 Staging Infrastructure Deployment
 - [ ] TASK-046 Staging Full Integration Validation

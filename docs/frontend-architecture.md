@@ -120,6 +120,14 @@ optimistic domain mutation is introduced.
 
 ## Known limitations after MVP QA
 
+## Opportunity Library implementation
+
+`/opportunities` is a URL-driven authenticated catalogue, separate from the trend-window-oriented
+Radar. It delegates search, taxonomy/stage/metric/watchlist filters, deterministic sort, and
+20/50/100-item pagination to the product API. Results reuse the shared stage, score, error/empty,
+and watchlist controls and link to the canonical opportunity dossier. See
+`docs/opportunity-library.md`.
+
 TASK-040 adds optional canonical industry/customer projections and code filters. Normal UX displays
 localized labels and retains source-derived free text; admin/debug surfaces may expose codes.
 

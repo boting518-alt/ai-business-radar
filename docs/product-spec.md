@@ -330,6 +330,7 @@ v0.1 succeeds at the product level when it can:
 11. Surface opportunities in a Radar UI.
 12. Support human review of AI-generated intelligence.
 13. Support watchlisting of opportunities.
+14. Provide an authenticated Opportunity Library for searching and filtering published opportunities.
 
 ### Initial quality targets
 
