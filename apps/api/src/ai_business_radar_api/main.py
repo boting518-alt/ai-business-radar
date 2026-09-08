@@ -12,6 +12,7 @@ from .config import Settings, get_settings
 from .infrastructure.database import create_database_engine, create_session_factory
 from .logging import configure_logging
 from .middleware.request_id import RequestIdMiddleware
+from .runtime_config import log_runtime_target
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +23,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+        log_runtime_target(logger, "api", app_settings.runtime_target)
         logger.info(
             "application_start name=%s version=%s environment=%s",
             app_settings.app_name,

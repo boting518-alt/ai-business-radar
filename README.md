@@ -19,6 +19,20 @@ See `AGENTS.md` for project constraints and working conventions.
 See `docs/mvp-runbook.md` for the isolated synthetic-data demo and
 `docs/mvp-release-readiness.md` for current release status.
 
+## Unified local runtime
+
+Put server-side values in `apps/api/.env`, the canonical shared runtime file, then start Web, API,
+worker, and scheduler together from any directory:
+
+```bash
+./scripts/dev-runtime.sh
+```
+
+For isolated live validation use `RUNTIME_PROFILE=live_validation ./scripts/dev-runtime.sh`.
+API, worker, and scheduler print the same secret-free configuration fingerprint at startup; a
+mismatch means they are not using the same database/Redis target. `workers/.env` is only a local
+compatibility copy and is not the source of truth.
+
 ## Backend development
 
 ```bash

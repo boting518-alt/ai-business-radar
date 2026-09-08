@@ -157,6 +157,11 @@ class DiscoverySystemStatus(BaseModel):
     scheduler: Literal["configured"] = "configured"
     youtube_api: Literal["configured", "unconfigured"]
     openai_api: Literal["configured", "unconfigured"]
+    runtime_profile: str
+    database_host: str | None
+    database_name: str | None
+    redis_host: str | None
+    config_fingerprint: str
 
 
 class StaleRunRecoveryRequest(BaseModel):
@@ -409,10 +414,13 @@ class DiscoveryOperationsService:
                 raise DiscoveryConflict("Discovery query already queued or running") from error
             topic.last_run_at = datetime.now(UTC)
             payload = {
-                "search_query_id": str(query.id),
-                "collection_run_id": str(run.id),
-                "max_pages": query.max_pages or topic.default_max_pages,
-                "max_results": query.max_videos or topic.default_max_videos,
+                "discovery_run_id": str(run.id),
+                "topic_run_id": None,
+                "query_id": str(query.id),
+                "payload": {
+                    "max_pages": query.max_pages or topic.default_max_pages,
+                    "max_results": query.max_videos or topic.default_max_videos,
+                },
             }
             return self._run(run, query.query), payload
 
@@ -485,10 +493,13 @@ class DiscoveryOperationsService:
                     (
                         run.id,
                         {
-                            "search_query_id": str(query.id),
-                            "collection_run_id": str(run.id),
-                            "max_pages": query.max_pages or topic.default_max_pages,
-                            "max_results": query.max_videos or topic.default_max_videos,
+                            "discovery_run_id": str(run.id),
+                            "topic_run_id": str(batch.id),
+                            "query_id": str(query.id),
+                            "payload": {
+                                "max_pages": query.max_pages or topic.default_max_pages,
+                                "max_results": query.max_videos or topic.default_max_videos,
+                            },
                         },
                     )
                 )

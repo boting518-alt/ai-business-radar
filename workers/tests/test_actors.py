@@ -50,9 +50,10 @@ def test_actor_queues_and_payloads_are_serializable() -> None:
         assert actor.queue_name == queue
         assert actor.options["max_retries"] == 2
     payload = {
-        "search_query_id": str(uuid4()),
-        "published_after": datetime.now(UTC).isoformat(),
-        "max_pages": 1,
+        "discovery_run_id": str(uuid4()),
+        "topic_run_id": str(uuid4()),
+        "query_id": str(uuid4()),
+        "payload": {"published_after": datetime.now(UTC).isoformat(), "max_pages": 1},
     }
     assert json.loads(json.dumps(payload)) == payload
 
@@ -94,7 +95,7 @@ async def test_discovery_validation_error_finalizes_precreated_run(monkeypatch) 
     run_id = uuid4()
     finalized = []
 
-    async def invalid(_payload, _settings):
+    async def invalid(_envelope, _settings):
         from ai_business_radar_api.services.youtube_discovery import DiscoveryRequest
 
         DiscoveryRequest(search_query_id=uuid4(), max_pages=99)
@@ -116,11 +117,23 @@ async def test_discovery_validation_error_finalizes_precreated_run(monkeypatch) 
     monkeypatch.setattr(youtube_discovery, "create_session_factory", lambda _engine: "factory")
     monkeypatch.setattr(youtube_discovery, "DiscoveryOperationsService", Operations)
     result = await youtube_discovery.execute_discovery_safely(
-        {"collection_run_id": str(run_id), "search_query_id": str(uuid4())}, settings
+        {
+            "discovery_run_id": str(run_id),
+            "topic_run_id": None,
+            "query_id": str(uuid4()),
+            "payload": {"max_pages": 99},
+        },
+        settings,
     )
     assert result is None
     assert finalized[0][0] == run_id
     assert finalized[0][1]["error_code"] == "invalid_discovery_request"
+
+
+def test_discovery_actor_has_retry_exhaustion_finalizer() -> None:
+    assert run_youtube_discovery.options["on_retry_exhausted"] == (
+        "finalize_youtube_discovery_retry_exhausted"
+    )
 
 
 @pytest.mark.asyncio
@@ -132,7 +145,9 @@ async def test_discovery_validation_error_finalizes_precreated_run(monkeypatch) 
             "execute_discovery",
             "YouTubeDiscoveryService",
             "discover",
-            {"search_query_id": str(uuid4())},
+            youtube_discovery.DiscoveryJobEnvelope(
+                discovery_run_id=uuid4(), query_id=uuid4(), payload={}
+            ),
         ),
         (
             youtube_metadata,

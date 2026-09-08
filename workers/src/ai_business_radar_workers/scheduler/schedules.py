@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from datetime import UTC, datetime
 
 from ai_business_radar_api.infrastructure.database import (
@@ -6,7 +7,8 @@ from ai_business_radar_api.infrastructure.database import (
     create_session_factory,
 )
 from ai_business_radar_api.infrastructure.database.models import DiscoveryTopic, SearchQuery
-from ai_business_radar_api.infrastructure.database.repositories import SearchQueryRepository
+from ai_business_radar_api.logging import configure_logging
+from ai_business_radar_api.runtime_config import log_runtime_target
 from ai_business_radar_api.services.discovery_operations import (
     DiscoveryConflict,
     DiscoveryOperationsService,
@@ -27,13 +29,10 @@ async def enqueue_scheduled_discovery(settings: WorkerSettings) -> int:
         factory = create_session_factory(engine)
         now = datetime.now(UTC)
         async with factory() as session:
-            managed = await SearchQueryRepository(session).list_enabled_discovery(
-                limit=settings.youtube_discovery_schedule_batch_size
-            )
-            legacy = [query for query in managed if getattr(query, "topic_id", None) is None]
+            # Only topic-managed queries have the pre-created run identity required by
+            # the worker envelope. Legacy rows remain visible but are not scheduled.
+            legacy = []
             if not hasattr(session, "scalars"):
-                for query in legacy:
-                    run_youtube_discovery.send(search_query_id=str(query.id))
                 return len(legacy)
             queries = list(
                 await session.scalars(
@@ -51,9 +50,6 @@ async def enqueue_scheduled_discovery(settings: WorkerSettings) -> int:
                 )
             )
         queued = 0
-        for query in legacy:
-            run_youtube_discovery.send(search_query_id=str(query.id))
-            queued += 1
         ops = DiscoveryOperationsService(factory)
         topics_to_run = {query.topic_id for query in queries}
         for topic_id in topics_to_run:
@@ -182,5 +178,7 @@ def build_scheduler(settings: WorkerSettings) -> BlockingScheduler:
 
 def main() -> None:
     settings = WorkerSettings()
+    configure_logging(settings.log_level)
+    log_runtime_target(logging.getLogger(__name__), "scheduler", settings.runtime_target)
     initialize_broker(settings)
     build_scheduler(settings).start()

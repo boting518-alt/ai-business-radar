@@ -68,3 +68,25 @@ def test_signal_prompt_version_allows_rollback_and_rejects_unknown_version() -> 
     assert settings.signal_extractor_prompt_version == "v001"
     with pytest.raises(ValidationError, match="Invalid prompt version"):
         Settings(_env_file=None, signal_extractor_prompt_version="v999")
+
+
+def test_live_validation_selects_explicit_database_and_has_safe_fingerprint() -> None:
+    settings = Settings(
+        _env_file=None,
+        runtime_profile="live_validation",
+        database_url="postgresql://user:secret@db.local:5432/default_db",
+        live_validation_database_url="postgresql://other:hidden@validation.local:6432/live_db",
+        redis_url="redis://:password@cache.local:6379/2",
+    )
+
+    target = settings.runtime_target
+    assert target.database_host == "validation.local"
+    assert target.database_name == "live_db"
+    assert target.redis_host == "cache.local"
+    assert len(target.fingerprint) == 16
+    assert "secret" not in repr(target) and "password" not in repr(target)
+
+
+def test_live_validation_fails_without_dedicated_database() -> None:
+    with pytest.raises(ValidationError, match="LIVE_VALIDATION_DATABASE_URL"):
+        Settings(_env_file=None, runtime_profile="live_validation")

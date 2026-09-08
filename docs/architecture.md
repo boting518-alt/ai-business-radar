@@ -175,7 +175,11 @@ Detailed tables, constraints, indexes, retention, and physical layer organizatio
 
 ### Development
 
-Developers run the Next.js app, FastAPI service, and Dramatiq worker runtime as separate local processes. PostgreSQL/Auth may use a Supabase development project or supported local setup. Redis runs locally or through an explicitly configured development service. External calls are mocked in normal automated tests.
+Developers use `scripts/dev-runtime.sh` to run the Next.js app, FastAPI service, Dramatiq worker,
+and scheduler as one local process group. All Python processes resolve `apps/api/.env` independent
+of working directory and print a shared secret-free runtime fingerprint. PostgreSQL/Auth may use a
+Supabase development project or supported local setup. Redis runs locally or through an explicitly
+configured development service. External calls are mocked in normal automated tests.
 
 ### Production
 

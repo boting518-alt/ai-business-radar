@@ -35,3 +35,23 @@ def test_discovery_console_routes_are_admin_only_and_typed() -> None:
     assert "DiscoverySystemStatus" in schemas
     assert "DiscoveryTopicRunDetail" in schemas
     assert "DiscoveryTopicRunSummary" in schemas
+
+
+def test_discovery_system_status_exposes_only_safe_runtime_identity() -> None:
+    settings = Settings(
+        _env_file=None,
+        database_url="postgresql://user:secret@db.local:5432/radar",
+        redis_url="redis://:hidden@cache.local:6379/0",
+    )
+    app = create_app(settings)
+    app.dependency_overrides[get_current_user] = lambda: identity("admin")
+    with TestClient(app) as client:
+        response = client.get("/api/v1/admin/discovery/system-status")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["database_host"] == "db.local"
+    assert body["database_name"] == "radar"
+    assert body["redis_host"] == "cache.local"
+    assert body["runtime_profile"] == "local"
+    assert "secret" not in response.text and "hidden" not in response.text

@@ -1,8 +1,17 @@
-"""Dramatiq CLI entry module; constructs the Redis broker before actor imports."""
+"""Dramatiq CLI entry module with fail-fast, observable configuration."""
+
+import logging
+
+from ai_business_radar_api.logging import configure_logging
+from ai_business_radar_api.runtime_config import log_runtime_target
 
 from .broker import initialize_broker
+from .config import WorkerSettings
 
-broker = initialize_broker()
+settings = WorkerSettings()
+configure_logging(settings.log_level)
+log_runtime_target(logging.getLogger(__name__), "worker", settings.runtime_target)
+broker = initialize_broker(settings)
 
 from .actors import (  # noqa: E402
     reconcile_translation_coverage,

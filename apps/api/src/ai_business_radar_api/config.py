@@ -8,17 +8,19 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .infrastructure.ai.errors import PromptNotFoundError
 from .infrastructure.ai.prompts import default_prompt_version, resolve_prompt
+from .runtime_config import SHARED_RUNTIME_ENV, RuntimeProfile, resolve_database_url, runtime_target
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=SHARED_RUNTIME_ENV,
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
     )
 
     app_env: str = "development"
+    runtime_profile: RuntimeProfile = "local"
     app_name: str = "YouTube AI Business Radar API"
     app_version: str = "0.1.0"
 
@@ -87,7 +89,14 @@ class Settings(BaseSettings):
     def validate_safe_production_cors(self) -> "Settings":
         if self.app_env.lower() == "production" and "*" in self.cors_origin_list:
             raise ValueError("CORS_ORIGINS must not contain '*' in production")
+        self.database_url = resolve_database_url(
+            self.runtime_profile, self.database_url, self.live_validation_database_url
+        )
         return self
+
+    @property
+    def runtime_target(self):
+        return runtime_target(self.runtime_profile, self.database_url, self.redis_url)
 
 
 @lru_cache

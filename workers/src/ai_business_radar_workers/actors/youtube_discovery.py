@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from datetime import datetime
 from uuid import UUID
@@ -15,7 +16,7 @@ from ai_business_radar_api.services.youtube_discovery import (
     SearchQueryNotFound,
     YouTubeDiscoveryService,
 )
-from pydantic import ValidationError
+from pydantic import BaseModel, ConfigDict, ValidationError
 
 from ..config import WorkerSettings
 from ..lifecycle import collection_dependencies
@@ -24,13 +25,20 @@ from .runtime import run_async
 logger = logging.getLogger(__name__)
 
 
-async def execute_discovery(payload: dict, settings: WorkerSettings | None = None):
-    runtime = settings or WorkerSettings()
+class DiscoveryJobEnvelope(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    discovery_run_id: UUID
+    topic_run_id: UUID | None = None
+    query_id: UUID
+    payload: dict
+
+
+async def execute_discovery(envelope: DiscoveryJobEnvelope, runtime: WorkerSettings):
+    payload = envelope.payload
     request = DiscoveryRequest(
-        search_query_id=UUID(payload["search_query_id"]),
-        collection_run_id=(
-            UUID(payload["collection_run_id"]) if payload.get("collection_run_id") else None
-        ),
+        search_query_id=envelope.query_id,
+        collection_run_id=envelope.discovery_run_id,
         max_pages=payload.get("max_pages", 1),
         max_results=payload.get("max_results", 50),
         order=payload.get("order", "date"),
@@ -49,18 +57,19 @@ async def execute_discovery(payload: dict, settings: WorkerSettings | None = Non
 
 
 async def execute_discovery_safely(payload: dict, settings: WorkerSettings | None = None):
-    runtime = settings or WorkerSettings()
+    envelope: DiscoveryJobEnvelope | None = None
+    runtime = settings
     try:
-        result = await execute_discovery(payload, runtime)
-        run_value = payload.get("collection_run_id")
-        if run_value:
-            engine = create_database_engine(runtime.database_url.get_secret_value())
-            try:
-                await DiscoveryOperationsService(
-                    create_session_factory(engine)
-                ).refresh_batch_for_run(UUID(run_value))
-            finally:
-                await engine.dispose()
+        envelope = DiscoveryJobEnvelope.model_validate(payload)
+        runtime = runtime or WorkerSettings()
+        result = await execute_discovery(envelope, runtime)
+        engine = create_database_engine(runtime.database_url.get_secret_value())
+        try:
+            await DiscoveryOperationsService(create_session_factory(engine)).refresh_batch_for_run(
+                envelope.discovery_run_id
+            )
+        finally:
+            await engine.dispose()
         return result
     except (
         ValidationError,
@@ -69,7 +78,7 @@ async def execute_discovery_safely(payload: dict, settings: WorkerSettings | Non
         SearchQueryDisabled,
         InvalidDiscoveryMode,
     ) as error:
-        run_value = payload.get("collection_run_id")
+        run_value = envelope.discovery_run_id if envelope else payload.get("discovery_run_id")
         location = None
         message = str(error).splitlines()[0][:200]
         if isinstance(error, ValidationError) and error.errors():
@@ -80,16 +89,16 @@ async def execute_discovery_safely(payload: dict, settings: WorkerSettings | Non
             "permanent_collection_job_failure actor=youtube_discovery run_id=%s "
             "query_id=%s error_type=%s validation_location=%s validation_message=%s",
             run_value,
-            payload.get("search_query_id"),
+            envelope.query_id if envelope else payload.get("query_id"),
             type(error).__name__,
             location,
             message,
         )
-        if run_value:
+        if run_value and runtime is not None:
             engine = create_database_engine(runtime.database_url.get_secret_value())
             try:
                 await DiscoveryOperationsService(create_session_factory(engine)).finalize_failure(
-                    UUID(run_value),
+                    UUID(str(run_value)),
                     error_code="invalid_discovery_request",
                     safe_message=message,
                 )
@@ -98,7 +107,32 @@ async def execute_discovery_safely(payload: dict, settings: WorkerSettings | Non
         return None
 
 
-@dramatiq.actor(queue_name="youtube_discovery", max_retries=2, min_backoff=5000)
+async def _finalize_retry_exhausted(original_message: dict) -> None:
+    payload = original_message.get("kwargs", {})
+    envelope = DiscoveryJobEnvelope.model_validate(payload)
+    runtime = WorkerSettings()
+    engine = create_database_engine(runtime.database_url.get_secret_value())
+    try:
+        await DiscoveryOperationsService(create_session_factory(engine)).finalize_failure(
+            envelope.discovery_run_id,
+            error_code="retry_exhausted",
+            safe_message="Discovery worker retries exhausted",
+        )
+    finally:
+        await engine.dispose()
+
+
+@dramatiq.actor(queue_name="maintenance", max_retries=0)
+def finalize_youtube_discovery_retry_exhausted(original_message: dict, _retry_metadata: dict):
+    asyncio.run(_finalize_retry_exhausted(original_message))
+
+
+@dramatiq.actor(
+    queue_name="youtube_discovery",
+    max_retries=2,
+    min_backoff=5000,
+    on_retry_exhausted="finalize_youtube_discovery_retry_exhausted",
+)
 def run_youtube_discovery(**payload):
     result = run_async(lambda: execute_discovery_safely(payload))
     logger.info(

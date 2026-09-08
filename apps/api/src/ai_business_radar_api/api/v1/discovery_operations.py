@@ -268,8 +268,14 @@ async def run_detail(
 @router.get("/system-status", response_model=DiscoverySystemStatus)
 async def system_status(request: Request, _: RequiredAdmin):
     settings = request.app.state.settings
+    target = settings.runtime_target
     return DiscoverySystemStatus(
         redis="configured" if settings.redis_url else "unconfigured",
         youtube_api="configured" if settings.youtube_api_key else "unconfigured",
         openai_api="configured" if settings.openai_api_key else "unconfigured",
+        runtime_profile=target.runtime_profile,
+        database_host=target.database_host,
+        database_name=target.database_name,
+        redis_host=target.redis_host,
+        config_fingerprint=target.fingerprint,
     )

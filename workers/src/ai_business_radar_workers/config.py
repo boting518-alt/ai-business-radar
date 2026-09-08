@@ -1,34 +1,13 @@
-from ai_business_radar_api.infrastructure.ai import (
-    PromptNotFoundError,
-    default_prompt_version,
-    resolve_prompt,
-)
-from pydantic import Field, SecretStr, field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+"""Worker configuration extending the canonical shared runtime contract."""
+
+from ai_business_radar_api.config import Settings
+from pydantic import Field, SecretStr, model_validator
 
 
-class WorkerSettings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore", case_sensitive=False)
-
+class WorkerSettings(Settings):
     redis_url: SecretStr
     database_url: SecretStr
     youtube_api_key: SecretStr
-    ai_provider: str | None = None
-    ai_model_relevance: str | None = None
-    ai_model_signal_extraction: str | None = None
-    signal_extractor_prompt_version: str = default_prompt_version("signal-extractor")
-    ai_model_comment_pain_mining: str | None = None
-    ai_model_opportunity_normalization: str | None = None
-    intelligence_translation_model: str | None = None
-    ai_opportunity_match_threshold: float = Field(default=0.70, ge=0, le=1)
-    ai_opportunity_create_threshold: float = Field(default=0.75, ge=0, le=1)
-    ai_max_retries: int = 2
-    openai_api_key: SecretStr | None = None
-    youtube_api_base_url: str = "https://www.googleapis.com/youtube/v3/"
-    youtube_http_timeout_seconds: float = 10
-    youtube_max_retries: int = 3
-    youtube_discovery_max_quota_units_per_run: int = 500
-    youtube_comment_max_quota_units_per_run: int = 500
     youtube_staging_claim_timeout_minutes: int = Field(default=30, ge=1)
     youtube_staging_recovery_batch_size: int = Field(default=100, ge=1, le=1000)
     youtube_discovery_schedule_batch_size: int = Field(default=10, ge=1, le=100)
@@ -45,11 +24,8 @@ class WorkerSettings(BaseSettings):
     translation_reconciliation_batch_size: int = Field(default=100, ge=1, le=500)
     translation_reconciliation_schedule_minutes: int = Field(default=20, ge=5, le=1440)
 
-    @field_validator("signal_extractor_prompt_version")
-    @classmethod
-    def validate_signal_prompt_version(cls, value: str) -> str:
-        try:
-            resolve_prompt("signal-extractor", value)
-        except PromptNotFoundError as error:
-            raise ValueError(str(error)) from error
-        return value
+    @model_validator(mode="after")
+    def require_worker_runtime(self) -> "WorkerSettings":
+        if not self.database_url or not self.redis_url:
+            raise ValueError("Worker requires resolved DATABASE_URL and REDIS_URL")
+        return self
