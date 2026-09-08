@@ -20,6 +20,9 @@ const batch = {
   requested_query_count: 2, queued_query_count: 2, queued: 2, running: 0,
   completed: 0, partial: 0, failed: 0, terminal_count: 0, quota_estimate: 0,
   started_at: "2026-09-08T00:00:00Z", completed_at: null,
+  intelligence_status: "not_started", intelligence_metrics: {},
+  intelligence_error_summary: null, intelligence_started_at: null,
+  intelligence_completed_at: null,
   runs: [run, { ...run, id: "run-2", query_id: "query-2" }],
 };
 const topic = {
@@ -36,7 +39,7 @@ function mockFetch(runResponse: unknown = batch) {
   vi.stubGlobal("fetch", vi.fn().mockImplementation((input: RequestInfo | URL) => {
     const url = String(input);
     if (url.endsWith("system-status")) return json({ redis: "configured", worker: "unknown", scheduler: "configured", youtube_api: "configured", openai_api: "configured" });
-    if (url.includes("/topic-runs/batch-1")) return json({ ...batch, status: "completed", queued: 0, completed: 2, terminal_count: 2, completed_at: "2026-09-08T00:01:00Z", runs: batch.runs.map(item => ({ ...item, status: "completed" })) });
+    if (url.includes("/topic-runs/batch-1")) return json({ ...batch, status: "completed", intelligence_status: "completed", queued: 0, completed: 2, terminal_count: 2, completed_at: "2026-09-08T00:01:00Z", intelligence_completed_at: "2026-09-08T00:02:00Z", runs: batch.runs.map(item => ({ ...item, status: "completed" })) });
     if (url.includes("/topics/topic-1/run")) return json(runResponse, runResponse === batch ? 202 : 409);
     return json([topic]);
   }));
@@ -60,9 +63,9 @@ describe("Discovery Console", () => {
     expect(screen.getByRole("button", { name: "排队中…" })).toBeDisabled();
     release(await json(batch, 202));
     expect(await screen.findByText("发现批次已排队（2/2）。")).toBeInTheDocument();
-    await screen.findByRole("button", { name: "Queued…" });
+    await screen.findByRole("button", { name: "Processing…" });
     await act(async () => vi.advanceTimersByTime(3000));
-    await screen.findByText("发现批次已结束：completed（2/2）");
+    await screen.findByText("处理已结束：发现 completed，情报 completed");
     const calls = vi.mocked(fetch).mock.calls.map(([url]) => String(url));
     expect(calls.some(url => url.includes("/topic-runs/batch-1"))).toBe(true);
     expect(calls.some(url => url.includes("/discovery/runs?"))).toBe(false);

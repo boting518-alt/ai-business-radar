@@ -46,6 +46,7 @@ class SignalRunRequest(BaseModel):
 
 class SignalBatchRequest(SignalRunRequest):
     limit: int = Field(default=20, ge=1, le=100)
+    video_ids: list[UUID] | None = None
 
 
 class SignalItemResult(BaseModel):
@@ -153,9 +154,12 @@ class BusinessSignalExtractionService:
 
     async def extract_batch(self, request: SignalBatchRequest) -> SignalBatchResult:
         async with self._sessions() as session:
-            videos = await VideoRepository(session).list_queued_for_signal_extraction(
-                limit=request.limit
-            )
+            if request.video_ids is None:
+                videos = await VideoRepository(session).list_queued_for_signal_extraction(
+                    limit=request.limit
+                )
+            else:
+                videos = await VideoRepository(session).list_existing_by_ids(request.video_ids)
         items = [await self.extract(video.id, force=request.force) for video in videos]
         return SignalBatchResult(
             requested=len(items),

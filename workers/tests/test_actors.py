@@ -130,10 +130,64 @@ async def test_discovery_validation_error_finalizes_precreated_run(monkeypatch) 
     assert finalized[0][1]["error_code"] == "invalid_discovery_request"
 
 
+@pytest.mark.asyncio
+async def test_terminal_topic_discovery_starts_intelligence_once(monkeypatch) -> None:
+    topic_run_id = uuid4()
+    started = []
+
+    async def completed(_envelope, _settings):
+        return SimpleNamespace(status="completed")
+
+    class Engine:
+        async def dispose(self):
+            pass
+
+    class Operations:
+        def __init__(self, _factory):
+            pass
+
+        async def refresh_batch_for_run(self, _run_id):
+            return SimpleNamespace(status="completed")
+
+    async def start(entity_id, _settings):
+        started.append(entity_id)
+
+    settings = SimpleNamespace(database_url=SimpleNamespace(get_secret_value=lambda: "db"))
+    monkeypatch.setattr(youtube_discovery, "execute_discovery", completed)
+    monkeypatch.setattr(youtube_discovery, "create_database_engine", lambda _url: Engine())
+    monkeypatch.setattr(youtube_discovery, "create_session_factory", lambda _engine: "factory")
+    monkeypatch.setattr(youtube_discovery, "DiscoveryOperationsService", Operations)
+    monkeypatch.setattr(youtube_discovery, "start_pipeline", start)
+    await youtube_discovery.execute_discovery_safely(
+        {
+            "discovery_run_id": str(uuid4()),
+            "topic_run_id": str(topic_run_id),
+            "query_id": str(uuid4()),
+            "payload": {},
+        },
+        settings,
+    )
+    assert started == [topic_run_id]
+
+
 def test_discovery_actor_has_retry_exhaustion_finalizer() -> None:
     assert run_youtube_discovery.options["on_retry_exhausted"] == (
         "finalize_youtube_discovery_retry_exhausted"
     )
+
+
+def test_pipeline_actors_have_retry_exhaustion_finalizer() -> None:
+    for actor in (
+        run_youtube_metadata_collection,
+        run_youtube_comment_collection,
+        run_relevance_filter,
+        run_comment_pain_mining,
+        run_signal_extraction,
+        run_opportunity_normalization,
+    ):
+        assert actor.options["on_retry_exhausted"] == (
+            "finalize_discovery_pipeline_retry_exhausted"
+        )
 
 
 @pytest.mark.asyncio

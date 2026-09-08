@@ -26,6 +26,7 @@ class MetadataCollectionRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     collection_run_id: UUID | None = None
+    topic_run_id: UUID | None = None
     limit: int = Field(default=50, ge=1, le=250)
     include_snapshots: bool = True
 
@@ -160,6 +161,7 @@ class YouTubeMetadataCollectionService:
                 limit=request.limit,
                 claimed_at=started_at,
                 collection_run_id=request.collection_run_id,
+                topic_run_id=request.topic_run_id,
             )
             await CollectionRunRepository(session).update_progress(
                 run.id, items_discovered=len(items), metadata=metadata

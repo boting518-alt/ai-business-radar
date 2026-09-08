@@ -26,11 +26,15 @@ keys in query parameters.
 
 `scripts/dev-runtime.sh` is the canonical local entry point. It starts Web, API, Dramatiq workers,
 and APScheduler as one process group and terminates children together.
-Local Next.js development uses webpack because Turbopack's persistence database is unreliable on
-the project's external filesystem. Production builds continue to use the framework default.
+Local Next.js development and production builds use webpack because Turbopack's persistence
+database is unreliable on the project's external filesystem.
 
 ## Discovery failure terminality
 
 Every discovery message has an envelope containing `discovery_run_id`, optional `topic_run_id`,
 and `query_id`, plus a nested business payload. Permanent validation failures and exhausted retries
 finalize the child run and recompute the parent batch, giving frontend polling a terminal state.
+Downstream metadata, comments, relevance, extraction, and normalization messages retain
+`topic_run_id`. Their exhausted-retry callback finalizes the separate intelligence status with a
+safe error while preserving already persisted RAW and FACT data. No additional environment file or
+secret is introduced by this orchestration.

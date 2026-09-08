@@ -19,6 +19,7 @@ from ai_business_radar_api.services.youtube_discovery import (
 from pydantic import BaseModel, ConfigDict, ValidationError
 
 from ..config import WorkerSettings
+from ..discovery_pipeline import start_pipeline
 from ..lifecycle import collection_dependencies
 from .runtime import run_async
 
@@ -65,11 +66,13 @@ async def execute_discovery_safely(payload: dict, settings: WorkerSettings | Non
         result = await execute_discovery(envelope, runtime)
         engine = create_database_engine(runtime.database_url.get_secret_value())
         try:
-            await DiscoveryOperationsService(create_session_factory(engine)).refresh_batch_for_run(
-                envelope.discovery_run_id
-            )
+            detail = await DiscoveryOperationsService(
+                create_session_factory(engine)
+            ).refresh_batch_for_run(envelope.discovery_run_id)
         finally:
             await engine.dispose()
+        if detail is not None and detail.status not in {"queued", "running"}:
+            await start_pipeline(envelope.topic_run_id, runtime)
         return result
     except (
         ValidationError,

@@ -126,7 +126,12 @@ class YouTubeDiscoveryItemRepository:
         )
 
     async def claim_pending(
-        self, *, limit: int, claimed_at: datetime, collection_run_id: UUID | None = None
+        self,
+        *,
+        limit: int,
+        claimed_at: datetime,
+        collection_run_id: UUID | None = None,
+        topic_run_id: UUID | None = None,
     ) -> list[YouTubeDiscoveryItem]:
         query = (
             select(YouTubeDiscoveryItem)
@@ -137,6 +142,10 @@ class YouTubeDiscoveryItemRepository:
         )
         if collection_run_id is not None:
             query = query.where(YouTubeDiscoveryItem.collection_run_id == collection_run_id)
+        if topic_run_id is not None:
+            query = query.join(
+                CollectionRun, CollectionRun.id == YouTubeDiscoveryItem.collection_run_id
+            ).where(CollectionRun.topic_run_id == topic_run_id)
         items = list(await self.session.scalars(query))
         if items:
             await self.session.execute(

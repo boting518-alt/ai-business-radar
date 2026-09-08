@@ -234,6 +234,12 @@ TASK-044 adds a Topic/Query control plane around the existing YouTube discovery 
 Manual and scheduled executions share the same durable collection-run lifecycle; no frontend or
 second scheduler calls YouTube directly. See `docs/discovery-operations-console.md`.
 
+TASK-044D connects terminal Topic discovery batches to the existing FACT and INTELLIGENCE workers.
+Stages remain separately queued and retryable; canonical-video deduplication and immutable
+extraction reuse prevent query overlap from multiplying work. Topic execution status is operational
+provenance and never replaces source evidence. See
+`docs/discovery-to-intelligence-orchestration.md`.
+
 Provider output must be validated against the corresponding Pydantic model before it becomes parsed output or downstream FACT data. Invalid output is recorded as `invalid_output`; raw output and extraction metadata remain available for audit. Later tasks will define retries, prompt regression datasets, and evaluation gates.
 
 TASK-039 promotes immutable Signal Extractor v003 as the configurable runtime default. Prompt

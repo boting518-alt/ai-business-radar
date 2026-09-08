@@ -20,6 +20,9 @@ class OpenAIClient:
         self._api_key = api_key
         self._client = client or AsyncOpenAI(api_key=api_key, max_retries=max_retries)
 
+    async def aclose(self) -> None:
+        await self._client.close()
+
     async def structured_generate(
         self,
         *,

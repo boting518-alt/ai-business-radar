@@ -7,7 +7,7 @@ from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
-from sqlalchemy import func, select, update
+from sqlalchemy import func, or_, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
@@ -117,6 +117,11 @@ class DiscoveryTopicRunSummary(BaseModel):
     quota_estimate: int
     started_at: datetime
     completed_at: datetime | None
+    intelligence_status: str = "not_started"
+    intelligence_metrics: dict = Field(default_factory=dict)
+    intelligence_error_summary: str | None = None
+    intelligence_started_at: datetime | None = None
+    intelligence_completed_at: datetime | None = None
 
 
 class DiscoveryTopicRunDetail(DiscoveryTopicRunSummary):
@@ -391,9 +396,31 @@ class DiscoveryOperationsService:
             query = await session.get(SearchQuery, query_id)
             if not query or not query.topic_id:
                 raise DiscoveryNotFound()
-            topic = await session.get(DiscoveryTopic, query.topic_id)
+            topic = await session.get(DiscoveryTopic, query.topic_id, with_for_update=True)
             if topic.status == "archived" or not query.enabled:
                 raise DiscoveryConflict("Query is not runnable")
+            active = await session.scalar(
+                select(DiscoveryTopicRun.id).where(
+                    DiscoveryTopicRun.topic_id == topic.id,
+                    or_(
+                        DiscoveryTopicRun.status.in_(("queued", "running")),
+                        DiscoveryTopicRun.intelligence_status.in_(("queued", "processing")),
+                    ),
+                )
+            )
+            if active:
+                raise DiscoveryConflict("Discovery topic already queued or running")
+            batch = DiscoveryTopicRun(
+                topic_id=topic.id,
+                trigger_type=trigger,
+                status="queued",
+                requested_query_count=1,
+                queued_query_count=1,
+                started_at=datetime.now(UTC),
+                created_at=datetime.now(UTC),
+            )
+            session.add(batch)
+            await session.flush()
             run = CollectionRun(
                 source_type="youtube",
                 run_type="discovery",
@@ -405,6 +432,7 @@ class DiscoveryOperationsService:
                 items_processed=0,
                 items_failed=0,
                 metadata_={"quota_estimate": 0},
+                topic_run_id=batch.id,
                 created_at=datetime.now(UTC),
             )
             session.add(run)
@@ -415,7 +443,7 @@ class DiscoveryOperationsService:
             topic.last_run_at = datetime.now(UTC)
             payload = {
                 "discovery_run_id": str(run.id),
-                "topic_run_id": None,
+                "topic_run_id": str(batch.id),
                 "query_id": str(query.id),
                 "payload": {
                     "max_pages": query.max_pages or topic.default_max_pages,
@@ -437,7 +465,10 @@ class DiscoveryOperationsService:
             active = await session.scalar(
                 select(DiscoveryTopicRun.id).where(
                     DiscoveryTopicRun.topic_id == topic_id,
-                    DiscoveryTopicRun.status.in_(("queued", "running")),
+                    or_(
+                        DiscoveryTopicRun.status.in_(("queued", "running")),
+                        DiscoveryTopicRun.intelligence_status.in_(("queued", "processing")),
+                    ),
                 )
             )
             if active:
@@ -568,13 +599,14 @@ class DiscoveryOperationsService:
                 batch.completed_at = now
         return await self.topic_run_detail(topic_run_id)
 
-    async def refresh_batch_for_run(self, run_id: UUID) -> None:
+    async def refresh_batch_for_run(self, run_id: UUID) -> DiscoveryTopicRunDetail | None:
         async with self.sessions() as session:
             topic_run_id = await session.scalar(
                 select(CollectionRun.topic_run_id).where(CollectionRun.id == run_id)
             )
         if topic_run_id:
-            await self.refresh_topic_run(topic_run_id)
+            return await self.refresh_topic_run(topic_run_id)
+        return None
 
     async def runs(
         self,
@@ -814,5 +846,10 @@ class DiscoveryOperationsService:
             quota_estimate=sum(run.quota_estimate or 0 for run in runs),
             started_at=batch.started_at,
             completed_at=batch.completed_at,
+            intelligence_status=getattr(batch, "intelligence_status", "not_started"),
+            intelligence_metrics=getattr(batch, "intelligence_metrics", None) or {},
+            intelligence_error_summary=getattr(batch, "intelligence_error_summary", None),
+            intelligence_started_at=getattr(batch, "intelligence_started_at", None),
+            intelligence_completed_at=getattr(batch, "intelligence_completed_at", None),
             runs=runs,
         )

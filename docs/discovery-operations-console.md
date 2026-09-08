@@ -25,9 +25,13 @@ Run Now creates a durable pending `collection_runs` row, then enqueues the exist
 `run_youtube_discovery` actor. A partial unique index prevents a second pending/running run for the
 same query. The actor passes the pre-created run ID into `YouTubeDiscoveryService`, which records
 running and terminal state plus auditable item and estimated quota metrics. Safe error categories
-are shown; raw provider responses and secrets are not exposed. Discovery currently ends after RAW
-discovery; existing separately scheduled metadata, comment, relevance, extraction, normalization,
-translation, trend, and scoring workers continue downstream.
+are shown; raw provider responses and secrets are not exposed. When all query children terminate,
+the worker starts the stage-by-stage metadata, comment, relevance, extraction, and normalization
+chain described in `docs/discovery-to-intelligence-orchestration.md`.
+
+Discovery and intelligence have separate statuses. The console continues polling while either is
+active, shows attributable stage counts, and does not label the operator action complete when only
+search has completed. Run Now is rejected while the same Topic still has active intelligence.
 
 The existing APScheduler interval remains the only scheduler. Each tick preserves legacy ungrouped
 queries and also polls due active topics, queues enabled queries, and advances topic `next_run_at`.
@@ -45,7 +49,7 @@ running a single query. TASK-044 local validation completed one official API pag
 videos and one estimated quota unit; the immediate duplicate was rejected. The shared scheduler was
 not invoked live because legacy enabled queries would also be queued, so due-topic scheduling was
 validated in isolation and the validation topic was left paused/manual. v0.1 does not provide arbitrary cron, non-YouTube sources, exact provider
-quota accounting, downstream per-run attribution, worker heartbeat, or billing.
+cross-stage quota accounting, per-video workflow rows, worker heartbeat, or billing.
 
 ## Run reliability and action UX
 

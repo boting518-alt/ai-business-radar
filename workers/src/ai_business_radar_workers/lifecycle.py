@@ -33,14 +33,13 @@ async def relevance_dependencies(settings: WorkerSettings):
     if settings.openai_api_key is None:
         raise AIConfigurationError("OPENAI_API_KEY is not configured")
     engine = create_database_engine(settings.database_url.get_secret_value())
+    client = OpenAIClient(
+        settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+    )
     try:
-        yield (
-            create_session_factory(engine),
-            OpenAIClient(
-                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
-            ),
-        )
+        yield create_session_factory(engine), client
     finally:
+        await client.aclose()
         await engine.dispose()
 
 
@@ -51,14 +50,13 @@ async def signal_extraction_dependencies(settings: WorkerSettings):
     if settings.openai_api_key is None:
         raise AIConfigurationError("OPENAI_API_KEY is not configured")
     engine = create_database_engine(settings.database_url.get_secret_value())
+    client = OpenAIClient(
+        settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+    )
     try:
-        yield (
-            create_session_factory(engine),
-            OpenAIClient(
-                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
-            ),
-        )
+        yield create_session_factory(engine), client
     finally:
+        await client.aclose()
         await engine.dispose()
 
 
@@ -69,14 +67,13 @@ async def comment_pain_dependencies(settings: WorkerSettings):
     if settings.openai_api_key is None:
         raise AIConfigurationError("OPENAI_API_KEY is not configured")
     engine = create_database_engine(settings.database_url.get_secret_value())
+    client = OpenAIClient(
+        settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+    )
     try:
-        yield (
-            create_session_factory(engine),
-            OpenAIClient(
-                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
-            ),
-        )
+        yield create_session_factory(engine), client
     finally:
+        await client.aclose()
         await engine.dispose()
 
 
@@ -89,14 +86,13 @@ async def opportunity_normalization_dependencies(settings: WorkerSettings):
     if settings.openai_api_key is None:
         raise AIConfigurationError("OPENAI_API_KEY is not configured")
     engine = create_database_engine(settings.database_url.get_secret_value())
+    client = OpenAIClient(
+        settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+    )
     try:
-        yield (
-            create_session_factory(engine),
-            OpenAIClient(
-                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
-            ),
-        )
+        yield create_session_factory(engine), client
     finally:
+        await client.aclose()
         await engine.dispose()
 
 
@@ -107,12 +103,11 @@ async def intelligence_translation_dependencies(settings: WorkerSettings):
     if settings.openai_api_key is None:
         raise AIConfigurationError("OPENAI_API_KEY is not configured")
     engine = create_database_engine(settings.database_url.get_secret_value())
+    client = OpenAIClient(
+        settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
+    )
     try:
-        yield (
-            create_session_factory(engine),
-            OpenAIClient(
-                settings.openai_api_key.get_secret_value(), max_retries=settings.ai_max_retries
-            ),
-        )
+        yield create_session_factory(engine), client
     finally:
+        await client.aclose()
         await engine.dispose()

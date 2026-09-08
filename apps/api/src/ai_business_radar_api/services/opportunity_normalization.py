@@ -52,6 +52,7 @@ class OpportunityNormalizationRunRequest(BaseModel):
 
 class OpportunityNormalizationBatchRequest(OpportunityNormalizationRunRequest):
     limit: int = Field(default=50, ge=1, le=200)
+    signal_ids: list[UUID] | None = None
 
 
 class OpportunityNormalizationItemResult(BaseModel):
@@ -142,16 +143,23 @@ class OpportunityNormalizationService:
             await self._fail(extraction_id, invalid=False, error="normalization_persistence_failed")
             return self._result(signal_id, extraction_id, "failed")
         if self._translation is not None and result.action in {"MATCH", "CREATE"}:
-            await self._translation.best_effort_enqueue(
-                "signal", signal_id, reason="signal_active"
-            )
+            await self._translation.best_effort_enqueue("signal", signal_id, reason="signal_active")
         return result
 
     async def normalize_batch(
         self, request: OpportunityNormalizationBatchRequest
     ) -> OpportunityNormalizationBatchResult:
         async with self._sessions() as session:
-            signals = await SignalRepository(session).list_for_normalization(limit=request.limit)
+            if request.signal_ids is None:
+                signals = await SignalRepository(session).list_for_normalization(
+                    limit=request.limit
+                )
+            else:
+                signals = [
+                    signal
+                    for signal_id in request.signal_ids[: request.limit]
+                    if (signal := await SignalRepository(session).get_by_id(signal_id)) is not None
+                ]
         items = [await self.normalize(signal.id, force=request.force) for signal in signals]
         return OpportunityNormalizationBatchResult(
             requested=len(items),

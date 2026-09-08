@@ -87,6 +87,13 @@ class DiscoveryTopicRun(Base):
     queued_query_count: Mapped[int] = mapped_column(Integer)
     started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    intelligence_status: Mapped[str] = mapped_column(server_default=text("'not_started'"))
+    intelligence_metrics: Mapped[dict[str, Any]] = mapped_column(
+        JSONB, server_default=text("'{}'::jsonb")
+    )
+    intelligence_error_summary: Mapped[str | None] = mapped_column(Text)
+    intelligence_started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    intelligence_completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 

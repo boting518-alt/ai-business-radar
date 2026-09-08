@@ -57,6 +57,7 @@ class CommentPainRunRequest(BaseModel):
 
 class CommentPainBatchRequest(CommentPainRunRequest):
     limit: int = Field(default=50, ge=1, le=200)
+    comment_ids: list[UUID] | None = None
 
 
 class CommentPainItemResult(BaseModel):
@@ -163,7 +164,16 @@ class CommentPainMiningService:
 
     async def mine_batch(self, request: CommentPainBatchRequest) -> CommentPainBatchResult:
         async with self._sessions() as session:
-            comments = await CommentRepository(session).list_for_pain_mining(limit=request.limit)
+            if request.comment_ids is None:
+                comments = await CommentRepository(session).list_for_pain_mining(
+                    limit=request.limit
+                )
+            else:
+                comments = [
+                    comment
+                    for comment_id in request.comment_ids[: request.limit]
+                    if (comment := await session.get(Comment, comment_id)) is not None
+                ]
         items = [await self.mine(comment.id, force=request.force) for comment in comments]
         return CommentPainBatchResult(
             requested=len(items),

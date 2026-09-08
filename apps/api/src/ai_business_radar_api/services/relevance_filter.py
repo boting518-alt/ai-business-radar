@@ -35,6 +35,7 @@ class RelevanceRunRequest(BaseModel):
 
 class RelevanceBatchRequest(RelevanceRunRequest):
     limit: int = Field(default=20, ge=1, le=100)
+    video_ids: list[UUID] | None = None
 
 
 class RelevanceItemResult(BaseModel):
@@ -115,7 +116,10 @@ class VideoRelevanceService:
 
     async def analyze_batch(self, request: RelevanceBatchRequest) -> RelevanceBatchResult:
         async with self._sessions() as session:
-            videos = await VideoRepository(session).list_new_for_relevance(limit=request.limit)
+            if request.video_ids is None:
+                videos = await VideoRepository(session).list_new_for_relevance(limit=request.limit)
+            else:
+                videos = await VideoRepository(session).list_existing_by_ids(request.video_ids)
         items = [await self.analyze(video.id, force=request.force) for video in videos]
         return RelevanceBatchResult(
             requested=len(videos),
