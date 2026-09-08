@@ -1,0 +1,10 @@
+[
+  {"source":"prospective-client intake and screening","expected_any":["潜在客户接待","潜在客户筛选"]},
+  {"source":"maintenance triage and vendor assignment","expected_any":["维修事项","供应商"]},
+  {"source":"human handoff and escalation","expected_any":["转交人工","升级处理"]},
+  {"source":"abandoned checkout and upsell","expected_any":["结账订单","追加销售"]},
+  {"source":"reconciliation and ledger","expected_any":["核对总账","对账"]},
+  {"source":"dental recall and appointment lead","expected_any":["召回","预约线索"]},
+  {"source":"QuickBooks and Shopify","expected_any":["QuickBooks","Shopify"]},
+  {"source":"creator claims","expected_any":["声称"]}
+]

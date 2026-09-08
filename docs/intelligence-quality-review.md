@@ -122,3 +122,9 @@ natural but retained awkward legal-intake phrasing. All three v002 families rema
 Detailed local metrics, cases, limitations, and provider usage are recorded in
 `docs/cross-source-validation.md` and the dated artifact. These results supplement rather than
 replace the TASK-035 dental baseline.
+
+TASK-037 adds 12 real signal A/B inputs focused on category boundaries, creator/product
+monetization, fragmentation, and sparse metadata. Signal v002 remained more atomic and eliminated
+two CTA-as-demand/purchase-intent errors, but its reviewed category accuracy was slightly lower and
+one invoice-extraction response failed schema validation. These mixed results keep v002
+experimental; detailed metrics are in `docs/semantic-separation-validation.md`.

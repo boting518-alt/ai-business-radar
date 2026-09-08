@@ -1,0 +1,8 @@
+[
+  {"case_id":"low_dental_frontdesk","phrase":"virtual front desk for oral care offices","expected":"dental_reception"},
+  {"case_id":"low_dental_calls","phrase":"24/7 patient phone assistant","expected":"dental_reception","expected_failure":"retrieval_failure"},
+  {"case_id":"low_legal_screening","phrase":"prospective-client screening bot","expected":"legal_intake"},
+  {"case_id":"low_legal_phone","phrase":"new-client phone gatekeeper","expected":"legal_intake"},
+  {"case_id":"low_property_resident","phrase":"resident support assistant for building questions","expected":"property_tenant"},
+  {"case_id":"low_property_comms","phrase":"building occupant communications automation","expected":"property_tenant","human_verdict":"review_appropriate_v002"}
+]

@@ -1,0 +1,9 @@
+[
+  {"case_id":"dental_insurance","video_id":"vNwT8PHkv9A","expected":"dental_insurance","contrast":"dental_reception"},
+  {"case_id":"dental_recall","video_id":"dyOSjWoa54A","expected":"dental_recall","contrast":"dental_insurance"},
+  {"case_id":"legal_drafting","video_id":"cyJMnDz1TKg","expected":"legal_drafting","contrast":"legal_intake"},
+  {"case_id":"legal_billing","video_id":"0c6AJl7z-Ic","expected":"legal_billing","contrast":"legal_drafting"},
+  {"case_id":"property_maintenance","video_id":"WE9OEsdfGGc","expected":"property_maintenance","contrast":"property_tenant"},
+  {"case_id":"property_leasing","video_id":"jv_H0eDb8Y4","expected":"review_appropriate","contrast":"property_maintenance"},
+  {"case_id":"ecommerce_cart","video_id":"3HtrzukGtG8","expected":"ecommerce_cart","contrast":"ecommerce_support"}
+]

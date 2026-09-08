@@ -1,0 +1,6 @@
+[
+  {"case_id":"dental_reception","buyer":"dental practices","expected_relation":"separate"},
+  {"case_id":"legal_intake","buyer":"law firms","expected_relation":"separate"},
+  {"case_id":"veterinary_reception","video_id":"PaelkSXrQS4","buyer":"veterinary clinics","expected_relation":"separate"},
+  {"case_id":"hvac_reception","video_id":"nVgv0hZmJxc","buyer":"home-service/HVAC companies","expected_relation":"separate"}
+]

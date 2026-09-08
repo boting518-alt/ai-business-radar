@@ -1,0 +1,5 @@
+[
+  {"video_id":"dyOSjWoa54A","workflow":"retrieve recall list; contact; confirm; offer slot; book; write back","v001":"under_fragmented","v002":"mostly_appropriate"},
+  {"video_id":"swpwrSZdAJ4","workflow":"answer questions; engage prospects; qualify leads; move toward purchase","v001":"mostly_appropriate","v002":"over_fragmented"},
+  {"video_id":"PaelkSXrQS4","workflow":"phone; booking; FAQ; escalation; alerts","v001":"mostly_appropriate","v002":"mostly_appropriate"}
+]

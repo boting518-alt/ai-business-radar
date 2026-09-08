@@ -36,6 +36,11 @@ multiple verticals, distinct channels, lexical-candidate stress, false-merge rev
 translation checks while remaining artifact-only. Cross-source results can recommend a decision but
 cannot change the active prompt configuration.
 
+Semantic-separation validation must additionally distinguish retrieval recall from normalizer
+judgment. Missing candidates are retrieval failures and cannot count against a prompt. Appropriate
+REVIEW outcomes for underspecified buyer/workflow context are excluded from false-merge failures.
+TASK-037 recommendations remain advisory and do not change v001 defaults.
+
 ## Promotion rule
 
 A candidate becomes the default only when all conditions hold:

@@ -1,0 +1,9 @@
+[
+  {"text":"answers every call instantly","expected":"workflow"},
+  {"text":"checks order status","expected":"workflow"},
+  {"text":"books appointments","expected":"workflow"},
+  {"text":"triages tenant maintenance requests","expected":"workflow"},
+  {"text":"uses n8n for backend webhook routing","expected":"technology"},
+  {"text":"uses Vapi, Google Calendar, Gmail, and Slack","expected":"technology"},
+  {"text":"AI shopping assistant recommends products","expected":"workflow","observed_v002":"technology"}
+]

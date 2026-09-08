@@ -74,3 +74,8 @@ validated for paraphrases, multilingual inputs, sparse comments, or close same-i
 The next justified architecture experiment is an offline lexical-versus-embedding retrieval
 evaluation using reviewed negatives. pgvector or semantic retrieval must not be introduced until
 that experiment demonstrates recall benefit without unacceptable false merges.
+
+TASK-037 performs that harder lexical baseline with same-industry negatives and low-overlap
+paraphrases. Its 83.3% low-overlap Recall@5 and one obvious missing dental-reception candidate
+justify an offline hybrid-retrieval experiment, but not a production semantic retrieval change.
+See `docs/semantic-separation-validation.md`.
