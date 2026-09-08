@@ -10,7 +10,7 @@ def test_all_migrated_tables_have_exactly_one_model() -> None:
     migration_sql = "\n".join(path.read_text() for path in sorted(MIGRATIONS.glob("[0-9]*.sql")))
     migrated = set(re.findall(r"^CREATE TABLE (\w+)", migration_sql, re.MULTILINE))
     assert set(Base.metadata.tables) == migrated
-    assert len(migrated) == 27
+    assert len(migrated) == 28
 
 
 def test_critical_columns_remain_mapped() -> None:

@@ -26,7 +26,12 @@ def test_discovery_console_routes_are_admin_only_and_typed() -> None:
     assert "/api/v1/admin/discovery/queries/{query_id}/run" in paths
     assert "/api/v1/admin/discovery/runs" in paths
     assert "/api/v1/admin/discovery/runs/recover-stale" in paths
+    assert "/api/v1/admin/discovery/topic-runs/{topic_run_id}" in paths
+    assert "/api/v1/admin/discovery/topic-runs/{topic_run_id}/runs" in paths
+    assert "/api/v1/admin/discovery/topics/{topic_id}/runs" in paths
     schemas = app.openapi()["components"]["schemas"]
     assert "DiscoveryTopicSummary" in schemas
     assert "DiscoveryRunSummary" in schemas
     assert "DiscoverySystemStatus" in schemas
+    assert "DiscoveryTopicRunDetail" in schemas
+    assert "DiscoveryTopicRunSummary" in schemas

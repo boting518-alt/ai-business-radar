@@ -133,6 +133,15 @@ The `review_tasks` target is a constrained application-level reference described
 **Important constraints:** `source_type = 'youtube'`; `run_type IN ('discovery', 'metadata_collection', 'channel_monitor', 'video_snapshot', 'comment_collection')`; `status IN ('pending', 'running', 'completed', 'partial', 'failed', 'cancelled')`; counts are non-negative; `finished_at >= started_at` when both exist. Pending runs have neither execution timestamp; running runs require `started_at` and no `finished_at`; terminal states require both.
 **Lifecycle notes:** Status transitions are `pending -> running -> completed|partial|failed|cancelled`; cancellation before start may use `pending -> cancelled` with `finished_at` and no `started_at`. Retain runs for operations and audit.
 
+#### Discovery Topic batch extension (TASK-044B)
+
+Topic executions are grouped by `discovery_topic_runs`. A batch records its Topic, trigger,
+requested and successfully queued query counts, status, and execution timestamps. Its status is
+one of `queued`, `running`, `completed`, `partial`, or `failed`, and a partial unique index permits
+only one queued/running batch per Topic. `collection_runs.topic_run_id` links each child to the
+batch; null remains valid for legacy or query-level runs. Batch progress must only aggregate rows
+with the matching non-null `topic_run_id`.
+
 ### 6.4 `channels`
 
 **Purpose:** Canonical YouTube channel records.

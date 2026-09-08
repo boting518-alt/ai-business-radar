@@ -1,5 +1,7 @@
 """Admin discovery topic configuration and asynchronous run orchestration."""
 
+from __future__ import annotations
+
 from datetime import UTC, datetime, timedelta
 from typing import Literal
 from uuid import UUID
@@ -9,7 +11,12 @@ from sqlalchemy import func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
-from ..infrastructure.database.models import CollectionRun, DiscoveryTopic, SearchQuery
+from ..infrastructure.database.models import (
+    CollectionRun,
+    DiscoveryTopic,
+    DiscoveryTopicRun,
+    SearchQuery,
+)
 
 Schedule = Literal["manual", "6h", "12h", "daily", "weekly"]
 
@@ -91,6 +98,29 @@ class DiscoveryRunSummary(BaseModel):
     error_code: str | None = None
     error_message_safe: str | None
     worker_message_id: str | None
+    topic_run_id: UUID | None = None
+
+
+class DiscoveryTopicRunSummary(BaseModel):
+    id: UUID
+    topic_id: UUID
+    trigger_type: str
+    status: str
+    requested_query_count: int
+    queued_query_count: int
+    queued: int
+    running: int
+    completed: int
+    partial: int
+    failed: int
+    terminal_count: int
+    quota_estimate: int
+    started_at: datetime
+    completed_at: datetime | None
+
+
+class DiscoveryTopicRunDetail(DiscoveryTopicRunSummary):
+    runs: list[DiscoveryRunSummary]
 
 
 class DiscoveryTopicSummary(BaseModel):
@@ -106,6 +136,7 @@ class DiscoveryTopicSummary(BaseModel):
     last_run_at: datetime | None
     next_run_at: datetime | None
     latest_run: DiscoveryRunSummary | None = None
+    current_topic_run: DiscoveryTopicRunSummary | None = None
 
 
 class DiscoveryTopicDetail(DiscoveryTopicSummary):
@@ -221,7 +252,11 @@ class DiscoveryOperationsService:
                 else {}
             )
             runs = await self._latest_runs(session, [x.id for x in topics])
-            return [self._topic(x, counts.get(x.id, 0), runs.get(x.id)) for x in topics]
+            batches = await self._latest_topic_runs(session, [x.id for x in topics])
+            return [
+                self._topic(x, counts.get(x.id, 0), runs.get(x.id), batches.get(x.id))
+                for x in topics
+            ]
 
     async def detail(self, topic_id: UUID) -> DiscoveryTopicDetail:
         async with self.sessions() as session:
@@ -236,7 +271,10 @@ class DiscoveryOperationsService:
                 )
             )
             runs = (await self.runs(topic_id=topic_id, page=1, page_size=20)).items
-            base = self._topic(topic, len(queries), runs[0] if runs else None).model_dump()
+            batches = await self._latest_topic_runs(session, [topic_id])
+            base = self._topic(
+                topic, len(queries), runs[0] if runs else None, batches.get(topic_id)
+            ).model_dump()
             return DiscoveryTopicDetail(
                 **base, queries=[self._query(x) for x in queries], recent_runs=runs
             )
@@ -378,6 +416,155 @@ class DiscoveryOperationsService:
             }
             return self._run(run, query.query), payload
 
+    async def create_topic_run(
+        self, topic_id: UUID, trigger: str
+    ) -> tuple[DiscoveryTopicRunDetail, list[tuple[UUID, dict]]]:
+        now = datetime.now(UTC)
+        async with self.sessions() as session, session.begin():
+            topic = await session.get(DiscoveryTopic, topic_id, with_for_update=True)
+            if not topic:
+                raise DiscoveryNotFound()
+            if topic.status == "archived":
+                raise DiscoveryConflict("Topic is not runnable")
+            active = await session.scalar(
+                select(DiscoveryTopicRun.id).where(
+                    DiscoveryTopicRun.topic_id == topic_id,
+                    DiscoveryTopicRun.status.in_(("queued", "running")),
+                )
+            )
+            if active:
+                raise DiscoveryConflict("Discovery topic already queued or running")
+            queries = list(
+                await session.scalars(
+                    select(SearchQuery)
+                    .where(SearchQuery.topic_id == topic_id, SearchQuery.enabled.is_(True))
+                    .order_by(SearchQuery.created_at)
+                )
+            )
+            if not queries:
+                raise DiscoveryConflict("Topic has no enabled queries")
+            active_child = await session.scalar(
+                select(CollectionRun.id).where(
+                    CollectionRun.search_query_id.in_([query.id for query in queries]),
+                    CollectionRun.status.in_(("pending", "running")),
+                )
+            )
+            if active_child:
+                raise DiscoveryConflict("Topic has an active legacy query run")
+            batch = DiscoveryTopicRun(
+                topic_id=topic_id,
+                trigger_type=trigger,
+                status="queued",
+                requested_query_count=len(queries),
+                queued_query_count=0,
+                started_at=now,
+                completed_at=None,
+                created_at=now,
+            )
+            session.add(batch)
+            await session.flush()
+            payloads: list[tuple[UUID, dict]] = []
+            for query in queries:
+                run = CollectionRun(
+                    source_type="youtube",
+                    run_type="discovery",
+                    status="pending",
+                    search_query_id=query.id,
+                    discovery_topic_id=topic.id,
+                    topic_run_id=batch.id,
+                    trigger_type=trigger,
+                    items_discovered=0,
+                    items_processed=0,
+                    items_failed=0,
+                    metadata_={"quota_estimate": 0},
+                    created_at=now,
+                )
+                session.add(run)
+                await session.flush()
+                payloads.append(
+                    (
+                        run.id,
+                        {
+                            "search_query_id": str(query.id),
+                            "collection_run_id": str(run.id),
+                            "max_pages": query.max_pages or topic.default_max_pages,
+                            "max_results": query.max_videos or topic.default_max_videos,
+                        },
+                    )
+                )
+            topic.last_run_at = now
+        return await self.topic_run_detail(batch.id), payloads
+
+    async def topic_run_detail(self, topic_run_id: UUID) -> DiscoveryTopicRunDetail:
+        async with self.sessions() as session:
+            batch = await session.get(DiscoveryTopicRun, topic_run_id)
+            if not batch:
+                raise DiscoveryNotFound()
+            rows = (
+                await session.execute(
+                    select(CollectionRun, SearchQuery.query)
+                    .outerjoin(SearchQuery, SearchQuery.id == CollectionRun.search_query_id)
+                    .where(CollectionRun.topic_run_id == topic_run_id)
+                    .order_by(CollectionRun.created_at)
+                )
+            ).all()
+            return self._topic_run(batch, [self._run(run, query) for run, query in rows])
+
+    async def topic_runs(self, topic_id: UUID) -> list[DiscoveryTopicRunSummary]:
+        async with self.sessions() as session:
+            if not await session.get(DiscoveryTopic, topic_id):
+                raise DiscoveryNotFound()
+            batches = list(
+                await session.scalars(
+                    select(DiscoveryTopicRun)
+                    .where(DiscoveryTopicRun.topic_id == topic_id)
+                    .order_by(DiscoveryTopicRun.created_at.desc())
+                )
+            )
+        return [await self.topic_run_detail(batch.id) for batch in batches]
+
+    async def increment_queued(self, topic_run_id: UUID) -> None:
+        async with self.sessions() as session, session.begin():
+            await session.execute(
+                update(DiscoveryTopicRun)
+                .where(DiscoveryTopicRun.id == topic_run_id)
+                .values(queued_query_count=DiscoveryTopicRun.queued_query_count + 1)
+            )
+
+    async def refresh_topic_run(self, topic_run_id: UUID) -> DiscoveryTopicRunDetail:
+        now = datetime.now(UTC)
+        async with self.sessions() as session, session.begin():
+            batch = await session.get(DiscoveryTopicRun, topic_run_id, with_for_update=True)
+            if not batch:
+                raise DiscoveryNotFound()
+            statuses = list(
+                await session.scalars(
+                    select(CollectionRun.status).where(CollectionRun.topic_run_id == topic_run_id)
+                )
+            )
+            if any(value in {"pending", "running"} for value in statuses):
+                batch.status = "running" if "running" in statuses else "queued"
+                batch.completed_at = None
+            else:
+                completed = sum(value == "completed" for value in statuses)
+                failed = sum(value == "failed" for value in statuses)
+                if completed == len(statuses):
+                    batch.status = "completed"
+                elif failed == len(statuses):
+                    batch.status = "failed"
+                else:
+                    batch.status = "partial"
+                batch.completed_at = now
+        return await self.topic_run_detail(topic_run_id)
+
+    async def refresh_batch_for_run(self, run_id: UUID) -> None:
+        async with self.sessions() as session:
+            topic_run_id = await session.scalar(
+                select(CollectionRun.topic_run_id).where(CollectionRun.id == run_id)
+            )
+        if topic_run_id:
+            await self.refresh_topic_run(topic_run_id)
+
     async def runs(
         self,
         *,
@@ -435,6 +622,7 @@ class DiscoveryOperationsService:
                     error_summary="queue_unavailable",
                 )
             )
+        await self.refresh_batch_for_run(run_id)
 
     async def finalize_failure(self, run_id: UUID, *, error_code: str, safe_message: str) -> bool:
         """Idempotently move only an active discovery run to failed."""
@@ -452,12 +640,14 @@ class DiscoveryOperationsService:
             current.finished_at = now
             current.error_summary = safe_message[:500]
             current.metadata_ = metadata
-            return True
+        await self.refresh_batch_for_run(run_id)
+        return True
 
     async def recover_stale(
         self, body: StaleRunRecoveryRequest, *, now: datetime | None = None
     ) -> StaleRunRecoveryResult:
         clock = now or datetime.now(UTC)
+        affected_batches: set[UUID] = set()
         async with self.sessions() as session, session.begin():
             rows = list(
                 await session.scalars(
@@ -482,6 +672,8 @@ class DiscoveryOperationsService:
             running = sum(row.status == "running" for row in rows)
             if not body.dry_run:
                 for row in rows:
+                    if row.topic_run_id:
+                        affected_batches.add(row.topic_run_id)
                     metadata = dict(row.metadata_ or {})
                     metadata["error_code"] = "stale_run_recovered"
                     row.status = "failed"
@@ -489,12 +681,15 @@ class DiscoveryOperationsService:
                     row.finished_at = clock
                     row.error_summary = "Stale discovery run recovered"
                     row.metadata_ = metadata
-            return StaleRunRecoveryResult(
+            result = StaleRunRecoveryResult(
                 queued_stale=queued,
                 running_stale=running,
                 would_mark_failed=len(rows),
                 marked_failed=0 if body.dry_run else len(rows),
             )
+        for topic_run_id in affected_batches:
+            await self.refresh_topic_run(topic_run_id)
+        return result
 
     async def _latest_runs(self, session, ids):
         if not ids:
@@ -511,7 +706,36 @@ class DiscoveryOperationsService:
         )
         return {r.discovery_topic_id: self._run(r, None) for r in rows}
 
-    def _topic(self, x, count, run=None):
+    async def _latest_topic_runs(self, session, ids):
+        if not ids:
+            return {}
+        batches = list(
+            await session.scalars(
+                select(DiscoveryTopicRun)
+                .distinct(DiscoveryTopicRun.topic_id)
+                .where(DiscoveryTopicRun.topic_id.in_(ids))
+                .order_by(DiscoveryTopicRun.topic_id, DiscoveryTopicRun.created_at.desc())
+            )
+        )
+        if not batches:
+            return {}
+        rows = (
+            (
+                await session.execute(
+                    select(CollectionRun).where(
+                        CollectionRun.topic_run_id.in_([batch.id for batch in batches])
+                    )
+                )
+            )
+            .scalars()
+            .all()
+        )
+        by_batch = {batch.id: [] for batch in batches}
+        for run in rows:
+            by_batch[run.topic_run_id].append(self._run(run, None))
+        return {batch.topic_id: self._topic_run(batch, by_batch[batch.id]) for batch in batches}
+
+    def _topic(self, x, count, run=None, topic_run=None):
         return DiscoveryTopicSummary(
             id=x.id,
             name=x.name,
@@ -525,6 +749,7 @@ class DiscoveryOperationsService:
             last_run_at=x.last_run_at,
             next_run_at=x.next_run_at,
             latest_run=run,
+            current_topic_run=topic_run,
         )
 
     def _query(self, x):
@@ -558,4 +783,25 @@ class DiscoveryOperationsService:
             error_code=meta.get("error_code"),
             error_message_safe=x.error_summary,
             worker_message_id=x.worker_message_id,
+            topic_run_id=x.topic_run_id,
+        )
+
+    def _topic_run(self, batch, runs):
+        counts = {key: 0 for key in ("queued", "running", "completed", "partial", "failed")}
+        for run in runs:
+            if run.status in counts:
+                counts[run.status] += 1
+        return DiscoveryTopicRunDetail(
+            id=batch.id,
+            topic_id=batch.topic_id,
+            trigger_type=batch.trigger_type,
+            status=batch.status,
+            requested_query_count=batch.requested_query_count,
+            queued_query_count=batch.queued_query_count,
+            **counts,
+            terminal_count=counts["completed"] + counts["partial"] + counts["failed"],
+            quota_estimate=sum(run.quota_estimate or 0 for run in runs),
+            started_at=batch.started_at,
+            completed_at=batch.completed_at,
+            runs=runs,
         )

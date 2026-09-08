@@ -1,5 +1,17 @@
 # Discovery Operations Console v0.1
 
+## Topic execution batches (TASK-044B)
+
+Each Topic-level manual or scheduled execution owns a durable `discovery_topic_runs` batch. Its
+child `collection_runs` carry `topic_run_id`; legacy ungrouped runs remain query history and
+cannot affect current Topic progress. Only one queued/running batch may exist per Topic. Batch
+status and counters derive exclusively from its children, with `partial` for mixed outcomes.
+
+The console loads topics and system status initially, then polls only
+`GET /api/v1/admin/discovery/topic-runs/{id}` for active batches. Polling stops after terminal
+status or component unmount. Child failures expose safe messages; historical `/runs` data is not
+used to disable Run Now or calculate current progress.
+
 `/admin/discovery` is the admin-only control plane for official YouTube discovery. A Discovery
 Topic represents one research theme; each child Discovery Query is one literal YouTube search.
 Query text remains user-authored, while `query_group` and `discovery_mode` remain `discovery`.

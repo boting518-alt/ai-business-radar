@@ -19,6 +19,8 @@ from ...services.discovery_operations import (
     DiscoveryTopicCreate,
     DiscoveryTopicDetail,
     DiscoveryTopicPatch,
+    DiscoveryTopicRunDetail,
+    DiscoveryTopicRunSummary,
     DiscoveryTopicSummary,
     StaleRunRecoveryRequest,
     StaleRunRecoveryResult,
@@ -172,15 +174,61 @@ async def patch_query(
         translate(error)
 
 
-@router.post("/topics/{topic_id}/run", status_code=202)
+@router.post("/topics/{topic_id}/run", response_model=DiscoveryTopicRunDetail, status_code=202)
 async def run_topic(
     topic_id: UUID,
     _: RequiredAdmin,
     ops: Annotated[DiscoveryOperationsService, Depends(service)],
     jobs: Annotated[JobEnqueuer, Depends(enqueuer)],
 ):
-    detail = await ops.detail(topic_id)
-    return [await queue(q.id, ops, jobs) for q in detail.queries if q.enabled]
+    try:
+        batch, payloads = await ops.create_topic_run(topic_id, "manual")
+    except (DiscoveryConflict, DiscoveryNotFound) as error:
+        translate(error)
+    for run_id, payload in payloads:
+        try:
+            message = jobs.enqueue(
+                queue="youtube_discovery", actor="run_youtube_discovery", payload=payload
+            )
+            await ops.mark_message(run_id, str(message))
+            await ops.increment_queued(batch.id)
+        except QueueUnavailableError:
+            await ops.mark_enqueue_failed(run_id)
+    return await ops.refresh_topic_run(batch.id)
+
+
+@router.get("/topic-runs/{topic_run_id}", response_model=DiscoveryTopicRunDetail)
+async def topic_run(
+    topic_run_id: UUID,
+    _: RequiredAdmin,
+    ops: Annotated[DiscoveryOperationsService, Depends(service)],
+):
+    try:
+        return await ops.refresh_topic_run(topic_run_id)
+    except DiscoveryNotFound as error:
+        translate(error)
+
+
+@router.get("/topic-runs/{topic_run_id}/runs")
+async def topic_run_children(
+    topic_run_id: UUID,
+    _: RequiredAdmin,
+    ops: Annotated[DiscoveryOperationsService, Depends(service)],
+):
+    try:
+        return (await ops.topic_run_detail(topic_run_id)).runs
+    except DiscoveryNotFound as error:
+        translate(error)
+
+
+@router.get("/topics/{topic_id}/runs", response_model=list[DiscoveryTopicRunSummary])
+async def topic_run_history(
+    topic_id: UUID, _: RequiredAdmin, ops: Annotated[DiscoveryOperationsService, Depends(service)]
+):
+    try:
+        return await ops.topic_runs(topic_id)
+    except DiscoveryNotFound as error:
+        translate(error)
 
 
 @router.get("/runs", response_model=DiscoveryRunPage)

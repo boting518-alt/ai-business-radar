@@ -1,5 +1,15 @@
 # YouTube AI Business Radar — API Contract Baseline v0.1
 
+## Discovery Topic execution batches (TASK-044B)
+
+- `POST /api/v1/admin/discovery/topics/{topic_id}/run` creates and queues one batch.
+- `GET /api/v1/admin/discovery/topic-runs/{topic_run_id}` returns counters and child runs.
+- `GET /api/v1/admin/discovery/topic-runs/{topic_run_id}/runs` returns only batch children.
+- `GET /api/v1/admin/discovery/topics/{topic_id}/runs` returns Topic batch history.
+
+Batch progress is `terminal_count / requested_query_count`. Legacy children with a null
+`topic_run_id` are excluded from current progress.
+
 Status: Frozen for TASK-007
 Version: 0.1
 Last updated: 2026-09-04

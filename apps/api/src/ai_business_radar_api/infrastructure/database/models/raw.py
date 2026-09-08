@@ -75,6 +75,21 @@ class DiscoveryTopic(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 
+class DiscoveryTopicRun(Base):
+    __tablename__ = "discovery_topic_runs"
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    topic_id: Mapped[UUID] = mapped_column(ForeignKey("discovery_topics.id"))
+    trigger_type: Mapped[str]
+    status: Mapped[str]
+    requested_query_count: Mapped[int] = mapped_column(Integer)
+    queued_query_count: Mapped[int] = mapped_column(Integer)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
 class CollectionRun(Base):
     __tablename__ = "collection_runs"
     id: Mapped[UUID] = mapped_column(
@@ -95,6 +110,7 @@ class CollectionRun(Base):
     discovery_topic_id: Mapped[UUID | None] = mapped_column(ForeignKey("discovery_topics.id"))
     trigger_type: Mapped[str | None]
     worker_message_id: Mapped[str | None] = mapped_column(Text)
+    topic_run_id: Mapped[UUID | None] = mapped_column(ForeignKey("discovery_topic_runs.id"))
 
 
 class Channel(Base):

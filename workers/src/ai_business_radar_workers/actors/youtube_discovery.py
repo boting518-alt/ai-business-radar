@@ -51,7 +51,17 @@ async def execute_discovery(payload: dict, settings: WorkerSettings | None = Non
 async def execute_discovery_safely(payload: dict, settings: WorkerSettings | None = None):
     runtime = settings or WorkerSettings()
     try:
-        return await execute_discovery(payload, runtime)
+        result = await execute_discovery(payload, runtime)
+        run_value = payload.get("collection_run_id")
+        if run_value:
+            engine = create_database_engine(runtime.database_url.get_secret_value())
+            try:
+                await DiscoveryOperationsService(
+                    create_session_factory(engine)
+                ).refresh_batch_for_run(UUID(run_value))
+            finally:
+                await engine.dispose()
+        return result
     except (
         ValidationError,
         ValueError,

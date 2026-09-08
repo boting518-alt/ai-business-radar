@@ -20,6 +20,7 @@ The expected application mechanism will be selected with deployment tooling. Unt
 - `0006_worker_runtime.sql` timestamps metadata staging claims for bounded stale recovery.
 - `0018_discovery_operations.sql` adds admin-managed discovery topics, bounded query overrides,
   durable queued runs, schedule state, and duplicate in-flight protection.
+- `0019_discovery_topic_runs.sql` correlates each Topic execution with its child query runs.
 
 Apply migrations in numeric order. `0001` creates `auth.uid()` only when it is absent so standalone
 PostgreSQL can apply the RLS baseline without manual schema state; Supabase's existing function is

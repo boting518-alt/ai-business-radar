@@ -55,15 +55,22 @@ async def enqueue_scheduled_discovery(settings: WorkerSettings) -> int:
             run_youtube_discovery.send(search_query_id=str(query.id))
             queued += 1
         ops = DiscoveryOperationsService(factory)
-        for query in queries:
+        topics_to_run = {query.topic_id for query in queries}
+        for topic_id in topics_to_run:
             try:
-                run, payload = await ops.queue_run(query.id, "scheduled")
-                message = run_youtube_discovery.send(**payload)
-                await ops.mark_message(run.id, str(message.message_id))
-                queued += 1
+                batch, payloads = await ops.create_topic_run(topic_id, "scheduled")
+                for run_id, payload in payloads:
+                    try:
+                        message = run_youtube_discovery.send(**payload)
+                        await ops.mark_message(run_id, str(message.message_id))
+                        await ops.increment_queued(batch.id)
+                        queued += 1
+                    except Exception:
+                        await ops.mark_enqueue_failed(run_id)
+                await ops.refresh_topic_run(batch.id)
             except DiscoveryConflict:
                 continue
-        topic_ids = {query.topic_id for query in queries}
+        topic_ids = topics_to_run
         async with factory() as session, session.begin():
             for topic_id in topic_ids:
                 topic = await session.get(DiscoveryTopic, topic_id)
