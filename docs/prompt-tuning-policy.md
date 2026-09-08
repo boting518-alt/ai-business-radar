@@ -41,6 +41,11 @@ judgment. Missing candidates are retrieval failures and cannot count against a p
 REVIEW outcomes for underspecified buyer/workflow context are excluded from false-merge failures.
 TASK-037 recommendations remain advisory and do not change v001 defaults.
 
+TASK-038 adds experimental v003 prompts only after real failure modes were frozen. A successful
+artifact A/B is a promotion recommendation, not authorization to change runtime constants,
+translation read preference, or historical extraction behavior. Retrieval changes have an
+independent safety gate because candidate recall and Normalizer behavior must be evaluated together.
+
 ## Promotion rule
 
 A candidate becomes the default only when all conditions hold:

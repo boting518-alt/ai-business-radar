@@ -1,0 +1,4637 @@
+{
+  "baseline_artifact": "../../artifacts/semantic-separation/20260908T020000Z/cases.json",
+  "embedding": {
+    "model": "text-embedding-3-small",
+    "request_count": 1,
+    "input_count": 31,
+    "tokens": 565
+  },
+  "limits": {
+    "lexical_k": 5,
+    "semantic_k": 5,
+    "union_limit": 10
+  },
+  "best_weighted_strategy": "lexical_0.3_semantic_0.7",
+  "metrics": {
+    "lexical": {
+      "cases": 15,
+      "recall_at_1": 0.6,
+      "recall_at_3": 0.8,
+      "recall_at_5": 0.9333333333333333,
+      "mrr": 0.73,
+      "mean_candidate_set_size": 3.933333333333333,
+      "irrelevant_candidate_rate": 0.7627118644067796
+    },
+    "semantic": {
+      "cases": 15,
+      "recall_at_1": 0.7333333333333333,
+      "recall_at_3": 0.9333333333333333,
+      "recall_at_5": 1.0,
+      "mrr": 0.8355555555555555,
+      "mean_candidate_set_size": 5.0,
+      "irrelevant_candidate_rate": 0.8
+    },
+    "union": {
+      "cases": 15,
+      "recall_at_1": 0.6,
+      "recall_at_3": 0.8666666666666667,
+      "recall_at_5": 1.0,
+      "mrr": 0.7522222222222222,
+      "mean_candidate_set_size": 6.6,
+      "irrelevant_candidate_rate": 0.8484848484848485
+    },
+    "weighted": {
+      "lexical_0.7_semantic_0.3": {
+        "cases": 15,
+        "recall_at_1": 0.8,
+        "recall_at_3": 0.9333333333333333,
+        "recall_at_5": 1.0,
+        "mrr": 0.861111111111111,
+        "mean_candidate_set_size": 6.6,
+        "irrelevant_candidate_rate": 0.8484848484848485
+      },
+      "lexical_0.5_semantic_0.5": {
+        "cases": 15,
+        "recall_at_1": 0.8,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.8777777777777778,
+        "mean_candidate_set_size": 6.6,
+        "irrelevant_candidate_rate": 0.8484848484848485
+      },
+      "lexical_0.3_semantic_0.7": {
+        "cases": 15,
+        "recall_at_1": 0.8,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.888888888888889,
+        "mean_candidate_set_size": 6.6,
+        "irrelevant_candidate_rate": 0.8484848484848485
+      }
+    },
+    "weighted_best": {
+      "cases": 15,
+      "recall_at_1": 0.8,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.888888888888889,
+      "mean_candidate_set_size": 6.6,
+      "irrelevant_candidate_rate": 0.8484848484848485
+    },
+    "low_overlap": {
+      "lexical": {
+        "cases": 6,
+        "recall_at_1": 0.6666666666666666,
+        "recall_at_3": 0.8333333333333334,
+        "recall_at_5": 0.8333333333333334,
+        "mrr": 0.75,
+        "mean_candidate_set_size": 3.0,
+        "irrelevant_candidate_rate": 0.7222222222222222
+      },
+      "semantic": {
+        "cases": 6,
+        "recall_at_1": 0.6666666666666666,
+        "recall_at_3": 0.8333333333333334,
+        "recall_at_5": 1.0,
+        "mrr": 0.7833333333333333,
+        "mean_candidate_set_size": 5.0,
+        "irrelevant_candidate_rate": 0.8
+      },
+      "union": {
+        "cases": 6,
+        "recall_at_1": 0.6666666666666666,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.8055555555555555,
+        "mean_candidate_set_size": 6.5,
+        "irrelevant_candidate_rate": 0.8461538461538461
+      },
+      "weighted_best": {
+        "cases": 6,
+        "recall_at_1": 0.8333333333333334,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.9166666666666666,
+        "mean_candidate_set_size": 6.5,
+        "irrelevant_candidate_rate": 0.8461538461538461
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "dental_insurance",
+      "family": "real_source",
+      "input_text": "Traditional insurance verification for dental practices involves calling insurance companies and manually filling out detailed coverage sheets.",
+      "source_title": "Dr. Scott Leune: How Curve Eliminated 80% of Insurance Verification Work",
+      "expected_candidate": "dental_insurance",
+      "expected_opportunity_id": "3b00ac37-fd13-505e-beae-ba921f67160f",
+      "lexical": [
+        "dental_insurance",
+        "dental_reception",
+        "ecommerce_cart",
+        "hvac_reception",
+        "dental_recall"
+      ],
+      "semantic": [
+        "dental_insurance",
+        "dental_reception",
+        "dental_recall",
+        "bookkeeping_invoice",
+        "legal_billing"
+      ],
+      "union": [
+        "dental_insurance",
+        "dental_reception",
+        "ecommerce_cart",
+        "hvac_reception",
+        "dental_recall",
+        "bookkeeping_invoice",
+        "legal_billing"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "dental_insurance",
+          "dental_reception",
+          "dental_recall",
+          "hvac_reception",
+          "ecommerce_cart",
+          "bookkeeping_invoice",
+          "legal_billing"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "dental_insurance",
+          "dental_reception",
+          "dental_recall",
+          "hvac_reception",
+          "ecommerce_cart",
+          "bookkeeping_invoice",
+          "legal_billing"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "dental_insurance",
+          "dental_reception",
+          "dental_recall",
+          "hvac_reception",
+          "bookkeeping_invoice",
+          "legal_billing",
+          "ecommerce_cart"
+        ]
+      },
+      "semantic_scores": {
+        "dental_insurance": 0.738052,
+        "dental_reception": 0.463096,
+        "dental_recall": 0.445571,
+        "bookkeeping_invoice": 0.35379,
+        "legal_billing": 0.343089
+      },
+      "lexical_0.7_semantic_0.3": [
+        "dental_insurance",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "ecommerce_cart",
+        "bookkeeping_invoice",
+        "legal_billing"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "dental_insurance",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "ecommerce_cart",
+        "bookkeeping_invoice",
+        "legal_billing"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "dental_insurance",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "bookkeeping_invoice",
+        "legal_billing",
+        "ecommerce_cart"
+      ],
+      "weighted_best": [
+        "dental_insurance",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "bookkeeping_invoice",
+        "legal_billing",
+        "ecommerce_cart"
+      ]
+    },
+    {
+      "case_id": "dental_recall",
+      "family": "real_source",
+      "input_text": "The creator claims that many six-month dental cleaning recall calls are never made by the front desk.",
+      "source_title": "AI hygiene recall — automated dental reactivation into NexHealth, Dentrix, Eaglesoft",
+      "expected_candidate": "dental_recall",
+      "expected_opportunity_id": "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+      "lexical": [
+        "dental_reception",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_recall",
+        "dental_insurance"
+      ],
+      "semantic": [
+        "dental_recall",
+        "dental_reception",
+        "dental_insurance",
+        "veterinary_reception",
+        "hvac_reception"
+      ],
+      "union": [
+        "dental_reception",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_recall",
+        "dental_insurance"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "dental_reception",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_recall",
+          "dental_insurance"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "dental_reception",
+          "dental_recall",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_insurance"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "dental_reception",
+          "dental_recall",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_insurance"
+        ]
+      },
+      "semantic_scores": {
+        "dental_recall": 0.498674,
+        "dental_reception": 0.419422,
+        "dental_insurance": 0.3689,
+        "veterinary_reception": 0.335256,
+        "hvac_reception": 0.301694
+      },
+      "lexical_0.7_semantic_0.3": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_recall",
+        "dental_insurance"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "dental_reception",
+        "dental_recall",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "dental_reception",
+        "dental_recall",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance"
+      ],
+      "weighted_best": [
+        "dental_reception",
+        "dental_recall",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance"
+      ]
+    },
+    {
+      "case_id": "legal_drafting",
+      "family": "real_source",
+      "input_text": "The video presents AI tools as a way for attorneys to streamline legal processes.",
+      "source_title": "How I Use AI To Write Legal Docs Super Fast",
+      "expected_candidate": "legal_drafting",
+      "expected_opportunity_id": "900091ad-8c85-5b34-8943-3139987b2347",
+      "lexical": [
+        "legal_drafting",
+        "legal_intake",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support"
+      ],
+      "semantic": [
+        "legal_drafting",
+        "legal_intake",
+        "legal_billing",
+        "bookkeeping_cashflow",
+        "dental_insurance"
+      ],
+      "union": [
+        "legal_drafting",
+        "legal_intake",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "legal_billing",
+        "dental_insurance"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "legal_drafting",
+          "legal_intake",
+          "bookkeeping_cashflow",
+          "ecommerce_support",
+          "ecommerce_cart",
+          "legal_billing",
+          "dental_insurance"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "legal_drafting",
+          "legal_intake",
+          "bookkeeping_cashflow",
+          "ecommerce_support",
+          "legal_billing",
+          "ecommerce_cart",
+          "dental_insurance"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "legal_drafting",
+          "legal_intake",
+          "bookkeeping_cashflow",
+          "legal_billing",
+          "ecommerce_support",
+          "dental_insurance",
+          "ecommerce_cart"
+        ]
+      },
+      "semantic_scores": {
+        "legal_drafting": 0.504932,
+        "legal_intake": 0.479838,
+        "legal_billing": 0.374352,
+        "bookkeeping_cashflow": 0.300013,
+        "dental_insurance": 0.291095
+      },
+      "lexical_0.7_semantic_0.3": [
+        "legal_drafting",
+        "legal_intake",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "ecommerce_cart",
+        "legal_billing",
+        "dental_insurance"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "legal_drafting",
+        "legal_intake",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "legal_billing",
+        "ecommerce_cart",
+        "dental_insurance"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "legal_drafting",
+        "legal_intake",
+        "bookkeeping_cashflow",
+        "legal_billing",
+        "ecommerce_support",
+        "dental_insurance",
+        "ecommerce_cart"
+      ],
+      "weighted_best": [
+        "legal_drafting",
+        "legal_intake",
+        "bookkeeping_cashflow",
+        "legal_billing",
+        "ecommerce_support",
+        "dental_insurance",
+        "ecommerce_cart"
+      ]
+    },
+    {
+      "case_id": "legal_billing",
+      "family": "real_source",
+      "input_text": "Traditional law-firm billing uses manual time tracking and invoicing.",
+      "source_title": "How Has Legal Billing Automation Evolved With AI? - Legal And HR SaaS Stack",
+      "expected_candidate": "legal_billing",
+      "expected_opportunity_id": "57ad77c4-836a-553f-9d2b-fed48819fad5",
+      "lexical": [
+        "legal_drafting",
+        "property_leasing",
+        "dental_insurance",
+        "bookkeeping_invoice",
+        "legal_billing"
+      ],
+      "semantic": [
+        "legal_billing",
+        "legal_drafting",
+        "legal_intake",
+        "bookkeeping_invoice",
+        "property_maintenance"
+      ],
+      "union": [
+        "legal_drafting",
+        "property_leasing",
+        "dental_insurance",
+        "bookkeeping_invoice",
+        "legal_billing",
+        "legal_intake",
+        "property_maintenance"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "legal_billing",
+          "legal_drafting",
+          "bookkeeping_invoice",
+          "dental_insurance",
+          "property_leasing",
+          "legal_intake",
+          "property_maintenance"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "legal_billing",
+          "legal_drafting",
+          "bookkeeping_invoice",
+          "dental_insurance",
+          "property_leasing",
+          "legal_intake",
+          "property_maintenance"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "legal_billing",
+          "legal_drafting",
+          "bookkeeping_invoice",
+          "legal_intake",
+          "dental_insurance",
+          "property_leasing",
+          "property_maintenance"
+        ]
+      },
+      "semantic_scores": {
+        "legal_billing": 0.575399,
+        "legal_drafting": 0.487135,
+        "legal_intake": 0.422125,
+        "bookkeeping_invoice": 0.378706,
+        "property_maintenance": 0.266492
+      },
+      "lexical_0.7_semantic_0.3": [
+        "legal_billing",
+        "legal_drafting",
+        "bookkeeping_invoice",
+        "dental_insurance",
+        "property_leasing",
+        "legal_intake",
+        "property_maintenance"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "legal_billing",
+        "legal_drafting",
+        "bookkeeping_invoice",
+        "dental_insurance",
+        "property_leasing",
+        "legal_intake",
+        "property_maintenance"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "legal_billing",
+        "legal_drafting",
+        "bookkeeping_invoice",
+        "legal_intake",
+        "dental_insurance",
+        "property_leasing",
+        "property_maintenance"
+      ],
+      "weighted_best": [
+        "legal_billing",
+        "legal_drafting",
+        "bookkeeping_invoice",
+        "legal_intake",
+        "dental_insurance",
+        "property_leasing",
+        "property_maintenance"
+      ]
+    },
+    {
+      "case_id": "property_maintenance",
+      "family": "real_source",
+      "input_text": "The Voice AI is positioned to triage urgent after-hours tenant maintenance requests.",
+      "source_title": "Voice AI: Automate Urgent Maintenance Tickets with Empathy",
+      "expected_candidate": "property_maintenance",
+      "expected_opportunity_id": "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+      "lexical": [
+        "property_maintenance",
+        "property_tenant",
+        "ecommerce_reviews",
+        "bookkeeping_invoice"
+      ],
+      "semantic": [
+        "property_tenant",
+        "property_maintenance",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception"
+      ],
+      "union": [
+        "property_maintenance",
+        "property_tenant",
+        "ecommerce_reviews",
+        "bookkeeping_invoice",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "property_maintenance",
+          "property_tenant",
+          "bookkeeping_invoice",
+          "ecommerce_reviews",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_reception"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "property_maintenance",
+          "property_tenant",
+          "veterinary_reception",
+          "hvac_reception",
+          "bookkeeping_invoice",
+          "dental_reception",
+          "ecommerce_reviews"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "property_maintenance",
+          "property_tenant",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_reception",
+          "bookkeeping_invoice",
+          "ecommerce_reviews"
+        ]
+      },
+      "semantic_scores": {
+        "property_tenant": 0.544661,
+        "property_maintenance": 0.528747,
+        "veterinary_reception": 0.453601,
+        "hvac_reception": 0.451561,
+        "dental_reception": 0.40586
+      },
+      "lexical_0.7_semantic_0.3": [
+        "property_maintenance",
+        "property_tenant",
+        "bookkeeping_invoice",
+        "ecommerce_reviews",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "property_maintenance",
+        "property_tenant",
+        "veterinary_reception",
+        "hvac_reception",
+        "bookkeeping_invoice",
+        "dental_reception",
+        "ecommerce_reviews"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "property_maintenance",
+        "property_tenant",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception",
+        "bookkeeping_invoice",
+        "ecommerce_reviews"
+      ],
+      "weighted_best": [
+        "property_maintenance",
+        "property_tenant",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception",
+        "bookkeeping_invoice",
+        "ecommerce_reviews"
+      ]
+    },
+    {
+      "case_id": "property_leasing",
+      "family": "real_source",
+      "input_text": "Pabbly Connect is positioned as integrating AI tools and CRM systems for automated lead filtering and qualification.",
+      "source_title": "How to Automate Lead Qualification for Real Estate Using AI Agents",
+      "expected_candidate": "property_leasing",
+      "expected_opportunity_id": "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+      "lexical": [
+        "legal_intake",
+        "property_leasing",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support"
+      ],
+      "semantic": [
+        "property_leasing",
+        "legal_intake",
+        "property_tenant",
+        "hvac_reception",
+        "legal_billing"
+      ],
+      "union": [
+        "legal_intake",
+        "property_leasing",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "property_tenant",
+        "hvac_reception",
+        "legal_billing"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "property_leasing",
+          "legal_intake",
+          "property_tenant",
+          "hvac_reception",
+          "ecommerce_support",
+          "bookkeeping_cashflow",
+          "ecommerce_cart",
+          "legal_billing"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "property_leasing",
+          "legal_intake",
+          "property_tenant",
+          "hvac_reception",
+          "ecommerce_support",
+          "bookkeeping_cashflow",
+          "legal_billing",
+          "ecommerce_cart"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "property_leasing",
+          "legal_intake",
+          "property_tenant",
+          "hvac_reception",
+          "ecommerce_support",
+          "legal_billing",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ]
+      },
+      "semantic_scores": {
+        "property_leasing": 0.42127,
+        "legal_intake": 0.410933,
+        "property_tenant": 0.377188,
+        "hvac_reception": 0.351064,
+        "legal_billing": 0.345907
+      },
+      "lexical_0.7_semantic_0.3": [
+        "property_leasing",
+        "legal_intake",
+        "property_tenant",
+        "hvac_reception",
+        "ecommerce_support",
+        "bookkeeping_cashflow",
+        "ecommerce_cart",
+        "legal_billing"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "property_leasing",
+        "legal_intake",
+        "property_tenant",
+        "hvac_reception",
+        "ecommerce_support",
+        "bookkeeping_cashflow",
+        "legal_billing",
+        "ecommerce_cart"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "property_leasing",
+        "legal_intake",
+        "property_tenant",
+        "hvac_reception",
+        "ecommerce_support",
+        "legal_billing",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "weighted_best": [
+        "property_leasing",
+        "legal_intake",
+        "property_tenant",
+        "hvac_reception",
+        "ecommerce_support",
+        "legal_billing",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ]
+    },
+    {
+      "case_id": "ecommerce_cart",
+      "family": "real_source",
+      "input_text": "Text claims to recover returning shoppers through automated campaigns.",
+      "source_title": "Text for Shopify: AI Sales, Cart Recovery & Live Chat",
+      "expected_candidate": "ecommerce_cart",
+      "expected_opportunity_id": "573908be-0bf3-540e-8156-652ab83b6cd0",
+      "lexical": [
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "legal_intake",
+        "property_leasing"
+      ],
+      "semantic": [
+        "ecommerce_cart",
+        "ecommerce_reviews",
+        "ecommerce_support",
+        "property_tenant",
+        "dental_recall"
+      ],
+      "union": [
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "ecommerce_support",
+        "legal_intake",
+        "property_leasing",
+        "ecommerce_reviews",
+        "property_tenant",
+        "dental_recall"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "ecommerce_cart",
+          "ecommerce_reviews",
+          "ecommerce_support",
+          "property_tenant",
+          "bookkeeping_cashflow",
+          "property_leasing",
+          "legal_intake",
+          "dental_recall"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "ecommerce_cart",
+          "ecommerce_reviews",
+          "ecommerce_support",
+          "property_tenant",
+          "bookkeeping_cashflow",
+          "property_leasing",
+          "legal_intake",
+          "dental_recall"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "ecommerce_cart",
+          "ecommerce_reviews",
+          "ecommerce_support",
+          "property_tenant",
+          "dental_recall",
+          "bookkeeping_cashflow",
+          "property_leasing",
+          "legal_intake"
+        ]
+      },
+      "semantic_scores": {
+        "ecommerce_cart": 0.549725,
+        "ecommerce_reviews": 0.446209,
+        "ecommerce_support": 0.428945,
+        "property_tenant": 0.384321,
+        "dental_recall": 0.381826
+      },
+      "lexical_0.7_semantic_0.3": [
+        "ecommerce_cart",
+        "ecommerce_reviews",
+        "ecommerce_support",
+        "property_tenant",
+        "bookkeeping_cashflow",
+        "property_leasing",
+        "legal_intake",
+        "dental_recall"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "ecommerce_cart",
+        "ecommerce_reviews",
+        "ecommerce_support",
+        "property_tenant",
+        "bookkeeping_cashflow",
+        "property_leasing",
+        "legal_intake",
+        "dental_recall"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "ecommerce_cart",
+        "ecommerce_reviews",
+        "ecommerce_support",
+        "property_tenant",
+        "dental_recall",
+        "bookkeeping_cashflow",
+        "property_leasing",
+        "legal_intake"
+      ],
+      "weighted_best": [
+        "ecommerce_cart",
+        "ecommerce_reviews",
+        "ecommerce_support",
+        "property_tenant",
+        "dental_recall",
+        "bookkeeping_cashflow",
+        "property_leasing",
+        "legal_intake"
+      ]
+    },
+    {
+      "case_id": "veterinary_reception",
+      "family": "real_source",
+      "input_text": "The system supports appointment booking.",
+      "source_title": "AI Voice Receptionist Automation for Veterinary Clinics | Vapi + n8n + Google Calendar",
+      "expected_candidate": "veterinary_reception",
+      "expected_opportunity_id": "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+      "lexical": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception"
+      ],
+      "semantic": [
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "union": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ]
+      },
+      "semantic_scores": {
+        "veterinary_reception": 0.461982,
+        "hvac_reception": 0.453711,
+        "dental_reception": 0.439737,
+        "property_tenant": 0.344958,
+        "property_maintenance": 0.333314
+      },
+      "lexical_0.7_semantic_0.3": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "weighted_best": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ]
+    },
+    {
+      "case_id": "hvac_reception",
+      "family": "real_source",
+      "input_text": "The system is positioned as an AI receptionist that answers every call instantly, 24/7.",
+      "source_title": "AI Receptionist and Emergency Appointment Booking for HVAC Repair",
+      "expected_candidate": "hvac_reception",
+      "expected_opportunity_id": "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+      "lexical": [
+        "hvac_reception",
+        "dental_reception",
+        "veterinary_reception",
+        "dental_recall"
+      ],
+      "semantic": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "ecommerce_support"
+      ],
+      "union": [
+        "hvac_reception",
+        "dental_reception",
+        "veterinary_reception",
+        "dental_recall",
+        "property_tenant",
+        "ecommerce_support"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "dental_recall",
+          "property_tenant",
+          "ecommerce_support"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "dental_recall",
+          "property_tenant",
+          "ecommerce_support"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "ecommerce_support",
+          "dental_recall"
+        ]
+      },
+      "semantic_scores": {
+        "veterinary_reception": 0.515048,
+        "dental_reception": 0.489313,
+        "hvac_reception": 0.47088,
+        "property_tenant": 0.418946,
+        "ecommerce_support": 0.39442
+      },
+      "lexical_0.7_semantic_0.3": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "dental_recall",
+        "property_tenant",
+        "ecommerce_support"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "dental_recall",
+        "property_tenant",
+        "ecommerce_support"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "ecommerce_support",
+        "dental_recall"
+      ],
+      "weighted_best": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "ecommerce_support",
+        "dental_recall"
+      ]
+    },
+    {
+      "case_id": "low_dental_frontdesk",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "virtual front desk for oral care offices",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "dental_reception",
+      "expected_opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+      "lexical": [
+        "hvac_reception",
+        "dental_reception",
+        "veterinary_reception",
+        "ecommerce_cart",
+        "bookkeeping_cashflow"
+      ],
+      "semantic": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance",
+        "dental_recall"
+      ],
+      "union": [
+        "hvac_reception",
+        "dental_reception",
+        "veterinary_reception",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "dental_insurance",
+        "dental_recall"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "dental_reception",
+          "veterinary_reception",
+          "hvac_reception",
+          "bookkeeping_cashflow",
+          "ecommerce_cart",
+          "dental_insurance",
+          "dental_recall"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "dental_reception",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_insurance",
+          "dental_recall",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "dental_reception",
+          "veterinary_reception",
+          "hvac_reception",
+          "dental_insurance",
+          "dental_recall",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ]
+      },
+      "semantic_scores": {
+        "dental_reception": 0.637339,
+        "veterinary_reception": 0.572097,
+        "hvac_reception": 0.501015,
+        "dental_insurance": 0.49931,
+        "dental_recall": 0.494866
+      },
+      "lexical_0.7_semantic_0.3": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "bookkeeping_cashflow",
+        "ecommerce_cart",
+        "dental_insurance",
+        "dental_recall"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance",
+        "dental_recall",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance",
+        "dental_recall",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "weighted_best": [
+        "dental_reception",
+        "veterinary_reception",
+        "hvac_reception",
+        "dental_insurance",
+        "dental_recall",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ]
+    },
+    {
+      "case_id": "low_dental_calls",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "24/7 patient phone assistant",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "dental_reception",
+      "expected_opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+      "lexical": [
+        "dental_recall"
+      ],
+      "semantic": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "union": [
+        "dental_recall",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "dental_recall",
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "dental_recall",
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "veterinary_reception",
+          "dental_reception",
+          "dental_recall",
+          "hvac_reception",
+          "property_tenant",
+          "property_maintenance"
+        ]
+      },
+      "semantic_scores": {
+        "veterinary_reception": 0.542787,
+        "dental_reception": 0.533997,
+        "hvac_reception": 0.465334,
+        "property_tenant": 0.412097,
+        "property_maintenance": 0.372534
+      },
+      "lexical_0.7_semantic_0.3": [
+        "dental_recall",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "dental_recall",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "veterinary_reception",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ],
+      "weighted_best": [
+        "veterinary_reception",
+        "dental_reception",
+        "dental_recall",
+        "hvac_reception",
+        "property_tenant",
+        "property_maintenance"
+      ]
+    },
+    {
+      "case_id": "low_legal_screening",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "prospective-client screening bot",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "legal_intake",
+      "expected_opportunity_id": "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+      "lexical": [
+        "legal_intake"
+      ],
+      "semantic": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ],
+      "union": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "legal_intake",
+          "property_leasing",
+          "property_tenant",
+          "legal_billing",
+          "hvac_reception"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "legal_intake",
+          "property_leasing",
+          "property_tenant",
+          "legal_billing",
+          "hvac_reception"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "legal_intake",
+          "property_leasing",
+          "property_tenant",
+          "legal_billing",
+          "hvac_reception"
+        ]
+      },
+      "semantic_scores": {
+        "legal_intake": 0.48932,
+        "property_leasing": 0.411283,
+        "property_tenant": 0.410308,
+        "legal_billing": 0.395948,
+        "hvac_reception": 0.390435
+      },
+      "lexical_0.7_semantic_0.3": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ],
+      "weighted_best": [
+        "legal_intake",
+        "property_leasing",
+        "property_tenant",
+        "legal_billing",
+        "hvac_reception"
+      ]
+    },
+    {
+      "case_id": "low_legal_phone",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "new-client phone gatekeeper",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "legal_intake",
+      "expected_opportunity_id": "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+      "lexical": [
+        "legal_intake"
+      ],
+      "semantic": [
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant",
+        "legal_intake"
+      ],
+      "union": [
+        "legal_intake",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "legal_intake",
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "legal_intake",
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "legal_intake",
+          "veterinary_reception",
+          "dental_reception",
+          "hvac_reception",
+          "property_tenant"
+        ]
+      },
+      "semantic_scores": {
+        "veterinary_reception": 0.463163,
+        "dental_reception": 0.460713,
+        "hvac_reception": 0.436996,
+        "property_tenant": 0.361978,
+        "legal_intake": 0.348824
+      },
+      "lexical_0.7_semantic_0.3": [
+        "legal_intake",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "legal_intake",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "legal_intake",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant"
+      ],
+      "weighted_best": [
+        "legal_intake",
+        "veterinary_reception",
+        "dental_reception",
+        "hvac_reception",
+        "property_tenant"
+      ]
+    },
+    {
+      "case_id": "low_property_resident",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "resident support assistant for building questions",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "property_tenant",
+      "expected_opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+      "lexical": [
+        "property_tenant",
+        "ecommerce_support",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "legal_drafting"
+      ],
+      "semantic": [
+        "property_tenant",
+        "hvac_reception",
+        "property_maintenance",
+        "veterinary_reception",
+        "dental_reception"
+      ],
+      "union": [
+        "property_tenant",
+        "ecommerce_support",
+        "ecommerce_cart",
+        "bookkeeping_cashflow",
+        "legal_drafting",
+        "hvac_reception",
+        "property_maintenance",
+        "veterinary_reception",
+        "dental_reception"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "property_tenant",
+          "ecommerce_support",
+          "hvac_reception",
+          "veterinary_reception",
+          "dental_reception",
+          "legal_drafting",
+          "property_maintenance",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "property_tenant",
+          "ecommerce_support",
+          "hvac_reception",
+          "veterinary_reception",
+          "dental_reception",
+          "property_maintenance",
+          "legal_drafting",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "property_tenant",
+          "ecommerce_support",
+          "hvac_reception",
+          "veterinary_reception",
+          "dental_reception",
+          "property_maintenance",
+          "legal_drafting",
+          "bookkeeping_cashflow",
+          "ecommerce_cart"
+        ]
+      },
+      "semantic_scores": {
+        "property_tenant": 0.578103,
+        "hvac_reception": 0.446201,
+        "property_maintenance": 0.443913,
+        "veterinary_reception": 0.420576,
+        "dental_reception": 0.415255
+      },
+      "lexical_0.7_semantic_0.3": [
+        "property_tenant",
+        "ecommerce_support",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_reception",
+        "legal_drafting",
+        "property_maintenance",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "property_tenant",
+        "ecommerce_support",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_reception",
+        "property_maintenance",
+        "legal_drafting",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "property_tenant",
+        "ecommerce_support",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_reception",
+        "property_maintenance",
+        "legal_drafting",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ],
+      "weighted_best": [
+        "property_tenant",
+        "ecommerce_support",
+        "hvac_reception",
+        "veterinary_reception",
+        "dental_reception",
+        "property_maintenance",
+        "legal_drafting",
+        "bookkeeping_cashflow",
+        "ecommerce_cart"
+      ]
+    },
+    {
+      "case_id": "low_property_comms",
+      "family": "carefully_selected_low_overlap",
+      "input_text": "building occupant communications automation",
+      "source_title": "Carefully selected source phrase",
+      "expected_candidate": "property_tenant",
+      "expected_opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+      "lexical": [
+        "property_tenant",
+        "dental_insurance",
+        "dental_recall",
+        "legal_billing",
+        "property_maintenance"
+      ],
+      "semantic": [
+        "property_tenant",
+        "property_maintenance",
+        "hvac_reception",
+        "dental_recall",
+        "property_leasing"
+      ],
+      "union": [
+        "property_tenant",
+        "dental_insurance",
+        "dental_recall",
+        "legal_billing",
+        "property_maintenance",
+        "hvac_reception",
+        "property_leasing"
+      ],
+      "weighted": {
+        "lexical_0.7_semantic_0.3": [
+          "property_tenant",
+          "property_maintenance",
+          "dental_recall",
+          "dental_insurance",
+          "legal_billing",
+          "hvac_reception",
+          "property_leasing"
+        ],
+        "lexical_0.5_semantic_0.5": [
+          "property_tenant",
+          "property_maintenance",
+          "dental_recall",
+          "dental_insurance",
+          "legal_billing",
+          "hvac_reception",
+          "property_leasing"
+        ],
+        "lexical_0.3_semantic_0.7": [
+          "property_tenant",
+          "property_maintenance",
+          "dental_recall",
+          "dental_insurance",
+          "legal_billing",
+          "hvac_reception",
+          "property_leasing"
+        ]
+      },
+      "semantic_scores": {
+        "property_tenant": 0.570677,
+        "property_maintenance": 0.500478,
+        "hvac_reception": 0.440971,
+        "dental_recall": 0.417744,
+        "property_leasing": 0.394979
+      },
+      "lexical_0.7_semantic_0.3": [
+        "property_tenant",
+        "property_maintenance",
+        "dental_recall",
+        "dental_insurance",
+        "legal_billing",
+        "hvac_reception",
+        "property_leasing"
+      ],
+      "lexical_0.5_semantic_0.5": [
+        "property_tenant",
+        "property_maintenance",
+        "dental_recall",
+        "dental_insurance",
+        "legal_billing",
+        "hvac_reception",
+        "property_leasing"
+      ],
+      "lexical_0.3_semantic_0.7": [
+        "property_tenant",
+        "property_maintenance",
+        "dental_recall",
+        "dental_insurance",
+        "legal_billing",
+        "hvac_reception",
+        "property_leasing"
+      ],
+      "weighted_best": [
+        "property_tenant",
+        "property_maintenance",
+        "dental_recall",
+        "dental_insurance",
+        "legal_billing",
+        "hvac_reception",
+        "property_leasing"
+      ]
+    }
+  ],
+  "normalizer_hybrid_ab": [
+    {
+      "case_id": "dental_insurance",
+      "expected_opportunity_id": "3b00ac37-fd13-505e-beae-ba921f67160f",
+      "candidate_ids": [
+        "3b00ac37-fd13-505e-beae-ba921f67160f",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "86fe5412-1561-5738-ae74-6dceaf4430e2",
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "573908be-0bf3-540e-8156-652ab83b6cd0"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1079,
+          "output_tokens": 76,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "3b00ac37-fd13-505e-beae-ba921f67160f",
+            "canonical_name": "Dental insurance verification automation",
+            "confidence": 0.99,
+            "reason": "The signal explicitly describes manual insurance verification and coverage-sheet completion in dental practices, directly matching automated benefits verification."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1233,
+          "output_tokens": 84,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "3b00ac37-fd13-505e-beae-ba921f67160f",
+            "canonical_name": "Dental insurance verification automation",
+            "confidence": 0.98,
+            "reason": "The signal describes dental practices manually checking insurance eligibility and completing coverage sheets, matching the candidate's manual insurance eligibility problem and automated benefits verification solution pattern."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "dental_recall",
+      "expected_opportunity_id": "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+      "candidate_ids": [
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "3b00ac37-fd13-505e-beae-ba921f67160f"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 909,
+          "output_tokens": 83,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+            "canonical_name": "Dental patient recall and reactivation automation",
+            "confidence": 0.98,
+            "reason": "The signal explicitly concerns missed six-month dental cleaning recall calls, directly matching automated dental patient recall and reactivation."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1063,
+          "output_tokens": 86,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+            "canonical_name": "Dental patient recall and reactivation automation",
+            "confidence": 0.95,
+            "reason": "The claimed missed six-month cleaning recall calls align with the dental-practice workflow of automating overdue patient recall and reactivation."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "legal_drafting",
+      "expected_opportunity_id": "900091ad-8c85-5b34-8943-3139987b2347",
+      "candidate_ids": [
+        "900091ad-8c85-5b34-8943-3139987b2347",
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+        "d1fa0d10-aa3e-5bac-9858-07a78ecf84f8",
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "518812b5-c374-513d-8ee4-f834fbf5f5f7",
+        "3b00ac37-fd13-505e-beae-ba921f67160f",
+        "573908be-0bf3-540e-8156-652ab83b6cd0"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1064,
+          "output_tokens": 82,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "900091ad-8c85-5b34-8943-3139987b2347",
+            "canonical_name": "AI document drafting for law firms",
+            "confidence": 0.97,
+            "reason": "The source title explicitly describes using AI to write legal documents faster, directly matching assisted legal document generation for law firms."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1218,
+          "output_tokens": 132,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "900091ad-8c85-5b34-8943-3139987b2347",
+            "canonical_name": "AI document drafting for law firms",
+            "confidence": 0.88,
+            "reason": "The source title explicitly describes using AI to write legal documents faster, aligning with assisted document generation for law firms; this remains a creator claim."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "legal_billing",
+      "expected_opportunity_id": "57ad77c4-836a-553f-9d2b-fed48819fad5",
+      "candidate_ids": [
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "900091ad-8c85-5b34-8943-3139987b2347",
+        "86fe5412-1561-5738-ae74-6dceaf4430e2",
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+        "3b00ac37-fd13-505e-beae-ba921f67160f",
+        "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1066,
+          "output_tokens": 83,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "57ad77c4-836a-553f-9d2b-fed48819fad5",
+            "canonical_name": "Legal billing and invoicing automation",
+            "confidence": 0.91,
+            "reason": "The signal explicitly identifies manual time tracking and invoicing in law-firm billing, which fits the legal billing automation candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1220,
+          "output_tokens": 89,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "57ad77c4-836a-553f-9d2b-fed48819fad5",
+            "canonical_name": "Legal billing and collections automation",
+            "confidence": 0.84,
+            "reason": "The signal identifies manual time tracking and invoicing in law-firm billing, which fits the existing law-firm billing automation opportunity at the same workflow level."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "property_maintenance",
+      "expected_opportunity_id": "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+      "candidate_ids": [
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "86fe5412-1561-5738-ae74-6dceaf4430e2",
+        "0d69c322-6824-5513-a7b0-e4430c240d36"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1082,
+          "output_tokens": 88,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+            "canonical_name": "Property maintenance triage and dispatch automation",
+            "confidence": 0.97,
+            "reason": "The signal explicitly concerns triaging urgent tenant maintenance requests, matching the candidate's maintenance-request triage problem and automated dispatch workflow for property managers."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1236,
+          "output_tokens": 85,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+            "canonical_name": "Property maintenance triage and dispatch automation",
+            "confidence": 0.94,
+            "reason": "The signal describes triage of urgent after-hours tenant maintenance requests, which fits property-manager maintenance request triage and automated dispatch."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "property_leasing",
+      "expected_opportunity_id": "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+      "candidate_ids": [
+        "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "518812b5-c374-513d-8ee4-f834fbf5f5f7",
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "d1fa0d10-aa3e-5bac-9858-07a78ecf84f8",
+        "573908be-0bf3-540e-8156-652ab83b6cd0"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1190,
+          "output_tokens": 92,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "AI-enabled lead filtering and qualification",
+            "confidence": 0.7,
+            "reason": "The signal supports automated lead filtering and qualification, but does not identify a customer segment. The real-estate source context suggests a possible property-manager fit, but does not clearly establish that it belongs to the property-manager candidate rather than another lead-qualification use case."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1344,
+          "output_tokens": 147,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "AI-enabled lead qualification automation",
+            "confidence": 0.62,
+            "reason": "The signal describes automated lead filtering and qualification through AI and CRM integrations, but does not identify a specific buyer or leasing workflow. The real-estate source title suggests possible relevance to property managers, yet the evidence does not establish fit with the candidate’s leasing lead qualification pattern."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "ecommerce_cart",
+      "expected_opportunity_id": "573908be-0bf3-540e-8156-652ab83b6cd0",
+      "candidate_ids": [
+        "573908be-0bf3-540e-8156-652ab83b6cd0",
+        "0d69c322-6824-5513-a7b0-e4430c240d36",
+        "518812b5-c374-513d-8ee4-f834fbf5f5f7",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "d1fa0d10-aa3e-5bac-9858-07a78ecf84f8",
+        "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1161,
+          "output_tokens": 81,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "573908be-0bf3-540e-8156-652ab83b6cd0",
+            "canonical_name": "Abandoned checkout recovery for ecommerce stores",
+            "confidence": 0.9,
+            "reason": "The Shopify context and claim of recovering shoppers through automated campaigns clearly align with automated cart recovery for ecommerce stores."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1315,
+          "output_tokens": 118,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "573908be-0bf3-540e-8156-652ab83b6cd0",
+            "canonical_name": "Abandoned checkout recovery for ecommerce stores",
+            "confidence": 0.84,
+            "reason": "The signal describes automated campaigns to recover shoppers, and the source context explicitly includes cart recovery, fitting automated abandoned-checkout recovery for ecommerce stores."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "veterinary_reception",
+      "expected_opportunity_id": "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+      "candidate_ids": [
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 891,
+          "output_tokens": 105,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+            "canonical_name": "AI receptionist for veterinary clinics",
+            "confidence": 0.94,
+            "reason": "Source context explicitly targets veterinary clinics, and the signal supports appointment booking, matching the candidate's automated front desk and booking workflow."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1045,
+          "output_tokens": 93,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+            "canonical_name": "AI receptionist for veterinary clinics",
+            "confidence": 0.97,
+            "reason": "The source context identifies an AI voice receptionist for veterinary clinics, and appointment booking directly fits the candidate's automated front-desk solution for missed calls and appointment booking."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "hvac_reception",
+      "expected_opportunity_id": "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+      "candidate_ids": [
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "518812b5-c374-513d-8ee4-f834fbf5f5f7",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1003,
+          "output_tokens": 88,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+            "canonical_name": "AI receptionist and quote booking for HVAC companies",
+            "confidence": 0.94,
+            "reason": "The source context explicitly identifies HVAC repair, and the signal describes an AI receptionist answering calls 24/7, matching the HVAC receptionist candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1157,
+          "output_tokens": 147,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+            "canonical_name": "AI receptionist and quote booking for HVAC companies",
+            "confidence": 0.93,
+            "reason": "The source context identifies HVAC repair, and the signal describes a 24/7 AI receptionist answering calls, matching automated front-desk handling of missed service calls and booking for HVAC companies."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_dental_frontdesk",
+      "expected_opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+      "candidate_ids": [
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "3b00ac37-fd13-505e-beae-ba921f67160f",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "d1fa0d10-aa3e-5bac-9858-07a78ecf84f8",
+        "573908be-0bf3-540e-8156-652ab83b6cd0"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1061,
+          "output_tokens": 79,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+            "canonical_name": "AI receptionist for dental practices",
+            "confidence": 0.94,
+            "reason": "“Virtual front desk” for oral care offices clearly aligns with an automated front desk/AI receptionist for dental practices."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1215,
+          "output_tokens": 82,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+            "canonical_name": "AI receptionist for dental practices",
+            "confidence": 0.93,
+            "reason": "“Virtual front desk for oral care offices” is a vendor-neutral synonym for an automated receptionist/front-desk workflow for dental practices."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_dental_calls",
+      "expected_opportunity_id": "b7059643-ee15-5acc-8733-76644a93039d",
+      "candidate_ids": [
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 973,
+          "output_tokens": 96,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "24/7 patient phone assistant",
+            "confidence": 0.93,
+            "reason": "The signal supports a patient-facing phone assistant but does not identify an industry, so it cannot be clearly matched to either the veterinary or dental receptionist candidates."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1127,
+          "output_tokens": 127,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "24/7 patient phone assistant",
+            "confidence": 0.3,
+            "reason": "The phrase suggests an automated patient phone/front-desk workflow, but it does not identify the practice type or specify appointment booking. It could fit the dental receptionist candidate or another healthcare setting not represented by the candidates."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_legal_screening",
+      "expected_opportunity_id": "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+      "candidate_ids": [
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+        "8e68f2e7-381e-5a42-a4a0-a4cde89b9218",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 882,
+          "output_tokens": 134,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "Prospective-client screening bot",
+            "confidence": 0.78,
+            "reason": "The signal describes client screening, which is directionally similar to legal intake, but it does not identify law firms or another customer segment clearly enough to match a candidate."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1036,
+          "output_tokens": 70,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "Prospective-client screening bot",
+            "confidence": 0.62,
+            "reason": "The phrase indicates a client-screening workflow but does not identify the buyer or industry, so it cannot be reliably matched to the law-firm intake candidate."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_legal_phone",
+      "expected_opportunity_id": "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+      "candidate_ids": [
+        "28d48fda-ae5f-58fa-a720-3c97d9d73c72",
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 877,
+          "output_tokens": 128,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "New-client phone gatekeeper",
+            "confidence": 0.86,
+            "reason": "The phrase indicates phone-based new-client screening, but it does not identify an industry or customer type that clearly ties it to the law-firm candidate rather than another service business."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1031,
+          "output_tokens": 66,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "New-client phone gatekeeping",
+            "confidence": 0.45,
+            "reason": "The phrase suggests new-client call screening, which could fit legal intake, but it provides no buyer or industry to establish a reliable match."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_property_resident",
+      "expected_opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+      "candidate_ids": [
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "518812b5-c374-513d-8ee4-f834fbf5f5f7",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "d6061af7-5fa9-5bbb-8f02-1fc15f27e486",
+        "b7059643-ee15-5acc-8733-76644a93039d",
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+        "900091ad-8c85-5b34-8943-3139987b2347",
+        "d1fa0d10-aa3e-5bac-9858-07a78ecf84f8",
+        "573908be-0bf3-540e-8156-652ab83b6cd0"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1235,
+          "output_tokens": 82,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+            "canonical_name": "AI tenant inquiry support for property managers",
+            "confidence": 0.95,
+            "reason": "The resident support assistant for building questions directly aligns with automated tenant communications for repetitive resident inquiries."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1389,
+          "output_tokens": 81,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+            "canonical_name": "AI tenant inquiry support for property managers",
+            "confidence": 0.94,
+            "reason": "Resident support for building questions matches automated tenant communications addressing repetitive resident inquiries for property managers."
+          }
+        }
+      }
+    },
+    {
+      "case_id": "low_property_comms",
+      "expected_opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+      "candidate_ids": [
+        "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+        "a626fd81-509c-5578-b779-d1f5cf7abbc7",
+        "0c95146e-8303-5b15-a0af-c8c542ffa61d",
+        "3b00ac37-fd13-505e-beae-ba921f67160f",
+        "57ad77c4-836a-553f-9d2b-fed48819fad5",
+        "dea6f219-cbeb-5410-b2b2-c51d50634f03",
+        "8e68f2e7-381e-5a42-a4a0-a4cde89b9218"
+      ],
+      "versions": {
+        "v001": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "121ac95b41c1dda27708212fff87e480fda3f850f240067b362888a31a068f9f",
+          "input_tokens": 1052,
+          "output_tokens": 131,
+          "output": {
+            "action": "MATCH",
+            "opportunity_id": "03bcb7af-a0a9-508a-b7eb-5e0c72ca9fc9",
+            "canonical_name": "Building occupant communications automation",
+            "confidence": 0.86,
+            "reason": "The signal directly aligns with automated tenant/resident communications for property managers."
+          }
+        },
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a7a8eb5c15ca4dbe4991e144732e7c99e45fc5b0dcd960b914bf35a79bc6d050",
+          "input_tokens": 1206,
+          "output_tokens": 128,
+          "output": {
+            "action": "REVIEW",
+            "opportunity_id": null,
+            "canonical_name": "Building occupant communications automation",
+            "confidence": 0.58,
+            "reason": "The phrase suggests automated communications with building occupants, but it does not identify the buyer, communication workflow, or whether it is tenant inquiry support versus another property-management communication use case."
+          }
+        }
+      }
+    }
+  ],
+  "signal_v003_ab": [
+    {
+      "video_id": "vNwT8PHkv9A",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1434,
+          "output_tokens": 612,
+          "output": {
+            "industry": "Dental practices",
+            "customer": "Dental practices, including front desk teams",
+            "problem": "Traditional insurance verification requires calls to insurers, lengthy holds, manual entry, and completion of detailed coverage sheets, creating a time and cost burden.",
+            "solution": "Curve Dental's integrated AI-enabled automated insurance verification populates insurance coverage information into patient charts.",
+            "business_model": null,
+            "technology": [
+              "AI-enabled automated insurance verification",
+              "Automatic extraction and population of insurance-plan coverage information into patient charts"
+            ],
+            "distribution": [
+              "Curve Dental platform integration",
+              "Product-feature landing page (curvedental.com/eligibility-plus)"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Traditional insurance verification required dental practices to call insurers, remain on long calls, and complete detailed coverage information sheets.",
+                "evidence": "“Calling the insurance company, filling out this long informational sheet on what's covered, what's not covered — and the only way to do it in the past was to just be on that call forever.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "pain",
+                "statement": "Traditional insurance verification was positioned as a significant time and cost drain for dental practices.",
+                "evidence": "“For most dental practices, it was one of the biggest time and money drains in the entire workflow.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "technology",
+                "statement": "Curve claims to offer AI-enabled automated insurance verification integrated into its platform.",
+                "evidence": "“With AI-enabled, automated insurance verification built directly into the platform...”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Curve claims its verification process automatically pulls insurance-plan information into the patient chart.",
+                "evidence": "“More than 80% of plans can now have this information pulled directly into the patient chart with Curve.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "adoption",
+                "statement": "Curve claims that more than 80% of insurance plans can be verified and populated into patient charts automatically.",
+                "evidence": "“More than 80% of insurance plans can now be verified and populated into the patient chart automatically.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "Curve states that practice teams still manually handle smaller, unusual insurance plans that require calls.",
+                "evidence": "“We're left with the smaller, unusual plans that we may still need to call on.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "Curve claims that automating insurance verification removes 80% of the associated work.",
+                "evidence": "“80% of the work is now gone when you use Curve and their integrated solution.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "customer",
+                "statement": "Curve identifies dental-practice front desk teams as beneficiaries of automated insurance verification capacity.",
+                "evidence": "“What this means for your front desk team's bandwidth.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1546,
+          "output_tokens": 471,
+          "output": {
+            "industry": "dental practices",
+            "customer": "dental practices",
+            "problem": "Traditional insurance verification required calling insurance companies, manually completing detailed coverage information, and could consume substantial practice time and cost.",
+            "solution": "Curve Dental's integrated AI-enabled automated insurance verification pulls coverage information into the patient chart for more than 80% of insurance plans; staff handle smaller unusual plans as edge cases.",
+            "business_model": null,
+            "technology": [
+              "AI-enabled automated insurance verification"
+            ],
+            "distribution": [
+              "Curve Dental insurance verification feature page"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Traditional insurance verification was described as a time- and cost-intensive workflow for dental practices because it involved calls to insurers and manual completion of detailed coverage information.",
+                "evidence": "“Calling the insurance company, filling out this long informational sheet on what's covered, what's not covered ... it wasted so much time and cost the practice so much money.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Curve's insurance-verification workflow pulls detailed insurance coverage information directly into the patient chart, while staff may call smaller unusual plans.",
+                "evidence": "“More than 80% of plans can now have this information pulled directly into the patient chart with Curve. We're left with the smaller, unusual plans that we may still need to call on.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "Curve is described as having an integrated automated, AI-enabled method for retrieving insurance coverage information.",
+                "evidence": "“Curve has now integrated an automated, AI-enabled way to get that same information.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "adoption",
+                "statement": "The creator claims that more than 80% of insurance plans can have coverage information pulled into the patient chart using Curve.",
+                "evidence": "“More than 80% of plans can now have this information pulled directly into the patient chart with Curve.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "growth",
+                "statement": "The creator claims Curve's integrated solution removes 80% of insurance-verification work.",
+                "evidence": "“80% of the work is now gone when you use Curve and their integrated solution.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "dyOSjWoa54A",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1418,
+          "output_tokens": 1063,
+          "output": {
+            "industry": "Dental practices",
+            "customer": "Dental front-desk teams",
+            "problem": "Overdue hygiene-recall calls may not be made, leaving hygiene appointments unbooked and chairs empty.",
+            "solution": "365agents Flows automates dental hygiene recall outreach and appointment booking using AI voice and texting agents.",
+            "business_model": null,
+            "technology": [
+              "AI voice agents",
+              "AI texting agents",
+              "NexHealth integration",
+              "Dentrix integration",
+              "Eaglesoft integration",
+              "Open Dental integration",
+              "Structured-data capture",
+              "System-of-record writeback"
+            ],
+            "distribution": [
+              "X",
+              "LinkedIn",
+              "Instagram",
+              "Facebook",
+              "TikTok",
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Dental practices can miss hygiene-recall outreach when front-desk staff do not make scheduled patient calls.",
+                "evidence": "\"Every six months, the dental front desk says they'll 'call you about your cleaning.' Most of those calls never get made.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator positions empty hygiene chairs as lost revenue because the room and staff costs remain paid when an appointment is not booked.",
+                "evidence": "\"Empty hygiene chairs are pure lost revenue — the room is paid for, the staff is paid for, and the appointment never gets booked.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as pulling overdue-recall lists from NexHealth.",
+                "evidence": "\"365agents Flows pulls the overdue-recall list out of NexHealth.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as contacting overdue-recall patients by outbound call or text.",
+                "evidence": "\"Outbound call or text.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as confirming the patient during the recall workflow.",
+                "evidence": "\"Confirms the patient.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as offering available appointment slots and booking patients onto the calendar.",
+                "evidence": "\"Offers open slots. Books on the calendar.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as writing booked appointments back to Dentrix, Eaglesoft, or Open Dental practice-management systems.",
+                "evidence": "\"Writes the appointment back to the PMS — Dentrix, Eaglesoft, or Open Dental.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows is described as suppressing recall outreach when a patient has already rebooked.",
+                "evidence": "\"If the patient already rebooked, the flow suppresses the call so the recall stops chasing.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims that recovered hygiene visits are incremental margin because the chair would otherwise be empty.",
+                "evidence": "\"Recovered hygiene visits are pure margin — the chair was empty anyway.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "365agents positions its agents as AI voice and texting agents that operate on defined workflows, capture structured data, and write back to an existing system of record.",
+                "evidence": "\"365agents builds AI voice and texting agents that run on defined workflows — every call moves through the same validated steps, captures structured data, and writes back to the system of record you already use.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "365agents claims its product works with any phone system and can go live in under 10 minutes out of the box.",
+                "evidence": "\"Out of the box, works with any phone system, go live in under 10 minutes.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "adoption",
+                "statement": "365agents states that it is Vanta-verified for SOC 2, HIPAA, and ISO 42001, and that BAAs are available.",
+                "evidence": "\"SOC 2, HIPAA, ISO 42001 — Vanta-verified. BAAs available.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1530,
+          "output_tokens": 753,
+          "output": {
+            "industry": "dental",
+            "customer": null,
+            "problem": "Dental front desks may not complete planned patient cleaning-recall calls, leaving hygiene appointment slots unbooked.",
+            "solution": "365agents Flows automates dental hygiene recall outreach: it pulls overdue-recall lists from NexHealth, contacts patients by call or text, offers open slots, books appointments, and writes them back to the practice management system while suppressing outreach for patients who already rebooked.",
+            "business_model": null,
+            "technology": [
+              "AI voice agents",
+              "texting agents",
+              "NexHealth",
+              "Dentrix",
+              "Eaglesoft",
+              "Open Dental"
+            ],
+            "distribution": [
+              "365agents website",
+              "pricing page",
+              "walkthrough booking",
+              "X",
+              "LinkedIn",
+              "Instagram",
+              "Facebook",
+              "TikTok",
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Uncompleted dental cleaning-recall calls can leave hygiene chairs empty and appointments unbooked.",
+                "evidence": "“Most of those calls never get made. Empty hygiene chairs are pure lost revenue — the room is paid for, the staff is paid for, and the appointment never gets booked.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents Flows pulls overdue-recall lists from NexHealth, contacts patients by outbound call or text, offers open slots, books appointments, and writes appointments back to Dentrix, Eaglesoft, or Open Dental.",
+                "evidence": "“365agents Flows pulls the overdue-recall list out of NexHealth. Outbound call or text. Confirms the patient. Offers open slots. Books on the calendar. Writes the appointment back to the PMS — Dentrix, Eaglesoft, or Open Dental.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The recall flow suppresses outreach when a patient has already rebooked.",
+                "evidence": "“If the patient already rebooked, the flow suppresses the call so the recall stops chasing.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims that recovering hygiene visits produces margin because the chair would otherwise be empty.",
+                "evidence": "“Recovered hygiene visits are pure margin — the chair was empty anyway.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "365agents' AI voice and texting agents run defined workflows with validated steps, structured-data capture, and writeback to the system of record.",
+                "evidence": "“365agents builds AI voice and texting agents that run on defined workflows — every call moves through the same validated steps, captures structured data, and writes back to the system of record you already use.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "365agents uses AI voice and texting agents to implement its workflows.",
+                "evidence": "“365agents builds AI voice and texting agents that run on defined workflows.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "adoption",
+                "statement": "365agents claims its product works with any phone system and can go live in under 10 minutes.",
+                "evidence": "“Out of the box, works with any phone system, go live in under 10 minutes.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "technology",
+                "statement": "365agents states that it is Vanta-verified for SOC 2, HIPAA, and ISO 42001, and that BAAs are available.",
+                "evidence": "“SOC 2, HIPAA, ISO 42001 — Vanta-verified. BAAs available.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "cyJMnDz1TKg",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1130,
+          "output_tokens": 306,
+          "output": {
+            "industry": "Legal services",
+            "customer": "Attorneys",
+            "problem": "Legal document drafting and legal tasks can require more time and may benefit from improved efficiency and accuracy.",
+            "solution": "Use AI tools, including ChatGPT prompts, to support legal document drafting and other legal tasks.",
+            "business_model": null,
+            "technology": [
+              "AI tools",
+              "ChatGPT",
+              "Prompting"
+            ],
+            "distribution": [
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The video describes using AI tools to write legal documents faster.",
+                "evidence": "Title: \"How I Use AI To Write Legal Docs Super Fast\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator presents AI tools as a way for attorneys to streamline legal processes.",
+                "evidence": "Description: \"Discover how attorneys leverage the power of AI tools to enhance their productivity and streamline legal processes.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "technology",
+                "statement": "The video presents ChatGPT prompts as a tool for legal-task workflows.",
+                "evidence": "Description: \"including how to use ChatGPT prompts to improve efficiency and accuracy in legal tasks.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "technology",
+                "statement": "The video covers AI-tool integration in legal work.",
+                "evidence": "Description: \"This video explores the integration of AI in law, showcasing practical applications and benefits.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1242,
+          "output_tokens": 289,
+          "output": {
+            "industry": "legal services",
+            "customer": "attorneys",
+            "problem": "Legal document drafting can require time and accuracy.",
+            "solution": "Use AI tools and ChatGPT prompts to improve efficiency and accuracy in legal tasks, including writing legal documents.",
+            "business_model": null,
+            "technology": [
+              "AI tools",
+              "ChatGPT"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "AI tools are used to write legal documents faster.",
+                "evidence": "Title: \"How I Use AI To Write Legal Docs Super Fast\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "workflow",
+                "statement": "AI tools can be applied to legal tasks to improve efficiency and accuracy.",
+                "evidence": "Description: \"how to use ChatGPT prompts to improve efficiency and accuracy in legal tasks.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "ChatGPT prompts are presented as a tool for legal tasks.",
+                "evidence": "Description: \"how to use ChatGPT prompts to improve efficiency and accuracy in legal tasks.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "AI is presented as supporting productivity and streamlining legal processes for attorneys.",
+                "evidence": "Description: \"Discover how attorneys leverage the power of AI tools to enhance their productivity and streamline legal processes.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "0c6AJl7z-Ic",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1510,
+          "output_tokens": 580,
+          "output": {
+            "industry": "Legal technology / law firms",
+            "customer": "Law firms",
+            "problem": "Manual time tracking and invoicing create billing-process challenges; billing errors, inconsistencies, block billing, and non-reimbursable activities can lead to disputes.",
+            "solution": "AI-enabled legal billing automation that captures time, links billing entries to case files and clients, flags compliance issues, analyzes invoices, provides billing analytics, and integrates with legal practice-management platforms.",
+            "business_model": null,
+            "technology": [
+              "Artificial intelligence for billing-task automation",
+              "Machine-learning invoice analysis",
+              "AI-driven billing analytics",
+              "Integration with legal practice-management platforms"
+            ],
+            "distribution": [
+              "YouTube channel content",
+              "Channel subscription call to action"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Traditional law-firm billing relies on manual time tracking and invoicing, which the creator describes as challenging.",
+                "evidence": "“traditional methods law firms used for billing, including manual time tracking and invoicing, and the challenges associated with those practices.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator describes AI billing tools as automatically capturing time and linking billing entries to case files and clients.",
+                "evidence": "“AI now automates many of these tasks, capturing time automatically and linking entries directly to case files and clients.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator describes AI tools as flagging billing errors and inconsistencies before invoices are sent.",
+                "evidence": "“AI tools help ensure billing compliance by flagging errors and inconsistencies before invoices are sent out.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The creator describes machine-learning models as analyzing invoices for block billing and non-reimbursable activities.",
+                "evidence": "“machine learning models analyze invoices to identify issues like block billing or non-reimbursable activities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "complaint",
+                "statement": "Billing errors and invoice issues are described as sources of disputes.",
+                "evidence": "“identify issues like block billing or non-reimbursable activities, reducing errors and disputes.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "technology",
+                "statement": "The creator describes AI-driven analytics that provide insights into billing patterns, profitability, and revenue opportunities.",
+                "evidence": "“AI-driven analytics provide insights into billing patterns, profitability, and revenue opportunities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator describes AI-powered billing systems as integrating with legal practice-management platforms across case management through collections.",
+                "evidence": "“AI-powered billing systems integrate with legal practice management platforms, streamlining workflows from case management to collections.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1622,
+          "output_tokens": 667,
+          "output": {
+            "industry": "legal technology",
+            "customer": "law firms",
+            "problem": "Manual time tracking and invoicing create challenges in legal billing; invoices can contain errors, inconsistencies, block billing, or non-reimbursable activities.",
+            "solution": "AI-powered legal billing automation captures time, links entries to case files and clients, flags billing issues before invoices are sent, analyzes invoices, provides billing and profitability analytics, and integrates with legal practice-management platforms.",
+            "business_model": null,
+            "technology": [
+              "artificial intelligence",
+              "machine learning models",
+              "AI-driven analytics",
+              "legal practice management platforms"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Traditional legal billing relies on manual time tracking and invoicing, which have associated challenges.",
+                "evidence": "“traditional methods law firms used for billing, including manual time tracking and invoicing, and the challenges associated with those practices.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "AI billing tools automate time capture and link billing entries to case files and clients.",
+                "evidence": "“AI now automates many of these tasks, capturing time automatically and linking entries directly to case files and clients.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "AI tools flag billing errors and inconsistencies before invoices are sent to support billing compliance.",
+                "evidence": "“AI tools help ensure billing compliance by flagging errors and inconsistencies before invoices are sent out.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "Machine-learning models analyze invoices for block billing and non-reimbursable activities.",
+                "evidence": "“machine learning models analyze invoices to identify issues like block billing or non-reimbursable activities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "Machine-learning models are described as the mechanism used to analyze legal invoices for billing issues.",
+                "evidence": "“machine learning models analyze invoices to identify issues like block billing or non-reimbursable activities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "AI-driven analytics provide insights into billing patterns, profitability, and revenue opportunities for law firms.",
+                "evidence": "“AI-driven analytics provide insights into billing patterns, profitability, and revenue opportunities, helping law firms make smarter business decisions.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "AI-driven analytics are described as providing insights into billing patterns, profitability, and revenue opportunities.",
+                "evidence": "“AI-driven analytics provide insights into billing patterns, profitability, and revenue opportunities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "AI-powered billing systems integrate with legal practice-management platforms to streamline workflows from case management to collections.",
+                "evidence": "“AI-powered billing systems integrate with legal practice management platforms, streamlining workflows from case management to collections.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "Legal practice-management platform integration is described as an enabling component of AI-powered billing systems.",
+                "evidence": "“AI-powered billing systems integrate with legal practice management platforms”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "WE9OEsdfGGc",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1351,
+          "output_tokens": 625,
+          "output": {
+            "industry": "Property management / real estate operations",
+            "customer": "Property managers, property-operations teams, and real estate operators",
+            "problem": "Urgent after-hours tenant maintenance calls require triage, issue capture, ticketing, and vendor dispatch.",
+            "solution": "A 24/7 Voice AI assistant that triages urgent tenant maintenance requests, captures issue details, generates service tickets, and dispatches vendors.",
+            "business_model": null,
+            "technology": [
+              "Voice AI",
+              "Agentic AI",
+              "Automated service-ticket generation",
+              "Priority-based workflow automation"
+            ],
+            "distribution": [
+              "Company website",
+              "Demo booking",
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The Voice AI is positioned to capture maintenance issue details and generate a service ticket that initiates repair workflows.",
+                "evidence": "\"accurately captures the specific issue details, and instantly generates a service ticket to trigger immediate repair workflows.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The product is positioned to triage urgent after-hours tenant maintenance requests and dispatch vendors without manual intervention.",
+                "evidence": "\"actively triaging urgent requests, capturing critical data, and dispatching vendors without manual intervention.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "competition",
+                "statement": "MonkSpaces.Ai positions its Voice AI as a replacement for traditional after-hours answering services.",
+                "evidence": "\"completely replacing traditional after-hours answering services\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "customer",
+                "statement": "The stated target customers include property managers that need autonomous triage for urgent, after-hours tenant maintenance calls.",
+                "evidence": "\"Property managers needing a 24/7 autonomous triage system for urgent, after-hours tenant maintenance calls\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The stated target customers include operational teams seeking to automate priority-based ticket-generation and dispatch workflows.",
+                "evidence": "\"Operational teams looking to automate ticket generation and dispatch workflows based on priority\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The stated target customers include real estate operators seeking to improve tenant satisfaction through immediate voice responses.",
+                "evidence": "\"Real estate operators wanting to improve tenant satisfaction with immediate, empathetic voice responses\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "product_launch",
+                "statement": "MonkSpaces.Ai offers AI products for property operations, including Voice AI, WhatsApp AI, and Email AI.",
+                "evidence": "\"MonkSpaces.Ai builds agentic AI products that modernize property operations\" and the linked products \"Voice AI,\" \"WhatsApp AI,\" and \"Email AI.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "technology",
+                "statement": "The Voice AI is positioned as a 24/7 digital property manager for property operations.",
+                "evidence": "\"Our Voice AI acts as a 24/7 digital property manager\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1463,
+          "output_tokens": 785,
+          "output": {
+            "industry": "property management / real estate operations",
+            "customer": "Property managers, operational teams, and real estate operators handling urgent after-hours tenant maintenance calls",
+            "problem": "Urgent after-hours tenant maintenance requests require triage, issue-data capture, ticket generation, and vendor dispatch; traditional after-hours answering services are described as requiring replacement.",
+            "solution": "MonkSpaces.Ai's Voice AI is presented as a 24/7 digital property manager that triages urgent tenant requests, captures issue details, generates service tickets, and dispatches vendors.",
+            "business_model": null,
+            "technology": [
+              "Voice AI",
+              "agentic AI"
+            ],
+            "distribution": [
+              "Website",
+              "Voice AI product page",
+              "WhatsApp AI product page",
+              "Email AI product page",
+              "Demo booking page",
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The Voice AI is presented as handling urgent maintenance calls by responding empathetically, capturing issue details, and generating a service ticket to initiate repair workflows.",
+                "evidence": "\"The intelligent audio assistant responds calmly and empathetically, accurately captures the specific issue details, and instantly generates a service ticket to trigger immediate repair workflows.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The Voice AI is presented as triaging urgent requests, capturing critical data, and dispatching vendors without manual intervention.",
+                "evidence": "\"Our Voice AI acts as a 24/7 digital property manager, completely replacing traditional after-hours answering services by actively triaging urgent requests, capturing critical data, and dispatching vendors without manual intervention.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "MonkSpaces.Ai describes its products as agentic AI products and its assistant as Voice AI.",
+                "evidence": "\"MonkSpaces.Ai builds agentic AI products\" and \"Our Voice AI acts as a 24/7 digital property manager.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "customer",
+                "statement": "The video is targeted at property managers needing 24/7 autonomous triage for urgent, after-hours tenant maintenance calls.",
+                "evidence": "\"Who this is for: → Property managers needing a 24/7 autonomous triage system for urgent, after-hours tenant maintenance calls\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "customer",
+                "statement": "The video is targeted at operational teams seeking to automate ticket generation and priority-based dispatch workflows.",
+                "evidence": "\"→ Operational teams looking to automate ticket generation and dispatch workflows based on priority\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "customer",
+                "statement": "The video is targeted at real estate operators seeking immediate, empathetic voice responses to improve tenant satisfaction.",
+                "evidence": "\"→ Real estate operators wanting to improve tenant satisfaction with immediate, empathetic voice responses\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "competition",
+                "statement": "MonkSpaces.Ai claims its Voice AI can completely replace traditional after-hours answering services.",
+                "evidence": "\"Our Voice AI acts as a 24/7 digital property manager, completely replacing traditional after-hours answering services\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "distribution",
+                "statement": "MonkSpaces.Ai provides website, Voice AI, WhatsApp AI, Email AI, and demo-booking links in the video description.",
+                "evidence": "\"Website: https://www.monkspaces.ai\"; \"Voice AI: https://www.monkspaces.ai/ai/voice\"; \"WhatsApp AI: https://www.monkspaces.ai/ai/whatsapp\"; \"Email AI: https://www.monkspaces.ai/ai/email\"; \"Book a Demo: https://www.monkspaces.ai/#demo\"",
+                "claim_status": "fact",
+                "confidence": 0.99
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "jv_H0eDb8Y4",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1671,
+          "output_tokens": 602,
+          "output": {
+            "industry": "Real estate",
+            "customer": "Real estate agents",
+            "problem": "Manual sorting of new leads against ideal-client criteria can take hours and distract agents from closing deals.",
+            "solution": "Pabbly Connect integrates Google Sheets, GPT-4, and CRM systems to automate lead filtering and qualification.",
+            "business_model": null,
+            "technology": [
+              "AI agents",
+              "GPT-4",
+              "CRM systems",
+              "Google Sheets",
+              "software integrations",
+              "no-code automation"
+            ],
+            "distribution": [
+              "Pabbly Connect website",
+              "shared workflow link",
+              "support email",
+              "Pabbly Forum",
+              "Facebook Group"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "A real estate agent can add a new lead to Google Sheets and have GPT-4 assess whether it matches criteria including budget, location, and property type.",
+                "evidence": "“When I add a lead to my Google Sheet, GPT-4 quickly tells me if they’re a good match” and “my ideal client profile—like budget, location, and property type.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "pain",
+                "statement": "Manual sorting of real-estate leads is positioned as taking hours.",
+                "evidence": "“GPT-4 quickly tells me if they’re a good match, saving me hours of manual sorting.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The workflow is positioned to filter leads so real estate agents can focus on serious buyers or renters.",
+                "evidence": "“It helps me focus only on serious buyers or renters.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "technology",
+                "statement": "Pabbly Connect is positioned to integrate AI agents with CRM systems for automated lead qualification.",
+                "evidence": "“Pabbly Connect simplifies this by integrating these tools, allowing AI agents to automatically filter and qualify leads based on your criteria.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "Pabbly Connect is positioned as a no-code tool for integrating and automating software, marketing, sales, payments, and business processes.",
+                "evidence": "“Pabbly Connect makes it easy to integrate and automate any software, marketing, sales, payments, or business processes quickly, without the need for any programming knowledge.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "pricing",
+                "statement": "Pabbly Connect claims not to charge for internal tasks such as mathematical operations, spreadsheet functions, and time-zone conversions.",
+                "evidence": "“Pabbly Connect offers absolutely no charges for internal tasks such as mathematical operations, spreadsheet functions, time zone conversions and more.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "product_launch",
+                "statement": "Pabbly Connect claims users can create unlimited automation workflows without restrictions.",
+                "evidence": "“you can create unlimited automation workflows for your business without any restrictions.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1783,
+          "output_tokens": 1134,
+          "output": {
+            "industry": "real estate",
+            "customer": "real estate agents",
+            "problem": "Manual sorting and qualification of new real-estate leads against criteria such as budget, location, and property type.",
+            "solution": "A Pabbly Connect workflow that uses GPT-4 to assess leads added to Google Sheets against an ideal client profile.",
+            "business_model": null,
+            "technology": [
+              "Pabbly Connect",
+              "AI agents",
+              "ChatGPT",
+              "GPT-4",
+              "CRM systems",
+              "Google Sheets"
+            ],
+            "distribution": [
+              "Pabbly Connect website",
+              "Pabbly Connect pricing page",
+              "shared workflow link",
+              "Pabbly Forum",
+              "Facebook Group"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The described real-estate workflow evaluates a new lead against an ideal client profile using budget, location, and property type after the lead is added to Google Sheets.",
+                "evidence": "\"When I add a lead to my Google Sheet, GPT-4 quickly tells me if they’re a good match\" and \"automatically check if a new lead fits my ideal client profile—like budget, location, and property type.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "Pabbly Connect is described as enabling AI agents to automatically filter and qualify leads based on user-defined criteria.",
+                "evidence": "\"Pabbly Connect simplifies this by integrating these tools, allowing AI agents to automatically filter and qualify leads based on your criteria.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "technology",
+                "statement": "The example workflow uses Google Sheets as the lead-input source and GPT-4 to assess lead fit.",
+                "evidence": "\"When I add a lead to my Google Sheet, GPT-4 quickly tells me if they’re a good match.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "pain",
+                "statement": "The creator describes manual lead sorting as taking hours for a real-estate agent.",
+                "evidence": "\"saving me hours of manual sorting.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "customer",
+                "statement": "The described workflow is presented for a real-estate agent who wants to focus on serious buyers or renters.",
+                "evidence": "\"As a real estate agent, I use this workflow\" and \"It helps me focus only on serious buyers or renters.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "pricing",
+                "statement": "Pabbly Connect claims it does not charge for internal tasks such as mathematical operations, spreadsheet functions, and time-zone conversions.",
+                "evidence": "\"Pabbly Connect offers absolutely no charges for internal tasks such as mathematical operations, spreadsheet functions, time zone conversions and more.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "product_launch",
+                "statement": "Pabbly Connect is described as allowing users to create unlimited automation workflows without restrictions.",
+                "evidence": "\"you can create unlimited automation workflows for your business without any restrictions.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.88
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "3HtrzukGtG8",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1723,
+          "output_tokens": 966,
+          "output": {
+            "industry": "Shopify e-commerce",
+            "customer": "Shopify merchants",
+            "problem": "Converting hesitant shoppers and recovering abandoned carts while providing customer support across the customer journey.",
+            "solution": "Text for Shopify combines live chat, an AI agent, customer support, proactive campaigns, and Shopify sales data in one workspace.",
+            "business_model": null,
+            "technology": [
+              "AI customer-service agent",
+              "AI shopping assistant",
+              "Shopify sales-data integration",
+              "real-time cart visibility",
+              "automated campaigns",
+              "shoppable product cards",
+              "live reporting"
+            ],
+            "distribution": [
+              "Shopify integration",
+              "Facebook",
+              "Instagram",
+              "X",
+              "LinkedIn",
+              "YouTube",
+              "GitHub"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "Text positions Text for Shopify as a workspace combining live chat, an AI agent, customer support, proactive campaigns, and Shopify sales data.",
+                "evidence": "\"Text combines live chat, an AI agent, customer support, proactive campaigns, and Shopify sales data in one workspace\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify lets teams view customers' cart contents in real time and track cart changes within conversations.",
+                "evidence": "\"See what customers have in their carts in real time\" and \"Track cart changes directly inside conversations\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "Text for Shopify includes an AI shopping assistant that recommends products.",
+                "evidence": "\"Recommend products with an AI shopping assistant\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify supports sending shoppable product cards in chat.",
+                "evidence": "\"Send shoppable product cards in chat\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify can suggest product alternatives when items are out of stock.",
+                "evidence": "\"Suggest alternatives when products are out of stock\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify uses automated campaigns to recover returning shoppers.",
+                "evidence": "\"Recover returning shoppers with automated campaigns\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify supports customers on product, checkout, and thank-you pages.",
+                "evidence": "\"Support customers directly on product, checkout, and thank-you pages\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "revenue",
+                "statement": "Text claims merchants using Text for Shopify saw a 266% sales increase and averaged $11,000 in additional monthly revenue.",
+                "evidence": "\"Merchants using Text for Shopify have seen sales increase by 266%, generating an average of $11,000 in additional monthly revenue\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "revenue",
+                "statement": "Text claims merchants using Text for Shopify had an average order value of $430.",
+                "evidence": "\"with an average order value of $430\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "adoption",
+                "statement": "Text claims its AI agent achieves a 74% resolution rate and handles the majority of customer conversations automatically, with teams handling cases requiring human expertise.",
+                "evidence": "\"with a 74% AI resolution rate, Text’s AI agent can handle the majority of customer conversations automatically while your team steps in when human expertise matters most\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "adoption",
+                "statement": "Text claims that over 34,000 companies are growing with its platform.",
+                "evidence": "\"join over 34,000 companies already growing with Text\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1835,
+          "output_tokens": 1382,
+          "output": {
+            "industry": "Shopify ecommerce",
+            "customer": "Merchants using Text for Shopify",
+            "problem": "Converting hesitant shoppers, recovering abandoned carts, and providing faster customer support across the customer journey.",
+            "solution": "Text for Shopify combines live chat, an AI agent, customer support, proactive campaigns, and Shopify sales data in one workspace.",
+            "business_model": null,
+            "technology": [
+              "AI agent",
+              "AI shopping assistant",
+              "Shopify sales data"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify is presented as helping teams convert hesitant shoppers, recover abandoned carts, recommend products, and provide faster support across the customer journey.",
+                "evidence": "\"helping your team convert hesitant shoppers, recover abandoned carts, recommend the right products, and provide faster support throughout the entire customer journey.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Text for Shopify is presented as allowing teams to see customer carts in real time and track cart changes inside conversations.",
+                "evidence": "\"See what customers have in their carts in real time\" and \"Track cart changes directly inside conversations\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "Text for Shopify is described as combining an AI agent and Shopify sales data in its workspace.",
+                "evidence": "\"Text combines live chat, an AI agent, customer support, proactive campaigns, and Shopify sales data in one workspace\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Text says its AI shopping assistant can recommend products, send shoppable product cards in chat, and suggest alternatives for out-of-stock products.",
+                "evidence": "\"Recommend products with an AI shopping assistant\"; \"Send shoppable product cards in chat\"; \"Suggest alternatives when products are out of stock\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Text says Text for Shopify can recover returning shoppers through automated campaigns.",
+                "evidence": "\"Recover returning shoppers with automated campaigns\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Text says Text for Shopify can support customers on product, checkout, and thank-you pages and report revenue generated by conversations.",
+                "evidence": "\"Support customers directly on product, checkout, and thank-you pages\" and \"Track exactly how much revenue your conversations generate\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "revenue",
+                "statement": "Text claims merchants using Text for Shopify saw a 266% sales increase and averaged $11,000 in additional monthly revenue, with an average order value of $430.",
+                "evidence": "\"Merchants using Text for Shopify have seen sales increase by 266%, generating an average of $11,000 in additional monthly revenue with an average order value of $430.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "Text claims its AI agent can automatically handle the majority of customer conversations, with teams stepping in when human expertise is needed.",
+                "evidence": "\"with a 74% AI resolution rate, Text’s AI agent can handle the majority of customer conversations automatically while your team steps in when human expertise matters most.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "adoption",
+                "statement": "Text claims that over 34,000 companies are already growing with Text.",
+                "evidence": "\"join over 34,000 companies already growing with Text.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "swpwrSZdAJ4",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1875,
+          "output_tokens": 1099,
+          "output": {
+            "industry": "Live-stream commerce and eCommerce sales automation",
+            "customer": "Entrepreneurs, marketers, creators, agencies, eCommerce businesses, and online sellers",
+            "problem": "Live-stream customers expect real-time interaction, while traditional sales teams rely on people to answer questions, engage prospects, qualify leads, and guide customers toward purchases.",
+            "solution": "An AI-powered sales agent positioned for live-stream selling, customer engagement, lead generation, and sales automation.",
+            "business_model": null,
+            "technology": [
+              "AI sales agents"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "Traditional sales teams are described as requiring people to answer customer questions.",
+                "evidence": "\"Traditional sales teams require people to answer questions\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "workflow",
+                "statement": "Traditional sales teams are described as requiring people to engage prospects.",
+                "evidence": "\"Traditional sales teams require people to... engage prospects\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "workflow",
+                "statement": "Traditional sales teams are described as requiring people to qualify leads.",
+                "evidence": "\"Traditional sales teams require people to... qualify leads\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "workflow",
+                "statement": "Traditional sales teams are described as requiring people to move customers toward a purchase.",
+                "evidence": "\"Traditional sales teams require people to... move customers toward a purchase.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.92
+              },
+              {
+                "type": "workflow",
+                "statement": "AI sales agents are positioned to automate much of the traditional sales process.",
+                "evidence": "\"AI sales agents aim to automate much of this process\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "growth",
+                "statement": "AI sales agents are positioned to let businesses engage with more potential customers at scale.",
+                "evidence": "\"allowing businesses to engage with more potential customers at scale.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "demand",
+                "statement": "The creator says live-stream commerce customers expect real-time interaction while watching a product or presentation.",
+                "evidence": "\"customers expect real-time interaction while watching a product or presentation.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "product_launch",
+                "statement": "The reviewed solution is positioned for live-stream selling.",
+                "evidence": "\"this AI-powered sales solution\" and \"what it can actually do for live-stream selling\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.87
+              },
+              {
+                "type": "customer",
+                "statement": "The review identifies entrepreneurs, marketers, creators, agencies, eCommerce businesses, and online sellers as potential users of the technology.",
+                "evidence": "\"whether this technology makes sense for entrepreneurs, marketers, creators, agencies, eCommerce businesses, and online sellers.\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1987,
+          "output_tokens": 637,
+          "output": {
+            "industry": "Live-stream commerce",
+            "customer": null,
+            "problem": "Live-stream customers expect real-time interaction while watching a product or presentation.",
+            "solution": "An AI-powered sales solution for live-stream selling, customer engagement, lead generation, and sales automation.",
+            "business_model": null,
+            "technology": [
+              "AI sales agents"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "AI sales agents aim to automate answering questions, engaging prospects, qualifying leads, and moving customers toward a purchase.",
+                "evidence": "Traditional sales teams require people to answer questions, engage prospects, qualify leads, and move customers toward a purchase. AI sales agents aim to automate much of this process while allowing businesses to engage with more potential customers at scale.",
+                "claim_status": "creator_claim",
+                "confidence": 0.9
+              },
+              {
+                "type": "technology",
+                "statement": "The reviewed Live Stream Sales Agent AI is described as an AI-powered sales solution.",
+                "evidence": "In this Live Stream Sales Agent AI review, I take a deeper look at this AI-powered sales solution...",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "demand",
+                "statement": "Live-stream customers are described as expecting real-time interaction while watching a product or presentation.",
+                "evidence": "Live-stream commerce makes this even more interesting because customers expect real-time interaction while watching a product or presentation.",
+                "claim_status": "creator_claim",
+                "confidence": 0.86
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "PD2eKTzkZ70",
+      "versions": {
+        "v002": {
+          "status": "invalid_output",
+          "error_type": "ValidationError",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c"
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1308,
+          "output_tokens": 280,
+          "output": {
+            "industry": null,
+            "customer": null,
+            "problem": "Manual copying and pasting of invoice data into Excel or another application.",
+            "solution": "Automating extraction of invoice data and copying it to Excel or another app with AI Builder and Power Automate.",
+            "business_model": null,
+            "technology": [
+              "AI Builder",
+              "Power Automate"
+            ],
+            "distribution": [
+              "Microsoft Learn tutorial",
+              "Power Platform Community"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "The metadata identifies manually copying and pasting invoice data between systems as a problem.",
+                "evidence": "\"Tired of manually copying and pasting the data from one place to another?\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "AI Builder and Power Automate are presented as automating invoice-data extraction and copying the data to Excel or another app.",
+                "evidence": "\"automate it in just 1 minute with AI Builder and Power Automate\"; \"extract data from invoices and copy it you Excel or any other app\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "technology",
+                "statement": "The described invoice-data automation uses AI Builder and Power Automate.",
+                "evidence": "\"automate it in just 1 minute with AI Builder and Power Automate\"",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "5DevfwAfVpA",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1577,
+          "output_tokens": 1317,
+          "output": {
+            "industry": "Accounting firms",
+            "customer": "Accounting firms",
+            "problem": "Managing multi-entity bookkeeping clients and intercompany activity can require separate subscriptions for each additional LLC.",
+            "solution": "Claude Cowork is presented as an AI agent for accounting-firm workflows; sponsor Kick is presented as an AI-first ledger for multi-entity client bookkeeping.",
+            "business_model": "Private community/alliance for accounting-firm owners.",
+            "technology": [
+              "AI agents",
+              "Claude Cowork",
+              "QuickBooks automation",
+              "AI-first accounting ledger"
+            ],
+            "distribution": [
+              "Free app-recommendation webpage",
+              "Private community of firm owners",
+              "Downloadable Claude Cowork skills via Google Drive"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The creator presents Claude Cowork examples for bookkeeping work.",
+                "evidence": "“We walk through real examples in bookkeeping”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator presents Claude Cowork examples for tax-preparation work.",
+                "evidence": "“We walk through real examples in ... tax prep”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator presents Claude Cowork examples for Excel workpapers.",
+                "evidence": "“We walk through real examples in ... Excel workpapers”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator presents Claude Cowork examples for receipt handling.",
+                "evidence": "“We walk through real examples in ... receipt handling”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The creator presents Claude Cowork as supporting QuickBooks automation.",
+                "evidence": "“We walk through real examples in ... even QuickBooks automation”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The creator characterizes Claude Cowork as the most impressive AI agent he has seen for accounting-firm work.",
+                "evidence": "“Claude Cowork is the most impressive AI agent I’ve seen yet for accounting firm work.”",
+                "claim_status": "opinion",
+                "confidence": 0.97
+              },
+              {
+                "type": "adoption",
+                "statement": "The creator believes AI agents are close enough that accountants should begin paying attention.",
+                "evidence": "“AI agents are getting close enough that every accountant needs to start paying attention now.”",
+                "claim_status": "opinion",
+                "confidence": 0.96
+              },
+              {
+                "type": "competition",
+                "statement": "Sponsor Kick is positioned as an alternative to QuickBooks and Xero for accounting firms.",
+                "evidence": "“Kick is a modern AI-first accounting ledger built for firms that want a real alternative to QuickBooks and Xero.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "customer",
+                "statement": "Sponsor Kick targets firms managing multi-entity clients.",
+                "evidence": "“It handles multi-entity clients inside one workspace”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "Sponsor Kick claims to make intercompany activity less difficult.",
+                "evidence": "“makes intercompany activity far less painful”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "pricing",
+                "statement": "Sponsor Kick claims firms can manage a client's related entities without adding subscriptions whenever a new LLC is added.",
+                "evidence": "“lets firms manage all of a client’s related entities without stacking extra subscriptions every time a new LLC shows up.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator directs viewers to join an alliance described as having more than 800 firm owners.",
+                "evidence": "“joining my alliance of +800 firm owners”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "customer",
+                "statement": "The creator states that he founded a private community of more than 800 firms.",
+                "evidence": "“I’m the founder of a 800+ firm private community”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1689,
+          "output_tokens": 632,
+          "output": {
+            "industry": "accounting firms",
+            "customer": "accountants and accounting firms",
+            "problem": "Managing bookkeeping for clients with multiple related entities can require extra subscriptions as new LLCs are added and can make intercompany activity difficult.",
+            "solution": "Claude Cowork is presented as an AI agent for accounting-firm work, with examples involving bookkeeping, tax preparation, Excel workpapers, receipt handling, and QuickBooks automation. Kick is presented as an AI-first accounting ledger for firms seeking an alternative to QuickBooks and Xero.",
+            "business_model": null,
+            "technology": [
+              "AI agents",
+              "Claude Cowork",
+              "QuickBooks automation"
+            ],
+            "distribution": [
+              "Creator's free app-recommendations page",
+              "Creator's private community",
+              "Sponsor referral link",
+              "Google Drive downloads for Cowork skills and example documents"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "Claude Cowork is presented as supporting accounting-firm workflows including bookkeeping, tax preparation, Excel workpapers, receipt handling, and QuickBooks automation.",
+                "evidence": "“We walk through real examples in bookkeeping, tax prep, Excel workpapers, receipt handling, and even QuickBooks automation”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "technology",
+                "statement": "The video presents Claude Cowork as an AI agent for accounting-firm work.",
+                "evidence": "“Claude Cowork is the most impressive AI agent I’ve seen yet for accounting firm work.”",
+                "claim_status": "opinion",
+                "confidence": 0.98
+              },
+              {
+                "type": "competition",
+                "statement": "Kick is positioned as an alternative to QuickBooks and Xero for accounting firms.",
+                "evidence": "“Kick is a modern AI-first accounting ledger built for firms that want a real alternative to QuickBooks and Xero.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "workflow",
+                "statement": "Kick is described as enabling firms to manage a client's multiple related entities in one workspace and handle intercompany activity.",
+                "evidence": "“It handles multi-entity clients inside one workspace, makes intercompany activity far less painful, and lets firms manage all of a client’s related entities”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "pain",
+                "statement": "The sponsor description identifies difficulty with intercompany activity and added subscriptions when new LLCs are added for a client.",
+                "evidence": "“makes intercompany activity far less painful” and “without stacking extra subscriptions every time a new LLC shows up.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator offers downloadable Cowork skills and example bank statements and tax documents.",
+                "evidence": "“Grab the Cowork skills I used in this video here” and “over 500 pages of example bank statements at tax docs here”",
+                "claim_status": "fact",
+                "confidence": 0.98
+              },
+              {
+                "type": "distribution",
+                "statement": "The creator promotes a private community of more than 800 firm owners.",
+                "evidence": "“joining my alliance of +800 firm owners” and “I’m the founder of a 800+ firm private community”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "PaelkSXrQS4",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1214,
+          "output_tokens": 567,
+          "output": {
+            "industry": "Veterinary clinics",
+            "customer": "Veterinary clinics",
+            "problem": null,
+            "solution": "An AI-powered veterinary clinic receptionist system for phone conversations, appointment booking, FAQ handling, emergency escalation, alerts, calendar automation, and webhook routing.",
+            "business_model": null,
+            "technology": [
+              "Vapi",
+              "n8n",
+              "Google Calendar",
+              "Gmail",
+              "Slack",
+              "AI conversational workflows",
+              "Webhooks",
+              "Workflow automation"
+            ],
+            "distribution": [
+              "YouTube"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "product_launch",
+                "statement": "The creator built an AI-powered receptionist system for veterinary clinics.",
+                "evidence": "“In this project, I built an AI-powered veterinary clinic receptionist system”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system handles AI phone conversations for veterinary clinics.",
+                "evidence": "“The system handles: • AI phone conversations”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system supports appointment booking.",
+                "evidence": "“The system handles: • Appointment booking”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system handles frequently asked questions.",
+                "evidence": "“The system handles: • FAQ handling”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system includes emergency escalation workflows.",
+                "evidence": "“The system handles: • Emergency escalation workflows”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system sends real-time Slack alerts.",
+                "evidence": "“The system handles: • Real-time Slack alerts”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The described system automates Google Calendar workflows.",
+                "evidence": "“The system handles: • Google Calendar automation”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The described system uses n8n for backend webhook routing.",
+                "evidence": "“The system handles: • Backend webhook routing with n8n”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "technology",
+                "statement": "The project uses Vapi, n8n, Google Calendar, Gmail, and Slack.",
+                "evidence": "“Tools used: * Vapi * n8n * Google Calendar * Gmail * Slack”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "adoption",
+                "statement": "The creator positions conversational AI as integrable with operational systems for customer support and clinic management.",
+                "evidence": "“This project demonstrates how conversational AI can be integrated into real operational systems for customer support and clinic management.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1326,
+          "output_tokens": 414,
+          "output": {
+            "industry": "veterinary clinics",
+            "customer": null,
+            "problem": null,
+            "solution": "An AI-powered veterinary clinic receptionist system for customer support and clinic management.",
+            "business_model": null,
+            "technology": [
+              "Vapi",
+              "n8n",
+              "Google Calendar",
+              "Gmail",
+              "Slack",
+              "AI conversational workflows",
+              "webhooks",
+              "workflow automation tools"
+            ],
+            "distribution": [],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "workflow",
+                "statement": "The system conducts AI phone conversations, books appointments, handles FAQs, escalates emergencies, and sends real-time Slack alerts for veterinary clinics.",
+                "evidence": "The system handles: • AI phone conversations • Appointment booking • FAQ handling • Emergency escalation workflows • Real-time Slack alerts",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "workflow",
+                "statement": "The system automates Google Calendar and routes backend webhooks with n8n.",
+                "evidence": "The system handles: • Google Calendar automation • Backend webhook routing with n8n",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The creator says the system was built using Vapi, n8n, Google Calendar, Slack, and workflow automation tools.",
+                "evidence": "In this project, I built an AI-powered veterinary clinic receptionist system using Vapi, n8n, Google Calendar, Slack and workflow automation tools.",
+                "claim_status": "creator_claim",
+                "confidence": 0.99
+              },
+              {
+                "type": "technology",
+                "statement": "The described implementation includes Gmail, AI conversational workflows, webhooks, and automation logic.",
+                "evidence": "Tools used: * Vapi * n8n * Google Calendar * Gmail * Slack * AI conversational workflows * Webhooks & automation logic",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "adoption",
+                "statement": "The creator presents conversational AI as integrated into operational systems for customer support and clinic management.",
+                "evidence": "This project demonstrates how conversational AI can be integrated into real operational systems for customer support and clinic management.",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "video_id": "nVgv0hZmJxc",
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "a87c62b333f02928f432b100655feff34d1251f6163da776d586430db9d7e16c",
+          "input_tokens": 1300,
+          "output_tokens": 651,
+          "output": {
+            "industry": "Home services, specifically HVAC repair",
+            "customer": "Home service businesses",
+            "problem": "Missed phone calls can result in lost jobs when prospective customers call a competitor instead.",
+            "solution": "An AI receptionist positioned to answer calls continuously, qualify customers, collect photos by text for quoting, and book jobs into a calendar.",
+            "business_model": null,
+            "technology": [
+              "AI receptionist",
+              "Calendar booking based on real availability",
+              "SMS photo collection for quote preparation"
+            ],
+            "distribution": [
+              "Direct outreach via laptopsandlatitude.com"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Home service businesses can lose jobs when they do not answer customer calls, particularly during urgent service needs.",
+                "evidence": "“what happens when someone’s AC breaks on a 95-degree day and you don’t answer the phone? They don’t leave a voicemail… they call your competitor.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "competition",
+                "statement": "The creator positions unanswered calls as an opportunity for competitors to win prospective home-service jobs.",
+                "evidence": "“They don’t leave a voicemail… they call your competitor.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "pain",
+                "statement": "The creator characterizes missed calls as a major revenue leak in home services.",
+                "evidence": "“That’s the biggest revenue leak in home services right now—missed calls.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is claimed to answer inbound calls instantly, 24/7.",
+                "evidence": "“It’s an AI receptionist that answers every call instantly, 24/7.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "workflow",
+                "statement": "The AI receptionist is claimed to qualify customers during calls.",
+                "evidence": "“It qualifies the customer”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              },
+              {
+                "type": "workflow",
+                "statement": "The system is claimed to text customers to collect photos for more accurate quotes.",
+                "evidence": "“texts them to collect photos for accurate quotes”",
+                "claim_status": "creator_claim",
+                "confidence": 0.95
+              },
+              {
+                "type": "workflow",
+                "statement": "The system is claimed to book jobs directly into a business calendar based on actual availability.",
+                "evidence": "“books the job مباشرة into your calendar based on your real availability.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.96
+              },
+              {
+                "type": "customer",
+                "statement": "The product is positioned specifically for home service businesses.",
+                "evidence": "“We built it specifically for home service businesses”",
+                "claim_status": "creator_claim",
+                "confidence": 0.98
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims the system allows home service businesses to track the revenue saved from handling missed calls each month.",
+                "evidence": "“you can actually track how much revenue it’s saving you every single month.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "workflow",
+                "statement": "The creator claims businesses can avoid losing jobs without hiring staff or changing their workflow.",
+                "evidence": "“You stop losing jobs you should’ve won… without hiring staff or changing your workflow.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.94
+              }
+            ]
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+          "input_tokens": 1412,
+          "output_tokens": 468,
+          "output": {
+            "industry": "home services",
+            "customer": "home service businesses",
+            "problem": "Missed phone calls may lead potential customers to call a competitor, resulting in lost jobs.",
+            "solution": "An AI receptionist that answers calls 24/7, qualifies customers, collects photos by text for quotes, and books jobs into a calendar based on availability.",
+            "business_model": null,
+            "technology": [
+              "AI",
+              "calendar integration"
+            ],
+            "distribution": [
+              "Creator website contact link: https://www.laptopsandlatitude.com"
+            ],
+            "pricing": null,
+            "signals": [
+              {
+                "type": "pain",
+                "statement": "Missed calls are presented as a revenue leak for home service businesses because callers may contact a competitor instead.",
+                "evidence": "“They don’t leave a voicemail… they call your competitor. That’s the biggest revenue leak in home services right now—missed calls.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.93
+              },
+              {
+                "type": "workflow",
+                "statement": "The described AI receptionist answers calls instantly, qualifies customers, requests photos by text for quotes, and books jobs into a calendar according to availability.",
+                "evidence": "“It’s an AI receptionist that answers every call instantly, 24/7. It qualifies the customer, texts them to collect photos for accurate quotes, and books the job مباشرة into your calendar based on your real availability.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.97
+              },
+              {
+                "type": "technology",
+                "statement": "The system is described as an AI receptionist with calendar-based booking.",
+                "evidence": "“It’s an AI receptionist that answers every call instantly, 24/7... and books the job مباشرة into your calendar based on your real availability.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.87
+              },
+              {
+                "type": "revenue",
+                "statement": "The creator claims the system lets home service businesses track the revenue it saves each month.",
+                "evidence": "“We built it specifically for home service businesses, so you can actually track how much revenue it’s saving you every single month.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.91
+              },
+              {
+                "type": "workflow",
+                "statement": "The system is claimed to prevent lost jobs without requiring staff hiring or workflow changes.",
+                "evidence": "“You stop losing jobs you should’ve won… without hiring staff or changing your workflow.”",
+                "claim_status": "creator_claim",
+                "confidence": 0.89
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "translation_v003_ab": [
+    {
+      "source_fields": [
+        "The product is positioned for prospective-client intake and screening.",
+        "The assistant may collect a retainer and communicate case status.",
+        "The resident assistant triages maintenance and assigns a vendor.",
+        "The tenant asks about amenity access."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 682,
+          "output_tokens": 120,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_1",
+                "translated_text": "该产品定位于潜在客户接入与筛选。"
+              },
+              {
+                "field_name": "field_2",
+                "translated_text": "该助手可收取预付费用并沟通案件状态。"
+              },
+              {
+                "field_name": "field_3",
+                "translated_text": "住户助手对维修事项进行分流，并指派供应商。"
+              },
+              {
+                "field_name": "field_4",
+                "translated_text": "租户询问配套设施的使用权限。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 772,
+          "output_tokens": 120,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_1",
+                "translated_text": "该产品面向潜在客户的客户接待和筛查。"
+              },
+              {
+                "field_name": "field_2",
+                "translated_text": "该助手可收取预付律师费并沟通案件状态。"
+              },
+              {
+                "field_name": "field_3",
+                "translated_text": "住户助手对维修事项进行分流，并指派供应商。"
+              },
+              {
+                "field_name": "field_4",
+                "translated_text": "租户询问设施使用权限。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "source_fields": [
+        "The agent hands off complex requests and escalates urgent cases.",
+        "The vendor claims it recovers abandoned checkouts and supports upsells.",
+        "The workflow categorizes transactions and reconciles the ledger.",
+        "The assistant supports month-end close and cash-flow review."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 688,
+          "output_tokens": 127,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_5",
+                "translated_text": "该智能体会转交复杂请求，并升级处理紧急情况。"
+              },
+              {
+                "field_name": "field_6",
+                "translated_text": "该供应商声称其可挽回弃购结账，并支持追加销售。"
+              },
+              {
+                "field_name": "field_7",
+                "translated_text": "该工作流对交易进行分类，并核对账本。"
+              },
+              {
+                "field_name": "field_8",
+                "translated_text": "该助手支持月末结账和现金流审查。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 778,
+          "output_tokens": 131,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_5",
+                "translated_text": "该智能体会将复杂请求转交人工，并对紧急情况升级处理。"
+              },
+              {
+                "field_name": "field_6",
+                "translated_text": "该供应商声称可挽回放弃结账的客户，并支持追加销售。"
+              },
+              {
+                "field_name": "field_7",
+                "translated_text": "该工作流对交易进行分类并核对总账。"
+              },
+              {
+                "field_name": "field_8",
+                "translated_text": "该助手支持月末结账和现金流审查。"
+              }
+            ],
+            "preserved_terms": [],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "source_fields": [
+        "The dental front desk handles recall and appointment leads.",
+        "The tool is presented as automating insurance verification.",
+        "QuickBooks is used for bookkeeping reconciliation.",
+        "Shopify remains the source of order-status data."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 678,
+          "output_tokens": 256,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_9",
+                "translated_text": "牙科前台负责复诊召回和预约线索。"
+              },
+              {
+                "field_name": "field_10",
+                "translated_text": "该工具被描述为可自动化保险核验。"
+              },
+              {
+                "field_name": "field_11",
+                "translated_text": "QuickBooks 用于账务对账。"
+              },
+              {
+                "field_name": "field_12",
+                "translated_text": "Shopify 仍是订单状态数据的来源。"
+              }
+            ],
+            "preserved_terms": [
+              "QuickBooks",
+              "Shopify"
+            ],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 768,
+          "output_tokens": 120,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_9",
+                "translated_text": "牙科前台负责患者召回和预约线索。"
+              },
+              {
+                "field_name": "field_10",
+                "translated_text": "该工具被描述为可自动完成保险资格核验。"
+              },
+              {
+                "field_name": "field_11",
+                "translated_text": "QuickBooks 用于簿记对账。"
+              },
+              {
+                "field_name": "field_12",
+                "translated_text": "Shopify 仍是订单状态数据的来源。"
+              }
+            ],
+            "preserved_terms": [
+              "QuickBooks",
+              "Shopify"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "source_fields": [
+        "The AI receptionist is positioned as collecting prospective-client information.",
+        "The creator claims the service can route maintenance requests.",
+        "The product may recommend items before a human handoff.",
+        "The channel offers paid consulting through an affiliate link."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 682,
+          "output_tokens": 119,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_13",
+                "translated_text": "该 AI 前台被定位为收集潜在客户信息。"
+              },
+              {
+                "field_name": "field_14",
+                "translated_text": "创作者声称该服务可转交维修请求。"
+              },
+              {
+                "field_name": "field_15",
+                "translated_text": "该产品可能会在转交人工处理前推荐商品。"
+              },
+              {
+                "field_name": "field_16",
+                "translated_text": "该频道通过联盟链接提供付费咨询服务。"
+              }
+            ],
+            "preserved_terms": [
+              "AI"
+            ],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 772,
+          "output_tokens": 123,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_13",
+                "translated_text": "该 AI 接待员被定位为用于采集潜在客户信息。"
+              },
+              {
+                "field_name": "field_14",
+                "translated_text": "创作者称，该服务可将维护请求转送至相应渠道。"
+              },
+              {
+                "field_name": "field_15",
+                "translated_text": "该产品可在转交人工前推荐商品。"
+              },
+              {
+                "field_name": "field_16",
+                "translated_text": "该频道通过联盟链接提供付费咨询服务。"
+              }
+            ],
+            "preserved_terms": [
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "source_fields": [
+        "The featured SaaS product charges a monthly subscription.",
+        "The platform uses n8n and speech recognition.",
+        "The receptionist answers incoming calls and books appointments.",
+        "The agent checks order status for ecommerce customers."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 678,
+          "output_tokens": 122,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_17",
+                "translated_text": "该主打 SaaS 产品按月收取订阅费。"
+              },
+              {
+                "field_name": "field_18",
+                "translated_text": "该平台使用 n8n 和语音识别技术。"
+              },
+              {
+                "field_name": "field_19",
+                "translated_text": "前台接听来电并预约。"
+              },
+              {
+                "field_name": "field_20",
+                "translated_text": "该智能体为电商客户查询订单状态。"
+              }
+            ],
+            "preserved_terms": [
+              "SaaS",
+              "n8n"
+            ],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 768,
+          "output_tokens": 121,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_17",
+                "translated_text": "展示的 SaaS 产品按月收取订阅费。"
+              },
+              {
+                "field_name": "field_18",
+                "translated_text": "该平台使用 n8n 和语音识别。"
+              },
+              {
+                "field_name": "field_19",
+                "translated_text": "接待员接听来电并预约。"
+              },
+              {
+                "field_name": "field_20",
+                "translated_text": "该智能体为电商客户查询订单状态。"
+              }
+            ],
+            "preserved_terms": [
+              "SaaS",
+              "n8n"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    },
+    {
+      "source_fields": [
+        "The leasing assistant qualifies prospective residents.",
+        "The law firm uses AI-assisted document drafting.",
+        "The bookkeeping team extracts invoice data.",
+        "The HVAC assistant schedules quote visits."
+      ],
+      "versions": {
+        "v002": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "b7b06f6bbed9189c6b688e4e5d07a34760e54efbe4d761a2ed2df4c40acc7044",
+          "input_tokens": 670,
+          "output_tokens": 119,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_21",
+                "translated_text": "租赁助手对潜在住户进行资格筛选。"
+              },
+              {
+                "field_name": "field_22",
+                "translated_text": "该律师事务所使用 AI 辅助起草文件。"
+              },
+              {
+                "field_name": "field_23",
+                "translated_text": "簿记团队提取发票数据。"
+              },
+              {
+                "field_name": "field_24",
+                "translated_text": "HVAC 助手安排报价上门预约。"
+              }
+            ],
+            "preserved_terms": [
+              "AI",
+              "HVAC"
+            ],
+            "warnings": []
+          }
+        },
+        "v003": {
+          "status": "completed",
+          "model": "gpt-5.6-terra",
+          "provider": "openai",
+          "prompt_hash": "3b2f297379f37cbdee499d0378eed2c28f821189d6101af344f2df87017a5435",
+          "input_tokens": 760,
+          "output_tokens": 115,
+          "output": {
+            "translations": [
+              {
+                "field_name": "field_21",
+                "translated_text": "租赁助手会筛选潜在住户。"
+              },
+              {
+                "field_name": "field_22",
+                "translated_text": "该律师事务所使用 AI 辅助起草文件。"
+              },
+              {
+                "field_name": "field_23",
+                "translated_text": "簿记团队提取发票数据。"
+              },
+              {
+                "field_name": "field_24",
+                "translated_text": "暖通空调助手安排报价上门拜访。"
+              }
+            ],
+            "preserved_terms": [
+              "AI"
+            ],
+            "warnings": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -210,6 +210,12 @@ normalization stress, and artifact-only translation output. It intentionally ope
 session, queues no worker job, and cannot activate or publish intelligence. See
 `docs/cross-source-validation.md`.
 
+TASK-038 keeps semantic retrieval outside the active pipeline. Its proposed future flow is lexical
+top-k plus semantic top-k, deterministic bounded union/rerank, then the unchanged Normalizer, with a
+lexical fallback. Experimental signal/translation v003 prompts retain existing structured-output
+schemas and do not alter v001 runtime constants. See `docs/hybrid-retrieval-evaluation.md`,
+`docs/signal-v003-design.md`, and `docs/translation-v003-design.md`.
+
 ## Prompt/schema version relationship
 
 Prompt and schema versions begin at `v001` and are independently identifiable but released deliberately as a compatible pair for each task.

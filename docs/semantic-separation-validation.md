@@ -80,3 +80,8 @@ remains experimental.
 
 No prompt file, model selection, runtime default, active opportunity, score, trend, review state, or
 localized projection is changed. Prompt fixes or promotion planning belong to TASK-038.
+
+TASK-038 subsequently recovered the missing low-overlap candidate with an offline hybrid prototype.
+Because candidate noise rose and semantic ranking missed two hard-negative boundaries, the result is
+`HYBRID_NEEDS_MORE_VALIDATION`; no runtime retrieval change followed. Signal and translation v003
+designs are documented separately and remain inactive.

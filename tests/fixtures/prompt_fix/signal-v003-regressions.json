@@ -1,0 +1,9 @@
+[
+  {"id":"workflow_behavior","must_prefer":"workflow","examples":["answers calls","captures billable time","recommends products","checks order status"]},
+  {"id":"technology_mechanism","must_prefer":"technology","examples":["n8n","speech recognition","RAG","calendar API"]},
+  {"id":"creator_ownership","must_not_infer":["featured_product_revenue","featured_product_customer"]},
+  {"id":"community_size","must_not_infer":["adoption","customer"]},
+  {"id":"balanced_fragmentation","must_preserve_context":true},
+  {"id":"pricing_null_safety","incomplete_price_must_be":null},
+  {"id":"invoice_schema_case","video_id":"PD2eKTzkZ70","v002":"invalid_output","v003":"completed"}
+]

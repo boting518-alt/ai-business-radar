@@ -1,0 +1,10 @@
+[
+  {"source":"creator","required_any":["创作者","发布者"],"forbidden":["创建者"]},
+  {"source":"legal retainer","required_any":["预付律师费","律师聘用金","聘用费"]},
+  {"source":"human handoff","required_any":["转交人工","人工接管"]},
+  {"source":"dental recall","required_any":["复诊召回","患者召回","复诊提醒"]},
+  {"source":"invoice extraction","required_any":["发票数据提取"]},
+  {"source":"month-end close","required_any":["月末结账"]},
+  {"source":"vendor claims","required_any":["供应商声称"],"preserve_claim":true},
+  {"source":"passive_calque","forbidden":["被定位为可","被描述为可"]}
+]

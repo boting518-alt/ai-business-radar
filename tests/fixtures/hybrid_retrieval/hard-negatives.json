@@ -1,0 +1,11 @@
+[
+  {"query_case":"low_dental_frontdesk","positive":"dental_reception","negatives":["dental_insurance","dental_recall"]},
+  {"query_case":"dental_recall","positive":"dental_recall","negatives":["dental_reception","dental_insurance"]},
+  {"query_case":"legal_drafting","positive":"legal_drafting","negatives":["legal_intake","legal_billing"]},
+  {"query_case":"legal_billing","positive":"legal_billing","negatives":["legal_intake","legal_drafting"]},
+  {"query_case":"property_maintenance","positive":"property_maintenance","negatives":["property_tenant","property_leasing"]},
+  {"query_case":"property_leasing","positive":"property_leasing","negatives":["legal_intake"]},
+  {"query_case":"ecommerce_cart","positive":"ecommerce_cart","negatives":["ecommerce_support"]},
+  {"query_case":"veterinary_reception","positive":"veterinary_reception","negatives":["dental_reception"]},
+  {"query_case":"hvac_reception","positive":"hvac_reception","negatives":["dental_reception"]}
+]

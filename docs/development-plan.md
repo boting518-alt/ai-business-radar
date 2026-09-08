@@ -47,14 +47,15 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-035 Local Intelligence Quality Review + Prompt Tuning
 - [x] TASK-036 Broader Discovery + Cross-Source Intelligence Validation
 - [x] TASK-037 Semantic Separation + Low-Overlap Retrieval Validation
+- [x] TASK-038 Hybrid Retrieval Offline Prototype + Prompt Fix Plan
 
 ## Next
 
-- [ ] TASK-038 Prompt Promotion Decision + v002 Fix/Promotion Plan
-- [ ] TASK-039 Industry + Customer Taxonomy Foundation
-- [ ] TASK-040 Hosted Supabase Auth + RLS Drill
-- [ ] TASK-041 Staging Infrastructure Deployment
-- [ ] TASK-042 Staging Full Integration Validation
+- [ ] TASK-039 Runtime Promotion Decision + Selected Version Switch
+- [ ] TASK-040 Industry + Customer Taxonomy Foundation
+- [ ] TASK-041 Hosted Supabase Auth + RLS Drill
+- [ ] TASK-042 Staging Infrastructure Deployment
+- [ ] TASK-043 Staging Full Integration Validation
 
 ## Validation debt
 
