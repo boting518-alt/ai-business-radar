@@ -1,10 +1,10 @@
 # Supabase Compatibility and Readiness v0.1
 
-Status: **READY TO CREATE/CONNECT SUPABASE** for a development project; hosted drill still required
+Status: **HOSTED DEVELOPMENT AUTH/RLS DRILL PASSED**; staging deployment still required
 
 ## Migration readiness
 
-The 12 numeric migrations are ordered, transactional, and compatible with a fresh hosted Supabase
+The 17 numeric migrations are ordered, transactional, and compatible with a fresh hosted Supabase
 PostgreSQL project based on static review and PostgreSQL 16 integration coverage. Apply them with
 the existing `psql` workflow; adopting Supabase CLI is not required for v0.1.
 
@@ -14,7 +14,7 @@ the existing `psql` workflow; adopting Supabase CLI is not required for v0.1.
   hosted Auth implementation is not replaced.
 - `0002_rls_baseline.sql`: Supabase-aware. It relies on existing `auth.uid()` and API roles, enables
   RLS on every application table, revokes broad grants, and defines application policies/helpers.
-- `0003` through `0012`: generic PostgreSQL schema evolution. They do not require localhost helper
+- `0003` through `0017`: generic PostgreSQL schema evolution. They do not require localhost helper
   objects, Supabase CLI metadata, pgvector, or external extensions beyond `pgcrypto` from `0001`.
 
 The `auth.users` to `public.user_profiles` relationship is intentionally logical, not a cross-schema
@@ -53,7 +53,7 @@ signing-key rotation/revocation procedures must allow for cache propagation.
 
 ## RLS readiness
 
-RLS is enabled on all 19 application tables. Authenticated users receive narrowly scoped grants:
+RLS is enabled on all 26 application tables. Authenticated users receive narrowly scoped grants:
 
 - own profile is readable; no profile write policy exists, preventing self-role escalation;
 - own Watchlists and membership rows are readable and writable;

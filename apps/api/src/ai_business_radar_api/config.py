@@ -3,7 +3,7 @@
 import json
 from functools import lru_cache
 
-from pydantic import Field, SecretStr, field_validator, model_validator
+from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .infrastructure.ai.errors import PromptNotFoundError
@@ -30,9 +30,16 @@ class Settings(BaseSettings):
     supabase_service_role_key: SecretStr | None = None
     supabase_jwt_secret: SecretStr | None = None
     supabase_jwks_url: str | None = None
-    supabase_jwt_issuer: str | None = None
-    supabase_jwt_audience: str | None = "authenticated"
+    supabase_jwt_issuer: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("SUPABASE_JWT_ISSUER", "SUPABASE_ISSUER"),
+    )
+    supabase_jwt_audience: str | None = Field(
+        default="authenticated",
+        validation_alias=AliasChoices("SUPABASE_JWT_AUDIENCE", "SUPABASE_AUDIENCE"),
+    )
     database_url: SecretStr | None = None
+    hosted_supabase_database_url: SecretStr | None = None
     live_validation_database_url: SecretStr | None = None
     redis_url: SecretStr | None = None
 

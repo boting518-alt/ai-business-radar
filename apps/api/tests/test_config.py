@@ -30,6 +30,17 @@ def test_external_service_secrets_are_optional() -> None:
     assert settings.youtube_api_key is None
     assert settings.openai_api_key is None
     assert settings.supabase_service_role_key is None
+    assert settings.hosted_supabase_database_url is None
+
+
+def test_supabase_issuer_and_audience_accept_hosted_aliases(monkeypatch) -> None:
+    monkeypatch.setenv("SUPABASE_ISSUER", "https://project.supabase.co/auth/v1")
+    monkeypatch.setenv("SUPABASE_AUDIENCE", "authenticated")
+
+    settings = Settings(_env_file=None)
+
+    assert settings.supabase_jwt_issuer == "https://project.supabase.co/auth/v1"
+    assert settings.supabase_jwt_audience == "authenticated"
 
 
 def test_cors_accepts_comma_separated_or_json_lists() -> None:

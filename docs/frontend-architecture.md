@@ -17,6 +17,9 @@ table shells, empty/error/loading states, and skeleton tables without scoring lo
 
 ## Authentication and security
 
+TASK-041 verified real hosted asymmetric JWT/JWKS login against local FastAPI, exact localhost CORS,
+SSR publishable-key boundaries, and absence of server secret values from the production bundle.
+
 Supabase Auth uses `@supabase/ssr` browser/server clients and cookie refresh in Next.js `proxy.ts`,
 following the current App Router SSR approach. Dashboard layouts validate a server session; admin
 routes additionally resolve the application role from FastAPI. Email/password login and logout are

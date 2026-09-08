@@ -48,29 +48,26 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-036 Broader Discovery + Cross-Source Intelligence Validation
 - [x] TASK-037 Semantic Separation + Low-Overlap Retrieval Validation
 - [x] TASK-038 Hybrid Retrieval Offline Prototype + Prompt Fix Plan
+- [x] TASK-039 Promote Signal Extractor v003 + Runtime Version Governance
+- [x] TASK-040 Industry + Customer Taxonomy Foundation
+- [x] TASK-041 Hosted Supabase Auth + RLS Drill
 
 ## Next
 
-- [ ] TASK-039 Runtime Promotion Decision + Selected Version Switch
-- [x] TASK-040 Industry + Customer Taxonomy Foundation
-- [ ] TASK-041 Hosted Supabase Auth + RLS Drill
 - [ ] TASK-042 Staging Infrastructure Deployment
 - [ ] TASK-043 Staging Full Integration Validation
+- [ ] TASK-044 Hybrid Retrieval Runtime Prototype
+- [ ] TASK-045 AI-Assisted Taxonomy Mapping + Review
+- [ ] TASK-046 Translation v003 Improvement / Promotion Decision
 
 ## Validation debt
 
 No local validation debt. All migrations, API/PostgreSQL integration tests, shared schemas, workers,
 frontend checks, and a real local Redis broker smoke test passed during TASK-028. Live YouTube,
-OpenAI, managed Supabase, and production deployment verification remain explicit environment gaps.
+OpenAI, staging infrastructure, and production deployment verification remain explicit environment
+gaps. Hosted development Supabase Auth/JWKS/RLS was validated in TASK-041.
 
 ## Deferred
-
-- [x] TASK-039 Promote Signal Extractor v003 + Runtime Version Governance
-- [ ] TASK-040 Industry + Customer Taxonomy Foundation
-- [ ] TASK-041 Hosted Supabase Auth + RLS Drill
-- [ ] TASK-042 Staging Infrastructure Deployment
-- [ ] TASK-043 Staging Full Integration Validation
-- [ ] TASK-044 Hybrid Retrieval Runtime Prototype
 
 TASK-039 does not mark the product production-ready.
 

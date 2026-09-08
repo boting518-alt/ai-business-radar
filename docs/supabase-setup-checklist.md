@@ -1,5 +1,9 @@
 # Hosted Supabase Setup Checklist
 
+TASK-041 completed the development-project drill. Use the separate
+`HOSTED_SUPABASE_DATABASE_URL` and `apps/api/scripts/validate_hosted_supabase.py`; never repoint the
+ordinary local `DATABASE_URL` implicitly.
+
 Status: operator checklist for a non-production development project
 
 ## Secrets and environments
@@ -46,7 +50,7 @@ psql -X "$SUPABASE_DEV_DB_URL" -v ON_ERROR_STOP=1 \
   -f scripts/verify_supabase_schema.sql
 ```
 
-- [ ] Confirm all 19 expected `public` tables exist, all have RLS enabled, and the expected
+- [ ] Confirm all 26 expected application `public` tables exist, all have RLS enabled, and the expected
       Watchlist and Review policies are present.
 - [ ] Remove the temporary secret from the shell after completing database work:
 
