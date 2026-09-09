@@ -1,0 +1,4958 @@
+{
+  "items": [
+    {
+      "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "name": "Roller-skating duck robot companion",
+      "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck product.",
+      "industry": "consumer robotics",
+      "customer_type": "Adults seeking a customizable companion and emotional support device",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 12,
+        "supporting_signal_count": 12,
+        "distinct_video_count": 5,
+        "distinct_channel_count": 5,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 1
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 12
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Roller-skating duck robot companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 5,
+              "distinct_channel_count": 5
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 12,
+          "distinct_video_count": 5,
+          "distinct_channel_count": 5,
+          "latest_score": "49.16",
+          "confidence_score": "72.48",
+          "hype_risk": "67.78",
+          "momentum_7d": "92.50",
+          "first_detected_at": "2026-09-07T15:10:13Z",
+          "last_activity_at": "2026-09-08T07:00:44Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T07:00:44Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "fcc1df7b-f208-4886-a6b8-6efeb3c53a96",
+      "name": "Affordable smartphone-powered AI workspace companion",
+      "one_line_thesis": "The device is positioned as an option for users who want an expressive, AI-powered workspace element without a dedicated, high-cost robotic unit.",
+      "industry": "consumer technology",
+      "customer_type": "Desk enthusiasts and tech hobbyists who enjoy experimenting with interactive gadgets",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 9,
+        "supporting_signal_count": 9,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "fcc1df7b-f208-4886-a6b8-6efeb3c53a96",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 9
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Affordable smartphone-powered AI workspace companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "3 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 3,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 9,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T18:15:22Z",
+          "last_activity_at": "2026-09-07T18:15:22Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T18:15:22Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+      "name": "AI voice receptionists for business call handling and appointment booking",
+      "one_line_thesis": "VoiceFactory says its AI voice receptionists can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.",
+      "industry": null,
+      "customer_type": "businesses",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 9,
+        "supporting_signal_count": 9,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 9
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI voice receptionists for business call handling and appointment booking"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 9,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-06T22:30:30Z",
+          "last_activity_at": "2026-09-07T17:47:38Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T17:47:38Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+      "name": "AI companionship apps for loneliness and emotional connection",
+      "one_line_thesis": "The creator frames loneliness and emotional dependency as risks associated with AI companionship.",
+      "industry": "AI companionship apps",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 9,
+        "supporting_signal_count": 9,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 2,
+        "demand_signal_count": 1,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 9
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI companionship apps for loneliness and emotional connection"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 9,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": "31.11",
+          "confidence_score": "53.30",
+          "hype_risk": "45.88",
+          "momentum_7d": "22.50",
+          "first_detected_at": "2026-09-01T14:29:56Z",
+          "last_activity_at": "2026-09-01T14:29:56Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-01T14:29:56Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+      "name": "AI-driven defence robotics for Indian terrain",
+      "one_line_thesis": "The founders say the post-ChatGPT moment made truly capable AI-driven robotics possible.",
+      "industry": "Defence robotics",
+      "customer_type": "Defence buyers",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 9,
+        "supporting_signal_count": 9,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 9
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI-driven defence robotics for Indian terrain"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "3 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 3,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 9,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-06-02T06:32:57Z",
+          "last_activity_at": "2026-08-19T02:30:20Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-19T02:30:20Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "a63ff4ba-5abe-43dc-8496-9e36a68040c8",
+      "name": "Wholesale supply of toys and general retail products",
+      "one_line_thesis": "Shahji Traders offers wholesale inquiries through WhatsApp.",
+      "industry": "Wholesale distribution",
+      "customer_type": "Retailers, resellers, and shop owners",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 6,
+        "supporting_signal_count": 6,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 1,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "a63ff4ba-5abe-43dc-8496-9e36a68040c8",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 6
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Wholesale supply of toys and general retail products"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 6,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T10:45:24Z",
+          "last_activity_at": "2026-09-07T10:45:24Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T10:45:24Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "213aa812-e703-4874-84e0-bfa10dab0d33",
+      "name": "Open-source self-balancing desktop robot kit",
+      "one_line_thesis": "RIG-Hover is presented as an open-source self-balancing desktop robot kit.",
+      "industry": "robotics",
+      "customer_type": "makers, developers, and robot lovers",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 5,
+        "supporting_signal_count": 5,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "213aa812-e703-4874-84e0-bfa10dab0d33",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 5
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Open-source self-balancing desktop robot kit"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 5,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T05:52:39Z",
+          "last_activity_at": "2026-09-08T05:52:39Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T05:52:39Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+      "name": "Senior loneliness companion services",
+      "one_line_thesis": "The creator characterizes loneliness as an emerging health crisis.",
+      "industry": "Loneliness economy",
+      "customer_type": "Seniors",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 5,
+        "supporting_signal_count": 5,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 5
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Senior loneliness companion services"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "3 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 3,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 5,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "29.74",
+          "confidence_score": "53.23",
+          "hype_risk": "62.78",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-09-07T15:49:00Z",
+          "last_activity_at": "2026-09-07T15:49:00Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:49:00Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "7934417c-5e12-4d06-ad98-57a207a653ca",
+      "name": "VTOL drone-deployed quadruped reconnaissance for hazardous building entry",
+      "one_line_thesis": "The described system uses a VTOL gasoline drone with a stated 3-hour flight time and 5 kg payload.",
+      "industry": "Defense robotics",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 5,
+        "supporting_signal_count": 5,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "7934417c-5e12-4d06-ad98-57a207a653ca",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 5
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "VTOL drone-deployed quadruped reconnaissance for hazardous building entry"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 5,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-19T02:30:20Z",
+          "last_activity_at": "2026-08-19T02:30:20Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-19T02:30:20Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+      "name": "Stair-climbing last-mile delivery robots",
+      "one_line_thesis": "A delivery robot may reach a building but cannot complete the delivery when stairs are involved.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 5,
+        "supporting_signal_count": 5,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 5
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Stair-climbing last-mile delivery robots"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 5,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "33.13",
+          "confidence_score": "46.28",
+          "hype_risk": "57.16",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-08-13T23:27:32Z",
+          "last_activity_at": "2026-08-13T23:27:47Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-13T23:27:47Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "1ca8ace1-f435-4537-8808-3975417a9852",
+      "name": "Custom voice workflows for transcription correction and structured prompts",
+      "one_line_thesis": "A custom voice workflow turns rambling brain dumps into structured prompts and uses a custom prompt to fix transcription errors.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 4,
+        "supporting_signal_count": 4,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "1ca8ace1-f435-4537-8808-3975417a9852",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 4
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Custom voice workflows for transcription correction and structured prompts"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 4,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T18:06:07Z",
+          "last_activity_at": "2026-09-07T18:06:07Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T18:06:07Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+      "name": "AI companion apps that avoid manipulative dark patterns",
+      "one_line_thesis": "AI companion apps may use dark patterns to stop users from leaving.",
+      "industry": "AI companion apps",
+      "customer_type": "Users of AI chatbots",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI companion apps that avoid manipulative dark patterns"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "28.66",
+          "confidence_score": "48.88",
+          "hype_risk": "61.48",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-09-08T14:47:05Z",
+          "last_activity_at": "2026-09-08T14:47:05Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T14:47:05Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "f49bcf69-b5bf-4690-998b-303d2ecb9c38",
+      "name": "AI-powered travel planning and trip-management companion",
+      "one_line_thesis": "The creator says AI is changing the travel industry.",
+      "industry": "travel",
+      "customer_type": "travelers",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "f49bcf69-b5bf-4690-998b-303d2ecb9c38",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI-powered travel planning and trip-management companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T02:36:10Z",
+          "last_activity_at": "2026-09-08T02:36:10Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T02:36:10Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "b69dd14b-5658-4d8f-9125-2fe12830fe7c",
+      "name": "Toy shop serving visitors near children's hospitals",
+      "one_line_thesis": "The creator says profitable opportunities can exist in places that make other people uncomfortable because urgent needs can prompt spending without hesitation.",
+      "industry": "Retail business / toy shop",
+      "customer_type": "People at or near a children's hospital",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 1,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "b69dd14b-5658-4d8f-9125-2fe12830fe7c",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Toy shop serving visitors near children's hospitals"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "3 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 3,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-19T20:27:01Z",
+          "last_activity_at": "2026-08-19T20:27:01Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-19T20:27:01Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+      "name": "Living-room AI robot dog companion",
+      "one_line_thesis": "The creator contrasts Sirius with robot dogs built for factories, the military, or research labs, describing Sirius as built for living-room use.",
+      "industry": "Consumer robotics",
+      "customer_type": "Living room consumers",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Living-room AI robot dog companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "29.06",
+          "confidence_score": "35.63",
+          "hype_risk": "60.71",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-08-09T14:46:05Z",
+          "last_activity_at": "2026-08-09T14:46:05Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-09T14:46:05Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "03dffd58-4a52-4bb2-9ffb-97809b2e691f",
+      "name": "Person-recognizing companion capabilities for Microduck",
+      "one_line_thesis": "The commenter wants to know whether the robot can recognize people and function as a companion robot rather than only perform preprogrammed movements.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "03dffd58-4a52-4bb2-9ffb-97809b2e691f",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Person-recognizing companion capabilities for Microduck"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-28T20:53:43Z",
+          "last_activity_at": "2026-09-08T12:22:28Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T12:22:28Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+      "name": "Manufacturer and seller information for Microduck",
+      "one_line_thesis": "The commenter cannot find information about who manufactures or sells the product.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 1,
+        "purchase_intent_signal_count": 1,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 3,
+      "readiness": {
+        "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Manufacturer and seller information for Microduck"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 3
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "24.85",
+          "confidence_score": "36.34",
+          "hype_risk": "49.58",
+          "momentum_7d": "22.50",
+          "first_detected_at": "2026-08-29T03:19:39Z",
+          "last_activity_at": "2026-09-05T06:40:46Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-05T06:40:46Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "e4c6368f-4fc1-4210-9e4f-5d1138c6c759",
+      "name": "Free-only access to AI girlfriend services",
+      "one_line_thesis": "The user is only willing to use the product while it is free and would not continue if payment were required.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "e4c6368f-4fc1-4210-9e4f-5d1138c6c759",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Free-only access to AI girlfriend services"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-03T09:26:59Z",
+          "last_activity_at": "2026-09-03T09:26:59Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-03T09:26:59Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+      "name": "Lower-priced Microduck access",
+      "one_line_thesis": "The stated price is $100 above the commenter’s willingness-to-buy threshold.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Lower-priced Microduck access"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": "23.75",
+          "confidence_score": "41.03",
+          "hype_risk": "50.90",
+          "momentum_7d": "22.50",
+          "first_detected_at": "2026-08-29T09:31:28Z",
+          "last_activity_at": "2026-08-29T09:31:28Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-29T09:31:28Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "8afd450f-cf3f-4e43-8c8f-dd32ec63549b",
+      "name": "Emotional AI teddy bear companions for children",
+      "one_line_thesis": "The video describes Haivivi's approach as emotional AI.",
+      "industry": "Interactive AI toys",
+      "customer_type": "Children",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "8afd450f-cf3f-4e43-8c8f-dd32ec63549b",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Emotional AI teddy bear companions for children"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "ready",
+        "recommendation": "publish",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-03T13:30:02Z",
+          "last_activity_at": "2026-08-03T13:30:02Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-03T13:30:02Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+      "name": "Open-source bipedal robot platform",
+      "one_line_thesis": "Microduck is described as an open-source bipedal robot from Hugging Face and Pollen Robotics.",
+      "industry": "robotics",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 31,
+        "supporting_signal_count": 31,
+        "distinct_video_count": 8,
+        "distinct_channel_count": 8,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 31
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Open-source bipedal robot platform"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 8,
+              "distinct_channel_count": 8
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 31,
+          "distinct_video_count": 8,
+          "distinct_channel_count": 8,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T23:02:22Z",
+          "last_activity_at": "2026-09-08T15:30:20Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T15:30:20Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+      "name": "Interactive AI plush companion toys",
+      "one_line_thesis": "Silly Baby is presented as an interactive AI companion plush that can chat and react.",
+      "industry": "AI companion toys",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 9,
+        "supporting_signal_count": 9,
+        "distinct_video_count": 3,
+        "distinct_channel_count": 3,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 9
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Interactive AI plush companion toys"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 3,
+              "distinct_channel_count": 3
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 9,
+          "distinct_video_count": 3,
+          "distinct_channel_count": 3,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T02:01:18Z",
+          "last_activity_at": "2026-09-08T02:50:21Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T02:50:21Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "eb7cb958-d37c-4fde-a41e-e6ae3ee69420",
+      "name": "AI pet interactive robotic companion robots",
+      "one_line_thesis": "The video features an AI pet interactive robotic companion robot.",
+      "industry": "home goods",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 7,
+        "supporting_signal_count": 7,
+        "distinct_video_count": 3,
+        "distinct_channel_count": 3,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "eb7cb958-d37c-4fde-a41e-e6ae3ee69420",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 7
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI pet interactive robotic companion robots"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 3,
+              "distinct_channel_count": 3
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 7,
+          "distinct_video_count": 3,
+          "distinct_channel_count": 3,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T14:43:22Z",
+          "last_activity_at": "2026-09-08T17:16:17Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T17:16:17Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "name": "Preorder demand for Microduck walking robot",
+      "one_line_thesis": "The commenter has preordered the product and is waiting for delivery.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 6,
+        "supporting_signal_count": 6,
+        "distinct_video_count": 5,
+        "distinct_channel_count": 5,
+        "pain_signal_count": 0,
+        "demand_signal_count": 1,
+        "purchase_intent_signal_count": 3,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 2,
+      "readiness": {
+        "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 6
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Preorder demand for Microduck walking robot"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 5,
+              "distinct_channel_count": 5
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 6,
+          "distinct_video_count": 5,
+          "distinct_channel_count": 5,
+          "latest_score": "42.88",
+          "confidence_score": "66.25",
+          "hype_risk": "71.04",
+          "momentum_7d": "87.90",
+          "first_detected_at": "2026-09-07T17:09:21Z",
+          "last_activity_at": "2026-09-08T07:00:44Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T07:00:44Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "30bef280-17d1-4f69-b174-46010c86ccaf",
+      "name": "AI virtual companions for cloud CAD and engineering workflows",
+      "one_line_thesis": "SOLIDWORKS e Dassault Systèmes integrano l'AI nella piattaforma cloud 3DEXPERIENCE attraverso tre virtual companion: Aura per il business, Leo per l'ingegneria e Marie per i materiali.",
+      "industry": "CAD, progettazione, ingegneria e produzione",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 4,
+        "supporting_signal_count": 4,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "30bef280-17d1-4f69-b174-46010c86ccaf",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 4
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI virtual companions for cloud CAD and engineering workflows"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 4,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T08:29:42Z",
+          "last_activity_at": "2026-09-07T08:29:42Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T08:29:42Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "56e0af28-97e6-48e3-97cb-c58a165412f8",
+      "name": "AI companion dolls in sextech",
+      "one_line_thesis": "Lovense launched the \"Emily\" AI companion doll at CES 2026.",
+      "industry": "sextech",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 4,
+        "supporting_signal_count": 4,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "56e0af28-97e6-48e3-97cb-c58a165412f8",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 4
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI companion dolls in sextech"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 4,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-06T19:48:38Z",
+          "last_activity_at": "2026-09-06T19:48:38Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-06T19:48:38Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "688824f7-1539-447f-92c9-11e3df2eeff3",
+      "name": "Purchase access for LOOI AI desktop robot",
+      "one_line_thesis": "The creator directs viewers to purchase LOOI through POSCARE.",
+      "industry": "consumer electronics",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "688824f7-1539-447f-92c9-11e3df2eeff3",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Purchase access for LOOI AI desktop robot"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T12:22:28Z",
+          "last_activity_at": "2026-09-08T12:22:28Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T12:22:28Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "1f911dc7-f090-41bc-a221-3f610eebed6e",
+      "name": "Multilingual AI desktop companion robot",
+      "one_line_thesis": "The video presents the B50B-EMO AI Robot as a multilingual smart-chat interactive assistant, dancing robot, desktop companion, and gift.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "1f911dc7-f090-41bc-a221-3f610eebed6e",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Multilingual AI desktop companion robot"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T02:41:03Z",
+          "last_activity_at": "2026-09-08T02:41:03Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T02:41:03Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "ab18160b-72f3-432e-8d13-40df40878a5a",
+      "name": "Gadgets Mania wholesale smart gadgets catalogue and purchase access",
+      "one_line_thesis": "Gadgets Mania provides a product catalogue link, Google Maps location link, and phone contacts for prospective buyers.",
+      "industry": "Wholesale consumer goods retail",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "ab18160b-72f3-432e-8d13-40df40878a5a",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Gadgets Mania wholesale smart gadgets catalogue and purchase access"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "0 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 0,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "pass",
+            "message": "Evidence spans multiple source videos or channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 2,
+              "distinct_channel_count": 2
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 2,
+          "distinct_channel_count": 2,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-25T12:30:52Z",
+          "last_activity_at": "2026-09-08T01:03:23Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T01:03:23Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "4ae23804-b6fc-4c80-afcd-86b642bb9392",
+      "name": "AI pet robot companion",
+      "one_line_thesis": "Roomba inventor Colin Angle unveiled a new AI robot companion.",
+      "industry": "Consumer robotics",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "4ae23804-b6fc-4c80-afcd-86b642bb9392",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI pet robot companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-05-06T20:02:31Z",
+          "last_activity_at": "2026-05-06T20:02:31Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-05-06T20:02:31Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+      "name": "Advanced robot-brain upgrades for humanoid robots",
+      "one_line_thesis": "The creator describes Mind, a Chinese robotics startup in Shenzhen, as having upgraded the Unitree G1 humanoid robot with an advanced \"robot brain.\"",
+      "industry": "robotics",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 3,
+        "supporting_signal_count": 3,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 3
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Advanced robot-brain upgrades for humanoid robots"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 3,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "27.85",
+          "confidence_score": "31.63",
+          "hype_risk": "59.39",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-04-02T16:48:10Z",
+          "last_activity_at": "2026-04-02T16:48:10Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-04-02T16:48:10Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "426d0b3c-bb84-42e9-8a70-b8d41e93e218",
+      "name": "ChatGPT-powered pocket AI companion robot",
+      "one_line_thesis": "The AI companion robot is presented as supporting voice commands, emotional interaction, singing, and dancing.",
+      "industry": "consumer gadgets",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "426d0b3c-bb84-42e9-8a70-b8d41e93e218",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "ChatGPT-powered pocket AI companion robot"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T12:30:09Z",
+          "last_activity_at": "2026-09-08T12:30:09Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T12:30:09Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "95680e0f-51c9-4b23-bc17-0f061e50fcef",
+      "name": "AliExpress purchase access for AI plush toy robot",
+      "one_line_thesis": "The creator provides an AliExpress purchase link for the featured product.",
+      "industry": "consumer smart toys",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "95680e0f-51c9-4b23-bc17-0f061e50fcef",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AliExpress purchase access for AI plush toy robot"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T02:50:21Z",
+          "last_activity_at": "2026-09-08T02:50:21Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T02:50:21Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "ca6e697c-a434-4490-a183-e1259ef5108c",
+      "name": "Support for anxiety when talking to new people",
+      "one_line_thesis": "Experiences anxiety when talking to new people.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "ca6e697c-a434-4490-a183-e1259ef5108c",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Support for anxiety when talking to new people"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-03T12:05:07Z",
+          "last_activity_at": "2026-09-03T12:05:07Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-03T12:05:07Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "4add3584-b0ca-4746-9731-04fce5a9feb9",
+      "name": "Advanced features for desk companion robots",
+      "one_line_thesis": "Similar desk robots were available on Taobao several years ago but had limited features and did not become popular.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "4add3584-b0ca-4746-9731-04fce5a9feb9",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Advanced features for desk companion robots"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-28T01:25:30Z",
+          "last_activity_at": "2026-08-28T01:25:30Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-28T01:25:30Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "850fbeb8-05ac-4dc6-8dd1-6b69df5ac7e6",
+      "name": "Non-subscription AI pet access model",
+      "one_line_thesis": "The product appears to require an ongoing subscription to remain usable, which may deter adoption.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "850fbeb8-05ac-4dc6-8dd1-6b69df5ac7e6",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 2
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Non-subscription AI pet access model"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 2,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-05-06T21:38:23Z",
+          "last_activity_at": "2026-05-06T21:38:23Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-05-06T21:38:23Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+      "name": "Amazon purchase access for Ropet AI robot pet",
+      "one_line_thesis": "The channel provides an Amazon link for Ropet and states that qualifying purchases support the channel.",
+      "industry": "robotic companion pets",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Amazon purchase access for Ropet AI robot pet"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "26.57",
+          "confidence_score": "42.75",
+          "hype_risk": "63.98",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-09-08T17:16:17Z",
+          "last_activity_at": "2026-09-08T17:16:17Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T17:16:17Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "07db7bc5-84e3-49d4-b329-df09e985a45a",
+      "name": "AI desktop pet companion",
+      "one_line_thesis": "Amo AI is presented as a desktop pet and AI companion.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "07db7bc5-84e3-49d4-b329-df09e985a45a",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "AI desktop pet companion"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-08T02:23:45Z",
+          "last_activity_at": "2026-09-08T02:23:45Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-08T02:23:45Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+      "name": "Blade-free wind-energy technology",
+      "one_line_thesis": "Vortex Bladeless is described as having blade-free wind-energy technology.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Blade-free wind-energy technology"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "2f354cb1-a290-46e3-b230-23be403108bf",
+      "name": "Autonomous VTOL aircraft",
+      "one_line_thesis": "Shield AI's X-BAT is described as an autonomous VTOL aircraft.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "2f354cb1-a290-46e3-b230-23be403108bf",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Autonomous VTOL aircraft"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "warning",
+            "message": "A possible near duplicate needs human review.",
+            "supporting_metrics": {
+              "candidate_count": 1
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": [
+          {
+            "opportunity_id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+            "name": "Blade-free wind-energy technology",
+            "status": "candidate",
+            "overlap": 0.76
+          }
+        ]
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "47e505ed-6730-4f63-95f4-e799485cc6e2",
+      "name": "Humanoid robots for industrial ladder climbing",
+      "one_line_thesis": "Figure's humanoid robot is described as climbing an industrial ladder.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "47e505ed-6730-4f63-95f4-e799485cc6e2",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Humanoid robots for industrial ladder climbing"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "70fe892c-4a4a-4352-96d9-81524afdb44d",
+      "name": "Real-world robotics dataset with successful and failed demonstrations",
+      "one_line_thesis": "The video description identifies AGIBOT's real-world robotics dataset as containing successful and failed demonstrations.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "70fe892c-4a4a-4352-96d9-81524afdb44d",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Real-world robotics dataset with successful and failed demonstrations"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "warning",
+            "message": "A possible near duplicate needs human review.",
+            "supporting_metrics": {
+              "candidate_count": 1
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": [
+          {
+            "opportunity_id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+            "name": "Blade-free wind-energy technology",
+            "status": "candidate",
+            "overlap": 0.7
+          }
+        ]
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "7fcda4f5-0cd0-46bb-89f1-e7faa81ac4af",
+      "name": "Vision- and touch-sensing robotic hands",
+      "one_line_thesis": "Advanced robotic hands are described as using vision and touch sensors.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "7fcda4f5-0cd0-46bb-89f1-e7faa81ac4af",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Vision- and touch-sensing robotic hands"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "warning",
+            "message": "A possible near duplicate needs human review.",
+            "supporting_metrics": {
+              "candidate_count": 1
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": [
+          {
+            "opportunity_id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+            "name": "Blade-free wind-energy technology",
+            "status": "candidate",
+            "overlap": 0.73
+          }
+        ]
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "c396402f-4e6d-43f1-b161-5621c11078ef",
+      "name": "Wheel-leg robotic mobility systems",
+      "one_line_thesis": "New mobility systems are described as combining wheels and legs.",
+      "industry": "Robotics and AI",
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "c396402f-4e6d-43f1-b161-5621c11078ef",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Wheel-leg robotic mobility systems"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "warning",
+            "message": "A possible near duplicate needs human review.",
+            "supporting_metrics": {
+              "candidate_count": 1
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-07T15:19:11Z",
+          "last_activity_at": "2026-09-07T15:19:11Z"
+        },
+        "duplicate_candidates": [
+          {
+            "opportunity_id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+            "name": "Blade-free wind-energy technology",
+            "status": "candidate",
+            "overlap": 0.73
+          }
+        ]
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-07T15:19:11Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "a9967ea9-8b05-4c70-b378-c5267b7d6ebd",
+      "name": "Ethical AI dating products that avoid exploiting user vulnerability",
+      "one_line_thesis": "Perception that AI-driven dating products exploit loneliness, depression, and appearance-related insecurity for profit, creating an ethical barrier to adoption.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "a9967ea9-8b05-4c70-b378-c5267b7d6ebd",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Ethical AI dating products that avoid exploiting user vulnerability"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-09-02T03:02:51Z",
+          "last_activity_at": "2026-09-02T03:02:51Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-02T03:02:51Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "32f90a9e-7cd5-4c67-acc7-fe58c7031dc2",
+      "name": "Turnkey Microduck configurations for non-technical fathers",
+      "one_line_thesis": "The commenter states they intend to get the robot.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 1,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "32f90a9e-7cd5-4c67-acc7-fe58c7031dc2",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Turnkey Microduck configurations for non-technical fathers"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-28T03:27:57Z",
+          "last_activity_at": "2026-08-28T03:27:57Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-28T03:27:57Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "5b2ada0d-15b6-4b72-8db8-eca58146c58d",
+      "name": "Independent, non-promotional coverage of AI toy products",
+      "one_line_thesis": "Perceives the coverage as an infomercial for the toy company, indicating skepticism about promotional bias.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "5b2ada0d-15b6-4b72-8db8-eca58146c58d",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Independent, non-promotional coverage of AI toy products"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-28T02:47:14Z",
+          "last_activity_at": "2026-08-28T02:47:14Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-28T02:47:14Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "8af02211-ab52-44c9-b017-609690f569fb",
+      "name": "User-data privacy concerns for Microduck",
+      "one_line_thesis": "Concern that buying and using the product allows the company to collect user-generated data and profit substantially from it.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "8af02211-ab52-44c9-b017-609690f569fb",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "User-data privacy concerns for Microduck"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-08-28T01:35:44Z",
+          "last_activity_at": "2026-08-28T01:35:44Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-28T01:35:44Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+      "name": "Display-ready, easy-to-assemble collectible model kits",
+      "one_line_thesis": "Blokees has become a brand the commenter readily considers when wanting to buy toys or model kits.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Display-ready, easy-to-assemble collectible model kits"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": "28.75",
+          "confidence_score": "27.75",
+          "hype_risk": "60.71",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-08-06T12:47:08Z",
+          "last_activity_at": "2026-08-06T12:47:08Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-08-06T12:47:08Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "ad090a8a-c9ee-481f-8afe-670afaa26acd",
+      "name": "Dễ thay pin cho đèn LED tích hợp trên mô hình lắp ráp",
+      "one_line_thesis": "Đèn LED tích hợp trong khung ngực khiến việc thay pin rất khó khăn.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 1,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "ad090a8a-c9ee-481f-8afe-670afaa26acd",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Dễ thay pin cho đèn LED tích hợp trên mô hình lắp ráp"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-07-25T08:53:46Z",
+          "last_activity_at": "2026-07-25T08:53:46Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-07-25T08:53:46Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "9e9f5a34-2887-450b-90a7-5e1a1ce00765",
+      "name": "Low-commitment AI pet experience",
+      "one_line_thesis": "The ongoing minor inconvenience and commitment required by a real pet may deter people seeking a pet-like experience.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 1,
+        "supporting_signal_count": 1,
+        "distinct_video_count": 1,
+        "distinct_channel_count": 1,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 0,
+      "readiness": {
+        "opportunity_id": "9e9f5a34-2887-450b-90a7-5e1a1ce00765",
+        "checks": {
+          "supporting_evidence": {
+            "status": "pass",
+            "message": "Active supporting evidence exists.",
+            "supporting_metrics": {
+              "active_signal_count": 1
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Low-commitment AI pet experience"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 1,
+              "distinct_channel_count": 1
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 0
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 1,
+          "distinct_video_count": 1,
+          "distinct_channel_count": 1,
+          "latest_score": null,
+          "confidence_score": null,
+          "hype_risk": null,
+          "momentum_7d": null,
+          "first_detected_at": "2026-05-06T22:28:06Z",
+          "last_activity_at": "2026-05-06T22:28:06Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-05-06T22:28:06Z",
+      "score_at": null,
+      "trend_at": null,
+      "score_freshness": "pending",
+      "trend_freshness": "pending"
+    },
+    {
+      "id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+      "name": "Affordable AI girlfriend service discovery",
+      "one_line_thesis": "The commenter asks which app offers a girlfriend for ₹5,000 per month, indicating interest in trying such a service.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 0,
+        "supporting_signal_count": 0,
+        "distinct_video_count": 0,
+        "distinct_channel_count": 0,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 2,
+      "readiness": {
+        "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+        "checks": {
+          "supporting_evidence": {
+            "status": "fail",
+            "message": "No active supporting signal exists.",
+            "supporting_metrics": {
+              "active_signal_count": 0
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Affordable AI girlfriend service discovery"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 0,
+              "distinct_channel_count": 0
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 2
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 0,
+          "distinct_video_count": 0,
+          "distinct_channel_count": 0,
+          "latest_score": "25.50",
+          "confidence_score": "7.50",
+          "hype_risk": "62.00",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-09-02T07:09:21Z",
+          "last_activity_at": "2026-09-02T07:09:21Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-09-02T07:09:21Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+      "name": "Affordable, attractive collectible model kits",
+      "one_line_thesis": "Người bình luận cho biết họ đã mua sản phẩm Blokees vì giá rẻ và thiết kế đẹp.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 0,
+        "supporting_signal_count": 0,
+        "distinct_video_count": 0,
+        "distinct_channel_count": 0,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+        "checks": {
+          "supporting_evidence": {
+            "status": "fail",
+            "message": "No active supporting signal exists.",
+            "supporting_metrics": {
+              "active_signal_count": 0
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Affordable, attractive collectible model kits"
+            }
+          },
+          "commercial_definition": {
+            "status": "fail",
+            "message": "1 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 1,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 0,
+              "distinct_channel_count": 0
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 0,
+          "distinct_video_count": 0,
+          "distinct_channel_count": 0,
+          "latest_score": "25.50",
+          "confidence_score": "7.50",
+          "hype_risk": "62.00",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-07-25T08:53:46Z",
+          "last_activity_at": "2026-07-25T08:53:46Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-07-25T08:53:46Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    },
+    {
+      "id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+      "name": "Robot dog launch-date and availability information",
+      "one_line_thesis": "The commenter is seeking the product's launch timing, indicating interest in obtaining it when available.",
+      "industry": null,
+      "customer_type": null,
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "evidence_summary": {
+        "active_signal_count": 0,
+        "supporting_signal_count": 0,
+        "distinct_video_count": 0,
+        "distinct_channel_count": 0,
+        "pain_signal_count": 0,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "semantic_warning_count": 1,
+      "readiness": {
+        "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+        "checks": {
+          "supporting_evidence": {
+            "status": "fail",
+            "message": "No active supporting signal exists.",
+            "supporting_metrics": {
+              "active_signal_count": 0
+            }
+          },
+          "scope_clear": {
+            "status": "pass",
+            "message": "Opportunity scope is specific and supported by descriptive fields.",
+            "supporting_metrics": {
+              "name": "Robot dog launch-date and availability information"
+            }
+          },
+          "commercial_definition": {
+            "status": "pass",
+            "message": "2 of customer, problem, and solution are populated.",
+            "supporting_metrics": {
+              "populated_fields": 2,
+              "required": 2
+            }
+          },
+          "duplicate_risk": {
+            "status": "pass",
+            "message": "No strong lexical duplicate was found.",
+            "supporting_metrics": {
+              "candidate_count": 0
+            }
+          },
+          "source_diversity": {
+            "status": "warning",
+            "message": "Evidence comes from fewer than two videos and channels.",
+            "supporting_metrics": {
+              "distinct_video_count": 0,
+              "distinct_channel_count": 0
+            }
+          },
+          "contradiction_quality": {
+            "status": "warning",
+            "message": "Contradicting or unresolved linked signals require review.",
+            "supporting_metrics": {
+              "contradicting_active_signals": 0,
+              "unresolved_review_signals": 1
+            }
+          }
+        },
+        "overall": "not_ready",
+        "recommendation": "defer",
+        "metrics": {
+          "active_signal_count": 0,
+          "distinct_video_count": 0,
+          "distinct_channel_count": 0,
+          "latest_score": "25.50",
+          "confidence_score": "7.50",
+          "hype_risk": "62.00",
+          "momentum_7d": "50.00",
+          "first_detected_at": "2026-06-11T07:41:55Z",
+          "last_activity_at": "2026-06-11T07:41:55Z"
+        },
+        "duplicate_candidates": []
+      },
+      "activation_review": null,
+      "review_state": "none",
+      "last_activity_at": "2026-06-11T07:41:55Z",
+      "score_at": "2026-09-09T10:49:48.065201Z",
+      "trend_at": "2026-09-09T10:49:48.065201Z",
+      "score_freshness": "ready",
+      "trend_freshness": "ready"
+    }
+  ],
+  "total": 54,
+  "offset": 0,
+  "limit": 100,
+  "has_more": false,
+  "counts": {
+    "total": 54,
+    "ready": 20,
+    "needs_review": 0,
+    "not_ready": 34,
+    "under_review": 0,
+    "deferred": 0
+  }
+}

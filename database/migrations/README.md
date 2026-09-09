@@ -58,3 +58,6 @@ Foreign keys default to restrictive behavior for source and historical intellige
 - `0021_signal_semantic_guardrails.sql` adds Signal semantic validity and roles plus restrictive
   audit history and effective-Signal RLS. Apply once before updated API/workers, then explicitly run
   the bounded dry-run/apply and impact recomputation described in docs/signal-semantic-guardrails.md.
+
+- `0022_candidate_workspace_audit.sql`: admin-only field revisions and activation event history;
+  additive, no historical event fabrication or Opportunity status changes. Apply before TASK-044G API.

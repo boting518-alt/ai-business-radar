@@ -345,3 +345,16 @@ TASK-044F evidence/Signal items add actor_role and evidence_role (unknown when u
 feeds, evidence and counts require active/current semantic state. Admin review signal context adds
 semantic_status and guardrail_reason_code. Semantic-invalid approval returns the existing review
 conflict response. No new admin audit HTTP endpoint is introduced; repair uses the bounded CLI.
+
+## TASK-044G admin candidate workspace
+
+Admin-only endpoints: GET /api/v1/admin/opportunities/candidates (q, industry_code, customer_code,
+readiness, review_state, has_semantic_warnings, sort, offset, limit20/max100, locale); GET/PATCH
+/api/v1/admin/opportunities/candidates/{id}; GET .../{id}/evidence (offset, limit, locale, excluded).
+List returns items,total,offset,limit,has_more,counts; list readiness omits full checks/duplicates.
+Detail contains summary, canonical opportunity, revisions, review_history, legacy_reviews,
+translation_state and history_has_more. A post-decision dossier stays admin-readable; PATCH only
+accepts candidates and requires expected_updated_at. Validation422, stale/ineligible edit409,
+missing404, non-admin403. Public endpoints still hide candidates. Submission reuses the existing
+/admin/opportunities/{id}/activation-review endpoint, now recording the submitting actor. Claim
+and final decisions reuse /admin/reviews APIs. Evidence adds signal_status and semantic_status.

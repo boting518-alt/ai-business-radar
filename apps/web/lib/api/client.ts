@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, DiscoveryRunPage, DiscoverySystemStatus, DiscoveryTopic, DiscoveryTopicRun, EvidencePage, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
+import type { CandidatePage, CandidateDetail, ActivationReadiness, CurrentUser, DiscoveryRunPage, DiscoverySystemStatus, DiscoveryTopic, DiscoveryTopicRun, EvidencePage, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -30,6 +30,12 @@ export class ApiClient {
   getWatchlist=()=>this.request<WatchlistResult>("/api/v1/watchlist");
   addToWatchlist=(id:string)=>this.request<WatchlistMembershipResult>(`/api/v1/watchlist/items/${encodeURIComponent(id)}`,{method:"POST"});
   removeFromWatchlist=(id:string)=>this.request<WatchlistMembershipResult>(`/api/v1/watchlist/items/${encodeURIComponent(id)}`,{method:"DELETE"});
+  listCandidates=(query:Query={})=>this.request<CandidatePage>(this.path("/api/v1/admin/opportunities/candidates",query));
+  getCandidate=(id:string,query:Query={})=>this.request<CandidateDetail>(this.path(`/api/v1/admin/opportunities/candidates/${encodeURIComponent(id)}`,query));
+  editCandidate=(id:string,body:unknown)=>this.request<CandidateDetail>(`/api/v1/admin/opportunities/candidates/${encodeURIComponent(id)}`,{method:"PATCH",body:JSON.stringify(body)});
+  getCandidateEvidence=(id:string,query:Query={})=>this.request<EvidencePage>(this.path(`/api/v1/admin/opportunities/candidates/${encodeURIComponent(id)}/evidence`,query));
+  submitCandidate=(id:string)=>this.request<{review_task_id:string;created:boolean;readiness:ActivationReadiness}>(`/api/v1/admin/opportunities/${encodeURIComponent(id)}/activation-review`,{method:"POST"});
+  listTaxonomy=(kind:"industry"|"customer",locale:string)=>this.request<Array<{code:string;label:string}>>(this.path(`/api/v1/admin/taxonomy/${kind}`,{locale}));
   listReviews=(query:Query={})=>this.request<ReviewListResult>(this.path("/api/v1/admin/reviews",query));
   getReview=(id:string)=>this.request<ReviewTask>(`/api/v1/admin/reviews/${encodeURIComponent(id)}`);
   claimReview=(id:string)=>this.request<ReviewWorkflowResult>(`/api/v1/admin/reviews/${encodeURIComponent(id)}/claim`,{method:"POST"});

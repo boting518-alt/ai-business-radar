@@ -1,0 +1,68 @@
+{
+  "review_task_id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+  "created": false,
+  "readiness": {
+    "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "checks": {
+      "supporting_evidence": {
+        "status": "pass",
+        "message": "Active supporting evidence exists.",
+        "supporting_metrics": {
+          "active_signal_count": 12
+        }
+      },
+      "scope_clear": {
+        "status": "pass",
+        "message": "Opportunity scope is specific and supported by descriptive fields.",
+        "supporting_metrics": {
+          "name": "Roller-skating duck robot companion"
+        }
+      },
+      "commercial_definition": {
+        "status": "pass",
+        "message": "2 of customer, problem, and solution are populated.",
+        "supporting_metrics": {
+          "populated_fields": 2,
+          "required": 2
+        }
+      },
+      "duplicate_risk": {
+        "status": "pass",
+        "message": "No strong lexical duplicate was found.",
+        "supporting_metrics": {
+          "candidate_count": 0
+        }
+      },
+      "source_diversity": {
+        "status": "pass",
+        "message": "Evidence spans multiple source videos or channels.",
+        "supporting_metrics": {
+          "distinct_video_count": 5,
+          "distinct_channel_count": 5
+        }
+      },
+      "contradiction_quality": {
+        "status": "warning",
+        "message": "Contradicting or unresolved linked signals require review.",
+        "supporting_metrics": {
+          "contradicting_active_signals": 0,
+          "unresolved_review_signals": 1
+        }
+      }
+    },
+    "overall": "ready",
+    "recommendation": "publish",
+    "metrics": {
+      "active_signal_count": 12,
+      "distinct_video_count": 5,
+      "distinct_channel_count": 5,
+      "latest_score": "49.16",
+      "confidence_score": "72.48",
+      "hype_risk": "67.78",
+      "momentum_7d": "92.50",
+      "first_detected_at": "2026-09-07T15:10:13Z",
+      "last_activity_at": "2026-09-08T07:00:44Z"
+    },
+    "duplicate_candidates": []
+  }
+}

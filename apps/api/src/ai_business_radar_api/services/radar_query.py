@@ -193,6 +193,8 @@ class OpportunityDetail(BaseModel):
 
 
 class EvidenceItem(SourceProvenance):
+    signal_status: str | None = None
+    semantic_status: str | None = None
     evidence_id: UUID
     evidence_kind: Literal["linked_signal", "explicit_signal", "explicit"]
     signal_id: UUID | None

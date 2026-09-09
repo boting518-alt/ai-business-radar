@@ -1,0 +1,169 @@
+{
+  "summary": {
+    "id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+    "name": "TASK-044G Local Fixture Publish — orbital sample tracking",
+    "one_line_thesis": "DISPOSABLE LOCAL TEST ONLY: track synthetic orbital sample custody.",
+    "industry": null,
+    "customer_type": "Synthetic orbital laboratories",
+    "industry_taxonomy": null,
+    "customer_taxonomy": null,
+    "evidence_summary": {
+      "active_signal_count": 2,
+      "supporting_signal_count": 2,
+      "distinct_video_count": 2,
+      "distinct_channel_count": 2,
+      "pain_signal_count": 2,
+      "demand_signal_count": 0,
+      "purchase_intent_signal_count": 0,
+      "revenue_signal_count": 0
+    },
+    "semantic_warning_count": 0,
+    "readiness": {
+      "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "checks": {
+        "supporting_evidence": {
+          "status": "pass",
+          "message": "Active supporting evidence exists.",
+          "supporting_metrics": {
+            "active_signal_count": 2
+          }
+        },
+        "scope_clear": {
+          "status": "pass",
+          "message": "Opportunity scope is specific and supported by descriptive fields.",
+          "supporting_metrics": {
+            "name": "TASK-044G Local Fixture Publish — orbital sample tracking"
+          }
+        },
+        "commercial_definition": {
+          "status": "pass",
+          "message": "3 of customer, problem, and solution are populated.",
+          "supporting_metrics": {
+            "populated_fields": 3,
+            "required": 2
+          }
+        },
+        "duplicate_risk": {
+          "status": "pass",
+          "message": "No strong lexical duplicate was found.",
+          "supporting_metrics": {
+            "candidate_count": 0
+          }
+        },
+        "source_diversity": {
+          "status": "pass",
+          "message": "Evidence spans multiple source videos or channels.",
+          "supporting_metrics": {
+            "distinct_video_count": 2,
+            "distinct_channel_count": 2
+          }
+        },
+        "contradiction_quality": {
+          "status": "warning",
+          "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+          "supporting_metrics": {
+            "contradicting_active_signals": 0,
+            "unresolved_review_signals": 0
+          }
+        }
+      },
+      "overall": "not_ready",
+      "recommendation": "defer",
+      "metrics": {
+        "active_signal_count": 2,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "latest_score": null,
+        "confidence_score": null,
+        "hype_risk": null,
+        "momentum_7d": null,
+        "first_detected_at": "2026-09-09T11:25:01.278389Z",
+        "last_activity_at": "2026-09-09T11:25:01.278389Z"
+      },
+      "duplicate_candidates": []
+    },
+    "activation_review": null,
+    "review_state": "none",
+    "last_activity_at": "2026-09-09T11:25:01.278389Z",
+    "score_at": null,
+    "trend_at": null,
+    "score_freshness": "pending",
+    "trend_freshness": "pending"
+  },
+  "opportunity": {
+    "id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+    "slug": "task-044g-local-fixture-publish",
+    "name": "TASK-044G Local Fixture Publish — orbital sample tracking",
+    "one_line_thesis": "DISPOSABLE LOCAL TEST ONLY: track synthetic orbital sample custody.",
+    "industry": null,
+    "sub_industry": null,
+    "customer_type": "Synthetic orbital laboratories",
+    "problem": "TEST ONLY: manual sample handoffs",
+    "solution": "TEST ONLY: custody tracking assistant",
+    "business_model": "Test subscription",
+    "primary_technology": null,
+    "typical_price_min": null,
+    "typical_price_max": null,
+    "typical_price_currency": null,
+    "typical_price_period": null,
+    "market_stage": "unknown",
+    "competition_level": null,
+    "build_difficulty": null,
+    "sales_difficulty": null,
+    "status": "active",
+    "first_detected_at": "2026-09-09T11:25:01.278389Z",
+    "last_activity_at": "2026-09-09T11:25:01.278389Z",
+    "created_at": "2026-09-09T11:25:01.278389Z",
+    "updated_at": "2026-09-09T11:35:22.433332Z"
+  },
+  "revisions": [],
+  "review_history": [
+    {
+      "id": "961548f4-06dd-481f-a6bb-fc1b1d620f6d",
+      "review_task_id": "184e913f-c167-422d-a8a6-c47d10247312",
+      "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "published",
+      "previous_status": "in_review",
+      "status": "resolved",
+      "notes": "TASK-044G 本地一次性夹具发布验收；全部证据均明确标记为 synthetic，不代表真实研究结论。验收后归档。",
+      "created_at": "2026-09-09T11:35:22.433332Z"
+    },
+    {
+      "id": "7917fd5f-da33-4794-a438-983c0ba44345",
+      "review_task_id": "184e913f-c167-422d-a8a6-c47d10247312",
+      "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "claimed",
+      "previous_status": "pending",
+      "status": "in_review",
+      "notes": null,
+      "created_at": "2026-09-09T11:34:54.372725Z"
+    },
+    {
+      "id": "d159a44a-3c67-4dee-a39c-4bb654eaa739",
+      "review_task_id": "184e913f-c167-422d-a8a6-c47d10247312",
+      "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "submitted",
+      "previous_status": null,
+      "status": "pending",
+      "notes": null,
+      "created_at": "2026-09-09T11:34:42.861164Z"
+    }
+  ],
+  "legacy_reviews": [
+    {
+      "id": "184e913f-c167-422d-a8a6-c47d10247312",
+      "status": "resolved",
+      "assigned_to": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "created_at": "2026-09-09T11:34:42.861164Z",
+      "updated_at": "2026-09-09T11:35:22.433332Z",
+      "resolved_at": "2026-09-09T11:35:22.433332Z",
+      "decision": "approve",
+      "decision_notes": "TASK-044G 本地一次性夹具发布验收；全部证据均明确标记为 synthetic，不代表真实研究结论。验收后归档。"
+    }
+  ],
+  "translation_state": "pending",
+  "history_has_more": false
+}

@@ -166,3 +166,12 @@ SourceTrace is shared with Signals for safe external links, parent-video labels,
 and incomplete-source fallback. Canonical extracted English and stored zh-CN projections remain
 separate from RAW text. Batch localization and provenance joins happen in the API, without per-card
 requests. Supporting vs contradicting/context links keep their stored meanings.
+
+## TASK-044G candidate workspace
+
+The existing protected admin review area now includes a paginated candidate list and dossier.
+ApiClient owns candidate CRUD/read evidence and existing activation submission calls; review claim
+and decisions reuse the current methods. The UI shows effective and excluded evidence separately,
+field revisions, activation events, backend readiness checks, duplicate links and post-publish
+ordinary-API confirmation. Fixed labels support zh-CN/en-US, with stored intelligence fallback.
+See candidate-opportunity-workspace.md for curation scope and freshness limitations.

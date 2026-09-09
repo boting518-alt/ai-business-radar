@@ -51,11 +51,11 @@ async def activation_readiness(
 @router.post("/{opportunity_id}/activation-review", response_model=ActivationReviewResult)
 async def create_activation_review(
     opportunity_id: UUID,
-    _: RequiredAdmin,
+    admin: RequiredAdmin,
     service: Annotated[OpportunityActivationReadinessService, Depends(get_activation_service)],
 ) -> ActivationReviewResult:
     try:
-        return await service.create_review(opportunity_id)
+        return await service.create_review(opportunity_id, actor_id=admin.user_profile_id)
     except Exception as error:
         _raise_error(error)
         raise

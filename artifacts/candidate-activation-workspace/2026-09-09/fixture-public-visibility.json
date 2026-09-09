@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "slug": "task-044g-local-fixture-publish",
+      "name": "TASK-044G Local Fixture Publish — orbital sample tracking",
+      "one_line_thesis": "DISPOSABLE LOCAL TEST ONLY: track synthetic orbital sample custody.",
+      "industry": null,
+      "sub_industry": null,
+      "customer_type": "Synthetic orbital laboratories",
+      "industry_taxonomy": null,
+      "customer_taxonomy": null,
+      "business_model": "Test subscription",
+      "market_stage": "unknown",
+      "competition_level": null,
+      "build_difficulty": null,
+      "sales_difficulty": null,
+      "opportunity_score": null,
+      "confidence_score": null,
+      "hype_risk_score": null,
+      "trend": null,
+      "first_detected_at": "2026-09-09T11:25:01.278389Z",
+      "last_activity_at": "2026-09-09T11:25:01.278389Z",
+      "evidence_summary": {
+        "active_signal_count": 2,
+        "supporting_signal_count": 2,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "pain_signal_count": 2,
+        "demand_signal_count": 0,
+        "purchase_intent_signal_count": 0,
+        "revenue_signal_count": 0
+      },
+      "watchlisted": false
+    }
+  ],
+  "total": 1,
+  "page": 1,
+  "page_size": 20,
+  "total_pages": 1
+}

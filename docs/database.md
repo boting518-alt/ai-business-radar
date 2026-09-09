@@ -538,3 +538,11 @@ Migration 0021 adds checked semantic validity/role fields and superseded_by to S
 admin-readable signal_semantic_audits append-only application history. Active product evidence now
 requires current semantic validity. Legacy defaults are compatible and are not proof of a completed
 audit. Signal source/type/claim/extraction and old links remain unchanged. See signal-semantic-guardrails.md.
+
+## TASK-044G human curation history
+
+Migration0022 adds opportunity_revisions (actor/time/field/old/new/note) and activation_review_events
+(submit/claim/defer/publish/invalid transitions and notes). Both retain restrictive foreign keys,
+admin-only read RLS, and application-owned append-only mutations in the parent transaction.
+Historical task state is not backfilled into fabricated events. No source/extraction/score schema
+or public Opportunity visibility predicate changes.

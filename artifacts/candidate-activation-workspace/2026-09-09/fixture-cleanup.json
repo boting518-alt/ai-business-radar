@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-09T11:44:46.499967+00:00",
+  "items": [
+    {
+      "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+      "previous_status": "active",
+      "status": "archived",
+      "signal_ids": [
+        "088f743e-1d36-4784-959e-93c3228a95ba",
+        "abf26af3-416b-46a3-8567-791157228bea"
+      ],
+      "signal_status": "ignored",
+      "history": "retained",
+      "reason": "Disposable TASK-044G local validation fixture cleanup"
+    },
+    {
+      "opportunity_id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+      "previous_status": "rejected",
+      "status": "archived",
+      "signal_ids": [
+        "9b192438-cdb6-49d2-978a-c9f0786981d6",
+        "ed007170-eb00-46fd-898b-2e61dc4860e2"
+      ],
+      "signal_status": "ignored",
+      "history": "retained",
+      "reason": "Disposable TASK-044G local validation fixture cleanup"
+    }
+  ]
+}

@@ -57,3 +57,12 @@ Schedulers, workers, AI output, readiness recommendations, and score thresholds 
 ## Known limitations
 
 Duplicate detection is bounded lexical retrieval rather than semantic embeddings. Contradiction coverage is incomplete and conservative. Source diversity counts videos and channels, never author identity. Claim-level quality remains a human judgment, and v0.1 retains current defer notes rather than complete claim/defer event history.
+
+## TASK-044G workspace and event audit
+
+The admin candidate workspace now supports inspect/edit/submit/claim/Publish/Defer/Invalid.
+Readiness has one shared batch/single composition and excludes non-current semantic evidence;
+semantic-under-review links also raise quality warnings. Existing state and publication thresholds
+are unchanged. List responses contain summary readiness; dossier and review reads show full checks.
+Migration0022 supersedes the previous claim/defer-history limitation with append-only activation
+review events. Older task fields remain legacy snapshots; see candidate-opportunity-workspace.md.

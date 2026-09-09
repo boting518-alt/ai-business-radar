@@ -228,3 +228,32 @@ class WatchlistItem(Base):
     watchlist_id: Mapped[UUID] = mapped_column(ForeignKey("watchlists.id"))
     opportunity_id: Mapped[UUID] = mapped_column(ForeignKey("opportunities.id"))
     added_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class OpportunityRevision(Base):
+    __tablename__ = "opportunity_revisions"
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    opportunity_id: Mapped[UUID] = mapped_column(ForeignKey("opportunities.id"))
+    changed_by: Mapped[UUID] = mapped_column(ForeignKey("user_profiles.id"))
+    changed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    field: Mapped[str] = mapped_column(Text)
+    old_value: Mapped[Any | None] = mapped_column(JSONB)
+    new_value: Mapped[Any | None] = mapped_column(JSONB)
+    note: Mapped[str | None] = mapped_column(Text)
+
+
+class ActivationReviewEvent(Base):
+    __tablename__ = "activation_review_events"
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    review_task_id: Mapped[UUID] = mapped_column(ForeignKey("review_tasks.id"))
+    opportunity_id: Mapped[UUID] = mapped_column(ForeignKey("opportunities.id"))
+    actor_id: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
+    event_type: Mapped[str] = mapped_column(Text)
+    previous_status: Mapped[str | None] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(Text)
+    notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))

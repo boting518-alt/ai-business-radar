@@ -1,0 +1,57 @@
+{
+  "id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+  "summary": {
+    "active_signal_count": 38,
+    "supporting_signal_count": 38,
+    "distinct_video_count": 4,
+    "distinct_channel_count": 4,
+    "pain_signal_count": 10,
+    "demand_signal_count": 0,
+    "purchase_intent_signal_count": 0,
+    "revenue_signal_count": 0
+  },
+  "scores": [
+    {
+      "calculated_at": "2026-09-05T15:00:00Z",
+      "scoring_version": "score-v001",
+      "trend_velocity_score": "50.00",
+      "demand_evidence_score": "18.01",
+      "revenue_evidence_score": "16.15",
+      "pain_severity_score": "34.55",
+      "competition_white_space_score": "55.00",
+      "build_feasibility_score": "60.00",
+      "distribution_ease_score": "50.00",
+      "opportunity_score": "37.71",
+      "confidence_score": "68.35",
+      "hype_risk_score": "54.49"
+    },
+    {
+      "calculated_at": "2026-09-07T17:00:00Z",
+      "scoring_version": "score-v001",
+      "trend_velocity_score": "50.00",
+      "demand_evidence_score": "32.85",
+      "revenue_evidence_score": "24.46",
+      "pain_severity_score": "53.33",
+      "competition_white_space_score": "55.00",
+      "build_feasibility_score": "60.00",
+      "distribution_ease_score": "50.00",
+      "opportunity_score": "44.74",
+      "confidence_score": "76.11",
+      "hype_risk_score": "50.04"
+    },
+    {
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "trend_velocity_score": "92.50",
+      "demand_evidence_score": "16.79",
+      "revenue_evidence_score": "20.61",
+      "pain_severity_score": "47.43",
+      "competition_white_space_score": "55.00",
+      "build_feasibility_score": "60.00",
+      "distribution_ease_score": "50.00",
+      "opportunity_score": "48.56",
+      "confidence_score": "75.86",
+      "hype_risk_score": "64.05"
+    }
+  ]
+}

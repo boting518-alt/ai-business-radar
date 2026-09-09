@@ -1,0 +1,176 @@
+{
+  "summary": {
+    "id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+    "name": "TASK-044G Local Fixture Invalid — orbital sample tracking",
+    "one_line_thesis": "DISPOSABLE LOCAL TEST ONLY: track synthetic orbital sample custody.",
+    "industry": null,
+    "customer_type": "Synthetic orbital laboratories",
+    "industry_taxonomy": null,
+    "customer_taxonomy": null,
+    "evidence_summary": {
+      "active_signal_count": 2,
+      "supporting_signal_count": 2,
+      "distinct_video_count": 2,
+      "distinct_channel_count": 2,
+      "pain_signal_count": 2,
+      "demand_signal_count": 0,
+      "purchase_intent_signal_count": 0,
+      "revenue_signal_count": 0
+    },
+    "semantic_warning_count": 0,
+    "readiness": {
+      "opportunity_id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+      "checks": {
+        "supporting_evidence": {
+          "status": "pass",
+          "message": "Active supporting evidence exists.",
+          "supporting_metrics": {
+            "active_signal_count": 2
+          }
+        },
+        "scope_clear": {
+          "status": "pass",
+          "message": "Opportunity scope is specific and supported by descriptive fields.",
+          "supporting_metrics": {
+            "name": "TASK-044G Local Fixture Invalid — orbital sample tracking"
+          }
+        },
+        "commercial_definition": {
+          "status": "pass",
+          "message": "3 of customer, problem, and solution are populated.",
+          "supporting_metrics": {
+            "populated_fields": 3,
+            "required": 2
+          }
+        },
+        "duplicate_risk": {
+          "status": "warning",
+          "message": "A possible near duplicate needs human review.",
+          "supporting_metrics": {
+            "candidate_count": 1
+          }
+        },
+        "source_diversity": {
+          "status": "pass",
+          "message": "Evidence spans multiple source videos or channels.",
+          "supporting_metrics": {
+            "distinct_video_count": 2,
+            "distinct_channel_count": 2
+          }
+        },
+        "contradiction_quality": {
+          "status": "warning",
+          "message": "No contradiction is recorded; automated contradiction coverage is incomplete.",
+          "supporting_metrics": {
+            "contradicting_active_signals": 0,
+            "unresolved_review_signals": 0
+          }
+        }
+      },
+      "overall": "not_ready",
+      "recommendation": "defer",
+      "metrics": {
+        "active_signal_count": 2,
+        "distinct_video_count": 2,
+        "distinct_channel_count": 2,
+        "latest_score": null,
+        "confidence_score": null,
+        "hype_risk": null,
+        "momentum_7d": null,
+        "first_detected_at": "2026-09-09T11:25:01.278389Z",
+        "last_activity_at": "2026-09-09T11:25:01.278389Z"
+      },
+      "duplicate_candidates": [
+        {
+          "opportunity_id": "4a0de110-a892-4bf7-958e-72d71acf5d31",
+          "name": "TASK-044G Local Fixture Publish — orbital sample tracking",
+          "status": "active",
+          "overlap": 0.88
+        }
+      ]
+    },
+    "activation_review": null,
+    "review_state": "none",
+    "last_activity_at": "2026-09-09T11:25:01.278389Z",
+    "score_at": null,
+    "trend_at": null,
+    "score_freshness": "pending",
+    "trend_freshness": "pending"
+  },
+  "opportunity": {
+    "id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+    "slug": "task-044g-local-fixture-invalid",
+    "name": "TASK-044G Local Fixture Invalid — orbital sample tracking",
+    "one_line_thesis": "DISPOSABLE LOCAL TEST ONLY: track synthetic orbital sample custody.",
+    "industry": null,
+    "sub_industry": null,
+    "customer_type": "Synthetic orbital laboratories",
+    "problem": "TEST ONLY: manual sample handoffs",
+    "solution": "TEST ONLY: custody tracking assistant",
+    "business_model": "Test subscription",
+    "primary_technology": null,
+    "typical_price_min": null,
+    "typical_price_max": null,
+    "typical_price_currency": null,
+    "typical_price_period": null,
+    "market_stage": "unknown",
+    "competition_level": null,
+    "build_difficulty": null,
+    "sales_difficulty": null,
+    "status": "rejected",
+    "first_detected_at": "2026-09-09T11:25:01.278389Z",
+    "last_activity_at": "2026-09-09T11:25:01.278389Z",
+    "created_at": "2026-09-09T11:25:01.278389Z",
+    "updated_at": "2026-09-09T11:43:40.914613Z"
+  },
+  "revisions": [],
+  "review_history": [
+    {
+      "id": "59c8ca95-dd46-4dbd-8ba9-59f139cc8f0d",
+      "review_task_id": "e2a70a68-d5a5-4d78-8034-ba334a4032a5",
+      "opportunity_id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "invalid",
+      "previous_status": "in_review",
+      "status": "resolved",
+      "notes": "TASK-044G 一次性本地夹具：验证 Invalid 保留审计且不向普通用户公开。此记录不是有效研究机会，验收后归档。",
+      "created_at": "2026-09-09T11:43:40.914613Z"
+    },
+    {
+      "id": "fe9a19ef-9de4-4f7e-8e57-b12b6a8918eb",
+      "review_task_id": "e2a70a68-d5a5-4d78-8034-ba334a4032a5",
+      "opportunity_id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "claimed",
+      "previous_status": "pending",
+      "status": "in_review",
+      "notes": null,
+      "created_at": "2026-09-09T11:43:18.116983Z"
+    },
+    {
+      "id": "fc992dd8-fc72-49eb-8f1a-ac8c26468e88",
+      "review_task_id": "e2a70a68-d5a5-4d78-8034-ba334a4032a5",
+      "opportunity_id": "334d1e4f-0e58-4488-a4ac-b5f053c25fcc",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "submitted",
+      "previous_status": null,
+      "status": "pending",
+      "notes": null,
+      "created_at": "2026-09-09T11:42:47.164840Z"
+    }
+  ],
+  "legacy_reviews": [
+    {
+      "id": "e2a70a68-d5a5-4d78-8034-ba334a4032a5",
+      "status": "resolved",
+      "assigned_to": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "created_at": "2026-09-09T11:42:47.164840Z",
+      "updated_at": "2026-09-09T11:43:40.914613Z",
+      "resolved_at": "2026-09-09T11:43:40.914613Z",
+      "decision": "reject",
+      "decision_notes": "TASK-044G 一次性本地夹具：验证 Invalid 保留审计且不向普通用户公开。此记录不是有效研究机会，验收后归档。"
+    }
+  ],
+  "translation_state": "pending",
+  "history_has_more": false
+}

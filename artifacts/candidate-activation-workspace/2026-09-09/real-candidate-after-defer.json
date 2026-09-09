@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "name": "Roller-skating duck robot companion",
+    "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+    "industry": "consumer robotics",
+    "customer_type": "Adults seeking a customizable companion and emotional support device",
+    "industry_taxonomy": null,
+    "customer_taxonomy": null,
+    "evidence_summary": {
+      "active_signal_count": 12,
+      "supporting_signal_count": 12,
+      "distinct_video_count": 5,
+      "distinct_channel_count": 5,
+      "pain_signal_count": 0,
+      "demand_signal_count": 0,
+      "purchase_intent_signal_count": 0,
+      "revenue_signal_count": 1
+    },
+    "semantic_warning_count": 1,
+    "readiness": {
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "checks": {
+        "supporting_evidence": {
+          "status": "pass",
+          "message": "Active supporting evidence exists.",
+          "supporting_metrics": {
+            "active_signal_count": 12
+          }
+        },
+        "scope_clear": {
+          "status": "pass",
+          "message": "Opportunity scope is specific and supported by descriptive fields.",
+          "supporting_metrics": {
+            "name": "Roller-skating duck robot companion"
+          }
+        },
+        "commercial_definition": {
+          "status": "pass",
+          "message": "2 of customer, problem, and solution are populated.",
+          "supporting_metrics": {
+            "populated_fields": 2,
+            "required": 2
+          }
+        },
+        "duplicate_risk": {
+          "status": "pass",
+          "message": "No strong lexical duplicate was found.",
+          "supporting_metrics": {
+            "candidate_count": 0
+          }
+        },
+        "source_diversity": {
+          "status": "pass",
+          "message": "Evidence spans multiple source videos or channels.",
+          "supporting_metrics": {
+            "distinct_video_count": 5,
+            "distinct_channel_count": 5
+          }
+        },
+        "contradiction_quality": {
+          "status": "warning",
+          "message": "Contradicting or unresolved linked signals require review.",
+          "supporting_metrics": {
+            "contradicting_active_signals": 0,
+            "unresolved_review_signals": 1
+          }
+        }
+      },
+      "overall": "ready",
+      "recommendation": "publish",
+      "metrics": {
+        "active_signal_count": 12,
+        "distinct_video_count": 5,
+        "distinct_channel_count": 5,
+        "latest_score": "49.16",
+        "confidence_score": "72.48",
+        "hype_risk": "67.78",
+        "momentum_7d": "92.50",
+        "first_detected_at": "2026-09-07T15:10:13Z",
+        "last_activity_at": "2026-09-08T07:00:44Z"
+      },
+      "duplicate_candidates": []
+    },
+    "activation_review": {
+      "id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+      "status": "pending",
+      "assigned_to": null,
+      "created_at": "2026-09-09T11:30:13.558815Z",
+      "decision": "defer",
+      "decision_notes": "TASK-044G 本地验收：暂缓发布。需核验教师使用 AI 做作业的引用与该机器人机会的相关性，并补充明确的客户问题；保留候选与现有证据，不将营销声明视为已验证需求。"
+    },
+    "review_state": "deferred",
+    "last_activity_at": "2026-09-08T07:00:44Z",
+    "score_at": "2026-09-09T10:49:48.065201Z",
+    "trend_at": "2026-09-09T10:49:48.065201Z",
+    "score_freshness": "stale",
+    "trend_freshness": "ready"
+  },
+  "opportunity": {
+    "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "slug": "roller-skating-duck-robot-companion",
+    "name": "Roller-skating duck robot companion",
+    "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+    "industry": "consumer robotics",
+    "sub_industry": null,
+    "customer_type": "Adults seeking a customizable companion and emotional support device",
+    "problem": null,
+    "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+    "business_model": null,
+    "primary_technology": "robotics",
+    "typical_price_min": null,
+    "typical_price_max": null,
+    "typical_price_currency": null,
+    "typical_price_period": null,
+    "market_stage": "unknown",
+    "competition_level": null,
+    "build_difficulty": null,
+    "sales_difficulty": null,
+    "status": "candidate",
+    "first_detected_at": "2026-09-07T15:10:13Z",
+    "last_activity_at": "2026-09-08T07:00:44Z",
+    "created_at": "2026-09-08T17:35:16.006003Z",
+    "updated_at": "2026-09-09T11:28:51.569844Z"
+  },
+  "revisions": [
+    {
+      "id": "dff9891a-c7bd-4836-85bc-50f59b7b2770",
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "changed_by": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "changed_at": "2026-09-09T11:28:51.569844Z",
+      "field": "one_line_thesis",
+      "old_value": "Micro Duck is presented as a robotic roller-skating duck product.",
+      "new_value": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+      "note": "TASK-044G 本地验收：根据现有 solution 补充 companion 定位，保留 presented as 声明限定，不新增需求结论。"
+    }
+  ],
+  "review_history": [
+    {
+      "id": "57057903-e797-4779-99fb-9e17dbf3ca0f",
+      "review_task_id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "deferred",
+      "previous_status": "in_review",
+      "status": "pending",
+      "notes": "TASK-044G 本地验收：暂缓发布。需核验教师使用 AI 做作业的引用与该机器人机会的相关性，并补充明确的客户问题；保留候选与现有证据，不将营销声明视为已验证需求。",
+      "created_at": "2026-09-09T11:33:36.383586Z"
+    },
+    {
+      "id": "4da9a4db-e263-4f52-85a3-edba724e654d",
+      "review_task_id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "claimed",
+      "previous_status": "pending",
+      "status": "in_review",
+      "notes": null,
+      "created_at": "2026-09-09T11:33:18.868591Z"
+    },
+    {
+      "id": "4cbfae4b-b2f3-4735-a8ba-52677069aaa5",
+      "review_task_id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "actor_id": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "event_type": "submitted",
+      "previous_status": null,
+      "status": "pending",
+      "notes": null,
+      "created_at": "2026-09-09T11:30:13.558815Z"
+    }
+  ],
+  "legacy_reviews": [
+    {
+      "id": "cf89b31b-18bf-4d22-b90c-bf04b5f453e9",
+      "status": "pending",
+      "assigned_to": null,
+      "created_at": "2026-09-09T11:30:13.558815Z",
+      "updated_at": "2026-09-09T11:33:36.383586Z",
+      "resolved_at": null,
+      "decision": "defer",
+      "decision_notes": "TASK-044G 本地验收：暂缓发布。需核验教师使用 AI 做作业的引用与该机器人机会的相关性，并补充明确的客户问题；保留候选与现有证据，不将营销声明视为已验证需求。"
+    }
+  ],
+  "translation_state": "pending",
+  "history_has_more": false
+}

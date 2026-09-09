@@ -9,14 +9,14 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from ..infrastructure.database.models import (
+    ActivationReviewEvent,
     Comment,
     Opportunity,
     OpportunitySignalLink,
     Signal,
-    TrendSnapshot,
     Video,
 )
-from ..infrastructure.database.repositories import OpportunityRepository, ReviewTaskRepository
+from ..infrastructure.database.repositories import ReviewTaskRepository
 from .translation_orchestration import TranslationCoverageReconciliationService
 
 GENERIC_NAMES = {
@@ -103,67 +103,89 @@ class OpportunityActivationReadinessService:
     async def assess_in_session(
         self, session: AsyncSession, opportunity: Opportunity
     ) -> OpportunityActivationReadiness:
-        source_rows = (
+        return (await self.assess_many(session, [opportunity]))[opportunity.id]
+
+    async def assess_many(self, session, opportunities):
+        """Fixed-query batch; the same checks also run under the publication lock."""
+        from ..infrastructure.database.repositories.radar_queries import RadarQueryRepository
+
+        ids = [item.id for item in opportunities]
+        if not ids:
+            return {}
+        rows = (
             await session.execute(
-                select(Signal.id, Signal.video_id, Comment.video_id, Video.channel_id)
-                .join(
-                    OpportunitySignalLink,
-                    OpportunitySignalLink.signal_id == Signal.id,
+                select(
+                    OpportunitySignalLink.opportunity_id,
+                    OpportunitySignalLink.relationship_type,
+                    Signal.status,
+                    Signal.semantic_status,
+                    Signal.id,
+                    Signal.video_id,
+                    Comment.video_id,
+                    Video.channel_id,
                 )
+                .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
                 .outerjoin(Comment, Signal.comment_id == Comment.id)
                 .outerjoin(Video, Video.id == func.coalesce(Signal.video_id, Comment.video_id))
-                .where(
-                    OpportunitySignalLink.opportunity_id == opportunity.id,
-                    OpportunitySignalLink.relationship_type == "supporting",
-                    (Signal.status == "active") & (Signal.semantic_status == "current"),
-                )
+                .where(OpportunitySignalLink.opportunity_id.in_(ids))
             )
         ).all()
+        grouped = {identity: [] for identity in ids}
+        for row in rows:
+            grouped[row[0]].append(row)
+        repo = RadarQueryRepository(session)
+        scores = await repo.latest_scores(ids)
+        trends = await repo.latest_trends(ids, "7d")
+        pool = list(
+            await session.scalars(
+                select(Opportunity)
+                .where(Opportunity.status.in_(("candidate", "active", "review")))
+                .order_by(Opportunity.last_activity_at.desc(), Opportunity.id)
+            )
+        )
+        result = {}
+        for opportunity in opportunities:
+            linked = grouped[opportunity.id]
+            supporting = [
+                r for r in linked if r[1] == "supporting" and r[2] == "active" and r[3] == "current"
+            ]
+            result[opportunity.id] = self._compose(
+                opportunity,
+                supporting,
+                sum(
+                    r[1] == "contradicting" and r[2] == "active" and r[3] == "current"
+                    for r in linked
+                ),
+                sum(
+                    (r[2] == "review" and r[3] == "current")
+                    or (r[2] in {"active", "review"} and r[3] == "under_review")
+                    for r in linked
+                ),
+                self._duplicate_pool(opportunity, pool),
+                scores.get(opportunity.id),
+                trends.get(opportunity.id),
+            )
+        return result
+
+    def _compose(
+        self,
+        opportunity,
+        source_rows,
+        contradicting_count,
+        unresolved_review_count,
+        duplicate_candidates,
+        score,
+        trend,
+    ):
         active_signal_count = len(source_rows)
-        video_ids = {row[1] or row[2] for row in source_rows if row[1] or row[2]}
-        channel_ids = {row[3] for row in source_rows if row[3]}
+        video_ids = {row[5] or row[6] for row in source_rows if row[5] or row[6]}
+        channel_ids = {row[7] for row in source_rows if row[7]}
         commercial_count = sum(
             bool(value and value.strip())
             for value in (opportunity.customer_type, opportunity.problem, opportunity.solution)
         )
-        duplicate_candidates = await self._duplicates(session, opportunity)
         exact_duplicate = any(item.overlap == 1 for item in duplicate_candidates)
         near_duplicate = bool(duplicate_candidates)
-        contradicting_count = (
-            await session.scalar(
-                select(func.count())
-                .select_from(OpportunitySignalLink)
-                .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
-                .where(
-                    OpportunitySignalLink.opportunity_id == opportunity.id,
-                    OpportunitySignalLink.relationship_type == "contradicting",
-                    (Signal.status == "active") & (Signal.semantic_status == "current"),
-                )
-            )
-            or 0
-        )
-        unresolved_review_count = (
-            await session.scalar(
-                select(func.count())
-                .select_from(OpportunitySignalLink)
-                .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
-                .where(
-                    OpportunitySignalLink.opportunity_id == opportunity.id,
-                    (Signal.status == "review") & (Signal.semantic_status == "current"),
-                )
-            )
-            or 0
-        )
-        score = await OpportunityRepository(session).get_latest_score(opportunity.id)
-        trend = await session.scalar(
-            select(TrendSnapshot)
-            .where(
-                TrendSnapshot.opportunity_id == opportunity.id,
-                TrendSnapshot.window_type == "7d",
-            )
-            .order_by(TrendSnapshot.period_end.desc())
-            .limit(1)
-        )
         scope_status, scope_message = self._scope(opportunity)
         checks = {
             "supporting_evidence": ReadinessCheck(
@@ -207,8 +229,7 @@ class OpportunityActivationReadinessService:
                 message="Contradicting or unresolved linked signals require review."
                 if contradicting_count or unresolved_review_count
                 else (
-                    "No contradiction is recorded; automated contradiction coverage "
-                    "is incomplete."
+                    "No contradiction is recorded; automated contradiction coverage is incomplete."
                 ),
                 supporting_metrics={
                     "contradicting_active_signals": contradicting_count,
@@ -260,7 +281,9 @@ class OpportunityActivationReadinessService:
             duplicate_candidates=duplicate_candidates,
         )
 
-    async def create_review(self, opportunity_id: UUID) -> ActivationReviewResult:
+    async def create_review(
+        self, opportunity_id: UUID, actor_id: UUID | None = None
+    ) -> ActivationReviewResult:
         now = datetime.now(UTC)
         async with self._sessions() as session, session.begin():
             opportunity = await session.scalar(
@@ -303,6 +326,18 @@ class OpportunityActivationReadinessService:
                     created_at=now,
                     updated_at=now,
                 )
+                session.add(
+                    ActivationReviewEvent(
+                        review_task_id=task.id,
+                        opportunity_id=opportunity.id,
+                        actor_id=actor_id,
+                        event_type="submitted",
+                        previous_status=None,
+                        status="pending",
+                        notes=None,
+                        created_at=now,
+                    )
+                )
                 result = ActivationReviewResult(
                     review_task_id=task.id, created=True, readiness=readiness
                 )
@@ -322,11 +357,18 @@ class OpportunityActivationReadinessService:
             return "warning", "Name is specific, but no thesis, problem, or solution is available."
         return "pass", "Opportunity scope is specific and supported by descriptive fields."
 
-    async def _duplicates(
-        self, session: AsyncSession, opportunity: Opportunity
-    ) -> list[DuplicateCandidate]:
+    def _duplicate_pool(self, opportunity, pool):
         terms = self._terms(opportunity)
-        pool = await OpportunityRepository(session).list_lexical_candidates(terms=terms, limit=20)
+        # Same recent-first lexical candidate cap as OpportunityRepository.
+        fields = ("name", "one_line_thesis", "industry", "customer_type", "problem", "solution")
+        pool = [
+            item
+            for item in pool
+            if not terms
+            or any(
+                term in (getattr(item, field) or "").lower() for term in terms for field in fields
+            )
+        ][:20]
         result = []
         normalized_name = " ".join(opportunity.name.lower().split())
         for item in pool:

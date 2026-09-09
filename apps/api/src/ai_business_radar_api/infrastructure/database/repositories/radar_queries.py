@@ -187,7 +187,12 @@ class RadarQueryRepository:
         )
         return list(reversed(rows))
 
-    async def evidence(self, opportunity_id, offset, limit, signal_type=None):
+    async def evidence(
+        self, opportunity_id, offset, limit, signal_type=None, *, excluded_only=False
+    ):
+        effective = (Signal.status == "active") & (Signal.semantic_status == "current")
+        eligibility = ~effective if excluded_only else effective
+
         # UNION read model: linked FACT rows first; explicit signal references only
         # when not already linked. No text/source/version-based semantic deduplication.
         def signal_columns(kind, evidence_id, relationship):
@@ -196,6 +201,8 @@ class RadarQueryRepository:
                 literal(kind).label("evidence_kind"),
                 Signal.id.label("signal_id"),
                 Signal.signal_type,
+                Signal.status.label("signal_status"),
+                Signal.semantic_status,
                 Signal.actor_role,
                 Signal.evidence_role,
                 Signal.signal_type.label("evidence_type"),
@@ -232,7 +239,7 @@ class RadarQueryRepository:
             .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
             .where(
                 OpportunitySignalLink.opportunity_id == opportunity_id,
-                (Signal.status == "active") & (Signal.semantic_status == "current"),
+                eligibility,
             )
         )
         explicit_signal = signal_sources(
@@ -241,7 +248,7 @@ class RadarQueryRepository:
             .join(Signal, Signal.id == OpportunityEvidence.signal_id)
             .where(
                 OpportunityEvidence.opportunity_id == opportunity_id,
-                (Signal.status == "active") & (Signal.semantic_status == "current"),
+                eligibility,
                 ~select(OpportunitySignalLink.id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity_id,
@@ -259,6 +266,8 @@ class RadarQueryRepository:
                 literal("explicit").label("evidence_kind"),
                 OpportunityEvidence.signal_id,
                 literal(None).label("signal_type"),
+                literal(None).label("signal_status"),
+                literal(None).label("semantic_status"),
                 literal("unknown").label("actor_role"),
                 literal("unknown").label("evidence_role"),
                 OpportunityEvidence.evidence_type,
@@ -288,6 +297,7 @@ class RadarQueryRepository:
             .where(
                 OpportunityEvidence.opportunity_id == opportunity_id,
                 OpportunityEvidence.signal_id.is_(None),
+                literal(not excluded_only),
             )
         )
         universe = union_all(linked, explicit_signal, manual).subquery()

@@ -24,7 +24,7 @@ class ServiceStub:
     async def assess(self, opportunity_id: UUID):
         return readiness(opportunity_id)
 
-    async def create_review(self, opportunity_id: UUID):
+    async def create_review(self, opportunity_id: UUID, actor_id=None):
         return ActivationReviewResult(
             review_task_id=self.review_id,
             created=True,

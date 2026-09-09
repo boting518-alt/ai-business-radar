@@ -90,3 +90,13 @@ Known-invalid/superseded Signals cannot be approved. Ambiguous semantics require
 approval with explicit notes, recorded as a semantic audit override; ordinary match/create approval
 cannot bypass it. Semantic validity is separate from the retained lifecycle status. Reject/ignore
 still preserve history. No automatic Opportunity status change is introduced.
+
+## TASK-044G activation workspace
+
+Candidate curation and activation are available under /admin/review/candidates. Opportunity edits
+are separate auditable draft revisions; they do not submit or publish. For activation reviews,
+submitted/claimed/deferred/published/invalid events now preserve repeated decisions and notes in
+activation_review_events. This supersedes the earlier current-fields-only limitation for activation
+reviews; other review types retain existing behavior. Current candidate readiness is projected on
+review reads while the original submitted context remains intact. Full provenance/history and
+current-admin actions are available in the linked candidate dossier.

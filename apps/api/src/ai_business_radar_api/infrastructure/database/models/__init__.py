@@ -3,10 +3,12 @@
 from .base import Base
 from .fact import AIExtraction, Signal, SignalSemanticAudit
 from .intelligence import (
+    ActivationReviewEvent,
     IntelligenceLocalization,
     Opportunity,
     OpportunityEvidence,
     OpportunityMergeHistory,
+    OpportunityRevision,
     OpportunityScore,
     OpportunitySignalLink,
     ReviewTask,
@@ -36,6 +38,8 @@ from .taxonomy import (
 )
 
 __all__ = [
+    "ActivationReviewEvent",
+    "OpportunityRevision",
     "AIExtraction",
     "Base",
     "Channel",

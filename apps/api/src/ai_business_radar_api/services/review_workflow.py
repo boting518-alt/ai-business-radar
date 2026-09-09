@@ -11,6 +11,7 @@ from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from ..infrastructure.database.models import (
+    ActivationReviewEvent,
     AIExtraction,
     Opportunity,
     OpportunityEvidence,
@@ -198,6 +199,14 @@ class ReviewWorkflowService:
             else []
         )
         by_id = {item.id: self._opportunity_context(item) for item in opportunities}
+        if task.review_type == "opportunity_activation":
+            current = next((item for item in opportunities if item.id == task.target_id), None)
+            if current is not None and current.status == "candidate":
+                context["readiness"] = (
+                    await OpportunityActivationReadinessService(self._sessions).assess_in_session(
+                        session, current
+                    )
+                ).model_dump(mode="json")
         if candidate_ids:
             context["candidates"] = [by_id[value] for value in candidate_ids if value in by_id]
         if task.target_type == "opportunity" and task.target_id in by_id:
@@ -263,6 +272,9 @@ class ReviewWorkflowService:
                 if task.assigned_to == admin_user_id:
                     return self._workflow_result(task, previous, {})
                 raise ReviewAssignmentConflict("Review task is assigned to another administrator")
+            self._activation_event(
+                session, task, admin_user_id, "claimed", previous, "in_review", None, now
+            )
             task.status = "in_review"
             task.assigned_to = admin_user_id
             task.updated_at = now
@@ -289,6 +301,16 @@ class ReviewWorkflowService:
                 )
             await self._validate_target(session, task)
             if decision == "defer":
+                self._activation_event(
+                    session,
+                    task,
+                    admin_user_id,
+                    "deferred",
+                    previous,
+                    "pending",
+                    request.decision_notes,
+                    now,
+                )
                 task.status = "pending"
                 task.assigned_to = None
                 task.decision = decision
@@ -300,6 +322,16 @@ class ReviewWorkflowService:
                 return self._workflow_result(task, previous, {})
 
             effects = await self._apply_decision(session, task, admin_user_id, request, now)
+            self._activation_event(
+                session,
+                task,
+                admin_user_id,
+                "published" if decision == "approve" else "invalid",
+                previous,
+                "resolved",
+                request.decision_notes,
+                now,
+            )
             task.status = "ignored" if decision == "ignore" else "resolved"
             if task.assigned_to is None:
                 task.assigned_to = admin_user_id
@@ -320,6 +352,22 @@ class ReviewWorkflowService:
                     "opportunity", task.target_id, reason="opportunity_active"
                 )
         return result
+
+    @staticmethod
+    def _activation_event(session, task, actor, event, previous, status, notes, now):
+        if task.review_type == "opportunity_activation":
+            session.add(
+                ActivationReviewEvent(
+                    review_task_id=task.id,
+                    opportunity_id=task.target_id,
+                    actor_id=actor,
+                    event_type=event,
+                    previous_status=previous,
+                    status=status,
+                    notes=notes,
+                    created_at=now,
+                )
+            )
 
     async def _validate_target(self, session: AsyncSession, task: ReviewTask) -> None:
         expected = {
