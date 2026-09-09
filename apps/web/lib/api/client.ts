@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { CurrentUser, DiscoveryRunPage, DiscoverySystemStatus, DiscoveryTopic, DiscoveryTopicRun, EvidenceItem, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
+import type { CurrentUser, DiscoveryRunPage, DiscoverySystemStatus, DiscoveryTopic, DiscoveryTopicRun, EvidencePage, OpportunityDetail, OpportunityLibraryResponse, Query, RadarResponse, ReviewDecision, ReviewListResult, ReviewTask, ReviewWorkflowResult, ScoreItem, SignalFeedItem, TrendItem, WatchlistMembershipResult, WatchlistResult } from "./types";
 
 export class ApiError extends Error {
   constructor(public status:number, message:string, public code="http_error", public requestId:string|null=null, public details?:unknown) { super(message); this.name="ApiError"; }
@@ -25,7 +25,7 @@ export class ApiClient {
   getOpportunity=(id:string,query:Query={})=>this.request<OpportunityDetail>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}`,query));
   getOpportunityTrends=(id:string,query:Query={})=>this.request<TrendItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/trends`,query));
   getOpportunityScores=(id:string,query:Query={})=>this.request<ScoreItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/scores`,query));
-  getOpportunityEvidence=(id:string,query:Query={})=>this.request<EvidenceItem[]>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/evidence`,query));
+  getOpportunityEvidence=(id:string,query:Query={})=>this.request<EvidencePage>(this.path(`/api/v1/opportunities/${encodeURIComponent(id)}/evidence`,query));
   listSignals=(query:Query={})=>this.request<SignalFeedItem[]>(this.path("/api/v1/signals",query));
   getWatchlist=()=>this.request<WatchlistResult>("/api/v1/watchlist");
   addToWatchlist=(id:string)=>this.request<WatchlistMembershipResult>(`/api/v1/watchlist/items/${encodeURIComponent(id)}`,{method:"POST"});

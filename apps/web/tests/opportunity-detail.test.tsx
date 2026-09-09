@@ -14,11 +14,11 @@ const score:ScoreItem={calculated_at:"2026-09-04T00:00:00Z",scoring_version:"sco
 const detail:OpportunityDetail={opportunity:{id:"opp-1",slug:"ai-dental-receptionist",name:"AI Dental Receptionist",one_line_thesis:"Automates inbound scheduling for dental practices.",industry:"Healthcare",sub_industry:"Dental",customer_type:"SMB",problem:"Missed calls become lost appointments.",solution:"An AI receptionist answers and schedules.",business_model:"SaaS",primary_technology:"Voice AI",typical_price_min:"199",typical_price_max:"499",typical_price_currency:"USD",typical_price_period:"month",competition_level:"medium",build_difficulty:"medium",sales_difficulty:"low",market_stage:"accelerating",first_detected_at:"2026-08-01T00:00:00Z",last_activity_at:"2026-09-04T00:00:00Z"},current_intelligence:score,trend_summary:{"7d":trend("7d"),"30d":trend("30d","61"),"90d":trend("90d","55")},evidence_summary:{active_signal_count:12,distinct_video_count:7,distinct_channel_count:4,pain_signal_count:5,demand_signal_count:3,purchase_intent_signal_count:2,revenue_signal_count:1},watchlisted:true};
 const scores=[score,{...score,calculated_at:"2026-08-28T00:00:00Z",opportunity_score:"71"}];
 const trends=[trend(),{...trend(),period_end:"2026-08-28T00:00:00Z",momentum_score:"63"}];
-const evidence:Array<EvidenceItem&{comment_author?:string}> = Array.from({length:10},(_,index)=>({evidence_id:`ev-${index}`,evidence_type:index?"demand":"pain",summary:index?`Evidence ${index}`:"Customers miss calls after hours.",source_type:"youtube_video",observed_at:"2026-09-03T00:00:00Z",strength:"0.8",confidence:"0.9",youtube_video_id:"video-1",video_title:"AI receptionist case study",comment_author:"private-author"}));
+const evidence:Array<EvidenceItem&{comment_author?:string}> = Array.from({length:20},(_,index)=>({evidence_id:`ev-${index}`,evidence_kind:"linked_signal",signal_id:`signal-${index}`,signal_type:"pain",statement:index?`Evidence ${index}`:"Customers miss calls after hours.",evidence_text:"Persisted excerpt",original_statement:"Canonical statement",original_evidence_text:"Persisted excerpt",statement_localized:false,evidence_localized:false,localization_stale:false,claim_status:"creator_claim",relationship_type:"supporting",source_url:"https://www.youtube.com/watch?v=abcdefghijk",source_navigation:"video",evidence_type:index?"demand":"pain",summary:index?`Evidence ${index}`:"Customers miss calls after hours.",source_type:"youtube_video",observed_at:"2026-09-03T00:00:00Z",strength:"0.8",confidence:"0.9",youtube_video_id:"video-1",video_title:"AI receptionist case study",comment_author:"private-author"}));
 
 function response(body:unknown,status=200,requestId?:string){return Promise.resolve(new Response(JSON.stringify(body),{status,headers:{"Content-Type":"application/json",...(requestId?{"X-Request-ID":requestId}:{})}}))}
 function mockApi(options:{detail?:unknown;trends?:unknown;scores?:unknown;evidence?:unknown;status?:number;requestId?:string}={}){
-  vi.stubGlobal("fetch",vi.fn().mockImplementation((input:RequestInfo|URL)=>{const url=String(input);if(options.status)return response(options.detail??{detail:"Failed"},options.status,options.requestId);if(url.includes("/trends"))return response(options.trends??trends);if(url.includes("/scores"))return response(options.scores??scores);if(url.includes("/evidence"))return response(options.evidence??evidence);return response(options.detail??detail)}));
+  vi.stubGlobal("fetch",vi.fn().mockImplementation((input:RequestInfo|URL)=>{const url=String(input);if(options.status)return response(options.detail??{detail:"Failed"},options.status,options.requestId);if(url.includes("/trends"))return response(options.trends??trends);if(url.includes("/scores"))return response(options.scores??scores);if(url.includes("/evidence"))return response({items:options.evidence??evidence,total:options.evidence?0:40,offset:0,limit:20,has_more:!options.evidence});return response(options.detail??detail)}));
 }
 
 describe("Opportunity detail page",()=>{
@@ -33,7 +33,7 @@ describe("Opportunity detail page",()=>{
     expect(urls.some(url=>url.endsWith("/opportunities/ai-dental-receptionist?locale=zh-CN"))).toBe(true);
     expect(urls.some(url=>url.includes("/trends?window_type=7d"))).toBe(true);
     expect(urls.some(url=>url.includes("/scores?limit=50"))).toBe(true);
-    expect(urls.some(url=>url.includes("/evidence?offset=0&limit=10"))).toBe(true);
+    expect(urls.some(url=>url.includes("/evidence?offset=0&limit=20"))).toBe(true);
   });
 
   it("renders persisted identity, metrics, business fields, price, and watchlist",async()=>{
@@ -59,15 +59,19 @@ describe("Opportunity detail page",()=>{
   });
 
   it("renders score history and evidence safely",async()=>{
-    render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("Supporting evidence");expect(screen.getByText("Customers miss calls after hours.")).toBeInTheDocument();expect(screen.getAllByText("AI receptionist case study",{exact:false}).length).toBeGreaterThan(0);expect(screen.getByText("Score history")).toBeInTheDocument();expect(screen.getAllByText("71").length).toBeGreaterThan(0);expect(screen.queryByText("private-author")).not.toBeInTheDocument();
+    render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("关联证据");expect(screen.getByText("Customers miss calls after hours.")).toBeInTheDocument();expect(screen.getAllByText("AI receptionist case study",{exact:false}).length).toBeGreaterThan(0);expect(screen.getByText("Score history")).toBeInTheDocument();expect(screen.getAllByText("71").length).toBeGreaterThan(0);expect(screen.queryByText("private-author")).not.toBeInTheDocument();
   });
 
   it("paginates bounded evidence through URL state",async()=>{
-    render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("Supporting evidence");fireEvent.click(screen.getByRole("button",{name:/下一页/}));expect(replace).toHaveBeenCalledWith("/opportunities/opp-1?evidence_offset=10");
+    render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("关联证据");fireEvent.click(screen.getByRole("button",{name:/下一页/}));expect(replace).toHaveBeenCalledWith("/opportunities/opp-1?evidence_offset=20");
+  });
+
+  it("links all related signals and resets evidence pagination on filter changes",async()=>{
+    query="evidence_offset=20";render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("关联证据");expect(screen.getByRole("link",{name:"查看全部关联信号"})).toHaveAttribute("href","/signals?opportunity_id=opp-1");fireEvent.change(screen.getByLabelText("信号类型"),{target:{value:"pricing"}});expect(replace).toHaveBeenCalledWith("/opportunities/opp-1?evidence_signal_type=pricing");
   });
 
   it("keeps missing data absent or marked safely",async()=>{
-    mockApi({detail:{...detail,opportunity:{...detail.opportunity,problem:null,typical_price_min:null,typical_price_max:null},current_intelligence:null,trend_summary:{"7d":null,"30d":null,"90d":null}},trends:[],scores:[],evidence:[]});render(<OpportunityDossier identifier="opp-1"/>);await screen.findByRole("heading",{name:"AI Dental Receptionist"});expect(screen.queryByText("Missed calls become lost appointments.")).not.toBeInTheDocument();expect(screen.getAllByText("—").length).toBeGreaterThan(0);expect(screen.getAllByText("No trend data yet.")).toHaveLength(3);expect(screen.getByText("Trend history is not available yet.")).toBeInTheDocument();expect(screen.getByText("No supporting evidence is available yet.")).toBeInTheDocument();
+    mockApi({detail:{...detail,opportunity:{...detail.opportunity,problem:null,typical_price_min:null,typical_price_max:null},current_intelligence:null,trend_summary:{"7d":null,"30d":null,"90d":null}},trends:[],scores:[],evidence:[]});render(<OpportunityDossier identifier="opp-1"/>);await screen.findByRole("heading",{name:"AI Dental Receptionist"});expect(screen.queryByText("Missed calls become lost appointments.")).not.toBeInTheDocument();expect(screen.getAllByText("—").length).toBeGreaterThan(0);expect(screen.getAllByText("No trend data yet.")).toHaveLength(3);expect(screen.getByText("Trend history is not available yet.")).toBeInTheDocument();expect(screen.getByText("存在关联信号，但部分来源暂不可显示")).toBeInTheDocument();
   });
 
   it("shows a safe 404 and Radar navigation",async()=>{

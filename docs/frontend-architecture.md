@@ -83,8 +83,8 @@ summaries.
 The detail response owns identity, business thesis, current score components, latest 7d/30d/90d
 trends, evidence totals, and watchlist state. History and evidence endpoints supply their own
 sections. The frontend formats dates, prices, and null values only; it never recomputes a score or
-infers market stage. `trend_window` and `evidence_offset` are URL state, with trend history bounded
-to 50 rows and evidence pages bounded to 10 rows.
+infers market stage. `trend_window`, `evidence_signal_type` and `evidence_offset` are URL state, with trend history bounded
+to 50 rows and evidence pages bounded to 20 rows.
 
 The dossier uses a dense research layout: header and key metrics first, then business thesis,
 three-window trend overview, seven persisted score components, evidence totals and supporting
@@ -157,3 +157,12 @@ projection or canonical fallback. Signal cards distinguish statement from eviden
 industry/customer/claim as separate semantic fields, retain original translated evidence behind a
 toggle, and keep video/channel proper names unchanged. See `docs/signal-semantics.md` and
 `docs/intelligence-localization.md`.
+
+## Evidence chain presentation (TASK-044E)
+
+The existing evidence endpoint returns an EvidencePage envelope. Dossier filters, total and Next
+use server metadata, with a UUID link to related Signals. EvidenceList renders typed public records;
+SourceTrace is shared with Signals for safe external links, parent-video labels, RAW comment text,
+and incomplete-source fallback. Canonical extracted English and stored zh-CN projections remain
+separate from RAW text. Batch localization and provenance joins happen in the API, without per-card
+requests. Supporting vs contradicting/context links keep their stored meanings.

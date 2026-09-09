@@ -21,3 +21,12 @@ relationship visually distinct.
 
 TASK-040 adds optional taxonomy mappings without rewriting these free-text fields. Customer codes
 represent buyers/operators, not beneficiaries. See `docs/taxonomy-foundation.md`.
+
+## TASK-044E source traceability
+
+The source video title is a clickable backend-derived URL, including the parent video for comment
+Signals. RAW `source_comment_text` is labeled separately from canonical extracted
+`original_statement`/`original_evidence_text`; canonical English is not necessarily verbatim RAW.
+Locale toggles retain both canonical fields. The global active feed remains independent of
+Opportunity publication. Claim/type classifications are unchanged; semantic repair is TASK-044F.
+See `docs/evidence-chain-source-traceability.md` for navigation limitations and visibility.

@@ -19,9 +19,9 @@ following authenticated reads in parallel:
 - `GET /api/v1/opportunities/{id-or-slug}`
 - `GET /api/v1/opportunities/{id-or-slug}/trends?window_type=...&limit=50`
 - `GET /api/v1/opportunities/{id-or-slug}/scores?limit=50`
-- `GET /api/v1/opportunities/{id-or-slug}/evidence?offset=...&limit=10`
+- `GET /api/v1/opportunities/{id-or-slug}/evidence?offset=...&limit=20&locale=...&signal_type=...`
 
-The page performs no item-level follow-up requests. `trend_window` and `evidence_offset` are stored
+The page performs no item-level follow-up requests. `trend_window`, `evidence_signal_type`, and `evidence_offset` are stored
 in the URL so the selected history and evidence page remain shareable. The trend default is 7d.
 
 ## Score and trend presentation
@@ -38,14 +38,18 @@ shows calculation time, Opportunity Score, Confidence, and Hype Risk and never r
 
 ## Evidence presentation and safety
 
-The detail response's evidence summary supplies Signal, Video, Channel, Pain, Demand, Purchase
-Intent, and Revenue totals. Supporting evidence is fetched in bounded pages of ten. Each row may
-show evidence type, safe summary, source type, observation date, strength, confidence, and video
-title.
+The detail response distinguishes all active linked Signals from supporting Signals and counts
+source videos/channels distinctly. Evidence reads directly from linked active Signals plus eligible
+explicit evidence; no mirrored opportunity_evidence rows are required. The typed page envelope
+reports total, offset, limit and has_more. Pages hold 20 records, filtered by canonical Signal type.
 
-The UI does not render comment author identity, raw AI/provider output, scoring input snapshots,
-provider request identifiers, or internal extraction errors. Watchlist state is visible but has no
-mutation control because the write workflow remains assigned to TASK-027.
+Cards show statement/excerpt, claim, relationship, source type/time, localized/canonical text, and
+clickable persisted video/comment provenance. RAW comments are separately labeled. The related
+Signals link applies the Opportunity UUID automatically. True empty, filtered empty, and incomplete
+source states differ. See `docs/evidence-chain-source-traceability.md` for exact counting/dedupe rules.
+
+The UI excludes author identity, raw AI/provider output, score inputs, request IDs and internal
+extraction errors. The shared watchlist button supports confirmed add/remove operations.
 
 ## Missing data and errors
 
@@ -65,8 +69,5 @@ horizontal scroll container so the overall page does not overflow.
 
 ## Known limitations
 
-- Evidence pagination cannot show an exact page total because the current endpoint returns a list
-  without total metadata; Next is enabled only when the current page is full.
 - Trend and score history are textual tables without charts.
-- Watchlist state is read-only.
 - Page-level URL changes currently refresh the four bounded detail requests together.

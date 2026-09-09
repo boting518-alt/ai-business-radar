@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from ..infrastructure.database.repositories.radar_queries import RadarQueryRepository
 from .intelligence_localization import IntelligenceLocalizationService, Locale
+from .source_provenance import SourceProvenance, source_navigation
 
 Window = Literal["7d", "30d", "90d"]
 Sort = Literal["score", "momentum", "confidence", "hype", "recent"]
@@ -63,6 +64,7 @@ class ScoreItem(BaseModel):
 
 class EvidenceSummary(BaseModel):
     active_signal_count: int = 0
+    supporting_signal_count: int = 0
     distinct_video_count: int = 0
     distinct_channel_count: int = 0
     pain_signal_count: int = 0
@@ -190,19 +192,37 @@ class OpportunityDetail(BaseModel):
     watchlisted: bool
 
 
-class EvidenceItem(BaseModel):
+class EvidenceItem(SourceProvenance):
     evidence_id: UUID
+    evidence_kind: Literal["linked_signal", "explicit_signal", "explicit"]
+    signal_id: UUID | None
+    signal_type: str | None
     evidence_type: str
+    statement: str
     summary: str
+    evidence_text: str | None
+    claim_status: str | None
+    relationship_type: str | None
     source_type: str
     observed_at: datetime | None
     strength: Decimal | None
     confidence: Decimal | None
-    youtube_video_id: str | None
-    video_title: str | None
+    original_statement: str
+    original_evidence_text: str | None
+    statement_localized: bool = False
+    evidence_localized: bool = False
+    localization_stale: bool = False
 
 
-class SignalFeedItem(BaseModel):
+class EvidencePage(BaseModel):
+    items: list[EvidenceItem]
+    total: int
+    offset: int
+    limit: int
+    has_more: bool
+
+
+class SignalFeedItem(SourceProvenance):
     id: UUID
     signal_type: str
     statement: str
@@ -480,56 +500,99 @@ class RadarQueryService:
             rows = await repo.score_history(opportunity.id, limit)
         return [ScoreItem.model_validate(row) for row in rows]
 
-    async def evidence(self, identifier: str, offset: int, limit: int) -> list[EvidenceItem]:
+    async def evidence(
+        self,
+        identifier: str,
+        offset: int,
+        limit: int,
+        locale: Locale = "en-US",
+        signal_type: str | None = None,
+    ) -> EvidencePage:
         async with self._sessions() as session:
             repo = RadarQueryRepository(session)
             opportunity = await repo.get_visible_opportunity(identifier)
             if opportunity is None:
                 raise OpportunityNotVisibleError("Opportunity was not found")
-            rows = await repo.evidence(opportunity.id, offset, limit)
-        return [EvidenceItem(**dict(row._mapping)) for row in rows]
+            rows, total = await repo.evidence(opportunity.id, offset, limit, signal_type)
+            values = [dict(row._mapping) for row in rows]
+            localized = await IntelligenceLocalizationService(session).localize_many(
+                "signal",
+                {
+                    item["signal_id"]: {
+                        "statement": item["statement"],
+                        "evidence_text": item["evidence_text"],
+                    }
+                    for item in values
+                    if item["signal_id"]
+                },
+                locale,
+            )
+            items = []
+            for item in values:
+                item.update(source_navigation(item))
+                self._localized_signal(item, localized.get(item["signal_id"], {}))
+                item["summary"] = item["statement"]
+                items.append(EvidenceItem(**item))
+        return EvidencePage(
+            items=items,
+            total=total,
+            offset=offset,
+            limit=limit,
+            has_more=offset + len(items) < total,
+        )
+
+    @staticmethod
+    def _localized_signal(values, localized):
+        values["original_statement"] = values["statement"]
+        values["original_evidence_text"] = values["evidence_text"]
+        for key, value in localized.items():
+            values[key] = value.text
+        values["statement_localized"] = bool(
+            localized.get("statement") and localized["statement"].localized
+        )
+        values["evidence_localized"] = bool(
+            localized.get("evidence_text") and localized["evidence_text"].localized
+        )
+        values["localization_stale"] = any(value.stale for value in localized.values())
 
     async def signals(self, locale: Locale = "en-US", **filters: Any) -> list[SignalFeedItem]:
         async with self._sessions() as session:
-            rows = await RadarQueryRepository(session).active_signals(**filters)
+            repo = RadarQueryRepository(session)
+            rows = await repo.active_signals(**filters)
+            values = [dict(row._mapping) for row in rows]
             localization = IntelligenceLocalizationService(session)
-            taxonomy = await RadarQueryRepository(session).taxonomy(
-                "signal", [row._mapping["id"] for row in rows], locale
+            taxonomy = await repo.taxonomy("signal", [item["id"] for item in values], locale)
+            localized = await localization.localize_many(
+                "signal",
+                {
+                    item["id"]: {
+                        key: item[key]
+                        for key in ("statement", "evidence_text", "industry", "customer_type")
+                    }
+                    for item in values
+                },
+                locale,
+            )
+            names = await localization.localize_many(
+                "opportunity",
+                {
+                    UUID(str(opportunity["id"])): {"name": opportunity["name"]}
+                    for item in values
+                    for opportunity in item["opportunities"] or []
+                },
+                locale,
             )
             items = []
-            for row in rows:
-                values = dict(row._mapping)
-                localized = await localization.localize(
-                    "signal",
-                    values["id"],
-                    locale,
-                    {
-                        "statement": values["statement"],
-                        "evidence_text": values["evidence_text"],
-                        "industry": values["industry"],
-                        "customer_type": values["customer_type"],
-                    },
-                )
-                values["original_statement"] = values["statement"]
-                values["original_evidence_text"] = values["evidence_text"]
-                for key, value in localized.items():
-                    values[key] = value.text
-                values["statement_localized"] = localized["statement"].localized
-                values["evidence_localized"] = localized["evidence_text"].localized
-                values["localization_stale"] = any(value.stale for value in localized.values())
-                values["opportunity_ids"] = values["opportunity_ids"] or []
-                values["opportunities"] = values["opportunities"] or []
-                values["industry_taxonomy"] = taxonomy.get((values["id"], "industry"))
-                values["customer_taxonomy"] = taxonomy.get((values["id"], "customer"))
-                for opportunity in values["opportunities"]:
-                    name = await localization.localize(
-                        "opportunity",
-                        UUID(str(opportunity["id"])),
-                        locale,
-                        {"name": opportunity["name"]},
-                    )
-                    opportunity["name"] = name["name"].text
-                items.append(SignalFeedItem(**values))
+            for item in values:
+                item.update(source_navigation(item))
+                self._localized_signal(item, localized[item["id"]])
+                item["opportunity_ids"] = item["opportunity_ids"] or []
+                item["opportunities"] = item["opportunities"] or []
+                item["industry_taxonomy"] = taxonomy.get((item["id"], "industry"))
+                item["customer_taxonomy"] = taxonomy.get((item["id"], "customer"))
+                for opportunity in item["opportunities"]:
+                    opportunity["name"] = names[UUID(str(opportunity["id"]))]["name"].text
+                items.append(SignalFeedItem(**item))
         return items
 
     @staticmethod

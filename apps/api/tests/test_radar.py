@@ -64,3 +64,40 @@ def test_openapi_exposes_product_routes_without_internal_score_inputs() -> None:
     assert "/api/v1/opportunities/{identifier}/trends" in paths
     assert "/api/v1/opportunities/{identifier}/evidence" in paths
     assert "inputs_snapshot" not in str(schema["components"]["schemas"]["ScoreItem"])
+
+
+def test_evidence_route_auth_pagination_filters_and_public_contract():
+    from ai_business_radar_api.services.radar_query import EvidencePage
+
+    class EvidenceStub:
+        async def evidence(self, identifier, offset, limit, locale, signal_type):
+            assert identifier == "active"
+            assert locale == "zh-CN" and signal_type == "pain"
+            return EvidencePage(items=[], total=0, offset=offset, limit=limit, has_more=False)
+
+    app = create_app(Settings(_env_file=None))
+    app.dependency_overrides[get_radar_service] = EvidenceStub
+    path = "/api/v1/opportunities/active/evidence?locale=zh-CN&signal_type=pain"
+    with TestClient(app) as client:
+        assert client.get(path).status_code == 401
+        for role in ("user", "admin"):
+            app.dependency_overrides[get_current_user] = lambda role=role: user(role)
+            response = client.get(path)
+            assert response.status_code == 200
+            assert response.json() == {
+                "items": [],
+                "total": 0,
+                "offset": 0,
+                "limit": 20,
+                "has_more": False,
+            }
+        assert client.get(path + "&limit=101").status_code == 422
+        assert client.get(path + "&offset=-1").status_code == 422
+        assert (
+            client.get("/api/v1/opportunities/active/evidence?signal_type=invented").status_code
+            == 422
+        )
+    schema = app.openapi()["components"]["schemas"]["EvidenceItem"]
+    assert not {"raw_output", "parsed_output", "author_hash", "admin_notes"} & set(
+        schema["properties"]
+    )

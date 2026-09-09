@@ -61,8 +61,15 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-044B Discovery Topic Execution Batch + Polling Correctness Fix
 - [x] TASK-044C Runtime Configuration Consistency + Discovery Worker Finalization
 - [x] TASK-044D Discovery-to-Intelligence Pipeline Orchestration
+- [x] TASK-044E Evidence Chain + Source Traceability (validated locally; see artifacts/evidence-chain/2026-09-09/validation-report.md)
+- [ ] TASK-044F Signal Semantic Guardrails + Historical Quality Repair
+- [ ] TASK-044G Candidate Opportunity Review & Activation Workspace
+- [ ] TASK-044H Opportunity Thesis & Business Case Consolidation
+- [ ] TASK-044I Discovery Console Operational Completion
+- [ ] TASK-044J Watchlist Change Tracking + Monitoring Freshness
+- [ ] TASK-044K Taxonomy Selectors + Review UX + Localization Polish
 - [ ] TASK-045 Staging Infrastructure Deployment
-- [ ] TASK-046 Staging Full Integration Validation
+- [ ] TASK-046 Staging Full Integration + Dual-role E2E
 - [ ] TASK-047 Hybrid Retrieval Runtime Prototype
 - [ ] TASK-048 AI-Assisted Taxonomy Mapping + Review
 

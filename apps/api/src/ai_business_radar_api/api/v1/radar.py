@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 
 from ...infrastructure.auth import RequiredUser
 from ...services.radar_query import (
-    EvidenceItem,
+    EvidencePage,
     OpportunityDetail,
     OpportunityLibraryRequest,
     OpportunityLibraryResponse,
@@ -209,16 +209,36 @@ async def scores(
         _not_found(error)
 
 
-@router.get("/opportunities/{identifier}/evidence", response_model=list[EvidenceItem])
+@router.get("/opportunities/{identifier}/evidence", response_model=EvidencePage)
 async def evidence(
     identifier: str,
     _: RequiredUser,
     service: Annotated[RadarQueryService, Depends(get_radar_service)],
     offset: int = Query(0, ge=0),
-    limit: int = Query(50, ge=1, le=100),
-) -> list[EvidenceItem]:
+    limit: int = Query(20, ge=1, le=100),
+    locale: Literal["zh-CN", "en-US"] = "en-US",
+    signal_type: Literal[
+        "pain",
+        "demand",
+        "purchase_intent",
+        "revenue",
+        "pricing",
+        "customer",
+        "product_launch",
+        "growth",
+        "competition",
+        "distribution",
+        "workflow",
+        "technology",
+        "market_change",
+        "complaint",
+        "feature_request",
+        "adoption",
+    ]
+    | None = None,
+) -> EvidencePage:
     try:
-        return await service.evidence(identifier, offset, limit)
+        return await service.evidence(identifier, offset, limit, locale, signal_type)
     except OpportunityNotVisibleError as error:
         _not_found(error)
 

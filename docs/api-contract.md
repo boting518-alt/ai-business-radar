@@ -233,12 +233,23 @@ current user. It does not expose score `inputs_snapshot`.
 
 `GET /api/v1/opportunities/{id-or-slug}/trends` and `/scores` return bounded chronological history.
 The former optionally filters by window; the latter omits reproducibility internals.
-`GET /api/v1/opportunities/{id-or-slug}/evidence` returns bounded safe evidence summaries and
-optional video ID/title, never comment author data or AI output.
+`GET /api/v1/opportunities/{id-or-slug}/evidence` returns `{items, total, offset, limit, has_more}`.
+It accepts offset (default0), limit (default20, 1–100), locale (en-US default or zh-CN), and optional
+canonical signal_type (invalid enums return422). Items combine linked active Signals and eligible
+explicit evidence, deduplicated by Signal identity, sorted observed_at descending/null last then
+kind/UUID. A non-active Opportunity returns404. Items contain evidence_kind, signal_id/type,
+statement/summary, evidence_text, claim_status, relationship_type, source_type, observed_at,
+strength/confidence, original_statement/evidence_text, localization flags, and public provenance.
+See `docs/evidence-chain-source-traceability.md` for count and explicit-evidence semantics.
+`active_signal_count` remains all active linked Signals; `supporting_signal_count` is its supporting
+subset. Distinct video/channel counts are source diversity, not independent verification.
 
 `GET /api/v1/signals` returns only active signals and supports signal type, industry, customer,
-active-opportunity, observed-after, and offset/limit filters. Source context is limited to video
-title, source type, and active opportunity IDs; comment author identity is never returned.
+active-opportunity, observed-after, and offset/limit filters. Both Signal and evidence projections include source_video_id, youtube_video_id, video_title,
+channel_name, source_comment_id, youtube_comment_id, source_comment_text, source_url and
+source_navigation (video/parent_video/external/unavailable). URL availability does not assert remote
+availability. Comment links target the parent video; author identity and raw AI output are excluded.
+Active Signals without a published Opportunity remain in the global feed.
 
 `GET /api/v1/watchlist` returns the current user's logical personal watchlist with active
 opportunity identity, current `score-v001` intelligence, latest 7-day `trend-v001` momentum, and
@@ -314,7 +325,7 @@ No planned endpoint path or payload is frozen by this status list.
 
 ## Intelligence locale projection
 
-`GET /radar`, `GET /opportunities`, `GET /opportunities/{id-or-slug}`, and `GET /signals` accept
+`GET /radar`, `GET /opportunities`, `GET /opportunities/{id-or-slug}`, `GET /opportunities/{id-or-slug}/evidence`, and `GET /signals` accept
 `locale=zh-CN|en-US` and default to canonical `en-US`. Missing or stale projections fall back to
 canonical content without failing the request. These reads never generate a translation.
 

@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from sqlalchemy import func, or_, select
+from sqlalchemy import func, literal, or_, select, union_all
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..models import (
@@ -116,6 +116,9 @@ class RadarQueryRepository:
             select(
                 OpportunitySignalLink.opportunity_id.label("opportunity_id"),
                 func.count(func.distinct(Signal.id)).label("active_signal_count"),
+                func.count(func.distinct(Signal.id))
+                .filter(OpportunitySignalLink.relationship_type == "supporting")
+                .label("supporting_signal_count"),
                 func.count(func.distinct(Video.id)).label("distinct_video_count"),
                 func.count(func.distinct(Channel.id)).label("distinct_channel_count"),
                 func.count(func.distinct(Signal.id))
@@ -181,29 +184,121 @@ class RadarQueryRepository:
         )
         return list(reversed(rows))
 
-    async def evidence(self, opportunity_id, offset, limit):
-        return list(
-            await self.session.execute(
-                select(
-                    OpportunityEvidence.id.label("evidence_id"),
-                    OpportunityEvidence.evidence_type,
-                    OpportunityEvidence.summary,
-                    OpportunityEvidence.source_type,
-                    OpportunityEvidence.observed_at,
-                    OpportunityEvidence.strength,
-                    OpportunityEvidence.confidence,
-                    Video.youtube_video_id,
-                    Video.title.label("video_title"),
+    async def evidence(self, opportunity_id, offset, limit, signal_type=None):
+        # UNION read model: linked FACT rows first; explicit signal references only
+        # when not already linked. No text/source/version-based semantic deduplication.
+        def signal_columns(kind, evidence_id, relationship):
+            return (
+                evidence_id.label("evidence_id"),
+                literal(kind).label("evidence_kind"),
+                Signal.id.label("signal_id"),
+                Signal.signal_type,
+                Signal.signal_type.label("evidence_type"),
+                Signal.statement,
+                Signal.evidence_text,
+                Signal.claim_status,
+                relationship.label("relationship_type"),
+                Signal.source_type,
+                Signal.observed_at,
+                Signal.evidence_strength.label("strength"),
+                Signal.confidence,
+                Video.id.label("source_video_id"),
+                Video.youtube_video_id,
+                Video.title.label("video_title"),
+                Channel.name.label("channel_name"),
+                Comment.id.label("source_comment_id"),
+                Comment.youtube_comment_id,
+                Comment.text.label("source_comment_text"),
+                literal(None).label("stored_source_url"),
+            )
+
+        def signal_sources(query):
+            return (
+                query.outerjoin(Comment, Comment.id == Signal.comment_id)
+                .outerjoin(Video, Video.id == func.coalesce(Signal.video_id, Comment.video_id))
+                .outerjoin(Channel, Channel.id == Video.channel_id)
+            )
+
+        linked = signal_sources(
+            select(
+                *signal_columns("linked_signal", Signal.id, OpportunitySignalLink.relationship_type)
+            )
+            .select_from(OpportunitySignalLink)
+            .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
+            .where(
+                OpportunitySignalLink.opportunity_id == opportunity_id, Signal.status == "active"
+            )
+        )
+        explicit_signal = signal_sources(
+            select(*signal_columns("explicit_signal", OpportunityEvidence.id, literal(None)))
+            .select_from(OpportunityEvidence)
+            .join(Signal, Signal.id == OpportunityEvidence.signal_id)
+            .where(
+                OpportunityEvidence.opportunity_id == opportunity_id,
+                Signal.status == "active",
+                ~select(OpportunitySignalLink.id)
+                .where(
+                    OpportunitySignalLink.opportunity_id == opportunity_id,
+                    OpportunitySignalLink.signal_id == Signal.id,
                 )
-                .outerjoin(Video, Video.id == OpportunityEvidence.video_id)
-                .where(OpportunityEvidence.opportunity_id == opportunity_id)
-                .order_by(
-                    OpportunityEvidence.observed_at.desc().nulls_last(), OpportunityEvidence.id
+                .correlate(Signal)
+                .exists(),
+            )
+            .distinct(Signal.id)
+            .order_by(Signal.id, OpportunityEvidence.id)
+        )
+        manual = (
+            select(
+                OpportunityEvidence.id.label("evidence_id"),
+                literal("explicit").label("evidence_kind"),
+                OpportunityEvidence.signal_id,
+                literal(None).label("signal_type"),
+                OpportunityEvidence.evidence_type,
+                OpportunityEvidence.summary.label("statement"),
+                literal(None).label("evidence_text"),
+                literal(None).label("claim_status"),
+                literal(None).label("relationship_type"),
+                OpportunityEvidence.source_type,
+                OpportunityEvidence.observed_at,
+                OpportunityEvidence.strength,
+                OpportunityEvidence.confidence,
+                Video.id.label("source_video_id"),
+                Video.youtube_video_id,
+                Video.title.label("video_title"),
+                Channel.name.label("channel_name"),
+                Comment.id.label("source_comment_id"),
+                Comment.youtube_comment_id,
+                Comment.text.label("source_comment_text"),
+                OpportunityEvidence.source_url.label("stored_source_url"),
+            )
+            .select_from(OpportunityEvidence)
+            .outerjoin(Comment, Comment.id == OpportunityEvidence.comment_id)
+            .outerjoin(
+                Video, Video.id == func.coalesce(Comment.video_id, OpportunityEvidence.video_id)
+            )
+            .outerjoin(Channel, Channel.id == Video.channel_id)
+            .where(
+                OpportunityEvidence.opportunity_id == opportunity_id,
+                OpportunityEvidence.signal_id.is_(None),
+            )
+        )
+        universe = union_all(linked, explicit_signal, manual).subquery()
+        query = select(universe)
+        if signal_type:
+            query = query.where(universe.c.signal_type == signal_type)
+        total = await self.session.scalar(select(func.count()).select_from(query.subquery()))
+        rows = list(
+            await self.session.execute(
+                query.order_by(
+                    universe.c.observed_at.desc().nulls_last(),
+                    universe.c.evidence_kind,
+                    universe.c.evidence_id,
                 )
                 .offset(offset)
                 .limit(limit)
             )
         )
+        return rows, total
 
     async def active_signals(
         self,
@@ -250,6 +345,11 @@ class RadarQueryRepository:
                 Signal.observed_at,
                 Signal.source_type,
                 Video.title.label("video_title"),
+                Video.id.label("source_video_id"),
+                Video.youtube_video_id,
+                Comment.id.label("source_comment_id"),
+                Comment.youtube_comment_id,
+                Comment.text.label("source_comment_text"),
                 Channel.name.label("channel_name"),
                 opportunity_ids.label("opportunity_ids"),
                 opportunities.label("opportunities"),
@@ -260,7 +360,7 @@ class RadarQueryRepository:
             .outerjoin(OpportunitySignalLink, OpportunitySignalLink.signal_id == Signal.id)
             .outerjoin(Opportunity, Opportunity.id == OpportunitySignalLink.opportunity_id)
             .where(Signal.status == "active")
-            .group_by(Signal.id, Video.title, Channel.name)
+            .group_by(Signal.id, Video.id, Comment.id, Channel.name)
         )
         if signal_type:
             query = query.where(Signal.signal_type == signal_type)

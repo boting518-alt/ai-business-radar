@@ -107,20 +107,30 @@ class IntelligenceLocalizationService:
             return results
         rows = list(
             await self._session.scalars(
-                select(IntelligenceLocalization).where(
+                select(IntelligenceLocalization)
+                .where(
                     IntelligenceLocalization.entity_type == entity_type,
                     IntelligenceLocalization.entity_id.in_(entities),
                     IntelligenceLocalization.locale == locale,
                     IntelligenceLocalization.translation_version
                     == CURRENT_TRANSLATION_VERSIONS[locale],
-                    IntelligenceLocalization.status == "current",
+                )
+                .order_by(
+                    IntelligenceLocalization.updated_at.desc(), IntelligenceLocalization.id.desc()
                 )
             )
         )
         for row in rows:
             canonical = entities.get(row.entity_id, {}).get(row.field_name)
-            if canonical and row.source_text_hash == source_text_hash(canonical):
-                results[row.entity_id][row.field_name] = LocalizedText(
-                    text=row.translated_text, original_text=canonical, localized=True
-                )
+            if not canonical or results[row.entity_id][row.field_name].localized:
+                continue
+            current = row.status == "current" and row.source_text_hash == source_text_hash(
+                canonical
+            )
+            results[row.entity_id][row.field_name] = LocalizedText(
+                text=row.translated_text if current else canonical,
+                original_text=canonical,
+                localized=current,
+                stale=not current,
+            )
         return results
