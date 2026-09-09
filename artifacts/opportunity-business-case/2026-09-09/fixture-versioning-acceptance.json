@@ -1,0 +1,1475 @@
+{
+  "before": {
+    "case": {
+      "completed_at": "2026-09-09 13:09:12.122597+00:00",
+      "context_hash": "ab45cf5c1fdb56e8e19dc8a275399cbbfb93b8d65ce0d72c9962fb279e228fdb",
+      "created_at": "2026-09-09 13:09:12.099162+00:00",
+      "error_code": null,
+      "field_metadata": {
+        "adoption_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "build_complexity_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "business_model_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "competition_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "customer_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "distribution_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "pricing_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "problem_summary": {
+          "channel_count": 1,
+          "claim_statuses": {
+            "creator_claim": 1
+          },
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 1
+        },
+        "revenue_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "solution_pattern": {
+          "channel_count": 2,
+          "claim_statuses": {
+            "creator_claim": 2
+          },
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": true,
+          "video_count": 2
+        },
+        "workflow_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        }
+      },
+      "id": "7742b978-da40-4f66-89d5-d335d0a58086",
+      "input_hash": "4fcc3883aa5330196c1fddd260114bc67c3732518d385316056c7cc68ed1748e",
+      "model": "deterministic-fixture",
+      "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+      "parsed_output": {
+        "adoption_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "build_complexity_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "business_model_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "competition_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "customer_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "distribution_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "pricing_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "problem_summary": {
+          "evidence_signal_ids": [
+            "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+          ],
+          "information_class": "editorial_synthesis",
+          "support_level": "partially_supported",
+          "text": "LOCAL TEST ONLY: laboratory staff lose sample handoff records.",
+          "uncertainty": "Not independently verified"
+        },
+        "revenue_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "solution_pattern": {
+          "evidence_signal_ids": [
+            "bab88c4a-ea14-44f1-9502-a6cf1b95e74b",
+            "c9e26c61-bcf7-4a36-bd18-2ebc0c9b899c"
+          ],
+          "information_class": "editorial_synthesis",
+          "support_level": "partially_supported",
+          "text": "LOCAL TEST ONLY: a sample custody tracking assistant for laboratory handoffs.",
+          "uncertainty": "Not independently verified"
+        },
+        "validation_gaps": [
+          "Verify actual customer use",
+          "Evidence insufficient: customer_summary",
+          "Evidence insufficient: workflow_summary",
+          "Evidence insufficient: business_model_summary",
+          "Evidence insufficient: pricing_summary",
+          "Evidence insufficient: revenue_summary",
+          "Evidence insufficient: distribution_summary",
+          "Evidence insufficient: competition_summary",
+          "Evidence insufficient: adoption_summary",
+          "Evidence insufficient: build_complexity_summary",
+          "Video/channel diversity is not independent customer validation."
+        ],
+        "workflow_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        }
+      },
+      "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+      "prompt_version": "v001",
+      "provider": "local-fixture-no-provider",
+      "review_status": "pending",
+      "reviewed_at": null,
+      "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+      "status": "completed",
+      "version": 1
+    },
+    "excluded_counts": {},
+    "history": [
+      {
+        "completed_at": null,
+        "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+        "created_at": "2026-09-09 13:11:57.510050+00:00",
+        "error_code": null,
+        "field_metadata": null,
+        "id": "04aee373-8f90-4eee-994d-f9458c0409ca",
+        "input_hash": "8c5ce7fe6a91086f8faacf47e58bda7b227cafae420b34a7fc5a65ead5f0c172",
+        "model": null,
+        "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+        "parsed_output": null,
+        "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+        "prompt_version": "v001",
+        "provider": null,
+        "review_status": "pending",
+        "reviewed_at": null,
+        "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+        "status": "queued",
+        "version": 2
+      },
+      {
+        "completed_at": "2026-09-09 13:09:12.122597+00:00",
+        "context_hash": "ab45cf5c1fdb56e8e19dc8a275399cbbfb93b8d65ce0d72c9962fb279e228fdb",
+        "created_at": "2026-09-09 13:09:12.099162+00:00",
+        "error_code": null,
+        "field_metadata": {
+          "adoption_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "build_complexity_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "business_model_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "competition_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "customer_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "distribution_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "pricing_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "problem_summary": {
+            "channel_count": 1,
+            "claim_statuses": {
+              "creator_claim": 1
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 1
+          },
+          "revenue_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "solution_pattern": {
+            "channel_count": 2,
+            "claim_statuses": {
+              "creator_claim": 2
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": true,
+            "video_count": 2
+          },
+          "workflow_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          }
+        },
+        "id": "7742b978-da40-4f66-89d5-d335d0a58086",
+        "input_hash": "4fcc3883aa5330196c1fddd260114bc67c3732518d385316056c7cc68ed1748e",
+        "model": "deterministic-fixture",
+        "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+        "parsed_output": {
+          "adoption_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "build_complexity_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "business_model_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "competition_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "customer_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "distribution_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "pricing_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "problem_summary": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: laboratory staff lose sample handoff records.",
+            "uncertainty": "Not independently verified"
+          },
+          "revenue_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "solution_pattern": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b",
+              "c9e26c61-bcf7-4a36-bd18-2ebc0c9b899c"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: a sample custody tracking assistant for laboratory handoffs.",
+            "uncertainty": "Not independently verified"
+          },
+          "validation_gaps": [
+            "Verify actual customer use",
+            "Evidence insufficient: customer_summary",
+            "Evidence insufficient: workflow_summary",
+            "Evidence insufficient: business_model_summary",
+            "Evidence insufficient: pricing_summary",
+            "Evidence insufficient: revenue_summary",
+            "Evidence insufficient: distribution_summary",
+            "Evidence insufficient: competition_summary",
+            "Evidence insufficient: adoption_summary",
+            "Evidence insufficient: build_complexity_summary",
+            "Video/channel diversity is not independent customer validation."
+          ],
+          "workflow_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          }
+        },
+        "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+        "prompt_version": "v001",
+        "provider": "local-fixture-no-provider",
+        "review_status": "pending",
+        "reviewed_at": null,
+        "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+        "status": "completed",
+        "version": 1
+      }
+    ],
+    "history_has_more": false,
+    "latest_attempt": {
+      "completed_at": null,
+      "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+      "created_at": "2026-09-09 13:11:57.510050+00:00",
+      "error_code": null,
+      "field_metadata": null,
+      "id": "04aee373-8f90-4eee-994d-f9458c0409ca",
+      "input_hash": "8c5ce7fe6a91086f8faacf47e58bda7b227cafae420b34a7fc5a65ead5f0c172",
+      "model": null,
+      "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+      "parsed_output": null,
+      "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+      "prompt_version": "v001",
+      "provider": null,
+      "review_status": "pending",
+      "reviewed_at": null,
+      "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+      "status": "queued",
+      "version": 2
+    },
+    "opportunity_status": "candidate",
+    "opportunity_updated_at": "2026-09-09 13:10:52.621263+00:00",
+    "source_diversity": {
+      "channel_count": 2,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 2
+      },
+      "signal_count": 2,
+      "signal_types": {
+        "pain": 2
+      },
+      "supporting_count": 2,
+      "video_count": 2
+    },
+    "state": "stale"
+  },
+  "after": {
+    "case": {
+      "completed_at": "2026-09-09 13:12:20.471159+00:00",
+      "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+      "created_at": "2026-09-09 13:12:20.463673+00:00",
+      "error_code": null,
+      "field_metadata": {
+        "adoption_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "build_complexity_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "business_model_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "competition_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "customer_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "distribution_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "pricing_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "problem_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "revenue_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "solution_pattern": {
+          "channel_count": 1,
+          "claim_statuses": {
+            "creator_claim": 1
+          },
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 1
+        },
+        "workflow_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        }
+      },
+      "id": "f353a8eb-ad81-4b01-aaf8-d0a192eb22b9",
+      "input_hash": "7bbf621f991450427ad07f85af92d8c0cf1ed9a296bbeeda0d534370b46fe6dc",
+      "model": "deterministic-fixture",
+      "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+      "parsed_output": {
+        "adoption_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "build_complexity_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "business_model_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "competition_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "customer_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "distribution_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "pricing_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "problem_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "revenue_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "solution_pattern": {
+          "evidence_signal_ids": [
+            "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+          ],
+          "information_class": "editorial_synthesis",
+          "support_level": "partially_supported",
+          "text": "LOCAL TEST ONLY: a source-based laboratory handoff assistant.",
+          "uncertainty": "Not independently verified"
+        },
+        "validation_gaps": [
+          "Verify actual customer use",
+          "Evidence insufficient: customer_summary",
+          "Evidence insufficient: problem_summary",
+          "Evidence insufficient: workflow_summary",
+          "Evidence insufficient: business_model_summary",
+          "Evidence insufficient: pricing_summary",
+          "Evidence insufficient: revenue_summary",
+          "Evidence insufficient: distribution_summary",
+          "Evidence insufficient: competition_summary",
+          "Evidence insufficient: adoption_summary",
+          "Evidence insufficient: build_complexity_summary",
+          "Video/channel diversity is not independent customer validation."
+        ],
+        "workflow_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        }
+      },
+      "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+      "prompt_version": "v001",
+      "provider": "local-fixture-no-provider",
+      "review_status": "pending",
+      "reviewed_at": null,
+      "source_evidence_hash": "66dc2f57623e756d86ca2a011a69abcfc08a3124e6cd0499ba50a8818cb855be",
+      "status": "completed",
+      "version": 3
+    },
+    "excluded_counts": {},
+    "history": [
+      {
+        "completed_at": "2026-09-09 13:12:20.471159+00:00",
+        "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+        "created_at": "2026-09-09 13:12:20.463673+00:00",
+        "error_code": null,
+        "field_metadata": {
+          "adoption_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "build_complexity_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "business_model_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "competition_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "customer_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "distribution_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "pricing_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "problem_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "revenue_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "solution_pattern": {
+            "channel_count": 1,
+            "claim_statuses": {
+              "creator_claim": 1
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 1
+          },
+          "workflow_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          }
+        },
+        "id": "f353a8eb-ad81-4b01-aaf8-d0a192eb22b9",
+        "input_hash": "7bbf621f991450427ad07f85af92d8c0cf1ed9a296bbeeda0d534370b46fe6dc",
+        "model": "deterministic-fixture",
+        "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+        "parsed_output": {
+          "adoption_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "build_complexity_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "business_model_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "competition_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "customer_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "distribution_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "pricing_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "problem_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "revenue_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "solution_pattern": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: a source-based laboratory handoff assistant.",
+            "uncertainty": "Not independently verified"
+          },
+          "validation_gaps": [
+            "Verify actual customer use",
+            "Evidence insufficient: customer_summary",
+            "Evidence insufficient: problem_summary",
+            "Evidence insufficient: workflow_summary",
+            "Evidence insufficient: business_model_summary",
+            "Evidence insufficient: pricing_summary",
+            "Evidence insufficient: revenue_summary",
+            "Evidence insufficient: distribution_summary",
+            "Evidence insufficient: competition_summary",
+            "Evidence insufficient: adoption_summary",
+            "Evidence insufficient: build_complexity_summary",
+            "Video/channel diversity is not independent customer validation."
+          ],
+          "workflow_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          }
+        },
+        "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+        "prompt_version": "v001",
+        "provider": "local-fixture-no-provider",
+        "review_status": "pending",
+        "reviewed_at": null,
+        "source_evidence_hash": "66dc2f57623e756d86ca2a011a69abcfc08a3124e6cd0499ba50a8818cb855be",
+        "status": "completed",
+        "version": 3
+      },
+      {
+        "completed_at": "2026-09-09 13:12:20.452691+00:00",
+        "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+        "created_at": "2026-09-09 13:11:57.510050+00:00",
+        "error_code": null,
+        "field_metadata": {
+          "adoption_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "build_complexity_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "business_model_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "competition_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "customer_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "distribution_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "pricing_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "problem_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "revenue_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "solution_pattern": {
+            "channel_count": 1,
+            "claim_statuses": {
+              "creator_claim": 1
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 1
+          },
+          "workflow_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          }
+        },
+        "id": "04aee373-8f90-4eee-994d-f9458c0409ca",
+        "input_hash": "8c5ce7fe6a91086f8faacf47e58bda7b227cafae420b34a7fc5a65ead5f0c172",
+        "model": "deterministic-fixture",
+        "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+        "parsed_output": {
+          "adoption_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "build_complexity_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "business_model_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "competition_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "customer_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "distribution_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "pricing_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "problem_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "revenue_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "solution_pattern": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: a source-based laboratory handoff assistant.",
+            "uncertainty": "Not independently verified"
+          },
+          "validation_gaps": [
+            "Verify actual customer use",
+            "Evidence insufficient: customer_summary",
+            "Evidence insufficient: problem_summary",
+            "Evidence insufficient: workflow_summary",
+            "Evidence insufficient: business_model_summary",
+            "Evidence insufficient: pricing_summary",
+            "Evidence insufficient: revenue_summary",
+            "Evidence insufficient: distribution_summary",
+            "Evidence insufficient: competition_summary",
+            "Evidence insufficient: adoption_summary",
+            "Evidence insufficient: build_complexity_summary",
+            "Video/channel diversity is not independent customer validation."
+          ],
+          "workflow_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          }
+        },
+        "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+        "prompt_version": "v001",
+        "provider": "local-fixture-no-provider",
+        "review_status": "pending",
+        "reviewed_at": null,
+        "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+        "status": "completed",
+        "version": 2
+      },
+      {
+        "completed_at": "2026-09-09 13:09:12.122597+00:00",
+        "context_hash": "ab45cf5c1fdb56e8e19dc8a275399cbbfb93b8d65ce0d72c9962fb279e228fdb",
+        "created_at": "2026-09-09 13:09:12.099162+00:00",
+        "error_code": null,
+        "field_metadata": {
+          "adoption_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "build_complexity_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "business_model_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "competition_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "customer_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "distribution_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "pricing_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "problem_summary": {
+            "channel_count": 1,
+            "claim_statuses": {
+              "creator_claim": 1
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 1
+          },
+          "revenue_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          },
+          "solution_pattern": {
+            "channel_count": 2,
+            "claim_statuses": {
+              "creator_claim": 2
+            },
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": true,
+            "video_count": 2
+          },
+          "workflow_summary": {
+            "channel_count": 0,
+            "claim_statuses": {},
+            "contradicting_signal_ids": [],
+            "multi_video_coverage": false,
+            "video_count": 0
+          }
+        },
+        "id": "7742b978-da40-4f66-89d5-d335d0a58086",
+        "input_hash": "4fcc3883aa5330196c1fddd260114bc67c3732518d385316056c7cc68ed1748e",
+        "model": "deterministic-fixture",
+        "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+        "parsed_output": {
+          "adoption_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "build_complexity_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "business_model_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "competition_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "customer_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "distribution_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "pricing_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "problem_summary": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: laboratory staff lose sample handoff records.",
+            "uncertainty": "Not independently verified"
+          },
+          "revenue_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          },
+          "solution_pattern": {
+            "evidence_signal_ids": [
+              "bab88c4a-ea14-44f1-9502-a6cf1b95e74b",
+              "c9e26c61-bcf7-4a36-bd18-2ebc0c9b899c"
+            ],
+            "information_class": "editorial_synthesis",
+            "support_level": "partially_supported",
+            "text": "LOCAL TEST ONLY: a sample custody tracking assistant for laboratory handoffs.",
+            "uncertainty": "Not independently verified"
+          },
+          "validation_gaps": [
+            "Verify actual customer use",
+            "Evidence insufficient: customer_summary",
+            "Evidence insufficient: workflow_summary",
+            "Evidence insufficient: business_model_summary",
+            "Evidence insufficient: pricing_summary",
+            "Evidence insufficient: revenue_summary",
+            "Evidence insufficient: distribution_summary",
+            "Evidence insufficient: competition_summary",
+            "Evidence insufficient: adoption_summary",
+            "Evidence insufficient: build_complexity_summary",
+            "Video/channel diversity is not independent customer validation."
+          ],
+          "workflow_summary": {
+            "evidence_signal_ids": [],
+            "information_class": "unknown",
+            "support_level": "insufficient_evidence",
+            "text": null,
+            "uncertainty": "No evidence"
+          }
+        },
+        "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+        "prompt_version": "v001",
+        "provider": "local-fixture-no-provider",
+        "review_status": "pending",
+        "reviewed_at": null,
+        "source_evidence_hash": "76bb79513f8435c18d2b42bc4eecdec51ada58e22548c1e92714c3fc10fd9b12",
+        "status": "completed",
+        "version": 1
+      }
+    ],
+    "history_has_more": false,
+    "latest_attempt": {
+      "completed_at": "2026-09-09 13:12:20.471159+00:00",
+      "context_hash": "2c9075f195137e99a8cf08d0e43a4c5361352a71258f6ff36f48c4281a693005",
+      "created_at": "2026-09-09 13:12:20.463673+00:00",
+      "error_code": null,
+      "field_metadata": {
+        "adoption_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "build_complexity_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "business_model_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "competition_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "customer_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "distribution_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "pricing_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "problem_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "revenue_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        },
+        "solution_pattern": {
+          "channel_count": 1,
+          "claim_statuses": {
+            "creator_claim": 1
+          },
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 1
+        },
+        "workflow_summary": {
+          "channel_count": 0,
+          "claim_statuses": {},
+          "contradicting_signal_ids": [],
+          "multi_video_coverage": false,
+          "video_count": 0
+        }
+      },
+      "id": "f353a8eb-ad81-4b01-aaf8-d0a192eb22b9",
+      "input_hash": "7bbf621f991450427ad07f85af92d8c0cf1ed9a296bbeeda0d534370b46fe6dc",
+      "model": "deterministic-fixture",
+      "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+      "parsed_output": {
+        "adoption_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "build_complexity_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "business_model_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "competition_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "customer_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "distribution_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "pricing_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "problem_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "revenue_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        },
+        "solution_pattern": {
+          "evidence_signal_ids": [
+            "bab88c4a-ea14-44f1-9502-a6cf1b95e74b"
+          ],
+          "information_class": "editorial_synthesis",
+          "support_level": "partially_supported",
+          "text": "LOCAL TEST ONLY: a source-based laboratory handoff assistant.",
+          "uncertainty": "Not independently verified"
+        },
+        "validation_gaps": [
+          "Verify actual customer use",
+          "Evidence insufficient: customer_summary",
+          "Evidence insufficient: problem_summary",
+          "Evidence insufficient: workflow_summary",
+          "Evidence insufficient: business_model_summary",
+          "Evidence insufficient: pricing_summary",
+          "Evidence insufficient: revenue_summary",
+          "Evidence insufficient: distribution_summary",
+          "Evidence insufficient: competition_summary",
+          "Evidence insufficient: adoption_summary",
+          "Evidence insufficient: build_complexity_summary",
+          "Video/channel diversity is not independent customer validation."
+        ],
+        "workflow_summary": {
+          "evidence_signal_ids": [],
+          "information_class": "unknown",
+          "support_level": "insufficient_evidence",
+          "text": null,
+          "uncertainty": "No evidence"
+        }
+      },
+      "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+      "prompt_version": "v001",
+      "provider": "local-fixture-no-provider",
+      "review_status": "pending",
+      "reviewed_at": null,
+      "source_evidence_hash": "66dc2f57623e756d86ca2a011a69abcfc08a3124e6cd0499ba50a8818cb855be",
+      "status": "completed",
+      "version": 3
+    },
+    "opportunity_status": "candidate",
+    "opportunity_updated_at": "2026-09-09 13:10:52.621263+00:00",
+    "source_diversity": {
+      "channel_count": 2,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 2
+      },
+      "signal_count": 2,
+      "signal_types": {
+        "pain": 2
+      },
+      "supporting_count": 2,
+      "video_count": 2
+    },
+    "state": "current"
+  },
+  "reuse": {
+    "id": "04aee373-8f90-4eee-994d-f9458c0409ca",
+    "status": "completed",
+    "reused": true
+  },
+  "provider_calls": 2,
+  "revisions": [
+    {
+      "changed_at": "2026-09-09 13:10:52.621263+00:00",
+      "changed_by": "bdcc80a7-72c5-494b-9851-5ef84a227359",
+      "field": "solution",
+      "id": "176cb598-7b81-4b77-8a41-1e67721e259a",
+      "new_value": "LOCAL TEST ONLY: a human-reviewed sample custody assistant for laboratory handoffs.",
+      "note": "TASK-044H \u672c\u5730\u5939\u5177\u9a8c\u6536\uff1a\u786e\u8ba4\u5355\u5b57\u6bb5\u91c7\u7eb3\u3001\u4eba\u5de5\u7f16\u8f91\u4e0e\u6765\u6e90\u8bba\u8bc1\u7559\u75d5\uff1b\u975e\u771f\u5b9e\u5546\u4e1a\u7ed3\u8bba\u3002",
+      "old_value": "LOCAL TEST ONLY: original tracking proposal",
+      "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+      "source_consolidation_id": "7742b978-da40-4f66-89d5-d335d0a58086"
+    }
+  ]
+}

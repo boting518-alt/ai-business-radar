@@ -6,8 +6,8 @@ import { WatchlistPage } from "@/components/watchlist/watchlist-page";
 import { WatchlistButton } from "@/components/watchlist/watchlist-button";
 import type { SignalFeedItem,WatchlistItem } from "@/lib/api/types";
 
-const replace=vi.fn();let query="";
-vi.mock("next/navigation",()=>({useRouter:()=>({replace}),useSearchParams:()=>new URLSearchParams(query)}));
+const replace=vi.fn();const router={replace};let query="";
+vi.mock("next/navigation",()=>({useRouter:()=>router,useSearchParams:()=>new URLSearchParams(query)}));
 vi.mock("@/lib/auth/client",()=>({createClient:()=>({auth:{getSession:vi.fn().mockResolvedValue({data:{session:{access_token:"token"}}})}})}));
 function response(body:unknown,status=200,id?:string){return Promise.resolve({ok:status>=200&&status<300,status,headers:new Headers(id?{"X-Request-ID":id}:{}),json:async()=>body} as Response)}
 const signal:SignalFeedItem={id:"signal-1",signal_type:"workflow",statement:"团队每周花数小时核对发票。",evidence_text:"我们仍逐张人工核对发票。",original_statement:"Teams lose hours reconciling invoices.",original_evidence_text:"We review every invoice by hand.",statement_localized:true,evidence_localized:true,localization_stale:false,industry:"Finance",customer_type:"SMB",claim_status:"creator_claim",confidence:"0.82",evidence_strength:"0.71",observed_at:"2026-09-04T08:00:00Z",source_type:"video",source_url:"https://www.youtube.com/watch?v=abcdefghijk",source_navigation:"video",video_title:"Invoice automation field report",channel_name:"Creative World Prime",opportunity_ids:["opp-1"],opportunities:[{id:"opp-1",slug:"invoice-ai",name:"Invoice AI"}]};

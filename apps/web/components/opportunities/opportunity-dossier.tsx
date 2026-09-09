@@ -8,6 +8,7 @@ import { ApiClient, ApiError } from "@/lib/api/client";
 import { createClient } from "@/lib/auth/client";
 import type { EvidencePage, OpportunityDetail, ScoreItem, TrendItem } from "@/lib/api/types";
 import { EmptyState, ErrorState } from "@/components/states/states";
+import { BusinessCasePanel } from "@/components/business-case/business-case-panel";
 import { EvidenceList } from "@/components/evidence/evidence-list";
 import { StageBadge } from "@/components/ui/primitives";
 import { WatchlistButton } from "@/components/watchlist/watchlist-button";
@@ -31,6 +32,7 @@ function price(detail:OpportunityDetail["opportunity"]){
 
 export function OpportunityDossier({identifier}:{identifier:string}){
   const {locale,t,enumLabel}=useI18n();
+  const caseApi=useMemo(()=>new ApiClient(async()=>{const {data}=await createClient().auth.getSession();return data.session?.access_token??null}),[]);
   const router=useRouter();
   const searchParams=useSearchParams();
   const serialized=searchParams.toString();
@@ -61,9 +63,13 @@ export function OpportunityDossier({identifier}:{identifier:string}){
         const {data:{session}}=await createClient().auth.getSession();
         if(!session){router.replace("/login");return}
         const api=new ApiClient(async()=>session.access_token);
-        const [nextDetail,nextTrends,nextScores,nextEvidence]=await Promise.all([
-          api.getOpportunity(identifier,{locale}),api.getOpportunityTrends(identifier,{window_type:trendWindow,limit:50}),api.getOpportunityScores(identifier,{limit:50}),api.getOpportunityEvidence(identifier,{offset:evidenceOffset,limit:EVIDENCE_LIMIT,locale,signal_type:evidenceType||undefined}),
-        ]);
+        const nextDetail=await api.getOpportunity(identifier,{locale});
+        if(!active)return;
+        const nextTrends=await api.getOpportunityTrends(identifier,{window_type:trendWindow,limit:50});
+        if(!active)return;
+        const nextScores=await api.getOpportunityScores(identifier,{limit:50});
+        if(!active)return;
+        const nextEvidence=await api.getOpportunityEvidence(identifier,{offset:evidenceOffset,limit:EVIDENCE_LIMIT,locale,signal_type:evidenceType||undefined});
         if(active){setDetail(nextDetail);setTrends(nextTrends);setScores(nextScores);setEvidence(nextEvidence)}
       }catch(reason){
         if(reason instanceof ApiError&&reason.status===401){router.replace("/login");return}
@@ -90,6 +96,7 @@ export function OpportunityDossier({identifier}:{identifier:string}){
     <header className="border-b pb-6"><div className="flex flex-wrap items-start justify-between gap-4"><div className="max-w-4xl"><div className="flex flex-wrap items-center gap-2"><h1 className="text-3xl font-semibold tracking-tight">{opportunity.name}</h1><StageBadge stage={opportunity.market_stage}/><WatchlistButton opportunityId={opportunity.id} initialWatchlisted={detail.watchlisted}/></div>{opportunity.one_line_thesis&&<p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">{opportunity.one_line_thesis}</p>}<div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">{[opportunity.industry,opportunity.sub_industry,opportunity.customer_type,opportunity.business_model].filter(Boolean).map(value=><span key={value}>{value}</span>)}</div></div><div className="text-right text-xs text-slate-500"><p>首次发现 {date(opportunity.first_detected_at)}</p><p className="mt-1">最近活动 {date(opportunity.last_activity_at)}</p></div></div></header>
     <section aria-labelledby="key-metrics"><h2 id="key-metrics" className="sr-only">关键情报指标</h2><div className="grid grid-cols-2 divide-x divide-y rounded-xl border bg-white sm:grid-cols-4 sm:divide-y-0 dark:bg-slate-950"><PrimaryMetric label="机会评分 Opportunity Score" value={current?.opportunity_score} definition="综合商业机会强度"/><PrimaryMetric label="置信度 Confidence" value={current?.confidence_score} definition="支持证据的强度与覆盖度" percentage/><PrimaryMetric label="炒作风险 Hype Risk" value={current?.hype_risk_score} definition="关注度相对于商业证据的风险"/><PrimaryMetric label="趋势动量 Momentum" value={currentTrend?.momentum_score} definition="近期趋势活跃度"/></div></section>
     <Section title="Business thesis"><dl className="grid gap-px overflow-hidden rounded-lg border bg-slate-200 md:grid-cols-2 dark:bg-slate-800">{businessFields.map(([label,value])=><div key={label} className="bg-white p-4 dark:bg-slate-950"><dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt><dd className="mt-2 text-sm leading-6">{value}</dd></div>)}</dl></Section>
+    <BusinessCasePanel id={opportunity.id} api={caseApi}/>
     <Section title="Trend overview"><div className="grid gap-3 lg:grid-cols-3">{WINDOWS.map(window=><TrendSummary key={window} window={window} trend={detail.trend_summary[window]}/>)}</div></Section>
     <Section title="Score breakdown">{current?<div className="divide-y rounded-lg border">{SCORE_COMPONENTS.map(([key,label])=><div key={key} className="grid grid-cols-[minmax(10rem,1fr)_3fr_3rem] items-center gap-3 px-4 py-3"><span className="text-sm">{label}</span><progress aria-label={label} max="100" value={Number(current[key])} className="h-2 w-full accent-slate-800"/><span className="text-right text-sm font-semibold tabular-nums">{display(current[key])}</span></div>)}</div>:<EmptyState title="评分尚不可用" description="该机会还没有持久化评分。"/>}</Section>
     <Section title={t("evidence.summary")}><div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border bg-slate-200 sm:grid-cols-4 lg:grid-cols-8 dark:bg-slate-800">{[[t("evidence.linked"),detail.evidence_summary.active_signal_count],[t("evidence.supporting"),detail.evidence_summary.supporting_signal_count??0],[t("evidence.videos"),detail.evidence_summary.distinct_video_count],[t("evidence.channels"),detail.evidence_summary.distinct_channel_count],[enumLabel("pain"),detail.evidence_summary.pain_signal_count],[enumLabel("demand"),detail.evidence_summary.demand_signal_count],[enumLabel("purchase_intent"),detail.evidence_summary.purchase_intent_signal_count],[enumLabel("revenue"),detail.evidence_summary.revenue_signal_count]].map(([label,value])=><div key={label} className="bg-white p-3 dark:bg-slate-950"><p className="text-[11px] text-slate-500">{label}</p><p className="mt-1 text-xl font-semibold tabular-nums">{value}</p></div>)}</div></Section>

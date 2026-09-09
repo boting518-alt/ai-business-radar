@@ -1,0 +1,187 @@
+{
+  "state": "current",
+  "case": {
+    "id": "6616967c-da97-4ffc-82a0-590b3a1aacc7",
+    "version": 1,
+    "parsed_output": {
+      "pricing_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "problem_summary": {
+        "text": "LOCAL TEST ONLY: laboratory staff lose sample handoff records.",
+        "uncertainty": "Not independently verified",
+        "support_level": "partially_supported",
+        "information_class": "editorial_synthesis",
+        "evidence_signal_ids": [
+          "afab276e-9fa4-4659-8b93-e3dfcfecb306"
+        ]
+      },
+      "revenue_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "validation_gaps": [
+        "Verify actual customer use",
+        "Evidence insufficient: customer_summary",
+        "Evidence insufficient: workflow_summary",
+        "Evidence insufficient: business_model_summary",
+        "Evidence insufficient: pricing_summary",
+        "Evidence insufficient: revenue_summary",
+        "Evidence insufficient: distribution_summary",
+        "Evidence insufficient: competition_summary",
+        "Evidence insufficient: adoption_summary",
+        "Evidence insufficient: build_complexity_summary",
+        "Video/channel diversity is not independent customer validation."
+      ],
+      "adoption_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "customer_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "solution_pattern": {
+        "text": "LOCAL TEST ONLY: a sample custody tracking assistant for laboratory handoffs.",
+        "uncertainty": "Not independently verified",
+        "support_level": "partially_supported",
+        "information_class": "editorial_synthesis",
+        "evidence_signal_ids": [
+          "afab276e-9fa4-4659-8b93-e3dfcfecb306",
+          "da3a763d-f828-4ed9-810b-b64f3e57d232"
+        ]
+      },
+      "workflow_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "competition_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "distribution_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "business_model_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      },
+      "build_complexity_summary": {
+        "text": null,
+        "uncertainty": "No evidence",
+        "support_level": "insufficient_evidence",
+        "information_class": "unknown",
+        "evidence_signal_ids": []
+      }
+    },
+    "field_metadata": {
+      "pricing_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "problem_summary": {
+        "video_count": 1,
+        "channel_count": 1,
+        "claim_statuses": {
+          "creator_claim": 1
+        },
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "revenue_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "adoption_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "customer_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "solution_pattern": {
+        "video_count": 2,
+        "channel_count": 2,
+        "claim_statuses": {
+          "creator_claim": 2
+        },
+        "multi_video_coverage": true,
+        "contradicting_signal_ids": []
+      },
+      "workflow_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "competition_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "distribution_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "business_model_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      },
+      "build_complexity_summary": {
+        "video_count": 0,
+        "channel_count": 0,
+        "claim_statuses": {},
+        "multi_video_coverage": false,
+        "contradicting_signal_ids": []
+      }
+    }
+  }
+}

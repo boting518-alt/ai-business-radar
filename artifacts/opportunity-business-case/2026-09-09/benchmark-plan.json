@@ -1,0 +1,224 @@
+{
+  "status": "awaiting_explicit_OpenAI_destination_approval",
+  "real_provider_calls": 0,
+  "cases": [
+    {
+      "id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+      "name": "AI receptionist and appointment-lead workflow management for dental practices",
+      "status": "active",
+      "count": 38,
+      "types": {
+        "customer": 2,
+        "distribution": 3,
+        "pain": 10,
+        "technology": 2,
+        "workflow": 21
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": "Dental clinics, dental offices, solo dentists, multi-provider dental practices, cosmetic dentistry clinics, and busy front desks",
+        "industry": "Dental clinics and dental practices",
+        "name": "AI receptionist and appointment-lead workflow management for dental practices",
+        "one_line_thesis": "Dental appointment leads are organized inside the VitalDesk dashboard.",
+        "problem": "Missed patient calls and after-hours inquiries, plus the administrative burden of capturing and routing appointment-related patient requests.",
+        "solution": "VitalDesk, an AI receptionist and dashboard for capturing patient communications and organizing front-desk workflows.",
+        "taxonomy": {
+          "customer": {
+            "code": "organization.dental_practice",
+            "label": "Dental Practice"
+          },
+          "industry": {
+            "code": "healthcare.dental",
+            "label": "Dental"
+          }
+        }
+      }
+    },
+    {
+      "id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "name": "Preorder demand for Microduck walking robot",
+      "status": "candidate",
+      "count": 6,
+      "types": {
+        "demand": 1,
+        "distribution": 1,
+        "pricing": 1,
+        "purchase_intent": 3
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": null,
+        "industry": null,
+        "name": "Preorder demand for Microduck walking robot",
+        "one_line_thesis": "The commenter has preordered the product and is waiting for delivery.",
+        "problem": "The commenter has preordered the product and is waiting for delivery.",
+        "solution": null,
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "name": "Roller-skating duck robot companion",
+      "status": "candidate",
+      "count": 12,
+      "types": {
+        "complaint": 1,
+        "customer": 1,
+        "market_change": 1,
+        "pricing": 2,
+        "product_launch": 2,
+        "revenue": 1,
+        "technology": 1,
+        "workflow": 3
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "industry": "consumer robotics",
+        "name": "Roller-skating duck robot companion",
+        "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+        "problem": null,
+        "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+      "name": "Open-source bipedal robot platform",
+      "status": "candidate",
+      "count": 31,
+      "types": {
+        "adoption": 1,
+        "distribution": 1,
+        "market_change": 1,
+        "pricing": 2,
+        "product_launch": 5,
+        "technology": 11,
+        "workflow": 10
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": null,
+        "industry": "robotics",
+        "name": "Open-source bipedal robot platform",
+        "one_line_thesis": "Microduck is described as an open-source bipedal robot from Hugging Face and Pollen Robotics.",
+        "problem": null,
+        "solution": "Microduck, an open-source bipedal robot from Hugging Face and Pollen Robotics.",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+      "name": "AI voice receptionists for business call handling and appointment booking",
+      "status": "candidate",
+      "count": 9,
+      "types": {
+        "pain": 1,
+        "product_launch": 1,
+        "technology": 1,
+        "workflow": 6
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": "businesses",
+        "industry": null,
+        "name": "AI voice receptionists for business call handling and appointment booking",
+        "one_line_thesis": "VoiceFactory says its AI voice receptionists can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.",
+        "problem": null,
+        "solution": "AI voice receptionists that handle routine customer conversations for businesses 24/7.",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+      "name": "AI companionship apps for loneliness and emotional connection",
+      "status": "candidate",
+      "count": 9,
+      "types": {
+        "competition": 1,
+        "complaint": 1,
+        "demand": 1,
+        "market_change": 2,
+        "pain": 2,
+        "workflow": 2
+      },
+      "before": {
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "customer_type": null,
+        "industry": "AI companionship apps",
+        "name": "AI companionship apps for loneliness and emotional connection",
+        "one_line_thesis": "The creator frames loneliness and emotional dependency as risks associated with AI companionship.",
+        "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+        "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+      "name": "Interactive AI plush companion toys",
+      "status": "candidate",
+      "count": 9,
+      "types": {
+        "feature_request": 1,
+        "product_launch": 4,
+        "technology": 2,
+        "workflow": 2
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": null,
+        "industry": "AI companion toys",
+        "name": "Interactive AI plush companion toys",
+        "one_line_thesis": "Silly Baby is presented as an interactive AI companion plush that can chat and react.",
+        "problem": null,
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    },
+    {
+      "id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+      "name": "AI-driven defence robotics for Indian terrain",
+      "status": "candidate",
+      "count": 9,
+      "types": {
+        "competition": 3,
+        "customer": 1,
+        "market_change": 1,
+        "pain": 1,
+        "technology": 1,
+        "workflow": 2
+      },
+      "before": {
+        "business_model": null,
+        "customer_type": "Defence buyers",
+        "industry": "Defence robotics",
+        "name": "AI-driven defence robotics for Indian terrain",
+        "one_line_thesis": "The founders say the post-ChatGPT moment made truly capable AI-driven robotics possible.",
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "taxonomy": {
+          "customer": null,
+          "industry": null
+        }
+      }
+    }
+  ]
+}

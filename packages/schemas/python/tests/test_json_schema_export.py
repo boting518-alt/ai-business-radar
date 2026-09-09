@@ -12,6 +12,7 @@ def test_all_ai_json_schemas_are_generated_from_models(tmp_path: Path) -> None:
 
     assert {path.name for path in written} == {
         "relevance_filter.v001.schema.json",
+        "opportunity_consolidation.v001.schema.json",
         "signal_extractor.v001.schema.json",
         "comment_pain_miner.v001.schema.json",
         "opportunity_normalizer.v001.schema.json",

@@ -9,6 +9,7 @@ from .ai_relevance import router as ai_relevance_router
 from .ai_signals import router as ai_signals_router
 from .auth import router as auth_router
 from .candidates import router as candidates_router
+from .consolidation import router as consolidation_router
 from .discovery_operations import router as discovery_operations_router
 from .health import router as health_router
 from .localization import router as localization_router
@@ -35,6 +36,7 @@ router.include_router(localization_router)
 router.include_router(trends_router)
 router.include_router(scoring_router)
 router.include_router(candidates_router)
+router.include_router(consolidation_router)
 router.include_router(opportunity_activation_router)
 router.include_router(reviews_router)
 router.include_router(radar_router)

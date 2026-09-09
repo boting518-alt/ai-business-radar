@@ -24,11 +24,11 @@ function mockApi(options:{detail?:unknown;trends?:unknown;scores?:unknown;eviden
 describe("Opportunity detail page",()=>{
   beforeEach(()=>{query="";replace.mockReset();mockApi()});
 
-  it("loads a slug through four parallel product APIs",async()=>{
+  it("loads a slug and the read-only business-case projection",async()=>{
     render(<OpportunityDossier identifier="ai-dental-receptionist"/>);
     expect(screen.getByLabelText("正在加载机会详情")).toBeInTheDocument();
     expect(await screen.findByRole("heading",{name:"AI Dental Receptionist"})).toBeInTheDocument();
-    await waitFor(()=>expect(fetch).toHaveBeenCalledTimes(4));
+    await waitFor(()=>expect(fetch).toHaveBeenCalledTimes(5));
     const urls=vi.mocked(fetch).mock.calls.map(call=>String(call[0]));
     expect(urls.some(url=>url.endsWith("/opportunities/ai-dental-receptionist?locale=zh-CN"))).toBe(true);
     expect(urls.some(url=>url.includes("/trends?window_type=7d"))).toBe(true);
@@ -51,7 +51,7 @@ describe("Opportunity detail page",()=>{
 
   it("shows all three trend summaries and trend history",async()=>{
     render(<OpportunityDossier identifier="opp-1"/>);await screen.findByText("Trend overview");
-    expect(screen.getAllByRole("heading",{level:3})).toHaveLength(3);expect(screen.getByText("Trend history")).toBeInTheDocument();expect(screen.getAllByText("63").length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("heading",{level:3,name:/^(7d|30d|90d)$/})).toHaveLength(3);expect(screen.getByText("Trend history")).toBeInTheDocument();expect(screen.getAllByText("63").length).toBeGreaterThan(0);
   });
 
   it("writes trend window changes to the URL",async()=>{

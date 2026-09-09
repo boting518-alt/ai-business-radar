@@ -358,3 +358,15 @@ accepts candidates and requires expected_updated_at. Validation422, stale/inelig
 missing404, non-admin403. Public endpoints still hide candidates. Submission reuses the existing
 /admin/opportunities/{id}/activation-review endpoint, now recording the submitting actor. Claim
 and final decisions reuse /admin/reviews APIs. Evidence adds signal_status and semantic_status.
+
+## TASK-044H business-case workflow
+
+Admin POST /admin/opportunities/{uuid}/consolidation prepares/reuses a durable attempt and enqueues;
+GET /consolidation/current and /consolidations expose safe status/history. POST
+/consolidations/{case_id}/accept accepts one mapped candidate field with optimistic updated_at and
+required note; POST /approve confirms current case display without publication. Both reject stale
+inputs with409. Public GET /opportunities/{uuid}/business-case requires an active Opportunity and
+projects only a current approved case; otherwise sections remain unavailable. Admin
+/consolidation/evidence/{dimension} and public /business-case/evidence/{dimension} reuse the 044E
+evidence projection with exact cited Signal IDs, locale, offset and limit20/max100. No GET calls AI.
+Detailed envelopes and limitations: opportunity-business-case-consolidation.md.

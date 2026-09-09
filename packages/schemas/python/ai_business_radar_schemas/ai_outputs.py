@@ -11,6 +11,7 @@ from .common import (
     AIScore100,
     SchemaModel,
 )
+from .consolidation import OpportunityConsolidationOutput
 from .enums import (
     ClaimStatus,
     HypeClassification,
@@ -114,6 +115,7 @@ class IntelligenceTranslationOutput(SchemaModel):
 
 
 AI_OUTPUT_MODELS = {
+    "opportunity_consolidation": OpportunityConsolidationOutput,
     "relevance_filter": RelevanceFilterOutput,
     "signal_extractor": BusinessSignalExtractorOutput,
     "comment_pain_miner": CommentPainMinerOutput,

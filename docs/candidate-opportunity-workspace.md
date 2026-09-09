@@ -106,3 +106,10 @@ Fixed workspace labels support zh-CN/en-US. Canonical business text and backend 
 may remain English; evidence uses stored localized projections with canonical fallback. Loading,
 true-empty, filtered-empty, missing-support and transport-retry states are distinct. Existing
 intermittent browser transport failures are not asserted fixed by this task.
+
+## TASK-044H business-case panel
+
+The dossier separately displays versioned machine synthesis, coverage gaps and missing/stale
+advisories. Admins explicitly refresh, inspect cited evidence, accept/edit one mapped field with
+revision provenance, or confirm the case for display. No new publication threshold or automatic
+Opportunity overwrite is introduced. See [business-case workflow](opportunity-business-case-consolidation.md).

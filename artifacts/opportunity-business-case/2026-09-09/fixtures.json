@@ -1,0 +1,30 @@
+[
+  {
+    "opportunity_id": "9a6148ea-3e06-4288-9c67-4bab0fd1aa6a",
+    "status": "candidate",
+    "signals": [
+      "bab88c4a-ea14-44f1-9502-a6cf1b95e74b",
+      "c9e26c61-bcf7-4a36-bd18-2ebc0c9b899c"
+    ],
+    "case_id": "7742b978-da40-4f66-89d5-d335d0a58086",
+    "result": {
+      "id": "7742b978-da40-4f66-89d5-d335d0a58086",
+      "status": "completed",
+      "error_code": null
+    }
+  },
+  {
+    "opportunity_id": "80a7a6a4-9492-4df4-938b-901c6c2d5f03",
+    "status": "active",
+    "signals": [
+      "afab276e-9fa4-4659-8b93-e3dfcfecb306",
+      "da3a763d-f828-4ed9-810b-b64f3e57d232"
+    ],
+    "case_id": "6616967c-da97-4ffc-82a0-590b3a1aacc7",
+    "result": {
+      "id": "6616967c-da97-4ffc-82a0-590b3a1aacc7",
+      "status": "completed",
+      "error_code": null
+    }
+  }
+]

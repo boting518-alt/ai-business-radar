@@ -61,3 +61,6 @@ Foreign keys default to restrictive behavior for source and historical intellige
 
 - `0022_candidate_workspace_audit.sql`: admin-only field revisions and activation event history;
   additive, no historical event fabrication or Opportunity status changes. Apply before TASK-044G API.
+
+- `0023_opportunity_consolidations.sql`: versioned business-case attempts, immutable terminal payloads,
+  admin-only audit RLS and source consolidation linkage on human revisions.

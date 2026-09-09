@@ -66,3 +66,10 @@ semantic-under-review links also raise quality warnings. Existing state and publ
 are unchanged. List responses contain summary readiness; dossier and review reads show full checks.
 Migration0022 supersedes the previous claim/defer-history limitation with append-only activation
 review events. Older task fields remain legacy snapshots; see candidate-opportunity-workspace.md.
+
+## TASK-044H consolidation advisory
+
+The full candidate dossier shows missing/stale machine business-case warnings before publication.
+These are advisory alongside the existing six deterministic checks, not a seventh publication gate.
+Human confirmation of a case permits its display only when the Opportunity itself is active; it never
+publishes a candidate. See opportunity-business-case-consolidation.md.

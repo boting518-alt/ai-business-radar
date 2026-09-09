@@ -30,8 +30,10 @@ from .actors import (  # noqa: E402
     translate_opportunity,
     translate_signal,
 )
+from .actors.consolidation import consolidate_opportunity  # noqa: E402
 
 __all__ = [
+    "consolidate_opportunity",
     "broker",
     "recover_stale_collection_claims",
     "recover_stale_discovery_runs",

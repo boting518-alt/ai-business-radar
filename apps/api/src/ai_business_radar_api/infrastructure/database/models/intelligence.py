@@ -231,6 +231,9 @@ class WatchlistItem(Base):
 
 
 class OpportunityRevision(Base):
+    source_consolidation_id: Mapped[UUID | None] = mapped_column(
+        ForeignKey("opportunity_consolidations.id")
+    )
     __tablename__ = "opportunity_revisions"
     id: Mapped[UUID] = mapped_column(
         Uuid, primary_key=True, server_default=text("gen_random_uuid()")
@@ -257,3 +260,36 @@ class ActivationReviewEvent(Base):
     status: Mapped[str] = mapped_column(Text)
     notes: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class OpportunityConsolidation(Base):
+    __tablename__ = "opportunity_consolidations"
+    __table_args__ = (UniqueConstraint("opportunity_id", "version"),)
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    opportunity_id: Mapped[UUID] = mapped_column(ForeignKey("opportunities.id"))
+    version: Mapped[int] = mapped_column(Integer)
+    status: Mapped[str] = mapped_column(Text)
+    source_evidence_hash: Mapped[str] = mapped_column(Text)
+    context_hash: Mapped[str] = mapped_column(Text)
+    input_hash: Mapped[str] = mapped_column(Text)
+    prompt_version: Mapped[str] = mapped_column(Text)
+    prompt_hash: Mapped[str] = mapped_column(Text)
+    provider: Mapped[str | None] = mapped_column(Text)
+    model: Mapped[str | None] = mapped_column(Text)
+    input_snapshot: Mapped[dict] = mapped_column(JSONB)
+    raw_output: Mapped[dict | None] = mapped_column(JSONB)
+    parsed_output: Mapped[dict | None] = mapped_column(JSONB)
+    field_metadata: Mapped[dict | None] = mapped_column(JSONB)
+    error_code: Mapped[str | None] = mapped_column(Text)
+    provider_request_id: Mapped[str | None] = mapped_column(Text)
+    input_tokens: Mapped[int | None] = mapped_column(Integer)
+    output_tokens: Mapped[int | None] = mapped_column(Integer)
+    created_by: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    review_status: Mapped[str] = mapped_column(Text, server_default="pending")
+    reviewed_by: Mapped[UUID | None] = mapped_column(ForeignKey("user_profiles.id"))
+    reviewed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))

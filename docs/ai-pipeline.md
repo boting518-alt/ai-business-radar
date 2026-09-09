@@ -251,3 +251,11 @@ TASK-044F adds deterministic semantic decisions after both Signal extraction and
 before normalization, and at review approval. Blocked proposals remain audited and cannot enter
 current evidence or translation. Experimental Signal v004 uses the unchanged strict v001 schema;
 actor/evidence roles are an application projection. Runtime remains v003. See signal-semantic-guardrails.md.
+
+## TASK-044H Opportunity consolidation
+
+`OpportunityConsolidationOutput` adds the opportunity_consolidation.v001 JSON schema and immutable
+opportunity-consolidation/v001 prompt. A separate asynchronous editorial stage consumes only current
+effective linked Signals and scoped human context. It does not change normalization, extraction,
+scoring or activation policies. Inputs/output/attempts live in opportunity_consolidations; explicit
+human acceptance retains source-consolidation revision lineage. See opportunity-business-case-consolidation.md.

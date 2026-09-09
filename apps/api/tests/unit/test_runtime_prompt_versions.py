@@ -12,6 +12,7 @@ from ai_business_radar_api.infrastructure.ai import (
 def test_runtime_matrix_keeps_only_signal_v003_promoted() -> None:
     assert RUNTIME_PROMPT_DEFAULTS == {
         "relevance-filter": "v001",
+        "opportunity-consolidation": "v001",
         "signal-extractor": "v003",
         "comment-pain-miner": "v001",
         "opportunity-normalizer": "v001",

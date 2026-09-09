@@ -188,7 +188,14 @@ class RadarQueryRepository:
         return list(reversed(rows))
 
     async def evidence(
-        self, opportunity_id, offset, limit, signal_type=None, *, excluded_only=False
+        self,
+        opportunity_id,
+        offset,
+        limit,
+        signal_type=None,
+        *,
+        excluded_only=False,
+        signal_ids=None,
     ):
         effective = (Signal.status == "active") & (Signal.semantic_status == "current")
         eligibility = ~effective if excluded_only else effective
@@ -302,6 +309,8 @@ class RadarQueryRepository:
         )
         universe = union_all(linked, explicit_signal, manual).subquery()
         query = select(universe)
+        if signal_ids is not None:
+            query = query.where(universe.c.signal_id.in_(signal_ids))
         if signal_type:
             query = query.where(universe.c.signal_type == signal_type)
         total = await self.session.scalar(select(func.count()).select_from(query.subquery()))

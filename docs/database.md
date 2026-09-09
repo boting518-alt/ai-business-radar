@@ -546,3 +546,11 @@ Migration0022 adds opportunity_revisions (actor/time/field/old/new/note) and act
 admin-only read RLS, and application-owned append-only mutations in the parent transaction.
 Historical task state is not backfilled into fabricated events. No source/extraction/score schema
 or public Opportunity visibility predicate changes.
+
+## TASK-044H immutable business-case history
+
+Migration0023 adds opportunity_consolidations, with versioned input/output and prompt/provider audit,
+queued/running/completed/failed attempts, and separate human confirmation metadata. A DB trigger
+protects terminal payloads. All direct reads are admin-only; application product APIs project only
+current confirmed cases for active Opportunities. opportunity_revisions gains source_consolidation_id.
+No new canonical business columns or score storage are added. See opportunity-business-case-consolidation.md.

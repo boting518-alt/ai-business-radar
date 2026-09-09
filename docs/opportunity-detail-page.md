@@ -71,3 +71,10 @@ horizontal scroll container so the overall page does not overflow.
 
 - Trend and score history are textual tables without charts.
 - Page-level URL changes currently refresh the four bounded detail requests together.
+
+## TASK-044H business-case sections
+
+The active dossier loads a separate read-only business-case projection. Only a current admin-confirmed
+case is displayed; missing or stale dimensions say Evidence insufficient. Evidence links resolve
+exact cited Signals through the existing provenance projection. Machine English is labeled separately
+from curated/localized Opportunity fields. See opportunity-business-case-consolidation.md.

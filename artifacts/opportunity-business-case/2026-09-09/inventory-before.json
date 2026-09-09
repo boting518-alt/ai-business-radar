@@ -1,0 +1,1303 @@
+[
+  {
+    "id": "03dffd58-4a52-4bb2-9ffb-97809b2e691f",
+    "name": "Person-recognizing companion capabilities for Microduck",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "feature_request": 1,
+      "product_launch": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Person-recognizing companion capabilities for Microduck",
+      "one_line_thesis": "The commenter wants to know whether the robot can recognize people and function as a companion robot rather than only perform preprogrammed movements.",
+      "problem": "The commenter wants to know whether the robot can recognize people and function as a companion robot rather than only perform preprogrammed movements.",
+      "solution": "Person recognition and companion-robot capabilities beyond programmed movement patterns.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+    "name": "Blade-free wind-energy technology",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Blade-free wind-energy technology",
+      "one_line_thesis": "Vortex Bladeless is described as having blade-free wind-energy technology.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "07db7bc5-84e3-49d4-b329-df09e985a45a",
+    "name": "AI desktop pet companion",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "product_launch": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "AI desktop pet companion",
+      "one_line_thesis": "Amo AI is presented as a desktop pet and AI companion.",
+      "problem": null,
+      "solution": "Amo AI is presented as a desktop pet and AI companion.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+    "name": "AI voice receptionists for business call handling and appointment booking",
+    "status": "candidate",
+    "count": 9,
+    "types": {
+      "pain": 1,
+      "product_launch": 1,
+      "technology": 1,
+      "workflow": 6
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "businesses",
+      "industry": null,
+      "name": "AI voice receptionists for business call handling and appointment booking",
+      "one_line_thesis": "VoiceFactory says its AI voice receptionists can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.",
+      "problem": null,
+      "solution": "AI voice receptionists that handle routine customer conversations for businesses 24/7.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+    "name": "Lower-priced Microduck access",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "complaint": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Lower-priced Microduck access",
+      "one_line_thesis": "The stated price is $100 above the commenter\u2019s willingness-to-buy threshold.",
+      "problem": "The stated price is $100 above the commenter\u2019s willingness-to-buy threshold.",
+      "solution": "Reduce the price by $100.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "1ca8ace1-f435-4537-8808-3975417a9852",
+    "name": "Custom voice workflows for transcription correction and structured prompts",
+    "status": "candidate",
+    "count": 4,
+    "types": {
+      "complaint": 1,
+      "growth": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Custom voice workflows for transcription correction and structured prompts",
+      "one_line_thesis": "A custom voice workflow turns rambling brain dumps into structured prompts and uses a custom prompt to fix transcription errors.",
+      "problem": "Voice transcription may fail to understand a user's accent and can produce transcription errors that need correction.",
+      "solution": "Daniel Nest demonstrates a custom voice workflow that turns rambling voice brain dumps into structured prompts, including use of a custom prompt to fix transcription errors.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "1f911dc7-f090-41bc-a221-3f610eebed6e",
+    "name": "Multilingual AI desktop companion robot",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "distribution": 2,
+      "product_launch": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Multilingual AI desktop companion robot",
+      "one_line_thesis": "The video presents the B50B-EMO AI Robot as a multilingual smart-chat interactive assistant, dancing robot, desktop companion, and gift.",
+      "problem": null,
+      "solution": "B50B-EMO AI Robot is presented as a multilingual smart-chat interactive assistant, dancing robot, desktop companion, and gift.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "213aa812-e703-4874-84e0-bfa10dab0d33",
+    "name": "Open-source self-balancing desktop robot kit",
+    "status": "candidate",
+    "count": 5,
+    "types": {
+      "customer": 1,
+      "distribution": 1,
+      "product_launch": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "makers, developers, and robot lovers",
+      "industry": "robotics",
+      "name": "Open-source self-balancing desktop robot kit",
+      "one_line_thesis": "RIG-Hover is presented as an open-source self-balancing desktop robot kit.",
+      "problem": null,
+      "solution": "RIG-Hover, an open-source self-balancing desktop robot kit.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+    "name": "Living-room AI robot dog companion",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "competition": 1,
+      "product_launch": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Living room consumers",
+      "industry": "Consumer robotics",
+      "name": "Living-room AI robot dog companion",
+      "one_line_thesis": "The creator contrasts Sirius with robot dogs built for factories, the military, or research labs, describing Sirius as built for living-room use.",
+      "problem": null,
+      "solution": "Sirius, an AI robot dog designed for living-room use that understands natural language, performs movements, and can learn new tricks.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+    "name": "Advanced robot-brain upgrades for humanoid robots",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "product_launch": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "robotics",
+      "name": "Advanced robot-brain upgrades for humanoid robots",
+      "one_line_thesis": "The creator describes Mind, a Chinese robotics startup in Shenzhen, as having upgraded the Unitree G1 humanoid robot with an advanced \"robot brain.\"",
+      "problem": null,
+      "solution": "Mind's described upgrade of the Unitree G1 humanoid robot with an advanced \"robot brain\" for autonomous everyday tasks.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "2f354cb1-a290-46e3-b230-23be403108bf",
+    "name": "Autonomous VTOL aircraft",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Autonomous VTOL aircraft",
+      "one_line_thesis": "Shield AI's X-BAT is described as an autonomous VTOL aircraft.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "30bef280-17d1-4f69-b174-46010c86ccaf",
+    "name": "AI virtual companions for cloud CAD and engineering workflows",
+    "status": "candidate",
+    "count": 4,
+    "types": {
+      "distribution": 1,
+      "market_change": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "CAD, progettazione, ingegneria e produzione",
+      "name": "AI virtual companions for cloud CAD and engineering workflows",
+      "one_line_thesis": "SOLIDWORKS e Dassault Syst\u00e8mes integrano l'AI nella piattaforma cloud 3DEXPERIENCE attraverso tre virtual companion: Aura per il business, Leo per l'ingegneria e Marie per i materiali.",
+      "problem": null,
+      "solution": "SOLIDWORKS e Dassault Syst\u00e8mes integrano l'AI nella piattaforma cloud 3DEXPERIENCE tramite tre virtual companion: Aura per il business, Leo per l'ingegneria e Marie per i materiali.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+    "name": "Preorder demand for Microduck walking robot",
+    "status": "candidate",
+    "count": 6,
+    "types": {
+      "demand": 1,
+      "distribution": 1,
+      "pricing": 1,
+      "purchase_intent": 3
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Preorder demand for Microduck walking robot",
+      "one_line_thesis": "The commenter has preordered the product and is waiting for delivery.",
+      "problem": "The commenter has preordered the product and is waiting for delivery.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "name": "Roller-skating duck robot companion",
+    "status": "candidate",
+    "count": 12,
+    "types": {
+      "complaint": 1,
+      "customer": 1,
+      "market_change": 1,
+      "pricing": 2,
+      "product_launch": 2,
+      "revenue": 1,
+      "technology": 1,
+      "workflow": 3
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Adults seeking a customizable companion and emotional support device",
+      "industry": "consumer robotics",
+      "name": "Roller-skating duck robot companion",
+      "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+      "problem": null,
+      "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "32f90a9e-7cd5-4c67-acc7-fe58c7031dc2",
+    "name": "Turnkey Microduck configurations for non-technical fathers",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "purchase_intent": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Turnkey Microduck configurations for non-technical fathers",
+      "one_line_thesis": "The commenter states they intend to get the robot.",
+      "problem": "The commenter states they intend to get the robot.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+    "name": "Affordable AI girlfriend service discovery",
+    "status": "candidate",
+    "count": 0,
+    "types": {},
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Affordable AI girlfriend service discovery",
+      "one_line_thesis": "The commenter asks which app offers a girlfriend for \u20b95,000 per month, indicating interest in trying such a service.",
+      "problem": "The commenter asks which app offers a girlfriend for \u20b95,000 per month, indicating interest in trying such a service.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "426d0b3c-bb84-42e9-8a70-b8d41e93e218",
+    "name": "ChatGPT-powered pocket AI companion robot",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "consumer gadgets",
+      "name": "ChatGPT-powered pocket AI companion robot",
+      "one_line_thesis": "The AI companion robot is presented as supporting voice commands, emotional interaction, singing, and dancing.",
+      "problem": null,
+      "solution": "A pocket-sized AI companion robot presented as ChatGPT-powered.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "47e505ed-6730-4f63-95f4-e799485cc6e2",
+    "name": "Humanoid robots for industrial ladder climbing",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Humanoid robots for industrial ladder climbing",
+      "one_line_thesis": "Figure's humanoid robot is described as climbing an industrial ladder.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "4add3584-b0ca-4746-9731-04fce5a9feb9",
+    "name": "Advanced features for desk companion robots",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "competition": 1,
+      "feature_request": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Advanced features for desk companion robots",
+      "one_line_thesis": "Similar desk robots were available on Taobao several years ago but had limited features and did not become popular.",
+      "problem": "Similar desk robots were available on Taobao several years ago but had limited features and did not become popular.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "4ae23804-b6fc-4c80-afcd-86b642bb9392",
+    "name": "AI pet robot companion",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "market_change": 1,
+      "product_launch": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Consumer robotics",
+      "name": "AI pet robot companion",
+      "one_line_thesis": "Roomba inventor Colin Angle unveiled a new AI robot companion.",
+      "problem": null,
+      "solution": "An AI robot companion described as resembling a cross between a dog and a bear.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "56e0af28-97e6-48e3-97cb-c58a165412f8",
+    "name": "AI companion dolls in sextech",
+    "status": "candidate",
+    "count": 4,
+    "types": {
+      "complaint": 1,
+      "customer": 1,
+      "market_change": 1,
+      "product_launch": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "sextech",
+      "name": "AI companion dolls in sextech",
+      "one_line_thesis": "Lovense launched the \"Emily\" AI companion doll at CES 2026.",
+      "problem": "Data-security exposure of customer information and order details following a reported Tenga breach.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "5b2ada0d-15b6-4b72-8db8-eca58146c58d",
+    "name": "Independent, non-promotional coverage of AI toy products",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "complaint": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Independent, non-promotional coverage of AI toy products",
+      "one_line_thesis": "Perceives the coverage as an infomercial for the toy company, indicating skepticism about promotional bias.",
+      "problem": "Perceives the coverage as an infomercial for the toy company, indicating skepticism about promotional bias.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "688824f7-1539-447f-92c9-11e3df2eeff3",
+    "name": "Purchase access for LOOI AI desktop robot",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "customer": 1,
+      "distribution": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "consumer electronics",
+      "name": "Purchase access for LOOI AI desktop robot",
+      "one_line_thesis": "The creator directs viewers to purchase LOOI through POSCARE.",
+      "problem": null,
+      "solution": "LOOI is presented as an AI desktop robot companion that turns a smartphone into an interactive cyber pet.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "70fe892c-4a4a-4352-96d9-81524afdb44d",
+    "name": "Real-world robotics dataset with successful and failed demonstrations",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Real-world robotics dataset with successful and failed demonstrations",
+      "one_line_thesis": "The video description identifies AGIBOT's real-world robotics dataset as containing successful and failed demonstrations.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "7934417c-5e12-4d06-ad98-57a207a653ca",
+    "name": "VTOL drone-deployed quadruped reconnaissance for hazardous building entry",
+    "status": "candidate",
+    "count": 5,
+    "types": {
+      "competition": 1,
+      "customer": 1,
+      "product_launch": 1,
+      "technology": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Defense robotics",
+      "name": "VTOL drone-deployed quadruped reconnaissance for hazardous building entry",
+      "one_line_thesis": "The described system uses a VTOL gasoline drone with a stated 3-hour flight time and 5 kg payload.",
+      "problem": "Humans may lack situational awareness before entering hazardous or obstructed buildings.",
+      "solution": "A drone carries a quadruped robot to a building entry, where the robot maps the space and streams camera and sensor data before humans enter.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+    "name": "Senior loneliness companion services",
+    "status": "candidate",
+    "count": 5,
+    "types": {
+      "distribution": 1,
+      "market_change": 1,
+      "pain": 1,
+      "product_launch": 1,
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Seniors",
+      "industry": "Loneliness economy",
+      "name": "Senior loneliness companion services",
+      "one_line_thesis": "The creator characterizes loneliness as an emerging health crisis.",
+      "problem": "Loneliness, described by the creator as a growing health crisis",
+      "solution": "Rental friends, AI companions, paid cuddle therapy, virtual communities, and senior companion services",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+    "name": "AI receptionist and appointment-lead workflow management for dental practices",
+    "status": "active",
+    "count": 38,
+    "types": {
+      "customer": 2,
+      "distribution": 3,
+      "pain": 10,
+      "technology": 2,
+      "workflow": 21
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Dental clinics, dental offices, solo dentists, multi-provider dental practices, cosmetic dentistry clinics, and busy front desks",
+      "industry": "Dental clinics and dental practices",
+      "name": "AI receptionist and appointment-lead workflow management for dental practices",
+      "one_line_thesis": "Dental appointment leads are organized inside the VitalDesk dashboard.",
+      "problem": "Missed patient calls and after-hours inquiries, plus the administrative burden of capturing and routing appointment-related patient requests.",
+      "solution": "VitalDesk, an AI receptionist and dashboard for capturing patient communications and organizing front-desk workflows.",
+      "taxonomy": {
+        "customer": {
+          "code": "organization.dental_practice",
+          "label": "Dental Practice"
+        },
+        "industry": {
+          "code": "healthcare.dental",
+          "label": "Dental"
+        }
+      }
+    }
+  },
+  {
+    "id": "7fcda4f5-0cd0-46bb-89f1-e7faa81ac4af",
+    "name": "Vision- and touch-sensing robotic hands",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Vision- and touch-sensing robotic hands",
+      "one_line_thesis": "Advanced robotic hands are described as using vision and touch sensors.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+    "name": "AI companionship apps for loneliness and emotional connection",
+    "status": "candidate",
+    "count": 9,
+    "types": {
+      "competition": 1,
+      "complaint": 1,
+      "demand": 1,
+      "market_change": 2,
+      "pain": 2,
+      "workflow": 2
+    },
+    "before": {
+      "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+      "customer_type": null,
+      "industry": "AI companionship apps",
+      "name": "AI companionship apps for loneliness and emotional connection",
+      "one_line_thesis": "The creator frames loneliness and emotional dependency as risks associated with AI companionship.",
+      "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+      "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+    "name": "Manufacturer and seller information for Microduck",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "demand": 1,
+      "purchase_intent": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Manufacturer and seller information for Microduck",
+      "one_line_thesis": "The commenter cannot find information about who manufactures or sells the product.",
+      "problem": "The commenter cannot find information about who manufactures or sells the product.",
+      "solution": "Provide manufacturer and seller or purchase information.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "850fbeb8-05ac-4dc6-8dd1-6b69df5ac7e6",
+    "name": "Non-subscription AI pet access model",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "complaint": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Non-subscription AI pet access model",
+      "one_line_thesis": "The product appears to require an ongoing subscription to remain usable, which may deter adoption.",
+      "problem": "The product appears to require an ongoing subscription to remain usable, which may deter adoption.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+    "name": "Stair-climbing last-mile delivery robots",
+    "status": "candidate",
+    "count": 5,
+    "types": {
+      "competition": 1,
+      "pain": 1,
+      "product_launch": 1,
+      "workflow": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Stair-climbing last-mile delivery robots",
+      "one_line_thesis": "A delivery robot may reach a building but cannot complete the delivery when stairs are involved.",
+      "problem": "A delivery robot may reach a building but cannot complete the delivery when stairs are involved.",
+      "solution": "A four-legged robot that can carry deliveries up stairs to the customer's door.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "8af02211-ab52-44c9-b017-609690f569fb",
+    "name": "User-data privacy concerns for Microduck",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "complaint": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "User-data privacy concerns for Microduck",
+      "one_line_thesis": "Concern that buying and using the product allows the company to collect user-generated data and profit substantially from it.",
+      "problem": "Concern that buying and using the product allows the company to collect user-generated data and profit substantially from it.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "8afd450f-cf3f-4e43-8c8f-dd32ec63549b",
+    "name": "Emotional AI teddy bear companions for children",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "market_change": 1,
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Children",
+      "industry": "Interactive AI toys",
+      "name": "Emotional AI teddy bear companions for children",
+      "one_line_thesis": "The video describes Haivivi's approach as emotional AI.",
+      "problem": null,
+      "solution": "Haivivi turns traditional teddy bears into interactive AI companions that can hold conversations, remember preferences, and adapt to each child over time.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+    "name": "AI companion apps that avoid manipulative dark patterns",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "complaint": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Users of AI chatbots",
+      "industry": "AI companion apps",
+      "name": "AI companion apps that avoid manipulative dark patterns",
+      "one_line_thesis": "AI companion apps may use dark patterns to stop users from leaving.",
+      "problem": "AI companion apps may use dark patterns and manipulative design tactics that pressure users to continue chatting.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "95680e0f-51c9-4b23-bc17-0f061e50fcef",
+    "name": "AliExpress purchase access for AI plush toy robot",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "distribution": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "consumer smart toys",
+      "name": "AliExpress purchase access for AI plush toy robot",
+      "one_line_thesis": "The creator provides an AliExpress purchase link for the featured product.",
+      "problem": null,
+      "solution": "An AI plush toy robot presented as a soft interactive companion with LED eyes, voice control, and app compatibility.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+    "name": "Display-ready, easy-to-assemble collectible model kits",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "competition": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Display-ready, easy-to-assemble collectible model kits",
+      "one_line_thesis": "Blokees has become a brand the commenter readily considers when wanting to buy toys or model kits.",
+      "problem": "Blokees has become a brand the commenter readily considers when wanting to buy toys or model kits.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "9e9f5a34-2887-450b-90a7-5e1a1ce00765",
+    "name": "Low-commitment AI pet experience",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "complaint": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Low-commitment AI pet experience",
+      "one_line_thesis": "The ongoing minor inconvenience and commitment required by a real pet may deter people seeking a pet-like experience.",
+      "problem": "The ongoing minor inconvenience and commitment required by a real pet may deter people seeking a pet-like experience.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "a63ff4ba-5abe-43dc-8496-9e36a68040c8",
+    "name": "Wholesale supply of toys and general retail products",
+    "status": "candidate",
+    "count": 6,
+    "types": {
+      "customer": 1,
+      "demand": 1,
+      "distribution": 2,
+      "pricing": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": "Wholesale supply",
+      "customer_type": "Retailers, resellers, and shop owners",
+      "industry": "Wholesale distribution",
+      "name": "Wholesale supply of toys and general retail products",
+      "one_line_thesis": "Shahji Traders offers wholesale inquiries through WhatsApp.",
+      "problem": null,
+      "solution": "Shahji Traders supplies trending and fast-selling wholesale products, including toys, party decorations, return gifts, stationery, sports and outdoor items, and general daily-use products, with bulk supply across India.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "a9967ea9-8b05-4c70-b378-c5267b7d6ebd",
+    "name": "Ethical AI dating products that avoid exploiting user vulnerability",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "complaint": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Ethical AI dating products that avoid exploiting user vulnerability",
+      "one_line_thesis": "Perception that AI-driven dating products exploit loneliness, depression, and appearance-related insecurity for profit, creating an ethical barrier to adoption.",
+      "problem": "Perception that AI-driven dating products exploit loneliness, depression, and appearance-related insecurity for profit, creating an ethical barrier to adoption.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "ab18160b-72f3-432e-8d13-40df40878a5a",
+    "name": "Gadgets Mania wholesale smart gadgets catalogue and purchase access",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "customer": 1,
+      "distribution": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Wholesale consumer goods retail",
+      "name": "Gadgets Mania wholesale smart gadgets catalogue and purchase access",
+      "one_line_thesis": "Gadgets Mania provides a product catalogue link, Google Maps location link, and phone contacts for prospective buyers.",
+      "problem": null,
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "ad090a8a-c9ee-481f-8afe-670afaa26acd",
+    "name": "D\u1ec5 thay pin cho \u0111\u00e8n LED t\u00edch h\u1ee3p tr\u00ean m\u00f4 h\u00ecnh l\u1eafp r\u00e1p",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "pain": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "D\u1ec5 thay pin cho \u0111\u00e8n LED t\u00edch h\u1ee3p tr\u00ean m\u00f4 h\u00ecnh l\u1eafp r\u00e1p",
+      "one_line_thesis": "\u0110\u00e8n LED t\u00edch h\u1ee3p trong khung ng\u1ef1c khi\u1ebfn vi\u1ec7c thay pin r\u1ea5t kh\u00f3 kh\u0103n.",
+      "problem": "\u0110\u00e8n LED t\u00edch h\u1ee3p trong khung ng\u1ef1c khi\u1ebfn vi\u1ec7c thay pin r\u1ea5t kh\u00f3 kh\u0103n.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+    "name": "Open-source bipedal robot platform",
+    "status": "candidate",
+    "count": 31,
+    "types": {
+      "adoption": 1,
+      "distribution": 1,
+      "market_change": 1,
+      "pricing": 2,
+      "product_launch": 5,
+      "technology": 11,
+      "workflow": 10
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "robotics",
+      "name": "Open-source bipedal robot platform",
+      "one_line_thesis": "Microduck is described as an open-source bipedal robot from Hugging Face and Pollen Robotics.",
+      "problem": null,
+      "solution": "Microduck, an open-source bipedal robot from Hugging Face and Pollen Robotics.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "b69dd14b-5658-4d8f-9125-2fe12830fe7c",
+    "name": "Toy shop serving visitors near children's hospitals",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "demand": 1,
+      "pain": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "People at or near a children's hospital",
+      "industry": "Retail business / toy shop",
+      "name": "Toy shop serving visitors near children's hospitals",
+      "one_line_thesis": "The creator says profitable opportunities can exist in places that make other people uncomfortable because urgent needs can prompt spending without hesitation.",
+      "problem": "Urgent emotional needs may lead people to spend without hesitation, according to the creator.",
+      "solution": "Locate a toy shop in front of a children's hospital to serve spending driven by urgent emotional needs.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "c396402f-4e6d-43f1-b161-5621c11078ef",
+    "name": "Wheel-leg robotic mobility systems",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "technology": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "Robotics and AI",
+      "name": "Wheel-leg robotic mobility systems",
+      "one_line_thesis": "New mobility systems are described as combining wheels and legs.",
+      "problem": "Whether robots can reliably understand unpredictable real-world environments, learn from mistakes, adapt to changing situations, and perform useful tasks.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+    "name": "Interactive AI plush companion toys",
+    "status": "candidate",
+    "count": 9,
+    "types": {
+      "feature_request": 1,
+      "product_launch": 4,
+      "technology": 2,
+      "workflow": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "AI companion toys",
+      "name": "Interactive AI plush companion toys",
+      "one_line_thesis": "Silly Baby is presented as an interactive AI companion plush that can chat and react.",
+      "problem": null,
+      "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "ca6e697c-a434-4490-a183-e1259ef5108c",
+    "name": "Support for anxiety when talking to new people",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "pain": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Support for anxiety when talking to new people",
+      "one_line_thesis": "Experiences anxiety when talking to new people.",
+      "problem": "Experiences anxiety when talking to new people.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+    "name": "Affordable, attractive collectible model kits",
+    "status": "candidate",
+    "count": 0,
+    "types": {},
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Affordable, attractive collectible model kits",
+      "one_line_thesis": "Ng\u01b0\u1eddi b\u00ecnh lu\u1eadn cho bi\u1ebft h\u1ecd \u0111\u00e3 mua s\u1ea3n ph\u1ea9m Blokees v\u00ec gi\u00e1 r\u1ebb v\u00e0 thi\u1ebft k\u1ebf \u0111\u1eb9p.",
+      "problem": "Ng\u01b0\u1eddi b\u00ecnh lu\u1eadn cho bi\u1ebft h\u1ecd \u0111\u00e3 mua s\u1ea3n ph\u1ea9m Blokees v\u00ec gi\u00e1 r\u1ebb v\u00e0 thi\u1ebft k\u1ebf \u0111\u1eb9p.",
+      "solution": null,
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+    "name": "AI-driven defence robotics for Indian terrain",
+    "status": "candidate",
+    "count": 9,
+    "types": {
+      "competition": 3,
+      "customer": 1,
+      "market_change": 1,
+      "pain": 1,
+      "technology": 1,
+      "workflow": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Defence buyers",
+      "industry": "Defence robotics",
+      "name": "AI-driven defence robotics for Indian terrain",
+      "one_line_thesis": "The founders say the post-ChatGPT moment made truly capable AI-driven robotics possible.",
+      "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+      "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+    "name": "Amazon purchase access for Ropet AI robot pet",
+    "status": "candidate",
+    "count": 1,
+    "types": {
+      "distribution": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "robotic companion pets",
+      "name": "Amazon purchase access for Ropet AI robot pet",
+      "one_line_thesis": "The channel provides an Amazon link for Ropet and states that qualifying purchases support the channel.",
+      "problem": null,
+      "solution": "Ropet is presented as a next-generation AI robot pet with conversation ability.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "e4c6368f-4fc1-4210-9e4f-5d1138c6c759",
+    "name": "Free-only access to AI girlfriend services",
+    "status": "candidate",
+    "count": 2,
+    "types": {
+      "complaint": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Free-only access to AI girlfriend services",
+      "one_line_thesis": "The user is only willing to use the product while it is free and would not continue if payment were required.",
+      "problem": "The user is only willing to use the product while it is free and would not continue if payment were required.",
+      "solution": "Use the product for free; otherwise use an alternative or go without it.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "eb7cb958-d37c-4fde-a41e-e6ae3ee69420",
+    "name": "AI pet interactive robotic companion robots",
+    "status": "candidate",
+    "count": 7,
+    "types": {
+      "product_launch": 3,
+      "technology": 3,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "home goods",
+      "name": "AI pet interactive robotic companion robots",
+      "one_line_thesis": "The video features an AI pet interactive robotic companion robot.",
+      "problem": null,
+      "solution": "AI pet interactive robotic companion robot",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+    "name": "Robot dog launch-date and availability information",
+    "status": "candidate",
+    "count": 0,
+    "types": {},
+    "before": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": null,
+      "name": "Robot dog launch-date and availability information",
+      "one_line_thesis": "The commenter is seeking the product's launch timing, indicating interest in obtaining it when available.",
+      "problem": "The commenter is seeking the product's launch timing, indicating interest in obtaining it when available.",
+      "solution": "Information about the product launch date or availability timeline.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "f49bcf69-b5bf-4690-998b-303d2ecb9c38",
+    "name": "AI-powered travel planning and trip-management companion",
+    "status": "candidate",
+    "count": 3,
+    "types": {
+      "market_change": 1,
+      "technology": 1,
+      "workflow": 1
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "travelers",
+      "industry": "travel",
+      "name": "AI-powered travel planning and trip-management companion",
+      "one_line_thesis": "The creator says AI is changing the travel industry.",
+      "problem": null,
+      "solution": "An AI-powered travel companion designed to help travelers plan, organize, and manage trips through conversation with AI.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  },
+  {
+    "id": "fcc1df7b-f208-4886-a6b8-6efeb3c53a96",
+    "name": "Affordable smartphone-powered AI workspace companion",
+    "status": "candidate",
+    "count": 9,
+    "types": {
+      "complaint": 2,
+      "market_change": 1,
+      "pain": 1,
+      "product_launch": 1,
+      "technology": 2,
+      "workflow": 2
+    },
+    "before": {
+      "business_model": null,
+      "customer_type": "Desk enthusiasts and tech hobbyists who enjoy experimenting with interactive gadgets",
+      "industry": "consumer technology",
+      "name": "Affordable smartphone-powered AI workspace companion",
+      "one_line_thesis": "The device is positioned as an option for users who want an expressive, AI-powered workspace element without a dedicated, high-cost robotic unit.",
+      "problem": "Users may want an expressive, AI-powered workspace accessory without needing a dedicated, high-cost robotic unit.",
+      "solution": "LOOI AI Desktop Companion transforms a smartphone into an interactive, personality-driven workspace accessory.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    }
+  }
+]

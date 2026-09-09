@@ -405,12 +405,12 @@ class CandidateWorkspaceService:
                 o.updated_at = now
         return await self.detail(identity)
 
-    async def evidence(self, identity, offset, limit, locale, excluded=False):
+    async def evidence(self, identity, offset, limit, locale, excluded=False, signal_ids=None):
         async with self._sessions() as session:
             if await session.get(Opportunity, identity) is None:
                 raise CandidateNotFound("Opportunity not found")
             rows, total = await RadarQueryRepository(session).evidence(
-                identity, offset, limit, excluded_only=excluded
+                identity, offset, limit, excluded_only=excluded, signal_ids=signal_ids
             )
             values = [dict(row._mapping) for row in rows]
             localized = await IntelligenceLocalizationService(session).localize_many(

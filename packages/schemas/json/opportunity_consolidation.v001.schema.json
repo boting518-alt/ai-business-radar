@@ -1,0 +1,132 @@
+{
+  "$defs": {
+    "BusinessCaseField": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_signal_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Signal Ids",
+          "type": "array"
+        },
+        "information_class": {
+          "enum": [
+            "source_grounded",
+            "editorial_synthesis",
+            "hypothesis",
+            "unknown"
+          ],
+          "title": "Information Class",
+          "type": "string"
+        },
+        "support_level": {
+          "enum": [
+            "supported",
+            "partially_supported",
+            "insufficient_evidence",
+            "hypothesis"
+          ],
+          "title": "Support Level",
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "maxLength": 3000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text"
+        },
+        "uncertainty": {
+          "anyOf": [
+            {
+              "maxLength": 1500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Uncertainty"
+        }
+      },
+      "required": [
+        "text",
+        "evidence_signal_ids",
+        "information_class",
+        "support_level",
+        "uncertainty"
+      ],
+      "title": "BusinessCaseField",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "adoption_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "build_complexity_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "business_model_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "competition_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "customer_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "distribution_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "pricing_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "problem_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "revenue_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "solution_pattern": {
+      "$ref": "#/$defs/BusinessCaseField"
+    },
+    "validation_gaps": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 30,
+      "minItems": 1,
+      "title": "Validation Gaps",
+      "type": "array"
+    },
+    "workflow_summary": {
+      "$ref": "#/$defs/BusinessCaseField"
+    }
+  },
+  "required": [
+    "customer_summary",
+    "problem_summary",
+    "workflow_summary",
+    "solution_pattern",
+    "business_model_summary",
+    "pricing_summary",
+    "revenue_summary",
+    "distribution_summary",
+    "competition_summary",
+    "adoption_summary",
+    "build_complexity_summary",
+    "validation_gaps"
+  ],
+  "title": "OpportunityConsolidationOutput",
+  "type": "object"
+}

@@ -1,0 +1,131 @@
+{
+  "dry_run": true,
+  "selected": 20,
+  "eligible": 19,
+  "current": 0,
+  "stale": 0,
+  "missing": 20,
+  "would_enqueue": 19,
+  "items": [
+    {
+      "id": "03dffd58-4a52-4bb2-9ffb-97809b2e691f",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "0486ca66-a204-45c8-8e6a-071ca2bc3068",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "07db7bc5-84e3-49d4-b329-df09e985a45a",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "1ca8ace1-f435-4537-8808-3975417a9852",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "1f911dc7-f090-41bc-a221-3f610eebed6e",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "213aa812-e703-4874-84e0-bfa10dab0d33",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "2f354cb1-a290-46e3-b230-23be403108bf",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "30bef280-17d1-4f69-b174-46010c86ccaf",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "32f90a9e-7cd5-4c67-acc7-fe58c7031dc2",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+      "state": "missing",
+      "eligible": false,
+      "would_enqueue": false
+    },
+    {
+      "id": "426d0b3c-bb84-42e9-8a70-b8d41e93e218",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "47e505ed-6730-4f63-95f4-e799485cc6e2",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "4add3584-b0ca-4746-9731-04fce5a9feb9",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    },
+    {
+      "id": "4ae23804-b6fc-4c80-afcd-86b642bb9392",
+      "state": "missing",
+      "eligible": true,
+      "would_enqueue": true
+    }
+  ]
+}
