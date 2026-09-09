@@ -98,8 +98,10 @@ Admin API:
 
 Worker: `consolidate_opportunity` on `opportunity_consolidation`, using the existing AIClient and
 configured `AI_MODEL_OPPORTUNITY_NORMALIZATION` model. This reuses configuration, not normalizer
-semantics. Prompt default is registered once as `opportunity-consolidation/v001`. Used prompt files
-must not be edited; changes require a new version and review.
+semantics. Prompt default is registered once as `opportunity-consolidation/v002`. Used prompt files
+must not be edited; changes require a new version and review. v001 remains retained. v002 was
+promoted after the bounded real benchmark exposed three category-mismatch failures; it explicitly
+aligns model instructions with the existing validator without relaxing evidence gates.
 
 From apps/api:
 

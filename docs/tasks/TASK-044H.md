@@ -1,6 +1,6 @@
 # TASK-044H — Opportunity Thesis & Business Case Consolidation (revised)
 
-Status: Implemented and locally tested; real-provider acceptance pending explicit OpenAI destination approval.
+Status: Implemented; 8-case real-provider v002 evaluation passed. Full canonical launcher smoke pending authorization for broader scheduler/queue consumers.
 Assessed 2026-09-09 before implementation.
 
 See [validation report](../../artifacts/opportunity-business-case/2026-09-09/validation-report.md).

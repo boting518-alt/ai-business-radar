@@ -1,0 +1,579 @@
+{
+  "completed_at": "2026-09-09 13:32:43.346111+00:00",
+  "context_hash": "68d5abea9ff3907a774e9b4e7102808ae50480effc6d429da871a118793b0f76",
+  "created_at": "2026-09-09 13:32:21.518396+00:00",
+  "created_by": null,
+  "error_code": null,
+  "field_metadata": {
+    "adoption_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "build_complexity_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "business_model_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "competition_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 3
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "customer_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "unknown": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "distribution_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "pricing_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "problem_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "revenue_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "solution_pattern": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 3
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "workflow_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    }
+  },
+  "id": "63195f5b-428e-47ad-98a4-71383ed47db6",
+  "input_hash": "51891670c8753dae3c419a4777d74ad2e4728fc1a70de04dce7dfb90413aaa20",
+  "input_snapshot": {
+    "context": {
+      "business_model": null,
+      "customer_type": "Defence buyers",
+      "industry": "Defence robotics",
+      "name": "AI-driven defence robotics for Indian terrain",
+      "one_line_thesis": "The founders say the post-ChatGPT moment made truly capable AI-driven robotics possible.",
+      "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+      "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    },
+    "excluded_counts": {},
+    "signals": [
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cThe robot dog as India's answer to the military mule and beyond\u201d",
+        "id": "048cd640-9480-4022-91e5-a3a7517ec774",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The robot dog is presented as an answer to India's military mule use case.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cThere's Boston Dynamics in the US. And then there's General Autonomy in India.\u201d",
+        "id": "4d589f06-9ddd-47c7-a395-876e46ac1377",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "competition",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The description identifies Boston Dynamics in the US and General Autonomy in India as robot-dog companies.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "unknown",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cWhat Defence Buyers Want From Advanced Robotics\u201d",
+        "id": "696324db-def5-4eab-9b76-c55dcdc55fd2",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "customer",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The video frames defence buyers as buyers of advanced robotics.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cthe post-ChatGPT moment had finally made truly capable AI-driven robotics possible\u201d",
+        "id": "927ce4e0-016a-4b39-89ce-cb86c94c4c9a",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "market_change",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The founders say the post-ChatGPT moment made truly capable AI-driven robotics possible.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cIndia, with its Himalayan terrain, Sundarbans forests, and Thar desert, needed solutions no one else in the world was building.\u201d",
+        "id": "976f3401-8679-4897-8412-f96394dc6eb2",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pain",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The video description says India needs robotics solutions for its Himalayan terrain, Sundarbans forests, and Thar desert that no one else is building.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cGeneral Autonomy is one of only 6-7 companies globally that own the full stack actuators, robot dogs, humanoids, and the AI models.\u201d",
+        "id": "9a8d3952-f71f-47e9-a1c0-92ed864ae433",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "technology",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "General Autonomy is described as owning a full robotics stack including actuators, robot dogs, humanoids, and AI models.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cThe actuator problem: why 99% of the world's supply chain sits in China\u201d",
+        "id": "abe6555d-2aec-4df3-8d2d-5a5d5ca721b4",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "competition",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The description says 99% of the world's actuator supply chain sits in China.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d13c03d0-9ae2-4a13-bc9d-9c6bcf4985b0",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"the drone carries the robot to the entry.. robot walks in on four legs through rubble, stairs, narrow corridors.. cameras and sensors stream data back in real time.. once mapped, humans go in with full awareness\"",
+        "id": "b2a1be99-8294-4951-ba68-85db0f0d02ee",
+        "observed_at": "2026-08-19 02:30:20+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Humans may lack situational awareness before entering hazardous or obstructed buildings.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "A drone carries a quadruped robot to a building entry, where the robot maps the space and streams camera and sensor data before humans enter.",
+        "source_id": "7193e90a-7fd7-4fef-bfd4-83dd90903eda",
+        "source_type": "video",
+        "statement": "The drone transports a robot to a building entry, and the robot enters to map the space and stream data before humans go in.",
+        "technology": [
+          "VTOL drone",
+          "quadruped robot",
+          "cameras",
+          "sensors"
+        ],
+        "video_id": "7193e90a-7fd7-4fef-bfd4-83dd90903eda"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "c9d40401-17a2-468a-ab94-681491a0ddc7",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Defence buyers",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201c99% of the world's robot dogs are made in China.\u201d",
+        "id": "d0cab4d4-089c-4a08-80ec-c3c966b4c8bf",
+        "observed_at": "2026-06-02 06:32:57+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "India's terrain creates challenges for which global robotics solutions fail.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "competition",
+        "solution": "General Autonomy is building AI-driven robotics, including robot dogs and humanoids, from the ground up.",
+        "source_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb",
+        "source_type": "video",
+        "statement": "The description states that 99% of the world's robot dogs are made in China.",
+        "technology": [
+          "AI models",
+          "actuators",
+          "robot dogs",
+          "humanoids",
+          "automation stack"
+        ],
+        "video_id": "62c5c773-aa11-4ba2-b257-344ee6b486bb"
+      }
+    ],
+    "source_diversity": {
+      "channel_count": 2,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 9
+      },
+      "signal_count": 9,
+      "signal_types": {
+        "competition": 3,
+        "customer": 1,
+        "market_change": 1,
+        "pain": 1,
+        "technology": 1,
+        "workflow": 2
+      },
+      "supporting_count": 9,
+      "video_count": 2
+    }
+  },
+  "input_tokens": 4861,
+  "model": "gpt-5.6-terra",
+  "opportunity_id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+  "output_tokens": 1635,
+  "parsed_output": {
+    "adoption_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible adoption signal is supplied; there is no evidence of deployment, active use, procurement, or retention."
+    },
+    "build_complexity_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "Although a creator claims ownership of multiple robotics-stack components, the evidence does not substantiate development effort, integration difficulty, manufacturing requirements, certification, or deployment complexity."
+    },
+    "business_model_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible evidence states how the product is monetized, contracted, or delivered commercially."
+    },
+    "competition_summary": {
+      "evidence_signal_ids": [
+        "4d589f06-9ddd-47c7-a395-876e46ac1377",
+        "d0cab4d4-089c-4a08-80ec-c3c966b4c8bf",
+        "abe6555d-2aec-4df3-8d2d-5a5d5ca721b4"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator description compares General Autonomy in India with Boston Dynamics in the United States. The same source also claims that 99% of robot dogs and 99% of the actuator supply chain are in China.",
+      "uncertainty": "These are creator claims and a descriptive comparison, not independently established direct competition, market shares, or a verified competitive set."
+    },
+    "customer_summary": {
+      "evidence_signal_ids": [
+        "696324db-def5-4eab-9b76-c55dcdc55fd2"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A video frames \u201cDefence buyers\u201d as buyers of advanced robotics. The evidence does not identify a specific procurement organization, decision-maker, operator, or end user.",
+      "uncertainty": "This is a video framing rather than evidence of an identified customer or purchasing role; validate the actual defence procurement buyer and operational users."
+    },
+    "distribution_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible evidence describes a customer-acquisition or distribution mechanism."
+    },
+    "pricing_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible product-pricing or observed-transaction signal is supplied."
+    },
+    "problem_summary": {
+      "evidence_signal_ids": [
+        "976f3401-8679-4897-8412-f96394dc6eb2"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator claims that India\u2019s Himalayan terrain, Sundarbans forests, and Thar desert require robotics solutions that are not otherwise being built.",
+      "uncertainty": "The terrain-specific need and absence of alternatives are creator claims; the evidence does not establish the frequency, severity, or operational consequences of this problem."
+    },
+    "revenue_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible product-monetization or observed-transaction revenue signal is supplied."
+    },
+    "solution_pattern": {
+      "evidence_signal_ids": [
+        "9a8d3952-f71f-47e9-a1c0-92ed864ae433",
+        "048cd640-9480-4022-91e5-a3a7517ec774",
+        "b2a1be99-8294-4951-ba68-85db0f0d02ee"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The evidenced vendor-specific pattern is a claimed vertically integrated robotics stack\u2014actuators, quadruped robot dogs, humanoids, and AI models\u2014positioned around terrain-adapted and military-mule applications. A separate example shows a drone-plus-quadruped reconnaissance configuration for mapping hazardous interiors before human entry.",
+      "uncertainty": "Full-stack ownership, application fit, and any relationship between the reconnaissance example and the named vendor are not independently verified. The supplied evidence does not establish a broader market-standard solution pattern."
+    },
+    "validation_gaps": [
+      "Evidence insufficient: business_model_summary",
+      "Evidence insufficient: pricing_summary",
+      "Evidence insufficient: revenue_summary",
+      "Evidence insufficient: distribution_summary",
+      "Evidence insufficient: adoption_summary",
+      "Evidence insufficient: build_complexity_summary",
+      "Video/channel diversity is not independent customer validation.",
+      "Validate the actual buying organization, procurement decision-maker, operators, and end users within the broad \u201cDefence buyers\u201d label.",
+      "Validate terrain-specific operational pain, its severity and frequency, and whether existing robotics products fail in the stated environments.",
+      "Determine whether the drone-plus-quadruped reconnaissance workflow is connected to General Autonomy, Indian defence use, or a separate example only.",
+      "Verify the claimed full-stack capabilities and identify which components are built, sourced, and production-ready.",
+      "Establish the commercial model, contract structure, pricing, and product revenue using eligible commercial evidence.",
+      "Establish distribution or procurement channels beyond video presence.",
+      "Obtain eligible adoption evidence, such as deployments, operational use, or procurement outcomes; no such evidence is supplied.",
+      "Independently assess the asserted Boston Dynamics comparison and China-related robot-dog and actuator supply-chain concentration claims.",
+      "Most substantive observations are creator claims from one video source; independent customer, operator, procurement, and technical evidence is missing."
+    ],
+    "workflow_summary": {
+      "evidence_signal_ids": [
+        "b2a1be99-8294-4951-ba68-85db0f0d02ee",
+        "048cd640-9480-4022-91e5-a3a7517ec774"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "A supplied workflow example uses a drone to deliver a quadruped robot to a building entry; the robot traverses rubble, stairs, and narrow corridors, maps the space, and streams camera and sensor data before people enter. Separately, a robot dog is presented as a military-mule use case.",
+      "uncertainty": "The building-reconnaissance workflow is from a separate video and is not evidenced as a General Autonomy or Indian-defence deployment. The military-mule framing is a creator claim."
+    }
+  },
+  "prompt_hash": "0a98a050ad422942c8d1f762f0d0fba82afa06a6d27482efdf92017b1b5e4f42",
+  "prompt_version": "v002",
+  "provider": "openai",
+  "provider_request_id": "resp_0df38bfb208c83f4016aa15fe61b0887d0b973a8810dc217d9",
+  "raw_output": {
+    "output_text": "{\"customer_summary\":{\"text\":\"A video frames \u201cDefence buyers\u201d as buyers of advanced robotics. The evidence does not identify a specific procurement organization, decision-maker, operator, or end user.\",\"evidence_signal_ids\":[\"696324db-def5-4eab-9b76-c55dcdc55fd2\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is a video framing rather than evidence of an identified customer or purchasing role; validate the actual defence procurement buyer and operational users.\"},\"problem_summary\":{\"text\":\"A creator claims that India\u2019s Himalayan terrain, Sundarbans forests, and Thar desert require robotics solutions that are not otherwise being built.\",\"evidence_signal_ids\":[\"976f3401-8679-4897-8412-f96394dc6eb2\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The terrain-specific need and absence of alternatives are creator claims; the evidence does not establish the frequency, severity, or operational consequences of this problem.\"},\"workflow_summary\":{\"text\":\"A supplied workflow example uses a drone to deliver a quadruped robot to a building entry; the robot traverses rubble, stairs, and narrow corridors, maps the space, and streams camera and sensor data before people enter. Separately, a robot dog is presented as a military-mule use case.\",\"evidence_signal_ids\":[\"b2a1be99-8294-4951-ba68-85db0f0d02ee\",\"048cd640-9480-4022-91e5-a3a7517ec774\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The building-reconnaissance workflow is from a separate video and is not evidenced as a General Autonomy or Indian-defence deployment. The military-mule framing is a creator claim.\"},\"solution_pattern\":{\"text\":\"The evidenced vendor-specific pattern is a claimed vertically integrated robotics stack\u2014actuators, quadruped robot dogs, humanoids, and AI models\u2014positioned around terrain-adapted and military-mule applications. A separate example shows a drone-plus-quadruped reconnaissance configuration for mapping hazardous interiors before human entry.\",\"evidence_signal_ids\":[\"9a8d3952-f71f-47e9-a1c0-92ed864ae433\",\"048cd640-9480-4022-91e5-a3a7517ec774\",\"b2a1be99-8294-4951-ba68-85db0f0d02ee\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"Full-stack ownership, application fit, and any relationship between the reconnaissance example and the named vendor are not independently verified. The supplied evidence does not establish a broader market-standard solution pattern.\"},\"business_model_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible evidence states how the product is monetized, contracted, or delivered commercially.\"},\"pricing_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible product-pricing or observed-transaction signal is supplied.\"},\"revenue_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible product-monetization or observed-transaction revenue signal is supplied.\"},\"distribution_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible evidence describes a customer-acquisition or distribution mechanism.\"},\"competition_summary\":{\"text\":\"A creator description compares General Autonomy in India with Boston Dynamics in the United States. The same source also claims that 99% of robot dogs and 99% of the actuator supply chain are in China.\",\"evidence_signal_ids\":[\"4d589f06-9ddd-47c7-a395-876e46ac1377\",\"d0cab4d4-089c-4a08-80ec-c3c966b4c8bf\",\"abe6555d-2aec-4df3-8d2d-5a5d5ca721b4\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"These are creator claims and a descriptive comparison, not independently established direct competition, market shares, or a verified competitive set.\"},\"adoption_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible adoption signal is supplied; there is no evidence of deployment, active use, procurement, or retention.\"},\"build_complexity_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"Although a creator claims ownership of multiple robotics-stack components, the evidence does not substantiate development effort, integration difficulty, manufacturing requirements, certification, or deployment complexity.\"},\"validation_gaps\":[\"Validate the actual buying organization, procurement decision-maker, operators, and end users within the broad \u201cDefence buyers\u201d label.\",\"Validate terrain-specific operational pain, its severity and frequency, and whether existing robotics products fail in the stated environments.\",\"Determine whether the drone-plus-quadruped reconnaissance workflow is connected to General Autonomy, Indian defence use, or a separate example only.\",\"Verify the claimed full-stack capabilities and identify which components are built, sourced, and production-ready.\",\"Establish the commercial model, contract structure, pricing, and product revenue using eligible commercial evidence.\",\"Establish distribution or procurement channels beyond video presence.\",\"Obtain eligible adoption evidence, such as deployments, operational use, or procurement outcomes; no such evidence is supplied.\",\"Independently assess the asserted Boston Dynamics comparison and China-related robot-dog and actuator supply-chain concentration claims.\",\"Most substantive observations are creator claims from one video source; independent customer, operator, procurement, and technical evidence is missing.\"]}",
+    "response_id": "resp_0df38bfb208c83f4016aa15fe61b0887d0b973a8810dc217d9"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_evidence_hash": "a0020cb2073138556e88952d04e6bd833f36e65c0416500b77bbe2e78563a6e1",
+  "started_at": "2026-09-09 13:32:21.530406+00:00",
+  "status": "completed",
+  "version": 2
+}

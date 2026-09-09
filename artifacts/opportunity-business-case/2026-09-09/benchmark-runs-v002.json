@@ -1,0 +1,74 @@
+[
+  {
+    "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+    "consolidation_id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+    "id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 16624,
+    "output_tokens": 2023
+  },
+  {
+    "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+    "consolidation_id": "3ef0d6df-1632-44b2-9856-edc7cdad1ab6",
+    "id": "3ef0d6df-1632-44b2-9856-edc7cdad1ab6",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 3548,
+    "output_tokens": 1542
+  },
+  {
+    "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "consolidation_id": "7e9b6620-66e4-4098-abfa-ea0639c8dc98",
+    "id": "7e9b6620-66e4-4098-abfa-ea0639c8dc98",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 5922,
+    "output_tokens": 1694
+  },
+  {
+    "opportunity_id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+    "consolidation_id": "fa757aa6-7db2-49a3-b99b-c5a996ac51f1",
+    "id": "fa757aa6-7db2-49a3-b99b-c5a996ac51f1",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 13266,
+    "output_tokens": 2441
+  },
+  {
+    "opportunity_id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+    "consolidation_id": "472ad3be-f93d-4a28-ac64-8fa420559d57",
+    "id": "472ad3be-f93d-4a28-ac64-8fa420559d57",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 4667,
+    "output_tokens": 1266
+  },
+  {
+    "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+    "consolidation_id": "0a7e40a4-71bf-4147-94b7-3f598224f449",
+    "id": "0a7e40a4-71bf-4147-94b7-3f598224f449",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 4854,
+    "output_tokens": 1709
+  },
+  {
+    "opportunity_id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+    "consolidation_id": "8bc0c636-3ae1-44ca-b047-2de4107990bd",
+    "id": "8bc0c636-3ae1-44ca-b047-2de4107990bd",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 4592,
+    "output_tokens": 1377
+  },
+  {
+    "opportunity_id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+    "consolidation_id": "63195f5b-428e-47ad-98a4-71383ed47db6",
+    "id": "63195f5b-428e-47ad-98a4-71383ed47db6",
+    "status": "completed",
+    "error_code": null,
+    "input_tokens": 4861,
+    "output_tokens": 1635
+  }
+]

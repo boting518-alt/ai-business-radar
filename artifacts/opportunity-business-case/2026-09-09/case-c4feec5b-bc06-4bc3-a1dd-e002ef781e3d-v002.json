@@ -1,0 +1,549 @@
+{
+  "completed_at": "2026-09-09 13:32:21.488186+00:00",
+  "context_hash": "7e077b92172268691684b1f130ab5c30794227d6d95d63ea53914578f4ed5e98",
+  "created_at": "2026-09-09 13:32:03.295877+00:00",
+  "created_by": null,
+  "error_code": null,
+  "field_metadata": {
+    "adoption_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "build_complexity_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "business_model_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "competition_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "customer_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "distribution_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "pricing_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "problem_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "revenue_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "solution_pattern": {
+      "channel_count": 3,
+      "claim_statuses": {
+        "creator_claim": 8
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 3
+    },
+    "workflow_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    }
+  },
+  "id": "8bc0c636-3ae1-44ca-b047-2de4107990bd",
+  "input_hash": "52a06b8bb033a246f1a13f5087611cdeef3af0e9b217d43d7a945a21d4ae529f",
+  "input_snapshot": {
+    "context": {
+      "business_model": null,
+      "customer_type": null,
+      "industry": "AI companion toys",
+      "name": "Interactive AI plush companion toys",
+      "one_line_thesis": "Silly Baby is presented as an interactive AI companion plush that can chat and react.",
+      "problem": null,
+      "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    },
+    "excluded_counts": {},
+    "signals": [
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "77387aa8-dc11-4a46-9c37-f7dfaf78bec4",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cSilly Baby isn\u2019t just an adorable pink plush\u2014it\u2019s an interactive AI companion designed to chat, react, and travel with you.\u201d",
+        "id": "4361b601-7588-4fbc-9187-0b5d7f679f07",
+        "observed_at": "2026-09-08 02:01:18+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "source_id": "7673d079-59c9-47ee-af9a-60e0893598ef",
+        "source_type": "video",
+        "statement": "Silly Baby is presented as an interactive AI companion plush that can chat and react.",
+        "technology": [
+          "AI-powered voice interaction"
+        ],
+        "video_id": "7673d079-59c9-47ee-af9a-60e0893598ef"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "5c303186-e811-477a-93fd-93547584bad5",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": [
+          "AliExpress affiliate link",
+          "YouTube product-review channel"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\"LED Eyes&Voice Control App Compatible\"",
+        "id": "4a85684c-e22a-402e-bcd1-ab25d05dae9c",
+        "observed_at": "2026-09-08 02:50:21+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "technology",
+        "solution": "An AI plush toy robot presented as a soft interactive companion with LED eyes, voice control, and app compatibility.",
+        "source_id": "152d1b19-2ebf-4ab7-8d8d-755fc901281e",
+        "source_type": "video",
+        "statement": "The product is described as supporting voice control and app compatibility.",
+        "technology": [
+          "voice control",
+          "mobile app compatibility"
+        ],
+        "video_id": "152d1b19-2ebf-4ab7-8d8d-755fc901281e"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "77387aa8-dc11-4a46-9c37-f7dfaf78bec4",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cPortable hanging ring \u2022 Approximately 6\u20138 hours of battery life \u2022 Convenient Type-C charging\u201d",
+        "id": "4f4457cf-caab-461a-a3fc-1339ae5ad0d3",
+        "observed_at": "2026-09-08 02:01:18+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "source_id": "7673d079-59c9-47ee-af9a-60e0893598ef",
+        "source_type": "video",
+        "statement": "Silly Baby is described as portable, with a hanging ring, 6\u20138 hours of battery life, and Type-C charging.",
+        "technology": [
+          "AI-powered voice interaction"
+        ],
+        "video_id": "7673d079-59c9-47ee-af9a-60e0893598ef"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "77387aa8-dc11-4a46-9c37-f7dfaf78bec4",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cTap its ear to wake it up, or triple-tap to activate casual chat mode.\u201d",
+        "id": "90041710-ac63-443e-93a5-b496c66d4310",
+        "observed_at": "2026-09-08 02:01:18+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "source_id": "7673d079-59c9-47ee-af9a-60e0893598ef",
+        "source_type": "video",
+        "statement": "Users can wake Silly Baby by tapping its ear and activate casual chat mode by triple-tapping.",
+        "technology": [
+          "AI-powered voice interaction"
+        ],
+        "video_id": "7673d079-59c9-47ee-af9a-60e0893598ef"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "77387aa8-dc11-4a46-9c37-f7dfaf78bec4",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cAI-powered voice interaction\u201d",
+        "id": "9bffe8d4-ac33-4e59-b419-3072f92894af",
+        "observed_at": "2026-09-08 02:01:18+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "technology",
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "source_id": "7673d079-59c9-47ee-af9a-60e0893598ef",
+        "source_type": "video",
+        "statement": "Silly Baby is described as using AI-powered voice interaction.",
+        "technology": [
+          "AI-powered voice interaction"
+        ],
+        "video_id": "7673d079-59c9-47ee-af9a-60e0893598ef"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "77387aa8-dc11-4a46-9c37-f7dfaf78bec4",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cWith support for more than 80 languages and 8 expressive eye reactions\u201d",
+        "id": "a7fa60de-0c85-4967-895d-7c82f5741315",
+        "observed_at": "2026-09-08 02:01:18+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "feature_request",
+        "solution": "Silly Baby is an interactive AI plush companion designed to chat, react, and travel with the user.",
+        "source_id": "7673d079-59c9-47ee-af9a-60e0893598ef",
+        "source_type": "video",
+        "statement": "Silly Baby is described as supporting more than 80 languages and having eight expressive eye reactions.",
+        "technology": [
+          "AI-powered voice interaction"
+        ],
+        "video_id": "7673d079-59c9-47ee-af9a-60e0893598ef"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "fb6b4f13-00b4-4464-abd4-40d48df9d61c",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Children",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "capable of holding conversations, remembering preferences and adapting to each child over time",
+        "id": "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4",
+        "observed_at": "2026-08-03 13:30:02+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Haivivi turns traditional teddy bears into interactive AI companions that can hold conversations, remember preferences, and adapt to each child over time.",
+        "source_id": "c61fc571-3bf8-4aa9-9ca6-524eeb1a9baf",
+        "source_type": "video",
+        "statement": "Haivivi's AI companions can hold conversations, remember preferences, and adapt to each child over time.",
+        "technology": [
+          "Emotional AI"
+        ],
+        "video_id": "c61fc571-3bf8-4aa9-9ca6-524eeb1a9baf"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "5c303186-e811-477a-93fd-93547584bad5",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": [
+          "AliExpress affiliate link",
+          "YouTube product-review channel"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\"2026 NEW AI Plush Toy Robot Smart Interactive With LED Eyes&Voice Control App Compatible Soft Companion\"",
+        "id": "e1c70001-b5fa-4fc9-b0a1-b057cb7ff6d7",
+        "observed_at": "2026-09-08 02:50:21+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "An AI plush toy robot presented as a soft interactive companion with LED eyes, voice control, and app compatibility.",
+        "source_id": "152d1b19-2ebf-4ab7-8d8d-755fc901281e",
+        "source_type": "video",
+        "statement": "The video presents a product described as a \"2026 NEW AI Plush Toy Robot\" with LED eyes, voice control, app compatibility, and a soft-companion form factor.",
+        "technology": [
+          "voice control",
+          "mobile app compatibility"
+        ],
+        "video_id": "152d1b19-2ebf-4ab7-8d8d-755fc901281e"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "fb6b4f13-00b4-4464-abd4-40d48df9d61c",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Children",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "Haivivi is turning traditional teddy bears into interactive AI companions",
+        "id": "f2137255-a2d3-4b1b-8087-30ce5a7069bc",
+        "observed_at": "2026-08-03 13:30:02+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Haivivi turns traditional teddy bears into interactive AI companions that can hold conversations, remember preferences, and adapt to each child over time.",
+        "source_id": "c61fc571-3bf8-4aa9-9ca6-524eeb1a9baf",
+        "source_type": "video",
+        "statement": "Haivivi offers technology that turns traditional teddy bears into interactive AI companions.",
+        "technology": [
+          "Emotional AI"
+        ],
+        "video_id": "c61fc571-3bf8-4aa9-9ca6-524eeb1a9baf"
+      }
+    ],
+    "source_diversity": {
+      "channel_count": 3,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 9
+      },
+      "signal_count": 9,
+      "signal_types": {
+        "feature_request": 1,
+        "product_launch": 4,
+        "technology": 2,
+        "workflow": 2
+      },
+      "supporting_count": 9,
+      "video_count": 3
+    }
+  },
+  "input_tokens": 4592,
+  "model": "gpt-5.6-terra",
+  "opportunity_id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+  "output_tokens": 1377,
+  "parsed_output": {
+    "adoption_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible adoption Signal is supplied. Creator claims and product presentations do not establish use, retention, purchase, or adoption."
+    },
+    "build_complexity_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "The Signals name claimed capabilities but provide no implementation, integration, safety, data-handling, manufacturing, or operating evidence from which build complexity can be assessed."
+    },
+    "business_model_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible Signal provides an explicit product monetization structure, such as hardware sale, subscription, service fee, or bundled offering."
+    },
+    "competition_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No Signal is classified as competition. The distinct Silly Baby, Haivivi, and generic AI plush examples cannot be treated as competitive evidence under the supplied taxonomy."
+    },
+    "customer_summary": {
+      "evidence_signal_ids": [
+        "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4",
+        "4361b601-7588-4fbc-9187-0b5d7f679f07"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "Children are explicitly identified only for the Haivivi AI-companion example. For Silly Baby and the generic AI plush toy robot, the purchaser and primary user are not stated; the claim that a product can \u201ctravel with you\u201d does not establish a customer segment.",
+      "uncertainty": "The evidence does not identify who buys these products, whether children are the intended users across the category, or the role of parents/guardians in purchasing and operation."
+    },
+    "distribution_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "Although two Signals carry distribution metadata referring to an AliExpress affiliate link and a YouTube product-review channel, their excerpts do not state an acquisition or sales-channel mechanism. No eligible distribution Signal substantiates distribution."
+    },
+    "pricing_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible pricing Signal states an offered or observed product price, currency, billing period, or transaction."
+    },
+    "problem_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No supplied Signal states a user problem, its severity, frequency, or an unmet need addressed by AI plush companions."
+    },
+    "revenue_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible product-monetization or observed-transaction revenue Signal is supplied."
+    },
+    "solution_pattern": {
+      "evidence_signal_ids": [
+        "4361b601-7588-4fbc-9187-0b5d7f679f07",
+        "9bffe8d4-ac33-4e59-b419-3072f92894af",
+        "90041710-ac63-443e-93a5-b496c66d4310",
+        "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4",
+        "f2137255-a2d3-4b1b-8087-30ce5a7069bc",
+        "4a85684c-e22a-402e-bcd1-ab25d05dae9c",
+        "4f4457cf-caab-461a-a3fc-1339ae5ad0d3",
+        "a7fa60de-0c85-4967-895d-7c82f5741315"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The supplied examples present plush or teddy-bear form factors augmented with conversational interaction: Silly Baby is claimed to chat and react using AI-powered voice interaction, while Haivivi is claimed to make teddy bears conversational, preference-aware, and adaptive. Claimed interface variants include touch activation, expressive LED eyes, and, for a separate generic product example, voice control and app compatibility. Portability, battery life, language support, and reactions are evidenced only as Silly Baby claims.",
+      "uncertainty": "The pattern is synthesized from creator claims concerning distinct named and generic products. It does not establish that all capabilities coexist in one product or perform as claimed."
+    },
+    "validation_gaps": [
+      "Evidence insufficient: problem_summary",
+      "Evidence insufficient: business_model_summary",
+      "Evidence insufficient: pricing_summary",
+      "Evidence insufficient: revenue_summary",
+      "Evidence insufficient: distribution_summary",
+      "Evidence insufficient: competition_summary",
+      "Evidence insufficient: adoption_summary",
+      "Evidence insufficient: build_complexity_summary",
+      "Video/channel diversity is not independent customer validation.",
+      "Identify the buyer, primary user, and operator separately, including whether parents or guardians purchase and supervise products claimed to be for children.",
+      "Validate the user problem, its frequency and severity, and why a plush conversational form factor is preferred over alternatives.",
+      "Independently test claimed voice interaction, conversational quality, preference memory, adaptation, touch activation, language support, eye reactions, app compatibility, battery life, and portability; current evidence consists of creator claims.",
+      "Determine whether the separate Silly Baby, Haivivi, and generic AI plush examples represent a common commercial pattern or materially different offerings.",
+      "Obtain explicit product pricing, monetization structure, and product revenue evidence.",
+      "Obtain explicit acquisition and sales-channel evidence; affiliate-link and review-channel metadata alone are insufficient.",
+      "Obtain eligible adoption evidence from actual users or observed use; no independent adoption evidence is supplied.",
+      "Collect competition-classified evidence rather than inferring competition from multiple product examples.",
+      "Assess child safety, privacy, consent, data retention, moderation, and guardian controls if children are a target user group.",
+      "Establish technical, manufacturing, support, and operational requirements before assessing build complexity."
+    ],
+    "workflow_summary": {
+      "evidence_signal_ids": [
+        "90041710-ac63-443e-93a5-b496c66d4310",
+        "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "For the Silly Baby example, a user wakes the plush by tapping its ear and enters casual chat mode with a triple tap. A separate Haivivi claim describes conversation, preference memory, and adaptation to a child over time.",
+      "uncertainty": "This describes vendor-specific claimed interactions from videos, not an independently observed end-to-end user workflow. Whether the interaction, memory, and adaptation work as claimed is unverified."
+    }
+  },
+  "prompt_hash": "0a98a050ad422942c8d1f762f0d0fba82afa06a6d27482efdf92017b1b5e4f42",
+  "prompt_version": "v002",
+  "provider": "openai",
+  "provider_request_id": "resp_087a8bf50661e085016aa15fd4287087d0a12d8a95731fd09e",
+  "raw_output": {
+    "output_text": "{\"customer_summary\":{\"text\":\"Children are explicitly identified only for the Haivivi AI-companion example. For Silly Baby and the generic AI plush toy robot, the purchaser and primary user are not stated; the claim that a product can \u201ctravel with you\u201d does not establish a customer segment.\",\"evidence_signal_ids\":[\"d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4\",\"4361b601-7588-4fbc-9187-0b5d7f679f07\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The evidence does not identify who buys these products, whether children are the intended users across the category, or the role of parents/guardians in purchasing and operation.\"},\"problem_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No supplied Signal states a user problem, its severity, frequency, or an unmet need addressed by AI plush companions.\"},\"workflow_summary\":{\"text\":\"For the Silly Baby example, a user wakes the plush by tapping its ear and enters casual chat mode with a triple tap. A separate Haivivi claim describes conversation, preference memory, and adaptation to a child over time.\",\"evidence_signal_ids\":[\"90041710-ac63-443e-93a5-b496c66d4310\",\"d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This describes vendor-specific claimed interactions from videos, not an independently observed end-to-end user workflow. Whether the interaction, memory, and adaptation work as claimed is unverified.\"},\"solution_pattern\":{\"text\":\"The supplied examples present plush or teddy-bear form factors augmented with conversational interaction: Silly Baby is claimed to chat and react using AI-powered voice interaction, while Haivivi is claimed to make teddy bears conversational, preference-aware, and adaptive. Claimed interface variants include touch activation, expressive LED eyes, and, for a separate generic product example, voice control and app compatibility. Portability, battery life, language support, and reactions are evidenced only as Silly Baby claims.\",\"evidence_signal_ids\":[\"4361b601-7588-4fbc-9187-0b5d7f679f07\",\"9bffe8d4-ac33-4e59-b419-3072f92894af\",\"90041710-ac63-443e-93a5-b496c66d4310\",\"d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4\",\"f2137255-a2d3-4b1b-8087-30ce5a7069bc\",\"4a85684c-e22a-402e-bcd1-ab25d05dae9c\",\"4f4457cf-caab-461a-a3fc-1339ae5ad0d3\",\"a7fa60de-0c85-4967-895d-7c82f5741315\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The pattern is synthesized from creator claims concerning distinct named and generic products. It does not establish that all capabilities coexist in one product or perform as claimed.\"},\"business_model_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible Signal provides an explicit product monetization structure, such as hardware sale, subscription, service fee, or bundled offering.\"},\"pricing_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible pricing Signal states an offered or observed product price, currency, billing period, or transaction.\"},\"revenue_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible product-monetization or observed-transaction revenue Signal is supplied.\"},\"distribution_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"Although two Signals carry distribution metadata referring to an AliExpress affiliate link and a YouTube product-review channel, their excerpts do not state an acquisition or sales-channel mechanism. No eligible distribution Signal substantiates distribution.\"},\"competition_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No Signal is classified as competition. The distinct Silly Baby, Haivivi, and generic AI plush examples cannot be treated as competitive evidence under the supplied taxonomy.\"},\"adoption_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible adoption Signal is supplied. Creator claims and product presentations do not establish use, retention, purchase, or adoption.\"},\"build_complexity_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"The Signals name claimed capabilities but provide no implementation, integration, safety, data-handling, manufacturing, or operating evidence from which build complexity can be assessed.\"},\"validation_gaps\":[\"Identify the buyer, primary user, and operator separately, including whether parents or guardians purchase and supervise products claimed to be for children.\",\"Validate the user problem, its frequency and severity, and why a plush conversational form factor is preferred over alternatives.\",\"Independently test claimed voice interaction, conversational quality, preference memory, adaptation, touch activation, language support, eye reactions, app compatibility, battery life, and portability; current evidence consists of creator claims.\",\"Determine whether the separate Silly Baby, Haivivi, and generic AI plush examples represent a common commercial pattern or materially different offerings.\",\"Obtain explicit product pricing, monetization structure, and product revenue evidence.\",\"Obtain explicit acquisition and sales-channel evidence; affiliate-link and review-channel metadata alone are insufficient.\",\"Obtain eligible adoption evidence from actual users or observed use; no independent adoption evidence is supplied.\",\"Collect competition-classified evidence rather than inferring competition from multiple product examples.\",\"Assess child safety, privacy, consent, data retention, moderation, and guardian controls if children are a target user group.\",\"Establish technical, manufacturing, support, and operational requirements before assessing build complexity.\"]}",
+    "response_id": "resp_087a8bf50661e085016aa15fd4287087d0a12d8a95731fd09e"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_evidence_hash": "f7bcf1f45a0e006de00a5100d1a6f3215185930f49550357c16cafdf200f0466",
+  "started_at": "2026-09-09 13:32:03.304363+00:00",
+  "status": "completed",
+  "version": 2
+}

@@ -1,0 +1,546 @@
+{
+  "completed_at": "2026-09-09 13:27:49.198927+00:00",
+  "context_hash": "764710771dd634b8241b3d457ab97dd2d5aa5624d588d5ddb26b626b7d754374",
+  "created_at": "2026-09-09 13:27:25.307100+00:00",
+  "created_by": null,
+  "error_code": null,
+  "field_metadata": {
+    "adoption_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "build_complexity_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "business_model_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "opinion": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "competition_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "opinion": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "customer_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "distribution_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "pricing_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "problem_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2,
+        "opinion": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "revenue_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "solution_pattern": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "workflow_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    }
+  },
+  "id": "f896bee4-147e-4b69-a76e-a9c56b4db2e7",
+  "input_hash": "75cbb45b00ea7df5d275a40ddefdcc388397c341765d72040e79477ad738959a",
+  "input_snapshot": {
+    "context": {
+      "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+      "customer_type": null,
+      "industry": "AI companionship apps",
+      "name": "AI companionship apps for loneliness and emotional connection",
+      "one_line_thesis": "The creator frames loneliness and emotional dependency as risks associated with AI companionship.",
+      "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+      "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    },
+    "excluded_counts": {
+      "active/under_review": 1
+    },
+    "signals": [
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d1ec9468-c93c-4a77-90d9-7eb458d31f8b",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Lonely and frustrated men",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cWe also explore the concerns surrounding emotional dependency, unrealistic expectations, privacy\u201d",
+        "id": "1d4dcff6-785c-4358-b3ab-ba742d5488c9",
+        "observed_at": "2026-08-29 19:15:31+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Some men may seek conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "complaint",
+        "solution": "Personalized AI companion apps or digital partners offering artificial companionship.",
+        "source_id": "2aebef8a-1883-43d7-9213-3857ec26decd",
+        "source_type": "video",
+        "statement": "The creator identifies concerns about emotional dependency, unrealistic expectations, and privacy related to AI companions.",
+        "technology": null,
+        "video_id": "2aebef8a-1883-43d7-9213-3857ec26decd"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "channel_id": "8f901426-013c-4187-82bd-5410e9c38471",
+        "claim_status": "opinion",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"AI girlfriends and AI companion apps are changing how people experience love, friendship, and emotional connection.\"",
+        "id": "422f9ab2-101f-4718-8ebe-b329e71614dd",
+        "observed_at": "2026-09-01 14:29:56+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "market_change",
+        "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+        "source_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1",
+        "source_type": "video",
+        "statement": "The creator suggests that AI companion apps are changing how people experience love, friendship, and emotional connection.",
+        "technology": [
+          "artificial intelligence",
+          "personalized AI"
+        ],
+        "video_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d1ec9468-c93c-4a77-90d9-7eb458d31f8b",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Lonely and frustrated men",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cAI companion apps appeal to lonely and frustrated men\u201d and \u201cwithout rejection, manipulation or constant conflict.\u201d",
+        "id": "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+        "observed_at": "2026-08-29 19:15:31+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Some men may seek conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pain",
+        "solution": "Personalized AI companion apps or digital partners offering artificial companionship.",
+        "source_id": "2aebef8a-1883-43d7-9213-3857ec26decd",
+        "source_type": "video",
+        "statement": "The metadata associates the appeal of AI companion apps with loneliness and frustration among men, as well as avoidance of rejection, manipulation, and constant conflict.",
+        "technology": null,
+        "video_id": "2aebef8a-1883-43d7-9213-3857ec26decd"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "channel_id": "8f901426-013c-4187-82bd-5410e9c38471",
+        "claim_status": "opinion",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"why real human connection may be harder to replace than we think\" and \"Can AI really replace human friendship and love\"",
+        "id": "7208a3c7-8f8f-485a-ab6a-fa14c31065ca",
+        "observed_at": "2026-09-01 14:29:56+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "competition",
+        "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+        "source_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1",
+        "source_type": "video",
+        "statement": "The creator questions whether AI can replace human friendship and love and argues that real human connection may be difficult to replace.",
+        "technology": [
+          "artificial intelligence",
+          "personalized AI"
+        ],
+        "video_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d1ec9468-c93c-4a77-90d9-7eb458d31f8b",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Lonely and frustrated men",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201csome men believe AI offers conversation, attention and emotional support without rejection, manipulation or constant conflict.\u201d",
+        "id": "91f43bdc-e3af-4808-837f-0af14215f84e",
+        "observed_at": "2026-08-29 19:15:31+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Some men may seek conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Personalized AI companion apps or digital partners offering artificial companionship.",
+        "source_id": "2aebef8a-1883-43d7-9213-3857ec26decd",
+        "source_type": "video",
+        "statement": "The creator says some men believe AI offers conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "technology": null,
+        "video_id": "2aebef8a-1883-43d7-9213-3857ec26decd"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d1ec9468-c93c-4a77-90d9-7eb458d31f8b",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Lonely and frustrated men",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cThis video examines why AI companion apps appeal to lonely and frustrated men\u201d",
+        "id": "ad98485c-2a6d-4fa8-8899-2110452dbb1f",
+        "observed_at": "2026-08-29 19:15:31+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Some men may seek conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "demand",
+        "solution": "Personalized AI companion apps or digital partners offering artificial companionship.",
+        "source_id": "2aebef8a-1883-43d7-9213-3857ec26decd",
+        "source_type": "video",
+        "statement": "The creator says AI companion apps appeal to lonely and frustrated men.",
+        "technology": null,
+        "video_id": "2aebef8a-1883-43d7-9213-3857ec26decd"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "channel_id": "8f901426-013c-4187-82bd-5410e9c38471",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"AI girlfriends and AI companion apps are changing how people experience love, friendship, and emotional connection\" and \"behind the seemingly perfect conversations\"",
+        "id": "b3575406-0d9b-42e3-badf-8697ba715dec",
+        "observed_at": "2026-09-01 14:29:56+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+        "source_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1",
+        "source_type": "video",
+        "statement": "The creator describes AI girlfriends and companion apps as providing conversations and emotional connection for companionship and friendship.",
+        "technology": [
+          "artificial intelligence",
+          "personalized AI"
+        ],
+        "video_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "channel_id": "8f901426-013c-4187-82bd-5410e9c38471",
+        "claim_status": "opinion",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"are AI companions solving loneliness\u2014or turning it into a profitable business?\" and \"how AI girlfriends create emotional attachment, and how artificial intelligence, emotional dependency\"",
+        "id": "c426cb09-507b-4380-9e9d-576be8de33b9",
+        "observed_at": "2026-09-01 14:29:56+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Loneliness and potential emotional dependency associated with AI companionship",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pain",
+        "solution": "AI girlfriends and AI companion apps positioned for companionship, friendship, and emotional connection",
+        "source_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1",
+        "source_type": "video",
+        "statement": "The creator frames loneliness and emotional dependency as risks associated with AI companionship.",
+        "technology": [
+          "artificial intelligence",
+          "personalized AI"
+        ],
+        "video_id": "6c3e0e1b-2f7b-444f-baa5-51a7dff05fa1"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "d1ec9468-c93c-4a77-90d9-7eb458d31f8b",
+        "claim_status": "speculation",
+        "comment_id": null,
+        "customer_type": "Lonely and frustrated men",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cAI girlfriends are becoming a growing part of the debate surrounding modern dating\u201d and \u201ccould they fundamentally transform the dating market?\u201d and \u201cwhat happens when technology begins competing directly for male attention.\u201d",
+        "id": "fdf310d7-5f16-4bc9-840d-f032481696a8",
+        "observed_at": "2026-08-29 19:15:31+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Some men may seek conversation, attention, and emotional support without rejection, manipulation, or constant conflict.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "market_change",
+        "solution": "Personalized AI companion apps or digital partners offering artificial companionship.",
+        "source_id": "2aebef8a-1883-43d7-9213-3857ec26decd",
+        "source_type": "video",
+        "statement": "The video frames AI girlfriends as an emerging factor in modern dating that could compete for male attention and potentially transform the dating market.",
+        "technology": null,
+        "video_id": "2aebef8a-1883-43d7-9213-3857ec26decd"
+      }
+    ],
+    "source_diversity": {
+      "channel_count": 2,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 9
+      },
+      "signal_count": 9,
+      "signal_types": {
+        "competition": 1,
+        "complaint": 1,
+        "demand": 1,
+        "market_change": 2,
+        "pain": 2,
+        "workflow": 2
+      },
+      "supporting_count": 9,
+      "video_count": 2
+    }
+  },
+  "input_tokens": 4461,
+  "model": "gpt-5.6-terra",
+  "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+  "output_tokens": 1606,
+  "parsed_output": {
+    "adoption_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "Claims that the apps appeal to some men do not establish active usage, retention, willingness to pay, or independently observed adoption."
+    },
+    "build_complexity_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "The supplied references to artificial intelligence and personalized AI do not provide sufficient technical, integration, safety, data, or operational detail to assess build complexity."
+    },
+    "business_model_summary": {
+      "evidence_signal_ids": [
+        "422f9ab2-101f-4718-8ebe-b329e71614dd",
+        "c426cb09-507b-4380-9e9d-576be8de33b9"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "One video signal characterizes AI companionship as involving subscription models and paywalls, while its creator asks whether AI companions turn loneliness into a profitable business.",
+      "uncertainty": "No product-specific monetization structure, paid feature definition, billing cadence, or evidence that users pay is provided. The profitability framing is an opinion/question, not revenue evidence."
+    },
+    "competition_summary": {
+      "evidence_signal_ids": [
+        "7208a3c7-8f8f-485a-ab6a-fa14c31065ca"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator questions whether AI can replace human friendship and love, framing real human connection as a possible alternative that may be difficult to replace.",
+      "uncertainty": "This is creator opinion about a broad alternative, not evidence of named competitors, switching behavior, differentiation, or competitive outcomes."
+    },
+    "customer_summary": {
+      "evidence_signal_ids": [
+        "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+        "ad98485c-2a6d-4fa8-8899-2110452dbb1f"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator frames lonely and frustrated men as a potential user segment for AI companion apps. The evidence does not identify a paying buyer, and user and buyer roles remain ambiguous.",
+      "uncertainty": "This is a creator characterization of appeal, not independently verified customer or purchase evidence."
+    },
+    "distribution_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "The videos discuss the category but provide no customer-acquisition, referral, app-store, partnership, advertising, or other distribution evidence."
+    },
+    "pricing_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No price, currency, billing period, offer terms, or observed payment is supplied."
+    },
+    "problem_summary": {
+      "evidence_signal_ids": [
+        "1d4dcff6-785c-4358-b3ab-ba742d5488c9",
+        "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+        "c426cb09-507b-4380-9e9d-576be8de33b9"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "Creator narratives associate AI companionship with users seeking conversation, attention, and emotional support while avoiding rejection, manipulation, or constant conflict; separate creator commentary raises emotional dependency, unrealistic-expectation, and privacy concerns.",
+      "uncertainty": "The statements are creator claims or opinions from videos, not direct reports from users; prevalence, severity, and whether these needs or risks drive purchase are unknown."
+    },
+    "revenue_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No company or product revenue, paid-user count, transaction, or recurring-revenue evidence is supplied."
+    },
+    "solution_pattern": {
+      "evidence_signal_ids": [
+        "b3575406-0d9b-42e3-badf-8697ba715dec",
+        "91f43bdc-e3af-4808-837f-0af14215f84e"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "AI companion or 'AI girlfriend' apps are described as providing artificial companionship through conversations positioned around companionship, friendship, and emotional connection.",
+      "uncertainty": "The pattern is based on creator descriptions and does not establish specific capabilities, efficacy, safeguards, or vendor-neutral product requirements."
+    },
+    "validation_gaps": [
+      "Evidence insufficient: pricing_summary",
+      "Evidence insufficient: revenue_summary",
+      "Evidence insufficient: distribution_summary",
+      "Evidence insufficient: adoption_summary",
+      "Evidence insufficient: build_complexity_summary",
+      "Excluded evidence: {'active/under_review': 1}; not used as support.",
+      "Video/channel diversity is not independent customer validation.",
+      "Identify the paying buyer and distinguish that role from the described end user; the only customer segment is a creator-framed group of lonely and frustrated men.",
+      "Validate the stated needs, risk concerns, and actual user outcomes through direct user or operator evidence; current evidence consists of two videos with creator claims, opinions, and speculation.",
+      "Establish whether subscriptions and paywalls are actually used by specific products, including plan structure, paid features, billing cadence, price, and observed payment behavior.",
+      "Obtain product or company monetization evidence before making any revenue claim.",
+      "Collect independent adoption evidence, such as active use, retention, conversion, or repeat payment; creator statements of appeal are not adoption evidence.",
+      "Identify actual acquisition channels and their performance; video presence is not distribution evidence.",
+      "Validate the competitive set, differentiation, and switching behavior beyond the creator's opinion that human connection may be hard to replace.",
+      "Clarify safety, privacy, emotional-dependency safeguards, and the technical/operational requirements needed to assess build complexity.",
+      "Resolve the semantic tension between companionship positioned as emotional support and creator concerns that it may contribute to emotional dependency or fail to replace human connection."
+    ],
+    "workflow_summary": {
+      "evidence_signal_ids": [
+        "91f43bdc-e3af-4808-837f-0af14215f84e",
+        "b3575406-0d9b-42e3-badf-8697ba715dec"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The described interaction pattern is a user conversing with an AI companion for attention and emotional support, framed as an alternative to interpersonal interactions perceived as involving rejection, manipulation, or conflict.",
+      "uncertainty": "Only a high-level creator description is available; onboarding, usage frequency, specific product interactions, and outcomes are not evidenced."
+    }
+  },
+  "prompt_hash": "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd",
+  "prompt_version": "v001",
+  "provider": "openai",
+  "provider_request_id": "resp_0044d2d57af98253016aa15ebe435887d0a2de697ca05644b8",
+  "raw_output": {
+    "output_text": "{\"customer_summary\":{\"text\":\"A creator frames lonely and frustrated men as a potential user segment for AI companion apps. The evidence does not identify a paying buyer, and user and buyer roles remain ambiguous.\",\"evidence_signal_ids\":[\"5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a\",\"ad98485c-2a6d-4fa8-8899-2110452dbb1f\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is a creator characterization of appeal, not independently verified customer or purchase evidence.\"},\"problem_summary\":{\"text\":\"Creator narratives associate AI companionship with users seeking conversation, attention, and emotional support while avoiding rejection, manipulation, or constant conflict; separate creator commentary raises emotional dependency, unrealistic-expectation, and privacy concerns.\",\"evidence_signal_ids\":[\"1d4dcff6-785c-4358-b3ab-ba742d5488c9\",\"5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a\",\"c426cb09-507b-4380-9e9d-576be8de33b9\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The statements are creator claims or opinions from videos, not direct reports from users; prevalence, severity, and whether these needs or risks drive purchase are unknown.\"},\"workflow_summary\":{\"text\":\"The described interaction pattern is a user conversing with an AI companion for attention and emotional support, framed as an alternative to interpersonal interactions perceived as involving rejection, manipulation, or conflict.\",\"evidence_signal_ids\":[\"91f43bdc-e3af-4808-837f-0af14215f84e\",\"b3575406-0d9b-42e3-badf-8697ba715dec\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"Only a high-level creator description is available; onboarding, usage frequency, specific product interactions, and outcomes are not evidenced.\"},\"solution_pattern\":{\"text\":\"AI companion or 'AI girlfriend' apps are described as providing artificial companionship through conversations positioned around companionship, friendship, and emotional connection.\",\"evidence_signal_ids\":[\"b3575406-0d9b-42e3-badf-8697ba715dec\",\"91f43bdc-e3af-4808-837f-0af14215f84e\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The pattern is based on creator descriptions and does not establish specific capabilities, efficacy, safeguards, or vendor-neutral product requirements.\"},\"business_model_summary\":{\"text\":\"One video signal characterizes AI companionship as involving subscription models and paywalls, while its creator asks whether AI companions turn loneliness into a profitable business.\",\"evidence_signal_ids\":[\"422f9ab2-101f-4718-8ebe-b329e71614dd\",\"c426cb09-507b-4380-9e9d-576be8de33b9\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"No product-specific monetization structure, paid feature definition, billing cadence, or evidence that users pay is provided. The profitability framing is an opinion/question, not revenue evidence.\"},\"pricing_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No price, currency, billing period, offer terms, or observed payment is supplied.\"},\"revenue_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No company or product revenue, paid-user count, transaction, or recurring-revenue evidence is supplied.\"},\"distribution_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"The videos discuss the category but provide no customer-acquisition, referral, app-store, partnership, advertising, or other distribution evidence.\"},\"competition_summary\":{\"text\":\"A creator questions whether AI can replace human friendship and love, framing real human connection as a possible alternative that may be difficult to replace.\",\"evidence_signal_ids\":[\"7208a3c7-8f8f-485a-ab6a-fa14c31065ca\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is creator opinion about a broad alternative, not evidence of named competitors, switching behavior, differentiation, or competitive outcomes.\"},\"adoption_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"Claims that the apps appeal to some men do not establish active usage, retention, willingness to pay, or independently observed adoption.\"},\"build_complexity_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"The supplied references to artificial intelligence and personalized AI do not provide sufficient technical, integration, safety, data, or operational detail to assess build complexity.\"},\"validation_gaps\":[\"Identify the paying buyer and distinguish that role from the described end user; the only customer segment is a creator-framed group of lonely and frustrated men.\",\"Validate the stated needs, risk concerns, and actual user outcomes through direct user or operator evidence; current evidence consists of two videos with creator claims, opinions, and speculation.\",\"Establish whether subscriptions and paywalls are actually used by specific products, including plan structure, paid features, billing cadence, price, and observed payment behavior.\",\"Obtain product or company monetization evidence before making any revenue claim.\",\"Collect independent adoption evidence, such as active use, retention, conversion, or repeat payment; creator statements of appeal are not adoption evidence.\",\"Identify actual acquisition channels and their performance; video presence is not distribution evidence.\",\"Validate the competitive set, differentiation, and switching behavior beyond the creator's opinion that human connection may be hard to replace.\",\"Clarify safety, privacy, emotional-dependency safeguards, and the technical/operational requirements needed to assess build complexity.\",\"Resolve the semantic tension between companionship positioned as emotional support and creator concerns that it may contribute to emotional dependency or fail to replace human connection.\"]}",
+    "response_id": "resp_0044d2d57af98253016aa15ebe435887d0a2de697ca05644b8"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_evidence_hash": "e3f8bafaab5b5a942334df6bbb1a2363b6455e77e6bf3a77fb92b2c15895e1a3",
+  "started_at": "2026-09-09 13:27:25.320047+00:00",
+  "status": "completed",
+  "version": 1
+}

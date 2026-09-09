@@ -7,7 +7,7 @@ from .errors import PromptNotFoundError
 PROMPT_ROOT = Path(__file__).parents[6] / "prompts"
 
 RUNTIME_PROMPT_DEFAULTS = {
-    "opportunity-consolidation": "v001",
+    "opportunity-consolidation": "v002",
     "relevance-filter": "v001",
     "signal-extractor": "v003",
     "comment-pain-miner": "v001",

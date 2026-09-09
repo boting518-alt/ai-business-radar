@@ -1,0 +1,16 @@
+{
+  "request": {
+    "id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+    "status": "completed",
+    "reused": true
+  },
+  "message_id": "e15f045c-28e0-4650-bd8e-5f371892e518",
+  "acknowledged": true,
+  "immutable_record_hash": "5199340f1205e33f373bf8730bd4dde6eb5291bee6e8716c67b5c07132ce8aba",
+  "row_unchanged": true,
+  "additional_provider_calls": 0,
+  "queue": "opportunity_consolidation",
+  "api_worker_fingerprint": "0b0184355f0cb72c",
+  "scheduler_started": false,
+  "full_canonical_launcher": "blocked_by_automatic_approval_review"
+}

@@ -1,6 +1,6 @@
 {
-  "status": "awaiting_explicit_OpenAI_destination_approval",
-  "real_provider_calls": 0,
+  "status": "authorized_and_executed",
+  "real_provider_calls": 16,
   "cases": [
     {
       "id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
@@ -220,5 +220,10 @@
         }
       }
     }
-  ]
+  ],
+  "prompt_versions": [
+    "v001",
+    "v002"
+  ],
+  "authorization": "User explicitly allowed the eight opportunities and effective evidence/context to OpenAI. Same eight cases rerun after prompt revision; no expanded opportunity sample."
 }

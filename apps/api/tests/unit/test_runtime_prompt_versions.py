@@ -9,10 +9,10 @@ from ai_business_radar_api.infrastructure.ai import (
 )
 
 
-def test_runtime_matrix_keeps_only_signal_v003_promoted() -> None:
+def test_runtime_matrix_preserves_independent_stage_versions() -> None:
     assert RUNTIME_PROMPT_DEFAULTS == {
         "relevance-filter": "v001",
-        "opportunity-consolidation": "v001",
+        "opportunity-consolidation": "v002",
         "signal-extractor": "v003",
         "comment-pain-miner": "v001",
         "opportunity-normalizer": "v001",
@@ -35,3 +35,10 @@ def test_explicit_version_resolution_supports_rollback_and_rejects_unknown(tmp_p
     assert resolve_prompt("signal-extractor", "v001").version == "v001"
     with pytest.raises(PromptNotFoundError, match="Invalid prompt version"):
         resolve_prompt("signal-extractor", "v999", root=tmp_path)
+
+
+def test_used_consolidation_prompt_history_is_immutable() -> None:
+    assert resolve_prompt("opportunity-consolidation", "v001").sha256 == (
+        "2f35b735fa2127726fa54d8b1353c9f30208a20773064a4da52083b3950288bd"
+    )
+    assert resolve_prompt("opportunity-consolidation").version == "v002"

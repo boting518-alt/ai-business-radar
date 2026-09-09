@@ -1,0 +1,664 @@
+{
+  "completed_at": "2026-09-09 13:30:44.408871+00:00",
+  "context_hash": "f8d43d6aa4bf0a247b47de8e8440d6ce842a1f8c5a285e52a2856cf91d28820a",
+  "created_at": "2026-09-09 13:30:20.861637+00:00",
+  "created_by": null,
+  "error_code": null,
+  "field_metadata": {
+    "adoption_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "build_complexity_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "business_model_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 1,
+        "fact": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "competition_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "customer_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "distribution_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "pricing_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 1,
+        "fact": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "problem_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "revenue_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "solution_pattern": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 3
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "workflow_summary": {
+      "channel_count": 3,
+      "claim_statuses": {
+        "creator_claim": 3
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 3
+    }
+  },
+  "id": "7e9b6620-66e4-4098-abfa-ea0639c8dc98",
+  "input_hash": "ff635d3f56fbb73a88df656d432921523486b32c1c593a9592f5e9c0991d573a",
+  "input_snapshot": {
+    "context": {
+      "business_model": null,
+      "customer_type": "Adults seeking a customizable companion and emotional support device",
+      "industry": "consumer robotics",
+      "name": "Roller-skating duck robot companion",
+      "one_line_thesis": "Micro Duck is presented as a robotic roller-skating duck companion product.",
+      "problem": null,
+      "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    },
+    "excluded_counts": {
+      "active/under_review": 1
+    },
+    "signals": [
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "ea60f34f-8f53-49dd-94f5-c20f789d2ced",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"When it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone\"",
+        "id": "0d209973-06ed-4998-a50f-4a795b07eb97",
+        "observed_at": "2026-09-07 14:30:06+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Micro Duck is described as a 10-inch AI robot that can walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.",
+        "source_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2",
+        "source_type": "video",
+        "statement": "The Micro Duck is described as recovering on its own after it falls and allowing users to program tricks from a phone.",
+        "technology": [
+          "self-learning AI"
+        ],
+        "video_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "847d0f25-3d64-46a8-9802-4fd525530303",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"Micro Duck combined robotics with quirky design by creating a roller-skating duck robot that sings instead of quacks.\"",
+        "id": "1f020391-3050-4fea-b66a-c8a9f0558d19",
+        "observed_at": "2026-09-07 15:10:13+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+        "source_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff",
+        "source_type": "video",
+        "statement": "Micro Duck is presented as a robotic roller-skating duck product.",
+        "technology": [
+          "robotics",
+          "AI"
+        ],
+        "video_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "847d0f25-3d64-46a8-9802-4fd525530303",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"Originally appearing as an educational AI toy, it has found unexpected uses among adults as a customizable companion and emotional support device.\"",
+        "id": "2774a057-1ded-4936-93ab-2f91faafd2ce",
+        "observed_at": "2026-09-07 15:10:13+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "customer",
+        "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+        "source_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff",
+        "source_type": "video",
+        "statement": "The description says the product has found uses among adults as a customizable companion and emotional support device.",
+        "technology": [
+          "robotics",
+          "AI"
+        ],
+        "video_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "847d0f25-3d64-46a8-9802-4fd525530303",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"a roller-skating duck robot that sings instead of quacks\"",
+        "id": "3362eac7-74c7-4798-9f2b-d8f513eac102",
+        "observed_at": "2026-09-07 15:10:13+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+        "source_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff",
+        "source_type": "video",
+        "statement": "The robot is described as singing rather than quacking as part of its interactive behavior.",
+        "technology": [
+          "robotics",
+          "AI"
+        ],
+        "video_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "ea60f34f-8f53-49dd-94f5-c20f789d2ced",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"When it falls, it gets back up on its own using self-learning AI.\"",
+        "id": "46447f3a-50e4-4d0e-b166-41989d7fac1e",
+        "observed_at": "2026-09-07 14:30:06+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "technology",
+        "solution": "Micro Duck is described as a 10-inch AI robot that can walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.",
+        "source_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2",
+        "source_type": "video",
+        "statement": "The creator attributes the Micro Duck's self-recovery after falling to self-learning AI.",
+        "technology": [
+          "self-learning AI"
+        ],
+        "video_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "0cf42025-6f04-41d4-92a0-4d3ce4c1d615",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": [
+          "pre-order"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\"It waddles, picks stuff up with its beak, gets back up when it falls, and yes it roller-skates.\"",
+        "id": "6c38858d-28a8-49ac-b517-90a9f3e526d3",
+        "observed_at": "2026-09-08 07:00:44+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Microduck, a robot duck that waddles, picks up objects with its beak, recovers after falling, and roller-skates.",
+        "source_id": "39ca1527-825e-4f67-87ad-03301980cfa2",
+        "source_type": "video",
+        "statement": "Microduck is described as able to waddle, pick up objects with its beak, get back up after falling, and roller-skate.",
+        "technology": [
+          "open-source reinforcement-learning software"
+        ],
+        "video_id": "39ca1527-825e-4f67-87ad-03301980cfa2"
+      },
+      {
+        "actor_role": "featured_product_company",
+        "business_model": null,
+        "channel_id": "dad5fa8d-a1b9-404f-a3ae-31f8c102da2a",
+        "claim_status": "fact",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": [
+          "Substack",
+          "guest Substack link",
+          "business inquiry email"
+        ],
+        "evidence_role": "product_pricing",
+        "evidence_text": "\u201cthe $400 MicroDuck from Hugging Face\u201d",
+        "id": "7597a321-0519-44f4-b73d-352843f5dc2a",
+        "observed_at": "2026-09-07 18:06:07+00:00",
+        "price_currency": "USD",
+        "price_max": "400.0",
+        "price_min": "400.0",
+        "price_period": null,
+        "problem": "Voice transcription may fail to understand a user's accent and can produce transcription errors that need correction.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pricing",
+        "solution": "Daniel Nest demonstrates a custom voice workflow that turns rambling voice brain dumps into structured prompts, including use of a custom prompt to fix transcription errors.",
+        "source_id": "0af7da78-2589-46cd-a8fb-70cf157b58e2",
+        "source_type": "video",
+        "statement": "MicroDuck is described as costing $400.",
+        "technology": [
+          "voice dictation",
+          "ChatGPT Voice Mode",
+          "AI avatars",
+          "AI voice cloning",
+          "MicroDuck"
+        ],
+        "video_id": "0af7da78-2589-46cd-a8fb-70cf157b58e2"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "847d0f25-3d64-46a8-9802-4fd525530303",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"Its unique features reflect evolving trends in consumer robotics where entertainment and mental wellness intersect.\"",
+        "id": "7d7455f5-653d-4c39-a6f7-7a7d1d2c06bc",
+        "observed_at": "2026-09-07 15:10:13+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "market_change",
+        "solution": "Micro Duck is described as a roller-skating duck robot that sings and can serve as a customizable companion and emotional support device.",
+        "source_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff",
+        "source_type": "video",
+        "statement": "The creator characterizes the product as reflecting a consumer-robotics trend at the intersection of entertainment and mental wellness.",
+        "technology": [
+          "robotics",
+          "AI"
+        ],
+        "video_id": "45d7a5ae-ee23-49e1-9ebd-f71e5c7b07ff"
+      },
+      {
+        "actor_role": "featured_product_company",
+        "business_model": null,
+        "channel_id": "0cf42025-6f04-41d4-92a0-4d3ce4c1d615",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": [
+          "pre-order"
+        ],
+        "evidence_role": "product_pricing",
+        "evidence_text": "\"a $399 robot duck\"",
+        "id": "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+        "observed_at": "2026-09-08 07:00:44+00:00",
+        "price_currency": "USD",
+        "price_max": "399.0",
+        "price_min": "399.0",
+        "price_period": "one-time",
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pricing",
+        "solution": "Microduck, a robot duck that waddles, picks up objects with its beak, recovers after falling, and roller-skates.",
+        "source_id": "39ca1527-825e-4f67-87ad-03301980cfa2",
+        "source_type": "video",
+        "statement": "Microduck is advertised at $399.",
+        "technology": [
+          "open-source reinforcement-learning software"
+        ],
+        "video_id": "39ca1527-825e-4f67-87ad-03301980cfa2"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "ea60f34f-8f53-49dd-94f5-c20f789d2ced",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\"Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard. When it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone\"",
+        "id": "c4ca65f2-71df-443c-a41f-429fed6c70cd",
+        "observed_at": "2026-09-07 14:30:06+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Micro Duck is described as a 10-inch AI robot that can walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.",
+        "source_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2",
+        "source_type": "video",
+        "statement": "The Micro Duck is presented as a 10-inch AI robot with walking, object-grabbing, skateboard-riding, self-recovery, and phone-programmable trick capabilities.",
+        "technology": [
+          "self-learning AI"
+        ],
+        "video_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "4a23474a-03b3-4710-8277-faf8d2765fdd",
+        "claim_status": "unknown",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "some experts in digital literacy warn parents to take a cautious approach when introducing AI to their kids.",
+        "id": "e2c3ccc1-db88-47fe-87ef-a6b0b2ed2972",
+        "observed_at": "2026-08-27 23:08:22+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "complaint",
+        "solution": "Hugging Face is launching Microduck, a robotic duck that users can teach new skills, including walking, skating, and singing.",
+        "source_id": "ffccbcc3-6fcb-4f59-b0ff-087518937b18",
+        "source_type": "video",
+        "statement": "Some experts in digital literacy warn parents to take a cautious approach when introducing AI to children.",
+        "technology": [
+          "artificial intelligence"
+        ],
+        "video_id": "ffccbcc3-6fcb-4f59-b0ff-087518937b18"
+      },
+      {
+        "actor_role": "featured_product_company",
+        "business_model": null,
+        "channel_id": "ea60f34f-8f53-49dd-94f5-c20f789d2ced",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": null,
+        "distribution_channels": null,
+        "evidence_role": "product_monetization",
+        "evidence_text": "\"In its first 24 hours, it pulled in over $2.5 million in sales\"",
+        "id": "f6a54891-a38c-45d7-b73e-987934530c04",
+        "observed_at": "2026-09-07 14:30:06+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "revenue",
+        "solution": "Micro Duck is described as a 10-inch AI robot that can walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.",
+        "source_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2",
+        "source_type": "video",
+        "statement": "The creator claims that Micro Duck generated over $2.5 million in sales in its first 24 hours.",
+        "technology": [
+          "self-learning AI"
+        ],
+        "video_id": "10821271-c3f6-4725-9259-a39b1c9ddcb2"
+      }
+    ],
+    "source_diversity": {
+      "channel_count": 5,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 12
+      },
+      "signal_count": 12,
+      "signal_types": {
+        "complaint": 1,
+        "customer": 1,
+        "market_change": 1,
+        "pricing": 2,
+        "product_launch": 2,
+        "revenue": 1,
+        "technology": 1,
+        "workflow": 3
+      },
+      "supporting_count": 12,
+      "video_count": 5
+    }
+  },
+  "input_tokens": 5922,
+  "model": "gpt-5.6-terra",
+  "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+  "output_tokens": 1694,
+  "parsed_output": {
+    "adoption_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible adoption signal is supplied. The reported first-24-hour sales claim is revenue evidence, not adoption evidence."
+    },
+    "build_complexity_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "Feature and technology claims do not establish engineering scope, manufacturing requirements, software architecture, safety requirements, or unit economics."
+    },
+    "business_model_summary": {
+      "evidence_signal_ids": [
+        "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+        "7597a321-0519-44f4-b73d-352843f5dc2a"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The evidence indicates an offered one-time hardware purchase for Microduck at a stated USD 399 price; a separate reference describes MicroDuck at USD 400 without specifying a billing period.",
+      "uncertainty": "The supplied evidence supports stated product pricing but does not establish the seller, fulfillment model, costs, recurring services, or whether either price was paid by customers."
+    },
+    "competition_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No supplied signal is classified as competition evidence."
+    },
+    "customer_summary": {
+      "evidence_signal_ids": [
+        "2774a057-1ded-4936-93ab-2f91faafd2ce"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator describes adults as users of Micro Duck as a customizable companion and emotional-support device; the evidence does not establish who buys the product or whether those roles are distinct.",
+      "uncertainty": "This is a creator claim about use among adults, not independent evidence of customer segments, purchase behavior, or buyer roles."
+    },
+    "distribution_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible signal excerpt states an acquisition or sales-channel mechanism. A pre-order label in metadata alone is insufficient evidence of distribution."
+    },
+    "pricing_summary": {
+      "evidence_signal_ids": [
+        "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+        "7597a321-0519-44f4-b73d-352843f5dc2a"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "Microduck is advertised at USD 399 as a one-time price. Another supplied source describes a USD 400 MicroDuck price without a stated period; the USD 1 difference and pricing contexts are unresolved.",
+      "uncertainty": "These are stated prices, not observed transactions. The sources differ slightly and do not clarify timing, taxes, configuration, availability, or whether they refer to the same commercial offer."
+    },
+    "problem_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No supplied product-specific evidence establishes a user problem, its severity, or a buyer need. A generic caution about introducing AI to children does not substantiate a Micro Duck problem statement."
+    },
+    "revenue_summary": {
+      "evidence_signal_ids": [
+        "f6a54891-a38c-45d7-b73e-987934530c04"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator claims that Micro Duck generated over USD 2.5 million in sales in its first 24 hours.",
+      "uncertainty": "This is an unverified creator claim. The supplied signal does not provide auditable sales records, order counts, refunds, net revenue, seller identity, or a defined launch date."
+    },
+    "solution_pattern": {
+      "evidence_signal_ids": [
+        "1f020391-3050-4fea-b66a-c8a9f0558d19",
+        "c4ca65f2-71df-443c-a41f-429fed6c70cd",
+        "46447f3a-50e4-4d0e-b166-41989d7fac1e"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "Micro Duck is presented as a specific interactive robotic-duck companion: a roller-skating robot that sings, supports physical actions and self-recovery, and is described as programmable from a phone. The supplied evidence supports this vendor-specific implementation, not a broader category pattern.",
+      "uncertainty": "Product features, including the attribution of self-recovery to self-learning AI, are creator claims and are not independently verified in the supplied signals."
+    },
+    "validation_gaps": [
+      "Evidence insufficient: problem_summary",
+      "Evidence insufficient: distribution_summary",
+      "Evidence insufficient: competition_summary",
+      "Evidence insufficient: adoption_summary",
+      "Evidence insufficient: build_complexity_summary",
+      "Excluded evidence: {'active/under_review': 1}; not used as support.",
+      "Video/channel diversity is not independent customer validation.",
+      "Validate the product-specific user problem and whether companionship or emotional support is a claimed use, demonstrated outcome, or regulated/wellness positioning.",
+      "Identify the actual buyer, end user, and any distinction between adult users, parents, and child users; current evidence only contains a creator claim about adults and a generic caution concerning children and AI.",
+      "Independently verify product capabilities, including phone-based trick programming and self-recovery attributed to self-learning AI.",
+      "Resolve whether USD 399 one-time and USD 400 refer to the same version, time period, seller, and offer terms.",
+      "Verify the claimed over-USD-2.5-million first-24-hour sales with company or transaction evidence; establish gross versus net sales, orders, refunds, and timing.",
+      "Obtain eligible adoption evidence rather than treating pricing or reported sales as proof of sustained use or retention.",
+      "Document explicit distribution and acquisition channels; pre-order metadata is not a demonstrated channel mechanism.",
+      "Collect competition evidence classified as such; none is supplied.",
+      "Establish technical, manufacturing, safety, and support requirements before assessing build complexity."
+    ],
+    "workflow_summary": {
+      "evidence_signal_ids": [
+        "0d209973-06ed-4998-a50f-4a795b07eb97",
+        "3362eac7-74c7-4798-9f2b-d8f513eac102",
+        "6c38858d-28a8-49ac-b517-90a9f3e526d3"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The described interaction workflow is physical play and customization: the robot walks or roller-skates, can pick up objects, recovers after falling, sings, and allows users to program tricks from a phone.",
+      "uncertainty": "The capabilities are creator-described and no evidence shows actual user workflows, frequency of use, or outcomes."
+    }
+  },
+  "prompt_hash": "0a98a050ad422942c8d1f762f0d0fba82afa06a6d27482efdf92017b1b5e4f42",
+  "prompt_version": "v002",
+  "provider": "openai",
+  "provider_request_id": "resp_07a3474830b098d1016aa15f6d828887d090aa3ed3263b432c",
+  "raw_output": {
+    "output_text": "{\"customer_summary\":{\"text\":\"A creator describes adults as users of Micro Duck as a customizable companion and emotional-support device; the evidence does not establish who buys the product or whether those roles are distinct.\",\"evidence_signal_ids\":[\"2774a057-1ded-4936-93ab-2f91faafd2ce\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is a creator claim about use among adults, not independent evidence of customer segments, purchase behavior, or buyer roles.\"},\"problem_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No supplied product-specific evidence establishes a user problem, its severity, or a buyer need. A generic caution about introducing AI to children does not substantiate a Micro Duck problem statement.\"},\"workflow_summary\":{\"text\":\"The described interaction workflow is physical play and customization: the robot walks or roller-skates, can pick up objects, recovers after falling, sings, and allows users to program tricks from a phone.\",\"evidence_signal_ids\":[\"0d209973-06ed-4998-a50f-4a795b07eb97\",\"3362eac7-74c7-4798-9f2b-d8f513eac102\",\"6c38858d-28a8-49ac-b517-90a9f3e526d3\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The capabilities are creator-described and no evidence shows actual user workflows, frequency of use, or outcomes.\"},\"solution_pattern\":{\"text\":\"Micro Duck is presented as a specific interactive robotic-duck companion: a roller-skating robot that sings, supports physical actions and self-recovery, and is described as programmable from a phone. The supplied evidence supports this vendor-specific implementation, not a broader category pattern.\",\"evidence_signal_ids\":[\"1f020391-3050-4fea-b66a-c8a9f0558d19\",\"c4ca65f2-71df-443c-a41f-429fed6c70cd\",\"46447f3a-50e4-4d0e-b166-41989d7fac1e\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"Product features, including the attribution of self-recovery to self-learning AI, are creator claims and are not independently verified in the supplied signals.\"},\"business_model_summary\":{\"text\":\"The evidence indicates an offered one-time hardware purchase for Microduck at a stated USD 399 price; a separate reference describes MicroDuck at USD 400 without specifying a billing period.\",\"evidence_signal_ids\":[\"b8dc7649-c6ad-453d-b8fd-1a61224b14cf\",\"7597a321-0519-44f4-b73d-352843f5dc2a\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The supplied evidence supports stated product pricing but does not establish the seller, fulfillment model, costs, recurring services, or whether either price was paid by customers.\"},\"pricing_summary\":{\"text\":\"Microduck is advertised at USD 399 as a one-time price. Another supplied source describes a USD 400 MicroDuck price without a stated period; the USD 1 difference and pricing contexts are unresolved.\",\"evidence_signal_ids\":[\"b8dc7649-c6ad-453d-b8fd-1a61224b14cf\",\"7597a321-0519-44f4-b73d-352843f5dc2a\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"These are stated prices, not observed transactions. The sources differ slightly and do not clarify timing, taxes, configuration, availability, or whether they refer to the same commercial offer.\"},\"revenue_summary\":{\"text\":\"A creator claims that Micro Duck generated over USD 2.5 million in sales in its first 24 hours.\",\"evidence_signal_ids\":[\"f6a54891-a38c-45d7-b73e-987934530c04\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is an unverified creator claim. The supplied signal does not provide auditable sales records, order counts, refunds, net revenue, seller identity, or a defined launch date.\"},\"distribution_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible signal excerpt states an acquisition or sales-channel mechanism. A pre-order label in metadata alone is insufficient evidence of distribution.\"},\"competition_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No supplied signal is classified as competition evidence.\"},\"adoption_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible adoption signal is supplied. The reported first-24-hour sales claim is revenue evidence, not adoption evidence.\"},\"build_complexity_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"Feature and technology claims do not establish engineering scope, manufacturing requirements, software architecture, safety requirements, or unit economics.\"},\"validation_gaps\":[\"Validate the product-specific user problem and whether companionship or emotional support is a claimed use, demonstrated outcome, or regulated/wellness positioning.\",\"Identify the actual buyer, end user, and any distinction between adult users, parents, and child users; current evidence only contains a creator claim about adults and a generic caution concerning children and AI.\",\"Independently verify product capabilities, including phone-based trick programming and self-recovery attributed to self-learning AI.\",\"Resolve whether USD 399 one-time and USD 400 refer to the same version, time period, seller, and offer terms.\",\"Verify the claimed over-USD-2.5-million first-24-hour sales with company or transaction evidence; establish gross versus net sales, orders, refunds, and timing.\",\"Obtain eligible adoption evidence rather than treating pricing or reported sales as proof of sustained use or retention.\",\"Document explicit distribution and acquisition channels; pre-order metadata is not a demonstrated channel mechanism.\",\"Collect competition evidence classified as such; none is supplied.\",\"Establish technical, manufacturing, safety, and support requirements before assessing build complexity.\"]}",
+    "response_id": "resp_07a3474830b098d1016aa15f6d828887d090aa3ed3263b432c"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_evidence_hash": "0a74153beb3f2d60e668d30eadab6ea7bf00a2069d6af333b70a63a228d5ec5e",
+  "started_at": "2026-09-09 13:30:20.875210+00:00",
+  "status": "completed",
+  "version": 2
+}

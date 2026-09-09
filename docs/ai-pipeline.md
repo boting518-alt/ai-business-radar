@@ -255,7 +255,7 @@ actor/evidence roles are an application projection. Runtime remains v003. See si
 ## TASK-044H Opportunity consolidation
 
 `OpportunityConsolidationOutput` adds the opportunity_consolidation.v001 JSON schema and immutable
-opportunity-consolidation/v001 prompt. A separate asynchronous editorial stage consumes only current
+opportunity-consolidation/v002 prompt. A separate asynchronous editorial stage consumes only current
 effective linked Signals and scoped human context. It does not change normalization, extraction,
 scoring or activation policies. Inputs/output/attempts live in opportunity_consolidations; explicit
 human acceptance retains source-consolidation revision lineage. See opportunity-business-case-consolidation.md.

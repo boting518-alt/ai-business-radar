@@ -1,0 +1,564 @@
+{
+  "completed_at": "2026-09-09 13:31:37.575170+00:00",
+  "context_hash": "bc5792eaa24f626e321a794f0aeace5be5341b6bb840053bca9c155574759a90",
+  "created_at": "2026-09-09 13:31:19.579700+00:00",
+  "created_by": null,
+  "error_code": null,
+  "field_metadata": {
+    "adoption_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "build_complexity_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "business_model_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "competition_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "customer_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 2
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "distribution_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "pricing_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "problem_summary": {
+      "channel_count": 1,
+      "claim_statuses": {
+        "creator_claim": 1
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 1
+    },
+    "revenue_summary": {
+      "channel_count": 0,
+      "claim_statuses": {},
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": false,
+      "video_count": 0
+    },
+    "solution_pattern": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 3
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    },
+    "workflow_summary": {
+      "channel_count": 2,
+      "claim_statuses": {
+        "creator_claim": 6
+      },
+      "contradicting_signal_ids": [],
+      "multi_video_coverage": true,
+      "video_count": 2
+    }
+  },
+  "id": "472ad3be-f93d-4a28-ac64-8fa420559d57",
+  "input_hash": "b95b67649a1b4380477c1532e00c6cdce6938990028291f879c6f3804edc7c39",
+  "input_snapshot": {
+    "context": {
+      "business_model": null,
+      "customer_type": "businesses",
+      "industry": null,
+      "name": "AI voice receptionists for business call handling and appointment booking",
+      "one_line_thesis": "VoiceFactory says its AI voice receptionists can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.",
+      "problem": null,
+      "solution": "AI voice receptionists that handle routine customer conversations for businesses 24/7.",
+      "taxonomy": {
+        "customer": null,
+        "industry": null
+      }
+    },
+    "excluded_counts": {},
+    "signals": [
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\u2022 Collect patient information",
+        "id": "06eec96c-dc83-48be-acc3-d24b7e5f7967",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "Sphinx AI is claimed to collect patient information.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "This video shows a quick example of how an AI receptionist can help businesses handle customer calls and appointment requests.",
+        "id": "0709ebdb-7f62-4ec4-b675-fd0944423465",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "The creator claims that an AI receptionist can help businesses handle customer calls and appointment requests.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\u2022 Answer incoming calls automatically",
+        "id": "1d70198c-42c9-41bb-bd1e-56add0ba8197",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "Sphinx AI is claimed to answer incoming calls automatically.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\u2022 Handle WhatsApp conversations",
+        "id": "6f72e82a-1b3c-4661-8cc1-36f10632cb25",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "Sphinx AI is claimed to handle WhatsApp conversations.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "874323ee-7e85-4b25-b1d6-cdbb4381bafd",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "businesses",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cAt VoiceFactory, we build AI voice receptionists...\u201d",
+        "id": "765f180b-5ac1-4e67-83da-c13303059b83",
+        "observed_at": "2026-09-06 22:30:30+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "technology",
+        "solution": "AI voice receptionists that handle routine customer conversations for businesses 24/7.",
+        "source_id": "1bf2860d-8484-4035-b1e7-d8d0906081ad",
+        "source_type": "video",
+        "statement": "VoiceFactory describes its offering as AI voice receptionists.",
+        "technology": [
+          "AI voice receptionists"
+        ],
+        "video_id": "1bf2860d-8484-4035-b1e7-d8d0906081ad"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "Missed calls can mean missed patients and lost appointments.",
+        "id": "8d28a51b-8a5e-4276-bb5a-ba34ce966868",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "pain",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "The creator states that missed calls can mean missed patients and lost appointments.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "Sphinx AI is an AI-powered Call Center & Virtual Receptionist designed for clinics, medical centers, and businesses.",
+        "id": "bcdbb440-5e2a-4d9b-b743-3196df70311c",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "product_launch",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "Sphinx AI is presented as an AI-powered call center and virtual receptionist for clinics, medical centers, and businesses.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "27f2f6de-8e17-46d8-9f90-0393e15b338f",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "Clinics, medical centers, and businesses",
+        "distribution_channels": [
+          "SphinxAI.net",
+          "Demo contact"
+        ],
+        "evidence_role": "unknown",
+        "evidence_text": "\u2022 Respond to patients in Arabic",
+        "id": "df5365d7-5ec2-43db-bb6e-9bfdd701c6c6",
+        "observed_at": "2026-09-07 17:47:38+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": "Missed clinic calls can result in missed patients and lost appointments.",
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "Sphinx AI is described as an AI-powered call center and virtual receptionist.",
+        "source_id": "6c946739-858c-4e34-932b-0cb7dccadc9a",
+        "source_type": "video",
+        "statement": "Sphinx AI is claimed to respond to patients in Arabic.",
+        "technology": [
+          "AI"
+        ],
+        "video_id": "6c946739-858c-4e34-932b-0cb7dccadc9a"
+      },
+      {
+        "actor_role": "unknown",
+        "business_model": null,
+        "channel_id": "874323ee-7e85-4b25-b1d6-cdbb4381bafd",
+        "claim_status": "creator_claim",
+        "comment_id": null,
+        "customer_type": "businesses",
+        "distribution_channels": null,
+        "evidence_role": "unknown",
+        "evidence_text": "\u201cAt VoiceFactory, we build AI voice receptionists that can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.\u201d",
+        "id": "e8e469d8-8e27-4f93-a4ef-61bb73ec3886",
+        "observed_at": "2026-09-06 22:30:30+00:00",
+        "price_currency": null,
+        "price_max": null,
+        "price_min": null,
+        "price_period": null,
+        "problem": null,
+        "relationship_type": "supporting",
+        "revenue_claim_amount": null,
+        "revenue_claim_currency": null,
+        "revenue_claim_period": null,
+        "signal_type": "workflow",
+        "solution": "AI voice receptionists that handle routine customer conversations for businesses 24/7.",
+        "source_id": "1bf2860d-8484-4035-b1e7-d8d0906081ad",
+        "source_type": "video",
+        "statement": "VoiceFactory says its AI voice receptionists can answer calls, talk naturally with customers, qualify leads, book appointments, answer questions, and handle routine conversations for businesses 24/7.",
+        "technology": [
+          "AI voice receptionists"
+        ],
+        "video_id": "1bf2860d-8484-4035-b1e7-d8d0906081ad"
+      }
+    ],
+    "source_diversity": {
+      "channel_count": 2,
+      "comment_count": 0,
+      "relationships": {
+        "supporting": 9
+      },
+      "signal_count": 9,
+      "signal_types": {
+        "pain": 1,
+        "product_launch": 1,
+        "technology": 1,
+        "workflow": 6
+      },
+      "supporting_count": 9,
+      "video_count": 2
+    }
+  },
+  "input_tokens": 4667,
+  "model": "gpt-5.6-terra",
+  "opportunity_id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+  "output_tokens": 1266,
+  "parsed_output": {
+    "adoption_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible adoption signal is supplied; creator descriptions of capabilities do not evidence customer use, retention, or deployment."
+    },
+    "build_complexity_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "The references to AI voice receptionists and call handling do not provide sufficient technical implementation evidence to assess build complexity."
+    },
+    "business_model_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible evidence states a monetization structure, payment model, or commercial terms."
+    },
+    "competition_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No signal classified as competition is supplied. The presence of VoiceFactory and Sphinx AI does not itself establish a competitive relationship."
+    },
+    "customer_summary": {
+      "evidence_signal_ids": [
+        "e8e469d8-8e27-4f93-a4ef-61bb73ec3886",
+        "bcdbb440-5e2a-4d9b-b743-3196df70311c"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The supplied creator claims position the offerings for businesses generally; Sphinx AI is additionally presented for clinics and medical centers. The evidence does not identify the economic buyer or distinguish it from operational users such as reception staff or patients.",
+      "uncertainty": "Audience categories are vendor/creator-stated and broad. Buyer, user, decision-maker, and sector-specific segmentation require validation."
+    },
+    "distribution_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "Although one signal contains website and demo-contact metadata, no eligible distribution signal or excerpt explicitly establishes an acquisition or channel mechanism."
+    },
+    "pricing_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible product-pricing or observed-transaction signal provides price, billing period, or payment terms."
+    },
+    "problem_summary": {
+      "evidence_signal_ids": [
+        "8d28a51b-8a5e-4276-bb5a-ba34ce966868"
+      ],
+      "information_class": "source_grounded",
+      "support_level": "partially_supported",
+      "text": "A creator states that missed calls can lead to missed patients and lost appointments in a clinic context.",
+      "uncertainty": "This is a creator claim tied to clinics; the evidence does not establish frequency, severity, or applicability across businesses generally."
+    },
+    "revenue_summary": {
+      "evidence_signal_ids": [],
+      "information_class": "unknown",
+      "support_level": "insufficient_evidence",
+      "text": null,
+      "uncertainty": "No eligible product-monetization or observed-transaction revenue evidence is supplied."
+    },
+    "solution_pattern": {
+      "evidence_signal_ids": [
+        "bcdbb440-5e2a-4d9b-b743-3196df70311c",
+        "765f180b-5ac1-4e67-83da-c13303059b83",
+        "e8e469d8-8e27-4f93-a4ef-61bb73ec3886"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The supplied material describes vendor-specific AI receptionist/call-center offerings that automate inbound customer or patient interactions, including call answering and appointment-related handling. Sphinx AI is presented for clinics, medical centers, and businesses; VoiceFactory describes AI voice receptionists for businesses.",
+      "uncertainty": "The pattern is derived from vendor claims and does not establish feature reliability, integrations, deployment model, or a broader market standard."
+    },
+    "validation_gaps": [
+      "Evidence insufficient: business_model_summary",
+      "Evidence insufficient: pricing_summary",
+      "Evidence insufficient: revenue_summary",
+      "Evidence insufficient: distribution_summary",
+      "Evidence insufficient: competition_summary",
+      "Evidence insufficient: adoption_summary",
+      "Evidence insufficient: build_complexity_summary",
+      "Video/channel diversity is not independent customer validation.",
+      "Validate the economic buyer, operator, and end-user roles; clinic patients are referenced as interaction participants, not confirmed buyers.",
+      "Validate whether missed-call and lost-appointment pain occurs outside the creator-stated clinic context, including its frequency and operational impact.",
+      "Obtain independent customer evidence for deployment, usage, outcomes, retention, and limitations; all supplied substantive claims are creator claims.",
+      "Validate functional performance and boundaries for call automation, lead qualification, booking, patient-data collection, Arabic responses, WhatsApp handling, and 24/7 operation.",
+      "Establish pricing, billing basis, contract terms, and explicit monetization structure.",
+      "Establish product revenue using eligible company/product monetization or transaction evidence.",
+      "Establish explicit customer-acquisition channels; website/demo-contact metadata alone is insufficient.",
+      "Obtain competition-classified evidence rather than inferring competition from the two named vendor examples.",
+      "Obtain technical evidence before assessing integration needs, reliability, compliance, data handling, or build complexity.",
+      "Resolve whether the broad business positioning and clinic/medical-center positioning represent distinct segments or vendor-specific scope."
+    ],
+    "workflow_summary": {
+      "evidence_signal_ids": [
+        "1d70198c-42c9-41bb-bd1e-56add0ba8197",
+        "06eec96c-dc83-48be-acc3-d24b7e5f7967",
+        "0709ebdb-7f62-4ec4-b675-fd0944423465",
+        "df5365d7-5ec2-43db-bb6e-9bfdd701c6c6",
+        "6f72e82a-1b3c-4661-8cc1-36f10632cb25",
+        "e8e469d8-8e27-4f93-a4ef-61bb73ec3886"
+      ],
+      "information_class": "editorial_synthesis",
+      "support_level": "partially_supported",
+      "text": "The evidenced vendor workflows include automatically answering incoming calls, collecting patient information, handling appointment requests, responding in Arabic, and handling WhatsApp conversations. A separate vendor claims voice receptionists can qualify leads, book appointments, answer questions, and handle routine conversations continuously.",
+      "uncertainty": "These are creator claims about two vendor-specific implementations, not observed customer workflows or independently verified performance."
+    }
+  },
+  "prompt_hash": "0a98a050ad422942c8d1f762f0d0fba82afa06a6d27482efdf92017b1b5e4f42",
+  "prompt_version": "v002",
+  "provider": "openai",
+  "provider_request_id": "resp_04c246aa4fe68e24016aa15fa8468087d0af0471e405efc916",
+  "raw_output": {
+    "output_text": "{\"customer_summary\":{\"text\":\"The supplied creator claims position the offerings for businesses generally; Sphinx AI is additionally presented for clinics and medical centers. The evidence does not identify the economic buyer or distinguish it from operational users such as reception staff or patients.\",\"evidence_signal_ids\":[\"e8e469d8-8e27-4f93-a4ef-61bb73ec3886\",\"bcdbb440-5e2a-4d9b-b743-3196df70311c\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"Audience categories are vendor/creator-stated and broad. Buyer, user, decision-maker, and sector-specific segmentation require validation.\"},\"problem_summary\":{\"text\":\"A creator states that missed calls can lead to missed patients and lost appointments in a clinic context.\",\"evidence_signal_ids\":[\"8d28a51b-8a5e-4276-bb5a-ba34ce966868\"],\"information_class\":\"source_grounded\",\"support_level\":\"partially_supported\",\"uncertainty\":\"This is a creator claim tied to clinics; the evidence does not establish frequency, severity, or applicability across businesses generally.\"},\"workflow_summary\":{\"text\":\"The evidenced vendor workflows include automatically answering incoming calls, collecting patient information, handling appointment requests, responding in Arabic, and handling WhatsApp conversations. A separate vendor claims voice receptionists can qualify leads, book appointments, answer questions, and handle routine conversations continuously.\",\"evidence_signal_ids\":[\"1d70198c-42c9-41bb-bd1e-56add0ba8197\",\"06eec96c-dc83-48be-acc3-d24b7e5f7967\",\"0709ebdb-7f62-4ec4-b675-fd0944423465\",\"df5365d7-5ec2-43db-bb6e-9bfdd701c6c6\",\"6f72e82a-1b3c-4661-8cc1-36f10632cb25\",\"e8e469d8-8e27-4f93-a4ef-61bb73ec3886\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"These are creator claims about two vendor-specific implementations, not observed customer workflows or independently verified performance.\"},\"solution_pattern\":{\"text\":\"The supplied material describes vendor-specific AI receptionist/call-center offerings that automate inbound customer or patient interactions, including call answering and appointment-related handling. Sphinx AI is presented for clinics, medical centers, and businesses; VoiceFactory describes AI voice receptionists for businesses.\",\"evidence_signal_ids\":[\"bcdbb440-5e2a-4d9b-b743-3196df70311c\",\"765f180b-5ac1-4e67-83da-c13303059b83\",\"e8e469d8-8e27-4f93-a4ef-61bb73ec3886\"],\"information_class\":\"editorial_synthesis\",\"support_level\":\"partially_supported\",\"uncertainty\":\"The pattern is derived from vendor claims and does not establish feature reliability, integrations, deployment model, or a broader market standard.\"},\"business_model_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible evidence states a monetization structure, payment model, or commercial terms.\"},\"pricing_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible product-pricing or observed-transaction signal provides price, billing period, or payment terms.\"},\"revenue_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible product-monetization or observed-transaction revenue evidence is supplied.\"},\"distribution_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"Although one signal contains website and demo-contact metadata, no eligible distribution signal or excerpt explicitly establishes an acquisition or channel mechanism.\"},\"competition_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No signal classified as competition is supplied. The presence of VoiceFactory and Sphinx AI does not itself establish a competitive relationship.\"},\"adoption_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"No eligible adoption signal is supplied; creator descriptions of capabilities do not evidence customer use, retention, or deployment.\"},\"build_complexity_summary\":{\"text\":null,\"evidence_signal_ids\":[],\"information_class\":\"unknown\",\"support_level\":\"insufficient_evidence\",\"uncertainty\":\"The references to AI voice receptionists and call handling do not provide sufficient technical implementation evidence to assess build complexity.\"},\"validation_gaps\":[\"Validate the economic buyer, operator, and end-user roles; clinic patients are referenced as interaction participants, not confirmed buyers.\",\"Validate whether missed-call and lost-appointment pain occurs outside the creator-stated clinic context, including its frequency and operational impact.\",\"Obtain independent customer evidence for deployment, usage, outcomes, retention, and limitations; all supplied substantive claims are creator claims.\",\"Validate functional performance and boundaries for call automation, lead qualification, booking, patient-data collection, Arabic responses, WhatsApp handling, and 24/7 operation.\",\"Establish pricing, billing basis, contract terms, and explicit monetization structure.\",\"Establish product revenue using eligible company/product monetization or transaction evidence.\",\"Establish explicit customer-acquisition channels; website/demo-contact metadata alone is insufficient.\",\"Obtain competition-classified evidence rather than inferring competition from the two named vendor examples.\",\"Obtain technical evidence before assessing integration needs, reliability, compliance, data handling, or build complexity.\",\"Resolve whether the broad business positioning and clinic/medical-center positioning represent distinct segments or vendor-specific scope.\"]}",
+    "response_id": "resp_04c246aa4fe68e24016aa15fa8468087d0af0471e405efc916"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_evidence_hash": "ba2650d5169fa08d9722eb1bcc9b3290d13ceda42139d7b5c71bdc87ebc32907",
+  "started_at": "2026-09-09 13:31:19.590029+00:00",
+  "status": "completed",
+  "version": 2
+}

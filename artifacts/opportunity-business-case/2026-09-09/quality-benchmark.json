@@ -1,0 +1,444 @@
+{
+  "reviewer": "Codex source-comparison review; not independent domain/customer validation",
+  "cases": [
+    {
+      "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+      "name": "AI receptionist and appointment-lead workflow management for dental practices",
+      "consolidation_id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+      "effective_signals": 38,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [],
+        "competition_summary": [],
+        "customer_summary": [
+          "d3945d9d-cf1e-4ad8-87df-5524cc2b3b63",
+          "bf1d1c1b-a4c5-4047-80ec-c72c4209513b"
+        ],
+        "distribution_summary": [
+          "78df14ee-b73a-4df9-9f4c-153c3a02617e",
+          "87a98d7b-a35e-4522-8b1d-995d68a3603a",
+          "5bfc38cb-1ade-43d7-919e-69ce44d7f258"
+        ],
+        "pricing_summary": [],
+        "problem_summary": [
+          "b8917537-9ee3-4747-b803-38fc5c979c99",
+          "e1f79354-58a0-4653-be83-2b7f99e1ff88",
+          "6c9c9de2-19ce-4519-8078-16a160ccf0a4",
+          "c3f9ddaf-e16b-46e0-8c31-da33310bbad9",
+          "de86428a-d9a7-4c0c-a7d5-0369dd3dbc16"
+        ],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "63eda4a9-3176-45ad-8ecf-fecfcd7c954d",
+          "e1da1423-5b39-4a42-8124-762381240931",
+          "2ed1f7a5-d4ea-4164-a3c5-2232f256d54f",
+          "2d87cecc-e19e-47ad-bdd1-c05b0fd94c71",
+          "96095539-c9ae-40f8-9b5a-b7322ba161d2"
+        ],
+        "workflow_summary": [
+          "4097d6ce-4c26-4e38-b190-c7da02030778",
+          "241223ae-34fd-429f-8973-3110cf8b22eb",
+          "17215f45-18ac-4bf6-86e1-e5e6ed2b7d0d",
+          "6926dc73-ae72-4378-80df-c29a659dcd35",
+          "0c1ec7a5-52fd-44db-a820-ebf72e6de724"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "business_model_summary",
+        "competition_summary",
+        "pricing_summary",
+        "revenue_summary"
+      ]
+    },
+    {
+      "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "name": "Preorder demand for Microduck walking robot",
+      "consolidation_id": "3ef0d6df-1632-44b2-9856-edc7cdad1ab6",
+      "effective_signals": 6,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [
+          "1822254d-d255-4ee7-ae1f-8e8410da56fb"
+        ],
+        "competition_summary": [],
+        "customer_summary": [
+          "1f94b9aa-fd70-4629-bd69-105898c25200",
+          "58c0bb77-c84a-4139-9ac1-2ef31cdf127e",
+          "f7940d32-9436-4f6e-9ce8-42f3446026b6"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [
+          "1822254d-d255-4ee7-ae1f-8e8410da56fb"
+        ],
+        "problem_summary": [],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "886e0306-d566-4c5c-af50-67db8ab355f9"
+        ],
+        "workflow_summary": []
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "competition_summary",
+        "distribution_summary",
+        "problem_summary",
+        "revenue_summary",
+        "workflow_summary"
+      ]
+    },
+    {
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "name": "Roller-skating duck robot companion",
+      "consolidation_id": "7e9b6620-66e4-4098-abfa-ea0639c8dc98",
+      "effective_signals": 12,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [
+          "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+          "7597a321-0519-44f4-b73d-352843f5dc2a"
+        ],
+        "competition_summary": [],
+        "customer_summary": [
+          "2774a057-1ded-4936-93ab-2f91faafd2ce"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [
+          "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+          "7597a321-0519-44f4-b73d-352843f5dc2a"
+        ],
+        "problem_summary": [],
+        "revenue_summary": [
+          "f6a54891-a38c-45d7-b73e-987934530c04"
+        ],
+        "solution_pattern": [
+          "1f020391-3050-4fea-b66a-c8a9f0558d19",
+          "c4ca65f2-71df-443c-a41f-429fed6c70cd",
+          "46447f3a-50e4-4d0e-b166-41989d7fac1e"
+        ],
+        "workflow_summary": [
+          "0d209973-06ed-4998-a50f-4a795b07eb97",
+          "3362eac7-74c7-4798-9f2b-d8f513eac102",
+          "6c38858d-28a8-49ac-b517-90a9f3e526d3"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "competition_summary",
+        "distribution_summary",
+        "problem_summary"
+      ]
+    },
+    {
+      "opportunity_id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+      "name": "Open-source bipedal robot platform",
+      "consolidation_id": "fa757aa6-7db2-49a3-b99b-c5a996ac51f1",
+      "effective_signals": 31,
+      "evidence_mappings": {
+        "adoption_summary": [
+          "ba8e8956-0059-4025-bbcd-2127450b66c9"
+        ],
+        "build_complexity_summary": [
+          "8b79eab3-5398-4b5d-8df8-907368b13fa8",
+          "87ddeb0a-0a09-4277-ad4a-a46824784d3a",
+          "65beb6ba-e9c6-4a29-91cd-4412aa59c912"
+        ],
+        "business_model_summary": [
+          "105f9df5-125a-4294-989e-b7ea03481880",
+          "7480e109-16cc-410c-94a1-1c2d1224aa94"
+        ],
+        "competition_summary": [],
+        "customer_summary": [
+          "64fdc1db-061a-4764-ba98-ec7b97a254f3"
+        ],
+        "distribution_summary": [
+          "850fea74-22ef-417d-8b07-f573e6566154"
+        ],
+        "pricing_summary": [
+          "105f9df5-125a-4294-989e-b7ea03481880",
+          "7480e109-16cc-410c-94a1-1c2d1224aa94"
+        ],
+        "problem_summary": [
+          "3e1b0e8e-f812-42ce-9b7b-b971599faf8a"
+        ],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "43cd65d5-1c4d-472a-93be-ae57c79fb4fb",
+          "64fdc1db-061a-4764-ba98-ec7b97a254f3",
+          "cc76d63c-e7b1-4dba-a47c-2d8088043909"
+        ],
+        "workflow_summary": [
+          "ab747561-2bd9-43d5-a8c9-e0de2ba71424",
+          "64fdc1db-061a-4764-ba98-ec7b97a254f3",
+          "0cfaa83a-512a-433d-a0f6-182cde7101e2"
+        ]
+      },
+      "unknown_dimensions": [
+        "competition_summary",
+        "revenue_summary"
+      ]
+    },
+    {
+      "opportunity_id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+      "name": "AI voice receptionists for business call handling and appointment booking",
+      "consolidation_id": "472ad3be-f93d-4a28-ac64-8fa420559d57",
+      "effective_signals": 9,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [],
+        "competition_summary": [],
+        "customer_summary": [
+          "e8e469d8-8e27-4f93-a4ef-61bb73ec3886",
+          "bcdbb440-5e2a-4d9b-b743-3196df70311c"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [],
+        "problem_summary": [
+          "8d28a51b-8a5e-4276-bb5a-ba34ce966868"
+        ],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "bcdbb440-5e2a-4d9b-b743-3196df70311c",
+          "765f180b-5ac1-4e67-83da-c13303059b83",
+          "e8e469d8-8e27-4f93-a4ef-61bb73ec3886"
+        ],
+        "workflow_summary": [
+          "1d70198c-42c9-41bb-bd1e-56add0ba8197",
+          "06eec96c-dc83-48be-acc3-d24b7e5f7967",
+          "0709ebdb-7f62-4ec4-b675-fd0944423465",
+          "df5365d7-5ec2-43db-bb6e-9bfdd701c6c6",
+          "6f72e82a-1b3c-4661-8cc1-36f10632cb25",
+          "e8e469d8-8e27-4f93-a4ef-61bb73ec3886"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "business_model_summary",
+        "competition_summary",
+        "distribution_summary",
+        "pricing_summary",
+        "revenue_summary"
+      ]
+    },
+    {
+      "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+      "name": "AI companionship apps for loneliness and emotional connection",
+      "consolidation_id": "0a7e40a4-71bf-4147-94b7-3f598224f449",
+      "effective_signals": 9,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [],
+        "competition_summary": [
+          "7208a3c7-8f8f-485a-ab6a-fa14c31065ca"
+        ],
+        "customer_summary": [
+          "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+          "91f43bdc-e3af-4808-837f-0af14215f84e",
+          "ad98485c-2a6d-4fa8-8899-2110452dbb1f"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [],
+        "problem_summary": [
+          "1d4dcff6-785c-4358-b3ab-ba742d5488c9",
+          "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+          "c426cb09-507b-4380-9e9d-576be8de33b9"
+        ],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "422f9ab2-101f-4718-8ebe-b329e71614dd",
+          "b3575406-0d9b-42e3-badf-8697ba715dec",
+          "91f43bdc-e3af-4808-837f-0af14215f84e"
+        ],
+        "workflow_summary": [
+          "91f43bdc-e3af-4808-837f-0af14215f84e",
+          "b3575406-0d9b-42e3-badf-8697ba715dec"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "business_model_summary",
+        "distribution_summary",
+        "pricing_summary",
+        "revenue_summary"
+      ]
+    },
+    {
+      "opportunity_id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+      "name": "Interactive AI plush companion toys",
+      "consolidation_id": "8bc0c636-3ae1-44ca-b047-2de4107990bd",
+      "effective_signals": 9,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [],
+        "competition_summary": [],
+        "customer_summary": [
+          "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4",
+          "4361b601-7588-4fbc-9187-0b5d7f679f07"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [],
+        "problem_summary": [],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "4361b601-7588-4fbc-9187-0b5d7f679f07",
+          "9bffe8d4-ac33-4e59-b419-3072f92894af",
+          "90041710-ac63-443e-93a5-b496c66d4310",
+          "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4",
+          "f2137255-a2d3-4b1b-8087-30ce5a7069bc",
+          "4a85684c-e22a-402e-bcd1-ab25d05dae9c",
+          "4f4457cf-caab-461a-a3fc-1339ae5ad0d3",
+          "a7fa60de-0c85-4967-895d-7c82f5741315"
+        ],
+        "workflow_summary": [
+          "90041710-ac63-443e-93a5-b496c66d4310",
+          "d3aaadc6-e5b7-496b-a3a8-0cd52d8986f4"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "business_model_summary",
+        "competition_summary",
+        "distribution_summary",
+        "pricing_summary",
+        "problem_summary",
+        "revenue_summary"
+      ]
+    },
+    {
+      "opportunity_id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+      "name": "AI-driven defence robotics for Indian terrain",
+      "consolidation_id": "63195f5b-428e-47ad-98a4-71383ed47db6",
+      "effective_signals": 9,
+      "evidence_mappings": {
+        "adoption_summary": [],
+        "build_complexity_summary": [],
+        "business_model_summary": [],
+        "competition_summary": [
+          "4d589f06-9ddd-47c7-a395-876e46ac1377",
+          "d0cab4d4-089c-4a08-80ec-c3c966b4c8bf",
+          "abe6555d-2aec-4df3-8d2d-5a5d5ca721b4"
+        ],
+        "customer_summary": [
+          "696324db-def5-4eab-9b76-c55dcdc55fd2"
+        ],
+        "distribution_summary": [],
+        "pricing_summary": [],
+        "problem_summary": [
+          "976f3401-8679-4897-8412-f96394dc6eb2"
+        ],
+        "revenue_summary": [],
+        "solution_pattern": [
+          "9a8d3952-f71f-47e9-a1c0-92ed864ae433",
+          "048cd640-9480-4022-91e5-a3a7517ec774",
+          "b2a1be99-8294-4951-ba68-85db0f0d02ee"
+        ],
+        "workflow_summary": [
+          "b2a1be99-8294-4951-ba68-85db0f0d02ee",
+          "048cd640-9480-4022-91e5-a3a7517ec774"
+        ]
+      },
+      "unknown_dimensions": [
+        "adoption_summary",
+        "build_complexity_summary",
+        "business_model_summary",
+        "distribution_summary",
+        "pricing_summary",
+        "revenue_summary"
+      ]
+    }
+  ],
+  "metrics": {
+    "v001_completed": 5,
+    "v001_rejected": 3,
+    "v002_completed": 8,
+    "v002_rejected": 0,
+    "opportunities": 8,
+    "generation_attempts": 16,
+    "input_tokens": 113524,
+    "output_tokens": 28964,
+    "valid_citation_occurrences": 101,
+    "nonempty_dimensions": {
+      "adoption_summary": 1,
+      "build_complexity_summary": 1,
+      "business_model_summary": 3,
+      "competition_summary": 2,
+      "customer_summary": 8,
+      "distribution_summary": 2,
+      "pricing_summary": 3,
+      "problem_summary": 5,
+      "revenue_summary": 1,
+      "solution_pattern": 8,
+      "workflow_summary": 7
+    }
+  },
+  "unchanged_real_opportunities": [
+    {
+      "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+      "status": "active",
+      "human_definition_unchanged": true,
+      "current_case_id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "3ef0d6df-1632-44b2-9856-edc7cdad1ab6",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "7e9b6620-66e4-4098-abfa-ea0639c8dc98",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "b5e65891-372a-47e7-bc20-52127b17e6d3",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "fa757aa6-7db2-49a3-b99b-c5a996ac51f1",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "13dc796a-2ec3-4dde-a91d-ff3ee4f423c6",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "472ad3be-f93d-4a28-ac64-8fa420559d57",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "0a7e40a4-71bf-4147-94b7-3f598224f449",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "c4feec5b-bc06-4bc3-a1dd-e002ef781e3d",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "8bc0c636-3ae1-44ca-b047-2de4107990bd",
+      "publicly_confirmed": "pending"
+    },
+    {
+      "opportunity_id": "d791a32a-1a93-4603-adf1-43ff0241e6b5",
+      "status": "candidate",
+      "human_definition_unchanged": true,
+      "current_case_id": "63195f5b-428e-47ad-98a4-71383ed47db6",
+      "publicly_confirmed": "pending"
+    }
+  ]
+}
