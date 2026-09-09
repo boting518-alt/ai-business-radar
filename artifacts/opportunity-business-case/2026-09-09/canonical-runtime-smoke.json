@@ -1,0 +1,36 @@
+{
+  "request": {
+    "id": "2070fd30-7d7d-4178-8d78-2a447eecf75f",
+    "status": "completed",
+    "reused": true
+  },
+  "message_id": "8a68d73e-5ae9-4aad-b83d-297b05afdbe6",
+  "acknowledged": true,
+  "immutable_record_hash": "5199340f1205e33f373bf8730bd4dde6eb5291bee6e8716c67b5c07132ce8aba",
+  "row_unchanged": true,
+  "additional_provider_calls": 0,
+  "queue": "opportunity_consolidation",
+  "api_worker_fingerprint": "0b0184355f0cb72c",
+  "scheduler_started": true,
+  "full_canonical_launcher": "passed_after_explicit_user_authorization",
+  "api_health": {
+    "path": "/api/v1/health",
+    "http_status": 200,
+    "response": {
+      "status": "ok",
+      "service": "api",
+      "version": "0.1.0"
+    }
+  },
+  "frontend": {
+    "path": "/radar",
+    "unauthenticated_http_status": 307
+  },
+  "configuration_fingerprints": [
+    "0b0184355f0cb72c"
+  ],
+  "translation_jobs_completed": 3,
+  "background_processes_stopped": true,
+  "shutdown_note": "On requested termination, launcher emitted wait: pid is not a child / status127 after all children shut down. Process inspection confirmed no runtime children remained; not a startup failure.",
+  "runtime_window_local": "2026-09-09 21:46:39 to 21:48:03 Asia/Shanghai"
+}

@@ -1,0 +1,115 @@
+runtime_start component=launcher profile=local project_root=/Volumes/BoTing/macmini/codex-space/ai-business-radar
+INFO:     Will watch for changes in these directories: ['/Volumes/BoTing/macmini/codex-space/ai-business-radar/apps/api']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [10783] using StatReload
+
+> ai-business-radar-web@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.3.4 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.31.96:3000
+- Environments: .env.local
+✓ Ready in 564ms
+✓ Running next.config.ts took 174ms
+2026-09-09 21:46:39,679 INFO ai_business_radar_workers.scheduler.schedules runtime_start component=scheduler profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+2026-09-09 21:46:39,800 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,803 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,803 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,804 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,804 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,804 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,804 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,804 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Added job "build_scheduler.<locals>.<lambda>" to job store "default"
+2026-09-09 21:46:39,805 INFO apscheduler.scheduler Scheduler started
+[2026-09-09 21:46:40,130] [PID 10782] [MainThread] [dramatiq.MainProcess] [INFO] Dramatiq '1.18.0' is booting up.
+[2026-09-09 21:46:39,329] [PID 10788] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,021] [PID 10788] [MainThread] [dramatiq.WorkerProcess(0)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,401] [PID 10789] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,063] [PID 10789] [MainThread] [dramatiq.WorkerProcess(1)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,402] [PID 10790] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,128] [PID 10790] [MainThread] [dramatiq.WorkerProcess(2)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,398] [PID 10791] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,096] [PID 10791] [MainThread] [dramatiq.WorkerProcess(3)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,405] [PID 10792] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,069] [PID 10792] [MainThread] [dramatiq.WorkerProcess(4)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,374] [PID 10806] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,089] [PID 10806] [MainThread] [dramatiq.WorkerProcess(5)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,207] [PID 10807] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:39,879] [PID 10807] [MainThread] [dramatiq.WorkerProcess(6)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:40,038] [PID 10807] [Thread-20] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_requested entity_type=opportunity entity_id=32a1149c-f46c-491e-b0fb-1ee64e08d4a0 locale=zh-CN field_count=3 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:40,038] [PID 10807] [Thread-22] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_requested entity_type=opportunity entity_id=4a0de110-a892-4bf7-958e-72d71acf5d31 locale=zh-CN field_count=4 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:40,039] [PID 10807] [Thread-21] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_requested entity_type=opportunity entity_id=334d1e4f-0e58-4488-a4ac-b5f053c25fcc locale=zh-CN field_count=4 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:39,463] [PID 10808] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,097] [PID 10808] [MainThread] [dramatiq.WorkerProcess(7)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,377] [PID 10809] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,082] [PID 10809] [MainThread] [dramatiq.WorkerProcess(8)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:39,395] [PID 10810] [MainThread] [ai_business_radar_workers.worker] [INFO] runtime_start component=worker profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+[2026-09-09 21:46:40,096] [PID 10810] [MainThread] [dramatiq.WorkerProcess(9)] [INFO] Worker process is ready for action.
+[2026-09-09 21:46:40,215] [PID 10823] [MainThread] [dramatiq.ForkProcess(0)] [INFO] Fork process 'dramatiq.middleware.prometheus:_run_exposition_server' is ready for action.
+INFO:     Started server process [10786]
+INFO:     Waiting for application startup.
+2026-09-09 21:46:40,287 INFO ai_business_radar_api.main runtime_start component=api profile=local database_host=localhost database_port=5432 database_name=ai_business_radar_live_test redis_host=localhost redis_port=6379 redis_database=0 config_fingerprint=0b0184355f0cb72c
+2026-09-09 21:46:40,287 INFO ai_business_radar_api.main application_start name=YouTube AI Business Radar API version=0.1.0 environment=development
+INFO:     Application startup complete.
+
+[2026-09-09 21:46:44,258] [PID 10807] [Thread-22] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_generated entity_type=opportunity entity_id=4a0de110-a892-4bf7-958e-72d71acf5d31 locale=zh-CN field_count=4 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:44,263] [PID 10807] [Thread-22] [ai_business_radar_workers.actors.intelligence_translation] [INFO] translation_actor_finished actor=translate_opportunity status=TranslationResult
+[2026-09-09 21:46:44,375] [PID 10807] [Thread-21] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_generated entity_type=opportunity entity_id=334d1e4f-0e58-4488-a4ac-b5f053c25fcc locale=zh-CN field_count=4 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:44,378] [PID 10807] [Thread-21] [ai_business_radar_workers.actors.intelligence_translation] [INFO] translation_actor_finished actor=translate_opportunity status=TranslationResult
+[2026-09-09 21:46:51,765] [PID 10807] [Thread-20] [ai_business_radar_api.services.intelligence_translation] [INFO] translation_generated entity_type=opportunity entity_id=32a1149c-f46c-491e-b0fb-1ee64e08d4a0 locale=zh-CN field_count=3 translation_version=translation-zh-CN-v001
+[2026-09-09 21:46:51,768] [PID 10807] [Thread-20] [ai_business_radar_workers.actors.intelligence_translation] [INFO] translation_actor_finished actor=translate_opportunity status=TranslationResult
+[2026-09-09 21:46:55,459] [PID 10789] [Thread-23] [dramatiq.worker.WorkerThread] [WARNING] Actor 'consolidate_opportunity' returned a value that is not None, and you haven't added the Results middleware to the broker, so the value has been discarded. Consider adding the Results middleware to your broker or piping the result into another actor.
+2026-09-09 21:47:30,808 INFO ai_business_radar_api.middleware.request_id request method=GET path=/health status=404 request_id=af48a31c-d6bc-46de-a194-94871782d895
+INFO:     127.0.0.1:63624 - "GET /health HTTP/1.1" 404 Not Found
+ GET /radar 307 in 1685ms (next.js: 1442ms, proxy.ts: 138ms, application-code: 104ms)
+2026-09-09 21:47:59,974 INFO ai_business_radar_api.middleware.request_id request method=GET path=/api/v1/health status=200 request_id=e33a46e7-6604-4b49-8835-74fb3d6044b5
+INFO:     127.0.0.1:63654 - "GET /api/v1/health HTTP/1.1" 200 OK
+[2026-09-09 21:48:00,617] [PID 10782] [MainThread] [dramatiq.MainProcess] [INFO] Sending signal 'SIGTERM' to subprocesses...
+[2026-09-09 21:48:00,618] [PID 10788] [MainThread] [dramatiq.WorkerProcess(0)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,618] [PID 10789] [MainThread] [dramatiq.WorkerProcess(1)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,618] [PID 10791] [MainThread] [dramatiq.WorkerProcess(3)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,618] [PID 10792] [MainThread] [dramatiq.WorkerProcess(4)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,618] [PID 10790] [MainThread] [dramatiq.WorkerProcess(2)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,618] [PID 10806] [MainThread] [dramatiq.WorkerProcess(5)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,620] [PID 10809] [MainThread] [dramatiq.WorkerProcess(8)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,619] [PID 10808] [MainThread] [dramatiq.WorkerProcess(7)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,620] [PID 10810] [MainThread] [dramatiq.WorkerProcess(9)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,619] [PID 10807] [MainThread] [dramatiq.WorkerProcess(6)] [INFO] Stopping worker process...
+[2026-09-09 21:48:00,620] [PID 10823] [MainThread] [dramatiq.ForkProcess(0)] [INFO] Stopping fork process...
+INFO:     Shutting down
+[?25h
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [10786]
+INFO:     Stopping reloader process [10783]
+[2026-09-09 21:48:01,149] [PID 10807] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,310] [PID 10809] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,313] [PID 10788] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,355] [PID 10792] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,356] [PID 10789] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,359] [PID 10808] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,362] [PID 10791] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,362] [PID 10806] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,381] [PID 10810] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:01,435] [PID 10790] [MainThread] [dramatiq.worker.Worker] [INFO] Shutting down...
+[2026-09-09 21:48:02,130] [PID 10808] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:02,230] [PID 10809] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:02,757] [PID 10807] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,176] [PID 10810] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,177] [PID 10790] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,194] [PID 10788] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,240] [PID 10792] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,291] [PID 10791] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,319] [PID 10789] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+[2026-09-09 21:48:03,350] [PID 10806] [MainThread] [dramatiq.worker.Worker] [INFO] Worker has been shut down.
+./scripts/dev-runtime.sh: line 30: wait: pid 10777 is not a child of this shell
+runtime_exit reason=child_process_stopped pid=10777 status=127

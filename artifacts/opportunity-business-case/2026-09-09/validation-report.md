@@ -183,7 +183,7 @@ the passing shared tests used the working API Python environment against the sam
 ## Runtime and remaining acceptance
 
 Local API and the bounded single-process/single-thread opportunity_consolidation worker both report
-fingerprint0b0184355f0cb72c against local PostgreSQL/Redis. Existing production frontend runs on3000.
+fingerprint0b0184355f0cb72c against local PostgreSQL/Redis. Frontend was available on3000 during validation.
 An exact duplicate of completed real Dental v2 was delivered through Redis and acknowledged by the
 worker; its entire persisted record stayed byte-equivalent after canonicalization, with no additional
 provider call. Same-input service request also reused that identity. See bounded-runtime-smoke.json.
@@ -197,13 +197,26 @@ Both cases remain unpublished/unconfirmed as appropriate; UI language restored t
 synthetic candidate UI acceptance/revision/immutable-history and public confirmed dossier checks remain
 valid, with fixtures archived afterwards.
 
-Automatic approval review rejected ./scripts/dev-runtime.sh because it also starts the scheduler
-and every queue consumer, potentially processing YouTube/translation jobs beyond the expressly
-allowed eight-case OpenAI scope. The safer dedicated-worker smoke was approved and completed.
-The attempted obsolete-fixture queue cleanup was sandbox-blocked before mutation; no queue cleanup
-was applied. Full canonical launcher smoke remains pending explicit authorization for those broader
-background consumers. This is the only remaining task acceptance item; the development-plan checkbox
-stays open. No staging deployment or push occurred.
+The initial automatic approval rejection of ./scripts/dev-runtime.sh was resolved by the user's
+explicit authorization of all workers, scheduler and possible legacy external jobs. On2026-09-09,
+21:46:39–21:48:03 Asia/Shanghai, the unmodified canonical script started API, frontend, all10 worker
+processes and scheduler. API/worker/scheduler fingerprints all matched0b0184355f0cb72c. API
+/api/v1/health returned200/ok; unauthenticated /radar returned the expected307 login redirect.
+The initial probe of nonexistent /health returned404; the actual registered endpoint passed.
+
+Three pre-existing opportunity translation jobs completed: the real duck companion and two archived
+TASK-044G fixtures. This is additional authorized translation work, separate from the16 business-case
+benchmark calls. No YouTube collection or scheduled sweep executed in this short window. No queue
+cleanup/deletion was performed. Real Dental completed v2 was delivered again through the full worker
+runtime: acknowledgement succeeded, the persisted record was unchanged and no consolidation provider
+call was repeated. See canonical-runtime-smoke.json and canonical-runtime.txt.
+
+The launcher was terminated immediately after verification. All API/frontend/worker/scheduler
+processes exited; process inspection confirmed no runtime children remained. During requested
+shutdown the launcher emitted a wait/not-a-child message and status127 after cleanup. This is a
+launcher shutdown-status limitation, not a component startup or task-processing failure; it remains
+recorded without unrelated script changes. next-env.d.ts was restored exactly after Next dev
+regenerated its paths. Full local acceptance is now complete; no staging deployment or push occurred.
 
 Known limits: machine prose is English; one-field-at-a-time acceptance may require reconsolidation
 before accepting another field; input200 Signals/250KB and history100 display caps; explicit rather

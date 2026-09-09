@@ -64,7 +64,7 @@ MVP STATUS: READY WITH KNOWN GAPS
 - [x] TASK-044E Evidence Chain + Source Traceability (validated locally; see artifacts/evidence-chain/2026-09-09/validation-report.md)
 - [x] TASK-044F Signal Semantic Guardrails + Historical Quality Repair (validated locally; see artifacts/signal-semantic-quality/2026-09-09/validation-report.md)
 - [x] TASK-044G Candidate Opportunity Review & Activation Workspace — local validation complete; see [report](../artifacts/candidate-activation-workspace/2026-09-09/validation-report.md)
-- [ ] TASK-044H Opportunity Thesis & Business Case Consolidation — implemented; 528 tests and 8-case real-provider validation passed; full canonical launcher smoke pending broader background-consumer authorization ([report](../artifacts/opportunity-business-case/2026-09-09/validation-report.md))
+- [x] TASK-044H Opportunity Thesis & Business Case Consolidation — 528 tests, 8-case real-provider validation and authorized full canonical launcher smoke passed; local acceptance complete ([report](../artifacts/opportunity-business-case/2026-09-09/validation-report.md))
 - [ ] TASK-044I Discovery Console Operational Completion
 - [ ] TASK-044J Watchlist Change Tracking + Monitoring Freshness
 - [ ] TASK-044K Taxonomy Selectors + Review UX + Localization Polish

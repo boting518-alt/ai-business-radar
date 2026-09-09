@@ -1,6 +1,6 @@
 # TASK-044H — Opportunity Thesis & Business Case Consolidation (revised)
 
-Status: Implemented; 8-case real-provider v002 evaluation passed. Full canonical launcher smoke pending authorization for broader scheduler/queue consumers.
+Status: Complete — implementation, 528 tests, 8-case real-provider v002 evaluation and explicitly authorized full canonical launcher smoke passed. Local acceptance only; no staging deployment.
 Assessed 2026-09-09 before implementation.
 
 See [validation report](../../artifacts/opportunity-business-case/2026-09-09/validation-report.md).
