@@ -6,7 +6,7 @@ from uuid import UUID
 
 from ai_business_radar_schemas import ReviewDecisionRequest
 from pydantic import BaseModel, ConfigDict, Field
-from sqlalchemy import delete, select, update
+from sqlalchemy import delete, select, text, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
@@ -22,6 +22,12 @@ from ..infrastructure.database.models import (
 )
 from ..infrastructure.database.repositories import OpportunityRepository, ReviewTaskRepository
 from .opportunity_activation import OpportunityActivationReadinessService
+from .signal_semantics import (
+    SemanticDecision,
+    evaluate_signal,
+    exact_current_duplicate,
+    persist_decision,
+)
 from .translation_orchestration import TranslationCoverageReconciliationService
 
 DECISION_MATRIX = {
@@ -218,6 +224,10 @@ class ReviewWorkflowService:
                 "solution",
                 "observed_at",
                 "source_type",
+                "semantic_status",
+                "actor_role",
+                "evidence_role",
+                "guardrail_reason_code",
             )
         }
 
@@ -327,6 +337,41 @@ class ReviewWorkflowService:
 
     async def _apply_decision(self, session, task, admin_id, request, now):
         decision = request.decision.value
+        if task.target_type == "signal" and decision in {"approve", "create_new", "merge"}:
+            source = await session.get(Signal, task.target_id)
+            await session.execute(
+                text("SELECT pg_advisory_xact_lock(hashtextextended(:key, 0))"),
+                {"key": f"semantic:{source.source_type}:{source.source_id}"},
+            )
+            signal = await session.scalar(
+                select(Signal).where(Signal.id == task.target_id).with_for_update()
+            )
+            semantic = evaluate_signal(signal)
+            duplicate = await exact_current_duplicate(session, signal)
+            if (
+                signal.semantic_status in {"invalid_semantic", "superseded"}
+                or semantic.decision == "reject_semantic"
+                or duplicate
+            ):
+                raise ReviewTaskConflict(
+                    "Semantic guardrail blocks activation; "
+                    "retain history and correct source evidence separately"
+                )
+            if (
+                semantic.decision == "review"
+                and signal.guardrail_reason_code != "human_semantic_approval"
+            ):
+                if (
+                    task.review_type != "signal_validation"
+                    or not (request.decision_notes or "").strip()
+                ):
+                    raise ReviewTaskConflict(
+                        "Ambiguous semantics require signal validation with explicit decision notes"
+                    )
+                semantic = SemanticDecision(
+                    "accept", "human_semantic_approval", signal.actor_role, signal.evidence_role
+                )
+            await persist_decision(session, signal, semantic, operator_note=request.decision_notes)
         if task.review_type == "signal_validation":
             status = {"approve": "active", "reject": "rejected", "ignore": "ignored"}[decision]
             await session.execute(

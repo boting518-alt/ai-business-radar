@@ -16,9 +16,11 @@ from ai_business_radar_api.infrastructure.database.models import (
     AIExtraction,
     Channel,
     Comment,
+    ReviewTask,
     Signal,
     Video,
 )
+from ai_business_radar_api.infrastructure.database.models.fact import SignalSemanticAudit
 from ai_business_radar_api.infrastructure.database.repositories import SignalRepository
 from ai_business_radar_api.services.comment_pain_mining import (
     CommentPainBatchRequest,
@@ -173,14 +175,18 @@ async def test_categories_provenance_privacy_reuse_and_force(pain_database) -> N
         )
         video = await session.get(Video, video_id)
     assert len(rows) == 12 and forced.extraction_id == extractions[1].id
-    assert [row.signal_type for row in rows[:6]] == [
-        "pain",
-        "workflow",
-        "purchase_intent",
-        "feature_request",
-        "competition",
-        "pricing",
-    ]
+    assert sorted(
+        row.signal_type for row in rows if row.ai_extraction_id == first.extraction_id
+    ) == sorted(
+        [
+            "pain",
+            "workflow",
+            "purchase_intent",
+            "feature_request",
+            "competition",
+            "pricing",
+        ]
+    )
     assert all(row.source_type == "comment" and row.source_id == comment_id for row in rows)
     assert all(
         row.video_id is None and row.status == "review" and row.claim_status == "unknown"
@@ -250,6 +256,8 @@ async def test_provider_failure_and_transaction_rollback_create_no_signals(
 async def test_batch_failure_isolated_and_comment_change_changes_hash(pain_database) -> None:
     factory = pain_database
     async with factory() as session, session.begin():
+        await session.execute(delete(ReviewTask).where(ReviewTask.target_type == "signal"))
+        await session.execute(delete(SignalSemanticAudit))
         await session.execute(delete(Signal))
         await session.execute(delete(AIExtraction))
         await session.execute(delete(Comment))

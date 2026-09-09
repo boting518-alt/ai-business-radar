@@ -246,3 +246,8 @@ TASK-039 promotes immutable Signal Extractor v003 as the configurable runtime de
 selection and hashing are centralized, unknown overrides fail explicitly, and new Signal audit rows
 store the SHA-256. Translation v003 and hybrid retrieval remain experimental; Normalizer stays v001.
 See `docs/runtime-prompt-version-governance.md`.
+
+TASK-044F adds deterministic semantic decisions after both Signal extraction and comment mining,
+before normalization, and at review approval. Blocked proposals remain audited and cannot enter
+current evidence or translation. Experimental Signal v004 uses the unchanged strict v001 schema;
+actor/evidence roles are an application projection. Runtime remains v003. See signal-semantic-guardrails.md.

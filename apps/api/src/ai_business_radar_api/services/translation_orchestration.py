@@ -287,7 +287,10 @@ class TranslationCoverageReconciliationService:
             signal_ids = list(
                 await session.scalars(
                     select(Signal.id)
-                    .where(Signal.status.in_(("review", "active")))
+                    .where(
+                        Signal.status.in_(("review", "active"))
+                        & (Signal.semantic_status == "current")
+                    )
                     .order_by(Signal.updated_at.desc(), Signal.id)
                     .limit(limit)
                 )
@@ -322,7 +325,7 @@ class TranslationCoverageReconciliationService:
     @staticmethod
     async def _eligible(session: AsyncSession, entity_type: EntityType, entity) -> bool:
         if entity_type == "signal":
-            return entity.status in {"review", "active"}
+            return entity.status in {"review", "active"} and entity.semantic_status == "current"
         if entity.status == "active":
             return True
         if entity.status != "candidate":

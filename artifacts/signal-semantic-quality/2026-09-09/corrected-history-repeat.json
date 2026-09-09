@@ -1,0 +1,2789 @@
+[
+  {
+    "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+    "trends": [
+      {
+        "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+        "snapshot_id": "7d872a20-ee46-437e-bcd7-443b40e28dba",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+        "snapshot_id": "961937e1-f3ee-46b7-87f1-312cf69e5694",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 2,
+          "new_video_count": 2,
+          "unique_channel_count": 2,
+          "total_views": 82360,
+          "comment_count": 20,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+        "snapshot_id": "11e8996d-a4de-43b3-884b-f34c46720405",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 2,
+          "new_video_count": 2,
+          "unique_channel_count": 2,
+          "total_views": 82360,
+          "comment_count": 20,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+      "score_id": "23402dba-d6fd-4e89-ae37-0a27bb229fd1",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "1a272377d3f4cfa9d4c92a654a0e25d2787e13739a40d999c3145aedeb89748b",
+      "components": {
+        "trend_velocity_score": "22.50",
+        "demand_evidence_score": "8.33",
+        "revenue_evidence_score": "6.60",
+        "pain_severity_score": "7.30",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "23.75",
+      "confidence_score": "41.03",
+      "hype_risk_score": "50.90",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "7d872a20-ee46-437e-bcd7-443b40e28dba",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "22.50",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "complaint": 2
+        },
+        "signals": [
+          {
+            "signal_id": "39cb92d7-f506-4b0f-98d2-76c709d8e3f4",
+            "signal_type": "complaint",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "a15f4bfe-0cf1-4d7b-b384-73263d5c27dc",
+            "signal_type": "complaint",
+            "claim_status": "unknown"
+          }
+        ],
+        "industry": null,
+        "video_count": 2,
+        "source_types": [
+          "comment"
+        ],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 2,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "15589543-5f48-46c5-ad3f-b4656e11c592",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-08-29 09:31:28+00:00",
+        "primary_technology": null,
+        "claim_status_counts": {
+          "unknown": 2
+        },
+        "relationship_counts": {
+          "supporting": 2,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+    "trends": [
+      {
+        "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+        "snapshot_id": "950196b1-d319-4332-bb4c-f0f61a458abf",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+        "snapshot_id": "fb2339b1-5d59-463d-ab86-35ac7b6ab7d8",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+        "snapshot_id": "7dbeebb5-1cc5-4826-8386-dfa6379dbb78",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 7,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+      "score_id": "ddbd05aa-ac1a-4e75-9e12-116fda2cc947",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "1354926b123057aa4545050ee26eb2ff21c084e2cd2ae7817ef0e2e7c422ee7c",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "2.52",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "99.83",
+        "build_feasibility_score": "30.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "29.06",
+      "confidence_score": "35.63",
+      "hype_risk_score": "60.71",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "950196b1-d319-4332-bb4c-f0f61a458abf",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "competition": 1,
+          "product_launch": 2
+        },
+        "signals": [
+          {
+            "signal_id": "09d68e0b-3a11-40d9-88bf-25acb99e8b36",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "575f221a-5545-43ba-babb-e4f0f7ceca62",
+            "signal_type": "competition",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "c22e457b-e834-4276-95d5-77198982b837",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "Consumer robotics",
+        "video_count": 1,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI",
+          "natural language understanding"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": "Living room consumers",
+        "business_model": null,
+        "opportunity_id": "2624cab1-88de-4234-90c0-0f902b423bc3",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-08-09 14:46:05+00:00",
+        "primary_technology": "AI",
+        "claim_status_counts": {
+          "creator_claim": 3
+        },
+        "relationship_counts": {
+          "supporting": 3,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+    "trends": [
+      {
+        "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+        "snapshot_id": "a9e2dc51-9f00-4819-8e62-66b15260c4d0",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+        "snapshot_id": "e35e96be-d990-48dc-93f2-5645560f0fd2",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+        "snapshot_id": "dcd5ab57-8037-4118-b1aa-54a40b408be7",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+      "score_id": "0a4dacd5-2839-4149-8a6d-c25361f75ce9",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "45f3c75601ce3790623a790651ce35d3f0327b903f4fb32c635355b9ea555252",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "4.74",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "4.42",
+        "competition_white_space_score": "76.75",
+        "build_feasibility_score": "30.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "27.85",
+      "confidence_score": "31.63",
+      "hype_risk_score": "59.39",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "a9e2dc51-9f00-4819-8e62-66b15260c4d0",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "workflow": 1,
+          "technology": 1,
+          "product_launch": 1
+        },
+        "signals": [
+          {
+            "signal_id": "6c05617f-fcd2-4f21-8a27-23e70fa614e6",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "78efa68f-a5e2-4b09-b313-7f7bc837154e",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "e27723cb-6332-41d1-86bf-2877ac3ea90e",
+            "signal_type": "technology",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "robotics",
+        "video_count": 1,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI",
+          "advanced \"robot brain\""
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "2d8549ed-19b7-490a-952d-71d8b6727d5f",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-04-02 16:48:10+00:00",
+        "primary_technology": "AI",
+        "claim_status_counts": {
+          "creator_claim": 3
+        },
+        "relationship_counts": {
+          "supporting": 3,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+    "trends": [
+      {
+        "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+        "snapshot_id": "c5905a99-3546-43d7-a368-10fe8d14da88",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 4,
+          "new_video_count": 4,
+          "unique_channel_count": 4,
+          "total_views": 10495,
+          "comment_count": 8,
+          "pain_signal_count": 0,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 2,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "87.90"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+        "snapshot_id": "b58cd4aa-7e89-4d80-a52d-ecffdbeee1e5",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 5,
+          "new_video_count": 5,
+          "unique_channel_count": 5,
+          "total_views": 61220,
+          "comment_count": 18,
+          "pain_signal_count": 0,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 3,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+        "snapshot_id": "f398faf7-dfcb-4ebc-9a8b-632da84998ae",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 5,
+          "new_video_count": 5,
+          "unique_channel_count": 5,
+          "total_views": 61220,
+          "comment_count": 18,
+          "pain_signal_count": 0,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 3,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+      "score_id": "e98effbc-5da1-4010-9ff5-66f8a522cca0",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "5e9bfc411c4257e54b3e756d6f56d1207b36913b46b59374b2a115640cc4523e",
+      "components": {
+        "trend_velocity_score": "87.90",
+        "demand_evidence_score": "38.02",
+        "revenue_evidence_score": "14.63",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "42.88",
+      "confidence_score": "66.25",
+      "hype_risk_score": "71.04",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "c5905a99-3546-43d7-a368-10fe8d14da88",
+          "total_views": 10495,
+          "video_count": 4,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 8,
+          "momentum_score": "87.90",
+          "new_video_count": 4,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 1,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 4,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 2
+        },
+        "counts": {
+          "demand": 1,
+          "pricing": 1,
+          "distribution": 1,
+          "purchase_intent": 3
+        },
+        "signals": [
+          {
+            "signal_id": "1822254d-d255-4ee7-ae1f-8e8410da56fb",
+            "signal_type": "pricing",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "1f94b9aa-fd70-4629-bd69-105898c25200",
+            "signal_type": "purchase_intent",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "4c6fa6bd-9021-4b44-b35a-2931b37a402d",
+            "signal_type": "demand",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "f7940d32-9436-4f6e-9ce8-42f3446026b6",
+            "signal_type": "purchase_intent",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "58c0bb77-c84a-4139-9ac1-2ef31cdf127e",
+            "signal_type": "purchase_intent",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "886e0306-d566-4c5c-af50-67db8ab355f9",
+            "signal_type": "distribution",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": null,
+        "video_count": 5,
+        "source_types": [
+          "comment",
+          "video"
+        ],
+        "technologies": [
+          "camera",
+          "dual IMU sensors",
+          "lidar",
+          "open-source codebase",
+          "processing chip",
+          "reinforcement learning"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 5,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "324b2ffe-d206-42d8-8dbb-9b9491be2d90",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-07 23:02:22+00:00",
+        "primary_technology": null,
+        "claim_status_counts": {
+          "unknown": 4,
+          "creator_claim": 2
+        },
+        "relationship_counts": {
+          "supporting": 6,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [
+          "pre-orders"
+        ],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+    "trends": [
+      {
+        "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+        "snapshot_id": "bfb7df40-0e1d-4f12-b3e4-f082af9828af",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 4,
+          "new_video_count": 4,
+          "unique_channel_count": 4,
+          "total_views": 4211,
+          "comment_count": 3,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 1,
+          "competitor_signal_count": 0,
+          "momentum_score": "92.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+        "snapshot_id": "a154e033-ddce-4fdd-9d37-0d175bd9a573",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 5,
+          "new_video_count": 5,
+          "unique_channel_count": 5,
+          "total_views": 35846,
+          "comment_count": 13,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 1,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+        "snapshot_id": "3550d4f3-8cf5-4be7-92b9-ca8ca27e903f",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 5,
+          "new_video_count": 5,
+          "unique_channel_count": 5,
+          "total_views": 35846,
+          "comment_count": 13,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 1,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+      "score_id": "36cb800f-1f60-4e1d-b386-f10409589a0a",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "39161ec2dcf6a837e2dc94e75f715bbb10fbfc77961a914bc1986583d2511421",
+      "components": {
+        "trend_velocity_score": "92.50",
+        "demand_evidence_score": "13.94",
+        "revenue_evidence_score": "40.64",
+        "pain_severity_score": "24.54",
+        "competition_white_space_score": "90.98",
+        "build_feasibility_score": "40.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "49.16",
+      "confidence_score": "72.48",
+      "hype_risk_score": "67.78",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "bfb7df40-0e1d-4f12-b3e4-f082af9828af",
+          "total_views": 4211,
+          "video_count": 4,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 3,
+          "momentum_score": "92.50",
+          "new_video_count": 4,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 1,
+          "unique_channel_count": 4,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "pricing": 2,
+          "revenue": 1,
+          "customer": 1,
+          "workflow": 3,
+          "complaint": 1,
+          "technology": 1,
+          "market_change": 1,
+          "product_launch": 2
+        },
+        "signals": [
+          {
+            "signal_id": "e2c3ccc1-db88-47fe-87ef-a6b0b2ed2972",
+            "signal_type": "complaint",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "0d209973-06ed-4998-a50f-4a795b07eb97",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "46447f3a-50e4-4d0e-b166-41989d7fac1e",
+            "signal_type": "technology",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "c4ca65f2-71df-443c-a41f-429fed6c70cd",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "f6a54891-a38c-45d7-b73e-987934530c04",
+            "signal_type": "revenue",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "1f020391-3050-4fea-b66a-c8a9f0558d19",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "2774a057-1ded-4936-93ab-2f91faafd2ce",
+            "signal_type": "customer",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "3362eac7-74c7-4798-9f2b-d8f513eac102",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "7d7455f5-653d-4c39-a6f7-7a7d1d2c06bc",
+            "signal_type": "market_change",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "7597a321-0519-44f4-b73d-352843f5dc2a",
+            "signal_type": "pricing",
+            "claim_status": "fact"
+          },
+          {
+            "signal_id": "6c38858d-28a8-49ac-b517-90a9f3e526d3",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+            "signal_type": "pricing",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "consumer robotics",
+        "video_count": 5,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI",
+          "AI avatars",
+          "AI voice cloning",
+          "ChatGPT Voice Mode",
+          "MicroDuck",
+          "artificial intelligence",
+          "open-source reinforcement-learning software",
+          "robotics",
+          "self-learning AI",
+          "voice dictation"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 5,
+        "customer_type": "Adults seeking a customizable companion and emotional support device",
+        "business_model": null,
+        "opportunity_id": "32a1149c-f46c-491e-b0fb-1ee64e08d4a0",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-08 07:00:44+00:00",
+        "primary_technology": "robotics",
+        "claim_status_counts": {
+          "fact": 1,
+          "unknown": 1,
+          "creator_claim": 10
+        },
+        "relationship_counts": {
+          "supporting": 12,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 2,
+        "distribution_channels": [
+          "Substack",
+          "business inquiry email",
+          "guest Substack link",
+          "pre-order"
+        ],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+    "trends": [
+      {
+        "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+        "snapshot_id": "30409437-274d-4f8f-a59e-aa81bd73de3b",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+        "snapshot_id": "d45fd7f6-4d24-40e1-8e2a-7d8543a9d081",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+        "snapshot_id": "b6f78048-1c0d-4de4-b47b-8ddcb86da145",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+      "score_id": "c58e38de-4166-4d39-96c2-fdd8ad62d65e",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "598a5331f351b4166b853ce6cc860133b7aafebf4735f0a96321a748be593c67",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "0.00",
+        "revenue_evidence_score": "0.00",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "25.50",
+      "confidence_score": "7.50",
+      "hype_risk_score": "62.00",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "30409437-274d-4f8f-a59e-aa81bd73de3b",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {},
+        "signals": [],
+        "industry": null,
+        "video_count": 0,
+        "source_types": [],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 0,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "33dc3898-06a6-4df1-80cd-5b3d1c5046ac",
+        "scoring_version": "score-v001",
+        "latest_signal_at": null,
+        "primary_technology": null,
+        "claim_status_counts": {},
+        "relationship_counts": {
+          "supporting": 0,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+    "trends": [
+      {
+        "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+        "snapshot_id": "93c6f1bf-8943-4407-8649-18e8231ceb79",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 3,
+          "comment_count": 1,
+          "pain_signal_count": 1,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+        "snapshot_id": "994c0c15-687e-44fd-a499-37ac54c62876",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 3,
+          "comment_count": 1,
+          "pain_signal_count": 1,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+        "snapshot_id": "d8ea6231-63cf-4dc6-b485-00ec32a2de3e",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 3,
+          "comment_count": 1,
+          "pain_signal_count": 1,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+      "score_id": "377085ca-894d-46cc-9bf1-d0c4c8ac9178",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "ea94da056740916477cbcf4fc2a2cc143e837123c42969352f5fb69194ad8a33",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "2.52",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "6.64",
+        "competition_white_space_score": "76.75",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "29.74",
+      "confidence_score": "53.23",
+      "hype_risk_score": "62.78",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "93c6f1bf-8943-4407-8649-18e8231ceb79",
+          "total_views": 3,
+          "video_count": 1,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 1,
+          "momentum_score": "50.00",
+          "new_video_count": 1,
+          "pain_signal_count": 1,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 1,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "pain": 1,
+          "technology": 1,
+          "distribution": 1,
+          "market_change": 1,
+          "product_launch": 1
+        },
+        "signals": [
+          {
+            "signal_id": "42add0c0-19f0-4a1a-8461-b744b29e7429",
+            "signal_type": "technology",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "6810a708-f238-416e-afaf-0c518d90d454",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "8c983458-0675-4c02-b9d4-711b89e8084b",
+            "signal_type": "distribution",
+            "claim_status": "fact"
+          },
+          {
+            "signal_id": "a7b12368-bff8-4f9c-a904-a0c53699aaaf",
+            "signal_type": "market_change",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "aafafcfc-6eab-4f65-95af-3a06bdea379c",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "Loneliness economy",
+        "video_count": 1,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": "Seniors",
+        "business_model": null,
+        "opportunity_id": "7a803455-c89f-4452-a39f-5b47b65ad6c5",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-07 15:49:00+00:00",
+        "primary_technology": "AI",
+        "claim_status_counts": {
+          "fact": 1,
+          "creator_claim": 4
+        },
+        "relationship_counts": {
+          "supporting": 5,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [
+          "YouTube channel subscriptions"
+        ],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+    "trends": [
+      {
+        "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+        "snapshot_id": "42b91378-6a7c-471b-904d-fbdc522bac2d",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 3,
+          "new_video_count": 3,
+          "unique_channel_count": 3,
+          "total_views": 26,
+          "comment_count": 0,
+          "pain_signal_count": 9,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "92.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+        "snapshot_id": "3772a689-7d33-47a5-8248-d7b267317fba",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 4,
+          "new_video_count": 4,
+          "unique_channel_count": 4,
+          "total_views": 67,
+          "comment_count": 0,
+          "pain_signal_count": 10,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+        "snapshot_id": "15f27e49-47e8-4c98-9c98-7bc8991e4ca2",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 4,
+          "new_video_count": 4,
+          "unique_channel_count": 4,
+          "total_views": 67,
+          "comment_count": 0,
+          "pain_signal_count": 10,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+      "score_id": "63f2055a-8e34-4281-9a79-46dcb3e6a566",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "ccd482aacacd5b03fc1824347e3d5dac5486702d11260206801e888bd2d54e5e",
+      "components": {
+        "trend_velocity_score": "92.50",
+        "demand_evidence_score": "16.79",
+        "revenue_evidence_score": "20.61",
+        "pain_severity_score": "47.43",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "60.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "48.56",
+      "confidence_score": "75.86",
+      "hype_risk_score": "64.05",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "42b91378-6a7c-471b-904d-fbdc522bac2d",
+          "total_views": 26,
+          "video_count": 3,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "92.50",
+          "new_video_count": 3,
+          "pain_signal_count": 9,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 3,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "pain": 10,
+          "customer": 2,
+          "workflow": 21,
+          "technology": 2,
+          "distribution": 3
+        },
+        "signals": [
+          {
+            "signal_id": "0c1ec7a5-52fd-44db-a820-ebf72e6de724",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "16e9da82-e39f-47ae-b756-938aae4f625a",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "17215f45-18ac-4bf6-86e1-e5e6ed2b7d0d",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "2029ca0f-110d-4301-977c-b90a41bb36fb",
+            "signal_type": "technology",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "241223ae-34fd-429f-8973-3110cf8b22eb",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "2d87cecc-e19e-47ad-bdd1-c05b0fd94c71",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "670584cf-0942-472f-a649-43cfb25115eb",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "78df14ee-b73a-4df9-9f4c-153c3a02617e",
+            "signal_type": "distribution",
+            "claim_status": "fact"
+          },
+          {
+            "signal_id": "96095539-c9ae-40f8-9b5a-b7322ba161d2",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "0a74cce1-79ee-47e1-b270-b7da6f6f5736",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "3f5b6fcd-b047-4bf1-9785-678f9de34311",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "4097d6ce-4c26-4e38-b190-c7da02030778",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "63eda4a9-3176-45ad-8ecf-fecfcd7c954d",
+            "signal_type": "technology",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "6926dc73-ae72-4378-80df-c29a659dcd35",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "87a98d7b-a35e-4522-8b1d-995d68a3603a",
+            "signal_type": "distribution",
+            "claim_status": "fact"
+          },
+          {
+            "signal_id": "b8917537-9ee3-4747-b803-38fc5c979c99",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "d3945d9d-cf1e-4ad8-87df-5524cc2b3b63",
+            "signal_type": "customer",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "d477ec45-b81c-4694-9cd8-31e6bbbbc993",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "e1da1423-5b39-4a42-8124-762381240931",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "30985cf2-b800-4263-9433-ecb03004c4ad",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "5bfc38cb-1ade-43d7-919e-69ce44d7f258",
+            "signal_type": "distribution",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "d5fa6f77-bd70-4d71-80a7-9caaa6d04203",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "de86428a-d9a7-4c0c-a7d5-0369dd3dbc16",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "f001fde2-91e9-4d7a-993c-59741d6f7bcc",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "0a8529d9-ba73-44a9-9f87-ff8fe2208a1f",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "2ed1f7a5-d4ea-4164-a3c5-2232f256d54f",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "3a60ac8b-6f84-414a-9511-5d7dc8023cf9",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "4749d3e1-3ebb-41b2-a73f-550ee4b307f1",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "51d9f447-3df3-4051-9a9e-f9ead54be051",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "5c173518-5d51-43ed-ae3f-70649c9c35e4",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "6c9c9de2-19ce-4519-8078-16a160ccf0a4",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "745e3ea8-e281-419e-ac6e-e587a8022ef7",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "7e3d4207-052c-4e0e-851b-f9cc4ee46d45",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "bf1d1c1b-a4c5-4047-80ec-c72c4209513b",
+            "signal_type": "customer",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "c3f9ddaf-e16b-46e0-8c31-da33310bbad9",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "c71cde9a-ba1e-465d-bae8-b4f55edf1a10",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "d162267e-90dd-4b3f-ab5b-d904f6548961",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "e1f79354-58a0-4653-be83-2b7f99e1ff88",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "Dental clinics and dental practices",
+        "video_count": 4,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI receptionist",
+          "Dental AI",
+          "Dental practice dashboard",
+          "Facebook",
+          "Instagram",
+          "SMS",
+          "WhatsApp",
+          "Workflow automation",
+          "calendar scheduling",
+          "conversation logs",
+          "dashboard",
+          "website chat"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 4,
+        "customer_type": "Dental clinics, dental offices, solo dentists, multi-provider dental practices, cosmetic dentistry clinics, and busy front desks",
+        "business_model": null,
+        "opportunity_id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-07 09:14:09+00:00",
+        "primary_technology": "AI receptionist",
+        "claim_status_counts": {
+          "fact": 2,
+          "creator_claim": 36
+        },
+        "relationship_counts": {
+          "supporting": 38,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [
+          "Comment-to-receive free booking-process audit",
+          "Company website",
+          "Demo booking",
+          "Direct phone contact",
+          "Email",
+          "Free consultation call",
+          "Intavia dental AI use-case webpage",
+          "Website",
+          "YouTube Shorts",
+          "YouTube channel subscriptions",
+          "YouTube demo",
+          "YouTube educational content",
+          "YouTube tutorial"
+        ],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+    "trends": [
+      {
+        "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+        "snapshot_id": "45006510-8dd4-43a4-977c-d4b4acc3d79e",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+        "snapshot_id": "765afa46-185a-4893-b0e0-95cb0cd88e11",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 2,
+          "new_video_count": 2,
+          "unique_channel_count": 2,
+          "total_views": 13701,
+          "comment_count": 15,
+          "pain_signal_count": 2,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+        "snapshot_id": "6d51c429-277f-436f-986b-9d00875ba2e9",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 2,
+          "new_video_count": 2,
+          "unique_channel_count": 2,
+          "total_views": 13701,
+          "comment_count": 15,
+          "pain_signal_count": 2,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+      "score_id": "b912ad57-797a-44ee-a66c-c4a7964f6185",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "b3b69d9c0a02cab963b232644bf6e8734b5c8980718b027e30e078c1ca1d7f15",
+      "components": {
+        "trend_velocity_score": "22.50",
+        "demand_evidence_score": "16.76",
+        "revenue_evidence_score": "6.60",
+        "pain_severity_score": "23.93",
+        "competition_white_space_score": "76.75",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "60.00"
+      },
+      "opportunity_score": "31.11",
+      "confidence_score": "53.30",
+      "hype_risk_score": "45.88",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "45006510-8dd4-43a4-977c-d4b4acc3d79e",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "22.50",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "pain": 2,
+          "demand": 1,
+          "workflow": 2,
+          "complaint": 1,
+          "competition": 1,
+          "market_change": 2
+        },
+        "signals": [
+          {
+            "signal_id": "1d4dcff6-785c-4358-b3ab-ba742d5488c9",
+            "signal_type": "complaint",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "5dcc0ff3-f7b4-40b1-85ca-6c506ac09a9a",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "91f43bdc-e3af-4808-837f-0af14215f84e",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "ad98485c-2a6d-4fa8-8899-2110452dbb1f",
+            "signal_type": "demand",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "fdf310d7-5f16-4bc9-840d-f032481696a8",
+            "signal_type": "market_change",
+            "claim_status": "speculation"
+          },
+          {
+            "signal_id": "422f9ab2-101f-4718-8ebe-b329e71614dd",
+            "signal_type": "market_change",
+            "claim_status": "opinion"
+          },
+          {
+            "signal_id": "7208a3c7-8f8f-485a-ab6a-fa14c31065ca",
+            "signal_type": "competition",
+            "claim_status": "opinion"
+          },
+          {
+            "signal_id": "b3575406-0d9b-42e3-badf-8697ba715dec",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "c426cb09-507b-4380-9e9d-576be8de33b9",
+            "signal_type": "pain",
+            "claim_status": "opinion"
+          }
+        ],
+        "industry": "AI companionship apps",
+        "video_count": 2,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "artificial intelligence",
+          "personalized AI"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 2,
+        "customer_type": null,
+        "business_model": "Subscription models and paywalls discussed in connection with AI companionship",
+        "opportunity_id": "800e195f-2564-4329-b49b-f0e9aa0f9d81",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-01 14:29:56+00:00",
+        "primary_technology": "artificial intelligence",
+        "claim_status_counts": {
+          "opinion": 3,
+          "speculation": 1,
+          "creator_claim": 5
+        },
+        "relationship_counts": {
+          "supporting": 9,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+    "trends": [
+      {
+        "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+        "snapshot_id": "ff69f03e-5164-4f02-9460-741ca26a9d9a",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+        "snapshot_id": "98f84b5b-eb23-4a00-8ce7-4d0a3405221b",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 50725,
+          "comment_count": 10,
+          "pain_signal_count": 0,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 1,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+        "snapshot_id": "80ba1364-2843-43f6-bcba-2ef45f097930",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 50725,
+          "comment_count": 10,
+          "pain_signal_count": 0,
+          "demand_signal_count": 1,
+          "purchase_intent_signal_count": 1,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+      "score_id": "4c3a7234-2a6a-4eb5-b3e0-e23ccbdc4399",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "f30f3d415bb3f4e5ed12d10558b66c4ca8cc0853d464556dba318942d938d5f9",
+      "components": {
+        "trend_velocity_score": "22.50",
+        "demand_evidence_score": "21.41",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "24.85",
+      "confidence_score": "36.34",
+      "hype_risk_score": "49.58",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "ff69f03e-5164-4f02-9460-741ca26a9d9a",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "22.50",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "demand": 1,
+          "purchase_intent": 1
+        },
+        "signals": [
+          {
+            "signal_id": "a5fffc21-26d4-44f5-b4a8-222970611543",
+            "signal_type": "purchase_intent",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "7f22acf9-c21e-4dde-842f-d6031081c854",
+            "signal_type": "demand",
+            "claim_status": "unknown"
+          }
+        ],
+        "industry": null,
+        "video_count": 1,
+        "source_types": [
+          "comment"
+        ],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "81ea8c9c-36fd-4087-b718-47a21acb3901",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-08-29 03:19:39+00:00",
+        "primary_technology": null,
+        "claim_status_counts": {
+          "unknown": 2
+        },
+        "relationship_counts": {
+          "supporting": 2,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+    "trends": [
+      {
+        "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+        "snapshot_id": "8261cc2b-033e-4a0c-a1ac-549fd0f3436f",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+        "snapshot_id": "034ce2ee-9ab1-4a0d-96e9-fba5b02ae29d",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 4,
+          "comment_count": 1,
+          "pain_signal_count": 1,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+        "snapshot_id": "f8c2512c-c61a-4e7c-8a00-00f3f4ca9e33",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 4,
+          "comment_count": 1,
+          "pain_signal_count": 1,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+      "score_id": "cdaa2bb8-c093-4d7d-b725-c0d79062547b",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "cf619eabe57c858f7fd0cd016b5cc4e9aae9e6ead74cda10fac0c4d939fec6c4",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "6.46",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "14.51",
+        "competition_white_space_score": "90.98",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "33.13",
+      "confidence_score": "46.28",
+      "hype_risk_score": "57.16",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "8261cc2b-033e-4a0c-a1ac-549fd0f3436f",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "pain": 1,
+          "workflow": 2,
+          "competition": 1,
+          "product_launch": 1
+        },
+        "signals": [
+          {
+            "signal_id": "c0106833-aa70-43d7-b7d5-213f8c108489",
+            "signal_type": "workflow",
+            "claim_status": "unknown"
+          },
+          {
+            "signal_id": "0fb68d14-dd4a-4888-9fdc-c8bffe0fd1b4",
+            "signal_type": "product_launch",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "33c4cb88-2761-4509-8f44-e26a536909c0",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "50dc2d7f-696a-4620-830d-f7c5ea57120a",
+            "signal_type": "pain",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "84c5e1f3-f2c2-4a27-9fd9-e538f77feff9",
+            "signal_type": "competition",
+            "claim_status": "speculation"
+          }
+        ],
+        "industry": null,
+        "video_count": 1,
+        "source_types": [
+          "comment",
+          "video"
+        ],
+        "technologies": [
+          "four-legged robotic platform"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "8759f17c-4b25-4758-9c30-b0808d6af110",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-08-13 23:27:47+00:00",
+        "primary_technology": null,
+        "claim_status_counts": {
+          "unknown": 1,
+          "speculation": 1,
+          "creator_claim": 3
+        },
+        "relationship_counts": {
+          "supporting": 5,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+    "trends": [
+      {
+        "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+        "snapshot_id": "74cdac25-9ab7-4337-a17d-ae56002b5b22",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 51,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+        "snapshot_id": "da4b9abc-2af7-4d1e-bbef-fd3436292b62",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 51,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+        "snapshot_id": "a403b5ba-dbe8-4162-9450-6b61e5e7407d",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 51,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+      "score_id": "ad17a672-adb6-44d3-a434-6e9817f87234",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "22a4ae11d8cb27e59dc98d2112da76bd2aaacd08e5fdf44d1870f2758cd3ad86",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "6.46",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "8.68",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "28.66",
+      "confidence_score": "48.88",
+      "hype_risk_score": "61.48",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "74cdac25-9ab7-4337-a17d-ae56002b5b22",
+          "total_views": 51,
+          "video_count": 1,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 1,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 1,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "workflow": 1,
+          "complaint": 1,
+          "technology": 1
+        },
+        "signals": [
+          {
+            "signal_id": "6fc84978-feed-4ac6-b213-813ba1ba71e1",
+            "signal_type": "workflow",
+            "claim_status": "creator_claim"
+          },
+          {
+            "signal_id": "8eff26a2-2295-4ad9-9c5d-a28541c55c11",
+            "signal_type": "complaint",
+            "claim_status": "speculation"
+          },
+          {
+            "signal_id": "ff3139c6-f485-4469-849a-ab9248261ec2",
+            "signal_type": "technology",
+            "claim_status": "fact"
+          }
+        ],
+        "industry": "AI companion apps",
+        "video_count": 1,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI chatbots"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": "Users of AI chatbots",
+        "business_model": null,
+        "opportunity_id": "905930ef-13af-4f9c-88f6-498a6cd63b57",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-08 14:47:05+00:00",
+        "primary_technology": "AI chatbots",
+        "claim_status_counts": {
+          "fact": 1,
+          "speculation": 1,
+          "creator_claim": 1
+        },
+        "relationship_counts": {
+          "supporting": 3,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+    "trends": [
+      {
+        "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+        "snapshot_id": "c19a7e0e-6890-4072-87a5-60a08764256b",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+        "snapshot_id": "5f73fd21-4c7e-4fe6-9141-965dd12a2663",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "22.50"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+        "snapshot_id": "6bf060b6-7669-4abb-b088-1a66f96717a5",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 4435,
+          "comment_count": 10,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 1,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+      "score_id": "48d40f3e-2e0c-494f-b07c-0c927e2b468c",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "207eeb3a79cce9be2aec6e8e7672146ccb13c71d50a800b0b55bf0747943b18e",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "2.52",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "76.75",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "28.75",
+      "confidence_score": "27.75",
+      "hype_risk_score": "60.71",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "c19a7e0e-6890-4072-87a5-60a08764256b",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "competition": 1
+        },
+        "signals": [
+          {
+            "signal_id": "2dd84bad-d02a-424f-9d12-095e979fa0ea",
+            "signal_type": "competition",
+            "claim_status": "unknown"
+          }
+        ],
+        "industry": null,
+        "video_count": 1,
+        "source_types": [
+          "comment"
+        ],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "982ddd0f-acc2-42ff-b551-aadd7c278287",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-08-06 12:47:08+00:00",
+        "primary_technology": null,
+        "claim_status_counts": {
+          "unknown": 1
+        },
+        "relationship_counts": {
+          "supporting": 1,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+    "trends": [
+      {
+        "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+        "snapshot_id": "17be968d-549c-482d-8cb9-efe715de9d3b",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+        "snapshot_id": "6fc02ec4-5fb8-463f-909d-bccde4c5843b",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+        "snapshot_id": "3bb0a376-2c3b-4f53-a21b-cd29d168a7dd",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+      "score_id": "4f965fb0-4689-4155-8ce3-ccda3b68dd06",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "800bfcd63e51d214d546e5fb00e5287af95b2757a2ebc120955b787317c8a6a0",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "0.00",
+        "revenue_evidence_score": "0.00",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "25.50",
+      "confidence_score": "7.50",
+      "hype_risk_score": "62.00",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "17be968d-549c-482d-8cb9-efe715de9d3b",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {},
+        "signals": [],
+        "industry": null,
+        "video_count": 0,
+        "source_types": [],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 0,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "cf74ae2f-802f-43fe-aae9-7b2e5b70f72f",
+        "scoring_version": "score-v001",
+        "latest_signal_at": null,
+        "primary_technology": null,
+        "claim_status_counts": {},
+        "relationship_counts": {
+          "supporting": 0,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+    "trends": [
+      {
+        "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+        "snapshot_id": "74296cee-249a-4360-b6f2-8b096c8df73a",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 0,
+          "comment_count": 3,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+        "snapshot_id": "bbe179a4-8e0d-48d1-81a8-2208965667ae",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 0,
+          "comment_count": 3,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+        "snapshot_id": "de6aa8ca-9268-483f-be01-5756711e334d",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 1,
+          "new_video_count": 1,
+          "unique_channel_count": 1,
+          "total_views": 0,
+          "comment_count": 3,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+      "score_id": "4e121661-b560-4f57-afe8-623d71b69eaa",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "f1f1d47affd281acdc539729d62c0b7ddb4d64085685800964fa4f14a2772acd",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "2.52",
+        "revenue_evidence_score": "3.79",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "26.57",
+      "confidence_score": "42.75",
+      "hype_risk_score": "63.98",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "74296cee-249a-4360-b6f2-8b096c8df73a",
+          "total_views": 0,
+          "video_count": 1,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 3,
+          "momentum_score": "50.00",
+          "new_video_count": 1,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 1,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {
+          "distribution": 1
+        },
+        "signals": [
+          {
+            "signal_id": "d4e5f911-f8d8-4c73-b54f-33560a33360d",
+            "signal_type": "distribution",
+            "claim_status": "creator_claim"
+          }
+        ],
+        "industry": "robotic companion pets",
+        "video_count": 1,
+        "source_types": [
+          "video"
+        ],
+        "technologies": [
+          "AI"
+        ],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 1,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "da4efc84-a4e3-42bd-9487-5ca29f52ce9d",
+        "scoring_version": "score-v001",
+        "latest_signal_at": "2026-09-08 17:16:17+00:00",
+        "primary_technology": "AI",
+        "claim_status_counts": {
+          "creator_claim": 1
+        },
+        "relationship_counts": {
+          "supporting": 1,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [
+          "Amazon affiliate link"
+        ],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  },
+  {
+    "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+    "trends": [
+      {
+        "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+        "snapshot_id": "7ea81918-0278-45c0-aafd-e28e94a7f2d1",
+        "window_type": "7d",
+        "period_start": "2026-09-02T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+        "snapshot_id": "353c1a37-8e1e-4267-b549-c14583277bc2",
+        "window_type": "30d",
+        "period_start": "2026-08-10T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      },
+      {
+        "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+        "snapshot_id": "d88516c7-3267-4785-99e5-ceb89c611387",
+        "window_type": "90d",
+        "period_start": "2026-06-11T10:49:48.065201Z",
+        "period_end": "2026-09-09T10:49:48.065201Z",
+        "aggregation_version": "trend-v001",
+        "metrics": {
+          "video_count": 0,
+          "new_video_count": 0,
+          "unique_channel_count": 0,
+          "total_views": 0,
+          "comment_count": 0,
+          "pain_signal_count": 0,
+          "demand_signal_count": 0,
+          "purchase_intent_signal_count": 0,
+          "revenue_signal_count": 0,
+          "competitor_signal_count": 0,
+          "momentum_score": "50.00"
+        },
+        "reused": true
+      }
+    ],
+    "score": {
+      "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+      "score_id": "6c336ed3-ae69-42ea-8aa9-7c7052691521",
+      "calculated_at": "2026-09-09T10:49:48.065201Z",
+      "scoring_version": "score-v001",
+      "input_hash": "214e211581c7bab21c46f9761e85c671af233efacdaf311dcf3b72e7744d4b58",
+      "components": {
+        "trend_velocity_score": "50.00",
+        "demand_evidence_score": "0.00",
+        "revenue_evidence_score": "0.00",
+        "pain_severity_score": "0.00",
+        "competition_white_space_score": "55.00",
+        "build_feasibility_score": "50.00",
+        "distribution_ease_score": "50.00"
+      },
+      "opportunity_score": "25.50",
+      "confidence_score": "7.50",
+      "hype_risk_score": "62.00",
+      "inputs_snapshot": {
+        "trend": {
+          "period_end": "2026-09-09 10:49:48.065201+00:00",
+          "snapshot_id": "7ea81918-0278-45c0-aafd-e28e94a7f2d1",
+          "total_views": 0,
+          "video_count": 0,
+          "window_type": "7d",
+          "period_start": "2026-09-02 10:49:48.065201+00:00",
+          "comment_count": 0,
+          "momentum_score": "50.00",
+          "new_video_count": 0,
+          "pain_signal_count": 0,
+          "aggregation_version": "trend-v001",
+          "demand_signal_count": 0,
+          "revenue_signal_count": 0,
+          "unique_channel_count": 0,
+          "competitor_signal_count": 0,
+          "purchase_intent_signal_count": 0
+        },
+        "counts": {},
+        "signals": [],
+        "industry": null,
+        "video_count": 0,
+        "source_types": [],
+        "technologies": [],
+        "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+        "channel_count": 0,
+        "customer_type": null,
+        "business_model": null,
+        "opportunity_id": "ef773e8f-771b-4e80-803b-d39d024b1d75",
+        "scoring_version": "score-v001",
+        "latest_signal_at": null,
+        "primary_technology": null,
+        "claim_status_counts": {},
+        "relationship_counts": {
+          "supporting": 0,
+          "contradicting": 0
+        },
+        "spend_evidence_count": 0,
+        "distribution_channels": [],
+        "explicit_numeric_count": 0
+      },
+      "reused": true
+    }
+  }
+]

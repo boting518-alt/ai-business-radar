@@ -1,0 +1,78 @@
+{
+  "prompt_version": "v004",
+  "prompt_hash": "b66ea77b78701638c4764cfb86f43f9961cc726ae10f6cd0d0aa16e5712dd530",
+  "input_hash": "ba360053de9a94b54472fca69dd5c6b5ec480d4c462ef135374a6bd7f6cbc928",
+  "input": {
+    "video": {
+      "youtube_video_id": "yxElm-G5Ofg",
+      "title": "Thoughts on Ropet’s Conversation Ability Next Gen AI Rob​​​​ot Pet #robot #robotcompanion #ropet",
+      "description": "Buy on Amazon and support My Channel by using the following link:\nRopet: https://amzn.to/4cP9Sbs\nAs an Amazon Associate I earn from qualifying purchases\nRopet Next Gen AI Rob​​​​ot Pet new updates \n #roboticpet #robot #newrobot #robotcompanion #desktoprobot #ropets #ropet #petbot #plushtoys #plush #plushies #ai #aiconversation",
+      "published_at": "2026-09-08T17:16:17+00:00",
+      "duration_seconds": 1050,
+      "language": "en",
+      "statistics": {
+        "view_count": 0,
+        "like_count": 0,
+        "comment_count": 0
+      }
+    },
+    "channel": {
+      "name": "Thanks to Caleb Chung",
+      "channel_type": null
+    }
+  },
+  "model": "gpt-5.6-terra",
+  "status": "completed",
+  "provider": "openai",
+  "raw_output": {
+    "response_id": "resp_011bea12bdbaf186016aa13871ccbc87d0b39c7bfd92e05c1a",
+    "output_text": "{\"industry\":\"robotic companion pets\",\"customer\":null,\"problem\":null,\"solution\":\"Ropet is presented as a next-generation AI robot pet with conversation ability.\",\"business_model\":null,\"technology\":[\"AI conversation\"],\"distribution\":[\"Amazon affiliate link promoted by the channel; the channel states it earns from qualifying purchases as an Amazon Associate.\"],\"pricing\":null,\"signals\":[{\"type\":\"product_launch\",\"statement\":\"Ropet is described as a next-generation AI robot pet with new updates.\",\"evidence\":\"Ropet Next Gen AI Rob​​​​ot Pet new updates\",\"claim_status\":\"creator_claim\",\"confidence\":0.84},{\"type\":\"technology\",\"statement\":\"Ropet is presented as having AI conversation capability.\",\"evidence\":\"Thoughts on Ropet’s Conversation Ability Next Gen AI Rob​​​​ot Pet\",\"claim_status\":\"creator_claim\",\"confidence\":0.8},{\"type\":\"distribution\",\"statement\":\"The channel provides an Amazon link for Ropet and says using it supports the channel.\",\"evidence\":\"Buy on Amazon and support My Channel by using the following link:\\nRopet: https://amzn.to/4cP9Sbs\",\"claim_status\":\"creator_claim\",\"confidence\":0.98},{\"type\":\"distribution\",\"statement\":\"The channel states that it earns from qualifying purchases as an Amazon Associate.\",\"evidence\":\"As an Amazon Associate I earn from qualifying purchases\",\"claim_status\":\"creator_claim\",\"confidence\":0.99}]}"
+  },
+  "parsed_output": {
+    "industry": "robotic companion pets",
+    "customer": null,
+    "problem": null,
+    "solution": "Ropet is presented as a next-generation AI robot pet with conversation ability.",
+    "business_model": null,
+    "technology": [
+      "AI conversation"
+    ],
+    "distribution": [
+      "Amazon affiliate link promoted by the channel; the channel states it earns from qualifying purchases as an Amazon Associate."
+    ],
+    "pricing": null,
+    "signals": [
+      {
+        "type": "product_launch",
+        "statement": "Ropet is described as a next-generation AI robot pet with new updates.",
+        "evidence": "Ropet Next Gen AI Rob​​​​ot Pet new updates",
+        "claim_status": "creator_claim",
+        "confidence": 0.84
+      },
+      {
+        "type": "technology",
+        "statement": "Ropet is presented as having AI conversation capability.",
+        "evidence": "Thoughts on Ropet’s Conversation Ability Next Gen AI Rob​​​​ot Pet",
+        "claim_status": "creator_claim",
+        "confidence": 0.8
+      },
+      {
+        "type": "distribution",
+        "statement": "The channel provides an Amazon link for Ropet and says using it supports the channel.",
+        "evidence": "Buy on Amazon and support My Channel by using the following link:\nRopet: https://amzn.to/4cP9Sbs",
+        "claim_status": "creator_claim",
+        "confidence": 0.98
+      },
+      {
+        "type": "distribution",
+        "statement": "The channel states that it earns from qualifying purchases as an Amazon Associate.",
+        "evidence": "As an Amazon Associate I earn from qualifying purchases",
+        "claim_status": "creator_claim",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "input_tokens": 1768,
+  "output_tokens": 302,
+  "provider_request_id": "resp_011bea12bdbaf186016aa13871ccbc87d0b39c7bfd92e05c1a"
+}

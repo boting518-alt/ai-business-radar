@@ -1,0 +1,106 @@
+{
+  "status": [
+    {
+      "status": "review",
+      "semantic_status": "current",
+      "count": 78
+    },
+    {
+      "status": "active",
+      "semantic_status": "current",
+      "count": 239
+    },
+    {
+      "status": "active",
+      "semantic_status": "invalid_semantic",
+      "count": 3
+    },
+    {
+      "status": "active",
+      "semantic_status": "under_review",
+      "count": 18
+    }
+  ],
+  "dental": [
+    {
+      "id": "7eea70c0-eeee-4db5-9cd0-ca73dcd42861",
+      "status": "active",
+      "linked_lifecycle_active": 40,
+      "effective": 38,
+      "purchase_intent": 0
+    }
+  ],
+  "examples": [
+    {
+      "id": "e281a06f-15ab-46ba-ab44-d35ebb1a78d8",
+      "statement": "The creator invites prospective customers to call AI Connect Pro to hear the AI work.",
+      "signal_type": "purchase_intent",
+      "status": "active",
+      "semantic_status": "invalid_semantic",
+      "actor_role": "seller_vendor",
+      "evidence_role": "seller_cta",
+      "guardrail_reason_code": "seller_cta_not_purchase_intent"
+    },
+    {
+      "id": "1f94b9aa-fd70-4629-bd69-105898c25200",
+      "statement": "The commenter ordered the product despite the total price with shipping being $508.",
+      "signal_type": "purchase_intent",
+      "status": "active",
+      "semantic_status": "current",
+      "actor_role": "buyer",
+      "evidence_role": "buyer_expression",
+      "guardrail_reason_code": "explicit_buyer_expression"
+    },
+    {
+      "id": "1300ad9a-33ae-4cce-94bd-23dd4043c32f",
+      "statement": "The description invites viewers to pre-order Microduck.",
+      "signal_type": "purchase_intent",
+      "status": "active",
+      "semantic_status": "invalid_semantic",
+      "actor_role": "seller_vendor",
+      "evidence_role": "seller_cta",
+      "guardrail_reason_code": "seller_cta_not_purchase_intent"
+    },
+    {
+      "id": "20ae3e2c-6104-4f5e-a972-907aa2a950d9",
+      "statement": "The channel states that it earns from qualifying purchases as an Amazon Associate.",
+      "signal_type": "revenue",
+      "status": "active",
+      "semantic_status": "invalid_semantic",
+      "actor_role": "affiliate_referrer",
+      "evidence_role": "creator_monetization",
+      "guardrail_reason_code": "affiliate_revenue_not_product_revenue"
+    }
+  ],
+  "dental_scores": [
+    {
+      "id": "63f2055a-8e34-4281-9a79-46dcb3e6a566",
+      "calculated_at": "2026-09-09 10:49:48.065201+00:00",
+      "scoring_version": "score-v001",
+      "opportunity_score": "48.56",
+      "demand_evidence_score": "16.79",
+      "revenue_evidence_score": "20.61"
+    },
+    {
+      "id": "6c9330c5-a9e1-40a8-b79e-81e6c64da3fc",
+      "calculated_at": "2026-09-07 17:00:00+00:00",
+      "scoring_version": "score-v001",
+      "opportunity_score": "44.74",
+      "demand_evidence_score": "32.85",
+      "revenue_evidence_score": "24.46"
+    },
+    {
+      "id": "0342929b-6ab0-4fc0-b7f7-0e51afc77e69",
+      "calculated_at": "2026-09-05 15:00:00+00:00",
+      "scoring_version": "score-v001",
+      "opportunity_score": "37.71",
+      "demand_evidence_score": "18.01",
+      "revenue_evidence_score": "16.15"
+    }
+  ],
+  "audit_count": [
+    {
+      "count": 34
+    }
+  ]
+}

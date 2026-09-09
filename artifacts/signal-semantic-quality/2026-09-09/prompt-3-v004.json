@@ -1,0 +1,69 @@
+{
+  "prompt_version": "v004",
+  "prompt_hash": "b66ea77b78701638c4764cfb86f43f9961cc726ae10f6cd0d0aa16e5712dd530",
+  "input_hash": "904cd19c7aca02316e5732a82725db3a5c2d18fa10c75d657f30417f76fc3c4c",
+  "input": {
+    "video": {
+      "youtube_video_id": "_1GumJMOm34",
+      "title": "Would You Like One? 🤖🦆",
+      "description": "That's not a toy duck. 😳 Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard.\n\nWhen it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone 🦆📱\n\nIn its first 24 hours, it pulled in over $2.5 million in sales — from a little tiltable desk toy to a viral robot celebrity.\n\nHold on... who'd have thought a cute, harmless-looking duck would become the internet's next robot star 🎬\n\n#MicroDuck #robot #AIrobot #humanoidrobot #cuterobot #robotsofinstagram #futuretech #technews #viralrobot #robotfuture",
+      "published_at": "2026-09-07T14:30:06+00:00",
+      "duration_seconds": 33,
+      "language": "en",
+      "statistics": {
+        "view_count": 1339,
+        "like_count": 17,
+        "comment_count": 2
+      }
+    },
+    "channel": {
+      "name": "Hello Humanoid!",
+      "channel_type": null
+    }
+  },
+  "model": "gpt-5.6-terra",
+  "status": "completed",
+  "provider": "openai",
+  "raw_output": {
+    "response_id": "resp_08fc81f72db83fb3016aa1387d014487d0b5d769a8de17a486",
+    "output_text": "{\"industry\":\"Consumer robotics\",\"customer\":null,\"problem\":null,\"solution\":\"Micro Duck, a 10-inch AI robot described as able to walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.\",\"business_model\":null,\"technology\":[\"self-learning AI\"],\"distribution\":[],\"pricing\":null,\"signals\":[{\"type\":\"product_launch\",\"statement\":\"The creator presents Micro Duck as a 10-inch AI robot with walking, object-grabbing, skateboard-riding, self-recovery, and phone-programmable trick capabilities.\",\"evidence\":\"“Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard. When it falls, it gets back up on its own using self-learning AI. ... You can program tricks straight from your phone”\",\"claim_status\":\"creator_claim\",\"confidence\":0.94},{\"type\":\"technology\",\"statement\":\"Micro Duck is claimed to use self-learning AI to get back up after falling.\",\"evidence\":\"“When it falls, it gets back up on its own using self-learning AI.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.93},{\"type\":\"revenue\",\"statement\":\"The creator claims that Micro Duck generated over $2.5 million in sales during its first 24 hours.\",\"evidence\":\"“In its first 24 hours, it pulled in over $2.5 million in sales”\",\"claim_status\":\"creator_claim\",\"confidence\":0.9}]}"
+  },
+  "parsed_output": {
+    "industry": "Consumer robotics",
+    "customer": null,
+    "problem": null,
+    "solution": "Micro Duck, a 10-inch AI robot described as able to walk, grab objects with its beak, ride a skateboard, recover after falling, and be programmed from a phone.",
+    "business_model": null,
+    "technology": [
+      "self-learning AI"
+    ],
+    "distribution": [],
+    "pricing": null,
+    "signals": [
+      {
+        "type": "product_launch",
+        "statement": "The creator presents Micro Duck as a 10-inch AI robot with walking, object-grabbing, skateboard-riding, self-recovery, and phone-programmable trick capabilities.",
+        "evidence": "“Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard. When it falls, it gets back up on its own using self-learning AI. ... You can program tricks straight from your phone”",
+        "claim_status": "creator_claim",
+        "confidence": 0.94
+      },
+      {
+        "type": "technology",
+        "statement": "Micro Duck is claimed to use self-learning AI to get back up after falling.",
+        "evidence": "“When it falls, it gets back up on its own using self-learning AI.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.93
+      },
+      {
+        "type": "revenue",
+        "statement": "The creator claims that Micro Duck generated over $2.5 million in sales during its first 24 hours.",
+        "evidence": "“In its first 24 hours, it pulled in over $2.5 million in sales”",
+        "claim_status": "creator_claim",
+        "confidence": 0.9
+      }
+    ]
+  },
+  "input_tokens": 1827,
+  "output_tokens": 318,
+  "provider_request_id": "resp_08fc81f72db83fb3016aa1387d014487d0b5d769a8de17a486"
+}

@@ -1,7 +1,7 @@
 """All migration-aligned persistence mappings."""
 
 from .base import Base
-from .fact import AIExtraction, Signal
+from .fact import AIExtraction, Signal, SignalSemanticAudit
 from .intelligence import (
     IntelligenceLocalization,
     Opportunity,
@@ -52,6 +52,7 @@ __all__ = [
     "ReviewTask",
     "SearchQuery",
     "Signal",
+    "SignalSemanticAudit",
     "TrendSnapshot",
     "UserProfile",
     "Video",

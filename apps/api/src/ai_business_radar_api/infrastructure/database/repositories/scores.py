@@ -114,7 +114,7 @@ class OpportunityScoreRepository:
                 .outerjoin(Video, Video.id == resolved_video_id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity_id,
-                    Signal.status == "active",
+                    (Signal.status == "active") & (Signal.semantic_status == "current"),
                 )
                 .order_by(effective_time, Signal.id)
             )

@@ -64,3 +64,7 @@ Structured events distinguish review/active triggers, reconciliation scans/enque
 enqueue failure, with entity type/ID, locale, version, and reason. Provider/model/token audit remains
 on persisted localization rows. There is no frontend status badge in v0.1; localized text is shown
 when current, otherwise canonical English is shown without waiting.
+
+TASK-044F adds semantic_status=current to Signal eligibility, including queued execution checks.
+Invalid/superseded/under-review semantic proposals retain existing translation history but do not
+consume new translation calls or surface as current product evidence.

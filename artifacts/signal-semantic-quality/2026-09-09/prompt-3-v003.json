@@ -1,0 +1,85 @@
+{
+  "prompt_version": "v003",
+  "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+  "input_hash": "904cd19c7aca02316e5732a82725db3a5c2d18fa10c75d657f30417f76fc3c4c",
+  "input": {
+    "video": {
+      "youtube_video_id": "_1GumJMOm34",
+      "title": "Would You Like One? 🤖🦆",
+      "description": "That's not a toy duck. 😳 Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard.\n\nWhen it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone 🦆📱\n\nIn its first 24 hours, it pulled in over $2.5 million in sales — from a little tiltable desk toy to a viral robot celebrity.\n\nHold on... who'd have thought a cute, harmless-looking duck would become the internet's next robot star 🎬\n\n#MicroDuck #robot #AIrobot #humanoidrobot #cuterobot #robotsofinstagram #futuretech #technews #viralrobot #robotfuture",
+      "published_at": "2026-09-07T14:30:06+00:00",
+      "duration_seconds": 33,
+      "language": "en",
+      "statistics": {
+        "view_count": 1339,
+        "like_count": 17,
+        "comment_count": 2
+      }
+    },
+    "channel": {
+      "name": "Hello Humanoid!",
+      "channel_type": null
+    }
+  },
+  "model": "gpt-5.6-terra",
+  "status": "completed",
+  "provider": "openai",
+  "raw_output": {
+    "response_id": "resp_0d44fc67c24f1bf7016aa13876b90487d0866398f37a2209ee",
+    "output_text": "{\"industry\":\"consumer robotics\",\"customer\":null,\"problem\":null,\"solution\":\"Micro Duck, a 10-inch AI robot described as able to walk, grab objects with its beak, skateboard, recover after falling, and be programmed from a phone.\",\"business_model\":null,\"technology\":[\"self-learning AI\"],\"distribution\":[\"internet virality\"],\"pricing\":null,\"signals\":[{\"type\":\"product_launch\",\"statement\":\"The video describes Micro Duck as a 10-inch AI robot that walks, grabs objects with its beak, and rides a skateboard.\",\"evidence\":\"“Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.93},{\"type\":\"workflow\",\"statement\":\"Micro Duck is described as recovering on its own after it falls and allowing users to program tricks from a phone.\",\"evidence\":\"“When it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.91},{\"type\":\"technology\",\"statement\":\"The video attributes Micro Duck's ability to get back up after falling to self-learning AI.\",\"evidence\":\"“When it falls, it gets back up on its own using self-learning AI.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.9},{\"type\":\"revenue\",\"statement\":\"The video claims that Micro Duck generated over $2.5 million in sales in its first 24 hours.\",\"evidence\":\"“In its first 24 hours, it pulled in over $2.5 million in sales.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.86},{\"type\":\"growth\",\"statement\":\"The video characterizes Micro Duck as having become a viral robot celebrity.\",\"evidence\":\"“from a little tiltable desk toy to a viral robot celebrity.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.78}]}"
+  },
+  "parsed_output": {
+    "industry": "consumer robotics",
+    "customer": null,
+    "problem": null,
+    "solution": "Micro Duck, a 10-inch AI robot described as able to walk, grab objects with its beak, skateboard, recover after falling, and be programmed from a phone.",
+    "business_model": null,
+    "technology": [
+      "self-learning AI"
+    ],
+    "distribution": [
+      "internet virality"
+    ],
+    "pricing": null,
+    "signals": [
+      {
+        "type": "product_launch",
+        "statement": "The video describes Micro Duck as a 10-inch AI robot that walks, grabs objects with its beak, and rides a skateboard.",
+        "evidence": "“Meet the Micro Duck, a 10-inch AI robot that walks, grabs things with its beak... and even rides a skateboard.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.93
+      },
+      {
+        "type": "workflow",
+        "statement": "Micro Duck is described as recovering on its own after it falls and allowing users to program tricks from a phone.",
+        "evidence": "“When it falls, it gets back up on its own using self-learning AI. And the craziest part? You can program tricks straight from your phone.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.91
+      },
+      {
+        "type": "technology",
+        "statement": "The video attributes Micro Duck's ability to get back up after falling to self-learning AI.",
+        "evidence": "“When it falls, it gets back up on its own using self-learning AI.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.9
+      },
+      {
+        "type": "revenue",
+        "statement": "The video claims that Micro Duck generated over $2.5 million in sales in its first 24 hours.",
+        "evidence": "“In its first 24 hours, it pulled in over $2.5 million in sales.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.86
+      },
+      {
+        "type": "growth",
+        "statement": "The video characterizes Micro Duck as having become a viral robot celebrity.",
+        "evidence": "“from a little tiltable desk toy to a viral robot celebrity.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.78
+      }
+    ]
+  },
+  "input_tokens": 1336,
+  "output_tokens": 415,
+  "provider_request_id": "resp_0d44fc67c24f1bf7016aa13876b90487d0866398f37a2209ee"
+}

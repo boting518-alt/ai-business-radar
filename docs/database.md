@@ -531,3 +531,10 @@ Migration `0015_intelligence_translation_runtime.sql` extends each projection wi
 hash, provider request ID, and input/output token counts plus validation constraints. These fields
 make TASK-034 provider calls auditable without weakening the versioned identity or RLS behavior
 added by `0014`.
+
+## TASK-044F semantic projection
+
+Migration 0021 adds checked semantic validity/role fields and superseded_by to Signal, plus the
+admin-readable signal_semantic_audits append-only application history. Active product evidence now
+requires current semantic validity. Legacy defaults are compatible and are not proof of a completed
+audit. Signal source/type/claim/extraction and old links remain unchanged. See signal-semantic-guardrails.md.

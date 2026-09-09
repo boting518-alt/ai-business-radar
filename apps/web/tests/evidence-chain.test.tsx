@@ -9,6 +9,13 @@ const item:EvidenceItem={evidence_id:"ev1",evidence_kind:"linked_signal",signal_
 function Language(){const {setLocale}=useI18n();return <button onClick={()=>setLocale("en-US")}>English</button>}
 
 describe("Evidence provenance UI",()=>{
+  it("labels creator monetization separately in both locales",()=>{
+    render(<LocaleProvider><Language/><SourceTrace source={{evidence_role:"creator_monetization"}}/></LocaleProvider>);
+    expect(screen.getByText("创作者变现")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button",{name:"English"}));
+    expect(screen.getByText("Creator monetization")).toBeInTheDocument();
+    window.localStorage.clear();
+  });
   it("distinguishes translated intelligence, canonical English, and original comment",()=>{
     render(<EvidenceList items={[item]} emptyMessage="empty"/>);
     expect(screen.getByText("反对")).toBeInTheDocument();expect(screen.getByText("未知")).toBeInTheDocument();

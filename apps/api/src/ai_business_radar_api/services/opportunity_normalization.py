@@ -6,6 +6,7 @@ from uuid import UUID
 
 from ai_business_radar_schemas import OpportunityNormalizerOutput
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from sqlalchemy import select, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
@@ -24,6 +25,7 @@ from ..infrastructure.database.repositories import (
     SignalRepository,
 )
 from .relevance_filter import canonical_input_hash
+from .signal_semantics import evaluate_signal, exact_current_duplicate, persist_decision
 from .translation_orchestration import TranslationCoverageReconciliationService
 
 TASK_TYPE = "opportunity_normalizer"
@@ -99,6 +101,25 @@ class OpportunityNormalizationService:
     async def normalize(
         self, signal_id: UUID, *, force: bool = False
     ) -> OpportunityNormalizationItemResult:
+        async with self._sessions() as session, session.begin():
+            current = await session.scalar(
+                select(Signal).where(Signal.id == signal_id).with_for_update()
+            )
+            if current is None:
+                raise SignalNotFoundError("Signal was not found")
+            if (
+                current.semantic_status == "current"
+                and current.guardrail_reason_code != "human_semantic_approval"
+            ):
+                decision = evaluate_signal(current)
+                duplicate = (
+                    await exact_current_duplicate(session, current)
+                    if decision.decision == "accept"
+                    else None
+                )
+                await persist_decision(session, current, decision, duplicate=duplicate)
+            if current.semantic_status != "current":
+                return self._result(signal_id, None, "semantic_blocked")
         signal, source_context, candidates = await self._load_context(signal_id, force=force)
         if not force:
             existing = await self._find_existing_outcome(signal_id)
@@ -139,7 +160,7 @@ class OpportunityNormalizationService:
 
         try:
             result = await self._complete(signal, candidates, extraction_id, parsed, response)
-        except SQLAlchemyError:
+        except (SQLAlchemyError, SignalNotEligibleError):
             await self._fail(extraction_id, invalid=False, error="normalization_persistence_failed")
             return self._result(signal_id, extraction_id, "failed")
         if self._translation is not None and result.action in {"MATCH", "CREATE"}:
@@ -177,7 +198,9 @@ class OpportunityNormalizationService:
             signal = await SignalRepository(session).get_by_id(signal_id)
             if signal is None:
                 raise SignalNotFoundError("Signal was not found")
-            if signal.status in {"ignored", "rejected"} and not force:
+            if signal.semantic_status != "current" or (
+                signal.status in {"ignored", "rejected"} and not force
+            ):
                 raise SignalNotEligibleError("Signal is not eligible for normalization")
             source_context: dict = {}
             if signal.video_id:
@@ -345,6 +368,31 @@ class OpportunityNormalizationService:
             action, review_reason = "REVIEW", "create_confidence_below_threshold"
 
         async with self._sessions() as session, session.begin():
+            # Serialize source-level publication across concurrent extraction versions.
+            await session.execute(
+                text("SELECT pg_advisory_xact_lock(hashtextextended(:key, 0))"),
+                {"key": f"semantic:{signal.source_type}:{signal.source_id}"},
+            )
+            locked = await session.scalar(
+                select(Signal).where(Signal.id == signal.id).with_for_update()
+            )
+            if locked.semantic_status != "current" or locked.status in {"rejected", "ignored"}:
+                raise SignalNotEligibleError("Signal changed during normalization")
+            duplicate = await exact_current_duplicate(session, locked)
+            if duplicate:
+                await persist_decision(session, locked, duplicate=duplicate)
+                await AIExtractionRepository(session).mark_completed(
+                    extraction_id,
+                    completed_at=now,
+                    raw_output=response.raw_output,
+                    parsed_output=parsed.model_dump(mode="json"),
+                    confidence=confidence,
+                    input_tokens=response.input_tokens,
+                    output_tokens=response.output_tokens,
+                    total_tokens=response.total_tokens,
+                    provider_request_id=response.provider_request_id,
+                )
+                return self._result(signal.id, extraction_id, "semantic_blocked")
             opportunities = OpportunityRepository(session)
             opportunity_id = None
             review_task_id = None

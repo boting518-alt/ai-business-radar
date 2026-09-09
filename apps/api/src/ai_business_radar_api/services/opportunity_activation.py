@@ -115,7 +115,7 @@ class OpportunityActivationReadinessService:
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity.id,
                     OpportunitySignalLink.relationship_type == "supporting",
-                    Signal.status == "active",
+                    (Signal.status == "active") & (Signal.semantic_status == "current"),
                 )
             )
         ).all()
@@ -137,7 +137,7 @@ class OpportunityActivationReadinessService:
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity.id,
                     OpportunitySignalLink.relationship_type == "contradicting",
-                    Signal.status == "active",
+                    (Signal.status == "active") & (Signal.semantic_status == "current"),
                 )
             )
             or 0
@@ -149,7 +149,7 @@ class OpportunityActivationReadinessService:
                 .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity.id,
-                    Signal.status == "review",
+                    (Signal.status == "review") & (Signal.semantic_status == "current"),
                 )
             )
             or 0

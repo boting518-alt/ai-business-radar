@@ -54,3 +54,7 @@ Foreign keys default to restrictive behavior for source and historical intellige
 ## Source integrity
 
 `ai_extractions` and `signals` retain `source_type` and `source_id` for a stable application-facing identity while also storing explicit nullable foreign keys. Named CHECK constraints enforce exactly one allowed source FK and require the discriminator and UUID to agree. Review-task `target_type`/`target_id` is the documented narrow polymorphic exception and remains service-enforced.
+
+- `0021_signal_semantic_guardrails.sql` adds Signal semantic validity and roles plus restrictive
+  audit history and effective-Signal RLS. Apply once before updated API/workers, then explicitly run
+  the bounded dry-run/apply and impact recomputation described in docs/signal-semantic-guardrails.md.

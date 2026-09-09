@@ -1,0 +1,675 @@
+{
+  "method": "Single-agent curated local regression labels, not independent adjudication or a production sample. All 34 active risk-category cases plus six non-risk controls. v002 has no active examples in this population. Unknown controls intentionally unassigned.",
+  "cases": [
+    {
+      "signal_id": "7a3a1f08-d797-45a9-9964-3f3c2fb685d9",
+      "signal_type": "adoption",
+      "gold": {
+        "decision": "review",
+        "actor_role": "seller_vendor",
+        "evidence_role": "seller_cta",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "unverified_adoption_scope",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "572eedd4-94f4-40b6-af02-d6af430f10c9",
+      "signal_type": "adoption",
+      "gold": {
+        "decision": "review",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "unverified_adoption_scope",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "9b3cb6af-c3e5-4b4e-88af-9eef39b4cc03",
+      "signal_type": "adoption",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "unverified_adoption_scope",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "deb2930a-8943-461d-b45a-6d7178237f83",
+      "signal_type": "adoption",
+      "gold": {
+        "decision": "review",
+        "actor_role": "creator_channel",
+        "evidence_role": "seller_claim",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "unverified_adoption_scope",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "ba8e8956-0059-4025-bbcd-2127450b66c9",
+      "signal_type": "adoption",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "seller_claim",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "attributed_adoption_claim",
+        "actor_role": "featured_product_company",
+        "evidence_role": "seller_claim"
+      }
+    },
+    {
+      "signal_id": "1822254d-d255-4ee7-ae1f-8e8410da56fb",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "buyer",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "596bc03b-8169-4587-ad9f-55e4e8d1af27",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "review",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_not_explicit",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "105f9df5-125a-4294-989e-b7ea03481880",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "b8dc7649-c6ad-453d-b8fd-1a61224b14cf",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "7597a321-0519-44f4-b73d-352843f5dc2a",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "6e8c89fa-80af-4438-9eca-ce0147a36cd9",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "review",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_not_explicit",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "7480e109-16cc-410c-94a1-1c2d1224aa94",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "959c58ee-663a-42f6-bd6a-bd154a855d39",
+      "signal_type": "pricing",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "seller_vendor",
+        "evidence_role": "product_pricing",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_product_price",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "e281a06f-15ab-46ba-ab44-d35ebb1a78d8",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "reject_semantic",
+        "actor_role": "seller_vendor",
+        "evidence_role": "seller_cta",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "reject_semantic",
+        "reason": "seller_cta_not_purchase_intent",
+        "actor_role": "seller_vendor",
+        "evidence_role": "seller_cta"
+      }
+    },
+    {
+      "signal_id": "58c0bb77-c84a-4139-9ac1-2ef31cdf127e",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_buyer_expression",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression"
+      }
+    },
+    {
+      "signal_id": "f7940d32-9436-4f6e-9ce8-42f3446026b6",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_buyer_expression",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression"
+      }
+    },
+    {
+      "signal_id": "1f94b9aa-fd70-4629-bd69-105898c25200",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_buyer_expression",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression"
+      }
+    },
+    {
+      "signal_id": "8d4d9c9f-5fc1-4101-a9b4-99aaeebbc30d",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "review",
+        "actor_role": "buyer",
+        "evidence_role": "product_pricing",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_without_buyer_intent",
+        "actor_role": "unknown",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "87329cc1-eb71-46ea-8951-2831e97eb540",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "review",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_actor",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "9f1f67d4-9dba-4f5d-90d2-40dd8a1d50ff",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_without_buyer_intent",
+        "actor_role": "unknown",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "7c346666-4820-4231-afee-1e8ddf12a605",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_actor",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "5deaac81-159f-4281-b203-0c7ec9a2f832",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "review",
+        "actor_role": "buyer",
+        "evidence_role": "product_pricing",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_without_buyer_intent",
+        "actor_role": "unknown",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "a5fffc21-26d4-44f5-b4a8-222970611543",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_buyer_expression",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression"
+      }
+    },
+    {
+      "signal_id": "90a9f7de-f7fb-4280-ac30-c928262a4b59",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "explicit_buyer_expression",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression"
+      }
+    },
+    {
+      "signal_id": "fc55b5fa-6710-4b68-b0b8-6c0c8380492d",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_actor",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "3cd9915c-c9a3-43b2-afa1-aad5a48e2e1c",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "buyer",
+        "evidence_role": "buyer_expression",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_actor",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "e65ba9e3-639e-412f-9cea-93ca9e367734",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "review",
+        "actor_role": "buyer",
+        "evidence_role": "product_pricing",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "price_without_buyer_intent",
+        "actor_role": "unknown",
+        "evidence_role": "product_pricing"
+      }
+    },
+    {
+      "signal_id": "17ff38af-5386-4d09-b824-c7b8140bd541",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "review",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_actor",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "1300ad9a-33ae-4cce-94bd-23dd4043c32f",
+      "signal_type": "purchase_intent",
+      "gold": {
+        "decision": "reject_semantic",
+        "actor_role": "seller_vendor",
+        "evidence_role": "seller_cta",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "reject_semantic",
+        "reason": "seller_cta_not_purchase_intent",
+        "actor_role": "seller_vendor",
+        "evidence_role": "seller_cta"
+      }
+    },
+    {
+      "signal_id": "2b5c0f9c-e6e0-44d6-ba2b-7c852304f978",
+      "signal_type": "revenue",
+      "gold": {
+        "decision": "review",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "ambiguous_revenue_owner",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "1ef07929-7314-4602-9abf-744a9ac8234f",
+      "signal_type": "revenue",
+      "gold": {
+        "decision": "review",
+        "actor_role": "featured_product_company",
+        "evidence_role": "third_party_observation",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "non_realized_revenue_scope",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation"
+      }
+    },
+    {
+      "signal_id": "ce96100c-5c4d-484e-a2f1-2adefaec6e2e",
+      "signal_type": "revenue",
+      "gold": {
+        "decision": "review",
+        "actor_role": "featured_product_company",
+        "evidence_role": "third_party_observation",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "review",
+        "reason": "non_realized_revenue_scope",
+        "actor_role": "unknown",
+        "evidence_role": "third_party_observation"
+      }
+    },
+    {
+      "signal_id": "20ae3e2c-6104-4f5e-a972-907aa2a950d9",
+      "signal_type": "revenue",
+      "gold": {
+        "decision": "reject_semantic",
+        "actor_role": "affiliate_referrer",
+        "evidence_role": "creator_monetization",
+        "valid_category": false
+      },
+      "predicted": {
+        "decision": "reject_semantic",
+        "reason": "affiliate_revenue_not_product_revenue",
+        "actor_role": "affiliate_referrer",
+        "evidence_role": "creator_monetization"
+      }
+    },
+    {
+      "signal_id": "f6a54891-a38c-45d7-b73e-987934530c04",
+      "signal_type": "revenue",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_monetization",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "attributed_product_revenue",
+        "actor_role": "featured_product_company",
+        "evidence_role": "product_monetization"
+      }
+    },
+    {
+      "signal_id": "b8917537-9ee3-4747-b803-38fc5c979c99",
+      "signal_type": "pain",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "d477ec45-b81c-4694-9cd8-31e6bbbbc993",
+      "signal_type": "pain",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "0a74cce1-79ee-47e1-b270-b7da6f6f5736",
+      "signal_type": "workflow",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "3f5b6fcd-b047-4bf1-9785-678f9de34311",
+      "signal_type": "workflow",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "87a98d7b-a35e-4522-8b1d-995d68a3603a",
+      "signal_type": "distribution",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    },
+    {
+      "signal_id": "78df14ee-b73a-4df9-9f4c-153c3a02617e",
+      "signal_type": "distribution",
+      "gold": {
+        "decision": "accept",
+        "actor_role": "unknown",
+        "evidence_role": "unknown",
+        "valid_category": true
+      },
+      "predicted": {
+        "decision": "accept",
+        "reason": "no_semantic_conflict",
+        "actor_role": "unknown",
+        "evidence_role": "unknown"
+      }
+    }
+  ],
+  "metrics": {
+    "purchase_intent_precision": {
+      "numerator": 5,
+      "denominator": 5
+    },
+    "revenue_ownership_accuracy": {
+      "numerator": 5,
+      "denominator": 5
+    },
+    "actor_role_accuracy": {
+      "numerator": 27,
+      "denominator": 40
+    },
+    "evidence_role_accuracy": {
+      "numerator": 29,
+      "denominator": 40
+    },
+    "false_positive_cta_rate": {
+      "numerator": 0,
+      "denominator": 3
+    },
+    "creator_product_monetization_confusion": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "decision_agreement": {
+      "numerator": 35,
+      "denominator": 40
+    }
+  }
+}

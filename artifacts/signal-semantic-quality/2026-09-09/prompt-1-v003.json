@@ -1,0 +1,91 @@
+{
+  "prompt_version": "v003",
+  "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+  "input_hash": "b5701bbb02ac90e43fb75851710c0b5b21988fef992c00cca1ee4253220ed6c2",
+  "input": {
+    "video": {
+      "youtube_video_id": "qt6qNv2FgG4",
+      "title": "Hugging Face Built a $399 Robot Duck That Ships Before Christmas",
+      "description": "Hugging Face + Pollen Robotics built Microduck — a $399 robot duck that ships before Christmas.\n\n25 cm tall, under 800 g. It waddles, picks stuff up with its beak, gets back up when it falls, and yes  it roller-skates. Open-source software for reinforcement learning. Four colors: Cream, Graphite, Lavender, Sky. Pre-order now.\n\nWould you drop $399 on a robot duck? Like and Subscribe.\n\nSources:\nhttps://pollen-robotics.com/microduck\nhttps://techcrunch.com (Microduck / Pollen / Hugging Face Aug 2026)\nhttps://www.theverge.com\n\n#Microduck #HuggingFace #PollenRobotics #RobotDuck #RobotechMind",
+      "published_at": "2026-09-08T07:00:44+00:00",
+      "duration_seconds": 29,
+      "language": "en",
+      "statistics": {
+        "view_count": 169,
+        "like_count": 4,
+        "comment_count": 0
+      }
+    },
+    "channel": {
+      "name": "Robotech Mind",
+      "channel_type": null
+    }
+  },
+  "model": "gpt-5.6-terra",
+  "status": "completed",
+  "provider": "openai",
+  "raw_output": {
+    "response_id": "resp_0a7d456b1806fcc5016aa13862676087d08653eb5053ab08da",
+    "output_text": "{\"industry\":\"Consumer robotics\",\"customer\":null,\"problem\":null,\"solution\":\"Microduck, a robot duck built by Hugging Face and Pollen Robotics.\",\"business_model\":null,\"technology\":[\"Open-source reinforcement-learning software\"],\"distribution\":[\"Pre-order\",\"Pollen Robotics product page\"],\"pricing\":{\"min\":399.0,\"max\":399.0,\"currency\":\"USD\",\"period\":\"one-time purchase\"},\"signals\":[{\"type\":\"product_launch\",\"statement\":\"Hugging Face and Pollen Robotics built Microduck, a robot duck.\",\"evidence\":\"\\\"Hugging Face + Pollen Robotics built Microduck\\\"\",\"claim_status\":\"creator_claim\",\"confidence\":0.9},{\"type\":\"pricing\",\"statement\":\"Microduck is priced at $399.\",\"evidence\":\"\\\"a $399 robot duck\\\"\",\"claim_status\":\"creator_claim\",\"confidence\":0.95},{\"type\":\"distribution\",\"statement\":\"Microduck is available for pre-order.\",\"evidence\":\"\\\"Pre-order now.\\\"\",\"claim_status\":\"creator_claim\",\"confidence\":0.9},{\"type\":\"workflow\",\"statement\":\"Microduck can waddle, pick up objects with its beak, recover after falling, and roller-skate.\",\"evidence\":\"\\\"It waddles, picks stuff up with its beak, gets back up when it falls, and yes it roller-skates.\\\"\",\"claim_status\":\"creator_claim\",\"confidence\":0.88},{\"type\":\"technology\",\"statement\":\"Microduck uses open-source software for reinforcement learning.\",\"evidence\":\"\\\"Open-source software for reinforcement learning.\\\"\",\"claim_status\":\"creator_claim\",\"confidence\":0.9}]}"
+  },
+  "parsed_output": {
+    "industry": "Consumer robotics",
+    "customer": null,
+    "problem": null,
+    "solution": "Microduck, a robot duck built by Hugging Face and Pollen Robotics.",
+    "business_model": null,
+    "technology": [
+      "Open-source reinforcement-learning software"
+    ],
+    "distribution": [
+      "Pre-order",
+      "Pollen Robotics product page"
+    ],
+    "pricing": {
+      "min": 399.0,
+      "max": 399.0,
+      "currency": "USD",
+      "period": "one-time purchase"
+    },
+    "signals": [
+      {
+        "type": "product_launch",
+        "statement": "Hugging Face and Pollen Robotics built Microduck, a robot duck.",
+        "evidence": "\"Hugging Face + Pollen Robotics built Microduck\"",
+        "claim_status": "creator_claim",
+        "confidence": 0.9
+      },
+      {
+        "type": "pricing",
+        "statement": "Microduck is priced at $399.",
+        "evidence": "\"a $399 robot duck\"",
+        "claim_status": "creator_claim",
+        "confidence": 0.95
+      },
+      {
+        "type": "distribution",
+        "statement": "Microduck is available for pre-order.",
+        "evidence": "\"Pre-order now.\"",
+        "claim_status": "creator_claim",
+        "confidence": 0.9
+      },
+      {
+        "type": "workflow",
+        "statement": "Microduck can waddle, pick up objects with its beak, recover after falling, and roller-skate.",
+        "evidence": "\"It waddles, picks stuff up with its beak, gets back up when it falls, and yes it roller-skates.\"",
+        "claim_status": "creator_claim",
+        "confidence": 0.88
+      },
+      {
+        "type": "technology",
+        "statement": "Microduck uses open-source software for reinforcement learning.",
+        "evidence": "\"Open-source software for reinforcement learning.\"",
+        "claim_status": "creator_claim",
+        "confidence": 0.9
+      }
+    ]
+  },
+  "input_tokens": 1336,
+  "output_tokens": 333,
+  "provider_request_id": "resp_0a7d456b1806fcc5016aa13862676087d08653eb5053ab08da"
+}

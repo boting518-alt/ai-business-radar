@@ -82,3 +82,11 @@ auditable. Release is deferred because direct decision and defer provide the min
 There is no task reopening, manual score override, market-stage policy, or autonomous merge.
 The TASK-026 admin UI uses the list/detail/claim/decision endpoints without duplicating workflow
 policy. TASK-022 consumes approved state for Radar queries.
+
+## TASK-044F semantic review
+
+signal_validation tasks expose semantic state, commercial actor, evidence role and stable reason.
+Known-invalid/superseded Signals cannot be approved. Ambiguous semantics require a signal_validation
+approval with explicit notes, recorded as a semantic audit override; ordinary match/create approval
+cannot bypass it. Semantic validity is separate from the retained lifecycle status. Reject/ignore
+still preserve history. No automatic Opportunity status change is introduced.

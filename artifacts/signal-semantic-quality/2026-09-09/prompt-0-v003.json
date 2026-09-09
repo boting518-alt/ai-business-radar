@@ -1,0 +1,91 @@
+{
+  "prompt_version": "v003",
+  "prompt_hash": "d91be041c6f50c0f97f5c9ba9d3469778ba92f1ee91d7063531df003a1c792e3",
+  "input_hash": "7f4ce4a7f9375930c7c70b6d22c0cc28756b1e23a65af51a53bb2af1f06da875",
+  "input": {
+    "video": {
+      "youtube_video_id": "38ZxuCL9bac",
+      "title": "Dental AI Receptionist Demo | Answer More Calls & Book More Patients with AI",
+      "description": "Discover how AI Connect Pro for Dental Clinics helps dental practices answer more calls, book more appointments, reduce front-desk pressure and improve the patient experience with an intelligent AI Receptionist and Dental Practice Dashboard.\n\nIn this demo, we show how AI Connect Pro can support a busy dental clinic by handling incoming calls, patient enquiries, appointment bookings, recalls, conversations and follow-up — while giving practice owners and managers clear visibility across clinic operations.\n\nSee how the Dental Dashboard helps monitor:\n\nAI calls answered and appointments booked\nNew patient enquiries and treatment opportunities\nAppointment confirmations, cancellations and no-show risk\nAI Receptionist call outcomes and urgent enquiries\nSMS, Facebook, Instagram and WhatsApp conversations\nRecall and patient reactivation opportunities\nTreatment pipeline value\nChair utilisation and provider capacity\nClinic performance and reporting\n\nThe goal isn’t to replace your reception team. It’s to give them more capacity to focus on patients while AI handles more of the repetitive front-desk workload.\n\nIf your dental practice is dealing with missed calls, reception overload, slow follow-up, appointment gaps or lost patient enquiries, an AI Receptionist can help make sure more opportunities are captured and acted on.\n\nCall AI Connect Pro and hear it work for yourself.\n\n1300 142 702\ninfo@aiconnectpro.com.au\naiconnectpro.com.au\n\nAI Connect Pro for Dental Clinics\nMore calls answered. More patients booked. More time for what matters.\n\n\n\n#AIReceptionist #DentalAI #DentalPractice #DentalMarketing #DentalSoftware #DentalReceptionist #ArtificialIntelligence #DentalAutomation #AppointmentBooking #PatientExperience #DentalPracticeManagement #AIConnectPro",
+      "published_at": "2026-09-07T09:14:09+00:00",
+      "duration_seconds": 222,
+      "language": "en",
+      "statistics": {
+        "view_count": 5,
+        "like_count": 1,
+        "comment_count": 0
+      }
+    },
+    "channel": {
+      "name": "aiconnectpro",
+      "channel_type": null
+    }
+  },
+  "model": "gpt-5.6-terra",
+  "status": "completed",
+  "provider": "openai",
+  "raw_output": {
+    "response_id": "resp_037abec1648d7206016aa138543c9487d0bc8c9fb267fce0b0",
+    "output_text": "{\"industry\":\"dental clinics\",\"customer\":\"Dental practices, including practice owners and managers\",\"problem\":\"Missed calls, reception overload, slow follow-up, appointment gaps, and lost patient enquiries\",\"solution\":\"AI Connect Pro's AI Receptionist and Dental Practice Dashboard\",\"business_model\":null,\"technology\":[\"AI Receptionist\",\"Dental Practice Dashboard\"],\"distribution\":[],\"pricing\":null,\"signals\":[{\"type\":\"workflow\",\"statement\":\"AI Connect Pro is presented as handling incoming calls, patient enquiries, appointment bookings, recalls, conversations, and follow-up for dental clinics.\",\"evidence\":\"“AI Connect Pro can support a busy dental clinic by handling incoming calls, patient enquiries, appointment bookings, recalls, conversations and follow-up”\",\"claim_status\":\"creator_claim\",\"confidence\":0.97},{\"type\":\"workflow\",\"statement\":\"The Dental Dashboard is presented as monitoring AI calls answered, appointments booked, new patient enquiries, treatment opportunities, appointment confirmations, cancellations, no-show risk, urgent enquiries, messaging conversations, recalls, patient reactivation opportunities, treatment pipeline value, chair utilisation, provider capacity, and clinic reporting.\",\"evidence\":\"“See how the Dental Dashboard helps monitor: AI calls answered and appointments booked; New patient enquiries and treatment opportunities; Appointment confirmations, cancellations and no-show risk; AI Receptionist call outcomes and urgent enquiries; SMS, Facebook, Instagram and WhatsApp conversations; Recall and patient reactivation opportunities; Treatment pipeline value; Chair utilisation and provider capacity; Clinic performance and reporting”\",\"claim_status\":\"creator_claim\",\"confidence\":0.98},{\"type\":\"pain\",\"statement\":\"The video targets dental practices dealing with missed calls, reception overload, slow follow-up, appointment gaps, or lost patient enquiries.\",\"evidence\":\"“If your dental practice is dealing with missed calls, reception overload, slow follow-up, appointment gaps or lost patient enquiries”\",\"claim_status\":\"creator_claim\",\"confidence\":0.99},{\"type\":\"workflow\",\"statement\":\"The AI Receptionist is presented as handling repetitive front-desk workload so reception teams have more capacity to focus on patients.\",\"evidence\":\"“The goal isn’t to replace your reception team. It’s to give them more capacity to focus on patients while AI handles more of the repetitive front-desk workload.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.97},{\"type\":\"technology\",\"statement\":\"The described solution uses an AI Receptionist.\",\"evidence\":\"“AI Connect Pro for Dental Clinics helps dental practices answer more calls, book more appointments, reduce front-desk pressure and improve the patient experience with an intelligent AI Receptionist and Dental Practice Dashboard.”\",\"claim_status\":\"creator_claim\",\"confidence\":0.98},{\"type\":\"distribution\",\"statement\":\"The creator directs viewers to call, email, or visit AI Connect Pro's website to try the service.\",\"evidence\":\"“Call AI Connect Pro and hear it work for yourself. 1300 142 702 info@aiconnectpro.com.au aiconnectpro.com.au”\",\"claim_status\":\"fact\",\"confidence\":0.99}]}"
+  },
+  "parsed_output": {
+    "industry": "dental clinics",
+    "customer": "Dental practices, including practice owners and managers",
+    "problem": "Missed calls, reception overload, slow follow-up, appointment gaps, and lost patient enquiries",
+    "solution": "AI Connect Pro's AI Receptionist and Dental Practice Dashboard",
+    "business_model": null,
+    "technology": [
+      "AI Receptionist",
+      "Dental Practice Dashboard"
+    ],
+    "distribution": [],
+    "pricing": null,
+    "signals": [
+      {
+        "type": "workflow",
+        "statement": "AI Connect Pro is presented as handling incoming calls, patient enquiries, appointment bookings, recalls, conversations, and follow-up for dental clinics.",
+        "evidence": "“AI Connect Pro can support a busy dental clinic by handling incoming calls, patient enquiries, appointment bookings, recalls, conversations and follow-up”",
+        "claim_status": "creator_claim",
+        "confidence": 0.97
+      },
+      {
+        "type": "workflow",
+        "statement": "The Dental Dashboard is presented as monitoring AI calls answered, appointments booked, new patient enquiries, treatment opportunities, appointment confirmations, cancellations, no-show risk, urgent enquiries, messaging conversations, recalls, patient reactivation opportunities, treatment pipeline value, chair utilisation, provider capacity, and clinic reporting.",
+        "evidence": "“See how the Dental Dashboard helps monitor: AI calls answered and appointments booked; New patient enquiries and treatment opportunities; Appointment confirmations, cancellations and no-show risk; AI Receptionist call outcomes and urgent enquiries; SMS, Facebook, Instagram and WhatsApp conversations; Recall and patient reactivation opportunities; Treatment pipeline value; Chair utilisation and provider capacity; Clinic performance and reporting”",
+        "claim_status": "creator_claim",
+        "confidence": 0.98
+      },
+      {
+        "type": "pain",
+        "statement": "The video targets dental practices dealing with missed calls, reception overload, slow follow-up, appointment gaps, or lost patient enquiries.",
+        "evidence": "“If your dental practice is dealing with missed calls, reception overload, slow follow-up, appointment gaps or lost patient enquiries”",
+        "claim_status": "creator_claim",
+        "confidence": 0.99
+      },
+      {
+        "type": "workflow",
+        "statement": "The AI Receptionist is presented as handling repetitive front-desk workload so reception teams have more capacity to focus on patients.",
+        "evidence": "“The goal isn’t to replace your reception team. It’s to give them more capacity to focus on patients while AI handles more of the repetitive front-desk workload.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.97
+      },
+      {
+        "type": "technology",
+        "statement": "The described solution uses an AI Receptionist.",
+        "evidence": "“AI Connect Pro for Dental Clinics helps dental practices answer more calls, book more appointments, reduce front-desk pressure and improve the patient experience with an intelligent AI Receptionist and Dental Practice Dashboard.”",
+        "claim_status": "creator_claim",
+        "confidence": 0.98
+      },
+      {
+        "type": "distribution",
+        "statement": "The creator directs viewers to call, email, or visit AI Connect Pro's website to try the service.",
+        "evidence": "“Call AI Connect Pro and hear it work for yourself. 1300 142 702 info@aiconnectpro.com.au aiconnectpro.com.au”",
+        "claim_status": "fact",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "input_tokens": 1514,
+  "output_tokens": 617,
+  "provider_request_id": "resp_037abec1648d7206016aa138543c9487d0bc8c9fb267fce0b0"
+}

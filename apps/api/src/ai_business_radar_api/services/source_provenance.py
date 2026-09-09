@@ -8,6 +8,8 @@ from pydantic import BaseModel
 
 
 class SourceProvenance(BaseModel):
+    actor_role: str = "unknown"
+    evidence_role: str = "unknown"
     source_video_id: UUID | None = None
     youtube_video_id: str | None = None
     video_title: str | None = None

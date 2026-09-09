@@ -281,6 +281,10 @@ class IntelligenceTranslationService:
             entity = await session.get(model, entity_id)
         if entity is None:
             raise TranslationEntityNotFoundError(f"{entity_type} was not found")
+        if entity_type == "signal" and (
+            entity.semantic_status != "current" or entity.status not in {"review", "active"}
+        ):
+            return {}
         return {field: getattr(entity, field) for field in ENTITY_FIELDS[entity_type]}
 
     async def _existing(self, entity_type: EntityType, entity_id: UUID, fields: list[str]):
@@ -392,7 +396,7 @@ class IntelligenceTranslationService:
             if request.entity_type in ("signals", "all"):
                 query = (
                     select(Signal.id)
-                    .where(Signal.status == "active")
+                    .where((Signal.status == "active") & (Signal.semantic_status == "current"))
                     .order_by(Signal.observed_at.desc().nulls_last(), Signal.id)
                 )
                 if not needs_projection_filter:

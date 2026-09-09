@@ -120,3 +120,11 @@ Pain is a proxy without separate urgency/risk/cost taxonomy. Competition counts 
 than unique named competitors. Build and distribution rules use only structured fields and are
 deliberately conservative. Contradiction coverage is incomplete. TASK-021 owns review decisions;
 TASK-022 owns current-score Radar reads.
+
+## TASK-044F corrected input universe
+
+Signal-based score/trend inputs additionally require semantic_status=current. This changes eligible
+evidence, not the frozen score-v001/trend-v001 formulas or weights. Bounded historical repair creates
+new trend snapshots at its audit timestamp before appending a corrected score; prior histories stay
+intact. Repeated repair uses the same timestamp and identities. Same-time counterfactuals distinguish
+semantic corrections from window/freshness changes. See signal-semantic-guardrails.md.

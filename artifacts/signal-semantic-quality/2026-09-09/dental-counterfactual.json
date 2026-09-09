@@ -1,0 +1,9 @@
+{
+  "method": "Read-only counterfactual: same new trend snapshot and evaluation time, but include the two excluded legacy Signals. Not a persisted score.",
+  "corrected_score": "48.56",
+  "uncorrected_same_time_score": "53.24",
+  "corrected_demand": "16.79",
+  "uncorrected_demand": "32.85",
+  "corrected_revenue": "20.61",
+  "uncorrected_revenue": "24.46"
+}

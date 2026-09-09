@@ -43,7 +43,7 @@ class SignalRepository:
         return list(
             await self.session.scalars(
                 select(Signal)
-                .where(Signal.status == "review")
+                .where((Signal.status == "review") & (Signal.semantic_status == "current"))
                 .order_by(Signal.observed_at.asc().nulls_last(), Signal.created_at, Signal.id)
                 .limit(limit)
             )

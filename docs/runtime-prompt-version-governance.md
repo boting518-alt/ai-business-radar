@@ -50,3 +50,7 @@ including passive/calque issues and an unsupported abandoned-checkout semantic a
 retrieval remains offline: lexical 0.3/semantic 0.7 reached 100% Recall@5 and low-overlap Recall@5,
 but candidate noise increased. Normalizer remains v001 because the surviving missed merge was
 retrieval-caused rather than a demonstrated Normalizer failure.
+
+TASK-044F adds experimental Signal v004 and semantic-v001 deterministic runtime guardrails. The
+four-input v003/v004 comparison is artifact-only; v004 remains KEEP_EXPERIMENTAL. Neither runtime
+matrix defaults nor immutable v001/v002/v003 bytes change.

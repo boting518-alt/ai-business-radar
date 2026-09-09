@@ -130,7 +130,7 @@ class TrendRepository:
                 .outerjoin(Video, Video.id == resolved_video_id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity_id,
-                    Signal.status == "active",
+                    (Signal.status == "active") & (Signal.semantic_status == "current"),
                     effective_time >= period_start,
                     effective_time < period_end,
                 )
@@ -147,7 +147,7 @@ class TrendRepository:
                 .join(OpportunitySignalLink, OpportunitySignalLink.signal_id == Signal.id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity_id,
-                    Signal.status == "active",
+                    (Signal.status == "active") & (Signal.semantic_status == "current"),
                     effective_time < before,
                 )
             )

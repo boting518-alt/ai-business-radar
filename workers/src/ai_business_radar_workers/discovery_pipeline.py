@@ -470,6 +470,7 @@ async def _signal_ids(extraction_ids: list[UUID], settings: WorkerSettings) -> l
                     select(Signal.id).where(
                         Signal.ai_extraction_id.in_(extraction_ids),
                         Signal.status == "review",
+                        Signal.semantic_status == "current",
                     )
                 )
             )

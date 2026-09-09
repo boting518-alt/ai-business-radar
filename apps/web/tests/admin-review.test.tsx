@@ -22,6 +22,15 @@ function mockApi(review=task(),options:{user?:CurrentUser;queue?:ReviewTask[];cl
 describe("Admin review workspace",()=>{
   beforeEach(()=>{query="";replace.mockReset();mockApi()});
 
+  it("shows semantic warning and blocks invalid approval",async()=>{
+    query="selected=review-1";
+    mockApi(task({status:"in_review",assigned_to:"admin-1",context:{signal:{...signal,semantic_status:"invalid_semantic",actor_role:"affiliate_referrer",evidence_role:"creator_monetization",guardrail_reason_code:"affiliate_revenue_not_product_revenue"}}}));
+    render(<ReviewWorkspace/>);
+    expect(await screen.findByText(/语义无效/)).toHaveTextContent("创作者变现");
+    expect(screen.getByText("affiliate_revenue_not_product_revenue")).toBeInTheDocument();
+    expect(screen.getByRole("button",{name:"Approve"})).toBeDisabled();
+    expect(screen.getByRole("button",{name:"Reject"})).not.toBeDisabled();
+  });
   it("loads the admin queue with backend ordering and default pending filter",async()=>{render(<ReviewWorkspace/>);expect(screen.getByLabelText("正在加载审核队列")).toBeInTheDocument();expect(await screen.findByText("Signal validation")).toBeInTheDocument();const listUrl=vi.mocked(fetch).mock.calls.map(call=>String(call[0])).find(url=>url.includes("/admin/reviews?"));expect(listUrl).toContain("status=pending");expect(screen.getByText(/priority 0.82/)).toBeInTheDocument()});
   it("blocks a non-admin even when the client route is reached",async()=>{mockApi(task(),{user:{...admin,role:"user"}});render(<ReviewWorkspace/>);expect(await screen.findByRole("alert")).toHaveTextContent("没有访问审核工作台的权限")});
   it("preserves queue filters and selection in URL",async()=>{render(<ReviewWorkspace/>);await screen.findByText("Signal validation");await userEvent.selectOptions(screen.getByLabelText("Status"),"in_review");await userEvent.selectOptions(screen.getByLabelText("Review type"),"quality_review");await userEvent.click(screen.getByRole("button",{name:"应用筛选"}));expect(replace).toHaveBeenCalledWith("/admin/review?status=in_review&review_type=quality_review");fireEvent.click(screen.getByRole("button",{name:/Signal validation/}));expect(replace).toHaveBeenLastCalledWith("/admin/review?selected=review-1")});

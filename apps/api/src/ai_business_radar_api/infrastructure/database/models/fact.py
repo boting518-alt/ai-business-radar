@@ -58,6 +58,13 @@ class Signal(Base):
     signal_type: Mapped[str]
     statement: Mapped[str] = mapped_column(Text)
     evidence_text: Mapped[str | None] = mapped_column(Text)
+    semantic_status: Mapped[str] = mapped_column(server_default="current")
+    actor_role: Mapped[str] = mapped_column(server_default="unknown")
+    evidence_role: Mapped[str] = mapped_column(server_default="unknown")
+    guardrail_version: Mapped[str | None]
+    guardrail_decision: Mapped[str | None]
+    guardrail_reason_code: Mapped[str | None]
+    superseded_by: Mapped[UUID | None] = mapped_column(ForeignKey("signals.id"))
     normalized_statement: Mapped[str | None] = mapped_column(Text)
     industry: Mapped[str | None]
     sub_industry: Mapped[str | None]
@@ -83,3 +90,26 @@ class Signal(Base):
     status: Mapped[str]
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class SignalSemanticAudit(Base):
+    __tablename__ = "signal_semantic_audits"
+    id: Mapped[UUID] = mapped_column(
+        Uuid, primary_key=True, server_default=text("gen_random_uuid()")
+    )
+    signal_id: Mapped[UUID] = mapped_column(ForeignKey("signals.id"))
+    guardrail_version: Mapped[str]
+    guardrail_decision: Mapped[str]
+    guardrail_reason_code: Mapped[str]
+    original_signal_type: Mapped[str]
+    canonical_signal_type: Mapped[str]
+    actor_role: Mapped[str]
+    evidence_role: Mapped[str]
+    previous_semantic_status: Mapped[str]
+    semantic_status: Mapped[str]
+    superseded_by: Mapped[UUID | None] = mapped_column(ForeignKey("signals.id"))
+    input_hash: Mapped[str]
+    operator_note: Mapped[str | None]
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=text("now()")
+    )

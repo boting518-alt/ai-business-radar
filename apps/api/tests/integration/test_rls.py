@@ -68,7 +68,7 @@ async def test_rls_user_ownership_visibility_and_admin_boundary(rls_postgres_url
             await connection.fetchval(
                 "SELECT count(*) FROM pg_class WHERE relkind = 'r' AND relrowsecurity"
             )
-                == 28
+                == 29
         )
 
         await connection.execute("SET ROLE authenticated")

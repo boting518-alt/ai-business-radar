@@ -97,3 +97,11 @@ The page still reloads its four bounded API reads together. Offset pagination is
 unchanged data, not a snapshot across concurrent ingestion. No direct-comment anchor, historical
 semantic repair, external availability monitoring, new source ingestion, or multi-source thesis
 generation is claimed. The task does not mark staging or production ready.
+
+## TASK-044F effective evidence
+
+All Signal-backed evidence, counts and public feeds additionally require semantic_status=current.
+This applies equally to linked and explicit Signal references. Standalone editorial evidence is
+unchanged. Actor/evidence roles are returned with provenance; creator monetization has a distinct
+localized label. Superseded/invalid/under-review rows and their links remain in audit history but do
+not count or appear as current product evidence. See signal-semantic-guardrails.md.

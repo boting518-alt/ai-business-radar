@@ -24,6 +24,7 @@ from ..infrastructure.database.repositories import (
     VideoRepository,
 )
 from .relevance_filter import canonical_input_hash
+from .signal_semantics import guard_created
 from .translation_orchestration import TranslationCoverageReconciliationService
 
 TASK_TYPE = "signal_extractor"
@@ -238,6 +239,7 @@ class BusinessSignalExtractionService:
         ]
         async with self._sessions() as session, session.begin():
             created = await SignalRepository(session).create_many(rows)
+            await guard_created(session, created)
             await AIExtractionRepository(session).mark_completed(
                 extraction_id,
                 completed_at=now,

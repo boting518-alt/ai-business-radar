@@ -30,3 +30,10 @@ Signals. RAW `source_comment_text` is labeled separately from canonical extracte
 Locale toggles retain both canonical fields. The global active feed remains independent of
 Opportunity publication. Claim/type classifications are unchanged; semantic repair is TASK-044F.
 See `docs/evidence-chain-source-traceability.md` for navigation limitations and visibility.
+
+## TASK-044F semantic validity
+
+Commercial actor and evidence roles now form a persisted, audited projection separate from category
+and claim status. Ordinary active feeds require semantic_status=current; creator monetization is
+not product revenue, and seller CTAs cannot activate as purchase intent. Historical Signal text,
+category, source and extraction remain retained. See [semantic guardrails](signal-semantic-guardrails.md).

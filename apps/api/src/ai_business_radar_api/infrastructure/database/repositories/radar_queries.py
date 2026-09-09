@@ -138,7 +138,10 @@ class RadarQueryRepository:
             .outerjoin(Comment, Comment.id == Signal.comment_id)
             .outerjoin(Video, Video.id == func.coalesce(Signal.video_id, Comment.video_id))
             .outerjoin(Channel, Channel.id == Video.channel_id)
-            .where(OpportunitySignalLink.opportunity_id.in_(ids), Signal.status == "active")
+            .where(
+                OpportunitySignalLink.opportunity_id.in_(ids),
+                (Signal.status == "active") & (Signal.semantic_status == "current"),
+            )
             .group_by(OpportunitySignalLink.opportunity_id)
         )
         return {
@@ -193,6 +196,8 @@ class RadarQueryRepository:
                 literal(kind).label("evidence_kind"),
                 Signal.id.label("signal_id"),
                 Signal.signal_type,
+                Signal.actor_role,
+                Signal.evidence_role,
                 Signal.signal_type.label("evidence_type"),
                 Signal.statement,
                 Signal.evidence_text,
@@ -226,7 +231,8 @@ class RadarQueryRepository:
             .select_from(OpportunitySignalLink)
             .join(Signal, Signal.id == OpportunitySignalLink.signal_id)
             .where(
-                OpportunitySignalLink.opportunity_id == opportunity_id, Signal.status == "active"
+                OpportunitySignalLink.opportunity_id == opportunity_id,
+                (Signal.status == "active") & (Signal.semantic_status == "current"),
             )
         )
         explicit_signal = signal_sources(
@@ -235,7 +241,7 @@ class RadarQueryRepository:
             .join(Signal, Signal.id == OpportunityEvidence.signal_id)
             .where(
                 OpportunityEvidence.opportunity_id == opportunity_id,
-                Signal.status == "active",
+                (Signal.status == "active") & (Signal.semantic_status == "current"),
                 ~select(OpportunitySignalLink.id)
                 .where(
                     OpportunitySignalLink.opportunity_id == opportunity_id,
@@ -253,6 +259,8 @@ class RadarQueryRepository:
                 literal("explicit").label("evidence_kind"),
                 OpportunityEvidence.signal_id,
                 literal(None).label("signal_type"),
+                literal("unknown").label("actor_role"),
+                literal("unknown").label("evidence_role"),
                 OpportunityEvidence.evidence_type,
                 OpportunityEvidence.summary.label("statement"),
                 literal(None).label("evidence_text"),
@@ -335,6 +343,8 @@ class RadarQueryRepository:
             select(
                 Signal.id,
                 Signal.signal_type,
+                Signal.actor_role,
+                Signal.evidence_role,
                 Signal.statement,
                 Signal.evidence_text,
                 Signal.industry,
@@ -359,7 +369,7 @@ class RadarQueryRepository:
             .outerjoin(Channel, Channel.id == Video.channel_id)
             .outerjoin(OpportunitySignalLink, OpportunitySignalLink.signal_id == Signal.id)
             .outerjoin(Opportunity, Opportunity.id == OpportunitySignalLink.opportunity_id)
-            .where(Signal.status == "active")
+            .where((Signal.status == "active") & (Signal.semantic_status == "current"))
             .group_by(Signal.id, Video.id, Comment.id, Channel.name)
         )
         if signal_type:

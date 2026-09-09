@@ -340,3 +340,8 @@ Both require the application `admin` role, target only `zh-CN`, and return HTTP 
 message ID, fixed `intelligence_translation` queue, and `queued` status. They do not return generated
 text and do not support dry-run; dry-run is a local CLI operation. Enqueue failure returns a safe
 503 response.
+
+TASK-044F evidence/Signal items add actor_role and evidence_role (unknown when unassigned). Public
+feeds, evidence and counts require active/current semantic state. Admin review signal context adds
+semantic_status and guardrail_reason_code. Semantic-invalid approval returns the existing review
+conflict response. No new admin audit HTTP endpoint is introduced; repair uses the bounded CLI.
